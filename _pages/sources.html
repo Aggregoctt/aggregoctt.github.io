@@ -2,11 +2,13 @@
 title: "Sources"
 permalink: /sources/
 ---
-{% for feed in site.data.sources %}
+{% for source in site.data.sources %}
+{% assign id = source[0] %}
+{% assign feed = source[1] %}
 <ul>
     <li>
-        <a href="{% if feed.website %}{{ feed.website }}{% else %}{{ feed.url | split:'/' | slice:0,3 | join:'/' }}{% endif %}">
-            {% if feed.name %}{{ feed.name }}{% else %}{{ feed.id }}{% endif %}
+        <a href="{% if feed.website %}{{ feed.website }}{% else %}{{ feed.url | split:'/' | slice:0,3 | join:'/' }}{% endif %}" target="_blank">
+            {% if feed.name %}{{ feed.name }}{% else %}{{ id }}{% endif %}
         </a>
     </li>
 </ul>

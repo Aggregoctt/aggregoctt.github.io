@@ -101,9 +101,12 @@ def make_filename(title:str, date:datetime, link:str) -> str:
 
 # validate feeds; if fields are missing, this will throw
 for feed in feeds:
-    feed["id"], feed["url"], feed["category"]
+    feed = feeds[feed]
+    feed["url"], feed["category"]
 
 for feed in feeds:
+    feed_id = feed
+    feed = feeds[feed_id]
     feed_url = feed["url"]
     category = feed["category"]
     print(f"Fetching: {feed_url}")
@@ -124,7 +127,7 @@ for feed in feeds:
         post_id = hashed_id(link)
         filename = make_filename(title, date, link)
 
-        output_dir = os.path.join(OUTPUT_DIR, feed["id"])
+        output_dir = os.path.join(OUTPUT_DIR, feed_id)
         os.makedirs(output_dir, exist_ok=True)
         filepath = os.path.join(output_dir, filename)
 
@@ -174,7 +177,7 @@ for feed in feeds:
             "canonical_url": link,
             "tags": tags,
             "author": entry.get("author"),
-            "source": feed["id"],
+            "source": feed_id,
             "excerpt": summary.strip(),
         }
 
