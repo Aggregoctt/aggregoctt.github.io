@@ -1,0 +1,33 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142349/cracking-the-dave-busters-anomaly/
+date: '2025-05-13T22:05:31'
+excerpt: 'Let&#8217;s dive into a peculiar bug in iOS. And by that I mean, let&#8217;s
+  follow along as Guilherme Rambo dives into a peculiar bug in iOS. The bug is that,
+  if you try to send an audio message using the Messages app to someone who’s also
+  using the Messages app, and that message happens to include the name “Dave and Buster’s”,
+  the message will never be received. ↫ Guilherme Rambo As I read this first description
+  of the bug, I had no idea what could possibly be causing this. However, once Rambo
+  explained that every audio messages is transcribed by Apple into a text version,
+  I immediately assumed what was going on: that &#8220;and&#8221; is throwing up problems
+  because the actual name of the brand is stylised with an ampersand, isn&#8217;t
+  it? It&#8217;s always DNS HTML, isn&#8217;t it? Yes. Yes it is. MessagesBlastDoorService
+  uses MBDXMLParserContext (via MBDHTMLToSuperParserContext) to parse XHTML for the
+  audio message. Ampersands have special meaning in XML/HTML and must be escaped,
+  so the correct way to represent the transcription in HTML would have been "Dave
+  &#38;amp;amp; Buster''s". Apple&#8217;s transcription system is not doing that,
+  causing the parser to attempt to detect a special code after the ampersand, and
+  since there&#8217;s no valid special code nor semicolon terminating what it thinks
+  is an HTML entity, it detects an error and stops parsing the content. ↫ Guilherme
+  Rambo It must be somewhat of a relief to programmers and developers the world over
+  that even a company as large and filled with talented people as Apple can run into
+  bugs like this.'
+image: null
+source: osnews
+tags:
+- Apple
+title: Cracking the Dave & Buster’s anomaly
+---
+<div><p>Let&#8217;s dive into a peculiar bug in iOS. And by that I mean, let&#8217;s follow along as Guilherme Rambo dives into a peculiar bug in iOS.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>The bug is that, if you try to send an audio message using the Messages app to someone who&#8217;s also using the Messages app, and that message happens to include the name &#8220;Dave and Buster&#8217;s&#8221;, the message will never be received.</p>
+<a href="https://rambo.codes/posts/2025-05-12-cracking-the-dave-and-busters-anomaly">&#8619; Guilherme Rambo</a></blockquote><p>As I read this first description of the bug, I had no idea what could possibly be causing this. However, once Rambo explained that every audio messages is transcribed by Apple into a text version, I immediately assumed what was going on: that &#8220;and&#8221; is throwing up problems because the actual name of the brand is stylised with an ampersand, isn&#8217;t it? It&#8217;s always DNS HTML, isn&#8217;t it?</p><p>Yes. Yes it is.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p><code>MessagesBlastDoorService</code> uses <code>MBDXMLParserContext</code> (via <code>MBDHTMLToSuperParserContext</code>) to parse XHTML for the audio message. Ampersands have special meaning in XML/HTML and must be escaped, so the correct way to represent the transcription in HTML would have been <code>"Dave &amp;amp;amp; Buster's"</code>. Apple&#8217;s transcription system is not doing that, causing the parser to attempt to detect a special code after the ampersand, and since there&#8217;s no valid special code nor semicolon terminating what it thinks is an HTML entity, it detects an error and stops parsing the content.</p>
+<a href="https://rambo.codes/posts/2025-05-12-cracking-the-dave-and-busters-anomaly">&#8619; Guilherme Rambo</a></blockquote><p>It must be somewhat of a relief to programmers and developers the world over that even a company as large and filled with talented people as Apple can run into bugs like this.</p></div>
