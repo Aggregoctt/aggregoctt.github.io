@@ -1,0 +1,118 @@
+---
+author: Lorenzo Franceschi-Bicchierai
+canonical_url: https://techcrunch.com/2025/05/13/seven-things-we-learned-from-whatsapp-vs-nso-group-spyware-lawsuit/
+date: '2025-05-13T20:00:00'
+excerpt: The landmark trial between WhatsApp and NSO Group unearthed several new revelations.
+  We recap some of them here.
+image: assets/media/JKQIXVDJox_ASii7xlh34g-YZ4DOXWWpWLyY7lsf2wjzg.webp
+source: techcrunch
+tags:
+- Security
+- Meta
+- NSO
+- NSO Group
+- Spyware
+- surveillance
+- WhatsApp
+- Zero-days
+title: Seven things we learned from WhatsApp vs. NSO Group spyware lawsuit
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">On Tuesday, <a href="https://techcrunch.com/2025/05/06/nso-group-must-pay-more-than-167-million-in-damages-to-whatsapp-for-spyware-campaign/">WhatsApp scored a major victory against NSO Group</a> when a jury ordered the infamous spyware maker to pay more than $167 million in damages to the Meta-owned company.</p>
+
+<p class="wp-block-paragraph">The ruling concluded a legal battle spanning more than five years, which started in October 2019 when <a href="https://techcrunch.com/2019/10/29/whatsapp-spyware-nso-group/">WhatsApp accused NSO Group</a> of hacking more than 1,400 of its users by taking advantage of a vulnerability in the chat app&#8217;s <a href="https://techcrunch.com/2019/05/13/whatsapp-exploit-let-attackers-install-government-grade-spyware-on-phones/">audio-calling functionality</a>.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The verdict came after a week-long jury trial that featured several testimonies, including NSO Group&#8217;s CEO Yaron Shohat and WhatsApp employees who responded and investigated the incident.&#160;</p>
+
+<p class="wp-block-paragraph">Even before the trial began, the case had unearthed several revelations, including that NSO Group <a href="https://techcrunch.com/2024/11/15/nso-group-admits-cutting-off-10-customers-because-they-abused-its-pegasus-spyware-say-unsealed-court-documents/">had cut off 10 of its government customers</a> for abusing its Pegasus spyware, <a href="https://techcrunch.com/2025/04/09/court-document-reveals-locations-of-whatsapp-victims-targeted-by-nso-spyware/">the locations of 1,223 of the victims</a> of the spyware campaign, and the names of three of the spyware maker&#8217;s customers: Mexico, Saudi Arabia, and Uzbekistan.</p>
+
+<p class="wp-block-paragraph">TechCrunch read the transcripts of the trial&#8217;s hearings and is highlighting the most interesting facts and revelations that came out. We will update this post as we learn more from the cache of more than 1,000 pages.&#160;</p>
+
+<h2 class="wp-block-heading" id="h-testimony-described-how-the-whatsapp-attack-worked"><strong>Testimony described how the WhatsApp attack worked</strong></h2>
+
+<p class="wp-block-paragraph">The <a href="https://techcrunch.com/2025/04/25/techcrunch-reference-guide-to-security-terminology/#zero-click-one-click-attacks">zero-click attack</a>, which means the spyware required no interaction from the target, &#8220;worked by placing a fake WhatsApp phone call to the target,&#8221; as WhatsApp&#8217;s lawyer Antonio Perez said during the trial. The lawyer explained that NSO Group had built what it called the &#8220;WhatsApp Installation Server,&#8221; a special machine designed to send malicious messages across WhatsApp&#8217;s infrastructure mimicking real messages.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;Once received, those messages would trigger the user&#8217;s phone to reach out to a third server and download the Pegasus spyware. The only thing they needed to make this happen was the phone number,&#8221; said Perez.&#160;</p>
+
+<p class="wp-block-paragraph">NSO Group&#8217;s research and development vice president Tamir Gazneli testified that &#8220;any zero-click solution whatsoever is a significant milestone for Pegasus.&#8221;</p>
+
+<h2 class="wp-block-heading" id="h-nso-group-confirms-it-targeted-an-american-phone-number-as-a-test-for-the-fbi"><strong>NSO Group confirms it targeted an American phone number as a test for the FBI</strong></h2>
+  
+		
+
+<p class="wp-block-paragraph">For years, NSO Group has claimed that its spyware cannot be used against American phone numbers, meaning any cell number that starts with the +1 country code. </p>
+
+<p class="wp-block-paragraph">In 2022, <a href="https://www.nytimes.com/2022/01/28/magazine/nso-group-israel-spyware.html" target="_blank" rel="noreferrer noopener nofollow">The New York Times first reported</a> that the company did &#8220;attack&#8221; a U.S. phone but it was part of a test for the FBI.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">NSO Group&#8217;s lawyer Joe Akrotirianakis confirmed this, saying the &#8220;single exception&#8221; to Pegasus not being able to target +1 numbers &#8220;was a specially configured version of Pegasus to be used in demonstration to potential U.S. government customers.&#8221;</p>
+
+<p class="wp-block-paragraph">The FBI <a href="https://www.nytimes.com/2022/11/12/us/politics/fbi-pegasus-spyware-phones-nso.html" target="_blank" rel="noreferrer noopener nofollow">reportedly chose</a> not to deploy Pegasus following its test.</p>
+
+<h2 class="wp-block-heading" id="h-how-nso-group-s-government-customers-use-pegasus"><strong>How NSO Group&#8217;s government customers use Pegasus</strong></h2>
+
+<p class="wp-block-paragraph">NSO&#8217;s CEO Shohat explained that Pegasus&#8217; user interface for its government customers does not provide an option to choose which hacking method or technique to use against the targets they are interested in, &#8220;because customers don&#8217;t care which vector they use, as long as they get the intelligence they need.&#8221;&#160;</p>
+
+<p class="wp-block-paragraph">In other words, it&#8217;s the Pegasus system in the backend that picks out which hacking technology, known as an <a href="https://techcrunch.com/2025/04/25/techcrunch-reference-guide-to-security-terminology/#exploit">exploit</a>, to use each time the spyware targets an individual.</p>
+
+<h2 class="wp-block-heading" id="h-nso-group-s-headquarters-shares-the-same-building-as-apple"><strong>NSO Group&#8217;s headquarters shares the same building as Apple</strong></h2>
+
+<p class="wp-block-paragraph">In a funny coincidence, NSO Group&#8217;s <a href="https://www.google.com/maps/place/N.S.O.+Group+Technologies+ltd./@32.1654515,34.7735432,14z/data=!3m1!4b1!4m6!3m5!1s0x151d4912074dc1f3:0x5a55935a3e5faa7!8m2!3d32.1654205!4d34.8104515!16s%2Fg%2F11jjp8_jy4?entry=ttu&amp;g_ep=EgoyMDI1MDUwNi4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank" rel="noreferrer noopener nofollow">headquarters</a> in Herzliya, a suburb of Tel Aviv in Israel, is in the same building <a href="https://www.google.com/maps/place/Apple/@32.1656131,34.8087369,17z/data=!3m1!4b1!4m6!3m5!1s0x151d488c142fac83:0xc1721ff4aa12d0fe!8m2!3d32.1656131!4d34.8113118!16s%2Fg%2F11b76ttfx3?entry=ttu&amp;g_ep=EgoyMDI1MDUwNi4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank" rel="noreferrer noopener nofollow">as Apple</a>, whose iPhone customers are also frequently targeted by NSO&#8217;s Pegasus spyware. Shohat said NSO occupies the top five floors and Apple occupies the remainder of the 14-floor building.</p>
+
+<p class="wp-block-paragraph">&#8220;We share the same elevator when we go up,&#8221; Shohat said during testimony.</p>
+
+<p class="wp-block-paragraph">The fact that NSO Group&#8217;s headquarters are openly advertised is somewhat interesting on its own. Other companies that develop spyware or zero-days like <a href="https://techcrunch.com/2024/02/15/variston-spyware-losing-staff-some-say-closing/">the Barcelona-based Variston</a>, which <a href="https://techcrunch.com/2025/02/13/barcelona-based-spyware-startup-variston-reportedly-shuts-down/">shuttered in February</a>, was located in a co-working space while claiming on its official website to be located somewhere else.&#160;</p>
+
+<h2 class="wp-block-heading" id="h-nso-group-admitted-that-it-kept-targeting-whatsapp-users-after-the-lawsuit-was-filed"><strong>NSO Group admitted that it kept targeting WhatsApp users after the lawsuit was filed</strong></h2>
+
+<p class="wp-block-paragraph">Following the spyware attack, WhatsApp filed its lawsuit against NSO Group in November 2019. Despite the active legal challenge, the spyware maker kept targeting the chat app&#8217;s users, according to NSO Group&#8217;s research and development vice president Tamir Gazneli.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Gazneli said that &#8220;Erised,&#8221; the codename for one of the versions of the WhatsApp zero-click vector, was in use from late-2019 up to May 2020. The other versions were called &#8220;Eden&#8221; and &#8220;Heaven,&#8221; and the three were collectively known as &#8220;Hummingbird.&#8221;</p>
+
+<h2 class="wp-block-heading" id="h-nso-says-it-employs-hundreds-of-people"><strong>NSO says it employs hundreds of people</strong></h2>
+
+<p class="wp-block-paragraph">NSO Group&#8217;s CEO Yaron Shohat disclosed a small but notable detail: NSO Group and its parent company, Q Cyber, have a combined number of employees totalling between 350 and 380. Around 50 of these employees work for Q Cyber.&#160;</p>
+
+<h2 class="wp-block-heading" id="h-nso-group-describes-dire-finances"><strong>NSO Group describes dire finances</strong></h2>
+
+<p class="wp-block-paragraph">During the trial, Shohat answered questions about the company&#8217;s finances, some of which were disclosed in depositions ahead of the trial. These details were brought up in connection with how much in damages the spyware maker should pay to WhatsApp.&#160;</p>
+
+<p class="wp-block-paragraph">According to Shohat and documents provided by NSO Group, the spyware maker lost $9 million in 2023 and $12 million in 2024. The company also revealed it had $8.8 million in its bank account as of 2023, and $5.1 million in the bank as of 2024. Nowadays, the company burns through around $10 million each month, mostly to cover the salaries of its employees.</p>
+
+<p class="wp-block-paragraph">Also, it was revealed that Q Cyber had around $3.2 million in the bank both in 2023 and 2024.</p>
+
+<p class="wp-block-paragraph">During the trial, NSO revealed its research and development unit &#8212; responsible for finding vulnerabilities in software and figuring out how to exploit them &#8212; spent some $52 million in expenses during 2023, and $59 million in 2024. Shohat also said that NSO Group&#8217;s customers pay &#8220;somewhere in the range&#8221; between $3 million and &#8220;ten times that&#8221; for access to its Pegasus spyware.</p>
+
+<p class="wp-block-paragraph">Factoring in these numbers, the spyware maker was hoping to get away with paying little or no damages.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;To be honest, I don&#8217;t think we&#8217;re able to pay anything. We are struggling to keep our head above water,&#8221; Shohat said during his testimony. &#8220;We&#8217;re committing to my [chief financial officer] just to prioritize expenses and to make sure that we have enough money to meet our commitments, and obviously on a weekly basis.&#8221;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">First published on May 10, 2025 and updated with additional details.</p>
+
+
+			
+
+			</div>
