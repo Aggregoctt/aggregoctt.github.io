@@ -1,0 +1,36 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142331/xtool-cross-platform-xcode-replacement-for-linux-windows-and-macos/
+date: '2025-05-10T06:14:44'
+excerpt: A few months ago I shared my Swift SDK for Darwin, which allows you to build
+  iOS Swift Packages on Linux, amongst other things. I mentioned that a lot of work
+  still needed to be done, such as handling codesigning, packaging, and bundling.
+  I&#8217;m super excited to share that we&#8217;ve finally reached the point where
+  all of these things are now possible with cross-platform, open source software.
+  Enter, xtool!  This means it&#8217;s finally possible to build and deploy iOS apps
+  from Linux and Windows (WSL). At the same time, xtool is SwiftPM-based and fully
+  declarative, which means you can also use it to replace Xcode on macOS for building
+  iOS software! ↫ kabiroberai While this is obviously an impressive piece of engineering
+  that&#8217;s taken countless years to fully put together, the issue this doesn&#8217;t
+  address are Apple&#8217;s licensing terms when it comes to Xcode and development
+  for Apple&#8217;s platforms. The Apple Developer Program License Agreement clearly
+  forbids installing Xcode and the Apple SDK on non-Apple branded devices, and as
+  this new xtool requires you download Xcode.xip and use it, it seems it violates
+  these terms. Now, as far as I&#8217;m concerned, these terms are idiotic and should
+  be 100% illegal, but if you&#8217;re an Apple developer who relies on your Apple
+  developer account to make money, using a tool like this definitely has the potential
+  to put your developer account at risk. For experimentation, sure, this is great,
+  but for any official work I would be quite weary until Apple makes some sort of
+  statement about the matter, which is highly unlikely to happen. Perhaps the courts
+  can, at some point, have a say here &#8211; especially in the EU &#8211; but even
+  then, Apple can always find or manufacture some reason to terminate your account
+  if they really want to. If you want to develop on your own terms, perhaps developing
+  for Apple platforms is not what you should be doing.
+image: null
+source: osnews
+tags:
+- Apple
+title: 'Xtool: cross-platform Xcode replacement for Linux, Windows, and macOS'
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>A few months ago I shared my <a href="https://forums.swift.org/t/introducing-an-sdk-for-building-ios-macos-apps-on-linux-experimental/66233">Swift SDK for Darwin</a>, which allows you to build iOS Swift Packages on Linux, amongst other things. I mentioned that a lot of work still needed to be done, such as handling codesigning, packaging, and bundling.</p><p>I&#8217;m super excited to share that we&#8217;ve finally reached the point where all of these things are now possible with cross-platform, open source software. Enter, <a href="https://github.com/xtool-org/xtool">xtool</a>!</p>[&#8230;]<p>This means it&#8217;s finally possible to build and deploy iOS apps from Linux and Windows (WSL). At the same time, xtool is SwiftPM-based and fully declarative, which means you can also use it to replace Xcode on macOS for building iOS software!</p>
+<a href="https://forums.swift.org/t/xtool-cross-platform-xcode-replacement-build-ios-apps-on-linux-and-more/79803">&#8619; kabiroberai</a></blockquote><p>While this is obviously an impressive piece of engineering that&#8217;s taken countless years to fully put together, the issue this doesn&#8217;t address are Apple&#8217;s licensing terms when it comes to Xcode and development for Apple&#8217;s platforms. The <a href="https://developer.apple.com/support/terms/apple-developer-program-license-agreement/">Apple Developer Program License Agreement</a> clearly forbids installing Xcode and the Apple SDK on non-Apple branded devices, and as this new xtool requires you download Xcode.xip and use it, it seems it violates these terms.</p><p>Now, as far as I&#8217;m concerned, these terms are idiotic and should be 100% illegal, but if you&#8217;re an Apple developer who relies on your Apple developer account to make money, using a tool like this definitely has the potential to put your developer account at risk. For experimentation, sure, this is great, but for any official work I would be quite weary until Apple makes some sort of statement about the matter, which is highly unlikely to happen.</p><p>Perhaps the courts can, at some point, have a say here &#8211; especially in the EU &#8211; but even then, Apple can always find or manufacture some reason to terminate your account if they really want to. If you want to develop on your own terms, perhaps developing for Apple platforms is not what you should be doing.</p></div>

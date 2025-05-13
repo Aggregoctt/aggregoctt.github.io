@@ -1,0 +1,139 @@
+---
+author: Krystian Kamil Grupa
+canonical_url: https://openslime.it/2020/07/clear-linux/
+date: '2020-07-26T12:55:00'
+excerpt: '<p><img alt="Home di Kriixone (Clear Linux)" class="attachment-post-thumbnail
+  size-post-thumbnail wp-post-image" height="1080" src="https://openslime.it/wp-content/uploads/2020/07/Screenshot-from-2020-07-24-13-50-31.jpg"
+  width="1920" /></p>
+
+  <p>Clear Linux, pochi ne parlano e di solito se viene fatta una discussione su di
+  esso viene sempre sottolineato come non viabile per l&#8217;uso sul proprio PC.Ma
+  perchè? Oggi vi parlero delle mie impressioni e opinioni su questa distro, che ormai
+  uso ogni giorno sul mio portatile. Come è precisamente, diverso, e soprattutto cosa
+  è [&#8230;]</p>
+
+  <p>L''articolo <a href="https://openslime.it/2020/07/clear-linux/" rel="nofollow">Clear
+  Linux, una distro incredibile, ma per pochi</a> proviene da <a href="https://openslime.it"
+  rel="nofollow">OpenSlime</a>.</p>'
+image: assets/media/zToZkHH-sm3qHJQmFlj8hg-fyQjO4vakkagBn0p5h8bgw.webp
+source: openslime
+tags:
+- Linux
+- Software
+- Clear Linux
+- gnu/linux
+- linux
+title: Clear Linux, una distro incredibile, ma per pochi
+---
+<div>
+<p>Clear Linux, pochi ne parlano e di solito se viene fatta una discussione su di esso viene sempre sottolineato come non viabile per l&#8217;uso sul proprio PC.<br><strong>Ma perch&#232;?</strong> Oggi vi parlero delle mie impressioni e opinioni su questa distro, che ormai uso ogni giorno sul mio portatile.</p>
+
+
+
+ 
+<h2 class="wp-block-heading"> Come &#232; precisamente, diverso, e soprattutto cosa &#232; davvero Clear Linux?</h2>
+
+
+
+ 
+
+
+
+<p>Clear Linux nasce come una distribuzione di sviluppo e programmazione firmata Intel. Si distingue da altre distribuzioni Linux nascendo come indipendente e basata su <strong><a href="https://docs.01.org/clearlinux/latest/guides/clear/swupd.html#swupd-guide">Swupd</a></strong> (di cui parleremo pi&#249; tardi), ma sopratutto ignorando alcune segui-linea del kernel Linux originale, attivando varie ottimizzazioni sulle piattaforme Intel (e non solo). Tutto questo in un ciclo di aggiornameni rolling che &#232; vicinissimo all&#8217;upstream delle applicazioni stesse.<br><br>In questo modo permette di avere una distribuzione molto solida ma anche aggiornata e veloce nell&#8217;uso quotidiano. </p>
+
+
+
+<h3 class="wp-block-heading"> Swupd, il futuro delle distruzioni Linux oggi? Forse si</h3>
+
+
+
+ 
+
+
+
+<p>Una parte importante di Clear Linux &#232; il suo gestore pacchetti, <strong>Swupd</strong>. Questo, a differenza di altri gestori di pacchetti nel mondo Linux, si basa sulla facilit&#224; con cui pu&#242; esser utilizzato e compatto.</p>
+
+
+
+<p>Il lavoro che esegue Swupd &#232; principalmente nascosto in background, poich&#232; controlla le dipendenze risolvendole e mantenendo il sistema aggiornato in automatico, ma non solo.</p>
+
+
+
+<p>Swupd &#232; uno dei pochi gestori di pacchetti Linux che si basa su una filosofia di mantenere aggiornato il sistema in modo dinamico.<br>Siccome un applicazione non sar&#224; mai aggiornata in autonomia, piuttosto, <strong>ogni aggiornamento che farete aggiorner&#224; l&#8217;intero sistema</strong>.</p>
+
+
+
+<p>All&#8217;inizio ci&#242; potrebbe esser visto come pazzia, se non contiamo <strong>l&#8217;ottimizzazione</strong> di Swupd stesso. Codesto riesce (senza esagerazioni) a <strong>diminuire la grandezza dell&#8217;aggiornamento equivalente su Arch di 1GB, a ~30MB, ma come?</strong><br><br>La risposta &#232; semplice, ma quasi introvabile nelle altre distro: lo scaricamento della sola differenza che c&#8217;&#232; tra il pachetto presente sul sistema e quello nuovo.</p>
+
+
+
+<p>Questo rende usare Swupd non solo semplice, una volta presaci la mano, ma altrettando piacevole.</p>
+
+
+
+<h3 class="wp-block-heading"> Velocit&#224; e ottimizzazione, l&#8217;effetto WOW di Clear Linux</h3>
+
+
+
+ 
+
+
+
+<p>Molti criticano Clear Linux per andare fuori dalle linee guida del kernel Linux ma, sinceramente, non ci vedo niente di male in ci&#242;.</p>
+
+
+
+<p>Ognuno deve fare delle scelte a discapito di altre, e tutti ignorano come <strong>Clear Linux &#232; indipendente proprio per questo motivo.</strong><br>Usando flag di compilazione ottimizzate e un kernel basato sull&#8217;ultimo stabile insieme alle patch di Intel, Clear Linux permette infatti di avere una fluidit&#224; nell&#8217;aprire applicazione, nell&#8217;avvio e nelle applicazioni stesse a dir poco strabiliante.<br><br>Ci&#242; inoltre include le librerie <strong>AVX512</strong> per l&#8217;apertura delle applicazioni sulle CPU intel supportate.</p>
+
+
+
+<h3 class="wp-block-heading"> Flessibilit&#224;, semplicit&#224; e sicurezza nella gestione file</h3>
+
+
+
+ 
+
+
+
+<p>Un ultimo punto forte di Clear Linux su cui vorrei soffermarmi &#232; la <strong>gestione file</strong>.</p>
+
+
+
+<p>A differenza di tutte le altre distibuzioni Linux, <strong>Clear Linux divide con precisione il sistema in tre parti diverse</strong>, che chiamer&#242; blocchi. <br>Il primo alle fondamenta sono le configurazioni del SO, come quelle Xorg, nel secondo livello troveremo il sistema e le sue librerie e infine, in cima, la parte dell&#8217;utente.</p>
+
+
+
+<p>Questo potrebbe sembrare poco importante, ma permette un controllo maggiore e pi&#249; semplice del sistema, evitando inoltre che l&#8217;utente possa fare danni a quest&#8217;ultimo, togliendo (ritornando a parlare di Swupd) il rischio che questo possa rompersi con gli aggiornamenti nel tempo.</p>
+
+
+
+<h2 class="wp-block-heading"> Perch&#233; Clear Linux non &#232; per tutti</h2>
+
+
+
+ 
+
+
+
+<p>Clear Linux rimane per&#242; <strong>una distro giovane, con poca utenza, e tanti piccoli fastidi</strong>, dove o si arriva a risolvere i problemi con un po di smanettamento, oppure rimangono irrisolti.</p>
+
+
+
+<p>Uno di questi potrebbe essere la totale mancanza di supporto a vari codec video e musica (risolvibili con la <a href="https://community.clearlinux.org/t/how-to-h264-etc-support-for-firefox-including-ffmpeg-install/195">compilazione da sorgente</a> o uso di Flatpak). Questo potrebbe essere il primo e pi&#249; importante blocco per usare questa distro: un utente non a conoscenza di ci&#242; potrebbe pensare che non funzionino, non riuscendo quindi a risolvere facilmente il problema.</p>
+
+
+
+<p>Inoltre la scelta di non avere driver Nvidia ufficialmente &#232; un ulteriore blocco, perch&#232; ne impedisce l&#8217;uso a chi ne ha bisogno. Ci sono ulteriori problemi e mancanze, ma sono comunque risolvibili grazie alle tante guide a disposizione e un <a href="https://community.clearlinux.org/">forum</a> pronto ad aiutarvi con questi problemi.</p>
+
+
+
+<p>Ma sapete cosa non si pu&#242; risolvere? <strong>La mancanza di tante applicazioni e strumenti che si usano ogni giorno</strong>, ed &#232; qui, che vi invito a scorrervi tutte le pagine del <a href="https://clearlinux.org/software">software</a> presente su Clear Linux, perch&#232; si, ha i suoi pro e contro, ma se siete utenti leggeri o che hanno la fortuna di trovare tutto quel di cui ha bisogno nelle repo e Flatpak, allora potrebbe essere il sistema Linux pi&#249; veloce, bello e facile da usare che ci sia oggi.</p>
+
+
+
+<p>E voi cosa ne pensate? Clear Linux sar&#224; il futuro o rimarr&#224; solo una distro particolare? Fatemelo sapere nei commenti e non abbiate paura di provarla!</p>
+
+
+
+ 
+    </div>

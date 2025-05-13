@@ -1,0 +1,13 @@
+---
+title: "Sources"
+permalink: /sources/
+---
+{% for feed in site.data.sources %}
+<ul>
+    <li>
+        <a href="{% if feed.website %}{{ feed.website }}{% else %}{{ feed.url | split:'/' | slice:0,3 | join:'/' }}{% endif %}">
+            {% if feed.name %}{{ feed.name }}{% else %}{{ feed.id }}{% endif %}
+        </a>
+    </li>
+</ul>
+{% endfor %}

@@ -1,0 +1,93 @@
+---
+title: "All News"
+layout: default
+pagination:
+    enabled: true
+permalink: /
+---
+
+<script>
+
+window.Aggregoctt = {
+    templates: {},
+    data: {{ site.data | jsonify }},
+    posts: [{% for post in site.posts %}{
+        url: {{ post.url | jsonify }},
+        link: {{ post.canonical_url | jsonify }},
+        title: {{ post.title | jsonify }},
+        date: {{ post.date | jsonify }},
+        tags: {{ post.tags | jsonify }},
+        image: {{ post.image | jsonify }},
+        excerpt: {{ post.excerpt | strip_html | strip_newlines | jsonify }},
+    },{% endfor %}],
+    site: {
+        baseurl: {{ site.baseurl | jsonify }},
+    },
+};
+
+window.Aggregoctt.templates.PostCard = `{% raw %}
+<div class="col-md-6">
+    <div class="card border-0 mb-4 box-shadow">   
+        <a data-href="{{ site.baseurl }}{{ post.url }}" href="{{ post.link }}">
+            <div class="topfirstimage" style="background-image: url({% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %});"></div>
+        </a>
+        <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+            <h2 class="h4 font-weight-bold">
+                <a class="text-dark" data-href="{{ site.baseurl }}{{ post.url }}" href="{{ post.link }}">{{ post.title }}</a>
+            </h2>
+            <p class="excerpt">
+                {{ post.excerpt | truncate: 150 }}
+            </p>
+            <div>
+                <!-- <small class="d-block text-muted">
+                    In <span class="catlist">
+                    {% for category in post.categories %}
+                    <a class="text-capitalize text-muted smoothscroll" href="{{ site.baseurl }}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                    {% endfor %}
+                    </span>
+                </small> -->
+                <small class="text-muted">{{ post.date | date: '%b %d, %Y' }}</small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endraw %}`;
+</script>
+
+<div class="container">
+    {% if page.url == "/" %}
+        <div class="row remove-site-content-margin" id="Posts"></div>
+        <button onclick="addPosts();">Load older</button>
+    {% endif %}
+</div>
+
+<script>
+
+var Liquid = window.liquidjs.Liquid;
+var engine = new Liquid({
+    extname: '.html',
+    cache: true,
+});
+
+var postsStart = 0;
+
+function addPosts() {
+    var count = 20;
+    var start = postsStart;
+    var posts = window.Aggregoctt.posts.slice(start, (start + count));
+    postsStart = (start + count);
+
+    var src = `{% raw %}
+        {% for post in posts %}
+            ${window.Aggregoctt.templates.PostCard}
+        {% endfor %}
+    {% endraw %}`;
+
+    engine.parseAndRender(src, { site: window.Aggregoctt, posts }).then(function(html) {
+        document.querySelector('#Posts').innerHTML += html;
+    });
+}
+
+addPosts();
+
+</script>

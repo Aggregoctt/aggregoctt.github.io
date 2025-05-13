@@ -1,0 +1,30 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/05/07/il-teorema-di-schinzel/
+date: '2025-05-07T02:51:24'
+excerpt: Siete in grado di scrivere un'equazione esplicita di una circonferenza che
+  passi per un numero predefinito di punti a coordinate intere?
+image: assets/media/byKzO61YaYslLs4Y2G0hRw-havL_k_t0R6bg7OZ-jciPQ.webp
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Il teorema di Schinzel
+---
+<div>
+			<p><br>
+Prendiamo un foglio a quadretti, e consideriamo i vertici dei quadretti (i punti di un lattice a coordinate intere, per dirlo in maniera pi&#249; seria: nel seguito parler&#242; di punti a coordinate intere o punti del lattice.) Disegniamo ora sul foglio un cerchio. Secondo voi, il teorema &#8220;dato un numero $n$, &#232; sempre possibile costruire un cerchio che contiene al suo interno esattamente $n$ punti a coordinate intere&#8221; &#232; vero o falso? (Possiamo accettare o no i punti a coordinate intere sulla circonferenza, tanto &#232; sempre possibile allargare il raggio di un $\varepsilon$ abbastanza piccolo da non toccare nessun altro punto a coordinate intere). In questo caso la dimostrazione &#232; relativamente semplice: se troviamo un punto del piano che abbia distanza diversa da tutti i punti del lattice, possiamo costruire un cerchio di centro quel punto, e al crescere del raggio il numero di punti ivi contenuti crescer&#224; di una singola unit&#224; per volta. Un punto simile &#232; $P = (\sqrt 2, \frac{1}{3})$. </p>
+<p>Come dimostrarlo? Supponiamo per assurdo che i punti distinti del lattice di coordinate $(a,b)$ e $(c,d)$ siano alla stessa distanza da $P$. Abbiamo allora per definizione</p>
+<p>$(a-\sqrt 2)^2 + (b-\frac{1}{3})^2 = (c-\sqrt 2)^2 + (d-\frac{1}{3})^2$</p>
+<p>Separando la parte irrazionale da quella razionale otteniamo</p>
+<p>$2(c-a)\sqrt 2 = c^2 + d^2 &#8211; a^2 &#8211; b^2 + \frac{2}{3}(b-d)$</p>
+<p>Poich&#233; il secondo membro &#232; un numero razionale, anche il primo deve esserlo; pertanto devono essere entrambi uguali a zero. Abbiamo cos&#236; </p>
+<p>$c=a; c^2 + d^2 &#8211; a^2 &#8211; b^2 + \frac{2}{3}(b-d) = 0.$</p>
+<p>Sostituendo la prima uguaglianza nella seconda, abbiamo $d^2 &#8211; b^2 + \frac{2}{3}(b-d) = 0$, cio&#232; </p>
+<p>$(d-b)(d+b-\frac{2}{3}) = 0.$</p>
+<p>Ma $b$ e $d$ sono interi, quindi il secondo fattore non pu&#242; essere nullo; pertanto $d=b$. Ma allora i due punti $(a,b)$ e $(c,d)$ coincidono, il che va contro la nostra ipotesi. Pare che Hugo Steinhaus sia anche riuscito a dimostrare che &#232; possibile trovare un cerchio di area $n$ che contiene esattamente $n$ punti a coordinate intere, ma non sono riuscito a trovare traccia di questa dimostrazione.</p>
+<p>Passiamo ora a un problema pi&#249; complicato, considerando non il cerchio ma solo la circonferenza appena costruita. &#200; possibile che questa circonferenza non passi per nessuno dei vertici dei quadretti (i punti di un lattice a coordinate intere, per dirlo in maniera pi&#249; seria). Ma a volte capita che alcuni dei punti della circonferenza abbiano coordinate intere. Per esempio, la circonferenza $x^2 + y^2 = 25$, cio&#232; di centro l&#8217;origine e raggio 5, passa per i punti $(-5,0), (5,0), (0,-5), (0,5), (-3,-4), (-3,4), (3,-4), (3,4)$. La domanda che ora possiamo farci &#232; &#8220;ma dato un numero $n$, riusciamo a costruire una circonferenza che passi per esattamente $n$ punti di coordinate intere?&#8221;</p>
+<p>Se $n=1$ trovare una circonferenza simile &#232; semplice: si prende una circonferenza di centro $(0,\frac{1}{4})$ e raggio \frac{1}{4}. Se $n=2$ &#232; altrettanto semplice: si prende una circonferenza di centro $(0,\frac{1}{2})$ e raggio \frac{1}{2}. In figura vedete una possibile soluzione per il caso $n=4$. Ma provate a risolvere il caso $n=3$&#8230; Una dimostrazione del teorema si &#232; avuta solo nel 1958, a opera del matematico polacco Andrzej Schinzel, e ha il pregio di essere costruttiva: se $n$ &#232; pari e quindi $n = 2k$ allora la circonferenza cercata ha centro $(\frac{1}{2}, 0)$ e raggio $\frac{1}{2} \cdot 5^{(k-1)/2}$, mentre se $n$ &#232; dispari e quindi $n = 2k+1$ la circonferenza ha centro $(\frac{1}{3}, 0)$ e raggio $\frac{1}{2} \cdot 5^k$.</p>
+<p>Non scrivo la dimostrazione, che &#232; piuttosto lunga (e la <a href="https://en.wikipedia.org/wiki/Schinzel%27s_theorem">pagina di Wikipedia</a> &#232; troppo stringata per capirci qualcosa, tra l&#8217;altro): posso per&#242; dire che si basa su un teorema di teoria dei numeri, che non dimostrer&#242;, che afferma che il numero $r(n)$ di soluzioni intere $(x,y)$ dell&#8217;equazione $x^2 + y^2 = n$ &#232; quattro volte la differenza tra il numero di divisori di $n$ della forma $4h+1$ e quelli della forma $4h+3$: il numero in realt&#224; &#232; da dividere per due perch&#233; si contano sia $(x,y)$ che $(y,x)$.</p>
+ 
+  					</div>

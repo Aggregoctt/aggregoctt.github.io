@@ -1,0 +1,75 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142343/linux-removes-support-for-the-486-and-now-im-curious-what-that-means-for-vortex86-processors/
+date: '2025-05-12T22:51:40'
+excerpt: 'I had to dig through our extensive archive &#8211; OSNews was founded in
+  2007, after all &#8211; to see if we reported on it at the time, but it turns out
+  we didn&#8217;t: in 2006, Intel announced that in 2007, it would cease production
+  of a range of old chips, including the 386 and 486. In Product Change Notification
+  106013-01, Intel proclaimed these chips dead. Intel Corporation has been manufacturing
+  its MCS 51, MCS 251 and MCS 96 Microcontroller Product Lines for over 25 years now,
+  and the Intel 186 Processor Families, the Intel 386 Processor Families and the Intel
+  486 Processor Families for over 15 years now. Additionally, we have been manufacturing
+  the i960 32 Bit RISC Processor Families for over 15 years. However, at this time,
+  the forecasted volumes for these product lines are now too low to continue production
+  of these products beyond the year 2007. Therefore, Intel will cease manufacturing
+  silicon wafers for our 6&#8243; based processes in 2007. Affected products include
+  Intel&#8217;s MCS 51, MCS 251, MCS 96, 80X18X, 80X38X, 80X486DXX, the i960 Family
+  of Microcomputers, in addition to the 82371SB, 82439TX and the 82439HX Chipsets.
+  Intel has no choice but to issue a Product Discontinuance Notice (PDN) effective
+  3/30/06. Last time orders will be accepted till 3/30/07 with last time ship dates
+  of 9/28/07. ↫ Intel Product Change Notification 106013-01 Considering the 386, 486,
+  and i960 families of processors were only used for niche embedded at very low volumes
+  at that point in time, it made sense to call it quits. We&#8217;re 18 years down
+  the line now, and I don&#8217;t think anyone really mourns the end of production
+  for these processors. Windows ended support for these chips well before the 2007
+  end of production date, with Windows 2000 being the last Windows version that would
+  run on a 486, albeit only barely, since it officially required a Pentium processor.
+  Linux, though, continued to support the 486, but that, too, is now coming to an
+  end. In a patch submitted to the LKML, Ingo Molnár, support for a variety of &#8220;complicated
+  hardware emulation facilities&#8221; for x86-32 will be removed, effectively ending
+  support for 486 and very early 586 processors, by increasing the minimum kernel
+  support features to include TSC and CX8 (CMPXCHG8B) hardware support. Linus Torvalds
+  has expressed interest in removing support for the 486 back in 2022, so this move
+  doesn&#8217;t come as a huge surprise. While most tech news outlets leave it at
+  that, as I was reading this news, I immediately thought of the Vortex86 line of
+  processors and what this would mean for Linux support for those processors. In case
+  you&#8217;re unaware, the Vortex86 is a line of x86-32-compatible processors, originating
+  at SiS, but now developed and produced by DMP Electronics in Taiwain. The last two
+  variants were the Vortex86DX3, a dual-core chip running at 1Ghz, and the Vortex86EX2,
+  a chip with two asymmetrical cores that can run two operating systems at once. Their
+  platform support documents for Windows and Linux are from 2021, so we can&#8217;t
+  rely on those for more information. Digging through some of the documentation from
+  ICOP, who sell industrial PCs based on the latest Vortex86DX3, I think support in
+  modern kernels is very much hit and miss even before this news. All Vortex86 processors
+  are supposedly i586 (with later variants being i686, even), but some of the earlier
+  versions were compatible with the 486SX. On top of that, Linux 4.14 seems to be
+  the last kernel that supports any of these chips out-of-the-box based on the documentation
+  by DMP &#8211; but then, if you go back to ICOP, you&#8217;ll find news items about
+  Linux 5.16 adding better support for Vortex86, so I&#8217;m definitely confused.
+  My uneducated guess is that the DX3 and EX2 will probably work even after these
+  changes to the Linux kernel, but earlier models might have more problems. Even on
+  the LKML I can find messages from the kind of people who know their stuff who don&#8217;t
+  know all the ins and outs of these Vortex86 processors, and which instructions they
+  actually support. It won&#8217;t matter much for people relying on Vortex86 processors
+  in industrial and commercial settings, though, since they tend to use custom stacks
+  built by the vendor, so they&#8217;re going to be just fine. What&#8217;s more interesting
+  is the what I assume is a small enthusiast market using Vortex86 processors who
+  might want to run modern Linux kernels on them. I have a feeling these code removals
+  might lead to some issues on especially the earlier models, meaning you&#8217;ll
+  have to use older kernels. I&#8217;ve always been fascinated by the Vortex86 line
+  of processors, and on numerous occasions I&#8217;ve hovered over the buy button
+  on some industrial PC using the VortexDX3 (or earlier) processor. Let me know if
+  you&#8217;re interested in seeing what this chip can do, and if there&#8217;s enough
+  interest, I can see if I can set a Ko-Fi goal to buy one these and mess around with
+  Windows Embedded/CE, Linux, and god knows what else these things can be made to
+  run.'
+image: null
+source: osnews
+tags:
+- Linux
+title: Linux removes support for the 486, and now I’m curious what that means for
+  Vortex86 processors
+---
+<div><p>I had to dig through our extensive archive &#8211; OSNews was founded in 2007, after all &#8211; to see if we reported on it at the time, but it turns out we didn&#8217;t: in 2006, Intel announced that in 2007, it would cease production of a range of old chips, including the 386 and 486. In Product Change Notification 106013-01, Intel proclaimed these chips dead.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Intel Corporation has been manufacturing its MCS 51, MCS 251 and MCS 96 Microcontroller Product Lines for over 25 years now, and the Intel 186 Processor Families, the Intel 386 Processor Families and the Intel 486 Processor Families for over 15 years now. Additionally, we have been manufacturing the i960 32 Bit RISC Processor Families for over 15 years. However, at this time, the forecasted volumes for these product lines are now too low to continue production of these products beyond the year 2007. Therefore, Intel will cease manufacturing silicon wafers for our 6&#8243; based processes in 2007. Affected products include Intel&#8217;s MCS 51, MCS 251, MCS 96, 80X18X, 80X38X, 80X486DXX, the i960 Family of Microcomputers, in addition to the 82371SB, 82439TX and the 82439HX Chipsets. Intel has no choice but to issue a Product Discontinuance Notice (PDN) effective 3/30/06. Last time orders will be accepted till 3/30/07 with last time ship dates of 9/28/07.</p>
+<a href="https://web.archive.org/web/20061009060120/http://developer.intel.com/design/pcn/Processors/D0106013.pdf">&#8619; Intel Product Change Notification 106013-01</a></blockquote><p>Considering the 386, 486, and i960 families of processors were only used for niche embedded at very low volumes at that point in time, it made sense to call it quits. We&#8217;re 18 years down the line now, and I don&#8217;t think anyone really mourns the end of production for these processors. Windows ended support for these chips well before the 2007 end of production date, with Windows 2000 being the last Windows version that would run on a 486, albeit only barely, since it officially required a Pentium processor.</p><p>Linux, though, continued to support the 486, but that, too, is now coming to an end. <a href="https://lore.kernel.org/lkml/20250425084216.3913608-1-mingo@kernel.org/">In a patch submitted to the LKML</a>, Ingo Moln&#225;r, support for a variety of &#8220;complicated hardware emulation facilities&#8221; for x86-32 will be removed, effectively ending support for 486 and very early 586 processors, by increasing the minimum kernel support features to include <a href="https://en.wikipedia.org/wiki/Time_Stamp_Counter">TSC</a> and CX8 (CMPXCHG8B) hardware support. Linus Torvalds has expressed interest in removing support for the 486 <a href="https://www.osnews.com/story/135438/the-linux-kernel-may-finally-phase-out-intel-i486-cpu-support/">back in 2022</a>, so this move doesn&#8217;t come as a huge surprise.</p><p>While most tech news outlets leave it at that, as I was reading this news, I immediately thought of the <a href="https://en.wikipedia.org/wiki/Vortex86">Vortex86</a> line of processors and what this would mean for Linux support for those processors. In case you&#8217;re unaware, the Vortex86 is a line of x86-32-compatible processors, originating at SiS, but now developed and produced by DMP Electronics in Taiwain. The last two variants were the Vortex86DX3, a dual-core chip running at 1Ghz, and the <a href="https://www.vortex86.com/products/Vortex86EX2">Vortex86EX2</a>, a chip with two asymmetrical cores that can run two operating systems at once.</p><p>Their platform support documents for <a href="https://www.vortex86.com/news/3">Windows</a> and <a href="https://www.vortex86.com/news/2">Linux</a> are from 2021, so we can&#8217;t rely on those for more information. Digging through some of the documentation from <a href="https://www.icop.com.tw/article/123">ICOP</a>, who sell industrial PCs based on the latest Vortex86DX3, I think support in modern kernels is very much hit and miss even before this news. All Vortex86 processors are supposedly i586 (with later variants being i686, even), but some of the earlier versions were compatible with the 486SX. On top of that, Linux 4.14 seems to be the last kernel that supports any of these chips out-of-the-box based on the documentation by DMP &#8211; but then, if you go back to ICOP, you&#8217;ll find news items about <a href="https://www.icop.com.tw/news/858">Linux 5.16 adding better support for Vortex86</a>, so I&#8217;m definitely confused.</p><p>My uneducated guess is that the DX3 and EX2 will probably work even after these changes to the Linux kernel, but earlier models might have more problems. Even on the LKML I can find messages from the kind of people who know their stuff who don&#8217;t know all the ins and outs of these Vortex86 processors, and which instructions they actually support.</p><p>It won&#8217;t matter much for people relying on Vortex86 processors in industrial and commercial settings, though, since they tend to use custom stacks built by the vendor, so they&#8217;re going to be just fine. What&#8217;s more interesting is the what I assume is a small enthusiast market using Vortex86 processors who might want to run modern Linux kernels on them. I have a feeling these code removals might lead to some issues on especially the earlier models, meaning you&#8217;ll have to use older kernels.</p></div>

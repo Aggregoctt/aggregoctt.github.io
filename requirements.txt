@@ -1,0 +1,7 @@
+feedparser
+python-slugify
+pyyaml
+beautifulsoup4
+requests
+pillow
+newspaper4k

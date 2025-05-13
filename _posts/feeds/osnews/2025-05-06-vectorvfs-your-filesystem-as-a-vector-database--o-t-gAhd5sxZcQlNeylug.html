@@ -1,0 +1,36 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142293/vectorvfs-your-filesystem-as-a-vector-database/
+date: '2025-05-06T23:40:13'
+excerpt: VectorVFS is a lightweight Python package that transforms your Linux filesystem
+  into a vector database by leveraging the native VFS (Virtual File System) extended
+  attributes. Rather than maintaining a separate index or external database, VectorVFS
+  stores vector embeddings directly alongside each file—turning your existing directory
+  structure into an efficient and semantically searchable embedding store. VectorVFS
+  supports Meta’s Perception Encoders (PE)  which includes image/video encoders for
+  vision language understanding, it outperforms InternVL3, Qwen2.5VL and SigLIP2 for
+  zero-shot image tasks. We support both CPU and GPU but if you have a large collection
+  of images it might take a while in the first time to embed all items if you are
+  not using a GPU. ↫ Christian S. Perone It won&#8217;t surprise many of you that
+  this goes a bit above my paygrade, but according to my limited understanding, VectorVFS
+  stores information about files inside the xattr part of inodes. The information
+  being stored is converted into vectors first, and this is the part that breaks my
+  brain a bit, because vectors in this context are far too complex for me to understand.
+  I vaguely understand the end result here &#8211; making files searchable using vector
+  magic without using a dedicated database or separate files by using extended attributes
+  in inodes &#8211; but the process is far more complicated to understand. It still
+  seems like a very interesting approach, though, and I&#8217;d love for people smarter
+  than me to take VectorVFS apart and explain it in easier terms for those of us who
+  don&#8217;t fully grasp it.
+image: null
+source: osnews
+tags:
+- Linux
+title: 'VectorVFS: your filesystem as a vector database'
+---
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>VectorVFS is a lightweight Python package that transforms your Linux filesystem into a vector database by leveraging the native VFS (Virtual File System) extended attributes. Rather than maintaining a separate index or external database, VectorVFS stores vector embeddings directly alongside each file—turning your existing directory structure into an efficient and semantically searchable embedding store.</p>
+<p>VectorVFS supports Meta’s Perception Encoders (PE) <a href="https://arxiv.org/abs/2504.13181">[arxiv]</a> which includes image/video encoders for vision language understanding, it outperforms InternVL3, Qwen2.5VL and SigLIP2 for zero-shot image tasks. We support both CPU and GPU but if you have a large collection of images it might take a while in the first time to embed all items if you are not using a GPU.</p>
+<cite><a href="https://vectorvfs.readthedocs.io/en/latest/index.html">↫ Christian S. Perone</a></cite></blockquote>
+<p>It won’t surprise many of you that this goes a bit above my paygrade, but according to my limited understanding, VectorVFS stores information about files inside the xattr part of inodes. The information being stored is converted into vectors first, and this is the part that breaks my brain a bit, because <a href="https://en.wikipedia.org/wiki/Vector_database">vectors in this context</a> are far too complex for me to understand.</p>
+<p>I vaguely understand the end result here – making files searchable using vector magic without using a dedicated database or separate files by using extended attributes in inodes – but the process is far more complicated to understand. It still seems like a very interesting approach, though, and I’d love for people smarter than me to take VectorVFS apart and explain it in easier terms for those of us who don’t fully grasp it.</p>

@@ -1,0 +1,35 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142315/microsoft-changes-pre-production-driver-signing-ends-the-device-metadata-service/
+date: '2025-05-07T22:35:33'
+excerpt: As the headline suggests, we&#8217;re going to be talking about some very
+  dry Windows stuff that only affects a relatively small number of people, but for
+  those people this is a big deal they need to address. If you&#8217;re working on
+  pre-production drivers that need to be signed, this is important to you. The Windows
+  Hardware Program supports partners signing drivers for use in pre-production environments.
+  The CA that is used to sign the binaries for use in pre-production environments
+  on the Windows Hardware Program is set to expire in July 2025, following which a
+  new CA will be used to sign the preproduction content starting June 9, 2025. ↫ Hardware
+  Dev Center Alongside the new CA come a bunch of changes to the rules. First and
+  foremost, expiry of signed drivers will no longer be tied to the expiry of the underlying
+  CA, so any driver signed with the new CA will not expire, regardless of what happens
+  to the CA. In addition, on April 22, May 13, and June 10, 2025, Windows servicing
+  releases (4D/5B/6B) will be shipped to Windows versions (down to Windows Server
+  2008) to replace the old CAs with the new ones. As such, if you&#8217;re working
+  on pre-production drivers, you need to install those Latest Cumulative updates.
+  On a very much related note, Microsoft has announced it&#8217;s retiring device
+  metadata and the Windows Metadata and Internet Services (WMIS). This is what allowed
+  OEMs and device makers to include things like device names, custom device icons,
+  and other information in the form of an XML file. While OEMs can no longer create
+  new device metadata this way, existing metadata already installed on Windows clients
+  will remain functional. As a replacement for this functionality, Microsoft points
+  to the driver&#8217;s INF files, where such information and icons can also be included.
+  Riveting stuff.
+image: null
+source: osnews
+tags:
+- Windows
+title: Microsoft changes pre-production driver signing, ends the device metadata service
+---
+<div><p>As the headline suggests, we&#8217;re going to be talking about some very dry Windows stuff that only affects a relatively small number of people, but for those people this is a big deal they need to address. If you&#8217;re working on pre-production drivers that need to be signed, this is important to you.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>The Windows Hardware Program supports partners signing drivers for use in pre-production environments. The CA that is used to sign the binaries for use in pre-production environments on the Windows Hardware Program is set to expire in July 2025, following which a new CA will be used to sign the preproduction content starting June 9, 2025.</p>
+<a href="https://techcommunity.microsoft.com/blog/hardwaredevcenter/changes-to-pre-production-driver-signing/4411183">&#8619; Hardware Dev Center</a></blockquote><p>Alongside the new CA come a bunch of changes to the rules. First and foremost, expiry of signed drivers will no longer be tied to the expiry of the underlying CA, so any driver signed with the new CA will not expire, regardless of what happens to the CA. In addition, on April 22, May 13, and June 10, 2025,  Windows servicing releases (4D/5B/6B) will be shipped to Windows versions (down to Windows Server 2008) to replace the old CAs with the new ones. As such, if you&#8217;re working on pre-production drivers, you need to install those Latest Cumulative updates.</p><p>On a very much related note, Microsoft has announced it&#8217;s <a href="https://techcommunity.microsoft.com/blog/hardwaredevcenter/end-of-servicing-and-retirement-plan-for-device-metadata-on-windows/4410945">retiring device metadata and the Windows Metadata and Internet Services (WMIS)</a>. This is what allowed OEMs and device makers to include things like device names, custom device icons, and other information in the form of an XML file. While OEMs can no longer create new device metadata this way, existing metadata already installed on Windows clients will remain functional. As a replacement for this functionality, Microsoft <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/driver-package-container-metadata">points to the driver&#8217;s INF files</a>, where such information and icons can also be included.</p><p>Riveting stuff.</p></div>

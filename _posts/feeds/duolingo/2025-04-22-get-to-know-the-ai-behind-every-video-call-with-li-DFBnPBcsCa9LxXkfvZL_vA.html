@@ -1,0 +1,102 @@
+---
+author: Parker Henry
+canonical_url: https://blog.duolingo.com/ai-and-video-call/
+date: '2025-04-22T12:00:29'
+excerpt: Go behind the scenes of our most immersive speaking feature.
+image: assets/media/DFBnPBcsCa9LxXkfvZL_vA-eUpfGvceJzX-x-k9OECYRg.webp
+source: duolingo
+tags:
+- Language
+- Product
+- Learning
+- Duolingo 101
+- Fun
+- Features
+- Speaking
+- Listening
+title: Get to know the AI behind every Video Call with Lily
+---
+<div>
+                <p>Large Language Models (LLMs) like ChatGPT, Claude, and Gemini have been trained on enormous amounts of language data in order to have natural-sounding exchanges. But using them to <a href="https://blog.duolingo.com/chatbot-language-practice/">teach language learners</a> is not as easy as saying, &#8220;Hey! Talk to this learner in Spanish!&#8221;</p><p>To develop AI-powered features like <a href="https://blog.duolingo.com/video-call/">Video Call with Lily</a>, we can't just let the model roam freely. Instead, we use targeted instructions and a predictable structure to make sure every call with Lily brings delight and sass&#8212;and, of course, the opportunity for speaking practice.</p><h2 id="how-we-design-each-video-call">How we design each Video Call</h2><p>When designing the perfect call experience, we have a lot of priorities to balance:</p><ul><li>It needs to be at the appropriate <a href="https://blog.duolingo.com/goldilocks-and-the-cefr-levels-which-proficiency-level-is-just-right/">CEFR level</a>.</li><li>It needs to have a purpose&#8212;like telling you a story, asking your opinion, teaching you something, or simply having a chat.</li><li>It needs to feel like it&#8217;s coming from Lily, a <a href="https://blog.duolingo.com/duolingo-female-character-origin-stories/">sarcastic emo teenage girl</a>, not from a generic AI chatbot.</li></ul><p>To achieve the right balance, we <a href="https://blog.duolingo.com/large-language-model-duolingo-lessons/">create a prompt</a> (or set of instructions) for the LLM. You can think of the prompt like a conversation involving three characters:</p><ul><li><strong>Assistant</strong>: This is Lily, the AI bot who reacts to what you, the <strong>User</strong>, say in accordance with the instructions from the <strong>System</strong>.</li><li><strong>System</strong>: This is like the <strong>Assistant&#8217;s</strong> coach. Duolingo Learning Designers write the instructions that the <strong>System</strong> says to the <strong>Assistant </strong>(Lily) about how to act and what to say.</li><li><strong>User</strong>: This is you&#8212;the learner who interacts with the <strong>Assistant</strong> (Lily).</li></ul><p>In all our calls, we provide the <strong>System</strong> with a robust set of instructions for how Lily should behave. These instructions include information about Lily&#8217;s personality and backstory, they tell her how to help you if you&#8217;re stuck, they ensure she speaks at the correct level, and more.&#160;</p><p>Also, very importantly, we include a basic blueprint for the conversation. Though each conversation you have with Lily is unique, they all follow a similar format:</p><p><strong>Part 1: Opener</strong> <br>The <strong>System</strong> tells Lily what to say first. This is almost always a greeting in the target language. Our engineers have built a cycle of greetings that Lily will go through for each CEFR level.</p><p><strong>Part 2: First Question</strong> <br>This sets the scene for what the call will be about. Lily might ask you something new about yourself, she might revisit a previous topic, or she might say that she has information to share about your target language&#8217;s culture.&#160;</p><p><strong>Part 3: Conversation</strong> <br>Lily and you can then go back and forth freely through the conversation. The <strong>System</strong> has instructed Lily to react to what you say and then to continue the conversation naturally.&#160;</p><p><strong>Part 4: Closer</strong> <br>After a certain number of back-and-forths, engineers have created a program where the <strong>System</strong> jumps in and whispers in Lily&#8217;s ear &#8220;Psst! Say it&#8217;s time to go.&#8221; This prevents the call from going on forever.</p><h2 id="behind-the-scenes">Behind the scenes</h2><h3 id="lilys-memory">Lily's memory</h3><p>If you&#8217;ve done several Video Calls, you may wonder, &#8220;How does Lily remember that about me?!&#8221; when she brings up information from previous calls. This is because after Lily hangs up, we take the call&#8217;s transcript, show it to the LLM, and ask &#8220;What important information have we learned about the <strong>User</strong>?&#8221; The information gleaned is then added to a List of Facts. The updated list becomes part of the instructions that the <strong>System </strong>gives to Lily during your next call.&#160;</p><p>That is to say, before Lily begins talking, the <strong>System</strong> says &#8220;Remember this <strong>User</strong>? Here&#8217;s a List of Facts: They said they have two dogs, they&#8217;re studying architecture, and their favorite food is tacos.&#8221; That way, Lily might mention &#8220;How are your dogs doing?&#8221; or &#8220;Have you tried any good tacos lately?&#8221; to make the call seem personalized and magical.</p><h3 id="creating-the-first-question">Creating the first question</h3><p>The first question is an important launchpad for the conversation. We want to get it right: It needs to be relevant to what you&#8217;re learning, it needs to be the <a href="https://blog.duolingo.com/right-level-of-difficulty/">right difficulty</a>, and it needs to set the scene for a good conversation. With all these criteria, we have to write detailed instructions just for how to write a good starting question!</p><p>In fact, when your Video Call is ringing, that's when the <strong>System</strong> is formulating the first question.</p>
+ 
+
+  
+    Conversation Prep
+  
+  
+     
+    Hey, LLM! You need to write a question that the Assistant (Lily) can ask the learner.
+    <ul>
+      <li>The question needs to be appropriate for the learner's CEFR level.</li>
+      <li>The question needs to use these words: <b>music</b>, <b>like</b>.</li>
+      <li>The question needs to&#8230; [etc]</li>
+    </ul>
+    
+  
+  
+     
+    Here's the question!
+    <br><br>
+    &#8220;<b>What kind of music do you like listening to?</b>&#8221;
+  
+
+ 
+<p>We then take this question from the Conversation Prep and feed it into the Main Conversation, where the <strong>System</strong> instructs Lily on how to lead the conversation with you:</p>
+ 
+
+  
+    Main Conversation
+  
+  
+     
+    You&#8217;re Lily, here&#8217;s some information about you:
+    <ul>
+      <li>You&#8217;re a teenage girl.</li>
+      <li>You&#8217;re very sarcastic.</li>
+      <li>You&#8217;re an introvert.</li>
+    </ul>
+    You&#8217;re talking to a learner who&#8217;s at A2 CEFR level. Here&#8217;s some information about this learner:
+    <ul>
+      <li>They have two dogs.</li>
+      <li>They&#8217;re studying architecture.</li>
+      <li>Their favorite food is tacos.</li>
+    </ul>
+    Begin the conversation with this opener: &#8220;<b>Hey!</b>&#8221;
+    <br><br>
+    Then say this first question: &#8220;<b>What kind of music do you like listening to?</b>&#8221;
+  
+  
+     
+    I understand. I&#8217;m going to start the conversation with the learner now.
+    <br><br>
+    &#8220;<b>Hey!</b>&#8221;
+  
+
+ 
+<p>As Video Call has developed and evolved, we've learned that it's important for the LLM to write the first question separately. When we include the instructions for the first question with the instructions for the rest of the call, we can often overload the LLM and get undesirable results&#8212;like sentences that are overly complex or missing the vocabulary provided in the Conversation Prep. It&#8217;s kind of similar for humans: If you&#8217;re told to do fifty tasks at the beginning of the day, you&#8217;ll probably forget to do some of them&#8212;or maybe you&#8217;ll do all fifty in a half-baked way. And since we want everything fully baked, we prepare the first question on its own.</p><h3 id="evaluating-conversations">Evaluating conversations</h3><p>The first question isn't the only one that matters&#8212;we want Lily to react dynamically throughout the call, at the drop of a hat!</p><p>Earlier this year, we saw that sometimes, learners didn&#8217;t want to talk about the subject that Lily was instructed to focus on. You&#8217;d say &#8220;You won&#8217;t believe it, Lily! I just completed the entire Spanish course!&#8221; and Lily would respond &#8220;That&#8217;s nice. Have you heard about Swiss folk music?&#8221; &#129763;</p><p>In order to let learners lead the conversation, we've since added an extra check that says &#8220;Does it seem like the learner wants to lead this conversation? If yes, ignore what you originally were going to talk about.&#8221; We have high hopes for these mid-call evaluations, as the LLM is always working&#8212;even during the Video Call itself&#8212;to ensure a great experience.&#160;</p><p>In the mid-call evaluation, the <strong>System </strong>looks at what you've said and asks Lily questions to keep the conversation engaging and on track:</p>
+ 
+
+  
+    Mid-Call Evaluation
+  
+  
+     
+    Hey, Lily! Consider the following for what the learner just said to you:
+    <ul>
+      <li>Did the learner talk about something that Lily loves? If yes, act excited!</li>
+      <li>Did the learner talk about something inappropriate? If yes, hang up now!</li>
+      <li>Does the learner seem confused? If yes, rephrase what you just said!</li>
+    </ul>
+    
+  
+  
+     
+    Got it! The learner just mentioned that they are really good at playing the guitar. Here&#8217;s my reaction to what they said:
+    <br><br>
+    &#8220;<b>Wow, I'm actually impressed. What&#8217;s your favorite song to play?</b>&#8221;
+  
+
+ 
+<h2 id="the-most-intelligent-speaking-practice-around">The most intelligent speaking practice around!</h2><p>All this may seem complicated&#8212;because it is! As our team continues to tinker and as AI continues to forge new paths, we're teaching Lily to meet you at your level and allow you to practice speaking without fear.</p>
+            
+        </div>

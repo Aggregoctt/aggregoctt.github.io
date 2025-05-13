@@ -1,0 +1,207 @@
+---
+author: Francesco Palmas
+canonical_url: https://openslime.it/2022/02/ventoy/
+date: '2022-02-10T12:00:00'
+excerpt: '<p><img alt="Schermata principale di Ventoy" class="attachment-post-thumbnail
+  size-post-thumbnail wp-post-image" height="586" src="https://openslime.it/wp-content/uploads/2021/11/screen_uefi.jpg"
+  width="794" /></p>
+
+  <p>Chi è abituato a provare molte distro GNU/Linux o a reinstallare spesso Windows,
+  sa bene come creare una USB avviabile con il SO desiderato. Nel fare tutto ciò,
+  però, bisogna per forza formattare in continuazione la chiavetta USB e non c&#8217;è
+  un modo più facile e veloce per avviare più SO in un&#8217;unica USB. In [&#8230;]</p>
+
+  <p>L''articolo <a href="https://openslime.it/2022/02/ventoy/" rel="nofollow">Ventoy:
+  avvia più SO dalla USB senza formattare</a> proviene da <a href="https://openslime.it"
+  rel="nofollow">OpenSlime</a>.</p>'
+image: assets/media/O_Vi-AXLj3zCRnFVG_X3CA-AzMsuMvdEWAZs_mKUuzi2w.webp
+source: openslime
+tags:
+- Guida (Linux)
+- Guida (Windows)
+- Software
+- gnu/linux
+- ISO
+- usb
+- Ventoy
+- windows
+title: 'Ventoy: avvia più SO dalla USB senza formattare'
+---
+<div>
+<p>Chi &#232; abituato a provare molte distro GNU/Linux o a reinstallare spesso Windows, sa bene come <a href="https://openslime.it/2018/07/creare-chiavetta-usb-avviabile/" target="_blank" rel="noreferrer noopener">creare una USB avviabile</a> con il SO desiderato. Nel fare tutto ci&#242;, per&#242;, bisogna per forza formattare in continuazione la chiavetta USB e non c&#8217;&#232; un modo pi&#249; facile e veloce per avviare pi&#249; SO in un&#8217;unica USB.</p>
+
+
+
+<p>In nostro soccorso arriva Ventoy, che si propone come soluzione a questo piccolo grande problema.</p>
+
+
+
+ 
+<h2 class="has-text-align-center wp-block-heading" id="cos-e-ventoy"> Cos&#8217;&#232; Ventoy?</h2>
+
+
+
+ 
+
+
+
+<p>Creato dal cinese longpanda, Ventoy &#232; uno strumento open source che ti permette di avviare file ISO (e non solo) dalla chiavetta USB, senza la necessit&#224; di formattarla. Supporta i formati ISO, WIM, IMG, VHD(x), EFI e sfrutta il bootloader GRUB come &#8220;file manager&#8221;: ci&#242; lo rende facile da usare.</p>
+
+
+
+<p>Ventoy funziona sia su BIOS legacy sia su UEFI, con la possibilit&#224; di abilitare il supporto al Secure Boot e usare GPT invece di MBR.</p>
+
+
+
+<h2 class="has-text-align-center wp-block-heading" id="come-funziona-ventoy"> Come funziona Ventoy</h2>
+
+
+
+<p>Il suo funzionamento &#232; semplice: dopo averlo installato, ti baster&#224; mettere tutti i file ISO nella partizione exFAT che ha creato Ventoy, riavviare il PC, prima che compaia il logo della marca premere il tasto per accedere al boot manager del BIOS o UEFI (F8, F1, F2, ESC&#8230;) e avviare la chiavetta con Ventoy. Comparir&#224; GRUB con i file messi in precedenza. Non dovrai fare altro che avviare il SO desiderato.</p>
+
+
+
+<p>Se vuoi provarne un altro, semplicemente riavvia il PC, accedi al boot manager, seleziona la USB con Ventoy e avvia un altro file.</p>
+
+
+
+<p>Non ha bisogno di ulteriore configurazione dopo l&#8217;installazione nella USB, ma se preferisci personalizzarlo puoi farlo <a href="https://www.ventoy.net/en/plugin_entry.html" target="_blank" rel="noreferrer noopener">attraverso i plugin.</a></p>
+
+
+
+<h2 class="has-text-align-center wp-block-heading" id="come-installare-ventoy"> Come installare Ventoy</h2>
+
+
+
+<p class="has-text-align-center">Vuoi provare Ventoy? Bene allora, ti mostrer&#242; come installarlo in pochi semplici passi. &#128512;</p>
+
+
+
+<ol><li>Scarica il file zip per il SO che stai usando (ventoy-x.x.xx-<strong>windows</strong>.zip oppure ventoy-x.x.xx-<strong>linux</strong>.tar.gz) <a href="https://www.ventoy.net/en/download.html" target="_blank" rel="noreferrer noopener">dal sito web ufficiale</a>;</li><li>Assicurati di non avere nessun file nella tua chiavetta USB, perch&#233; verr&#224; <strong>formattata</strong> per installare Ventoy. Collega quindi la USB nel PC;</li><li>Estrai il suo contenuto e avvia il file <code>Ventoy2Disk.exe</code> se sei su Windows, <code>VentoyGUI.x86_64</code> (64 bit) o <code>VentoyGUI.i386</code> (32 bit) se sei su GNU/Linux;</li><li>(solo GNU/Linux) Se hai problemi ad avviare il programma facendo doppio click, puoi aprire il terminale dentro alla cartella dove hai estratto i file e inviare questo comando per dare al file la flag &#8220;eseguibile&#8221;: <code>chmod +x VentoyGUI.x86_64</code> (se hai un PC a 64 bit) oppure <code>chmod +x VentoyGUI.i386</code> (se lo hai a 32 bit). Dopo averlo fatto, riprova ad aprire il programma dal file manager oppure inviando il comando <code>./VentoyGUI.x86_64</code> oppure <code>./VentoyGUI.i386</code><br></li><li>Seleziona il tuo dispositivo (Device) e, infine, clicca su Install;</li><li>Conferma la formattazione e aspetta che il tool installi Ventoy. Potrebbe essere necessario su GNU/Linux mettere la password per continuare;</li><li><strong>Perfetto!</strong> Hai installato con successo Ventoy &#128521;<br>Dovrebbe comparire nell&#8217;Esplora File una partizione chiamata Ventoy, formattata in exFAT: l&#236; vanno messi i file ISO. Se dovesse comparire una partizione FAT32 chiamata VTOYEFI o EFI, <strong>non toccarla</strong> a meno che non sai quello che stai facendo, altrimenti impedirai il suo avvio.</li></ol>
+
+
+
+<p>Ventoy formatta la chiavetta USB in <strong>MBR</strong>, consigliato per una buona compatibilit&#224; con la maggior parte dei PC, sia UEFI sia BIOS. Non c&#8217;&#232; bisogno di formattarla in GPT, a meno che il tuo PC non supporti pienamente i dispositivi MBR. In questo caso dovrai procedere in questo modo:</p>
+
+
+
+<ol><li>Avvia il programma <a href="#Come_installare_Ventoy">come spiegato prima negli step 1-4</a>;</li><li>Seleziona il tuo dispositivo (Device), poi <strong>clicca su Option e poi su Partition Table</strong>;</li><li>Seleziona <strong>GPT</strong> e, infine, clicca su Install;</li><li>Bene, hai installato Ventoy in GPT! &#128578;</li></ol>
+
+
+
+<p>Usare GPT <strong>potrebbe creare problemi</strong> con vecchi PC con BIOS legacy, che supportano solo MBR. Se Ventoy lo usi solo su PC UEFI e non supportano correttamente MBR, va benissimo usare GPT. Non ci sono differenze cambiando tabella partizioni: Ventoy funzioner&#224; lo stesso indipendentemente da quello che hai scelto. Ulteriori info sulle differenze tra GPT e MBR in Ventoy li trovi <a href="https://www.ventoy.net/en/doc_mbr_vs_gpt.html" target="_blank" rel="noreferrer noopener">cliccando qui.</a></p>
+
+
+
+<h3 class="has-text-align-center wp-block-heading" id="secure-boot"> Secure Boot</h3>
+
+
+
+<p class="has-text-align-center has-vivid-red-color has-text-color"><strong>Ricordati di disabilitare il Secure Boot dal tuo PC UEFI!!</strong></p>
+
+
+
+<p>Se non puoi o non vuoi farlo, non preoccuparti: <strong>l&#8217;installer ha un supporto sperimentale al Secure Boot</strong>, disattivato di default.<br>Per attivarlo ugualmente, su Ventoy2Disk vai su <strong>Option </strong>e abilita <strong>Secure Boot</strong>. Infine installalo nella chiavetta USB, <a href="#Come_installare_Ventoy">come spiegato prima</a>.<br>In questo modo non dovrai disattivare l&#8217;avvio protetto, ma il PC bloccher&#224; il primo avvio di Ventoy per motivi di sicurezza. Ecco come sbloccare la situazione:</p>
+
+
+
+                 
+
+                 
+                
+
+
+<ol><li>Avviando Ventoy dal boot loader UEFI, avrai una schermata d&#8217;errore (<code>Verification failed: (15) Access Denied</code>). Premi Invio per passare alla schermata successiva;</li><li>Premi entro 10 secondi un tasto qualsiasi per entrare nel MOK manager;</li><li>Vai su &#8220;Enroll key from disk&#8221;, poi su &#8220;EFI&#8221; o &#8220;VTOYEFI&#8221;;</li><li>Seleziona il file ENROLL_THIS_KEY_IN_MOKMANAGER.cer</li><li>Vai su &#8220;Continue&#8221; e infine su &#8220;Yes&#8221;;</li><li>Riavvia il PC selezionando &#8220;Reboot&#8221;. Al prossimo avvio di Ventoy, non avrai pi&#249; la schermata di errore ma si avvier&#224; il software desiderato.</li></ol>
+
+
+
+<p><strong>Nota bene:</strong> non tutti i SO potrebbero avviarsi via Ventoy con Secure Boot attivo. In caso di incompatibilit&#224;, prova a disabilitarlo nelle impostazioni UEFI, se possibile.</p>
+
+
+
+<p class="has-vivid-red-color has-text-color"><strong>Attenzione! Se passi a un altro PC con Secure Boot attivo, dovrai aggiungere la chiave anche in quel computer!</strong></p>
+
+
+
+<h3 class="has-text-align-center wp-block-heading" id="aggiornare-ventoy"> Aggiornare Ventoy</h3>
+
+
+
+<p>Se desideri <strong>aggiornare </strong>Ventoy nella USB, <a href="#Come_installare_Ventoy">rifai la guida</a> <strong>riscaricando il programma</strong>, ma <strong>invece</strong> di cliccare su Install dovrai cliccare su <strong>Update</strong> (o confermare l&#8217;aggiornamento se te lo dovesse chiedere all&#8217;avvio dell&#8217;installer). Non formatter&#224; la chiavetta USB e non perderai i file ISO al suo interno.</p>
+
+
+
+<h3 class="has-text-align-center wp-block-heading" id="installare-ventoy-senza-formattare"> Installare Ventoy senza formattare</h3>
+
+
+
+<p>Per chi volesse mettere Ventoy in un hard disk o chiavetta USB senza perdere tutti i dati, &#232; possibile abilitare la modalit&#224; non-distruttiva. &#200; per&#242; una funzione sperimentale e bisogna rispettare questi requisiti:</p>
+
+
+
+<ul><li>Deve essere libera almeno una partizione. Se il disco usa MBR e ha 4 partizioni esistenti oppure se usa GPT e ha 128 partizioni esistenti, non &#232; possibile procedere. Puoi verificare il numero delle partizioni in Gestione Disco su Windows oppure su <code>lsblk</code> o GParted su GNU/Linux;</li><li><strong>La partizione deve essere formattata in NTFS o, se usi GNU/Linux, in ext2/3/4</strong>;</li><li>Se usi GNU/Linux, assicurati di avere installato i seguenti pacchetti: <code>ntfs-3g</code> se usi NTFS, <code>e2fsprogs</code> se usi ext2/3/4</li></ul>
+
+
+
+<p>Se rispetti questi requisiti, puoi abilitare l&#8217;opzione in questo modo:</p>
+
+
+
+<ol><li>Avvia il programma <a href="#Come_installare_Ventoy">come spiegato prima negli step 1-4</a>;</li><li><strong>Nessun software &#232; perfetto, se possibile assicurati di fare un backup del disco prima di continuare;</strong></li><li>Seleziona il dispositivo, poi vai su <strong>Option</strong> e infine su <strong>Non-destructive Install</strong>;</li><li>Infine clicca su <strong>Install</strong></li></ol>
+
+
+
+<p>La tabella partizioni (MBR/GPT) non verr&#224; modificata, indipendentemente dall&#8217;opzione scelta nell&#8217;installer. Se &#232; andata tutto correttamente avrai di nuovo a disposizione il disco o la chiavetta USB, pronta per contenere file ISO da avviare nel PC.</p>
+
+
+
+<h2 class="has-text-align-center wp-block-heading" id="vale-la-pena-usare-ventoy"> Vale la pena usare Ventoy?</h2>
+
+
+
+<p>Ovviamente dipende da persona a persona, ma secondo me andrebbe usato da tutti per la sua semplicit&#224; e comodit&#224; d&#8217;uso. Sono molti i suoi utilizzi: da semplicemente avviare la ISO di Windows per installarlo su PC a provare decine di distro GNU/Linux senza perdere tempo fino ad arrivare a usarlo come coltellino svizzero, mettendo per esempio <a href="https://rescuezilla.com/" target="_blank" rel="noreferrer noopener">RescueZilla</a>, <a href="https://gparted.org/livecd.php" target="_blank" rel="noreferrer noopener">GParted Live</a> o simili per il ripristino del computer.</p>
+
+
+
+<p>Per come funziona il programma, ci si pu&#242; chiedere se sia compatibile con tutti i SO in circolazione. La risposta &#232; <strong>si</strong>, ma dipende quanto &#232; particolare il SO scaricato.</p>
+
+
+
+<p>In questa <a href="https://www.ventoy.net/en/isolist.html" target="_blank" rel="noreferrer noopener">pagina web</a> &#232; possibile vedere le ISO testate su Ventoy. Come avrai notato la compatibilit&#224; &#232; enorme e se usate solo Windows e/o GNU/Linux non dovrai preoccuparti.</p>
+
+
+
+<p>Ulteriori info sulla compatibilit&#224; nelle distro GNU/Linux e altri SO disponibili su DistroWatch lo si trova <a href="https://www.ventoy.net/en/distrowatch.html" target="_blank" rel="noreferrer noopener">cliccando qui.</a> Il <strong>90%</strong> delle distro inclusi nella classifica di DistroWatch funzionano su Ventoy.</p>
+
+
+
+<p>Sono mesi che uso Ventoy nella mia chiavetta USB e non mi sta dando problemi di alcun tipo. Se volete un&#8217;ulteriore conferma dell&#8217;alta compatibilit&#224; del programma, questi sono i SO che ho provato e che funzionano correttamente con Ventoy:</p>
+
+
+
+<ul><li>Windows 10, Windows 11</li><li>Arch Linux</li><li>Ubuntu</li><li>Fedora</li><li>RescueZilla</li><li>MemTest86</li><li>Paragon Hard Disk Manager (WinPE)</li></ul>
+
+
+
+<p>Ho addirittura provato <strong>Haiku </strong>e <strong>ReactOS </strong>su Ventoy, nonostante nel sito web ufficiale vengono messi negli SO non avviabili. I risultati che ho ottenuto non sono stati incoraggianti: </p>
+
+
+
+<ul><li><strong>ReactOS (LiveCD)</strong>: in base a come lo si avvia, d&#224; un errore diverso. In generale non riesce ad avviare correttamente il SO.<ul><li>Impossibile avviarlo in modalit&#224; UEFI, siccome ReactOS non lo supporta ancora;</li><li>Se si prova ad avviarlo in modalit&#224; BIOS legacy, il boot loader non riesce a trovare il suo file .ini, non continuando l&#8217;avvio;</li><li>Usando l&#8217;opzione Memdisk (carica la ISO nella RAM invece di &#8220;montarlo come disco CD/DVD&#8221; nella USB), premendo il tasto F1 nella schermata principale di Ventoy prima di avviare il SO selezionato, compare il bootloader, ma mentre carica ReactOS si impalla e d&#224; schermata blu con errore <code>IO1_INITIALIZATION_FAILED</code><br></li></ul></li><li><strong>Haiku:</strong> che si prova ad avvialo normalmente via UEFI oppure via BIOS legacy (riavvia subito il PC) oppure abilitando il Memdisk, dopo alcuni secondi di caricamento va in kernel panic perch&#233; non trova la partizione boot (anche se mostra le info della partizione EFI di Ventoy; forse non trova quella corretta?)<br></li></ul>
+
+
+
+<p>Ovviamente ho testato due SO diversi da Windows o GNU/Linux solo per divertimento, ma potrebbero esserci altri SO non compatibili con Ventoy.</p>
+
+
+
+<p>Ti invito quindi a vedere la lista sulla compatibilit&#224; citata prima o semplicemente provali tu stesso, probabilmente funziona &#128513;<br>(se fosse cos&#236; e non &#232; presente nella lista, <a href="https://github.com/ventoy/Ventoy/issues/1195" target="_blank" rel="noreferrer noopener">vedi qui</a> come fare per comunicarlo allo sviluppatore)</p>
+
+
+
+<p>Anche te stai usando Ventoy o hai intenzione di provarlo? Fatemi sapere la vostra opinione in merito scrivendo un commento sotto &#128521;</p>
+
+
+
+ 
+    </div>

@@ -1,0 +1,115 @@
+- id: theverge
+  name: The Verge
+  url: https://www.theverge.com/rss/index.xml
+  category: Tech
+
+- id: techcrunch
+  name: TechCrunch
+  url: https://techcrunch.com/feed/
+  category: Tech
+
+- id: openslime
+  name: OpenSlime
+  url: https://openslime.it/feed/
+  category: Tech
+
+- id: osnews
+  name: OSnews
+  url: https://www.osnews.com/feed/
+  category: Tech
+
+- id: 404media
+  title: 404 Media
+  url: https://www.404media.co/rss/
+  category: News
+
+- id: dailydot
+  title: The Daily Dot
+  url: https://www.dailydot.com/feed/
+  category: News
+
+- id: dexerto
+  title: Dexerto
+  url: https://www.dexerto.com/feed/
+  category: News
+
+- id: gamingtalker
+  name: GamingTalker
+  url: https://www.gamingtalker.it/feed/
+  category: Games
+
+- id: nintendo-uk
+  name: Nintendo UK
+  url: https://www.nintendo.com/en-gb/news.xml
+  category: Games
+
+- id: nintendo-it
+  name: Nintendo Italia
+  url: https://www.nintendo.com/it-it/news.xml
+  category: Games
+
+- id: nintendo-jp
+  name: Nintendo Japan
+  url: https://www.nintendo.co.jp/news/whatsnew.xml
+  category: Games
+
+- id: duolingo
+  name: Duolingo Blog
+  url: https://blog.duolingo.com/rss/
+  category: Blogs
+
+- id: sanrio
+  name: Sanrio Blogs
+  url: https://www.sanrio.com/blogs/sanrio.atom
+  category: Blogs
+
+- id: sanrio-eu
+  name: Sanrio Europe Blog
+  url: https://www.sanrio.eu/feed/
+  category: Blogs
+
+- id: octospacc
+  name: fritto misto di octospacc
+  url: https://octospacc.altervista.org/author/minioctt/feed/
+  category: Blogs
+
+- id: spaccinc
+  name: Spacc Inc.
+  url: https://rsshub.app/telegram/channel/SpaccInc
+  website: https://t.me/SpaccInc
+  category: Fun
+
+- id: creeperiano99
+  name: Creeperiano99
+  url: https://rsshub.app/telegram/channel/Creeperiano99Channel
+  website: https://t.me/Creeperiano99Channel
+  category: Blogs
+
+- id: dailycogito
+  name: Il Substack del Daily Cogito
+  url: https://dailycogito.substack.com/feed
+  category: Blogs
+
+- id: xkcd
+  url: https://xkcd.com/rss.xml
+  category: Fun
+
+- id: theonion
+  name: The Onion
+  url: https://theonion.com/feed/
+  category: Fun
+
+- id: thepudding
+  name: The Pudding
+  url: https://pudding.cool/rss.xml
+  category: Fun
+
+- id: notiziolemau
+  name: Notiziole di .mau.
+  url: https://xmau.com/wp/notiziole/feed/
+  category: Blogs
+
+- id: ritaglimau
+  name: ritagli di .mau.
+  url: https://mau.tumblr.com/rss
+  category: Blogs
