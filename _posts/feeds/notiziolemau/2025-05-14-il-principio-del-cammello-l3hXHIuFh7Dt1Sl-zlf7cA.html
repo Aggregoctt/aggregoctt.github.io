@@ -1,0 +1,38 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/05/14/il-principio-del-cammello/
+date: '2025-05-14T02:51:04'
+excerpt: Non sarà noto come il principio dei cassetti, ma ha anch'esso la sua utilità.
+image: assets/media/l3hXHIuFh7Dt1Sl-zlf7cA-yCIsLAFiByWUzW3XowW1XA.webp
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Il principio del cammello
+---
+<div>
+			<p>Conoscete sicuramente il principio dei cassetti: se avete $n$ cassetti e volete metterci dentro $n+1$ magliette, ci sar&#224; almeno un cassetto che conterr&#224; due magliette (pi&#249; o meno stropicciate). Immagino per&#242; che non abbiate mai sentito parlare del principio del cammello: almeno io.non lo conoscevo, anche perch&#233; probabilmente il nome l&#8217;ha inventato Tiwadar Danka, che ne parla <a href="https://thepalindrome.org/p/the-camel-principle">in questo suo articolo</a>.</p>
+ 
+<p>Il nome del principio deriva dalla vecchia storia del beduino che in punto di morte divide i suoi diciassette cammello tra i tre figli: al maggiore ne tocca la met&#224;, al secondogenito un terzo e al minore un nono. Quando dopo il funerale i fratelli si accingono a spartirsi i cammelli, scoprono che bisogna fare spezzatini di cammello per la suddivisione, come mostrato in figura qui sopra: e notoriamente la carne di cammello &#232; molto stopposa e non &#232; buona nemmeno come spezzatino. Mentre stanno litigando, passa un vecchio saggio in sella al suo cammello. Fattosi spiegare il motivo della diatriba, ci pensa su un attimo e poi dice &#8220;Nema problema! Tenetemi un attimo il cammello, e rifacciamo i conti.&#8221; I cammelli sono ora 18, e i conti tornano perfettamente: nove cammelli vanno al figlio maggiore, sei al secondo e due al terzo. Facendo la somma abbiamo 17 cammelli suddivisi tra i fratelli; il saggio saluta, si riprende il suo cammello e se ne va.</p>
+ 
+<p>Cosa ha fatto il saggio? Ha aggiunto e poi tolto un cammello. Il principio del cammello &#232; proprio questo: se noi sommiamo e sottraiamo la stessa quantit&#224; non modifichiamo il risultato, ma magari possiamo riarrangiare i termini per trovare una soluzione. Nel caso del racconto qui sopra in realt&#224; c&#8217;&#232; un trucco: il beduino aveva fatto male la suddivisione, oltre a fare parti estremamente disuguali. Infatti 1/2 + 1/3 + 1/9 = 17/18. Ecco perch&#233; i conti non tornavano! Ma ci sono altri esempi pratici. Per esempio, come si arriva alla soluzione di un&#8217;equazione di secondo grado? Noi a scuola impariamo la formula a memoria, e poi ce la dimentichiamo subito dopo. Nel mondo anglosassone la formula viene ricavata &#8220;completando il quadrato&#8221; e questa &#232; un&#8217;applicazione del principio del cammello. Vediamo come.</p>
+<p>Partendo dall&#8217;equazione $ax^2 + bx + c = 0$, il primo passaggio consiste nel fattorizzare $a$:</p>
+<p>$$a \left[ x^2 + \frac{b}{a}x + \frac{c}{a} \right] = 0$$</p>
+<p>Da qui ci piacerebbe avere un qualcosa della forma $(ax+r)^2$: per farlo possiamo sommare e sottrarre un cammell&#8230; ehm, il termine $b^2/4a^2$. Otteniamo dunque </p>
+<p>$$a \left[ x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} &#8211; \frac{b^2}{4a^2}  + \frac{c}{a} \right] = 0 \quad &#8594; \quad \\ a \left[ \left(x + \frac{b}{2a}\right)^2 &#8211; \frac{b^2}{4a^2}  + \frac{c}{a} \right] = 0$$</p>
+<p>Perch&#233; il prodotto di due termini sia nullo, almeno uno deve esserlo: ma $a \ne 0$ perch&#233; senn&#242; l&#8217;equazione non sarebbe di secondo grado, quindi a essere nulle &#232; il secondo,da cui abbiamo </p>
+<p>$$\left(x + \frac{b}{2a}\right)^2 = \frac{b^2 &#8211; 4ac}{(2a)^2}$$</p>
+<p>che ci porta rapidamente alla formula cercata.</p>
+<p>Il secondo esempio di Danka sfrutta una variante del principio del cammello: anzich&#233; sommare e sottrarre la stessa quantit&#224;, si moltiplica e divide per la stessa quantit&#224; (non nulla, ovvio). Questa variante viene usata per ricavare la formula della derivata di una funzione composta. Sappiamo che la definizione della derivata di una funzione $f()$ nel punto $a$ &#232; data da </p>
+<p>$$f'(a) = \lim_{x \to a} \frac{f(x)-f(a)}{x-a} $$</p>
+<p>E se noi volessimo trovare la derivata in $a$ di $(f \circ g)()$? Riscriviamo la formula sopra: </p>
+<p>$$ (f \circ g)'(a) = \lim_{x \to a} \frac{(f \circ g)(x)-(f \circ g)(a)}{x-a} $$</p>
+<p>A questo punto prendiamo il nostro cammello e moltiplichiamo e dividiamo per $g(x) &#8211; g(a)$. Otteniamo </p>
+<p>$$ (f \circ g)'(a) = \lim_{x \to a} \frac{(f \circ g)(x)-(f \circ g)(a)}{g(x) &#8211; g(a)} \frac{g(x) &#8211; g(a)}{x-a}  $$</p>
+<p>Abbiamo ora il limite di un prodotto che (sempre alle solite condizioni di esistenza) &#232; uguale al prodotto dei limiti: </p>
+<p>$$ (f \circ g)'(a) = \lim_{x \to a} \frac{(f \circ g)(x)-(f \circ g)(a)} {g(x) &#8211; g(a)}\lim_{x \to a}  \frac{g(x) &#8211; g(a)}{x-a}  $$</p>
+<p>Ma il primo limite &#232; $f'(g(a))$ e il secondo &#232; $g'(a)$, da cui il risultato cercato $(f \circ g)'(a) = f'(g(a))\cdot g'(a)$.</p>
+<p>L&#8217;unico vero problema del principio del cammello &#232; che bisogna avere un&#8217;idea di cosa ci pu&#242; servire per facilitarci la vita: ma se ricontrollate gli esempi vedete che non &#232; poi cos&#236; difficile. Anche nel secondo caso tutto quello che avevamo a disposizione era la definizione di derivata, e quindi ce la siamo cercata (senza doppi sensi). Vi vengono in mente altri casi in cui si pu&#242; usare il principio del cammello?</p>
+<p>La silhouette del cammello &#232; presa da <a href="https://www.svgrepo.com/svg/481586/camel-2">SVGrepo</a>.</p>
+ 
+  					</div>
