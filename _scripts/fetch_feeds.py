@@ -114,7 +114,8 @@ for feed in feeds:
 
     for entry in d.entries:
         link = entry.get("link")
-        if not link or link in seen:
+        guid = entry.get("id")
+        if not link or (link in seen) or (guid and guid in seen):
             continue
 
         date_struct = (
@@ -188,6 +189,8 @@ for feed in feeds:
             f.write(content_html)
 
         new_seen.append(link)
+        if guid and guid != link:
+            new_seen.append(guid)
         print(f"✓ Saved: {filename}")
 
 # Save new seen URLs

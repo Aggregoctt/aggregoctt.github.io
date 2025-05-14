@@ -11,7 +11,7 @@ permissions:
 on:
   schedule:
     # Every hour at minute 0 (UTC) → adjust if you want a different timezone
-    - cron: '0 */2 * * *'
+    - cron: '0 */1 * * *'
   workflow_dispatch:
 
 jobs:
