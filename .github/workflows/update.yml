@@ -50,6 +50,6 @@ jobs:
         with:
           author_name: github-actions[bot]
           author_email: github-actions[bot]@users.noreply.github.com
-          message: "chore: update data [skip ci]"
+          message: "chore: update data"
           add: "."           # or scope down to your `_data/` or specific folder
           push: true
