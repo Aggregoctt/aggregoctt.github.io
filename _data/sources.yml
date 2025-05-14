@@ -99,6 +99,16 @@ theonion:
   url: https://theonion.com/feed/
   category: Fun
 
+lercio:
+  name: Lercio
+  url: https://www.lercio.it/feed/
+  category: Fun
+
+reductress:
+  name: Reductress
+  url: https://reductress.com/feed/
+  category: Fun
+
 thepudding:
   name: The Pudding
   url: https://pudding.cool/rss.xml
@@ -112,4 +122,23 @@ notiziolemau:
 ritaglimau:
   name: ritagli di .mau.
   url: https://mau.tumblr.com/rss
+  category: Blogs
+
+alfemminile:
+  name: fem
+  url: https://www.alfemminile.com/rss/
+  category: Blogs
+
+hdblog:
+  name: HDBlog.it
+  url: https://www.hdblog.it/feed/
+  category: Tech
+
+dday:
+  name: DDay.it
+  url: https://www.dday.it/feed
+  category: Tech
+
+simsaladream:
+  url: https://simsaladream.wordpress.com/feed/
   category: Blogs

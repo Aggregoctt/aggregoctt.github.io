@@ -1,8 +1,6 @@
 ---
 title: "All News"
 layout: default
-pagination:
-    enabled: true
 permalink: /
 ---
 
@@ -26,71 +24,54 @@ window.Aggregoctt = {
     },
 };
 
-window.Aggregoctt.templates.PostCard = `{% raw %}
-<div class="col-md-6">
-    <div class="card border-0 mb-4 box-shadow">   
-        <a data-href="{{ site.baseurl }}{{ post.url }}" href="{{ post.link }}" target="_blank">
-            <div class="topfirstimage" style="background-image: url({% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %});"></div>
-        </a>
-        <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-            <h2 class="h4 font-weight-bold">
-                <a class="text-dark" data-href="{{ site.baseurl }}{{ post.url }}" href="{{ post.link }}" target="_blank">{{ post.title }}</a>
-            </h2>
-            <p class="excerpt">
-                {{ post.excerpt | truncate: 150 }}
-            </p>
-            <div>
-                <small class="d-block text-muted">
-                    In <span class="catlist">
-                        <a class="text-capitalize text-muted smoothscroll">{{ post.source }}</a><span class="sep">, </span>
-                        {% assign categories = data.sources[post.source].category | split: "," %}
-                        {% for category in categories %}
-                            <a class="text-capitalize text-muted smoothscroll" data-href="{{ site.baseurl }}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
-                        {% endfor %}
-                    </span>
-                </small>
-                <small class="text-muted">{{ post.date | date: '%b %d, %Y' }}</small>
-            </div>
-        </div>
-    </div>
-</div>
-{% endraw %}`;
 </script>
 
 <div class="container">
     {% if page.url == "/" %}
         <div class="row remove-site-content-margin" id="Posts"></div>
-        <button class="btn" onclick="addPosts();">Load older</button>
+        <button class="btn" onclick="window.Aggregoctt.addPosts();">Load older</button>
     {% endif %}
 </div>
 
-<script>
-
-var Liquid = window.liquidjs.Liquid;
-var engine = new Liquid({
-    extname: '.html',
-    cache: true,
-});
+<script>(function(){
 
 var postsStart = 0;
 
-function addPosts() {
+window.Aggregoctt.addPosts = function(){
     var count = 20;
     var start = postsStart;
     var posts = window.Aggregoctt.posts.slice(start, (start + count));
     postsStart = (start + count);
 
-    var src = `{% raw %}
-        {% for post in posts %}
-            ${window.Aggregoctt.templates.PostCard}
-        {% endfor %}
-    {% endraw %}`;
-
-    engine.parseAndRender(src, { site: window.Aggregoctt.site, data: window.Aggregoctt.data, posts }).then(function(html) {
-        document.querySelector('#Posts').innerHTML += html;
-    });
+    var site = window.Aggregoctt.site;
+    var data = window.Aggregoctt.data;
+    for (var i in posts) {
+        var post = posts[i];
+        Posts.innerHTML += '{% raw %}<div class="col-md-6">'+
+            '<div class="card border-0 mb-4 box-shadow">'+
+                '<a data-href="{{ site.baseurl }}{{ post.url }}" href="'+post.link+'" target="_blank">'+
+                    '<div class="topfirstimage" style="background-image: url('+(post.image ? site.baseurl+'/'+post.image : '')+');"></div>'+
+                '</a>'+
+                '<div class="card-body px-0 pb-0 d-flex flex-column align-items-start">'+
+                    '<h2 class="h4 font-weight-bold">'+
+                        '<a class="text-dark" data-href="{{ site.baseurl }}{{ post.url }}" href="'+post.link+'" target="_blank">'+post.title+'</a>'+
+                    '</h2>'+
+                    '<p class="excerpt">'+post.excerpt.trim().slice(0, 150)+'...</p>'+
+                    '<div>'+
+                        '<small class="d-block text-muted">'+
+                            'In <span class="catlist">'+
+                                '<a class="text-capitalize text-muted smoothscroll">'+post.source+'</a><span class="sep">, </span>'+
+                                '<a class="text-capitalize text-muted smoothscroll" data-href="{{ site.baseurl }}/categories.html#{{ category | downcase }}">'+data.sources[post.source].category+'</a><span class="sep">, </span>'+
+                            '</span>'+
+                        '</small>'+
+                        '<small class="text-muted">'+post.date.slice(0, -6)+'</small>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>{% endraw %}';
+    }
 }
 
-addPosts();
+window.Aggregoctt.addPosts();
 
-</script>
+})();</script>

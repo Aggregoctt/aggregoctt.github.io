@@ -1,0 +1,9 @@
+---
+title: "Search"
+permalink: /search/
+layout: default
+---
+<script src="{{site.baseurl}}/assets/js/lunr.js"></script>
+<script src="{{site.baseurl}}/site-search.js"></script>
+{% include search-lunr.html %}
+<script>(function(q){q&&(lunrsearch.value=q)&&lunr_search(q)})(new URLSearchParams(location.search).get('q'));</script>
