@@ -1,0 +1,24 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/sicurezza/articoli/n618561/oniux-tor-project-privacy-su-linux/
+date: '2025-05-15T12:25:00'
+excerpt: Oniux è il nuovo strumento Tor che instrada qualsiasi programma Linux attraverso
+  la rete Tor a livello di kernel, garantendo massimo anonimato e sicurezza.
+image: assets/media/kpwbmbXXZOMXOW3j7_XcQw-oIM9MxUFF56I46RyqcLrqw.webp
+source: hdblog
+tags:
+- Sicurezza
+title: Oniux, il nuovo strumento del Tor Project per blindare la privacy su Linux
+---
+<div><p>Il <strong>Tor Project</strong> &#232; noto soprattutto per l'omonimo browser, che consente l'accesso al cosiddetto <a href="https://www.hdblog.it/dark-web/">dark web</a>. Ad ogni modo, l'organizzazione, negli anni, ha creato un vasto arsenale di strumenti per proteggere la privacy degli utenti (recentemente <a href="https://www.hdblog.it/sicurezza/articoli/n593576/tor-project-tails-os-fusione-sicurezza-privacy/">si &#232; unita a Tails</a>) e in queste ore ne ha annunciato uno completamente nuovo, pensato specificatamente per gli utenti Linux. </p>    <p>Si chiama <strong>Oniux </strong>e consente di instradare qualsiasi programma attraverso la <strong>rete Tor a livello di kernel</strong>. A differenza delle soluzioni precedenti, questa tecnologia non si limita a filtrare il traffico tramite proxy, ma isola le applicazioni in uno spazio dedicato del sistema operativo, riducendo quasi a zero i<strong> rischi di fuga di dati</strong>.</p><p>L&#8217;innovazione di Oniux consiste nell&#8217;utilizzo dei <strong>Linux namespace</strong>, una funzionalit&#224; del kernel che permette di compartimentare le risorse del sistema. In questo modo ogni programma lanciato attraverso Oniux viene confinato in un <strong>ambiente virtuale</strong>, dove il traffico passa unicamente attraverso Tor, indipendentemente da eventuali errori di configurazione o comportamenti anomali delle app. Una soluzione particolarmente utile per attivisti, giornalisti, ricercatori e chiunque abbia bisogno di anonimato e isolamento di rete, anche in ambienti ad alto rischio.</p>    <p>Oniux raccoglie l&#8217;eredit&#224; di <strong>Torsocks</strong>, un altro tool sviluppato dalla stessa organizzazione. Tuttavia, se quest&#8217;ultimo funzionava soltanto con applicazioni che invocano le librerie standard C (libc), Oniux fa un passo avanti: &#232; in grado di intercettare ogni tipo di traffico, anche quello generato da istruzioni a basso livello, come le chiamate di sistema in linguaggio assembly. Questo vuol dire che anche i software pi&#249; ostinati non potranno sfuggire alla rete Tor una volta lanciati con Oniux.</p>    <p>Il Tor Project non ha ancora fornito una data ufficiale per il rilascio stabile del tool, ma &#232; gi&#224; disponibile per test su Linux. Per scaricarlo, potete impartire queste istruzioni dal terminale, partendo dall'installazione di Rust, che &#232; necessario: </p>
+
+<ol>
+	<li>
+	<p>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</p>
+	</li>
+	<li>
+	<p>cargo install --git https://gitlab.torproject.org/tpo/core/oniux oniux@0.4.0</p>
+	</li>
+</ol>
+
+<p>Sebbene Tor Project sottolinei che questo non dovrebbe scoraggiare gli utenti da provare Oniux, la stessa organizzazione ricorda che si tratta di uno strumento ancora in una fase sperimentale e che potrebbe presentare dei limiti, a differenza di torsocks che &#232; disponibile da oltre 15 anni (ed &#232; stato, quindi, a lungo scrutinato dalla community di esperti). </p></div>
