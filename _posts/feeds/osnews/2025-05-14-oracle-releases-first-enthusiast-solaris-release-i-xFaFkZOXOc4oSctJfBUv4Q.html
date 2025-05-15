@@ -1,0 +1,59 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142363/oracle-releases-first-enthusiast-solaris-release-in-three-years-promises-more-regular-updates/
+date: '2025-05-14T23:45:50'
+excerpt: 'You&#8217;d almost forget, but aside from the enterprise-focused variant
+  of Solaris for which Oracle sells support contracts, the company has also nominally
+  maintained and released a version of Solaris aimed at non-production use and enthusiasts.
+  This version, called Solaris CBE or Common Build Environment, has always been free
+  to download and use, but since it was last updated all the way back in early 2022,
+  you&#8217;d be forgiven for having forgotten all about it. Today, though, Oracle
+  has finally released a new version of Solaris CBE, after three years of silence.
+  The Common Build Environment (CBE) release for Oracle Solaris 11.4 SRU 81 is now
+  available via “pkg update” from the release repository or by downloading the install
+  images from the Oracle Solaris Downloads page. As with the first Oracle Solaris
+  11.4 CBE, this is licensed for free/open source developers and non-production personal
+  use, and this is not the final, supported version of the 11.4.81 SRU, but the pre-release
+  version on which the SRU was built. It contains all of the new features and interfaces,
+  but not all of the final rounds of bug fixes, from the 11.4.81 SRU. The previous
+  version was the CBE for 11.4.42, so there’s more than 3 years worth of changes between
+  these two releases. If you wanted to read about the changes in every intervening
+  SRU, you can find the monthly SRU release announcements for every SRU, and the What&#8217;s
+  New summaries for each quarterly feature release starting with SRU 63, on the Oracle
+  Solaris blog. Some FOSS version updates are also listed in Oracle Solaris 11.4 Bundled
+  Software Updates. You can also find posts about some of the new features from the
+  SRUs on Joerg Moellenkamp’s blog and Marcel Hofstetter’s blog. ↫ Alan Coopersmith
+  and Jan Pechanec With three years of changes, updates, and fixes to talk about,
+  it&#8217;s no surprise there&#8217;s a lot of things this new release covers, and
+  credit to Oracle: the blog post announcing this new release is incredibly detailed,
+  lists a ton of the changes in great detail, and is definitely required reading if
+  you&#8217;re interested in trying this release out for yourself. I&#8217;m definitely
+  tempted, even if it&#8217;s Oracle. Solaris 11.4 SRU 81 CBE comes with much more
+  recent versions of the free and open source tools and frameworks you&#8217;ve come
+  to expect, like updated versions of GCC, LLVM/clang, tons of programming languages
+  like Python, Perl, and Rust, as well as updates to all the related toolchain components.
+  The CTF (Compact C Type Format) utilities (ctfconvert, ctfdump, and ctfmerge), used
+  to build Solaris itself and crucial for tools like DTrace, have also been updated,
+  and now reside in /usr/bin. These updates are joined by a massive number of other,
+  related low-level changes. For desktop users, GNOME has been updated from the veritably
+  ancient GNOME 3.38 to GNOME 45 (current is 48.1), which is a big jump for Solaris
+  desktop users. Firefox and Thunderbird jump from 91 ESR to 128 ESR, which should
+  deliver a much-improved browsing and email experience. All of this graphical desktop
+  use is powered by version 21.1 of the X server, Mesa 21.3.8, and version 470.182
+  of the NVIDIA driver. Grub has been updated to version 2.12, and thanks to a new
+  secure boot shim, users no longer have to make any changes to secure boot settings,
+  as Solaris will always default to installing the secure boot image. This is just
+  a small selection of all the changes, and it seems Oracle is planning on releasing
+  these CBE versions more often from here on out, as they say this release contains
+  a ton of preparatory work for changes in upcoming releases, &#8220;which should
+  come more often than once every three years going forward&#8221;. Do note that while
+  Solaris CBE releases are free for non-production use, they&#8217;re not open source.'
+image: null
+source: osnews
+tags:
+- Solaris
+title: Oracle releases first “enthusiast” Solaris release in three years, promises
+  more regular updates
+---
+<div><p>You&#8217;d almost forget, but aside from the enterprise-focused variant of Solaris for which Oracle sells support contracts, the company has also nominally maintained and released a version of Solaris aimed at non-production use and enthusiasts. This version, called Solaris CBE or Common Build Environment, has always been free to download and use, but since it was last updated <a href="https://www.osnews.com/story/134786/announcing-the-first-oracle-solaris-11-4-cbe/">all the way back in early 2022</a>, you&#8217;d be forgiven for having forgotten all about it. Today, though, Oracle has finally released a new version of Solaris CBE, after three years of silence.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>The Common Build Environment (CBE) release for Oracle Solaris 11.4 SRU 81 is now available via &#8220;pkg update&#8221; from <a href="http://pkg.oracle.com/solaris/release/">the release repository</a> or by downloading the install images from <a href="https://www.oracle.com/solaris/solaris11/downloads/solaris-downloads.html">the Oracle Solaris Downloads page</a>. As with <a href="https://blogs.oracle.com/solaris/post/announcing-the-first-oracle-solaris-114-cbe">the first Oracle Solaris 11.4 CBE</a>, this is licensed for <a href="https://www.oracle.com/downloads/licenses/solaris-ea-license.html">free/open source developers and non-production personal use</a>, and this is not the final, supported version of the 11.4.81 SRU, but the pre-release version on which the SRU was built. It contains all of the new features and interfaces, but not all of the final rounds of bug fixes, from the 11.4.81 SRU.</p><p>The previous version was the CBE for 11.4.42, so there&#8217;s more than 3 years worth of changes between these two releases. If you wanted to read about the changes in every intervening SRU, you can find the monthly SRU release announcements for every SRU, and the What&#8217;s New summaries for each quarterly feature release starting with SRU 63, on the <a href="https://blogs.oracle.com/solaris/">Oracle Solaris blog</a>. Some FOSS version updates are also listed in <a href="https://docs.oracle.com/en/operating-systems/solaris/oracle-solaris/11.4/freeware/oracle-solaris-11.4-bundled-software-updates.html">Oracle Solaris 11.4 Bundled Software Updates</a>. You can also find posts about some of the new features from the SRUs on <a href="https://www.c0t0d0s0.org/tags/?tag=Solaris">Joerg Moellenkamp&#8217;s blog</a> and <a href="https://jomasoftmarcel.blogspot.com/">Marcel Hofstetter&#8217;s blog</a>.</p>
+<a href="https://blogs.oracle.com/solaris/post/whats-new-in-the-oracle-solaris-11481-cbe-release">&#8619; Alan Coopersmith and Jan Pechanec</a></blockquote><p>With three years of changes, updates, and fixes to talk about, it&#8217;s no surprise there&#8217;s a lot of things this new release covers, and credit to Oracle: the blog post announcing this new release is incredibly detailed, lists a ton of the changes in great detail, and is definitely required reading if you&#8217;re interested in trying this release out for yourself. I&#8217;m definitely tempted, even if it&#8217;s Oracle.</p><p>Solaris 11.4 SRU 81 CBE comes with much more recent versions of the free and open source tools and frameworks you&#8217;ve come to expect, like updated versions of GCC, LLVM/clang, tons of programming languages like Python, Perl, and Rust, as well as updates to all the related toolchain components. The CTF (Compact C Type Format) utilities (<code>ctfconvert</code>, <code>ctfdump</code>, and <code>ctfmerge</code>), used to build Solaris itself and crucial for tools like DTrace, have also been updated, and now reside in <code>/usr/bin</code>. These updates are joined by a massive number of other, related low-level changes.</p><p>For desktop users, GNOME has been updated from the veritably ancient GNOME 3.38 to GNOME 45 (current is 48.1), which is a big jump for Solaris desktop users. Firefox and Thunderbird jump from 91 ESR to 128 ESR, which should deliver a much-improved browsing and email experience. All of this graphical desktop use is powered by version 21.1 of the X server, Mesa 21.3.8, and version 470.182 of the NVIDIA driver. Grub has been updated to version 2.12, and thanks to a new secure boot shim, users no longer have to make any changes to secure boot settings, as Solaris will always default to installing the secure boot image.</p><p>This is just a small selection of all the changes, and it seems Oracle is planning on releasing these CBE versions more often from here on out, as they say this release contains a ton of preparatory work for changes in upcoming releases, &#8220;which should come more often than once every three years going forward&#8221;. Do note that while Solaris CBE releases are free for non-production use, they&#8217;re not open source.</p></div>
