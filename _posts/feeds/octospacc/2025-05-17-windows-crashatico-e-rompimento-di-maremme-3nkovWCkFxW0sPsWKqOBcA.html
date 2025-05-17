@@ -1,0 +1,28 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/05/17/windows-crashatico-e-rompimento-di-maremme/
+date: '2025-05-17T21:00:24'
+excerpt: 'Vaffanculo, e specifico proprio nel culo: Windows colpisce, indovinate un
+  po&#8217;, ancora un&#8217;altra volta&#8230; e stasera con un bug che avevo persino
+  dimenticato ci fosse, perché avevo dimenticato di inviarlo qui le due volte passate.
+  Cioè, mi è era successa una cosa simile quando avevo Windows 11, ma per 10 non mi
+  sono mai presa [&#8230;]'
+image: assets/media/3nkovWCkFxW0sPsWKqOBcA-tByasb6Z_pCDTZb73YlrmA.webp
+source: octospacc
+tags:
+- Senza categoria
+- GUI
+- bug
+- crash
+- Windows
+- freeze
+- Windows10
+- softlock
+- explorer
+title: windows crashatico e rompimento di maremme
+---
+<div>
+
+		<p>Vaffanculo, e specifico proprio nel culo: <strong>Windows colpisce, </strong><strong>indovinate un po&#8217;</strong><strong>, ancora un&#8217;altra volta&#8230; e stasera con un bug che avevo persino dimenticato ci fosse</strong>, perch&#233; avevo dimenticato di inviarlo qui le due volte passate. Cio&#232;, mi &#232; era successa una cosa simile quando avevo Windows 11, ma per 10 non mi sono mai presa i minuti persi per lamentarmene seriamente, quindi (nella speranza che non succeda pi&#249; &#8212; perch&#233; al momento stranamente ho il precedente per cui raccontare i problemi tecnici di Windows li fa scomparire&#8230; o forse sono talmente fritta che me lo sto inventando) ecco qua. &#128148;</p><p>Il punto &#232; che <strong>&#232; crashato explorer</strong> &#8212; perch&#233; volevo copiare un file sul mio server con SSH (per cui uso un plugin di cui non ricordo il nome&#8230; quindi in teoria il problema del crash potrebbe essere suo, ma certamente non quello che succede dopo), ma si &#232; bloccato a met&#224;, e allora ho annullato il trasferimento, ma ovviamente essendo softlockato non si annulla, quindi dopo qualche minuto si &#232; freezata proprio la finestra, quindi ho cliccato un sacco di volte la X per chiuderla, ma ovviamente anzich&#233; chiudersi per bene &#232; proprio crashato tutto il processo &#8212; <strong>e subito dopo non si &#232; riavviato da solo, e non c&#8217;&#232; un cazzo di modo per farlo ripartire a mano.</strong> &#128553;</p><p>A parte che, quando fa questa cosa strana, <strong>sparisce giustamente la taskbar dal mio schermo principale&#8230; ma per qualche motivo non dal secondario, dove rimane visibile pur se estremamente buggata</strong> (diventa pi&#249; bassa, con linee compenetrate, spariscono le icone delle finestre e il puntatore del mouse passandoci sopra diventa la rotellina che indica caricamento)&#8230; le cose diventano rapidamente peggio. Infatti, non solo <strong>pu&#242; capitare che altre app arbitrariamente si freezino fino a crashare</strong> (per esempio, Telegram Desktop), ma &#232; la fine pi&#249; totale, perch&#233; <strong>non si riescono ad avviare altri processi</strong> (n&#233; il fottuto explorer crashato, ma nemmeno altre app). &#128169;</p><p>Maremma maiala se viene da piangere: si pu&#242; aprire la schermata di CTRL+Alt+Canc, ma cliccare Task manager non apre nulla (cos&#236; come non lo apre la combinazione CTRL+Shift+ESC); Win+R nemmeno funziona (anzi, sembra che la pressione del tasto Win non venga registrata, perch&#233; stando su un campo di resto la lettera R viene scritta); se si ha qualcosa di gi&#224; aperto da cui in teoria si possono avviare altri processi (il Prompt dei comandi, un browser web, il fottuto Blocco note da cui si pu&#242; navigare nel file system con la finestra di apertura file, ma comunque provare ad aprire un EXE la fa freezare)&#8230; <strong>Basta, cio&#232;, oh, che cazzo!!!</strong> &#128557;</p><p>La foto sopra in realt&#224; &#232; di qualche mese fa, perch&#233; <strong>stavolta ho addirittura softlockato TUTTO, provando invano a far riprendere il sistema senza riavviarlo</strong> (che mi secca ampiamente dover fare, anche se puntualmente &#232; l&#8217;unica via di uscita dalla tremendaggine, perch&#233; Windows &#232; costruito su sputazza e codice spaghetti), quindi non ho potuto riprendere altro, ma alla fine appunto non c&#8217;&#232; molto da vedere. Praticamente, <strong>ho provato a loggare in un altro utente per vedere se explorer si riprendesse, ma purtroppo no&#8230;</strong> anzi, forse perch&#233; in questo stato inconsistente alcuni servizi di sistema sono irraggiungibili, visto che gli utenti secondari che ho non sono mai stati configurati (li uso solo per runas, quindi &#232; giusto cos&#236;), lui vorrebbe fare la procedura di inizializzazione del profilo, ma nella pratica non ci riesce, e 10 minuti dopo si arriva quindi a questo simpatico messaggio (che in questo caso &#232; una sonora bugia, visto che in questo stato rimarrebbe cos&#236; per sempre): &#8220;Ci sta volendo un po&#8217; pi&#249; di quanto ci aspettavamo ma arriveremo alla fine pi&#249; veloce che possiamo&#8220;&#8230; si Microsoft, ci credo completamente. &#128557;</p><p>Poi, ancora per vedere se qualcosa sarebbe cambiato, ho provato a fare il Disconnetti anzich&#233; Cambia utente&#8230; e <strong>questo &#232; stato appunto come si &#232; softlockato definitivamente, perch&#233; a questo punto si &#232; bloccato sulla schermata &#8220;Signing out&#8221;</strong>, con le palle che girano ma nessun input che funziona (perch&#233; le schermate di arresto, riavvio e disconnessione in Windows non registrano nemmeno CTRL+Alt+Canc, visto che quello &#232; tecnicamente sempre lo stesso processo, winlogon, che essendo gi&#224; in foreground non pu&#242; essere giustamente richiamato dal background). <strong>CHE PALLE.</strong> &#128575;</p> 
+ 
+	 </div>
