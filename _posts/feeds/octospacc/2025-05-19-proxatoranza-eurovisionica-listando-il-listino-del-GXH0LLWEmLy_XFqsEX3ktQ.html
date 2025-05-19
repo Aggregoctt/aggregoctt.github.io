@@ -1,0 +1,32 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/05/19/proxatoranza-eurovisionica-listando-il-listino-del-gruppo-canzoni-aggiornamento-coatto-proxatore-group/
+date: '2025-05-19T15:52:39'
+excerpt: Ieri è accaduto che, nell&#8217;aver parlato dell&#8217;Eurovision, non ho
+  fornito alcuna personale classifica delle canzoni&#8230; peccato, eccetto che in
+  realtà no. La mia omissione è stata infatti un atto volontario e consapevole, in
+  pieno stile siciliano (miiiinchia); un po&#8217; perché non volevo che il post su
+  Telegram fosse spezzato in 2 solo per via di [&#8230;]
+image: assets/media/GXH0LLWEmLy_XFqsEX3ktQ-gv9vQbYR5T7lOfKcSdjNfw.webp
+source: octospacc
+tags:
+- Senza categoria
+- web
+- Eurovision
+- EurovisionSongContest
+- ESC
+- Proxatore
+- aggiornamento
+- Eurovision2025
+- ESC2025
+- ESCITA
+- playlist
+- tierlist
+title: 'proxatoranza eurovisionica, listando il listino del gruppo canzoni (aggiornamento
+  coatto: proxatore-group)'
+---
+<div>
+
+		<p>Ieri &#232; accaduto che, <strong>nell&#8217;aver parlato dell&#8217;Eurovision, non ho fornito alcuna personale classifica delle canzoni&#8230;</strong> peccato, eccetto che in realt&#224; no. La mia omissione &#232; stata infatti un atto volontario e consapevole, in pieno stile siciliano (miiiinchia); un po&#8217; perch&#233; non volevo che il post su Telegram fosse spezzato in 2 solo per via di qualche link da mettere (sempre grazie a te, Durov, e al tuo limite schifoso di 4096 caratteri&#8230;), e sia perch&#233; ho pensato, a questo punto, di <strong>cogliere la palla al balzissimo e aggiungere una ennesima funzionalit&#224; innovativa al nostro carissimo Proxatore&#8230; le &#8220;playlist&#8221;</strong>, che torneranno sicuramente utili anche in futuro. &#128563;</p><p>Ecco allora &#8212; almeno giusto per iniziare, perch&#233; non &#232; da escludere che mi venga lo sghiribizzo di aggiungerne altre con calma poi, e in tal caso aggiorner&#242; il link qui &#8212; <strong>una versione &#8220;base&#8221; della mia classifica ESC 2025, con (pi&#249; o meno) in ordine le canzoni che senza dubbio mi sono piaciute di pi&#249;</strong>: <a href="https://proxatore.octt.eu.org/?proxatore-group=%5B%22%2Fyoutube%2Fwatch%3Fv%3D3rrWZ6cldsA%22%2C%22%2Fyoutube%2Fwatch%3Fv%3D3MB628Kanzo%22%2C%22%2Fyoutube%2Fwatch%3Fv%3DGT7ZZBCscUg%22%2C%22%2Fyoutube%2Fwatch%3Fv%3D9b9Z5HSCXOI%22%2C%22%2Fyoutube%2Fwatch%3Fv%3DVlu5XXDwHos%22%2C%22%2Fyoutube%2Fwatch%3Fv%3Dhq6XIRKmA2A%22%5D">https://proxatore.octt.eu.org/?proxatore-group=%5B%22%2Fyoutube%2Fwatch%3Fv%3D3rrWZ6cldsA%22%2C%22%2Fyoutube%2Fwatch%3Fv%3D3MB628Kanzo%22%2C%22%2Fyoutube%2Fwatch%3Fv%3DGT7ZZBCscUg%22%2C%22%2Fyoutube%2Fwatch%3Fv%3D9b9Z5HSCXOI%22%2C%22%2Fyoutube%2Fwatch%3Fv%3DVlu5XXDwHos%22%2C%22%2Fyoutube%2Fwatch%3Fv%3Dhq6XIRKmA2A%22%5D</a>! (E si, nella lista c&#8217;&#232; anche l&#8217;Italia, perch&#233; sul mio sito le regole del voto le decido io!!!) &#128520;</p><p>Perfetto; ora che la questione musica &#232; chiusa, posso senza problemi parlare di ci&#242; che non frega a nessuno, ossia questo mio nuovo aggiornamento!!! <strong>Ieri sera ho implementato giusto la parte di backend</strong>, che &#232; molto semplice e (solo per il momento) gi&#224; accettabile, <strong>appunto apposta per fare questo link</strong>. Non si tratta di playlist in senso prettamente multimediale, ma di <strong>insiemi di elementi generici</strong> (<strong>anche post di testo</strong>, da qualunque delle piattaforme supportate), di un gruppo praticamente&#8230; e quindi il nome meno schifoso che ho trovato &#232; &#8220;results group&#8220;. Quindi, il backend legge una lista JSON di URL, passata nell&#8217;argomento query <code>proxatore-group</code>, e (con la dovuta pazienza&#8230;) cattura tutto e risponde per bene. &#128077;</p><p>La cosa bella per&#242; &#232; che stavolta, meno di quanto vale per altre parti del programmino (alcune talmente oscure che non ho neanche ancora trovato l&#8217;occasione di documentarle, ops), il lato tecnico frega relativamente zero&#8230; perch&#233; <strong>oggi pomeriggio ho invece giusto implementato l&#8217;epicit&#224; lato frontend!!!</strong> Con JavaScript, infatti, <strong>appaiono tastini utili alla creazione di uno di questi gruppi</strong> direttamente dal sito, che allora si pu&#242; fare senza stare a comporre URL a mano, evitando una seccatura anni &#8217;70. Si pu&#242; aggiungere un elemento, cliccando il bottoncione dalla pagina dedicata o da una di ricerca, e questo appare in una lista in cima allo schermo, con bottoncini per rimuovere e spostare su e gi&#249;&#8230; e poi boom, si pu&#242; kopiare il link. In buona sostanza, <strong>siamo arrivati davvero alla magia con questo aggeggio</strong>. &#128571;</p><p>Probabilmente <strong>il frontend &#232; ancora da sistemare</strong>, perch&#233; mi appare un po&#8217; strambo che praticamente si vanno a creare due liste separate a schermo, quella normale di visualizzazione (per tutti) e quella di gestione (se si sta modificando una lista)&#8230; e perch&#233; al momento ogni click anche dei tastini ricarica tutta la pagina&#8230; ma anche perch&#233; sarebbe ottimale aggiungere una visualizzazione ottimizzata per video e audio, che permetta di riprodurre tutto rapidamente in sequenza senza dover aprire la pagina di ogni risultato&#8230; cos&#236; come il backend, che al momento riscarica tutti i link di un gruppo ogni volta che se ne chiede la pagina, senza caching, e questo potrebbe essere problematico a lungo andare. Vabb&#232;, se non perdo la vita arriveranno anche questi piccoli fix, questione di tempo. &#129303;</p> 
+ 
+	 </div>
