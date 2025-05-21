@@ -1,0 +1,31 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/windows/articoli/n619214/microsoft-apre-codice-windows-subsystem-linux/
+date: '2025-05-21T13:50:00'
+excerpt: il sottosistema Linux integrato in Windows è ora disponibile pubblicamente
+  su GitHub. Un passo storico per uno dei progetti più peculiari dell’ecosistema Microsoft.
+image: assets/media/BbRxL5xrlRJDJkbRQZntOg-GXwnnbj9U-mWUEUxl4cKUw.webp
+source: hdblog
+tags:
+- Windows
+title: 'WSL diventa open source: Microsoft apre il codice del Windows Subsystem for
+  Linux'
+---
+<div>
+	
+				<p><strong>Microsoft</strong> ha annunciato ufficialmente <strong>l'apertura del codice sorgente del Windows Subsystem for Linux (WSL)</strong>, rendendo finalmente disponibile su GitHub il "cuore tecnologico" che consente l'esecuzione di un ambiente GNU/Linux direttamente all'interno del sistema operativo Windows. Si tratta di un traguardo atteso da anni, che <strong>chiude simbolicamente il primo issue aperto nel repository GitHub ufficiale di WSL: "Will this be Open Source?".</strong></p>    <p>Da oggi, chiunque pu&#242;<strong> scaricare, compilare e contribuire attivamente</strong> allo sviluppo di WSL, partecipando in prima persona alla sua evoluzione. Il codice &#232; accessibile all'indirizzo <a href="https://github.com/microsoft/WSL" target="_blank">microsoft/WSL,</a> con documentazione e riferimenti dettagliati anche su <a href="https://wsl.dev/" target="_blank">wsl.dev</a>.</p>COSA VIENE EFFETTIVAMENTE APERTO<p>La versione open source di WSL <strong>comprende numerosi componenti chiave</strong>. Tra questi, gli eseguibili a riga di comando come wsl.exe, wslconfig.exe e wslg.exe, oltre al servizio wslservice.exe, responsabile dell'avvio della macchina virtuale e della gestione dei filesystem condivisi. Anche i processi Linux come init, gns e localhost, fondamentali per il networking e il port forwarding, sono ora <strong>disponibili nel codice sorgente.</strong></p>
+
+<p>Viene inclusa anche l'implementazione Plan9 per la condivisione di file da Linux verso Windows. Gi&#224; in precedenza Microsoft aveva reso open source alcuni componenti come microsoft/wslg (per il supporto Wayland e X server) e microsoft/WSL2-Linux-Kernel, il kernel Linux utilizzato da WSL 2.</p>    <p><strong>Restano invece ancora chiusi alcuni elementi fondamentali </strong>presenti nell'immagine di Windows: lxcore.sys, driver responsabile del funzionamento di WSL 1, e i componenti p9rdr.sys e p9np.dll per la redirezione del filesystem &#8220;\wsl.localhost&#8221;.</p>UNA LUNGA EVOLUZIONE INIZIATA NEL 2016<p>Annunciato per la prima volta alla conferenza BUILD del 2016, WSL &#232; stato inizialmente lanciato come un esperimento basato su lxcore.sys, in grado di eseguire nativamente file ELF e interpretare chiamate di sistema Linux all'interno del kernel Windows. Questo approccio ha dato origine a WSL 1, ancora supportato, ma con limiti crescenti in termini di compatibilit&#224;.</p>    <p><a href="https://www.hdblog.it/2019/06/13/windows-10-insider-20h1-18917-wsl-2-changelog/">Nel 2019 Microsoft ha annunciato WSL 2,</a> basato su una vera macchina virtuale con kernel Linux, migliorando drasticamente la compatibilit&#224; con le distribuzioni Linux reali. Da allora il progetto ha guadagnato funzionalit&#224; come il supporto GPU, le applicazioni grafiche (tramite wslg) e systemd.</p>    <p><strong>Nel 2021 &#232; iniziata la separazione di WSL dal sistema operativo Windows: </strong>il pacchetto &#232; stato distribuito sul Microsoft Store come versione indipendente, a partire dalla release 0.47.1, inizialmente in anteprima solo per Windows 11. La prima versione stabile, WSL 1.0.0, &#232; arrivata nel novembre 2022, con supporto esteso anche a Windows 10.</p>UN PROGETTO IN CONTINUA ESPANSIONE<p><strong>Con il rilascio di WSL 2.0.0</strong>, Microsoft ha introdotto ulteriori miglioramenti: <strong>networking mirroring, tunneling DNS, supporto al session 0, configurazione di proxy e firewall, e altre ottimizzazioni.</strong> L'ultima versione disponibile, al momento dell'annuncio, &#232; WSL 2.5.7, distribuita attraverso GitHub dopo ben nove pagine di release a partire dalla prima versione Store.</p>    <p>Il passaggio a una distribuzione indipendente ha permesso a Microsoft di accelerare lo sviluppo, ma &#232; stato il contributo della community a rendere il progetto ci&#242; che &#232; oggi. Nonostante l'assenza di codice sorgente, molti utenti hanno fornito bug report, suggerimenti e persino implementazioni migliorative. L'apertura del codice &#232; quindi <strong>il riconoscimento formale di un rapporto gi&#224; profondo tra Microsoft e la comunit&#224; open source.</strong></p>UNA NUOVA FASE PER LA COMMUNITY<p>Ora che il codice di WSL &#232; finalmente pubblico, <strong>chiunque potr&#224; studiarne il funzionamento,</strong> <strong>proporre modifiche</strong>, <strong>correggere errori</strong> o <strong>aggiungere nuove funzionalit&#224;</strong>. Microsoft invita chiunque sia interessato a visitare il repository GitHub per scoprire come contribuire.</p>    <p>Il rilascio open source di WSL segna<strong> un cambio di paradigma importante</strong>: da componente nativo integrato in Windows a progetto open, autonomo, e pienamente partecipativo. Un'ulteriore conferma del percorso di apertura che Microsoft ha intrapreso da anni, e che oggi coinvolge uno degli strumenti pi&#249; utilizzati dagli sviluppatori.</p> 
+
+	
+				
+
+
+ 
+
+
+	
+				 
+			
+	
+			</div>
