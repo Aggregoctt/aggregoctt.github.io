@@ -1,0 +1,19 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/microsoft/articoli/n619187/windows-10-update-fix-boot-loop-bitlocker/
+date: '2025-05-21T10:40:00'
+excerpt: Il problema si verificava con i sistemi dotati di CPU Intel
+image: assets/media/LHdF4_KCJaJnbl-oW9C5Fg-RxYDl9K9HmpGMzx9VYsx5w.webp
+source: hdblog
+tags:
+- Windows
+- Microsoft
+title: Windows 10 riceve l'aggiornamento che risolve il boot loop di BitLocker
+---
+<div><p>Microsoft ha rilasciato in queste ore un <strong>aggiornamento di emergenza </strong>identificato dalla sigla <strong>KB5061768</strong>, rivolto agli utenti di <a href="https://www.hdblog.it/windows-10/">Windows 10</a> nelle versioni 21H2 e 22H2 (build 19044.5853 e 19045.5853).</p>
+
+<p>Questa patch correttiva &#232; stata pubblicata per risolvere i <strong>problemi di avvio </strong>del sistema in modalit&#224; di ripristino BitLocker, un inconveniente manifestatosi <strong>su determinati sistemi con processori Intel </strong>(di decima generazione o successivi con tecnologia Intel Trusted Execution Technology - TXT - abilitata). La causa era l'installazione del precedente aggiornamento di sicurezza KB5058379 del 13 maggio 2025, che poteva indurre un malfunzionamento del servizio LSASS.<strong> L'update KB5061768 &#232; disponibile unicamente tramite il Microsoft Update Catalog, che potete consultare in Fonte</strong>.</p><p>Il problema originato dall'update KB5058379 consisteva nell'interruzione imprevista del processo Local Security Authority Subsystem Service, anomalia che poteva innescare una Riparazione Automatica del sistema, richiedendo poi l'inserimento della chiave di ripristino BitLocker e creando di fatto un loop.</p>
+
+<p>Microsoft consiglia l'installazione di KB5061768 soprattutto agli utenti con sistemi potenzialmente affetti che non hanno ancora applicato l'aggiornamento KB5058379, cos&#236; da prevenire il problema. Per coloro i cui sistemi sono<strong> gi&#224; bloccati</strong>, l'azienda di Redmond suggerisce una procedura dettagliata: disabilitare temporaneamente le opzioni Intel VT for Direct I/O (VTD/VTX) e Intel TXT nel BIOS/UEFI (operazione che richieder&#224; la chiave BitLocker), installare KB5061768 dal Microsoft Update Catalog, riavviare e poi riabilitare VTD/VTX e TXT (passaggio che richieder&#224; di nuovo la chiave).</p>
+
+<p>Allo stesso tempo, Microsoft segnala un<strong> nuovo problema noto</strong> che potrebbe emergere dopo l'installazione di KB5061768 (o di una recente patch di anteprima che ha introdotto il font Noto come fallback). In particolare, il testo in alcune lingue (come cinese, giapponese e coreano) potrebbe apparire sfocato nei browser basati su Chromium (Chrome, Edge) se lo scaling del display &#232; al 100% (96 DPI). Microsoft sta investigando; una mitigazione temporanea &#232; impostare lo scaling al 125% o superiore.</p></div>
