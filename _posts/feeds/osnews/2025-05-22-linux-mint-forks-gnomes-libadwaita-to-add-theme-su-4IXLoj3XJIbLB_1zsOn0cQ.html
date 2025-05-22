@@ -1,0 +1,50 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142412/linux-mint-forks-gnomes-libadwaita-to-add-theme-support/
+date: '2025-05-22T22:44:01'
+excerpt: 'On numerous occasions, we&#8217;ve talked about the issue facing non-GNOME
+  GTK desktops, like Xfce, MATE, and Cinnamon: the popularity of Libadwaita. With
+  more and more application developers opting for GNOME&#8217;s Libadwaita because
+  of the desktop environment&#8217;s popularity, many popular GTK applications now
+  look like GNOME applications instead of GTK applications, and they just don&#8217;t
+  mesh well with traditional GTK desktops. Since Libadwaita is not themeable, applications
+  that use it can&#8217;t really be made to feel at home on non-GNOME GTK desktops,
+  unless said desktops adopt the entire GNOME design language, handing over control
+  ovr their GUI design to outsiders in the process. The developers of Libadwaita,
+  as well as the people behind GNOME, have made it very clear they do not intend to
+  make Libadwaita themeable, and they are well within their rights to make that decision.
+  I think it&#8217;s a bad decision &#8211; themeing is a crucial accessibility feature
+  &#8211; but it&#8217;s their project, their code, and their time, and I fully respect
+  their decision, since it&#8217;s really not up to GNOME to worry about the other
+  GTK desktops. So, what are the developers of Xfce, MATE, and Cinnamon supposed to
+  do? Well, how about taking matters into their own hands? Clement Lefebvre, the lead
+  developer of Linux Mint and its Cinnamon desktop environment, has soft-forked Libadwaita
+  to add theme support to the library. They&#8217;re calling it LibAdapta. libAdapta
+  is libAdwaita with theme support and a few extra. It provides the same features
+  and the same look as libAdwaita by default. In desktop environments which provide
+  theme selection, libAdapta apps follow the theme and use the proper window controls.
+  ↫ LibAdapta&#8217;s GitHub page The reason they consider libAdapta a &#8220;soft-fork&#8221;
+  is that all it does is add theme support; they do not intended to deviate from Libadwaita
+  in any other way, and will follow Libadwaita&#8217;s releases. It will use the current
+  GTK3 theme, and will fallback to the default Libadwaita look and feel if the GTK3
+  theme in question doesn&#8217;t have a libadapta-1.0 directory. This seems like
+  a transparent and smart way to handle it. I doubt it will be long before libAdapta
+  becomes a default part of a lot of user instructions online, GTK theme developers
+  will probably add support for it pretty quickly, and perhaps even of a lot of non-GNOME
+  GTK desktop environments will add it by default. It will make it a lot easier for,
+  say, the developers of MATE to make use of the latest Libadwaita applications, without
+  having to either accept a disjointed, inconsistent user experience, or adopt the
+  GNOME design language hook, line, and sinker and lose all control over the user
+  experience they wish to offer to their users. I&#8217;m glad this exists now, and
+  hope it will prove to be popular. I appreciate the pragmatic approach taken here
+  &#8211; a relatively simple fork that doesn&#8217;t burden upstream, without long
+  feature request threads where everybody is shouting at each other that needlessly
+  spill over onto Fedi. This is how open source is supposed to work.'
+image: null
+source: osnews
+tags:
+- GTK+
+title: Linux Mint forks GNOME’s Libadwaita to add theme support
+---
+<div><p>On numerous occasions, <a href="https://www.osnews.com/story/139512/linux-mint-non-gnome-gtk-desktop-environments-need-to-work-together-in-the-face-of-libadwaita/">we&#8217;ve talked</a> about the issue facing non-GNOME GTK desktops, like Xfce, MATE, and Cinnamon: the popularity of Libadwaita. With more and more application developers opting for GNOME&#8217;s Libadwaita because of the desktop environment&#8217;s popularity, many popular GTK applications now look like GNOME applications instead of GTK applications, and they just don&#8217;t mesh well with traditional GTK desktops. Since Libadwaita is not themeable, applications that use it can&#8217;t really be made to feel at home on non-GNOME GTK desktops, unless said desktops adopt the entire GNOME design language, handing over control ovr their GUI design to outsiders in the process.</p><p>The developers of Libadwaita, as well as the people behind GNOME, have made it very clear they do not intend to make Libadwaita themeable, and they are well within their rights to make that decision. I think it&#8217;s a bad decision &#8211; themeing is a crucial accessibility feature &#8211; but it&#8217;s their project, their code, and their time, and I fully respect their decision, since it&#8217;s really not up to GNOME to worry about the other GTK desktops. So, what are the developers of Xfce, MATE, and Cinnamon supposed to do?</p><p>Well, how about taking matters into their own hands? Clement Lefebvre, the lead developer of Linux Mint and its Cinnamon desktop environment, has soft-forked Libadwaita to add theme support to the library. They&#8217;re calling it <a href="https://github.com/xapp-project/libadapta">LibAdapta</a>.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>libAdapta is libAdwaita with theme support and a few extra.</p><p>It provides the same features and the same look as libAdwaita by default.</p><p>In desktop environments which provide theme selection, libAdapta apps follow the theme and use the proper window controls.</p>
+<a href="https://github.com/xapp-project/libadapta">&#8619; LibAdapta&#8217;s GitHub page</a></blockquote><p>The reason they consider libAdapta a &#8220;soft-fork&#8221; is that all it does is add theme support; they do not intended to deviate from Libadwaita in any other way, and will follow Libadwaita&#8217;s releases. It will use the current GTK3 theme, and will fallback to the default Libadwaita look and feel if the GTK3 theme in question doesn&#8217;t have a <code>libadapta-1.0</code> directory. This seems like a transparent and smart way to handle it.</p><p>I doubt it will be long before libAdapta becomes a default part of a lot of user instructions online, GTK theme developers will probably add support for it pretty quickly, and perhaps even of a lot of non-GNOME GTK desktop environments will add it by default. It will make it a lot easier for, say, the developers of MATE to make use of the latest Libadwaita applications, without having to either accept a disjointed, inconsistent user experience, or adopt the GNOME design language hook, line, and sinker and lose all control over the user experience they wish to offer to their users.</p><p>I&#8217;m glad this exists now, and hope it will prove to be popular. I appreciate the pragmatic approach taken here &#8211; a relatively simple fork that doesn&#8217;t burden upstream, without long feature request threads where everybody is shouting at each other that needlessly spill over onto Fedi. This is how open source is supposed to work.</p></div>
