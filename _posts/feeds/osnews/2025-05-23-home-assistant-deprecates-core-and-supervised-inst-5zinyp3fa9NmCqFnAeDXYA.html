@@ -1,0 +1,39 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142421/home-assistant-deprecates-core-and-supervised-installation-methods-and-32bit-systems/
+date: '2025-05-23T21:07:31'
+excerpt: 'We are today officially deprecating two installation methods and three legacy
+  CPU architectures. We always strive to have Home Assistant run on almost anything,
+  but sometimes we must make difficult decisions to keep the project moving forward.
+  Though these changes will only affect a small percentage of Home Assistant users,
+  we want to do everything in our power to make this easy for those who may need to
+  migrate. ↫ Franck Nijhof on the Home Assistant blog Home Assistant is quite popular
+  among the kind of people who read OSNews, and this news might actually hit our little
+  demographic particularly hard. The legacy CPU architectures they&#8217;re removing
+  support for won&#8217;t make much of a difference, as we&#8217;re talking 32bit
+  x86 and 32bit ARM, although that last one does include version 1 and 2 of the Raspberry
+  Pi, which were quite popular at the time. Do check to make sure you&#8217;re not
+  running your Home Assistant installation on one of those. The bigger hit is the
+  deprecation of two installation methods: Home Assistant Core and Home Assistant&#8217;s
+  Supervised installation method. In Core, you&#8217;re running it in a Python environment,
+  and with Supervised, you&#8217;re installing the various components that make up
+  Home Assistant manually. Supervised is used to install Home Assistant on unsupported
+  operating systems, like the various flavours of BSD. What this means is that if
+  you are running Home Assistant on, say, OpenBSD, you&#8217;re going to have to migrate
+  soon. Apparently, these installation methods are not used very often, and are difficult
+  for Home Assistant to support. These changes do not mean you can no longer perform
+  these installation methods; it just means they are not supported, will be removed
+  from the documentation, and new issues with these methods will not be accepted.
+  Of course, anyone is free to take over hosting any documentation and guides, as
+  Home Assistant is open source. Home Assistant generally wants you to use Home Assistant
+  OS, which is basically a Linux distribution designed to run Home Assistant, either
+  on real hardware (which is what I do, on an x86 thin client) or in a container.'
+image: null
+source: osnews
+tags:
+- OS News
+title: Home Assistant deprecates Core and Supervised installation methods and 32bit
+  systems
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>We are today officially deprecating two installation methods and three legacy CPU architectures. We always strive to have Home Assistant run on almost anything, but sometimes we must make difficult decisions to keep the project moving forward. Though these changes will only affect a small percentage of Home Assistant users, we want to do everything in our power to make this easy for those who may need to migrate.</p>
+<a href="https://www.home-assistant.io/blog/2025/05/22/deprecating-core-and-supervised-installation-methods-and-32-bit-systems/">&#8619; Franck Nijhof on the Home Assistant blog</a></blockquote><p>Home Assistant is quite popular among the kind of people who read OSNews, and this news might actually hit our little demographic particularly hard. The legacy CPU architectures they&#8217;re removing support for won&#8217;t make much of a difference, as we&#8217;re talking 32bit x86 and 32bit ARM, although that last one does include version 1 and 2 of the Raspberry Pi, which were quite popular at the time. Do check to make sure you&#8217;re not running your Home Assistant installation on one of those.</p><p>The bigger hit is the deprecation of two installation methods: Home Assistant Core and Home Assistant&#8217;s Supervised installation method. In Core, you&#8217;re running it in a Python environment, and with Supervised, you&#8217;re installing the various components that make up Home Assistant manually. Supervised is used to install Home Assistant on unsupported operating systems, like the various flavours of BSD. What this means is that if you are running Home Assistant on, say, OpenBSD, you&#8217;re going to have to migrate soon.</p><p>Apparently, these installation methods are not used very often, and are difficult for Home Assistant to support. These changes do not mean you can no longer perform these installation methods; it just means they are not supported, will be removed from the documentation, and new issues with these methods will not be accepted. Of course, anyone is free to take over hosting any documentation and guides, as Home Assistant is open source.</p><p>Home Assistant generally wants you to use Home Assistant OS, which is basically a Linux distribution designed to run Home Assistant, either on real hardware (which is what I do, on an x86 thin client) or in a container.</p></div>
