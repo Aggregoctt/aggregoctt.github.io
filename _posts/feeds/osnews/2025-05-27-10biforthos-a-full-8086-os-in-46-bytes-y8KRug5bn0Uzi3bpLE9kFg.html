@@ -1,0 +1,31 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142449/10biforthos-a-full-8086-os-in-46-bytes/
+date: '2025-05-27T21:44:38'
+excerpt: 'An incredibly primitive operating system, with just two instructions: compile
+  (1) and execute (0). It is heavily inspired by Frank Sergeant 3-Instruction Forth
+  and is a strip down exercise following up SectorForth, SectorLisp, SectorC (the
+  C compiler used here) and milliForth. Here is the full OS code in 46 bytes of 8086
+  assembly opcodes. ↫ 10biForthOS sourcehut page Yes, the entire operating system
+  easily fits right here, inside an OSNews quote block: 50b8 8e00 31d8 e8ff 0017 003c
+  0575 00ea5000 3c00 7401 eb02 e8ee 0005 0588 eb47b8e6 0200 d231 14cd e480 7580 c3f4
+  ↫ 10biForthOS sourcehut page How do you actually use this operating system? Once
+  the operating system is loaded at boot, it listens on the serial port for instructions.
+  You can then send the instruction 1 followed by a byte of an assembly opcode which
+  will be compiled into a fixed location in memory. The instruction 0 will then execute
+  the program. There&#8217;s also a version with keyboard support, as well as a much
+  bigger version compiled for x86-64. Something like this inevitably raises the question
+  what an operating system really is, and if this extremely limited and minimalist
+  thing can be considered as one. I&#8217;m not going to deep into this existential
+  discussion, mostly because I land firmly on the side that this is indeed just as
+  much an operating system as, say, Windows or MorphOS. This bit of code, when booted,
+  allows you to operate the system. It&#8217;s an operating system.'
+image: null
+source: osnews
+tags:
+- OS News
+title: '10biForthOS: a full 8086 OS in 46 bytes'
+---
+<div><p>An incredibly primitive operating system, with just two instructions: compile (1) and execute (0).</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>It is heavily inspired by Frank Sergeant <a href="https://pygmy.utoh.org/3ins4th.html">3-Instruction Forth</a> and is a strip down exercise following up <a href="https://github.com/cesarblum/sectorforth">SectorForth</a>, <a href="https://justine.lol/sectorlisp/">SectorLisp</a>, <a href="https://xorvoid.com/sectorc.html">SectorC</a> (the C compiler used here) and <a href="https://github.com/fuzzballcat/milliForth">milliForth</a>.</p><p>Here is the full OS code in 46 bytes of 8086 assembly opcodes.</p>
+<a href="https://git.sr.ht/~hocwp/10biForthOS">&#8619; 10biForthOS sourcehut page</a></blockquote><p>Yes, the entire operating system easily fits right here, inside an OSNews quote block:</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p><code>50b8 8e00 31d8 e8ff 0017 003c 0575 00ea</code><br><code>5000 3c00 7401 eb02 e8ee 0005 0588 eb47</code><br><code>b8e6 0200 d231 14cd e480 7580 c3f4</code></p>
+<a href="https://git.sr.ht/~hocwp/10biForthOS">&#8619; 10biForthOS sourcehut page</a></blockquote><p>How do you actually use this operating system? Once the operating system is loaded at boot, it listens on the serial port for instructions. You can then send the instruction 1 followed by a byte of an assembly opcode which will be compiled into a fixed location in memory. The instruction 0 will then execute the program. There&#8217;s also a version with keyboard support, as well as a much bigger version compiled for x86-64.</p><p>Something like this inevitably raises the question what an operating system really is, and if this extremely limited and minimalist thing can be considered as one. I&#8217;m not going to deep into this existential discussion, mostly because I land firmly on the side that this is indeed just as much an operating system as, say, Windows or MorphOS. This bit of code, when booted, allows you to operate the system.</p><p>It&#8217;s an operating system.</p></div>

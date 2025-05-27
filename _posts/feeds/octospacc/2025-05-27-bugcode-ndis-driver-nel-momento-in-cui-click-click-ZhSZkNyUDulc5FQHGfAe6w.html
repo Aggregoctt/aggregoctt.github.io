@@ -1,0 +1,27 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/05/27/bugcode_ndis_driver-nel-momento-in-cui-click-click/
+date: '2025-05-27T21:58:15'
+excerpt: Windows è una cosa allucinanta&#8230; e non abbiamo nulla di nuovo sotto
+  il sole, in questo senso, ok. Però questo è proprio uno di quei casi in cui mi vengono
+  in testa dubbi, domande; mi chiedo sinceramente come sia possibile che siamo arrivati
+  nell&#8217;anno di nostro Signore 2025 con la tecnologia che, bene o male [&#8230;]
+image: assets/media/ZhSZkNyUDulc5FQHGfAe6w-If1QKxzXXu6vFkv0ohimDQ.gif
+source: octospacc
+tags:
+- Senza categoria
+- bug
+- crash
+- driver
+- Windows
+- network
+- BUGCODE_NDIS_DRIVER
+- bugcode
+- BSOD
+title: BUGCODE_NDIS_DRIVER nel momento in cui click click
+---
+<div>
+
+		<p><strong>Windows &#232; una cosa allucinanta&#8230;</strong> e non abbiamo nulla di nuovo sotto il sole, in questo senso, ok. Per&#242; questo &#232; proprio uno di quei casi in cui mi vengono in testa dubbi, domande; mi chiedo sinceramente come sia possibile che siamo arrivati nell&#8217;anno di nostro Signore 2025 con la tecnologia che, bene o male &#8212; anche se decisamente pi&#249; male che bene &#8212; funziona, se <strong>nei momenti in cui fallisce lo fa in maniera cos&#236; catastrofica ed inspiegabile.</strong> Vedete e ammirate, che roba mi ha riservato ieri (&#8230;e che io sto inviando solo ora, perch&#233; sono io)&#8230;  &#128586;</p><p>Forse <strong>questo &#232; infatti il bug pi&#249; strano che mi &#232; successo fin&#8217;ora con il sistema operativo malefico, sul mio PC fisso</strong>. Ma no, la cosa pi&#249; strana non &#232; il fatto che il computer si fosse <strong>completamente freezato su questa schermata blu</strong>, non rispondendo a nessun tasto, che per tipo 3 minuti &#232; rimasta cos&#236; fin quando non mi sono scocciata e ho riavviato l&#8217;hardware col tasto RESET&#8230; La cosa che non capisco &#232; <strong>come ci &#232; arrivato in primo luogo a crashare in questo modo, il sistema</strong>, porco di un Bill Gates! &#128563;</p><p>Ho semplicemente fatto, <strong>mentre il PC era regolarmente connesso ad Internet via Ethernet</strong>, e tutte le mie applicazioni funzionavano su Internet<strong>, ma per qualche motivo il sistema Windows credeva di non avere connessione Internet</strong>, la seguente merdata: <strong>in Esplora Risorse &gt; Questo PC, ho fatto Aggiungi una posizione di rete</strong>, quindi Avanti, ed &#232; apparso un popup stile Windows 7 che chiedeva di configurare una connessione DSL o dial-up (nel 2025, e che dobbiamo fare). Visto che non mi faceva cliccare sotto, e cancellando il dialogo si chiudeva l&#8217;intero wizard, <strong>ho cliccato avanti su una delle due opzioni&#8230; ed immediatamente &#232; crashato tutto</strong>. &#128163;</p><p>Il codice di errore era <a href="https://learn.microsoft.com/it-it/windows-hardware/drivers/debugger/bug-check-0x7c--bugcode-ndis-driver"><strong>BUGCODE_NDIS_DRIVER</strong></a>, che Microsoft dice che &#8220;indica che il sistema operativo ha rilevato un errore in un driver di rete&#8220;&#8230; e questo era gi&#224; evidente, visto che lui era proprio convinto di non avere connessione, con anche sempre la classica icona del no connessione sulla taskbar, per&#242; mi faccia il piacere: o deve crashare subito, perch&#233; un driver si &#232; spaccato, o non deve crashare proprio, perch&#233; evidentemente lo spacc in questione non &#232; rilevante. <strong>Non ha il minimo senso che crashi perch&#233; ho semplicemente cliccato un tasto nella GUI di quello che in teoria &#232; un processo userspace!</strong> &#128557;</p> 
+ 
+	 </div>
