@@ -1,0 +1,60 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142447/signal-uses-windows-drm-to-counter-recall-snooping/
+date: '2025-05-27T21:13:37'
+excerpt: 'Microsoft&#8217;s Recall feature, which takes screenshots of the contents
+  of your screen every few seconds, saves them, and then runs text and image recognition
+  to extract information from them, has had a rocky start. Even now that it&#8217;s
+  out there and Microsoft deems it ready for everyone to use, it has huge security
+  and privacy gaps, and one of them is that applications that contain sensitive information,
+  such as the Windows Signal application, cannot &#8216;opt out&#8217; of having their
+  contents scraped. Signal was rather unhappy with this massive privacy risk, and
+  decided to do something about it. It&#8217;s called screen security, and is Windows-only
+  because it&#8217;s specifically designed to counter Windows Recall. If you attempt
+  to take a screenshot of Signal Desktop when screen security is enabled, nothing
+  will appear. This limitation can be frustrating, but it might look familiar to you
+  if you’ve ever had the audacity to try and take a screenshot of a movie or TV show
+  on Windows. According to Microsoft’s official developer documentation, setting the
+  correct Digital Rights Management (DRM) flag on the application window will ensure
+  that “content won’t show up in Recall or any other screenshot application.” So that’s
+  exactly what Signal Desktop is now doing on Windows 11 by default. ↫ Joshua Lund
+  on the Signal blog Microsoft cares more about enforcing the rights of massive corporations
+  than it does about respecting the privacy of its users. As such, everything is in
+  place in Windows to ensure neither you nor Recall can take screenshots of, I don&#8217;t
+  know, the Bee Movie, but nothing has been put in place to protect your private and
+  sensitive messages in a service like Signal. This really tells you all you need
+  to know about who Microsoft truly cares about, and it sure as hell isn&#8217;t you,
+  the user. What Signal is doing is absolutely brilliant. By turning Windows&#8217;
+  digital rights management features against Recall to protect the privacy of Signal
+  users, Signal has made it impossible &#8211; or at least very hard &#8211; for Microsoft
+  to address this. Of course, this also means that taking screenshots of the Signal
+  application on Windows for legitimate purposes is more cumbersome now, but since
+  you can temporarily turn screen security off to take a screenshot means it&#8217;s
+  not impossible. I almost want other Windows developers to employ this same trick,
+  just to make Recall less valuable, but that&#8217;s probably not a great idea considering
+  how much it would annoy users just trying to take legitimate screenshots. My uneducated
+  guess is that this is exactly why Microsoft isn&#8217;t providing developers with
+  the kind of fine-grained controls to let Recall know what it can and cannot take
+  screenshots of: Microsoft must know Recall is a feature for shareholders, not for
+  users, and that users will ask developers to opt-out of any Recall snooping if such
+  APIs were officially available. Microsoft wants to make it has hard as possible
+  for applications to opt out of being sucked into the privacy black hole that is
+  Recall, but in doing so, might be pushing developers to use DRM to achieve the same
+  goal. Just delicious. Signal also signed off with a scathing indictment of &#8220;AI&#8221;
+  as a whole. “Take a screenshot every few seconds” legitimately sounds like a suggestion
+  from a low-parameter LLM that was given a prompt like “How do I add an arbitrary
+  AI feature to my operating system as quickly as possible in order to make investors
+  happy?” — but more sophisticated threats are on the horizon. The integration of
+  AI agents with pervasive permissions, questionable security hygiene, and an insatiable
+  hunger for data has the potential to break the blood-brain barrier between applications
+  and operating systems. This poses a significant threat to Signal, and to every privacy-preserving
+  application in general. ↫ Joshua Lund on the Signal blog Heed this warning.'
+image: null
+source: osnews
+tags:
+- Privacy, Security
+title: Signal uses Windows’ DRM to counter Recall snooping
+---
+<div><p>Microsoft&#8217;s Recall feature, which takes screenshots of the contents of your screen every few seconds, saves them, and then runs text and image recognition to extract information from them, has had a rocky start. Even now that it&#8217;s out there and Microsoft deems it ready for everyone to use, it has huge security and privacy gaps, and one of them is that applications that contain sensitive information, such as the Windows Signal application, cannot &#8216;opt out&#8217; of having their contents scraped.</p><p>Signal was rather unhappy with this massive privacy risk, and decided to do something about it. It&#8217;s called screen security, and is Windows-only because it&#8217;s specifically designed to counter Windows Recall.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>If you attempt to take a screenshot of Signal Desktop when screen security is enabled, nothing will appear. This limitation can be frustrating, but it might look familiar to you if you&#8217;ve ever had the audacity to try and take a screenshot of a movie or TV show on Windows. According to Microsoft&#8217;s <a href="https://learn.microsoft.com/en-us/windows/client-management/manage-recall#information-for-developers">official developer documentation</a>, setting the correct <a href="https://en.wikipedia.org/wiki/Digital_rights_management">Digital Rights Management</a> (DRM) flag on the application window will ensure that &#8220;content won&#8217;t show up in Recall or any other screenshot application.&#8221; So that&#8217;s exactly what Signal Desktop is now doing on Windows 11 by default.</p>
+<a href="https://signal.org/blog/signal-doesnt-recall/">&#8619; Joshua Lund on the Signal blog</a></blockquote><p>Microsoft cares more about enforcing the rights of massive corporations than it does about respecting the privacy of its users. As such, everything is in place in Windows to ensure neither you nor Recall can take screenshots of, I don&#8217;t know, the Bee Movie, but nothing has been put in place to protect your private and sensitive messages in a service like Signal. This really tells you all you need to know about who Microsoft truly cares about, and it sure as hell isn&#8217;t you, the user.</p><p>What Signal is doing is absolutely brilliant. By turning Windows&#8217; digital rights management features against Recall to protect the privacy of Signal users, Signal has made it impossible &#8211; or at least very hard &#8211; for Microsoft to address this. Of course, this also means that taking screenshots of the Signal application on Windows for legitimate purposes is more cumbersome now, but since you can temporarily turn screen security off to take a screenshot means it&#8217;s not impossible.</p><p>I almost want other Windows developers to employ this same trick, just to make Recall less valuable, but that&#8217;s probably not a great idea considering how much it would annoy users just trying to take legitimate screenshots. My uneducated guess is that this is exactly why Microsoft isn&#8217;t providing developers with the kind of fine-grained controls to let Recall know what it can and cannot take screenshots of: Microsoft must know Recall is a feature for shareholders, not for users, and that users will ask developers to opt-out of any Recall snooping if such APIs were officially available.</p><p>Microsoft wants to make it has hard as possible for applications to opt out of being sucked into the privacy black hole that is Recall, but in doing so, might be pushing developers to use DRM to achieve the same goal. Just delicious.</p><p>Signal also signed off with a scathing indictment of &#8220;AI&#8221; as a whole.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>&#8220;Take a screenshot every few seconds&#8221; legitimately sounds like a suggestion from a low-parameter LLM that was given a prompt like &#8220;How do I add an arbitrary AI feature to my operating system as quickly as possible in order to make investors happy?&#8221; &#8212; but more sophisticated threats are on the horizon.</p><p>The integration of AI agents with pervasive permissions, questionable security hygiene, and an insatiable hunger for data has the potential to break <a href="https://techcrunch.com/2025/03/07/signal-president-meredith-whittaker-calls-out-agentic-ai-as-having-profound-security-and-privacy-issues/">the blood-brain barrier</a> between applications and operating systems. This poses a significant threat to Signal, and to every privacy-preserving application in general.</p>
+<a href="https://signal.org/blog/signal-doesnt-recall/">&#8619; Joshua Lund on the Signal blog</a></blockquote><p>Heed this warning.</p></div>
