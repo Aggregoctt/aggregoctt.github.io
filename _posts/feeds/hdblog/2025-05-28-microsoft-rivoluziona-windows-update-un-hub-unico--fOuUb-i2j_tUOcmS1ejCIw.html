@@ -1,0 +1,21 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/microsoft/articoli/n619983/microsoft-windows-update-centralizzati/
+date: '2025-05-28T10:25:00'
+excerpt: Un cambiamento epocale per gli aggiornamenti di Windows
+image: assets/media/fOuUb-i2j_tUOcmS1ejCIw-SNpiuGCBO-H-cNxl7mvOEg.webp
+source: hdblog
+tags:
+- Windows
+- Microsoft
+title: 'Microsoft rivoluziona Windows Update: un hub unico per tutti gli update software'
+---
+<div><p>Microsoft ha annunciato un'importante evoluzione per il suo sistema di aggiornamenti <a href="https://www.hdblog.it/windows-10-sun-valley/">in Windows 11</a>, presentando i piani per quella che definisce la "piattaforma di pianificazione di Windows Update". Si tratta di un'iniziativa ambiziosa che mira a<strong> trasformare Windows Update nel punto di riferimento centrale per la gestione di quasi tutti gli aggiornamenti software installati su un PC</strong>, andando quindi ben oltre i soli aggiornamenti del sistema operativo. L'idea di fondo, come illustrato dall'azienda in un post sul proprio blog, &#232; quella di porre fine all'attuale frammentazione, dove ogni applicazione dispone spesso di un proprio meccanismo di aggiornamento, con notifiche e tempistiche separate e talvolta invadenti per l'utente.</p><p>Questo nuovo sistema, che Microsoft specifica essere "costruito sullo stack di Windows Update" esistente, offrir&#224; agli sviluppatori di applicazioni la possibilit&#224; di<strong> integrare i propri aggiornamenti direttamente in questo gestore centralizzato</strong>. Ci&#242; avverr&#224; tramite nuove API e comandi PowerShell e gli sviluppatori, o chi gestisce gli aggiornamenti per loro conto, dovranno registrare il proprio software con il nuovo "pianificatore". Parte di questo processo includer&#224; l'indicazione di un file eseguibile che il sistema potr&#224; utilizzare per verificare la presenza di nuovi update per quella specifica app.</p>
+
+<p>Successivamente, tramite le API, potranno comunicare al pianificatore la disponibilit&#224; di un aggiornamento, fornendo dettagli come nome, versione, tipo di pacchetto, eventuale necessit&#224; di riavvio del sistema e scadenze per l'installazione su dispositivi gestiti centralmente. <strong>Per le applicazioni tradizionali Win32</strong>, che non utilizzano i moderni formati di pacchetto MSIX o APPX, gli sviluppatori avranno anche la possibilit&#224; di fornire eseguibili dedicati per gestire il download e l'installazione, e persino script per chiudere e riaprire automaticamente le applicazioni che potrebbero bloccare il processo di update.</p>
+
+<p>Una volta ricevute tutte queste informazioni, il sistema si occuper&#224; di pianificare in modo intelligente i download e le installazioni, mostrando all'utente le familiari notifiche di Windows Update quando &#232; richiesto un intervento o un'approvazione. L'applicazione aggiornata dovr&#224; poi comunicare al sistema l'esito dell'operazione (successo o fallimento), permettendo eventuali tentativi successivi in caso di problemi.</p><p>I potenziali vantaggi di questo approccio centralizzato includono una <strong>pianificazione degli aggiornamenti pi&#249; intelligente</strong>, che potrebbe tenere conto se il PC &#232; effettivamente in uso, e la disponibilit&#224; di una <strong>cronologia unica di tutti gli aggiornamenti installati</strong>, accessibile tramite le Impostazioni di Windows. Per gli sviluppatori, ci&#242; potrebbe tradursi nel non dover pi&#249; costruire e mantenere complessi sistemi di aggiornamento proprietari.</p>
+
+<p>Al momento, questa nuova piattaforma di pianificazione &#232; in fase di private preview, quindi si tratta ancora di uno stadio iniziale di sviluppo e test. Microsoft invita gli sviluppatori interessati a partecipare a questa fase di anteprima a contattare l'azienda tramite l'indirizzo email dedicato: <strong>unifiedorchestrator@service.microsoft.com</strong>.</p>
+
+<p>Si tratta indubbiamente di un progetto ambizioso che, se implementato con successo e superando le note criticit&#224; che talvolta hanno afflitto Windows Update in passato, potrebbe semplificare notevolmente la gestione degli aggiornamenti software sia per gli utenti finali che per gli sviluppatori.</p></div>
