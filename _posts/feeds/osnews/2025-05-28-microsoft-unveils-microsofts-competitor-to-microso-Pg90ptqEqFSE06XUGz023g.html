@@ -1,0 +1,53 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142454/microsoft-unveils-microsofts-competitor-to-microsofts-winget/
+date: '2025-05-28T19:56:42'
+excerpt: 'One of the ways in which Windows (and macOS) trails behind the Linux and
+  BSD world is the complete lack of centralised, standardised application management.
+  Windows users still have to scour the web to download sketchy installers straight
+  from the Windows 95 days, amassing a veritable collection updaters in the process,
+  which either continuously run in the background, or annoy you with update pop-ups
+  when you launch an application. It&#8217;s an archaic nightmare users of supposedly
+  modern computers should not have to be dealing with. Microsoft has tried to remedy
+  this, but in true Microsoft fashion, it did so halfheartedly, for instance with
+  the Windows Package Manager, better known as winget. Instead of building an actual
+  package manager, Microsoft basically just created a glorified script that downloads
+  the same installers you download manually, and runs them in unattended mode in the
+  background &#8211; it&#8217;s a download manager masquerading as a proper application
+  management framework. To complicate matters, winget is only available as a command-line
+  tool, meaning 99% of Windows users won&#8217;t be using it. There&#8217;s no graphical
+  frontend in Windows, and it&#8217;s not integrated into Windows Update, so even
+  if you strictly use winget to install your applications &#8211; which will be hard,
+  as there&#8217;s only about 1400 applications that use it &#8211; you still don&#8217;t
+  have a centralised place to upgrade your entire operating system and all of its
+  applications. It&#8217;s a mess, and Microsoft intends to address it. Again. This
+  time, they&#8217;re finally doing what should have been the goal from the start:
+  allowing applications to be updated through Windows Update. Built on the Windows
+  Update stack, the orchestration platform aims to provide developers and product
+  teams building apps and management tools with an API for onboarding their update(s)
+  that supports the needs of their installers. The orchestrator will coordinate across
+  all onboarded products that are updated on Windows 11, in addition to Windows Update,
+  to provide IT admins and users with a consistent management plane and experience,
+  respectively. ↫ Angie Chen on the Windows IT Pro Blog Sounds good, but hold on a
+  minute &#8211; &#8220;orchestration platform&#8221;? So this isn&#8217;t the existing
+  winget, but integrated into Windows Update, where it should&#8217;ve been all along?
+  No, what we&#8217;re looking at here is Microsoft&#8217;s competitor to Microsoft&#8217;s
+  winget inside Microsoft&#8217;s Windows Update, oh and there&#8217;s also the Windows
+  Store. In other words, once this rolls out, it&#8217;ll be yet another way to manage
+  applications, existing inside Windows Update, and alongside winget (and the Windows
+  Store). They way it works is surprisingly similar to winget: application developers
+  can register an update executable with the orchestrator, and the orchestrator will
+  periodically run this update executable to check for updates. In other words, this
+  looks a hell of a lot like a mere download manager for existing updaters. What it&#8217;s
+  definitively not, however, is winget &#8211; so if you&#8217;re a Windows application
+  developer, you now not only have to register your application to work with winget,
+  but also register it with this new orchestrator to work with Windows Update. This
+  thing is so incredibly Microsoft.'
+image: null
+source: osnews
+tags:
+- Windows
+title: Microsoft unveils Microsoft’s competitor to Microsoft’s winget
+---
+<div><p>One of the ways in which Windows (and macOS) trails behind the Linux and BSD world is the complete lack of centralised, standardised application management. Windows users still have to scour the web to download sketchy installers straight from the Windows 95 days, amassing a veritable collection updaters in the process, which either continuously run in the background, or annoy you with update pop-ups when you launch an application. It&#8217;s an archaic nightmare users of supposedly modern computers should not have to be dealing with.</p><p>Microsoft has tried to remedy this, but in true Microsoft fashion, it did so halfheartedly, for instance with the Windows Package Manager, better known as winget. Instead of building an actual package manager, Microsoft basically just created a glorified script that downloads the same installers you download manually, and runs them in unattended mode in the background &#8211; it&#8217;s a download manager masquerading as a proper application management framework.</p><p>To complicate matters, winget is only available as a command-line tool, meaning 99% of Windows users won&#8217;t be using it. There&#8217;s no graphical frontend in Windows, and it&#8217;s not integrated into Windows Update, so even if you strictly use winget to install your applications &#8211; which will be hard, as there&#8217;s only about 1400 applications that use it &#8211; you still don&#8217;t have a centralised place to upgrade your entire operating system and all of its applications.</p><p>It&#8217;s a mess, and Microsoft intends to address it. Again. This time, they&#8217;re finally doing what should have been the goal from the start: allowing applications to be updated through Windows Update.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Built on the Windows Update stack, the orchestration platform aims to provide developers and product teams building apps and management tools with an API for onboarding their update(s) that supports the needs of their installers. The orchestrator will coordinate across all onboarded products that are updated on Windows 11, in addition to Windows Update, to provide IT admins and users with a consistent management plane and experience, respectively.</p>
+<a href="https://techcommunity.microsoft.com/blog/windows-itpro-blog/introducing-a-unified-future-for-app-updates-on-windows/4416354">&#8619; Angie Chen on the Windows IT Pro Blog</a></blockquote><p>Sounds good, but hold on a minute &#8211; &#8220;orchestration platform&#8221;? So this isn&#8217;t the existing winget, but integrated into Windows Update, where it should&#8217;ve been all along? No, what we&#8217;re looking at here is Microsoft&#8217;s competitor to Microsoft&#8217;s winget inside Microsoft&#8217;s Windows Update, oh and there&#8217;s also the Windows Store. In other words, once this rolls out, it&#8217;ll be yet another way to manage applications, existing inside Windows Update, and alongside winget (and the Windows Store).</p><p>They way it works is surprisingly similar to winget: application developers can register an update executable with the orchestrator, and the orchestrator will periodically run this update executable to check for updates. In other words, this looks a hell of a lot like a mere download manager for existing updaters. What it&#8217;s definitively not, however, is winget &#8211; so if you&#8217;re a Windows application developer, you now not only have to register your application to work with winget, but also register it with this new orchestrator to work with Windows Update.</p><p>This thing is so incredibly Microsoft.</p></div>
