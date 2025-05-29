@@ -1,0 +1,31 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/hardware/articoli/n620115/asus-router-infettati-backdoor-allarme-ricercatori/
+date: '2025-05-29T11:25:00'
+excerpt: '9.000 router Asus colpiti da una backdoor sofisticata che sopravvive a riavvii
+  e aggiornamenti: si sospetta operazione su vasta scala di un attore legato a governi
+  stranieri.'
+image: assets/media/_Mg4BWH7mOqDeQ_WOy_7CA-R4usQFWgQ8GqO8PSQ0ILQg.webp
+source: hdblog
+tags:
+- Asus
+title: 'Router Asus sotto attacco: backdoor insidiosa colpisce migliaia di dispositivi'
+---
+<div><p>Migliaia di<strong> router del brand Asus </strong>sarebbero stati <strong>compromessi</strong>, con gravissime conseguenze per la privacy e la sicurezza dei rispettivi utenti. A lanciare l'allarme sono i ricercatori di GreyNoise che, considerata la gravit&#224; e il livello di sofisticazione dell'attacco, suggeriscono possa essere <a href="https://www.hdblog.it/attacchi-hacker/">opera di hacker</a> legati a un governo straniero. </p>    <p>I ricercatori di GreyNoise hanno scoperto una backdoor sofisticata che consente l&#8217;accesso remoto ai dispositivi infettati, resistendo sia ai riavvii che agli aggiornamenti firmware. Sarebbero oltre 9000 i router della Asus infettati in questo modo. Il rapporto &#232; stato pubblicato questo mercoled&#236;. </p><p>Il gruppo dietro l&#8217;attacco, probabilmente legato a un'entit&#224; statale, sfrutta<strong> vulnerabilit&#224; note</strong> e patchate (alcune delle quali mai tracciate ufficialmente con codici CVE) per ottenere il <strong>controllo amministrativo dei router</strong>. Una volta dentro, installano una chiave pubblica SSH che consente l&#8217;accesso continuo a chiunque possegga la chiave privata corrispondente. Questo sistema non lascia malware visibili n&#233; tracce evidenti, rendendo la compromissione particolarmente difficile da individuare.</p>    <p>Secondo GreyNoise, l&#8217;obiettivo al momento non sembra essere l&#8217;uso immediato dei dispositivi compromessi, ma piuttosto la creazione di una rete di router controllati da remoto, da attivare in operazioni future. La scoperta dei ricercatori potrebbe avere compromesso gli obiettivi criminali degli hacker, dunque. GreyNoise ha spiegato che l'operazione &#232; stata scoperta grazie all'uso di <strong>Sift, una nuova AI proprietaria</strong> progettata proprio per scoprire vulnerabilit&#224; e attacchi in corso come quello descritto in questa notizia. </p><p>Fortunatamente, &#232; possibile verificare se il proprio router &#232; stato compromesso "semplicemente" verificando gli accessi SSH attivi. Semplicemente tra virgolette, perch&#233; ci rendiamo conto che si tratta di un'operazione che potrebbe non essere alla portata di tutti gli utenti. </p>    <p>I router infettati mostrano un accesso SSH attivo sulla porta 53282, con una chiave che inizia con la seguente stringa: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAo41nBoVFfj4HlVMGV+YPsxMDrMlbdDZ..." . </p>    <p>E' anche possibile verificare se il proprio router &#232; stato contattato da uno dei seguenti IP: </p>
+
+<ul>
+	<li>
+	<p><i>101.99.91[.]151</i></p>
+	</li>
+	<li>
+	<p><i>101.99.94[.]173</i></p>
+	</li>
+	<li>
+	<p><i>79.141.163[.]179</i></p>
+	</li>
+	<li>
+	<p><i>111.90.146[.]237</i></p>
+	</li>
+</ul>
+
+<p>In caso positivo, &#232; necessario <strong>eliminare manualmente la chiave SSH</strong> e la porta nel pannello di configurazione del router. A prescindere dalla compromissione o meno del router, vi raccomandiamo di verificare e abilitare l'installazione automatica di patch e firmware di sicurezza. Asus ha gi&#224; rilasciato una patch per correggere la vulnerabilit&#224; che rende possibile l'installazione della backdoor, ciononostante, se questa &#232; gi&#224; stata installata non c'&#232; altra soluzione se non quella di rimuoverla manualmente seguendo le istruzioni che vi abbiamo riportato (e che trovate in dettaglio anche nei link in fonte). </p></div>
