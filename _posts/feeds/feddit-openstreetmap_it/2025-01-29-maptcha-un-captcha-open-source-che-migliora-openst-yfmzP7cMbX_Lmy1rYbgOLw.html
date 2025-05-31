@@ -1,0 +1,76 @@
+---
+author: https://feddit.it/u/damtux
+canonical_url: https://feddit.it/post/14431409
+date: '2025-01-29T19:09:27'
+excerpt: 'submitted by <a href="https://feddit.it/u/damtux">damtux</a> to <a href="https://feddit.it/c/openstreetmap_it">openstreetmap_it</a><br
+  />13 points | <a href="https://feddit.it/post/14431409">2 comments</a><br /><a href="https://fosdem.org/2025/schedule/event/fosdem-2025-5879-maptcha-the-open-source-captcha-that-improves-openstreetmap/">https://fosdem.org/2025/schedule/event/fosdem-2025-5879-maptcha-the-open-source-captcha-that-improves-openstreetmap/</a><p>Sessione
+  al FOSDEM 2025 tenuta da Anna Zanchetta (track Geospatial).</p>
+
+  <blockquote>
+
+  <p>I bot e lo spam sono una sfida per le piattaforme online.
+
+  I CAPTCHA tradizionali aiutano a bloccare i bot, ma spesso richiedono di migliorare
+  mappe e software proprietari, esponendo al contempo le informazioni degli utenti
+  ai fornitori di CAPTCHA di terze parti. OpenStreetMap (OSM) ha ancora molti oggetti
+  da mappare, ma la qualità degli oggetti generati dall’intelligenza artificiale non
+  è sufficientemente elevata per l’inclusione diretta. Introduciamo “MapTCHA”, un
+  CAPTCHA che sfrutta l’incertezza nell’interpretazione delle immagini con la computer
+  vision e fornisce una verifica umana per le previsioni dell’intelligenza artificiale:
+  agli utenti viene chiesto di identificare le immagini che contengono oggetti interpretati
+  correttamente, ad esempio i contorni di un edificio.</p>
+
+  <p>Separiamo i casi positivi noti, in cui sia la previsione dell’IA che OSM contengono
+  un oggetto, da quelli sconosciuti, in cui gli oggetti sono presenti solo nella previsione.
+
+  Generiamo anche i casi negativi noti dalle aree in cui gli oggetti
+
+  non sono presenti né in OSM né nella previsione. Mostriamo un mix di queste immagini
+  senza dire all’utente quali sono. Gli esseri umani vengono convalidati confermando
+  i positivi e i negativi noti, mentre noi determiniamo la verità delle immagini sconosciute
+  aggregando le risposte degli utenti attraverso il voto.
+
+  Quando il voto indica un’elevata fiducia nell’esistenza di un oggetto, suggeriamo
+  la posizione per la mappatura OSM.</p>
+
+  <p>Il nostro prototipo identifica gli edifici utilizzando immagini aeree con una
+  risoluzione sufficiente a visualizzare singoli edifici e oggetti di medie dimensioni.
+
+  Il riconoscimento delle immagini è fornito da fAIr, un sistema open-source di mappatura
+  assistita dall’intelligenza artificiale sviluppato dal Team Humanitarian OpenStreetMap
+  (HOT).
+
+  Consente l’addestramento e la messa a punto di modelli di apprendimento automatico
+  pre-addestrati per segmentare le impronte degli edifici.</p>
+
+  <p>I piani futuri prevedono l’espansione a più oggetti e tipi di immagini, l’affinamento
+  dei modelli di intelligenza artificiale, l’integrazione di MapTCHA in vari sistemi
+  di login e il miglioramento dell’interfaccia utente.</p>
+
+  <p>In questa sessione parleremo di come stiamo costruendo questa soluzione, di come
+  potrebbe migliorare le attività di mappatura in OSM a sostegno dei progetti sul
+  campo e di alcune sfide legate al lavoro con i dati derivati dall’intelligenza artificiale.</p>
+
+  </blockquote>
+
+  <p>(traduzione dall’originale nel sito del FOSDEM linkato)</p>'
+image: assets/media/yfmzP7cMbX_Lmy1rYbgOLw-KH5eA0KBxFsd9EEgQ0Rqjw.webp
+source: feddit-openstreetmap_it
+tags:
+- OpenStreetMap Italia Community
+title: MapTCHA, un captcha open source che migliora OpenStreetMap
+---
+<div><blockquote dir="auto">
+<p dir="auto">I bot e lo spam sono una sfida per le piattaforme online.
+I CAPTCHA tradizionali aiutano a bloccare i bot, ma spesso richiedono di migliorare mappe e software proprietari, esponendo al contempo le informazioni degli utenti ai fornitori di CAPTCHA di terze parti. OpenStreetMap (OSM) ha ancora molti oggetti da mappare, ma la qualit&#224; degli oggetti generati dall&#8217;intelligenza artificiale non &#232; sufficientemente elevata per l&#8217;inclusione diretta. Introduciamo &#8220;MapTCHA&#8221;, un CAPTCHA che sfrutta l&#8217;incertezza nell&#8217;interpretazione delle immagini con la computer vision e fornisce una verifica umana per le previsioni dell&#8217;intelligenza artificiale: agli utenti viene chiesto di identificare le immagini che contengono oggetti interpretati correttamente, ad esempio i contorni di un edificio.</p>
+<p dir="auto">Separiamo i casi positivi noti, in cui sia la previsione dell&#8217;IA che OSM contengono un oggetto, da quelli sconosciuti, in cui gli oggetti sono presenti solo nella previsione.
+Generiamo anche i casi negativi noti dalle aree in cui gli oggetti
+non sono presenti n&#233; in OSM n&#233; nella previsione. Mostriamo un mix di queste immagini senza dire all&#8217;utente quali sono. Gli esseri umani vengono convalidati confermando i positivi e i negativi noti, mentre noi determiniamo la verit&#224; delle immagini sconosciute aggregando le risposte degli utenti attraverso il voto.
+Quando il voto indica un&#8217;elevata fiducia nell&#8217;esistenza di un oggetto, suggeriamo la posizione per la mappatura OSM.</p>
+<p dir="auto">Il nostro prototipo identifica gli edifici utilizzando immagini aeree con una risoluzione sufficiente a visualizzare singoli edifici e oggetti di medie dimensioni.
+Il riconoscimento delle immagini &#232; fornito da fAIr, un sistema open-source di mappatura assistita dall&#8217;intelligenza artificiale sviluppato dal Team Humanitarian OpenStreetMap (HOT).
+Consente l&#8217;addestramento e la messa a punto di modelli di apprendimento automatico pre-addestrati per segmentare le impronte degli edifici.</p>
+<p dir="auto">I piani futuri prevedono l&#8217;espansione a pi&#249; oggetti e tipi di immagini, l&#8217;affinamento dei modelli di intelligenza artificiale, l&#8217;integrazione di MapTCHA in vari sistemi di login e il miglioramento dell&#8217;interfaccia utente.</p>
+<p dir="auto">In questa sessione parleremo di come stiamo costruendo questa soluzione, di come potrebbe migliorare le attivit&#224; di mappatura in OSM a sostegno dei progetti sul campo e di alcune sfide legate al lavoro con i dati derivati dall&#8217;intelligenza artificiale.</p>
+</blockquote>
+</div>
