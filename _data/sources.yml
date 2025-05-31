@@ -139,6 +139,41 @@ dday:
   url: https://www.dday.it/feed
   category: Tech
 
+arstechnica:
+  name: Ars Technica
+  url: https://arstechnica.com/feed/
+  category: Tech
+
 simsaladream:
   url: https://simsaladream.wordpress.com/feed/
   category: Blogs
+
+feddit-devol:
+  name: Feddit - Devol
+  url: https://feddit.it/feeds/c/devol.xml?sort=New
+  category: Feeds
+
+feddit-openstreetmap_it:
+  name: Feddit - OpenStreetMap Italia
+  url: https://feddit.it/feeds/c/openstreetmap_it.xml?sort=New
+  category: Feeds
+
+feddit-caffeitalia:
+  name: Feddit - Caffé Italia
+  url: https://feddit.it/feeds/c/caffeitalia.xml?sort=New
+  category: Feeds
+
+feddit-memita:
+  name: Feddit - Meme Italiani
+  url: https://feddit.it/feeds/c/memita.xml?sort=New
+  category: Fun
+
+feddit-matematica:
+  name: Feddit - Matematica
+  url: https://feddit.it/feeds/c/matematica.xml?sort=New
+  category: Feeds
+
+feddit-giappone:
+  name: Feddit - Giappone
+  url: https://feddit.it/feeds/c/giappone.xml?sort=New
+  category: Feeds
