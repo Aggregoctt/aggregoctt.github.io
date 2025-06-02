@@ -1,0 +1,54 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2025/06/microsoft-belatedly-attempts-to-tame-usb-c-confusion-with-its-rules-for-pc-oems/
+date: '2025-06-02T21:19:48'
+excerpt: USB-C ports have always supported different capabilities on different systems.
+image: assets/media/U3I6JS-G8D0kav6mfBtRBA-JqM-CkTQ4eXIUTVc8y94Xw.webp
+source: arstechnica
+tags:
+- Tech
+- USB-C
+- windows 11
+- windows 11 24h2
+title: Microsoft belatedly attempts to tame USB-C confusion with its rules for PC
+  OEMs
+---
+<div>
+                      
+                      
+          <p>We've been covering the small, reversible USB Type-C connector since the days when it was just <a href="https://arstechnica.com/gadgets/2014/09/reversible-tiny-faster-hands-on-with-the-usb-type-c-plug/">a USB Implementers Forum tech demo</a>, and in the decade-plus since then, the port has gradually taken over the world. It gradually migrated from laptops to game consoles, to PC accessories, to Android phones, to e-readers, and to iPhones. Despite some hiccups and shortcomings, we're considerably closer to a single connector that does everything than we were a decade ago.</p>
+<p>But some of that confusion persists. A weakness built into the USB-C from the very beginning was that the specification for the physical connector was always separate from the specifications for the USB protocol itself (that is, the data transfer speed a given port is capable of), the USB Power Delivery specification for charging, and the USB-C Alt Mode specification for carrying non-USB signals like DisplayPort or HDMI.</p>
+<p>All of these specifications were frequently grouped together so that individual USB-C ports could handle charging, display output, and data transfers (or some combination of all three at once), but they weren't&#160;required to go together, so occasionally users will still run into physical USB-C ports that fall short of the port's do-everything promise.</p>
+<p>Microsoft is stepping in to iron out the last of those inconsistencies, according to <a href="https://techcommunity.microsoft.com/blog/microsoftusbblog/ending-usb-c%C2%AE-port-confusion/4410479">a post on the company's Microsoft USB Blog</a> late last week (did you know that Microsoft had a USB Blog? I didn't until recently). Microsoft is using its <a href="https://learn.microsoft.com/en-us/windows-hardware/design/compatibility/">Windows Hardware Compatibility Program</a> (WHCP) for PC companies to mandate support for charging, display output, and at least 5Gbps USB speeds on all USB-C ports built into all PCs, using its clout as the main software provider for the entire Windows PC ecosystem to weed out the last few systems that ship with partially functional USB-C ports.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>"Windows Diagnostics Data shows that 27 percent of PCs with USB4 have encountered a limited functionality notification, meaning that a customer plugged a USB-C device in, but a feature (alternate mode) that device needs was not implemented on the PC and Windows notified the user," wrote Microsoft Senior Product Manager Ugan Sivagnanenthirarajah. "The reversible USB Type-C connector isn&#8217;t the problem, the inconsistent implementations of USB-C port capabilities across the PC ecosystem is."</p>
+ 
+
+<p>According to Microsoft, all USB-C ports must include "PC charging support" and support for a minimum of one external display, plus the ability to supply at least 4.5 W of power to a connected accessory. Microsoft doesn't mandate the use of higher 10, 20, 40, or 80Gbps transfer speeds or a specific USB-PD wattage level, nor does it require all USB-C ports to support connecting external PCI Express devices like external graphics docks. But at a bare minimum, users should expect USB 3.x speeds, display output, and charging support from any USB-C port in any Windows laptop built by one of the major OEMs.</p>
+<p>Microsoft says that Intel still handles certification for its Thunderbolt specification, and that Thunderbolt 4 and 5 ports still handle a superset of all USB-C capabilities, including support for PCI Express devices, 40 or 80Gbps transfer speeds, support for two or more external 4K displays, and up to 15 W of power for external accessories. That said, any ports that advertise 40 or 80Gbps USB4 support will also be required to support Thunderbolt 3-certified accessories.</p>
+<h2>Herding cats</h2>
+<p>The WHCP program provides automated testing tools that PC companies can use to ensure that their new systems work as expected with Windows, and Microsoft can use data from the program to detect and solve issues across the entire Windows ecosystem. For example, the new WHCP requirements mandate that USB-C ports use Windows' built-in USB drivers, which means that fixes for problems that arise can be distributed across all Windows systems via Windows Update rather than requiring additional effort on the part of the PC builder.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>Microsoft has never had the kind of control over the PC ecosystem that Apple enjoys over its Mac hardware and software, but the WHCP program (and other, older predecessors) have allowed Microsoft to nudge the wider PC ecosystem forward over the years; it has helped drive adoptions of technologies like <a href="https://mjg59.dreamwidth.org/5552.html">UEFI and Secure Boot</a>, Trusted Platform Modules, and <a href="https://www.windowscentral.com/windows-11-requires-precision-touchpads-and-thats-good-most-laptops">Precision Touchpads</a>. And despite occasionally being controversial, those requirements have gradually made the PC ecosystem more secure and reliable&#8212;local disk encryption is now supported invisibly by the vast majority of PCs rather than being a niche feature for corporate IT departments, for example, and large multi-touch trackpads are no longer held back by outdated and flaky drivers.</p>
+<p>This USB-C intervention on Microsoft's part is coming a bit late, but it should gradually fix some of the functional shortcomings of USB-C. The port is still a bit of a mess&#8212;even with Microsoft's intervention, you still need a dense table full of data to tell you all of the different things a USB-C port might do when you plug something into it&#8212;but this should help to set a functional baseline that the USB-IF arguably should have insisted on a decade ago.</p>
+
+
+          
+                  
+
+                  
+          </div>
