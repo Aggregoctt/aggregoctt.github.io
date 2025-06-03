@@ -1,0 +1,65 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/gadgets/2025/06/polish-engineer-creates-postage-stamp-sized-1980s-atari-computer/
+date: '2025-06-03T20:22:36'
+excerpt: Hobby project shrinks 1980s computer platform that pierced the Iron Curtain.
+image: assets/media/BEJNOXwfhR8Ohtkp8UaGgA-G4AbqMdBu126HUBmIUvmtg.webp
+source: arstechnica
+tags:
+- Tech
+- Atari
+- Atari 8-bit
+- Atari 800
+- Atari computers
+- Atarino
+- retrocomputing
+- retrogaming
+- retrotech
+- Vintage computing
+title: Polish engineer creates postage stamp-sized 1980s Atari computer
+---
+<div>
+                      
+                      
+          <p>In 1979, Atari released the Atari <a href="https://arstechnica.com/gaming/2025/04/how-a-1980s-atari-creator-with-cystic-fibrosis-crafted-a-story-of-salmon-survival/">400 and 800</a>, groundbreaking home computers that included custom graphics and sound chips, four joystick ports, and the ability to run the <a href="https://en.wikipedia.org/wiki/Star_Raiders">most advanced</a> home video games of their era. These machines, which retailed for $549 and $999, respectively, represented a leap in consumer-friendly personal computing, with their modular design and serial I/O bus that <a href="https://www.fastcompany.com/90432140/how-atari-took-on-apple-in-the-1980s-home-pc-wars">presaged USB</a>. Now, 46 years later, a hobbyist has shrunk down the system hardware to a size that would have seemed like science fiction in the 1970s.</p>
+<p>Polish engineer Piotr "Osa" Ostapowicz <a href="https://forums.atariage.com/topic/381202-the-new-extraordinary-a8-clone-platform/">recently unveiled</a> "Atarino," what may be the world's smallest 8-bit Atari computer recreation, according to retro computing site <a href="https://www.atariteca.net.pe/2025/05/atarino-el-atari-8-bits-mas-pequeno.html">Atariteca</a>. The entire system&#8212;processor, graphics chips, sound hardware, and memory controllers&#8212;fits on a module measuring just 2&#215;1.5 centimeters (about 0.79&#215;0.59 inches), which is roughly the size of a postage stamp.</p>
+<p>Ostapowicz's creation reimplements the classic Atari XL/XE architecture using modern <a href="https://en.wikipedia.org/wiki/Field-programmable_gate_array">FPGA</a> (field-programmable gate array) technology. Unlike software emulators that simulate old hardware (and modern recreations that run them, like the <a href="https://arstechnica.com/gadgets/2024/01/why-i-hope-the-atari-400-mini-will-bring-respect-to-ataris-most-underrated-platform/">Atari 400 Mini</a> console) on a complete computer system of another architecture, Atarino reproduces the original Atari components faithfully at the logic level, allowing it to run vintage software while maintaining compatibility with original peripherals.</p>
+ 
+
+<p>"The current project is not strictly a clone of Atari but basically, well, I'm forming a machine that is compatible with the Atari 8-bit computer itself, but it was created on the basis of the framework that I created some time ago," Ostapowicz <a href="https://www.youtube.com/watch?v=XNLTSS3DUwI">told</a> Atari Online PL in a January 2024 YouTube interview.</p>
+ 
+
+<p>The project, which began over a decade ago and was first publicly demonstrated in December 2023, includes a <a href="https://en.wikipedia.org/wiki/MOS_Technology_6502">6502C</a> processor, <a href="https://en.wikipedia.org/wiki/ANTIC">ANTIC</a> and <a href="https://en.wikipedia.org/wiki/CTIA_and_GTIA">GTIA</a> graphics chips, <a href="https://en.wikipedia.org/wiki/POKEY">POKEY</a> sound chip, and memory controllers onto a single Lattice UP5K FPGA chip. Despite its tiny size, the system can run at clock speeds up to 31 MHz&#8212;far faster than the original hardware's 1.79 MHz.</p>
+<h2>Smaller, faster, and positioned for future projects</h2>
+<p>While Atarino maintains broad compatibility with classic Atari software, Ostapowicz says he has enhanced the original design in several ways. For example, the 6502 processor core follows the physical chip specifications but adds new instructions. The memory system uses independent channels rather than the original's "<a href="http://krap.pl/mirrorz/atari/homepage.ntlworld.com/kryten_droid/Atari/800XL/atari_hw/atari_cycle_counting.htm">cycle stealing</a>" approach (where the graphics chip temporarily halts the CPU to access memory), improving performance.</p>
+
+          
+                       
+                   
+                   
+                  
+
+              
+          
+          
+<p>The graphics capabilities of the Atarino also extend beyond the original's limitations. Ostapowicz implemented functional clones of the ANTIC and GTIA chips with extended resolution modes. And the system outputs video through both VGA at 60 Hz and HDMI.</p>
+ 
+
+<p>The modular design allows hobbyists to integrate Atarino into custom keyboards, miniaturized cases, or development boards. Ostapowicz has created multiple keyboard variants, including one based on the <a href="https://www.computinghistory.org.uk/det/11984/Atari-65XE/">65XE</a> layout and another using a UART interface with microcontroller-based scanning. The system also supports connections to modern peripherals through Wi-Fi or Ethernet modules.</p>
+<p>Development continues on the project, with Ostapowicz currently refining the POKEY sound chip emulation to match the original's asynchronous behavior. He's also working on simplifying development tools for users, with the environment already compatible with CC65 and Visual Studio Code. He plans to release complete kits with documentation, inviting the retrocomputing community to experiment with the hardware.</p>
+<h2>The European Atari connection</h2>
+<p>The Atari 8-bit platform <a href="https://www.atariorbit.org/2025/01/16/rogul-an-interview-with-wojciech-bocianski/">holds particular significance</a> in Poland and Europe in general, where these computers performed well on the home market throughout the 1980s and into the 1990s. While most American consumers had moved on to newer systems, Polish users in particular embraced Atari's affordable computers during the country's economic transition away from communism, creating a vibrant community that persists today. This nostalgic connection has made Poland a global hub for Atari 8-bit development and preservation.</p>
+ 
+
+<p>In communist Poland, Western computers were primarily available through <a href="https://en.wikipedia.org/wiki/Pewex">Pewex</a>, a chain of hard-currency shops that accepted only US dollars. Despite <a href="https://hackaday.com/2014/12/15/home-computers-behind-the-iron-curtain/">COCOM embargoes</a> on Western technology, Atari computers became generally available at these stores, partly thanks to efforts by <a href="https://3seaseurope.com/jack-tramiel-commodore-lodz-poland/">Jack Tramiel</a>, the Polish-born Atari owner who ensured his computers reached his homeland. This nostalgic connection has made Poland a global hub for Atari 8-bit development and preservation.</p>
+<p>For Atarino creator Ostapowicz, his Atari miniaturization project is more than a nostalgic exercise or a mere technical challenge; it stems from a desire to create a tiny platform that applies 8-bit computing to new applications. He also saw an opportunity to build something fun and useful for today's hobbyists and developers, bridging the past with future possibilities.</p>
+<p>"I just came to the conclusion that we can build something that is compatible with Atari, give it a miniature form, and then it will happen," he said in the Atari Online interview. "As I mentioned, if someone wants to make a portable console, he has an open road. If someone wants to make an IoT system out of it, here you go."</p>
+
+
+          
+                   
+                   
+                  
+
+                  
+          </div>
