@@ -1,0 +1,32 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142480/fvwm3-1-1-3-released-completes-transition-from-autotools-to-meson/
+date: '2025-06-03T20:53:30'
+excerpt: 'Fvwm3, the venerable, solid, configurable, no-nonsense window manager for
+  X, has been updated: fvwm3 1.1.3 has been released. While the version number indicates
+  that this is a minor release, there&#8217;s one reason why 1.1.3 is actually a much
+  bigger deal than the version number suggests: it switches the build system from
+  autotools to meson. Fvwm is very old, and has been using autotools since 1996 (before
+  then it was using handcrafted makefiles), but the release of autotools 2.70, which
+  came eight years after the previous release, the amount of changes in autotools
+  proved to be a major headache for fvwm. Since the amount of work would be considerable,
+  the project decided to look at alternatives to autotools, and after considering
+  CMake and meson, the latter was chosen. This was chosen primary because X11 itself
+  is transitioning its projects from autotools to meson. Additionally, there has been
+  good help from the wider community around meson&#8217;s adoption. In terms of &#8220;speed&#8221;,
+  the parallelised nature of not using make does mean compilation speeds are improved,
+  even on lower-end systems. ↫ Thomas Adam To ensure you don&#8217;t need Python 3
+  just to build fvwm3, you can use muon starting with muon version 0.13. Muon is written
+  in C, and only requires a C compiler to be built. Fvwm3&#8217;s transition from
+  autotools to Meson started with version 1.1.1, and with 1.1.3 autotools has been
+  completely deprecated. As for actual changes to fvwm3 itself, this point release
+  is exactly what you&#8217;d expect &#8211; a few bug fixes, as well as some minor
+  changes to FvwmRearrange.'
+image: null
+source: osnews
+tags:
+- Desktop environments
+title: Fvwm3 1.1.3 released, completes transition from autotools to meson
+---
+<div><p>Fvwm3, the venerable, solid, configurable, no-nonsense window manager for X, has been updated: <a href="https://github.com/fvwmorg/fvwm3/releases/tag/1.1.3">fvwm3 1.1.3 has been released</a>. While the version number indicates that this is a minor release, there&#8217;s one reason why 1.1.3 is actually a much bigger deal than the version number suggests: it <a href="https://github.com/fvwmorg/fvwm3/discussions/1068">switches the build system from autotools to meson</a>.</p><p>Fvwm is very old, and has been using autotools since 1996 (before then it was using handcrafted makefiles), but the release of autotools 2.70, which came eight years after the previous release, the amount of changes in autotools proved to be a major headache for fvwm. Since the amount of work would be considerable, the project decided to look at alternatives to autotools, and after considering CMake and meson, the latter was chosen.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>This was chosen primary because X11 itself is transitioning its projects from autotools to meson. Additionally, there has been good help from the wider community around meson&#8217;s adoption.</p><p>In terms of &#8220;speed&#8221;, the parallelised nature of not using <code>make</code> does mean compilation speeds are improved, even on lower-end systems.</p>
+<a href="https://github.com/fvwmorg/fvwm3/discussions/1068">&#8619; Thomas Adam</a></blockquote></div>
