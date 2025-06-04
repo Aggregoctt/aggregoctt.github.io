@@ -1,0 +1,47 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/06/04/quaternioni-che-non-ce-lhanno-fatta/
+date: '2025-06-04T02:51:25'
+excerpt: 'I quaternioni sono un&#8217;estensione dei numeri complessi, ideata da William
+  Rowan Hamilton che voleva estendere alla terza dimensione le operazioni geometriche
+  permesse sul piano dall&#8217;introduzione dei numeri complessi: dopo lunghi e infruttuosi
+  tentativi di aggiungere una nuova unità immaginaria che rappresentasse l&#8217;asse
+  z, il 16 ottobre 1843 ebbe l&#8217;idea risolutiva mentre passeggiava con la moglie
+  [&#8230;]'
+image: assets/media/m6d7XbIHBPA4hqPLX2Tpfg-wEVGvUTFF3YUL-cMh5NIhg.webp
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Quaternioni che non ce l’hanno fatta
+---
+<div>
+			<p>I quaternioni sono un&#8217;estensione dei numeri complessi, ideata da William Rowan Hamilton che voleva estendere alla terza dimensione le operazioni geometriche permesse sul piano dall&#8217;introduzione dei numeri complessi: dopo lunghi e infruttuosi tentativi di aggiungere una nuova unit&#224; immaginaria che rappresentasse l&#8217;asse z, il 16 ottobre 1843 ebbe l&#8217;idea risolutiva mentre passeggiava con la moglie a Dublino e passava su Brougham Bridge: occorreva anche avere una terza unit&#224; immaginaria per riuscire a far tornare i conti nel caso di moltiplicazioni. Incise cos&#236; sul parapetto del ponte le formule di base per i quaternioni: (ora il ponte si chiama Broom Bridge, e al posto dell&#8217;incisione c&#8217;&#232; una targa)</p>
+<p>$$i^2 = j^2 = k^2 = ijk = &#8722;1$$</p>
+ 
+<p>Ok, tecnicamente non serviva una terza unit&#224; immaginaria: Hamilton avrebbe potuto accontentarsi di $i$ e $j$, con le uguaglianze $i^2 = j^2 = -1$ e $ij = -ji$, ma evidentemente preferiva una simmetria totale. Come avete notato, passando ai quaternioni perdiamo qualcosa. Come nel caso dei numeri complessi non avevamo pi&#249; un ordinamento (naturale: possiamo sempre dire che $a+bi &gt; c+di$ se $a&gt;c$ oppure $a=c, b&gt;d$, ma non ce ne facciamo niente in pratica), con i quaternioni perdiamo la commutativit&#224; della moltiplicazione. Questo non dovrebbe stupirci: se i quaternioni rappresentano operazioni che si fanno nello spazio e nel particolare quelli unitari rappresentano una rotazione, sappiamo che il risultato della composizione di due rotazioni spaziali dipende dall&#8217;ordine con cui si eseguono. La cosa divertente &#232; che come al solito in matematica non si butta mai via nulla: la moltiplicazione di due quaternioni &#232; fondamentalmente identica all&#8217;<a href="https://it.wikipedia.org/wiki/Identit%C3%A0_dei_quattro_quadrati_di_Eulero">Identit&#224; dei quattro quadrati di Eulero</a>, che il grande matematico svizzero aveva scoperto un secolo prima&#8230;</p>
+<p>Quello che per&#242; ho scoperto in questi giorni &#232; che i quaternioni non sono stati l&#8217;unico modo per rappresentare l&#8217;algebra corrispondente agli spazi 3D e 4D! I primi esempi sono stati trovati da James Cockle, un altro avvocato prestato alla matematica. Nel 1848 Cockle propose i <a href="https://en.wikipedia.org/wiki/Bicomplex_number#Tessarines">tessarini</a>, che sono definiti dalle seguenti relazioni: </p>
+<p>$$i j = j i = k, \quad i^2 = -1, \quad j^2 = 1$$</p>
+ 
+<p>I tessarini sono stati creati per rappresentare seno e coseno iperbolico, ma hanno lo svantaggio di avere dei divisori dello zero, cio&#232; due numeri non nulli tale che il loro prodotto sia zero. L&#8217;anno successivo Cockle propose cos&#236; i <a href="https://en.wikipedia.org/wiki/Split-quaternion">coquaternioni</a>, con le relazioni </p>
+<p>$$i^2 = -1, \quad j^2 = k^2 = 1, \quad ij = k = -ji $$</p>
+ 
+<p>Anche in questo caso per&#242; abbiamo divisori dello zero e addirittura elementi nilpotenti (che cio&#232; elevati a una potenza sufficientemente alta danno zero.</p>
+<p>Tutti questi tipi di numero vengono oggi visti come matrici 2&#215;2: abbiamo per i quaternioni le unit&#224;</p>
+<p>$$1 = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \qquad<br>
+  i = \begin{pmatrix} i &amp; 0 \\ 0 &amp; i \end{pmatrix} \qquad<br>
+  j = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix} \qquad<br>
+  k = \begin{pmatrix} 0 &amp; i \\ i &amp; 0 \end{pmatrix}$$</p>
+<p>Per i tessarini valgono invece le uguaglianze</p>
+<p>$$1 = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \qquad<br>
+  i = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix} \qquad<br>
+  j = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} \qquad<br>
+  k = \begin{pmatrix} 0 &amp; i \\ i &amp; 0 \end{pmatrix}$$</p>
+<p>Per i coquaternioni infine abbiamo </p>
+<p>$$1 = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \qquad<br>
+  i = \begin{pmatrix} i &amp; 0 \\ 0 &amp; i \end{pmatrix} \qquad<br>
+  j = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} \qquad<br>
+  k = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}$$</p>
+<p>In pratica tutte queste algebre sono casi speciali dei <a href="https://en.wikipedia.org/wiki/Biquaternion">biquaternioni</a>, che sono appunto algebre sulle matrici 2&#215;2. Non potete dire che i matematici non abbiano fantasia&#8230;</p>
+ 
+  					</div>
