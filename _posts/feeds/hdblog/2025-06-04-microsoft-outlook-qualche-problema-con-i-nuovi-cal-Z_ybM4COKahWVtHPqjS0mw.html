@@ -1,0 +1,53 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/microsoft/articoli/n620713/microsoft-outlook-calendari-condivisi-bug/
+date: '2025-06-04T11:05:00'
+excerpt: C'è qualche workaround ma per certe cose bisogna aspettare aggiornamenti.
+image: assets/media/Z_ybM4COKahWVtHPqjS0mw-A3QAgHbXVK4oecq1ufSM8g.webp
+source: hdblog
+tags:
+- Windows
+- Microsoft
+title: Microsoft Outlook, qualche problema con i nuovi calendari condivisi
+---
+<div><p>Microsoft ha confermato che il corposo aggiornamento della funzionalit&#224; di calendari condivisi arrivata recentemente su Outlook Classic, la vecchia versione del <a href="https://www.hdblog.it/outlook/">client di posta elettronica </a>che &#232; un&#8217;app nativa &#8220;vera&#8221; al posto di un web wrapper, ha <strong>alcuni bug e problemi noti, potenzialmente piuttosto fastidiosi</strong> e che potrebbero coinvolgere tutti gli utenti. Il concetto di calendario condiviso &#232; in teoria molto semplice da comprendere: permette a pi&#249; utenti e account di modificare e visualizzare un calendario. L&#8217;aggiornamento aveva portato diverse migliorie sostanziose, tra cui:</p>
+
+<ul>
+	<li>Sincronizzazione e visualizzazione istantanea dei calendari condivisi</li>
+	<li>La modifica della data di fine di una serie non reimposta quella precedente</li>
+	<li>Possibilit&#224; di accettare gli inviti ai meeting senza inviare una risposta</li>
+	<li>Negli elementi di tipo meeting non viene pi&#249; visualizzato chi &#232; stato l&#8217;ultimo a modificarli</li>
+	<li>Non si pu&#242; pi&#249; inserire lo stesso calendario pi&#249; volte</li>
+	<li>Selezione simultanea di calendari duplicati</li>
+	<li>Impossibile aggiungere allegati quando si risponde all&#8217;invito a una riunione</li>
+	<li>Cambiamenti alla logica di funzionamento del salvataggio automatico nelle bozze degli eventi</li>
+	<li>L'impostazione "Scarica cartelle condivise" viene ignorata</li>
+</ul>
+
+<p>L&#8217;elenco di problemi noti &#232; composto da <strong>tre voci separate, una sola delle quali ha al momento una soluzione temporanea</strong> o workaround (beh, tecnicamente in una delle altre due il workaround c&#8217;&#232;, ovvero usare la nuova app). Altri tre &#8220;bug&#8221; sono in realt&#224; una feature, per usare la famosa frase di Steve Jobs, nel senso che Microsoft ha coscientemente apportato delle modifiche strutturali che costringono a fare certe cose in modo diverso. I tre bug veri e propri sono:</p>    <p>Annullamento riunione inviato in modo imprevisto ad alcuni partecipanti nella versione classica di Outlook</p>
+
+<ul>
+	<li>In un calendario condiviso REST, dopo l'aggiunta o la rimozione di un partecipante o l'inoltro di una riunione, l'annullamento di una riunione potrebbe essere inviato in modo imprevisto ad alcuni partecipanti.
+	<ul>
+		<li>Soluzione alternativa: usare la nuova Outlook oppure disattivare i miglioramenti dei calendari condivisi</li>
+	</ul>
+	</li>
+	<li>I partecipanti non ricevono aggiornamenti sulle modifiche degli allegati da parte del delegato
+	<ul>
+		<li>Quando un delegato invia un aggiornamento per una riunione che richiede la rimozione di un allegato su un'occorrenza di una serie di riunioni, i destinatari potrebbero non ricevere alcune o tutte le modifiche apportate all'allegato.</li>
+		<li>Nella cartella Problemi di sincronizzazione del delegato verranno visualizzati errori di sincronizzazione. Esempio:</li>
+		<li>17:23:26 Synchronizer Version 16.0.15313</li>
+		<li>17:23:26 Synchronizing Mailbox 'Delegate User'</li>
+		<li>17:23:26 Synchronizing local changes in folder 'Manager User'</li>
+		<li>17:23:27 Uploading to server 'https://outlook.office365.com/mapi/emsmdb/?xxxxxxxx-xx'</li>
+		<li>17:23:30 Error synchronizing folder</li>
+		<li>17:23:30 [0-320]</li>
+	</ul>
+	</li>
+	<li>Dopo l'eliminazione di un allegato da una riunione esistente, potrebbe ricomparire dopo l'eliminazione
+	<ul>
+		<li>Dopo che un utente ha eliminato un allegato da una riunione esistente, l'allegato potrebbe ricomparire dopo l'eliminazione.</li>
+		<li>Soluzione alternativa: Attendere circa un minuto per concedere il tempo di sincronizzazione da completare. Inoltre, &#232; consigliabile salvare gli allegati in SharePoint o OneDrive ogni volta che &#232; possibile e condividerli con un collegamento.</li>
+	</ul>
+	</li>
+</ul></div>
