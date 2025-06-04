@@ -1,0 +1,50 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/06/chrome-boots-2-certificate-authorities-citing-a-lack-of-trust-and-confidence/
+date: '2025-06-04T11:20:37'
+excerpt: Chunghwa Telecom and Netlock customers must look elsewhere for new certificates.
+image: assets/media/TNistGMV3ZnsHYMYSk1zhA-zbTuMnvIglhGM-vhAWDNWw.webp
+source: arstechnica
+tags:
+- Biz & IT
+- Google
+- Security
+- certificate authorities
+- chrome browser
+- google
+title: Two certificate authorities booted from the good graces of Chrome
+---
+<div>
+                      
+                      
+          <p>Google says its Chrome browser will stop trusting certificates from two certificate authorities after &#8220;patterns of concerning behavior observed over the past year&#8221; diminished trust in their reliability.</p>
+<p>The two organizations, Taiwan-based Chunghwa Telecom and Budapest-based Netlock, are among the hundreds of certificate authorities trusted by Chrome and most other browsers to provide digital certificates that encrypt traffic and certify the authenticity of sites. With the ability to mint cryptographic credentials that cause address bars to display a padlock, assuring the trustworthiness of a site, these certificate authorities wield significant control over the security of the web.</p>
+<h2>Inherent risk</h2>
+<p>&#8220;Over the past several months and years, we have observed a pattern of compliance failures, unmet improvement commitments, and the absence of tangible, measurable progress in response to publicly disclosed incident reports,&#8221; members of the Chrome security team <a href="https://security.googleblog.com/2025/05/sustaining-digital-certificate-security-chrome-root-store-changes.html">wrote Tuesday</a>. &#8220;When these factors are considered in aggregate and considered against the inherent risk each publicly-trusted CA poses to the internet, continued public trust is no longer justified.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>According to Ryan Hurst, a researcher with over two decades of experience working with certificate authorities, such certificate distrust events occur about <a href="https://unmitigatedrisk.com/?p=850">once every 15 months</a>. The reasons for the revocations vary widely.</p>
+<p>Hurst provided the following graph tracking the frequency of reasons for past events:</p>
+ 
+<p>Google cited no specific incidents. Hurst, however, said past offenses included:</p>
+<ul>
+<li>Netlock failing to disclose an intermediate CA Certificate to the Common CA Database over a span of <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1904041"> more than one year.</a></li>
+<li>Netlock <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1947691">failing to revoke</a> a misissued certificate.</li>
+<li>Netlock failing to provide <a href="link">mandated weekly updates</a> concerning a security incident.</li>
+<li>Chunghwa Telecom <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1892419"> delaying revocation</a> of a misissued certificate.</li>
+<li>Chunghwa Telecom misissuing 247 certificates with <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1916392">incorrect subject domain name structures.</a></li>
+</ul>
+<p>Chrome will stop trusting all certificates issued by Chunghwa Telecom and Netlock after July 31. Certificates issued after that date will, by default, display an <a href="https://untrusted-root.badssl.com/">error page</a> on Chrome. The delay is designed to give those organizations' customers time to find new certificate authorities. Representatives from both organizations didn't respond to emails requesting comment.</p>
+
+
+          
+                  
+
+                  
+          </div>
