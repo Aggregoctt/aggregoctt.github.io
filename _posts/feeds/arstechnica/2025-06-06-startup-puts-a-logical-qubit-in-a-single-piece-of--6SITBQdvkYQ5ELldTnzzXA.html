@@ -1,0 +1,60 @@
+---
+author: John Timmer
+canonical_url: https://arstechnica.com/science/2025/06/startup-puts-a-logical-qubit-in-a-single-piece-of-hardware/
+date: '2025-06-06T16:02:55'
+excerpt: Nord Quantique's plan for error correction involves far less hardware.
+image: assets/media/6SITBQdvkYQ5ELldTnzzXA-8A1iLM_VNHDDcpHdDibS-Q.webp
+source: arstechnica
+tags:
+- Science
+- Computer science
+- nord quantique
+- Physics
+- quantum computing
+- quantum mechanics
+title: Startup puts a logical qubit in a single piece of hardware
+---
+<div>
+                      
+                      
+           
+<p>Everyone in quantum computing agrees that error correction will be the key to doing a broad range of useful calculations. But early every company in the field seems to have a different vision of how best to get there. Almost all of their plans share a key feature: some variation on logical qubits built by linking together multiple hardware qubits.</p>
+<p>A key exception is <a href="https://nordquantique.ca/en">Nord Quantique</a>, which aims to dramatically cut the amount of hardware needed to support an error-corrected quantum computer. It does this by putting enough quantum states into a single piece of hardware, allowing each of those pieces to hold an error-corrected qubit. Last week, the company shared results showing that it could make hardware that used photons at two different frequencies to successfully identify every case where a logical qubit lost its state.</p>
+<p>That still doesn't provide error correction, and they didn't use the logical qubit to perform operations. But it's an important validation of the company's approach.</p>
+<h2>Double the frequencies</h2>
+<p>Nord Quantique's hardware is similar to what we described <a href="https://arstechnica.com/science/2025/05/beyond-qubits-meet-the-qutrit-and-ququart/">in a recent article</a> about using a single piece of hardware to host quantum systems that store information in three or more states. It involves putting a bunch of microwave photons into a resonator and creating a quantum oscillator with multiple modes, which allows information to be stored in those modes. In the earlier work, researchers used these modes to create a system that could be in as many as four states&#8212;instead of the hardware hosting a qubit, it was used to hold either a qutrit or ququart.</p>
+<p>The state of this sort of system is monitored using a different type of qubit, called a transmon, that is physically linked to the resonator.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>A bit over a year ago, Nord Quantique used a similar setup to show that it could be used to <a href="https://arstechnica.com/science/2024/02/alternate-qubit-design-does-error-correction-in-hardware/">identify the most common form of error</a> in these devices, one in which the system loses one of its photons. "We can store multiple microwave photons into each of these cavities, and the fact that we have redundancy in the system comes exactly from this," said Nord Quantique's CTO, Julien Camirand Lemyre. However, this system was unable to handle many of the less common errors that might also occur.</p>
+<p>This time around, the company is showing that it can get an actual logical qubit into a variant of the same hardware. In the earlier version of its equipment, the resonator cavity had a single post and supported a single frequency. In the newer iteration, there were two posts and two frequencies. Each of those frequencies creates its own quantum resonator in the same cavity, with its own set of modes. "It's this ensemble of photons inside this cavity that creates the logical qubit," Lemyre told Ars.</p>
+<p>The additional quantum information that can now be stored in the system enables it to identify more complex errors than the loss of a photon.</p>
+ 
+<h2>Catching, but not fixing errors</h2>
+<p>The company did two experiments with this new hardware. First, it ran multiple rounds of error detection on data stored in the logical qubit, essentially testing its ability to act like a quantum memory and retain the information stored there. Without correcting errors, the system rapidly decayed, with an error probability in each round of measurement of about 12 percent. By the time the system reached the 25th measurement, almost every instance had already encountered an error.</p>
+<p>The second time through, the company repeated the process, discarding any instances in which an error occurred. In almost every instance, that meant the results were discarded long before they got through two dozen rounds of measurement. But at these later stages, none of the remaining instances were in an erroneous state. That indicates that a successful correction of the errors&#8212;something the team didn't try&#8212;would be able to fix all the detected problems.</p>
+
+          
+                  
+
+              
+          
+          
+<p>"When we do this, we don't have any errors left," Lemyre said. "And this builds confidence into this approach, meaning that if we build the next generation of codes that is now able to correct these errors that were detected in this two-mode approach, we should have that flat line of no errors occurring over a long period of time."</p>
+<p>Several other companies have already performed experiments in which errors were detected&#8212;and corrected. In a few instances, companies have even performed operations with logical qubits, although these were not sophisticated calculations. Nord Quantique, in contrast, is only showing the operation of a single logical qubit, so it's not even possible to test a two-qubit gate operation using the hardware it has described so far.</p>
+<p>So simply being able to identify the occurrence of errors is not on the cutting edge. Why is this notable?</p>
+<p>All the other companies require multiple hardware qubits to host a single logical qubit. Since building many hardware qubits has been an ongoing challenge, most researchers have plans to minimize the number of hardware qubits needed to support a logical qubit&#8212;some combination of high-quality hardware, a clever error correction scheme, and/or a hardware-specific feature that catches the most common errors. You can view Nord Quantique's approach as being at the extreme end of the spectrum of solutions, where the number of hardware qubits required is simply one.</p>
+<p>From Nord Quantique's perspective, that's significant because it means that its hardware will ultimately occupy less space and have lower power and cooling requirements than some of its competitors. (Other hardware, like neutral atoms, requires lots of lasers and a high vacuum, so the needs are difficult to compare.) But it also means that, should it become technically difficult to get large numbers of qubits to operate as a coherent whole, Nord Quantique's approach may ultimately help us overcome some of these limits.</p>
+
+
+          
+                  
+
+                  
+          </div>
