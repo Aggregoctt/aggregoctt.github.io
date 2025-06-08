@@ -1,0 +1,23 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/microsoft/articoli/n621143/windows-11-inetpub-sicurezza-protezione-cancellata/
+date: '2025-06-08T16:25:00'
+excerpt: Windows Update la crea dopo le patch di aprile, ed è apparentemente vuota.
+  Ma è fondamentale per proteggersi da una insidiosa falla di tipo privilege escalation.
+image: assets/media/5wFPl1-_zOtOL6fR7QBzLA-eYY_RBkhH-6mbn9M6l3ksQ.webp
+source: hdblog
+tags:
+- Windows
+- Microsoft
+title: Windows 10/11, avete cancellato questa cartella di sistema? Siete a rischio
+  | Soluzione
+---
+<div><p>Per caso vi &#232; capitato di installare gli aggiornamenti di sicurezza di <a href="https://www.hdblog.it/windows-10/">aprile per Windows 10</a> e <a href="https://www.hdblog.it/windows-10-sun-valley/">Windows 11 e successivamente</a> <strong>trovare nella radice del drive principale (C:) una strana cartella chiamata <span>inetpub</span></strong> che prima non esisteva? Se s&#236;, e se siete molto tentati di cancellarla, sappiate che &#232; molto, <strong>molto meglio lasciarla l&#236; dov&#8217;&#232;</strong>, anche se sembra vuota. In realt&#224; &#232; un elemento fondamentale per la correzione di una falla, nota come CVE-2025-21204, una privilege escalation che pu&#242; portare a cedere il controllo del proprio sistema ad <a href="https://www.hdblog.it/attacchi-hacker/">hacker e altre minacce</a>.</p>    <p>Microsoft l&#8217;ha confermato espressamente nelle scorse ore dopo che iniziavano a emergere le segnalazioni di utenti che avevano scoperto la cartella e cercavano di capire che farci. Alcuni hanno detto di averla cancellata senza apparenti conseguenze negative, ma il colosso di Redmond ha chiarito che <strong>la cartella deve rimanere presente se si vuole essere protetti contro la vulnerabilit&#224;</strong> sopra citata - &#8220;a prescindere da se IIS [Internet Information Services] &#232; attivo&#8221;. IIS &#232; un servizio essenziale per garantire la connettivit&#224; internet sul proprio sistema Windows.</p><p><strong>Se avete cancellato la cartella, quindi, dovete rimediare - e non basta ricrearla facendo tasto destro &gt; Nuova cartella</strong> in Esplora File: bisogna assicurarsi che abbia i permessi correttamente configurati e altri dettagli significativi. Per semplificare la vita agli utenti, Microsoft ha rilasciato un rapido script per PowerShell che ripristina correttamente la situazione. Lo script si chiama ufficialmente Set-InetpubFolderAcl.ps1 ed &#232; consultabile dal sito ufficiale di Microsoft, basta <a href="https://www.powershellgallery.com/packages/Set-InetpubFolderAcl/1.0" target="_blank">dirigersi su questa pagina</a>. In base alle note ufficiali, lo script:</p>
+
+<ul>
+	<li>Crea la cartella</li>
+	<li>Imposta i permessi corretti in modo tale da evitare accessi non autorizzati in base alla vulnerabilit&#224; di cui sopra</li>
+	<li>Aggiorna gli ACL per la directory DeviceHealthAttestation, se presente (solo su sistemi Windows Server gi&#224; aggiornati alle patch di febbraio e pi&#249; recenti).</li>
+</ul>
+
+<p>Come tutti gli script PowerShell ufficiali Microsoft, non &#232; necessario scaricarlo per installarlo/eseguirlo: basta <strong>digitare il comando</strong> Install-Script -Name Set-InetpubFolderAcl usando PowerShellGet. Assicuratevi di eseguire PowerShell con privilegi elevati!</p></div>
