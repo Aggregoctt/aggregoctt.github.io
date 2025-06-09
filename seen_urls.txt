@@ -10419,3 +10419,4 @@ https://xkcd.com/3100/
 https://arstechnica.com/cars/2025/06/mercedes-next-electric-glc-rides-great-weve-driven-the-prototype/
 https://arstechnica.com/ai/2025/06/apple-tiptoes-with-modest-ai-updates-while-rivals-race-ahead/
 https://arstechnica.com/health/2025/06/anti-vaccine-advocate-rfk-jr-fires-entire-cdc-panel-of-vaccine-advisors/
+https://arstechnica.com/gadgets/2025/06/apple-details-the-end-of-intel-mac-support-and-a-phaseout-for-rosetta-2/
