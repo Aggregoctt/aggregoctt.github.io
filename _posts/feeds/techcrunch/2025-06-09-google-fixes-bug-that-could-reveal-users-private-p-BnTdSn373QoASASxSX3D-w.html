@@ -1,0 +1,60 @@
+---
+author: Zack Whittaker
+canonical_url: https://techcrunch.com/2025/06/09/google-fixes-bug-that-could-reveal-users-private-phone-numbers/
+date: '2025-06-09T14:00:00'
+excerpt: The bug allowed a researcher to uncover recovery phone numbers of nearly
+  any Google account.
+image: assets/media/BnTdSn373QoASASxSX3D-w-t5ejWk_JwTRAUi1sLpfmUA.webp
+source: techcrunch
+tags:
+- Security
+- cybersecurity
+- Google
+- security flaw
+title: Google fixes bug that could reveal users’ private phone numbers
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">A security researcher has discovered a bug that could be exploited to reveal the private recovery phone number of almost any Google account without alerting its owner, potentially exposing users to privacy and security risks.&#160;</p>
+
+<p class="wp-block-paragraph">Google confirmed to TechCrunch that it fixed the bug after the researcher alerted the company in April.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The independent researcher, who goes by the handle brutecat and <a href="https://brutecat.com/articles/leaking-google-phones" target="_blank" rel="noreferrer noopener nofollow">blogged their findings</a>, told TechCrunch that they could obtain the recovery phone number of a Google account by exploiting a bug in the company&#8217;s account recovery feature.</p>
+
+<p class="wp-block-paragraph">The exploit relied on an &#8220;attack chain&#8221; of several individual processes working in tandem, including leaking the full display name of a targeted account, and bypassing an anti-bot protection mechanism that Google implemented to prevent the malicious spamming of password reset requests. Bypassing the rate limit ultimately allowed the researcher to cycle through every possible permutation of a Google account&#8217;s phone number in a short space of time and arrive at the correct digits.</p>
+
+<p class="wp-block-paragraph">By automating the attack chain with a script, the researcher said it was possible to brute-force a Google account owner&#8217;s recovery phone number in 20 minutes or less, depending on the length of the phone number.</p>
+
+<p class="wp-block-paragraph">To test this, TechCrunch set up a new Google account with a phone number that had never been used before, then provided brutecat with the email address of our new Google account.&#160;</p>
+
+<p class="wp-block-paragraph">A short time later, brutecat messaged back with the phone number that we had set.</p>
+
+<p class="wp-block-paragraph">&#8220;bingo :),&#8221; said the researcher.</p>
+
+<p class="wp-block-paragraph">Revealing the private recovery phone number can expose even anonymous Google accounts to targeted attacks, such as takeover attempts. Identifying a private phone number associated with someone&#8217;s Google account could make it easier for skilled hackers to take control of that phone number through a <a href="https://techcrunch.com/2025/04/25/techcrunch-reference-guide-to-security-terminology/#sim-swap">SIM swap attack</a>, for example. With control of that phone number, the attacker can reset the password of any account associated with that phone number by generating password reset codes sent to that phone.</p>
+
+<p class="wp-block-paragraph">Given the potential risk to the wider public, TechCrunch agreed to hold this story until the bug could be fixed.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;This issue has been fixed. We&#8217;ve always stressed the importance of working with the security research community through our vulnerability rewards program and we want to thank the researcher for flagging this issue,&#8221; Google spokesperson Kimberly Samra told TechCrunch. &#8220;Researcher submissions like this are one of the many ways we&#8217;re able to quickly find and fix issues for the safety of our users.&#8221;</p>
+
+<p class="wp-block-paragraph">Samra said that the company has seen &#8220;no confirmed, direct links to exploits at this time.&#8221;</p>
+
+<p class="wp-block-paragraph">Brutecat said Google paid $5,000 in a bug bounty reward for their finding.</p>
+
+ 
+
+
+			
+
+			</div>
