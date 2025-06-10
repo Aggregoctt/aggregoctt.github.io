@@ -1,0 +1,31 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142540/apple-releases-containerization-a-swift-package-for-running-linux-containers-on-macos/
+date: '2025-06-10T20:59:39'
+excerpt: As part of its WWDC announcements, Apple has unveiled Containerization, which
+  uses macOS&#8217; virtualisation framework to run Linux containers on Apple Silicon
+  Macs. Containerization executes each Linux container inside of its own lightweight
+  virtual machine. Clients can create dedicated IP addresses for every container to
+  remove the need for individual port forwarding. Containers achieve sub-second start
+  times using an optimized Linux kernel configuration and a minimal root filesystem
+  with a lightweight init system. vminitd is a small init system, which is a subproject
+  within Containerization. vminitd is spawned as the initial process inside of the
+  virtual machine and provides a GRPC API over vsock. The API allows the runtime environment
+  to be configured and containerized processes to be launched. vminitd provides I/O,
+  signals, and events to the calling process when a process is ran. ↫ Containerization
+  GitHub page Alongside this new tool, Apple also released container, which creates
+  and runs OCI-compliant container images. Yes, both of these names are horribly generic
+  and are definitely going to lead to confusion in online discussions and writing,
+  but the tools themselves seem quite nice. People stuck on macOS who need to do Linux
+  work can now easily get their work done on macOS &#8211; if you&#8217;re okay with
+  using Electron for developers, of course, which is what containers really are. Clearly,
+  nobody can ignore Linux, not even Apple or Microsoft.
+image: null
+source: osnews
+tags:
+- macOS
+title: Apple releases Containerization, a Swift package for running Linux containers
+  on macOS
+---
+<div><p>As part of its WWDC announcements, Apple has unveiled Containerization, which uses macOS&#8217; virtualisation framework to run Linux containers on Apple Silicon Macs.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Containerization executes each Linux container inside of its own lightweight virtual machine. Clients can create dedicated IP addresses for every container to remove the need for individual port forwarding. Containers achieve sub-second start times using an optimized <a href="https://github.com/apple/containerization/blob/main/kernel">Linux kernel configuration</a> and a minimal root filesystem with a lightweight init system.</p><p><a href="https://github.com/apple/containerization/blob/main/vminitd">vminitd</a> is a small init system, which is a subproject within Containerization. <code>vminitd</code> is spawned as the initial process inside of the virtual machine and provides a GRPC API over vsock. The API allows the runtime environment to be configured and containerized processes to be launched. <code>vminitd</code> provides I/O, signals, and events to the calling process when a process is ran.</p>
+<a href="https://github.com/apple/containerization">&#8619; Containerization GitHub page</a></blockquote><p>Alongside this new tool, <a href="https://github.com/apple/container">Apple also released container</a>, which creates and runs OCI-compliant container images. Yes, both of these names are horribly generic and are definitely going to lead to confusion in online discussions and writing, but the tools themselves seem quite nice. People stuck on macOS who need to do Linux work can now easily get their work done on macOS &#8211; if you&#8217;re okay with using Electron for developers, of course, which is what containers really are.</p><p>Clearly, nobody can ignore Linux, not even Apple or Microsoft.</p></div>
