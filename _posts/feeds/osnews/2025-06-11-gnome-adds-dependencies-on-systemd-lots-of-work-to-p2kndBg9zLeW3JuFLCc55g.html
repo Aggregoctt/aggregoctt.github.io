@@ -1,0 +1,59 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142551/gnome-adds-dependencies-on-systemd-lots-of-work-to-do-for-systemd-less-environments/
+date: '2025-06-11T21:54:55'
+excerpt: 'GNOME has announced it&#8217;ll be increasing its dependency on systemd,
+  the popular init system used by most (popular) Linux distributions. While GNOME
+  already had a few relatively inconsequential dependencies on systemd, it was effectively
+  not a huge problem to run GNOME on operating systems that don&#8217;t have systemd,
+  which most notably includes the various flavours of BSD. That&#8217;s going to change.
+  There&#8217;s going to be two changes, one of which is relatively minor, and one
+  of which will pose much bigger problems. The minor change involves GDM becoming
+  dependent on systemd’s userdb infrastructure in order to clean up a lot of GDM&#8217;s
+  code involved in multi-seat setups and remote login. Currently, this works through
+  a series of hacks that the GDM developers are going to clean up, switching to using
+  systemd-userdb to &#8220;dynamically allocate user accounts, and then runs each
+  login screen as a unique user&#8221;. To aid non-systemd environments during this
+  transition, GDM will get a temporary alternate code path that enables you to run
+  GDM without systemd-userdb. So if you compile GDM against elogind, GDM will use
+  an alternative trick to enable multiple graphical sessions under the same user.
+  This trick will remain in place at least until GNOME 50, but its future after that
+  is uncertain. The second change is much more involved. Next, the bigger change.
+  Since GNOME 3.34, gnome-session uses the systemd user instance to start and manage
+  the various GNOME session services. When systemd is unavailable, gnome-session falls
+  back to a builtin service manager. This builtin service manager uses .desktop files
+  to start up the various GNOME session services, and then monitors them for failure.
+  This code was initially implemented for GNOME 2.24, and is starting to show its
+  age. It has received very minimal attention in the 17 years since it was first written.
+  Really, there’s no reason to keep maintaining a bespoke and somewhat primitive service
+  manager when we have systemd at our disposal. The only reason this code hasn’t completely
+  bit rotted is the fact that GDM’s aforementioned hacks break systemd and so we rely
+  on the builtin service manager to launch the login screen. Well, that has now changed.
+  The hacks in GDM are gone, and the login screen’s session is managed by systemd.
+  This means that the builtin service manager will now be completely unused and untested.
+  Moreover: we’d like to implement a session save/restore feature, but the builtin
+  service manager interferes with that. For this reason, the code is being removed.
+  ↫ Adrian Vovk Mitigating this change will be a lot more involved for operating systems
+  that don&#8217;t use systemd, and the blog post goes into detail into what, exactly,
+  needs to be done in systemd-less environments. There&#8217;s quite a few systemd
+  components and other little tidbits that you will need to find or create alternatives
+  for, and considering you&#8217;ll need to have all of it in place roughly by GNOME
+  50, roughly a year from now, I can imagine this causing quite a few headaches for
+  platforms like the BSDs and Linux distributions using init systems other than systemd.
+  With these changes, GNOME further solidifies itself as a Linux desktop only &#8211;
+  and lest anyone forget, that&#8217;s entirely within their right to do. Systemd
+  haters can jump up and down all they want, but in the end, they have no right to
+  demand that GNOME developers spend precious time and resources testing GNOME on
+  and developing it for platforms that they themselves do not use. They&#8217;re clearly
+  targeting the trifecta of Linux, system, and Wayland, and that&#8217;s their choice
+  to make, not anyone else&#8217;s. Still, if operating systems like OpenBSD and FreeBSD,
+  or Linux distributions without systemd intend to continue offering a fully functional
+  GNOME desktop, they&#8217;re going to have some work to do.'
+image: null
+source: osnews
+tags:
+- Gnome
+title: GNOME adds dependencies on systemd, lots of work to do for systemd-less environments
+---
+<div><p>GNOME has announced it&#8217;ll be increasing its dependency on systemd, the popular init system used by most (popular) Linux distributions. While GNOME already had a few relatively inconsequential dependencies on systemd, it was effectively not a huge problem to run GNOME on operating systems that don&#8217;t have systemd, which most notably includes the various flavours of BSD. That&#8217;s going to change.</p><p>There&#8217;s going to be two changes, one of which is relatively minor, and one of which will pose much bigger problems. The minor change involves GDM becoming dependent on systemd&#8217;s userdb infrastructure in order to clean up a lot of GDM&#8217;s code involved in multi-seat setups and remote login. Currently, this works through a series of hacks that the GDM developers are going to clean up, switching to using systemd-userdb to &#8220;dynamically allocate user accounts, and then runs each login screen as a unique user&#8221;.</p><p>To aid non-systemd environments during this transition, GDM will get a temporary alternate code path that enables you to run GDM without systemd-userdb. So if you compile GDM against <a href="https://github.com/elogind/elogind">elogind</a>, GDM will use an alternative trick to enable multiple graphical sessions under the same user. This trick will remain in place at least until GNOME 50, but its future after that is uncertain.</p><p>The second change is much more involved.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Next, the bigger change. Since GNOME 3.34, gnome-session uses the systemd user instance to start and manage the various GNOME session services. When systemd is unavailable, gnome-session falls back to a builtin service manager. This builtin service manager uses <code>.desktop</code> files to start up the various GNOME session services, and then monitors them for failure. This code was initially implemented for GNOME 2.24, and is starting to show its age. It has received very minimal attention in the 17 years since it was first written. Really, there&#8217;s no reason to keep maintaining a bespoke and somewhat primitive service manager when we have systemd at our disposal. The only reason this code hasn&#8217;t completely bit rotted is the fact that GDM&#8217;s aforementioned hacks break systemd and so we rely on the builtin service manager to launch the login screen.</p><p>Well, that has now changed. The hacks in GDM are gone, and the login screen&#8217;s session is managed by systemd. This means that the builtin service manager will now be completely unused and untested. Moreover: we&#8217;d like to implement a <a href="https://github.com/flatpak/xdg-desktop-portal/discussions/1698">session save/restore feature</a>, but the builtin service manager interferes with that. For this reason, the code <a href="https://gitlab.gnome.org/GNOME/gnome-session/-/merge_requests/145">is being removed</a>.</p>
+<a href="https://blogs.gnome.org/adrianvovk/2025/06/10/gnome-systemd-dependencies/">&#8619; Adrian Vovk</a></blockquote><p>Mitigating this change will be a lot more involved for operating systems that don&#8217;t use systemd, and the blog post goes into detail into what, exactly, needs to be done in systemd-less environments. There&#8217;s quite a few systemd components and other little tidbits that you will need to find or create alternatives for, and considering you&#8217;ll need to have all of it in place roughly by GNOME 50, roughly a year from now, I can imagine this causing quite a few headaches for platforms like the BSDs and Linux distributions using init systems other than systemd.</p><p>With these changes, GNOME further solidifies itself as a Linux desktop only &#8211; and lest anyone forget, that&#8217;s entirely within their right to do. Systemd haters can jump up and down all they want, but in the end, they have no right to demand that GNOME developers spend precious time and resources testing GNOME on and developing it for platforms that they themselves do not use. They&#8217;re clearly targeting the trifecta of Linux, system, and Wayland, and that&#8217;s their choice to make, not anyone else&#8217;s.</p><p>Still, if operating systems like OpenBSD and FreeBSD, or Linux distributions without systemd intend to continue offering a fully functional GNOME desktop, they&#8217;re going to have some work to do.</p></div>
