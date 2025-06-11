@@ -1,0 +1,87 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/06/with-the-launch-of-o3-pro-lets-talk-about-what-ai-reasoning-actually-does/
+date: '2025-06-11T16:58:43'
+excerpt: New studies reveal pattern-matching reality behind the AI industry's reasoning
+  claims.
+image: assets/media/M-om-FeE1JN9Scf33lCT0w-l6nAjKLSsKUeCNL-tHpPRA.webp
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI assistants
+- AI benchmarks
+- AI development tools
+- AI models
+- AI programming
+- API
+- large language models
+- machine learning
+- o1-pro
+- o3-pro
+- openai
+- simulated reasoning
+- SR models
+title: With the launch of o3-pro, let’s talk about what AI “reasoning” actually does
+---
+<div>
+                      
+                      
+           
+<p>On Tuesday, OpenAI <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">announced</a> that o3-pro, a new version of its most capable simulated reasoning model, is now available to ChatGPT Pro and Team users, replacing o1-pro in the model picker. The company also reduced API pricing for o3-pro by 87 percent compared to o1-pro while cutting o3 prices by 80 percent. While "reasoning" is useful for some analytical tasks, new studies have posed fundamental questions about what the word actually means when applied to these AI systems.</p>
+<p>We'll take a deeper look at "reasoning" in a minute, but first, let's examine what's new. While OpenAI <a href="https://arstechnica.com/ai/2025/04/openai-releases-new-simulated-reasoning-models-with-full-tool-access/">originally launched</a> o3 (non-pro) in April, the o3-pro model focuses on mathematics, science, and coding while adding new capabilities like web search, file analysis, image analysis, and Python execution. Since these tool integrations slow response times (longer than the already slow o1-pro), OpenAI recommends using the model for complex problems where accuracy matters more than speed. However, they do not necessarily <a href="https://techcrunch.com/2025/04/18/openais-new-reasoning-ai-models-hallucinate-more/">confabulate less</a> than "non-reasoning" AI models (they still introduce factual errors), which is a significant caveat when seeking accurate results.</p>
+<p>Beyond the reported performance improvements, OpenAI announced a substantial price reduction for developers. O3-pro costs $20 per million input tokens and $80 per million output tokens in the API, making it 87 percent cheaper than o1-pro. The company also reduced the price of the standard o3 model by 80 percent.</p>
+<p>These reductions address one of the main concerns with reasoning models&#8212;their high cost compared to standard models. The original o1 cost $15 per million input tokens and $60 per million output tokens, while o3-mini cost $1.10 per million input tokens and $4.40 per million output tokens.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Why use o3-pro?</h2>
+<p>Unlike general-purpose models like GPT-4o that prioritize speed, broad knowledge, and making users <a href="https://arstechnica.com/information-technology/2025/04/annoyed-chatgpt-users-complain-about-bots-relentlessly-positive-tone/">feel good about themselves</a>, o3-pro uses a chain-of-thought simulated reasoning process to devote more output tokens toward working through complex problems, making it generally better for technical challenges that require deeper analysis. But it's still not perfect.</p>
+ 
+
+<p>Measuring so-called "reasoning" capability is tricky since benchmarks can be easy to game by cherry-picking or training data contamination, but OpenAI reports that o3-pro is popular among testers, at least. "In expert evaluations, reviewers consistently prefer o3-pro over o3 in every tested category and especially in key domains like science, education, programming, business, and writing help," <a href="https://help.openai.com/en/articles/9624314-model-release-notes">writes</a> OpenAI in its release notes. "Reviewers also rated o3-pro consistently higher for clarity, comprehensiveness, instruction-following, and accuracy."</p>
+ 
+
+<p>OpenAI shared benchmark results showing o3-pro's reported performance improvements. On the <a href="https://artofproblemsolving.com/wiki/index.php/2024_AIME_I">AIME 2024</a> mathematics competition, o3-pro achieved 93 percent pass@1 accuracy, compared to 90 percent for o3 (medium) and 86 percent for o1-pro. The model reached 84 percent on PhD-level science questions from <a href="https://arxiv.org/abs/2311.12022">GPQA Diamond</a>, up from 81 percent for o3 (medium) and 79 percent for o1-pro. For programming tasks measured by <a href="https://codeforces.com/">Codeforces</a>, o3-pro achieved an Elo rating of 2748, surpassing o3 (medium) at 2517 and o1-pro at 1707.</p>
+<h2>When reasoning is simulated</h2>
+<p> 
+<br>
+It's easy for laypeople to be thrown off by the anthropomorphic claims of "reasoning" in AI models. In this case, as with the borrowed anthropomorphic term "<a href="https://arstechnica.com/information-technology/2023/04/why-ai-chatbots-are-the-ultimate-bs-machines-and-how-people-hope-to-fix-them/">hallucinations</a>," "reasoning" has become a term of art in the AI industry that basically means "devoting more compute time to solving a problem." It does not necessarily mean the AI models systematically apply logic or possess the ability to construct solutions to truly novel problems. This is why Ars Technica continues to use the term "simulated reasoning" (SR) to describe these models. They are simulating a human-style reasoning process that does not necessarily produce the same results as human reasoning when faced with novel challenges. 
+                  </p>
+
+          
+                   
+                   
+                  
+
+              
+          
+          
+ 
+<p>While simulated reasoning models like o3-pro often show measurable improvements over general-purpose models on analytical tasks, <a href="https://arstechnica.com/ai/2025/04/new-study-shows-why-simulated-reasoning-ai-models-dont-yet-live-up-to-their-billing/">research suggests</a> these gains come from allocating more computational resources to traverse their neural networks in smaller, more directed steps. The answer lies in what researchers call "inference-time compute" scaling. When these models use what are called "<a href="https://arxiv.org/abs/2201.11903">chain-of-thought</a>" techniques, they dedicate more computational resources to exploring connections between concepts in their neural network data. Each intermediate "reasoning" output step (produced in tokens) serves as context for the next token prediction, effectively constraining the model's outputs in ways that tend to improve accuracy and reduce mathematical errors (though not necessarily factual ones).</p>
+<p>But fundamentally, all <a href="https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)">Transformer-based</a> AI models are pattern-matching marvels. They borrow reasoning patterns from examples in the training data that researchers use to create them. Recent studies on <a href="https://arstechnica.com/ai/2025/04/new-study-shows-why-simulated-reasoning-ai-models-dont-yet-live-up-to-their-billing/">Math Olympiad problems</a> reveal that SR models still function as sophisticated pattern-matching machines&#8212;they cannot catch their own mistakes or adjust failing approaches, often producing confidently incorrect solutions without any "awareness" of errors.</p>
+<p>Apple researchers <a href="https://machinelearning.apple.com/research/illusion-of-thinking">found similar limitations</a> when testing SR models on controlled puzzle environments. Even when provided explicit algorithms for solving puzzles like Tower of Hanoi, the models failed to execute them correctly&#8212;suggesting their process relies on pattern matching from training data rather than logical reasoning. As problem complexity increased, these models showed a "counterintuitive scaling limit," reducing their reasoning effort despite having adequate computational resources. This aligns with the USAMO findings showing that models made basic logical errors and continued with flawed approaches even when generating contradictory results.</p>
+<p>However, there's some serious nuance here that you may miss if you're reaching quickly for a pro-AI or anti-AI take. Pattern-matching and reasoning aren't necessarily mutually exclusive. Since it's difficult to <a href="https://en.wikipedia.org/wiki/Reason">mechanically define</a> human reasoning at a fundamental level, we can't definitively say whether sophisticated pattern-matching is categorically different from "genuine" reasoning or just a different implementation of similar underlying processes. The Tower of Hanoi failures are compelling evidence of current limitations, but they don't resolve the deeper philosophical question of what reasoning actually is.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<p>And understanding these limitations doesn't diminish the genuine utility of SR models. For many real-world applications&#8212;debugging code, solving math problems, or analyzing structured data&#8212;pattern matching from vast training sets is enough to be useful. But as we consider the industry's stated trajectory <a href="https://arstechnica.com/information-technology/2025/01/sam-altman-says-we-are-now-confident-we-know-how-to-build-agi/">toward artificial general intelligence</a>&#160;and even <a href="https://arstechnica.com/information-technology/2025/06/after-ai-setbacks-meta-bets-billions-on-undefined-superintelligence/">superintelligence</a>, the evidence so far suggests that simply scaling up current approaches or adding more "thinking" tokens may not bridge the gap between statistical pattern recognition and what might be called generalist algorithmic reasoning.</p>
+<p>But the technology is evolving rapidly, and new approaches are already being developed to address those shortcomings. For example, <a href="https://arxiv.org/abs/2203.11171">self-consistency sampling</a> allows models to generate multiple solution paths and check for agreement, while <a href="https://leonnicholls.medium.com/the-art-of-llm-self-criticism-with-google-gemini-21e8052d6adf">self-critique prompts</a> attempt to make models evaluate their own outputs for errors. <a href="https://arstechnica.com/information-technology/2023/02/meta-develops-an-ai-language-bot-that-can-use-external-software-tools/">Tool augmentation</a> represents another useful direction already used by o3-pro and other ChatGPT models&#8212;by connecting LLMs to calculators, symbolic math engines, or formal verification systems, researchers can compensate for some of the models' computational weaknesses. These methods show promise, though they don't yet fully address the fundamental pattern-matching nature of current systems.</p>
+<p>For now, o3-pro is a better, cheaper version of what OpenAI previously provided. It's good at solving familiar problems, struggles with truly new ones, and still makes confident mistakes. If you understand its limitations, it can be a powerful tool, but always double-check the results.</p>
+
+
+          
+                  
+
+                  
+          </div>
