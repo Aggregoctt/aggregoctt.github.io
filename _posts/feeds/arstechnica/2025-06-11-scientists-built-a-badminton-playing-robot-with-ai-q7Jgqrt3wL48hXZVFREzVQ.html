@@ -1,0 +1,61 @@
+---
+author: Jacek Krywko
+canonical_url: https://arstechnica.com/science/2025/06/scientists-built-a-badminton-playing-robot-with-ai-powered-skills/
+date: '2025-06-11T11:15:20'
+excerpt: A lower latency visual system might be needed to make the robot more competitive.
+image: assets/media/q7Jgqrt3wL48hXZVFREzVQ-ZK0I3izrJi61JTPzOl4XNg.webp
+source: arstechnica
+tags:
+- AI
+- Science
+- ai in sports
+- badminton
+- robot
+title: Scientists built a badminton-playing robot with AI-powered skills
+---
+<div>
+                      
+                      
+           
+<p>Robots like <a href="https://arstechnica.com/gadgets/2024/04/boston-dynamics-debuts-humanoid-robot-destined-for-commercialization/">Atlas</a>, <a href="https://arstechnica.com/gadgets/2023/07/this-lidar-equipped-30-pound-robot-dog-can-be-yours-for-1600/">Spot</a>, and <a href="https://arstechnica.com/gadgets/2022/04/boston-dynamics-stretch-robot-hits-production-and-its-already-sold-out/">Stretch</a> have amazed people with natural, life-like agility and body balance. What they were lacking, though, was a way to quickly connect this natural movement to perception&#8212;the robotic equivalent of the reflexes that let you catch a ball or duck in an instant to avoid getting hit.</p>
+<p>So, a team of scientists at ETH Zurich got busy fixing this problem. &#8220;I wanted to fuse perception and body movement,&#8221; said Yuntao Ma, a roboticist who led a team developing an AI-powered, badminton-playing robot.</p>
+<h2>Chasing shuttlecocks</h2>
+<p>The robot built by Ma&#8217;s team was called ANYmal and resembled a miniature giraffe that plays badminton by holding a racket in its teeth. It was a quadruped platform developed by <a href="https://www.anybotics.com/">ANYbotics</a>, an ETH Zurich spinoff company that mainly builds robots for the oil and gas industries. &#8220;It was an industry-grade robot,&#8221; Ma said. The robot had elastic actuators in its legs, weighed roughly 50 kilograms, and was half a meter wide and under a meter long.</p>
+<p>On top of the robot, Ma&#8217;s team fitted an arm with several degrees of freedom produced by another ETH Zurich spinoff called <a href="https://duatic.com/">Duatic</a>. This is what would hold and swing a badminton racket. Shuttlecock tracking and sensing the environment were done with a stereoscopic camera. &#8220;We&#8217;ve been working to integrate the hardware for five years,&#8221; Ma said.</p>
+<p>Along with the hardware, his team was also working on the robot&#8217;s brain. State-of-the-art robots usually use model-based control optimization, a time-consuming, sophisticated approach that relies on a mathematical model of the robot&#8217;s dynamics and environment. &#8220;In recent years, though, the approach based on reinforcement learning algorithms became more popular,&#8221; Ma told Ars. &#8220;Instead of building advanced models, we simulated the robot in a simulated world and let it learn to move on its own.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>In ANYmal&#8217;s case, this simulated world was a badminton court where its digital alter ego was chasing after shuttlecocks with a racket. The training was divided into repeatable units, each of which required that the robot predict the shuttlecock&#8217;s trajectory and hit it with a racket six times in a row.</p>
+<p>During this training, like a true sportsman, the robot also got to know its physical limits and to work around them.</p>
+<h2>Precision vs. speed</h2>
+<p>The idea behind training the control algorithms was to develop visuo-motor skills similar to human badminton players. The robot was supposed to move around the court, anticipating where the shuttlecock might go next and position its whole body, using all available degrees of freedom, for a swing that would mean a good return. This is why balancing perception and movement played such an important role.</p>
+<p>&#8220;Imagine the robot getting into position to make a return,&#8221; Ma said. &#8220;When it moves slowly, the chances of a successful play are lower. When it moves fast, the camera gets shaky, which increases the margin of error in tracking the shuttlecock. It&#8217;s a trade-off, and we wanted it to learn resolving such trade-offs.&#8221; The training procedure included a perception model based on real camera data, which taught the robot to keep the shuttlecock in its field of view while accounting for the noise and resulting object-tracking errors.</p>
+<p>Once the training was done, the robot learned to position itself on the court. It figured out that the best strategy after a successful return is to move back to the center and toward the backline, which is something human players do. It even came with a trick where it stood on its hind legs to see the incoming shuttlecock better.</p>
+
+          
+                  
+
+              
+          
+          
+<p>It also learned fall avoidance and determined how much risk was reasonable to take given its limited speed. The robot did not attempt impossible plays that would create the potential for serious damage&#8212;it was committed, but not suicidal.</p>
+<p>But when it finally played humans, it turned out ANYmal, as a badminton player, was amateur at best.</p>
+<h2>The major leagues</h2>
+<p>The first problem was its reaction time. An average human reacts to visual stimuli in around 0.2&#8211;0.25 seconds. Elite badminton players with trained reflexes, anticipation, and muscle memory can cut this time down to 0.12&#8211;0.15 seconds. ANYmal needed roughly 0.35 seconds after the opponent hit the shuttlecock to register trajectories and figure out what to do.</p>
+<p>Part of the problem was poor eyesight. &#8220;I think perception is still a big issue,&#8221; Ma said. &#8220;The robot localized the shuttlecock with the stereo camera and there could be a positioning error introduced at each timeframe.&#8221; The camera also had a limited field of view, which meant the robot could see the shuttlecock for only a limited time before it had to act. &#8220;Overall, it was suited for more friendly matches&#8212;when the human player starts to smash, the success rate goes way down for the robot,&#8221; Ma acknowledged.</p>
+<p>But his team already has some ideas on how to make ANYmal better. Reaction time can be improved by predicting the shuttlecock trajectory based on the opponent&#8217;s body position rather than waiting to see the shuttlecock itself&#8212;a technique commonly used by elite badminton or tennis players. To improve ANYmal&#8217;s perception, the team wants to fit it with more advanced hardware like event cameras&#8212;vision sensors that register movement with ultra-low latencies in the microseconds range. Other improvements might include faster, more capable actuators.</p>
+<p>&#8220;I think the training framework we propose would be useful in any application where you need to balance perception and control. Picking objects up, even catching and throwing stuff,&#8221; Ma suggested. Sadly, one thing that&#8217;s almost certainly off the table is taking ANYmal to major leagues in badminton or tennis. &#8220;Would I set up a company selling badminton playing robots? Well, maybe not,&#8221; Ma said.</p>
+<p>Science Robotics, 2025. DOI: <a href="http://dx.doi.org/10.1126/scirobotics.adu3922">10.1126/scirobotics.adu3922</a></p>
+
+
+          
+                  
+
+                  
+          </div>
