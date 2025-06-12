@@ -1,0 +1,51 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/06/apple-previews-new-import-export-feature-to-make-passkeys-more-interoperable/
+date: '2025-06-12T20:26:28'
+excerpt: Apple OSes will soon transfer passkeys seamlessly and securely across platforms.
+image: assets/media/pzIWEZYiSeJ3ndgTCiN02g-J_oY7mfSkj7dSrWVJzJqow.webp
+source: arstechnica
+tags:
+- Apple
+- Biz & IT
+- Security
+- iOS
+- iPadOS
+- MacOS
+- wwdc 2025
+title: 'Coming to Apple OSes: A seamless, secure way to import and export passkeys'
+---
+<div>
+                      
+                      
+          <p>Apple this week provided a glimpse into a feature that solves one of the biggest drawbacks of passkeys, the industry-wide standard for website and app authentication that isn't susceptible to credential phishing and other attacks targeting passwords.</p>
+<p>The import/export feature, which Apple <a href="https://developer.apple.com/videos/play/wwdc2025/279/?time=1152">demonstrated</a> at this week&#8217;s Worldwide Developers Conference, will be available in the next major releases of iOS, macOS, iPadOS, and visionOS. It aims to solve one of the biggest shortcomings of passkeys as they have existed to date. Passkeys created on one operating system or credential manager are largely bound to those environments. A passkey created on a Mac, for instance, can sync easily enough with other Apple devices connected to the same iCloud account. Transferring them to a Windows device or even a dedicated credential manager installed on the same Apple device has been impossible.</p>
+<h2>Growing pains</h2>
+<p>That limitation has led to criticisms that passkeys are a power play by large companies to lock users into specific product ecosystems. Users have also rightly worried that the lack of transferability increases the risk of getting locked out of important accounts if a device storing passkeys is lost, stolen, or destroyed.</p>
+<p>The FIDO Alliance, the consortium of more than 100 platform providers, app makers, and websites developing the authentication standard, has been keenly aware of the drawback and has been working on programming interfaces that will make the passkey syncing more flexible. A <a href="https://www.androidauthority.com/passkey-import-3540069/">recent teardown</a> of the Google password manager by Android Authority shows that developers are actively implementing import/export tools, although the company has yet to provide any timeline for their general availability. (Earlier this year, the Google password manager added functionality to transfer passwords to iOS apps, but the process is clunky.) A <a href="https://fidoalliance.org/specs/cx/cxf-v1.0-rd-20250313.html">recent update</a> from FIDO shows that a large roster of companies are participating in the development, including Dashlane, 1Password, Bitwarden, Devolutions, NordPass, and Okta.</p>
+<p>&#8220;People own their credentials and should have the flexibility to manage them where they choose,&#8221; the narrator of the Apple video says. &#8220;This gives people more control over their data and the choice of which credential manager they use.&#8221; The transfer feature, which will also work with passwords and verification codes, provides an industry-standard means for apps and OSes to more securely sync these credentials.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+<p>As the video explains:</p>
+<blockquote><p>This new process is fundamentally different and more secure than traditional credential export methods, which often involve exporting an unencrypted CSV or JSON file, then manually importing it into another app. The transfer process is user initiated, occurs directly between participating credential manager apps and is secured by local authentication like Face ID.</p>
+<p>This transfer uses a data schema that was built in collaboration with the members of the FIDO Alliance. It standardizes the data format for passkeys, passwords, verification codes, and more data types.</p>
+<p>The system provides a secure mechanism to move the data between apps. No insecure files are created on disk, eliminating the risk of credential leaks from exported files. It&#8217;s a modern, secure way to move credentials.</p></blockquote>
+<p>The push to passkeys is fueled by the tremendous costs associated with passwords. Creating and managing a sufficiently long, randomly generated password for each account is a burden on many users, a difficulty that often leads to weak choices and reused passwords. Leaked passwords have also been a chronic problem.</p>
+<p>Passkeys, in theory, provide a means of authentication that&#8217;s immune to credential phishing, password leaks, and password spraying. Under the latest &#8220;FIDO2&#8221; specification, it creates a unique public/private encryption keypair during each website or app enrollment. The keys are generated and stored on a user&#8217;s phone, computer, YubiKey, or similar device. The public portion of the key is sent to the account service. The private key remains bound to the user device, where it can&#8217;t be extracted. During sign-in, the website or app server sends the device that created the key pair a challenge in the form of pseudo-random data. Authentication occurs only when the device signs the challenge using the corresponding private key and sends it back.</p>
+<p>This design ensures that there is no shared secret that ever leaves the user's device. That means there's no data to be sniffed in transit, phished, or compromised through other common methods.</p>
+<p>As I <a href="https://arstechnica.com/security/2024/12/passkey-technology-is-elegant-but-its-most-definitely-not-usable-security/">noted in December</a>, the biggest thing holding back passkeys at the moment is their lack of usability. Apps, OSes, and websites are, in many cases, islands that don't interoperate with their peers. Besides potentially locking users out of their accounts, the lack of interoperability also makes passkeys too difficult for many people.</p>
+<p>Apple's demo this week provides the strongest indication yet that passkey developers are making meaningful progress in improving usability.</p>
+
+
+          
+                  
+
+                  
+          </div>
