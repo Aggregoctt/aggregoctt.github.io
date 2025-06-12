@@ -1,0 +1,88 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142553/rumour-google-intends-to-discontinue-the-android-open-source-project/
+date: '2025-06-12T06:08:01'
+excerpt: 'With the release of Android 16, Google changed how it developed Android.
+  Development is now taking place behind closed doors, with the code dropped after
+  the corresponding version has been released to Pixel devices. Well, it turns out
+  this wasn&#8217;t the only thing Google has changed about Android development. As
+  the developers of CalyxOS, a popular de-Googled Android ROM, dove into the Android
+  16 AOSP source code, they realised something very important was missing: the device-specific
+  source code for modern Pixel devices. Android 16 was released to AOSP yesterday
+  but with a one big difference than typical releases: Google did not publish any
+  device-specific source code for supported, modern Pixel devices. In previous years,
+  Google released full device trees alongside new Android versions. This allowed developers
+  to build and boot AOSP on Pixel hardware relatively easily. With Android 16, only
+  the platform/framework code has been released. The device trees are missing, at
+  least for now. This means AOSP 16 cannot currently be built or run on any recent
+  Pixel device easily just using official source. It’s unclear whether this is a delay
+  or a policy change. Either way, it seriously disrupts custom ROM development and
+  our porting efforts. ↫ CalyxOS on Reddit If this is truly a policy change, it&#8217;s
+  a big one that affects custom ROM developers considerably. Pixel devices were &#8220;special&#8221;
+  among custom ROM developers because support for them was part of AOSP releases,
+  so they were well-supported by projects like CalyxOS, GrapheneOS, and LineageOS,
+  including all the hardware components, and with quick updates. Without access to
+  the Pixel-specific source code for the Pixel 6 to Pixel 9a, these devices will now
+  have to be treated like any other Android phone as far as ROM developers go, meaning
+  it&#8217;ll take a lot more work and time to get them to work properly with new
+  major Android releases. Google did not announce this potential policy change, and
+  this has some in the custom Android ROM community on edge. I&#8217;ve been talking
+  to people in the custom ROM community, and the story goes that a few months ago,
+  at least one of these communities was approached by a journalist who wanted to talk
+  to them. This journalist claimed that Google intends to discontinue the Android
+  Open Source Project, with the first step Google would take being no longer releasing
+  the device-specific Pixel source code (something nobody knew would happen until
+  yesterday). The fact that this first step has now become a reality lends some credence
+  to the journalist&#8217;s claim that Google is discontinuing AOSP. However, since
+  such tips are not uncommon, and since there was no way to verify, the custom ROM
+  developers in question didn&#8217;t really know what to do with it. During the writing
+  of this article over the past 12 hours, Google itself has also responded to what
+  is apparently a growing, now public concern in the wider Android community. Seang
+  Chau, Google VP and GM of Android Platform, published a Tweet, disclaiming Google
+  has any intentions to close up shop for AOSP. We&#8217;re seeing some speculation
+  that AOSP is being discontinued. To be clear, AOSP is NOT going away. AOSP was built
+  on the foundation of being an open platform for device implementations, SoC vendors,
+  and instruction set architectures. AOSP needs a reference target that is flexible,
+  configurable, and affordable – independent of any particular hardware, including
+  those from Google. For years, developers have been building Cuttlefish (available
+  on GitHub as the reference device for AOSP) and GSI targets from source. We continue
+  to make those available for testing and development purposes. ↫ Seang Chau This
+  seems like a solid denial from Google, but it leaves a lot of room for Google to
+  make a wide variety of changes to Android&#8217;s development and open source status
+  without actually killing off AOSP entirely. Since Android is licensed under the
+  Apache 2.0 license, Google is free to make &#8220;Pixel Android&#8221; &#8211; its
+  own Android variant &#8211; closed source, leaving AOSP up until that point available
+  under the Apache 2.0 license. This is reminiscent of what Oracle did with Solaris.
+  Of course, any modifications to the Linux kernel upon which Android is built will
+  remain open source, since the Linux kernel is licensed under the GPLv2. If Google
+  were indeed intending to do this, what could happen is that Google takes Android
+  closed source from here on out, spinning off whatever remains of AOSP up until that
+  point into a separate company or project, as potentially ordered during the antitrust
+  case against Google in the United States. This would leave Google free to continue
+  developing its own &#8220;Pixel Android&#8221; entirely as proprietary software
+  &#8211; save for the Linux kernel &#8211; while leaving AOSP in the state it&#8217;s
+  in right now outside of Google. This technically means &#8220;AOSP is not going
+  away&#8221;, as Chau claims. Of course, other parties would then be free to continue
+  working on and contributing to AOSP, but AOSP itself would no longer benefit from
+  the work done by Google. Again, this feels very similar to how illumos and OpenIndiana
+  are built atop the last open source release of Solaris from 2010, without any of
+  the additional work Oracle has done on Solaris since then. As you can tell, there&#8217;s
+  a lot of speculation here, because even if all of this is true, it seems the ongoing
+  court case and any rulings that come of it will play a major role in Google&#8217;s
+  decision-making process. The Android Open Source Project has been gutted over the
+  years, with Google leaving more and more parts of it to languish, while moving a
+  lot of code and functionality into proprietary components like Google Mobile Services
+  and Google Play Services. Taking &#8220;Pixel Android&#8221; closed source almost
+  feels like the natural next step in the process of gutting AOSP that&#8217;s been
+  ongoing for well over a decade. As it stands today, a default AOSP installation
+  requires a lot of additional components and applications before it can be considered
+  a complete mobile'
+image: null
+source: osnews
+tags:
+- Android
+title: 'Rumour: Google intends to discontinue the Android Open Source Project'
+---
+<div><p>With the release of Android 16, <a href="https://www.osnews.com/story/142002/google-moves-all-android-development-behind-closed-doors/">Google changed how it developed Android</a>. Development is now taking place behind closed doors, with the code dropped after the corresponding version has been released to Pixel devices. Well, it turns out this wasn&#8217;t the only thing Google has changed about Android development. As the developers of CalyxOS, a popular de-Googled Android ROM, dove into the Android 16 AOSP source code, they realised something very important was missing: the device-specific source code for modern Pixel devices.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Android 16 was released to <a href="https://android.googlesource.com/platform/manifest/+/android-16.0.0_r1">AOSP</a> yesterday but with a one big difference than typical releases: Google did not publish any device-specific source code for supported, modern Pixel devices. In previous years, Google released full device trees alongside new Android versions. This allowed developers to build and boot AOSP on Pixel hardware relatively easily. With Android 16, only the platform/framework code has been released. The device trees are missing, at least for now.</p><p>This means AOSP 16 cannot currently be built or run on any recent Pixel device easily just using official source. It&#8217;s unclear whether this is a delay or a policy change. Either way, it seriously disrupts custom ROM development and our porting efforts.</p>
+<a href="https://old.reddit.com/r/CalyxOS/comments/1l8z43t/android_16_and_pixel_support/">&#8619; CalyxOS on Reddit</a></blockquote><p>If this is truly a policy change, it&#8217;s a big one that affects custom ROM developers considerably. Pixel devices were &#8220;special&#8221; among custom ROM developers because support for them was part of AOSP releases, so they were well-supported by projects like CalyxOS, GrapheneOS, and LineageOS, including all the hardware components, and with quick updates. Without access to the Pixel-specific source code for the Pixel 6 to Pixel 9a, these devices will now have to be treated like any other Android phone as far as ROM developers go, meaning it&#8217;ll take a lot more work and time to get them to work properly with new major Android releases.</p><p>Google did not announce this potential policy change, and this has some in the custom Android ROM community on edge. I&#8217;ve been talking to people in the custom ROM community, and the story goes that a few months ago, at least one of these communities was approached by a journalist who wanted to talk to them. This journalist claimed that Google intends to discontinue the Android Open Source Project, with the first step Google would take being no longer releasing the device-specific Pixel source code (something nobody knew would happen until yesterday). The fact that this first step has now become a reality lends some credence to the journalist&#8217;s claim that Google is discontinuing AOSP. However, since such tips are not uncommon, and since there was no way to verify, the custom ROM developers in question didn&#8217;t really know what to do with it.</p><p>During the writing of this article over the past 12 hours, Google itself has also responded to what is apparently a growing, now public concern in the wider Android community. Seang Chau, Google VP and GM of Android Platform, published a Tweet, disclaiming Google has any intentions to close up shop for AOSP.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>We&#8217;re seeing some speculation that AOSP is being discontinued. To be clear, AOSP is NOT going away. AOSP was built on the foundation of being an open platform for device implementations, SoC vendors, and instruction set architectures.</p><p>AOSP needs a reference target that is flexible, configurable, and affordable &#8211; independent of any particular hardware, including those from Google. For years, developers have been building Cuttlefish (available on GitHub as the reference device for AOSP) and GSI targets from source. We continue to make those available for testing and development purposes.</p>
+<a href="https://x.com/seangchau/status/1933029688202703062">&#8619; Seang Chau</a></blockquote><p>This seems like a solid denial from Google, but it leaves a lot of room for Google to make a wide variety of changes to Android&#8217;s development and open source status without actually killing off AOSP entirely. Since Android is licensed under the Apache 2.0 license, Google is free to make &#8220;Pixel Android&#8221; &#8211; its own Android variant &#8211; closed source, leaving AOSP up until that point available under the Apache 2.0 license. This is reminiscent of what Oracle did with Solaris. Of course, any modifications to the Linux kernel upon which Android is built will remain open source, since the Linux kernel is licensed under the GPLv2.</p><p>If Google were indeed intending to do this, what could happen is that Google takes Android closed source from here on out, spinning off whatever remains of AOSP up until that point into a separate company or project, as potentially ordered during the antitrust case against Google in the United States. This would leave Google free to continue developing its own &#8220;Pixel Android&#8221; entirely as proprietary software &#8211; save for the Linux kernel &#8211; while leaving AOSP in the state it&#8217;s in right now outside of Google. This technically means &#8220;AOSP is not going away&#8221;, as Chau claims.</p><p>Of course, other parties would then be free to continue working on and contributing to AOSP, but AOSP itself would no longer benefit from the work done by Google. Again, this feels very similar to how illumos and OpenIndiana are built atop the last open source release of Solaris from 2010, without any of the additional work Oracle has done on Solaris since then. As you can tell, there&#8217;s a lot of speculation here, because even if all of this is true, it seems the ongoing court case and any rulings that come of it will play a major role in Google&#8217;s decision-making process.</p><p>The Android Open Source Project has been gutted over the years, with Google leaving more and more parts of it to languish, while moving a lot of code and functionality into proprietary components like Google Mobile Services and Google Play Services. Taking &#8220;Pixel Android&#8221; closed source almost feels like the natural next step in the process of gutting AOSP that&#8217;s been ongoing for well over a decade. As it stands today, a default AOSP installation requires a lot of additional components and applications before it can be considered a complete mobile operating system, and if it were to be spun off into a separate, non-Google project to which Google itself contributes nothing, its future seems quite uncertain.</p><p>My own perception is that this is just one of the courses of action Google is considering in light of potentially being forced to spin off Android as part of the antitrust case in the United States. I doubt any decisions have been made yet, but if they go through with it, it would allow Google to develop &#8220;Pixel Android&#8221; in such a way that it wouldn&#8217;t benefit any of their Pixel competitors, unless these competitors specifically opt to license &#8220;Pixel Android&#8221; &#8211; assuming Google would even offer such licensing options. Regardless, it seems the Android world might be in for a shock.</p></div>
