@@ -1,0 +1,61 @@
+---
+author: Nate Anderson
+canonical_url: https://arstechnica.com/tech-policy/2025/06/man-hid-child-abuse-in-nsfw-nope-dont-open-you-were-warned/
+date: '2025-06-16T21:16:51'
+excerpt: Child sex abuse imagery leads to 5 years in prison.
+image: assets/media/2V24wwhjCqQkOAqGJVwQ_g-ZKyn-UZkUm8D8Q5jnZcE3Q.webp
+source: arstechnica
+tags:
+- Policy
+- child pornography
+- computer security
+- csam
+- guantanamo bay
+title: Man “hid” child abuse in “/NSFW/Nope/Don’t open/You were Warned/”
+---
+<div>
+                      
+                      
+          <p>Last Friday, a Michigan man named David Bartels was sentenced to five years in federal prison for "Possession of Child Pornography by a Person Employed by the Armed Forces Outside of the United States." The unusual nature of the charge stems from the fact that Bartels bought and viewed the illegal material while working as a military contractor for Maytag Fuels at Naval Station Guantanamo Bay, Cuba.</p>
+<p>Bartels had made some cursory efforts to cover his tracks, such as using the <a href="https://www.torproject.org/download/">TOR browser</a>. (This may sound simple enough, but according to the US government, only 12.3 percent of people charged with similar offenses used "the Dark Web" at all.) Bartels knew enough about tech to use Discord, Telegram, VLC, and Megasync to further his searches. And he had at least eight external USB hard drives or SSDs, plus laptops, an Apple iPad Mini, and a Samsung Galaxy Z Fold 3.</p>
+<p>But for all his baseline technical knowledge, Bartels simultaneously showed little security awareness. He bought collections of child sex abuse material (CSAM) using PayPal, for instance. He received CSAM from other people who possessed his actual contact information. And he stored his contraband on a Western Digital 5TB hard drive under the astonishingly guilty-sounding folder hierarchy "/NSFW/Nope/Don't open/You were Warned/Deeper/."</p>
+<h2>Not hard to catch</h2>
+<p>According to <a href="https://storage.courtlistener.com/recap/gov.uscourts.miwd.112766/gov.uscourts.miwd.112766.38.0.pdf">Bartels' lawyer</a>, authorities found Bartels in January 2023, after "a person he had received child porn from was caught by law enforcement. Apparently they were able to see who this individual had sent material to, one of which was Mr. Bartels."</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Captain Samuel White, who was the commanding officer at Guantanamo Bay at the time, approved a "command authorized search and seizure" of Bartels' gear. As NCIS investigators grabbed his computing equipment, others sat Bartels down for some questioning. He cracked immediately, telling them that he had in fact owned the PayPal account, which had "been locked for at least one year," and he admitted to buying CSAM while stationed on the base.</p>
+<p>Forensic investigation <a href="https://storage.courtlistener.com/recap/gov.uscourts.miwd.112766/gov.uscourts.miwd.112766.26.1.pdf">showed</a> that /NSFW/Nope/Don't open/You were Warned/Deeper/ contained "41,026 images and videos." When the hash values of these files were run against the main National Center for Missing and Exploited Children database, 285 "known victims" of CSAM were identified in 1,500 images and videos&#8212;including children who were under 12 at the time.</p>
+<p>These "known victims," now much older, can file restitution claims against people who view their abuse images. In Bartels' case, 19 people did so, asking courts for a total of $151,500 from him. The judge gave them $63,000 instead&#8212;$3,000 apiece.</p>
+<p>The forensic search of Bartels' drives is also a good reminder of just how many traces people leave when doing anything on modern digital computing systems:</p>
+<ul>
+<li><strong>Jump Lists.</strong> Windows creates "<a href="https://www.makeuseof.com/windows-10-jump-lists-guide/">Jump Lists</a>" that allow people to quickly access recently opened files. These Jump Lists, which had not been purged, showed that CSAM files from the 5TB hard drive had been opened on Bartels' laptop.</li>
+<li><strong>Browser data.</strong> Microsoft Edge had not been purged. Its "WebCachev01.dat" and "History" files likewise showed the laptop's user accessing CSAM video files from the Western Digital drive.</li>
+<li><strong>Registry data.</strong> This was further confirmed by data from the "USBSTOR" key in the Windows Registry, which identified a 5TB "WD Elements 2620 USB Device" as having been last connected to the laptop on December 31, 2022.</li>
+<li><strong>Bookmarks.</strong> CSAM websites had been bookmarked within the TOR browser and stored in its "places.sqlite" file.</li>
+<li><strong>Prefetch.</strong> The Windows Prefetch tool&#8212;meant to increase application load/run speed&#8212;also stores data on the last eight times each piece of software was run. The data was used by investigators to show exactly when Bartels had run tools like Megasync, Telegram, and VLC.</li>
+</ul>
+
+          
+                  
+
+              
+          
+          
+<h2>&#8220;He did nothing...&#8221;</h2>
+<p><a href="https://storage.courtlistener.com/recap/gov.uscourts.miwd.112766/gov.uscourts.miwd.112766.26.0.pdf">According to the government</a>, Bartels had the mental and educational resources to "battle his sexual interest in children, or he could have used his salary to find treatment or assistance with combating his proclivity... Instead, he did nothing but feed his insatiable desire to harm children."</p>
+<p>In a <a href="https://storage.courtlistener.com/recap/gov.uscourts.miwd.112766/gov.uscourts.miwd.112766.38.0.pdf">sentencing memo</a>, Bartels' lawyer argues that his client would never have sought out this material in the past. But now, "the ready accessibility of porn and the ease at which it can be shared online has created a cesspool for all kinds of people and images to circulate around," he wrote.</p>
+<p>Such material can "lead anyone down a rabbit hole that puts them in prison. We have people that likely would never have gone out and purchased DVDs back in the 1990s that can now find whatever they want on the internet. The dopamine release of viewing this material is well documented and can quickly create an addiction. This seems to happen particularly to those who are socially isolated and spend a lot of free time on a computer."</p>
+<p>Bartels, who is said to be "deeply ashamed" of what he did, now has plenty of free time in front of him&#8212;but little of it is likely to be spent on computers.</p>
+
+
+          
+                  
+
+                  
+          </div>
