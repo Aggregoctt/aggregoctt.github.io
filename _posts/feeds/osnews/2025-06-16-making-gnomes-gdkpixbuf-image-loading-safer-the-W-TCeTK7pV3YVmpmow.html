@@ -1,0 +1,48 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142582/making-gnomes-gdkpixbuf-image-loading-safer/
+date: '2025-06-16T21:24:13'
+excerpt: 'A new image loading machinery, called glycin, has been in the works for
+  a while. It is already used by GNOME’s default Image Viewer (Loupe), as well as
+  by a bunch of other apps. Glycin provides many security benefits over existing solutions
+  due to the use of the Rust programming language and sandboxing. Distributions will
+  now be able to use the security benefits and broader format support of glycin for
+  other GNOME apps, thumbnailers, and GNOME Shell, whithout changing any existing
+  software. This is made possible by a new option for GNOME’s legacy image-loading
+  library, GdkPixbuf, to use glycin internally. ↫ Sophie Herold Clearly, this is an
+  improvement over the previous image loading library, but there&#8217;s a bit of
+  a catch that is in line with GNOME&#8217;s increased reliance on systemd features:
+  glycin only works on Linux due to its sandbox mechanisms and how it communicates
+  with its loaders. However, there&#8217;s no need to fret this time, and that&#8217;s
+  why I&#8217;m posting this item &#8211; you just know this tiny little tidbit will
+  find their way into internet discussion forums and social media as another example
+  of GNOME not caring about non-Linux users. While some of the sandboxing and communication
+  features in glycin can be made to work on the BSDs and perhaps macOS, it won&#8217;t
+  be perfect. As such, great care has been taken to ensure non-Linux platforms can
+  continue to use GdkPixbuf just fine, since support for other platforms is part of
+  the goals of this change before traditional loaders are removed. As a general solution
+  for other platforms, I am planning a mechanism to compile the loaders into the library.
+  This will not provide sandboxing and format extendability without recompilation.
+  But since most loaders are written in Rust, this is still a huge step-up security
+  wise. Contributions for support on other platforms are welcome. For GdkPixbuf users,
+  this will not pose an immediate issue since traditional gdk-pixbuf loaders are not
+  going away until all platforms it supported, are supported by glycin. ↫ Sophie Herold
+  There are a few other issues, as any change like this tends to cause, like the list
+  of supported images formats. Glycin supports AVIF, BMP, DDS, Farbfeld, QOI, GIF,
+  HEIC, ICO, JPEG, JPEG XL, OpenEXR, PNG, PNM, SVG, TGA, TIFF, and WEBP out of the
+  box, but some of the subformats within each of these might potentially not work
+  entirely correctly due to incorrect implementations by, say, camera manufacturers.
+  A special case here is the TIFF format, which apparently still has a number of issues
+  and might end up relying on a fallback. Glycin brings a ton of benefits, such as
+  improved colour support for things like HDR and wider colour gamut displays, better
+  metadata support, basic image editing functions out of the box, increased performance,
+  as well as the benefits inherent in using a memory-safe language like Rust.'
+image: null
+source: osnews
+tags:
+- Gnome
+title: Making GNOME’s GdkPixbuf image loading safer
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>A new image loading machinery, called <a href="https://gitlab.gnome.org/GNOME/glycin" target="_blank" rel="noreferrer noopener">glycin</a>, has been in the works for a while. It is already used by GNOME&#8217;s default Image Viewer (Loupe), as well as by a bunch of <a href="https://gitlab.gnome.org/GNOME/glycin#apps-using-glycin" target="_blank" rel="noreferrer noopener">other apps</a>. Glycin provides many security benefits over existing solutions due to the use of the Rust programming language and sandboxing. Distributions will now be able to use the security benefits and broader format support of glycin for other GNOME apps, thumbnailers, and GNOME Shell, whithout changing any existing software. This is made possible by a new option for GNOME&#8217;s legacy image-loading library, GdkPixbuf, to use glycin internally.</p>
+<a href="https://blogs.gnome.org/sophieh/2025/06/13/making-gnomes-gdkpixbuf-image-loading-safer/">&#8619; Sophie Herold</a></blockquote><p>Clearly, this is an improvement over the previous image loading library, but there&#8217;s a bit of a catch that is in line with GNOME&#8217;s increased reliance on systemd features: glycin only works on Linux due to its sandbox mechanisms and how it communicates with its loaders. However, there&#8217;s no need to fret this time, and that&#8217;s why I&#8217;m posting this item &#8211; you just know this tiny little tidbit will find their way into internet discussion forums and social media as another example of GNOME not caring about non-Linux users.</p><p>While some of the sandboxing and communication features in glycin can be made to work on the BSDs and perhaps macOS, it won&#8217;t be perfect. As such, great care has been taken to ensure non-Linux platforms can continue to use GdkPixbuf just fine, since support for other platforms is part of the goals of this change before traditional loaders are removed.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>As a general solution for other platforms, I am planning a mechanism to compile the loaders into the library. This will not provide sandboxing and format extendability without recompilation. But since most loaders are written in Rust, this is still a huge step-up security wise. Contributions for support on other platforms are welcome. For GdkPixbuf users, this will not pose an immediate issue since traditional gdk-pixbuf loaders are not going away until all platforms it supported, are supported by glycin.</p>
+<a href="https://blogs.gnome.org/sophieh/2025/06/13/making-gnomes-gdkpixbuf-image-loading-safer/">&#8619; Sophie Herold</a></blockquote><p>There are a few other issues, as any change like this tends to cause, like the list of supported images formats. Glycin supports AVIF, BMP, DDS, Farbfeld, QOI, GIF, HEIC, ICO, JPEG, JPEG XL, OpenEXR, PNG, PNM, SVG, TGA, TIFF, and WEBP out of the box, but some of the subformats within each of these might potentially not work entirely correctly due to incorrect implementations by, say, camera manufacturers. A special case here is the TIFF format, which apparently still has <a href="https://github.com/image-rs/image-tiff/issues/262">a number of issues</a> and might end up relying on a fallback.</p><p>Glycin brings a ton of benefits, such as improved colour support for things like HDR and wider colour gamut displays, better metadata support, basic image editing functions out of the box, increased performance, as well as the benefits inherent in using a memory-safe language like Rust.</p></div>
