@@ -1,0 +1,45 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/06/tech-support-scammers-inject-malicious-phone-numbers-into-big-name-websites/
+date: '2025-06-18T21:10:45'
+excerpt: Microsoft, Apple, Bank of America, and many more sites all targeted.
+image: assets/media/74RnldrxSGC4KAWn-9orYg-DL6tFiKsu981L-DpKlrHKg.webp
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- google ads
+- tech support scams
+- websites
+title: Tech support scammers inject malicious phone numbers into big-name websites
+---
+<div>
+          
+          
+<h2>Not the Apple page you're looking for</h2>
+<p>&#8220;If I showed the [webpage] to my parents, I don't think they would be able to tell that this is fake,&#8221; J&#233;r&#244;me Segura, lead malware intelligence analyst at Malwarebytes, said in an interview. &#8220;As the user, if you click on those links, you think, &#8216;Oh I'm actually on the Apple website and Apple is recommending that I call this number.&#8217;&#8221;</p>
+<p>The unknown actors behind the scam begin by buying Google ads that appear at the top of search results for Microsoft, Apple, HP, PayPal, Netflix, and other sites. While Google displays only the scheme and host name of the site the ad links to (for instance, https://www.microsoft.com), the ad appends parameters to the path to the right of that address. When a target clicks on the ad, it opens a page on the official site. The appended parameters then inject fake phone numbers into the page the target sees.</p>
+ 
+
+ 
+
+<p>Google requires ads to display the official domain they link to, but the company allows parameters to be added to the right of it that aren't visible. The scammers are taking advantage of this by adding strings to the right of the hostname. An example:</p>
+<pre>/kb/index?page=search&amp;q=&#9743;&#9743;Call%20Us%20%2B1-805-749-2108%20AppIe%20HeIpIine%2F%2F%2F%2F%2F%2F%2F&amp;product=&amp;doctype=&amp;currentPage=1&amp;includeArchived=false&amp;locale=en_US&amp;type=organic</pre>
+ 
+<p>The parameters aren't displayed in the Google ad, so a target has no obvious reason to suspect anything is amiss. When clicked on, the ad leads to the correct hostname. The appended parameters, however, inject a fake phone number into the webpage the target sees. The technique works on most browsers and against most websites. Malwarebytes.com was among the sites affected until recently, when the site began filtering out the malicious parameters.</p>
+ 
+
+<p>&#8220;If there is a security flaw here it&#8217;s that when you run that URL it executes that query against the Apple website and the Apple website is unable to determine that this is not a legitimate query,&#8221; Segura explained. &#8220;This is a preformed query made by a scammer, but [the website is] not able to figure that out. So they're just spitting out whatever query you have.&#8221;</p>
+<p>So far, Segura said, he has seen the scammers abuse only Google ads. It's not known if ads on other sites can be abused in a similar way.</p>
+<p>While many targets will be able to recognize that the injected text is fake, the ruse may not be so obvious to people with vision impairment, cognitive decline, or who are simply tired or in a hurry. When someone calls the injected phone number, they're connected to a scammer posing as a representative of the company. The scammer can then trick the caller into handing over personal or payment card details or allow remote access to their computer. Scammers who claim to be with Bank of America or PayPal try to gain access to the target&#8217;s financial account and drain it of funds.</p>
+<p>Malwarebytes&#8217; browser security product now notifies users of such scams. A more comprehensive preventative step is to never click on links in Google ads, and instead, when possible, to click on links in organic results.</p>
+
+
+          
+                   
+             
+             
+            
+
+                  
+          </div>
