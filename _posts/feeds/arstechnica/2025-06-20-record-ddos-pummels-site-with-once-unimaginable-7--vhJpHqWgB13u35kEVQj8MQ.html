@@ -1,0 +1,45 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/06/record-ddos-pummels-site-with-once-unimaginable-7-3tbps-of-junk-traffic/
+date: '2025-06-20T19:04:22'
+excerpt: Attacker rained down the equivalent of 9,300 full-length HD movies in just
+  45 seconds.
+image: assets/media/vhJpHqWgB13u35kEVQj8MQ-LqFkXslOEKpGAkdZi-2TSw.webp
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- distributed denial of service attack
+- DOS attack
+title: Record DDoS pummels site with once-unimaginable 7.3Tbps of junk traffic
+---
+<div>
+                      
+                      
+          <p>Large-scale attacks designed to bring down Internet services by sending them more traffic than they can process keep getting bigger, with the largest one yet, measured at 7.3 terabits per second, being reported Friday by Internet security and performance provider Cloudflare.</p>
+<p>The 7.3Tbps attack amounted to 37.4 terabytes of junk traffic that hit the target in just 45 seconds. That's an almost comprehensible amount of data, equivalent to more than 9,300 full-length HD movies or 7,500 hours of HD streaming content in well under a minute.</p>
+<h2>Indiscriminate target bombing</h2>
+<p>Cloudflare <a href="https://blog.cloudflare.com/defending-the-internet-how-cloudflare-blocked-a-monumental-7-3-tbps-ddos/">said</a> the attackers &#8220;carpet bombed&#8221; an average of nearly 22,000 destination ports of a single IP address belonging to the target, identified only as a Cloudflare customer. A total of 34,500 ports were targeted, indicating the thoroughness and well-engineered nature of the attack.</p>
+<p>The vast majority of the attack was delivered in the form of User Datagram Protocol packets. Legitimate UDP-based transmissions are used in especially time-sensitive communications, such as those for video playback, gaming applications, and DNS lookups. It speeds up communications by not formally establishing a connection before data is transferred. Unlike the more common Transmission Control Protocol, UDP doesn't wait for a connection between two computers to be established through a handshake and doesn't check whether data is properly received by the other party. Instead, it immediately sends data from one machine to another.</p>
+<p>UDP flood attacks send extremely high volumes of packets to random or specific ports on the target IP. Such floods can saturate the target&#8217;s Internet link or overwhelm internal resources with more packets than they can handle.</p>
+<p>Since UDP doesn't require a handshake, attackers can use it to flood a targeted server with torrents of traffic without first obtaining the server's permission to begin the transmission. UDP floods typically send large numbers of datagrams to multiple ports on the target system. The target system, in turn, must send an equal number of data packets back to indicate the ports aren't reachable. Eventually, the target system buckles under the strain, resulting in legitimate traffic being denied.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>A much smaller portion of the attack, measured at just 0.004 percent, was delivered as reflection attacks. Reflection attacks direct malicious traffic to one or more third-party intermediaries, such as Network Time Protocol services for syncing server clocks. The attacker spoofs the sender IP of the malicious packets to give the appearance they&#8217;re being delivered by the final target. When the third party sends a response, it's delivered to the target rather than the destination of the original source of the traffic.</p>
+<p>Reflection attacks provide multiple benefits to attackers. For one, such attacks cause the DDoS to be delivered from a wide variety of destinations. That makes it harder for targets to defend against the onslaught. Additionally, by choosing intermediary servers known to generate responses that are in some cases thousands of times bigger than the originating request, attackers can magnify the firepower available to them by a thousandfold or more. Cloudflare and other players routinely advise server administrators to lock down servers to prevent them from responding to spoofed packets, but inevitably, many don't heed the advice.</p>
+<p>Cloudflare said the record DDoS exploited various reflection or amplification vectors, including the previously mentioned Network Time Protocol; the Quote of the Day Protocol, which listens on UDP port 17 and responds with a short quote or message; the Echo Protocol, which responds with the same data it receives; and Portmapper services used identify resources available to applications connecting through the Remote Procedure Call.</p>
+<p>Cloudflare said the attack was also delivered through one or more Mirai-based botnets. Such botnets are typically made up of home and small office routers, web cameras, and other Internet of Things devices that have been compromised.</p>
+<p>DDoS sizes have continued a steady climb over the past three decades. In <a href="https://arstechnica.com/security/2025/03/massive-botnet-that-appeared-overnight-is-delivering-record-size-ddoses/">March</a>, Nokia reported that a botnet dubbed Eleven11bot delivered a DOS with a peak of 6.5Tbps. In May, KrebsonSecurity <a href="https://krebsonsecurity.com/2025/05/krebsonsecurity-hit-with-near-record-6-3-tbps-ddos/">said</a> it came under a DDos that peaked at 6.3Tbps.</p>
+
+
+          
+                  
+
+                  
+          </div>
