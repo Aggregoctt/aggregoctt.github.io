@@ -1,0 +1,161 @@
+---
+author: Timothy B. Lee
+canonical_url: https://arstechnica.com/features/2025/06/study-metas-llama-3-1-can-recall-42-percent-of-the-first-harry-potter-book/
+date: '2025-06-20T11:00:14'
+excerpt: The research could have big implications for generative AI copyright lawsuits.
+image: assets/media/EUJcxJOVUDcmwqW90MV_Cw-PWakzYk5XJEVhYNtcRgd8g.webp
+source: arstechnica
+tags:
+- AI
+- Features
+- harry potter
+- Llama 3.1
+- Meta AI
+title: 'Study: Meta AI model can reproduce almost half of Harry Potter book'
+---
+<div>
+                      
+                      
+           
+<p>In recent years, numerous plaintiffs&#8212;including publishers of books, newspapers, computer code, and photographs&#8212;have&#160;<a href="https://www.understandingai.org/p/the-ai-community-needs-to-take-copyright" rel="">sued AI companies</a>&#160;for training models using copyrighted material. A key question in all of these lawsuits has been how easily AI models produce verbatim excerpts from the plaintiffs&#8217; copyrighted content.</p>
+<p>For example, in its&#160;<a href="https://www.understandingai.org/p/why-the-new-york-times-sued-microsoft" rel="">December 2023 lawsuit</a> against OpenAI, The New York Times Company produced dozens of examples where GPT-4 exactly reproduced significant passages from Times&#160;stories. In its&#160;<a href="https://www.courthousenews.com/wp-content/uploads/2025/01/open-ai-motion-to-dismiss-ny-times.pdf" rel="">response</a>, OpenAI described this as a &#8220;fringe behavior&#8221; and a &#8220;problem that researchers at OpenAI and elsewhere work hard to address.&#8221;</p>
+<p>But is it actually a fringe behavior? And have leading AI companies addressed it?&#160;<a href="https://arxiv.org/abs/2505.12546" rel="">New research</a>&#8212;focusing on books rather than newspaper articles and on different companies&#8212;provides surprising insights into this question. Some of the findings should bolster plaintiffs&#8217; arguments, while others may be more helpful to defendants.</p>
+<p>The paper was published last month by a team of computer scientists and legal scholars from Stanford, Cornell, and West Virginia University. They studied whether five popular open-weight models&#8212;three from Meta and one each from Microsoft and EleutherAI&#8212;were able to reproduce text from Books3, a collection of books that is widely used to train LLMs. Many of the books are still under copyright.</p>
+<p>This chart illustrates their most surprising finding:</p>
+ 
+<p>The chart shows how easy it is to get a model to generate 50-token excerpts from various parts of&#160;Harry Potter and the Sorcerer's Stone. The darker a line is, the easier it is to reproduce that portion of the book.</p>
+<p>Each row represents a different model. The three bottom rows are Llama models from Meta. And as you can see, Llama 3.1 70B&#8212;a mid-sized model Meta released in July 2024&#8212;is far more likely to reproduce Harry Potter text than any of the other four models.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Specifically, the paper estimates that Llama 3.1 70B has memorized&#160;42 percent&#160;of the first Harry Potter book well enough to reproduce 50-token excerpts at least half the time. (I&#8217;ll unpack how this was measured in the next section.)</p>
+<p>Interestingly, Llama 1 65B, a similar-sized model released in February 2023, had memorized only 4.4 percent of&#160;Harry Potter and the Sorcerer's Stone. This suggests that despite the potential legal liability, Meta did not do much to prevent memorization as it trained Llama 3. At least for this book, the problem got much worse between Llama 1 and Llama 3.</p>
+<p>Harry Potter and the Sorcerer's Stone&#160;was one of dozens of books tested by the researchers. They found that Llama 3.1 70B was far more likely to reproduce popular books&#8212;such as&#160;The Hobbit&#160;and George Orwell&#8217;s&#160;1984&#8212;than obscure ones. And for most books, Llama 3.1 70B memorized more than any of the other models.</p>
+<p>&#8220;There are really striking differences among models in terms of how much verbatim text they have memorized,&#8221; said James Grimmelmann, a Cornell law professor who has collaborated with several of the paper&#8217;s authors.</p>
+<p>The results surprised the study&#8217;s authors, including Mark Lemley, a law professor at Stanford. (Lemley used to be part of Meta's legal team, but in January, he <a href="https://www.wired.com/story/lawmaker-meta-copyright-cases/">dropped them as a client</a> after Facebook adopted more Trump-friendly moderation policies.)</p>
+<p>&#8220;We'd expected to see some kind of low level of replicability on the order of 1 or 2 percent,&#8221; Lemley told me. &#8220;The first thing that surprised me is how much variation there is.&#8221;</p>
+ 
+<p>These results give everyone in the AI copyright debate something to latch onto. For AI industry critics, the big takeaway is that&#8212;at least for some models and some books&#8212;memorization is not a fringe phenomenon.</p>
+<p>On the other hand, the study only found significant memorization of a few popular books. For example, the researchers found that Llama 3.1 70B only memorized 0.13 percent of&#160;Sandman Slim, a 2009 novel by author Richard Kadrey. That&#8217;s a tiny fraction of the 42 percent figure for&#160;Harry Potter.</p>
+
+          
+                  
+
+              
+          
+          
+<p>This could be a headache for law firms that have filed class-action lawsuits against AI companies. Kadrey is the lead plaintiff in a class-action lawsuit against Meta. To certify a class of plaintiffs, a court must find that the plaintiffs are in largely similar legal and factual situations.</p>
+<p>Divergent results like these could cast doubt on whether it makes sense to lump J.K. Rowling, Kadrey, and thousands of other authors together in a single mass lawsuit. And that could work in Meta&#8217;s favor, since most authors lack the resources to file individual lawsuits.</p>
+<p>The broader lesson of this study is that the details will matter in these copyright cases. Too often, online discussions have treated &#8220;do generative models copy their training data or merely learn from it?&#8221; as a theoretical or even philosophical question. But it&#8217;s a question that can be tested empirically&#8212;and the answer might differ across models and across copyrighted works.</p>
+<h2 class="header-anchor-post">How they measured memorization</h2>
+<p>It&#8217;s common to talk about LLMs predicting the next token. But under the hood, what the model actually does is generate a probability distribution over&#160;all&#160;possibilities for the next token. For example, if you prompt an LLM with the phrase &#8220;Peanut butter and,&#8221; it will respond with a probability distribution that might look like this made-up example:</p>
+<ul>
+<li>P(&#8220;jelly&#8221;) = 70 percent</li>
+<li>P(&#8220;sugar&#8221;) = 9 percent</li>
+<li>P(&#8220;peanut&#8221;) = 6 percent</li>
+<li>P(&#8220;chocolate&#8221;) = 4 percent</li>
+<li>P(&#8220;cream&#8221;) = 3 percent</li>
+</ul>
+<p>And so forth.</p>
+<p>After the model generates a list of probabilities like this, the system will select one of these options at random, weighted by their probabilities. So 70 percent of the time the system will generate &#8220;Peanut butter and jelly.&#8221; Nine percent of the time, we&#8217;ll get &#8220;Peanut butter and sugar.&#8221; Six percent of the time, it will be &#8220;Peanut butter and peanut.&#8221; You get the idea.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The study&#8217;s authors didn&#8217;t have to generate multiple outputs to estimate the likelihood of a particular response. Instead, they could calculate probabilities for each token and then multiply them together.</p>
+<p>Suppose someone wants to estimate the probability that a model will respond to &#8220;My favorite sandwich is&#8221; with &#8220;peanut butter and jelly.&#8221; Here&#8217;s how to do that:</p>
+<ul>
+<li>Prompt the model with &#8220;My favorite sandwich is,&#8221; and look up the probability of &#8220;peanut&#8221; (let&#8217;s say it&#8217;s <strong>20 percent</strong>).</li>
+<li>Prompt the model with &#8220;My favorite sandwich is peanut,&#8221; and look up the probability of &#8220;butter&#8221; (let&#8217;s say it&#8217;s <strong>90 percent</strong>).</li>
+<li>Prompt the model with &#8220;My favorite sandwich is peanut butter&#8221; and look up the probability of &#8220;and&#8221; (let&#8217;s say it&#8217;s&#160;<strong>80 percent</strong>).</li>
+<li>Prompt the model with &#8220;My favorite sandwich is peanut butter and&#8221; and look up the probability of &#8220;jelly&#8221; (let&#8217;s say it&#8217;s&#160;<strong>70 percent</strong>).</li>
+</ul>
+<p>Then we just have to multiply the probabilities like this:</p>
+<p>0.2 * 0.9 * 0.8 * 0.7 = 0.1008</p>
+<p>So we can predict that the model will produce &#8220;peanut butter and jelly&#8221; about 10 percent of the time, without actually generating 100 or 1,000 outputs and counting how many of them were that exact phrase.</p>
+<p>This technique greatly reduced the cost of the research, allowed the authors to analyze more books, and made it feasible to precisely estimate very low probabilities.</p>
+<p>For example, the authors estimated that it would take more than 10 quadrillion samples to exactly reproduce some 50-token sequences from some books. Obviously, it wouldn&#8217;t be feasible to actually generate that many outputs. But it wasn&#8217;t necessary: the probability could be estimated just by multiplying the probabilities for the 50 tokens.</p>
+<p>A key thing to notice is that probabilities can get really small really fast. In my made-up example, the probability that the model will produce the four tokens &#8220;peanut butter and jelly&#8221; is just 10 percent. If we added more tokens, the probability would get even lower. If we added&#160;46 more tokens, the probability could fall by several orders of magnitude.</p>
+
+          
+                  
+
+              
+          
+          
+<p>For any language model, the probability of generating any given 50-token sequence &#8220;by accident&#8221; is vanishingly small. If a model generates 50 tokens from a copyrighted work, that is strong evidence that the tokens &#8220;came from&#8221; the training data. This is true even if it only generates those tokens 10 percent, 1 percent, or 0.01 percent of the time.</p>
+ 
+<h2 class="header-anchor-post">We don&#8217;t know how Harry Potter got into Llama models</h2>
+<p>The study authors took 36 books and divided each of them into overlapping 100-token passages. Using the first 50 tokens as a prompt, they calculated the probability that the next 50 tokens would be identical to the original passage. They counted a passage as &#8220;memorized&#8221; if the model had a greater than 50 percent chance of reproducing it word for word.</p>
+<p>This definition is quite strict. For a 50-token sequence to have a probability greater than 50 percent, the average token in the passage needs a probability of at least 98.5 percent! Moreover, the authors only counted exact matches. They didn&#8217;t try to count cases where&#8212;for example&#8212;the model generates 48 or 49 tokens from the original passage but got one or two tokens wrong. If these cases were counted, the amount of memorization would be even higher.</p>
+<p>This research provides strong evidence that significant portions of&#160;Harry Potter and the Sorcerer's Stone were copied into the weights of Llama 3.1 70B. But this finding doesn&#8217;t tell us why or how this happened. I suspect that part of the answer is that Llama 3 70B was trained on 15 trillion tokens&#8212;more than 10 times the 1.4 trillion tokens used to train Llama 1 65B.</p>
+<p>The more times a model is trained on a particular example, the more likely it is to memorize that example. Perhaps Meta had trouble finding 15 trillion distinct tokens, so it trained on the Books3 dataset multiple times. Or maybe Meta added third-party sources&#8212;such as online Harry Potter fan forums, consumer book reviews, or student book reports&#8212;that included quotes from Harry Potter&#160;and other popular books.</p>
+
+          
+                  
+
+              
+          
+          
+<p>I&#8217;m not sure that either of these explanations fully fits the facts. The fact that memorization was a much bigger problem for the most popular books does suggest that Llama may have been trained on secondary sources that quote these books rather than the books themselves. There are likely exponentially more online discussions of Harry Potter than Sandman Slim.</p>
+<p>On the other hand, it&#8217;s surprising that Llama memorized&#160;so much of&#160;Harry Potter and the Sorcerer's Stone.</p>
+<p>&#8220;If it were citations and quotations, you'd expect it to concentrate around a few popular things that everyone quotes or talks about,&#8221; Lemley said. The fact that Llama 3 memorized almost half the book suggests that the entire text was well represented in the training data.</p>
+<p>Or there could be another explanation entirely. Maybe Meta made subtle changes in its training recipe that accidentally worsened the memorization problem. I emailed Meta for comment last week but haven&#8217;t heard back.</p>
+<p>&#8220;It doesn't seem to be all popular books,&#8221; Mark Lemley told me. &#8220;Some popular books have this result and not others. It&#8217;s hard to come up with a clear story that says why that happened.&#8221;</p>
+<h2 class="header-anchor-post">Three theories of liability</h2>
+
+There are actually three distinct theories of how training a model on copyrighted works could infringe copyright:
+
+<ol>
+<li>Training on a copyrighted work is inherently infringing because the training process involves making a digital copy of the work.</li>
+<li>The training process copies information from the training data into the model, making the model a derivative work under copyright law.</li>
+<li>Infringement occurs when a model generates (portions of) a copyrighted work.</li>
+</ol>
+<p>A lot of discussion so far has focused on the first theory because it is the most threatening to AI companies. If the courts uphold this theory, most current LLMs would be illegal, whether or not they have memorized any training data.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The AI industry has some pretty strong arguments that&#160;<a href="https://www.understandingai.org/p/the-ai-community-needs-to-take-copyright" rel="">using copyrighted works during the training process is fair use</a>&#160;under the 2015 Google Books ruling. But the fact that Llama 3.1 70B memorized large portions of&#160;Harry Potter could color how the courts consider these fair use questions.</p>
+ 
+<p>A key part of fair use analysis is whether a use is &#8220;transformative&#8221;&#8212;whether a company has made something new or is merely profiting from the work of others. The fact that language models are capable of regurgitating substantial portions of popular works like&#160;Harry Potter,&#160;1984, and&#160;The Hobbit could cause judges to look at these fair use arguments more skeptically.</p>
+<p>Moreover, one of Google&#8217;s key arguments in the books case was that its system was designed to never return more than a short excerpt from any book. If the judge in the Meta lawsuit wanted to distinguish Meta&#8217;s arguments from the ones Google made in the books case, he could point to the fact that Llama can generate far more than a few lines of&#160;Harry Potter.</p>
+<p>The new study &#8220;complicates the story that the defendants have been telling in these cases,&#8221; co-author Mark Lemley told me. &#8220;Which is &#8216;we just learn word patterns. None of that shows up in the model.&#8217;&#8221;</p>
+<p>But the Harry Potter result creates even more danger for Meta under that second theory&#8212;that Llama itself is a derivative copy of Rowling&#8217;s book.</p>
+<p>&#8220;It's clear that you can in fact extract substantial parts of Harry Potter and various other books from the model,&#8221; Lemley said. &#8220;That suggests to me that probably for some of those books there's something the law would call a copy of part of the book in the model itself.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>The Google Books precedent probably can&#8217;t protect Meta against this second legal theory because Google never made its books database available for users to download&#8212;Google almost certainly would have lost the case if it had done that.</p>
+<p>In principle, Meta could still convince a judge that copying 42 percent of Harry Potter was allowed under the flexible, judge-made doctrine of fair use. But it would be an uphill battle.</p>
+<p>&#8220;The fair use analysis you've gotta do is not just &#8216;is the training set fair use,&#8217; but &#8216;is the incorporation in the model fair use?&#8217;" Lemley said. "That complicates the defendants' story.&#8221;</p>
+<p>Grimmelmann also said there&#8217;s a danger that this research could put open-weight models in greater legal jeopardy than closed-weight ones. The Cornell and Stanford researchers could only do their work because the authors had access to the underlying model&#8212;and hence to the token probability values that allowed efficient calculation of probabilities for sequences of tokens.</p>
+<p>Most leading labs, including OpenAI, Anthropic, and Google, have increasingly restricted access to these so-called logits, making it more difficult to study these models.</p>
+<p>Moreover, if a company keeps model weights on its own servers, it can use filters to try to prevent infringing output from reaching the outside world. So even if the underlying OpenAI, Anthropic, and Google models have memorized copyrighted works in the same way as Llama 3.1 70B, it might be difficult for anyone outside the company to prove it.</p>
+<p>Moreover, this kind of filtering makes it easier for companies with closed-weight models to invoke the Google Books precedent. In short, copyright law might create a strong disincentive for companies to release open-weight models.</p>
+<p>&#8220;It's kind of perverse,&#8221; Mark Lemley told me. &#8220;I don't like that outcome.&#8221;</p>
+<p>On the other hand, judges might conclude that it would be bad to effectively punish companies for publishing open-weight models.</p>
+<p>&#8220;There's a degree to which being open and sharing weights is a kind of public service,&#8221; Grimmelmann told me. &#8220;I could honestly see judges being less skeptical of Meta and others who provide open-weight models.&#8221;</p>
+<p><i>Timothy B. Lee was on staff at Ars Technica from 2017 to 2021. Today, he writes </i><a href="https://www.understandingai.org/"><i>Understanding AI,</i></a><i>&#160;a newsletter that explores how AI works and how it's changing our world. You can subscribe&#160;</i><a href="https://www.understandingai.org/"><i>here</i></a><i>.</i></p>
+
+
+          
+                  
+
+                  
+          </div>
