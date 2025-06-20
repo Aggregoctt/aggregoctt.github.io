@@ -1,0 +1,63 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/06/mit-student-prints-ai-polymer-masks-to-restore-paintings-in-hours/
+date: '2025-06-20T17:32:33'
+excerpt: Removable transparent films apply digital restorations directly to damaged
+  artwork.
+image: assets/media/GyikJk6dhoTs6bWVEsx97g-XwfM3PRwdrWjiZW76qEpqA.webp
+source: arstechnica
+tags:
+- AI
+- Science
+- AI image generators
+- art restoration
+- computer vision
+- conservation technology
+- cultural preservation
+- digital art tools
+- image synthesis
+- machine learning
+- MIT
+- museums
+- polymer technology
+title: MIT student prints AI polymer masks to restore paintings in hours
+---
+<div>
+                      
+                      
+          <p>MIT graduate student Alex Kachkine once spent nine months meticulously restoring a damaged baroque Italian painting, which left him plenty of time to wonder if technology could speed things up. Last week, MIT News <a href="https://news.mit.edu/2025/restoring-damaged-paintings-using-ai-generated-mask-0611">announced</a> his solution: a technique that uses AI-generated polymer films to physically restore damaged paintings in hours rather than months. The research <a href="https://www.nature.com/articles/s41586-025-09045-4">appears</a> in Nature.</p>
+<p>Kachkine's method works by printing a transparent "mask" containing thousands of precisely color-matched regions that conservators can apply directly to an original artwork. Unlike traditional restoration, which permanently alters the painting, these masks can reportedly be removed whenever needed. So it's a reversible process that does not permanently change a painting.</p>
+<p>"Because there's a digital record of what mask was used, in 100 years, the next time someone is working with this, they'll have an extremely clear understanding of what was done to the painting," Kachkine told MIT News. "And that's never really been possible in conservation before."</p>
+ 
+
+<p>Nature <a href="https://www.nature.com/articles/d41586-025-01776-8">reports</a> that up to 70 percent of institutional art collections remain hidden from public view due to damage&#8212;a large amount of cultural heritage sitting unseen in storage. Traditional <a href="https://arstechnica.com/science/2020/07/new-restoration-reveals-painted-over-original-version-of-van-eyck-lamb-of-god/">restoration methods</a>, where conservators painstakingly fill damaged areas one at a time while mixing exact color matches for each region, can take weeks to decades for a single painting. It's skilled work that requires both artistic talent and deep technical knowledge, but there simply aren't enough conservators to tackle the backlog.</p>
+<p>The mechanical engineering student conceived the idea during a 2021 cross-country drive to MIT, when gallery visits revealed how much art remains hidden due to damage and restoration backlogs. As someone who restores paintings as a hobby, he understood both the problem and the potential for a technological solution.</p>
+<p>To demonstrate his method, Kachkine chose a challenging test case: a 15th-century oil painting requiring repairs in 5,612 separate regions. An AI model identified damage patterns and generated 57,314 different colors to match the original work. The entire restoration process reportedly took 3.5 hours&#8212;about 66 times faster than traditional hand-painting methods.</p>
+ 
+
+<p>Notably, Kachkine avoided using generative AI models like <a href="https://arstechnica.com/information-technology/2022/09/with-stable-diffusion-you-may-never-believe-what-you-see-online-again/">Stable Diffusion</a> or the "full-area application" of generative adversarial networks (GANs) for the digital restoration step. According to the Nature paper, these models cause "spatial distortion" that would prevent proper alignment between the restored image and the damaged original.</p>
+
+          
+                       
+                   
+                   
+                  
+
+              
+          
+          
+<p>Instead, Kachkine utilized computer vision techniques found in prior art conservation research: "<a href="https://karianakis.github.io/papers/DSP13_paper.pdf">cross-applied colouration</a>" for simple damages like thin cracks, and "<a href="https://www.nature.com/articles/s40494-024-01391-2">local partial convolution</a>" for reconstructing low-complexity patterns. For areas of high visual complexity, such as faces, Kachkine relied on traditional conservator methods, transposing features from other works by the same artist.</p>
+<h2>From pixels to polymers</h2>
+<p>Kachkine's process begins conventionally enough, with traditional cleaning to remove any previous restoration attempts. After scanning the cleaned painting, the aforementioned algorithms analyze the image and create a virtual restoration that "predicts" what the damaged areas should look like based on the surrounding paint and the artist's style. This part isn't particularly new&#8212;museums have been creating digital restorations for years. The innovative part is what happens next.</p>
+<p>Custom software (<a href="https://codeocean.com/capsule/0882403/tree/v1">shared</a> by Kachkine online) maps every region needing repair and determines the exact colors required for each spot. His software then translates that information into a two-layer polymer mask printed on thin films&#8212;one layer provides color, while a white backing layer ensures the full color spectrum reproduces accurately on the painting's surface. The two layers must align precisely to reproduce colors accurately.</p>
+ 
+<p>High-fidelity inkjet printers produce the mask layers, which Kachkine aligns by hand and adheres to the painting using conservation-grade varnish spray. Importantly, the polymer materials dissolve in standard conservation solutions, allowing future removal of the mask without damaging the original work. Museums can also store digital files documenting every change made during restoration, creating a paper trail for future conservators.</p>
+<p>Kachkine says that the technology doesn't replace human judgment&#8212;conservators must still guide ethical decisions about how much intervention is appropriate and whether digital predictions accurately capture the artist's original intent. "It will take a lot of deliberation about the ethical challenges involved at every stage in this process to see how can this be applied in a way that's most consistent with conservation principles," he told MIT News.</p>
+<p>For now, the method works best with paintings that include numerous small areas of damage rather than large missing sections. In a world where AI models increasingly seem to blur the line between human- and machine-created media, it's refreshing to see a clear application of computer vision tools used as an <a href="https://arstechnica.com/ai/2025/04/in-the-age-of-ai-we-must-protect-human-creativity-as-a-natural-resource/">augmentation of human skill</a> and not as a wholesale replacement for the judgment of skilled conservators.</p>
+
+
+          
+                  
+
+                  
+          </div>
