@@ -1,0 +1,72 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/gadgets/2025/06/microsoft-surprises-ms-dos-fans-with-remake-of-ancient-text-editor-that-works-on-linux/
+date: '2025-06-23T17:23:35'
+excerpt: It's funny how useful a 34-year-old software design can still be.
+image: assets/media/6uJncCcxmyydM4bGnI-7WA-cQsBouJ0P9bANaxzAGSWHw.gif
+source: arstechnica
+tags:
+- Tech
+- command line
+- GitHub
+- Linux
+- microsoft
+- MS-DOS
+- open source
+- Programming
+- retrocomputing
+- retrotech
+- rust
+- Simon Willison
+- software development
+- text editors
+- Ubuntu
+- Vintage computing
+- Windows
+title: Microsoft surprises MS-DOS fans with remake of ancient text editor that works
+  on Linux
+---
+<div>
+                      
+                      
+          <p>Last month, Microsoft <a href="https://omgubuntu.co.uk/2025/01/microsoft-edit-cli-text-editor-ubuntu">released</a> a modern remake of its classic <a href="https://en.wikipedia.org/wiki/MS-DOS_Editor">MS-DOS Editor</a>, bringing back a piece of computing history that first appeared in <a href="https://winworldpc.com/product/ms-dos/50">MS-DOS 5.0</a> back in 1991. The new open source tool, built with <a href="https://www.rust-lang.org/">Rust</a> and simply called "Edit," works on Windows, macOS, and&#8212;in a twist that would have seemed unlikely three decades ago&#8212;Linux.</p>
+<p>The cross-platform availability has delighted longtime users who never expected to see Microsoft's text editor running on their preferred operating system. "30 years of waiting, and I can use MS Edit on Linux," <a href="https://www.reddit.com/r/linuxmasterrace/comments/1kqmjd1/30_years_of_waiting_and_i_can_use_ms_edit_on_linux/">wrote</a> one Reddit user, capturing the nostalgic appeal of running a genuinely useful version of a Microsoft DOS utility on a Unix-like system.</p>
+<p> An animated GIF from Microsoft showing the modern "Edit" application in action. (Credit: <a href="https://devblogs.microsoft.com/commandline/edit-is-now-open-source/">Microsoft</a>)</p>
+<p>The original MS-DOS Editor represented a major step forward for Microsoft's command-line text-editing capabilities at the time of its release. Before 1991, DOS users suffered through <a href="https://en.wikipedia.org/wiki/Edlin">EDLIN</a>, a line-based editor so primitive and user-hostile that many people resorted to typing "<a href="https://www.computerhope.com/jargon/c/copycon.htm">COPY CON</a> filename.txt" and hoping for the best. MS-DOS Editor changed that by introducing concepts that seem basic today: a full-screen interface, mouse support, and <a href="https://arstechnica.com/apple/2025/06/bill-atkinson-architect-of-the-macs-graphical-soul-dies-at-74/">pull-down menus</a> you could actually navigate without memorizing cryptic commands.</p>
+<p>And those cryptic commands persist today in some Linux editors, like <a href="https://en.wikipedia.org/wiki/Vim_(text_editor)">Vim</a>, a modal text editor where users must switch between different modes for editing versus navigating text, which famously confuses newcomers. "Many of you are probably familiar with the 'How do I exit vim?' meme," <a href="https://devblogs.microsoft.com/commandline/edit-is-now-open-source/">wrote</a> Christopher Nguyen, a product manager on Microsoft's Windows Terminal team, in a blog post about Edit. "While it is relatively simple to learn the magic exit incantation, it's certainly not a coincidence that this often turns up as a stumbling block for new and old programmers."</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Aside from ease of use, Microsoft's main reason for creating the new version of Edit stems from a peculiar gap in modern Windows. "What motivated us to build Edit was the need for a default CLI text editor in 64-bit versions of Windows," <a href="https://devblogs.microsoft.com/commandline/edit-is-now-open-source/">writes</a> Nguyen while referring to the command-line interface, or CLI. "32-bit versions of Windows ship with the MS-DOS editor, but 64-bit versions do not have a CLI editor installed inbox."</p>
+<p> An animated GIF from Microsoft showing the modern "Edit" application in action. (Credit: <a href="https://devblogs.microsoft.com/commandline/edit-is-now-open-source/">Microsoft</a>)</p>
+<p>So far, the development community seems to be <a href="https://news.ycombinator.com/item?id=44031529">giving</a> Microsoft's new open source tool a mixed-to-positive reception. But the cross-platform nature of the new tool editor has already excited some developers. "Microsoft released a new terminal text editor! It's called Microsoft Edit, it's open source, it's tiny (about 250KB as a Rust binary) and it works cross-platform," <a href="https://x.com/simonw/status/1936492946708365476">wrote</a> independent AI researcher Simon Willison on X on Saturday. "They built it for Windows 11 - I've been trying it out on my Mac and it's a nice alternative to Vim or nano."</p>
+<p>Linux users can download Edit from <a href="https://github.com/microsoft/edit">the project's GitHub releases page</a> or install it through an <a href="https://snapcraft.io/msedit">unofficial snap package</a>. Oh, and if you're a fan of the vintage editor and crave a 16-bit text-mode for your retro machine that actually runs MS-DOS, you can <a href="https://archive.org/details/microsoft-ms-dos-editor">download a copy</a> on the Internet Archive.</p>
+<h2>The hallowed legacy of &#8220;Edit&#8221;</h2>
+ 
+
+<p>When MS-DOS 5.0 launched in 1991, the computing world looked vastly different from today. A typical PC might include a 286 or 386 processor, a mere 4MB of RAM was considered wildly generous, and the Internet <a href="https://arstechnica.com/gadgets/2025/04/a-history-of-the-internet-part-1-an-arpa-dream-takes-form/">remained</a> largely an academic curiosity. Windows 3.0 had arrived the year before, but MS-DOS still ruled desktop computing on IBM PC clones. For millions of users, MS-DOS Editor became their first introduction to "modern" text editing&#8212;a stepping stone between the command-line era and the graphical interfaces that would soon dominate.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>Looking back to when MS-DOS Editor debuted, it's interesting to learn that the original editor shipped in an unusual form. <a href="https://en.wikipedia.org/wiki/MS-DOS_Editor">According to Wikipedia</a>, EDIT.COM was actually just a stub that launched the <a href="https://en.wikipedia.org/wiki/QBasic">QBasic</a> programming language editor in a different mode&#8212;a clever way to reuse existing code while providing a more approachable text-editing experience. Later versions of EDIT.COM became standalone programs as Microsoft phased out QBasic from Windows distributions.</p>
+ 
+
+<p>At 250KB, the new Edit maintains the lightweight philosophy of its predecessor while adding features the original couldn't dream of: Unicode support, regular expressions, and the ability to handle gigabyte-sized files. The original editor was <a href="https://en.wikipedia.org/wiki/MS-DOS_Editor">limited</a> to files smaller than 300KB depending on available conventional memory&#8212;a constraint that seems quaint in an era of terabyte storage. But the web publication OMG! Ubuntu <a href="https://www.omgubuntu.co.uk/2025/06/microsoft-edit-text-editor-ubuntu">found</a> that the modern Edit not only "works great on Ubuntu" but noted its speed when handling gigabyte-sized documents.</p>
+<p>At a time when AI coding assistants and sophisticated IDEs dominate software development, it's fun to think that we may be on the verge of a renaissance in appreciation for simple, fast tools that just work. After all, some tasks are timeless. The fact that Microsoft's 1991 design philosophy from MS-DOS translates so well to 2025 suggests that most fundamental aspects of text editing haven't changed much despite 34 years of tech evolution.</p>
+
+
+          
+                  
+
+                  
+          </div>
