@@ -1,0 +1,124 @@
+---
+author: Matt von Hippel
+canonical_url: https://arstechnica.com/science/2025/06/how-a-grad-student-got-lhc-data-to-play-nice-with-quantum-interference/
+date: '2025-06-23T11:00:08'
+excerpt: New approach is already having an impact on the experiment’s plans for future
+  work.
+image: assets/media/Y4VqOKLFSH94DPnNX44nqg-HEfZrFb4rcviKmTRC6ITPw.webp
+source: arstechnica
+tags:
+- Features
+- Science
+- AI
+- Large Hadron Collider
+- LHC
+- machine learning
+- quantum interference
+title: How a grad student got LHC data to play nice with quantum interference
+---
+<div>
+                      
+                      
+           
+<p>Measurements at the Large Hadron Collider have been stymied by one of the most central phenomena of the quantum world. But now, a young researcher has championed a new method to solve the problem using deep neural networks.</p>
+<p>The Large Hadron Collider is one of the biggest experiments in history, but it&#8217;s also one of the hardest to interpret. Unlike seeing an image of a star in a telescope, saying anything at all about the data that comes out of the LHC requires careful statistical modeling.</p>
+<p>&#8220;If you gave me a theory [that] the Higgs boson is this way or that way, I think people imagine, 'Hey, you built the experiment, you should be able to tell me what you're going to see under various hypotheses!&#8217;&#8221; said Daniel Whiteson, a professor at the University of California, Irvine. &#8220;But we don't.&#8221;</p>
+<p>One challenge with interpreting LHC data is interference, a core implication of quantum mechanics. Interference allows two possible events to inhibit each other, weakening the likelihood of seeing the result of either. In the presence of interference, physicists needed to use a fuzzier statistical method to analyze data, losing the data&#8217;s full power and increasing its uncertainty.</p>
+<p>However, a recent breakthrough suggests a different way to tackle the problem. The ATLAS collaboration, one of two groups studying proton collisions at the LHC, released two papers last December that describe new ways of exploring data from their detector. <a href="https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SOFT-2023-01/">One</a> describes how to use a machine learning technique called Neural Simulation-Based Inference to maximize the potential of particle physics data. <a href="https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGP-2024-14/">The other</a> demonstrates its effectiveness with the ultimate test: re-doing a previous analysis with the new technique and seeing dramatic improvement.</p>
+<p>The papers are the culmination of a young researcher&#8217;s six-year quest to convince the collaboration of the value of the new technique. Its success is already having an impact on the experiment&#8217;s plans for future work.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Making sense out of fusing bosons</h2>
+<p>Each particle collision at the LHC involves many possible pathways in which different particles combine to give rise to the spray of debris that experimenters see. In 2017, David Rousseau at IJCLab in Orsay, a member of the ATLAS collaboration, asked one of his students, Aishik Ghosh, to improve his team&#8217;s ability to detect a specific pathway. That particular pathway is quite important since it&#8217;s used to measure properties of the Higgs boson, a particle (first measured in 2012) that helps explain the mass of all other fundamental particles.</p>
+<p>It was a pretty big ask. &#8220;When a grad student gets started in ATLAS, they&#8217;re a tiny cog in a giant, well-oiled machine of 3,500 physicists, who all seem to know exactly what they&#8217;re doing,&#8221; said Ghosh.</p>
+<p>The pathway Ghosh was asked to study occurs via several steps. First, the two colliding protons each emit a W boson, a particle associated with the weak nuclear force. These two bosons fuse together, changing their identity to form a Higgs boson. The Higgs boson then decays, forming a pair of Z bosons, another particle associated with the weak force. Finally, those Z bosons themselves each decay into a lepton, like an electron, and its antimatter partner, like a positron.</p>
+ 
+
+<p>Measurements like the one Ghosh was studying are a key way of investigating the properties of the Higgs boson. By precisely measuring how long it takes the Higgs boson to decay, physicists could find evidence of it interacting with new, undiscovered particles that are too massive for the LHC to produce directly.</p>
+<p>Ghosh started on the project, hoping to find a small improvement in the collaboration&#8217;s well-tested methods. Instead, he noticed a larger issue. The goal he was given, of detecting a single pathway by itself, didn&#8217;t actually make sense.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>&#8220;I was doing that and I realized, &#8216;What am I doing?&#8217; There's no clear objective,&#8221; said Ghosh.</p>
+<p>The problem was quantum interference.</p>
+ 
+<h2>How quantum histories interfere</h2>
+<p>One of the most famous demonstrations of the mysterious nature of quantum mechanics is called the double-slit experiment. In this demonstration, electrons are shot through a screen with two slits that allow them to pass through to a photographic plate on the other side. With one slit covered, the electrons form a pattern centered on the opening. The photographic plate lights up bright right across from the slit and dims further away from it.</p>
+<p>With both slits open, you would expect the pattern to get brighter as more electrons reach the photographic plate. Instead, the effect varies. The two slits do not give rise to two nice bright peaks; instead, you see a rippling pattern in which some areas get brighter while others get dimmer, even though the dimmer areas should, in principle, be easier for electrons to reach.</p>
+<p>The effect happens even if the electrons are shot at the screen one by one to stop them from influencing each other directly. It&#8217;s as if each electron carries with it two possible histories, one in which it goes through one slit and another where it goes through the other before both end up at the same place. These two histories interfere with each other so that some destinations become less likely instead of more likely.</p>
+ 
+
+<p>For electrons in the double-slit experiment, the two different histories are two different paths through space. For a measurement at the Large Hadron Collider, the histories are more abstract&#8212;paths that lead through transformations of fields. One history might be like the pathway Ghosh was asked to study, in which two W bosons fuse to form a Higgs boson before the Higgs boson splits into two Z bosons. But in another history, the two W bosons might fuse and immediately split into two Z bosons without ever producing a Higgs.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>Both histories have the same beginning, with two W bosons, and the same end, with two Z bosons. And just as the two histories of electrons in the double-slit experiment can interfere, so can the two histories for these particles.</p>
+ 
+
+<p>That interference makes the effect of the Higgs boson much more challenging to spot. ATLAS scientists wanted to look for two pairs of electrons and positrons, which would provide evidence that two Z bosons were produced. They would classify their observations into two types: observations that are evidence for the signal they were looking for (that of a decaying Higgs boson) and observations of events that generate this pattern of particles without the Higgs boson acting as an intermediate (the latter are called the background). But the two types of observations, signal and background, interfere. With a stronger signal, corresponding to more Higgs bosons decaying, you might observe more pairs of electrons and positrons&#8230; but if these events interfere, you also might see those pairs disappear.</p>
+<h2>Learning to infer</h2>
+<p>In traditional approaches, those disappearances are hard to cope with, even when using methods that already incorporate machine learning.</p>
+<p>One of the most common uses of machine learning is classification&#8212;for example, distinguishing between pictures of dogs and cats. You train the machine on pictures of cats and pictures of dogs, and it tells you, given a picture, which animal is the most likely match. Physicists at the LHC were already using this kind of classification method to characterize the products of collisions, but it functions much worse when interference is involved.</p>
+<p>&#8220;If you have something that disappears, you don't quite know what to train on,&#8221; said David Rousseau. &#8220;Usually, you're training signal versus background, exactly like you're training cats versus dogs. When there is something that disappears, you don't see what you trained on.&#8221;</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>At first, Ghosh tried a few simple tricks, but as time went on, he realized he needed to make a more fundamental change. He reached out to others in the community and learned about a method called Neural Simulation-Based Inference, or NSBI.</p>
+<p>In older approaches, people had trained machine learning models to classify observations into signal and background, using simulations of particle collisions to make the training data. Then they used that classification to infer the most likely value of a number, like the amount of time it takes a Higgs boson to decay, based on data from an actual experiment. Neural Simulation-Based Inference skips the classification and goes directly to the inference.</p>
+<p>Instead of trying to classify observations into signal and background, NSBI uses simulations to teach an artificial neural network to guess a formula called a likelihood ratio. Someone using NSBI would run several simulations that describe different situations, such as letting the Higgs boson decay at different rates, and then check how many of each type of simulation yielded a specific observation. The fraction of these simulations with a certain decay rate would provide the likelihood ratio, a method for inferring which decay rate is more likely given experimental evidence. If the neural network is good at guessing this ratio, it will be good at finding how long the Higgs takes to decay.</p>
+<p>Because NSBI doesn&#8217;t try to classify observations into different categories, it handles quantum interference more effectively. Instead of trying to find the Higgs based on a signal that disappears, it examines all the data, trying to guess which decay time is the most likely.</p>
+<p>Ghosh tested the method, which showed promising results on test data, and presented the results at a conference in 2019. But if he was going to convince the ATLAS collaboration that the method was safe to use, he still had a lot of work ahead of him.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<h2>Shifting the weight on ATLAS&#8217; shoulders</h2>
+<p>Experiments like ATLAS have high expectations attached to them. A collaboration of thousands of scientists, ATLAS needs to not only estimate the laws of physics but also have a clear idea of just how uncertain those estimates are. At the time, NSBI hadn&#8217;t been tested in that way.</p>
+<p>&#8220;None of this has actually been used on data,&#8221; said Ghosh. &#8220;Nobody knew how to quantify the uncertainties. So you have a neural network that gives you a likelihood. You don't know how good the likelihood is. Is it well-estimated? What if it's wrongly estimated just in some weird corner? That would completely bias your results.&#8221;</p>
+<p>Checking those corners was too big a job for a single PhD student and too complex to complete within a single PhD degree. Aishik would have to build a team, and he would need time to build that team. That&#8217;s tricky in the academic world, where students go on to short-term postdoc jobs with the expectation that they quickly publish new results to improve their CV for the next position.</p>
+<p>&#8220;We&#8217;re usually looking to publish the next paper within two to three years&#8212;no time to overhaul our methods,&#8221; said Ghosh. Fortunately, Ghosh had support. He received his PhD alongside Rousseau and went to work with Daniel Whiteson, who encouraged him to pursue his ambitious project.</p>
+<p>&#8220;I think it's really important that postdocs learn to take those risks because that's what science is,&#8221; Whiteson said.</p>
+<p>Ghosh gathered his team. Another student of Rousseau&#8217;s, Arnaud Maury, worked to calibrate the machine&#8217;s confidence in its answers. A professor at the University of Massachusetts, Rafael Coelho Lopes de Sa, joined the project. His student Jay Sandesara would have a key role in getting the calculation to work at full scale on a computer cluster. IJCLab emeritus RD Schaffer and University of Li&#232;ge professor Gilles Loupe provided cross-checks and advice.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The team wanted a clear demonstration that their method worked, so they took an unusual step. They took data that ATLAS had already analyzed and performed a full analysis using their method instead, showing that it could pass every check the collaboration could think of. They would publish two papers, one describing the method and the other giving the results of their upgraded analysis. Zach Marshall, who was the computing coordinator for ATLAS at the time, helped get the papers through, ensuring that they were vetted by experts in multiple areas.</p>
+<p>&#8220;It was a very small subset of our community that had that overlap between this technical understanding and the physics analysis experience and understanding that were capable of really speaking to whether that paper was sufficient and intelligible and useful. So we really had to make sure that we engaged that little group of humans by name,&#8221; said Marshall.</p>
+<p>The new method showed significant improvements, getting a much more precise result than the collaboration&#8217;s previous analysis. That improvement, and the thorough checks, persuaded ATLAS to use NSBI more broadly going forward. It will give them much more precision than they expected, using the Higgs boson to search for new particles and clarify our understanding of the quantum world. When ATLAS discusses its future plans, it makes projections of the precision it expects to reach in the future. But those plans are now being upended.</p>
+<p>&#8220;One of the fun things about this method that Aishik pushed hard is each time it feels like now we do that projection&#8212;here's how well we'll do in 15 years&#8212;we absolutely crush those projections,&#8221; said Marshall. &#8220;So we are just now having to redo a set of projections because we matched our old projections for 15 years out already today. It's a very fun problem to have.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
