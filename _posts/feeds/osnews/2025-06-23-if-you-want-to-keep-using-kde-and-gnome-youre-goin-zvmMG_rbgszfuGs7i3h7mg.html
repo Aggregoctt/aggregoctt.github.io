@@ -1,0 +1,64 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142633/if-you-want-to-keep-using-kde-and-gnome-youre-going-to-have-to-move-to-wayland/
+date: '2025-06-23T21:42:25'
+excerpt: 'With the transition from X11 to Wayland in full swing, from popular distributions
+  removing X11 sessions altogether and the two major desktop environments planning
+  for the removal of X11 support as well, there&#8217;s a ton of questions people
+  are dealing with. Both the KDE and GNOME project published detailed blog posts about
+  the matter. First, KDE&#8217;s Nathan Graham makes it very clear that KDE Plasma&#8217;s
+  X11 sessions continues to be maintained. This means KDE Plasma will continue to
+  work on X11, major bugs in the session (e.g. can&#8217;t log in) will be fixed,
+  and really bad regressions in the session may eventually be fixed. That being said,
+  minor bugs will probably not be fixed unless someone pays for it, and new features
+  in the X11 session will not happen at all, unless someone pays for it. KDE currently
+  has no time frame for when X11 support will be dropped from KDE Plasma, and Graham
+  doesn&#8217;t expect it to happen within the next two years. The KDE project maintains
+  a list of known significant issues with KDE Plasma on Wayland, and KDE plans on
+  addressing everything on that list before removing X11 support. Graham notes that
+  in the end, dropping X11 support from KDE Plasma is mostly up to distributions,
+  as it wouldn&#8217;t make any sense to drop it if distributions aren&#8217;t on
+  board. At the moment, about 70-80% of KDE Plasma users are using Wayland, he notes.
+  On the GNOME side of things, Jordan Petridis also detailed GNOME&#8217;s position
+  on Wayland and X11. GNOME will be disabling the X11 session in GNOME 49, with a
+  full removal of the X11 code in GNOME 50. This won&#8217;t break any X11 applications
+  (on either GNOME or KDE), since even if they don&#8217;t have a Wayland backend,
+  they&#8217;ll run just fine using XWayland, which is an X server running on top
+  of Wayland. XWayland isn&#8217;t going anywhere any time soon. According to Petridis,
+  the Wayland session is as functional as the X11 session, and &#8220;in plenty of
+  cases a lot more capable and efficient&#8221;. He further adds that &#8220;there’s
+  some niche workflows that are only possible on X11, but there isn’t any functionality
+  regression&#8221;. Basically, if you&#8217;re using your spacebar as a heater, you
+  might run into problems. As for accessibility, Wayland is actually doing pretty
+  great. There has been a lot of concerned trolling and misinformation specifically
+  around this topic sadly from people that don’t care about it and have been abusing
+  the discourse as a straw man argument. Drowning all the people that rely on it and
+  need to be heard. Thankfully Aaron of fireborn fame wrote recently a blogpost talking
+  about all this in detail and clearing up misconceptions. ↫ Jordan Petridis Finally,
+  Petridis summarises why the Linux desktop world is moving to Wayland: No, the Xorg
+  Server is still very much maintained, however its development is halted. It still
+  receives occasional bugfixes and there are timely security releases when needed.
+  The common sentiment, shared among Xorg, Graphics, Kernel, Platform and Application
+  developers is that any future development is a dead-end and shortcomings can’t be
+  addressed without breaking X11. That’s why the majority of Xorg developers moved
+  on to make a new, separate, thing: Wayland. ↫ Jordan Petridis This pill is so hard
+  to swallow for some people that they go full bananas and start seeing red hats and
+  Illuminati symbols everywhere, losing their minds and spiraling deep into ludicrous
+  conspiracy theories. The truth of the matter is, however, blatantly banal: the people
+  developing X.org realised long ago that meaningfully improving it would irrevocably
+  break it, and as such they developed something new so they wouldn&#8217;t have to
+  break X11. That&#8217;s it. X.org will continue to exist and live on in its maintained
+  state, and desktops relying on it will continue to function. If you want to keep
+  using GNOME and KDE, though, you&#8217;ll have to drop X11, because the kinds of
+  features and improvements these desktops want to deliver are not possible without
+  breaking X11. Would you want an X11 that&#8217;s broken for everyone, or an X11
+  that keeps working as-is, while those that want to move on do so somewhere else?'
+image: null
+source: osnews
+tags:
+- Wayland
+title: If you want to keep using KDE and GNOME, you’re going to have to move to Wayland
+---
+<div><p>With the transition from X11 to Wayland in full swing, from popular distributions removing X11 sessions altogether and the two major desktop environments planning for the removal of X11 support as well, there&#8217;s a ton of questions people are dealing with. Both the KDE and GNOME project published detailed blog posts about the matter.</p><p>First, <a href="https://pointieststick.com/2025/06/21/about-plasmas-x11-session/">KDE&#8217;s Nathan Graham</a> makes it very clear that KDE Plasma&#8217;s X11 sessions continues to be maintained. This means KDE Plasma will continue to work on X11, major bugs in the session (e.g. can&#8217;t log in) will be fixed, and really bad regressions in the session may eventually be fixed. That being said, minor bugs will probably not be fixed unless someone pays for it, and new features in the X11 session will not happen at all, unless someone pays for it.</p><p>KDE currently has no time frame for when X11 support will be dropped from KDE Plasma, and Graham doesn&#8217;t expect it to happen within the next two years. The KDE project maintains a <a href="https://community.kde.org/Plasma/Wayland_Known_Significant_Issues">list of known significant issues with KDE Plasma on Wayland</a>, and KDE plans on addressing everything on that list before removing X11 support. Graham notes that in the end, dropping X11 support from KDE Plasma is mostly up to distributions, as it wouldn&#8217;t make any sense to drop it if distributions aren&#8217;t on board. At the moment, about 70-80% of KDE Plasma users are using Wayland, he notes.</p><p>On the GNOME side of things, <a href="https://blogs.gnome.org/alatiera/2025/06/23/x11-session-removal-faq/">Jordan Petridis also detailed GNOME&#8217;s position on Wayland and X11</a>. GNOME will be disabling the X11 session in GNOME 49, with a full removal of the X11 code in GNOME 50. This won&#8217;t break any X11 applications (on either GNOME or KDE), since even if they don&#8217;t have a Wayland backend, they&#8217;ll run just fine using XWayland, which is an X server running on top of Wayland. XWayland isn&#8217;t going anywhere any time soon.</p><p>According to Petridis, the Wayland session is as functional as the X11 session, and &#8220;in plenty of cases a lot more capable and efficient&#8221;. He further adds that &#8220;there&#8217;s some niche workflows that are only possible on X11, but there isn&#8217;t any functionality regression&#8221;. Basically, i<a href="https://xkcd.com/1172/">f you&#8217;re using your spacebar as a heater</a>, you might run into problems.</p><p>As for accessibility, Wayland is actually doing pretty great.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>There has been a lot of concerned trolling and misinformation specifically around this topic sadly from people that don&#8217;t care about it and have been abusing the discourse as a straw man argument. Drowning all the people that rely on it and need to be heard. Thankfully Aaron of <a href="https://fireborn.mataroa.blog/">fireborn</a> fame wrote recently a <a href="https://fireborn.mataroa.blog/blog/i-want-to-love-linux-it-doesnt-love-me-back-post-4-wayland-is-growing-up-and-now-we-dont-have-a-choice/">blogpost</a> talking about all this in detail and clearing up misconceptions.</p>
+<a href="https://blogs.gnome.org/alatiera/2025/06/23/x11-session-removal-faq/">&#8619; Jordan Petridis</a></blockquote><p>Finally, Petridis summarises why the Linux desktop world is moving to Wayland:</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>No, the Xorg Server is still very much maintained, however its development is halted. It still receives occasional bugfixes and there are timely security releases when needed.</p><p>The <a href="https://gitlab.freedesktop.org/xorg/xserver/-/issues/1797#note_2804024">common sentiment</a>, shared among Xorg, Graphics, Kernel, Platform and Application developers is that any future development is a dead-end and shortcomings can&#8217;t be addressed without breaking X11. That&#8217;s why the majority of Xorg developers moved on to make a new, separate, thing: Wayland.</p>
+<a href="https://blogs.gnome.org/alatiera/2025/06/23/x11-session-removal-faq/">&#8619; Jordan Petridis</a></blockquote><p>This pill is so hard to swallow for some people that they go full bananas and start seeing red hats and Illuminati symbols everywhere, losing their minds and spiraling deep into ludicrous conspiracy theories. The truth of the matter is, however, blatantly banal: the people developing X.org realised long ago that meaningfully improving it would irrevocably break it, and as such they developed something new so they wouldn&#8217;t have to break X11. That&#8217;s it.</p><p>X.org will continue to exist and live on in its maintained state, and desktops relying on it will continue to function. If you want to keep using GNOME and KDE, though, you&#8217;ll have to drop X11, because the kinds of features and improvements these desktops want to deliver are not possible without breaking X11. Would you want an X11 that&#8217;s broken for everyone, or an X11 that keeps working as-is, while those that want to move on do so somewhere else?</p></div>
