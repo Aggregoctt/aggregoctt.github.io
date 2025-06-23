@@ -1,0 +1,18 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/intel/articoli/n622813/ubuntu-intel-gpu-security-mitigations-cosa-cambia/
+date: '2025-06-23T11:15:00'
+excerpt: Le prestazioni saliranno del 20%
+image: assets/media/t46OZCMU3_t9m53g6YK6fw-e7NVtkkc8nxlAqijjtImhg.webp
+source: hdblog
+tags:
+- Linux
+- Intel
+title: Ubuntu migliorerà le prestazioni delle GPU Intel disattivando delle misure
+  di sicurezza
+---
+<div><p>Queste misure di protezione erano state introdotte anni fa sull'onda della scoperta di gravi vulnerabilit&#224; hardware come <a href="https://www.hdblog.it/meltdown-spectre/">Spectre e Meltdown</a>, che potevano esporre i dati degli utenti pericoli per la privacy. Sebbene<strong> il rischio principale riguardasse le CPU</strong>, per le quali Intel rilasci&#242; diversi aggiornamenti microcode, per <strong>eccesso di cautela</strong> vennero applicate protezioni anche allo stack grafico. Tuttavia, ad oggi non sono stati segnalati attacchi di tipo Spectre rivolti espressamente alle GPU integrate di Intel, quindi, secondo Canonical, queste mitigazioni hanno per&#242; comportato un <strong>calo prestazionale non trascurabile</strong>.</p>
+
+<p>La discussione, emersa da una segnalazione sulla piattaforma Launchpad, ha portato a un accordo tra i team di sicurezza di Intel e Canonical. La conclusione condivisa &#232; che le mitigazioni per Spectre a livello di "Compute Runtime" (il software che gestisce il calcolo sulla GPU) non sono pi&#249; ritenute cruciali, poich&#233; il problema &#232; ora <strong>gestito efficacemente a livello di kernel Linux</strong>. Inoltre, Intel distribuisce gi&#224; le sue build ufficiali del Compute Runtime da GitHub con queste stesse mitigazioni disattivate, suggerendo che <strong>la loro rimozione anche su Ubuntu sia una procedura sicura</strong>.</p><p>La disattivazione nei futuri pacchetti di Ubuntu avverr&#224; tramite l'opzione di compilazione "NEO_DISABLE_MITIGATIONS", e si prevede che la modifica venga implementata <strong>nella versione 25.10 del sistema operativo</strong>.</p>
+
+<p>Nonostante la decisione sia stata formalmente approvata da entrambe le aziende per infondere fiducia negli utenti, resta sempre una remota possibilit&#224; che tale modifica possa aprire vettori di attacco sconosciuti. Tuttavia, la valutazione congiunta di Intel e Canonical indica che<strong> il notevole guadagno prestazionale giustifica ampiamente un rischio ormai considerato minimo</strong>, grazie alle protezioni implementate a livelli pi&#249; profondi del sistema operativo.</p></div>
