@@ -1,0 +1,66 @@
+---
+author: Ryan Whitwam
+canonical_url: https://arstechnica.com/google/2025/06/google-releases-first-cloud-free-ai-robotics-model/
+date: '2025-06-24T14:00:41'
+excerpt: Google's Carolina Parada says Gemini has enabled huge robotics breakthroughs,
+  like the new on-device AI.
+image: assets/media/3-m8_aIdkvj0sFPANt-o2g-NFS5m56I-zfJs8ZXABA6DQ.webp
+source: arstechnica
+tags:
+- AI
+- Google
+- Tech
+- Artificial Intelligence
+- gemini
+- gemini robotics
+- google
+title: Google’s new robotics AI can run without the cloud and still tie your shoes
+---
+<div>
+                      
+                      
+          <p>We sometimes call chatbots like Gemini and ChatGPT "robots," but generative AI is also playing a growing role in real, physical robots. After <a href="https://arstechnica.com/ai/2025/03/googles-origami-folding-ai-brain-may-power-new-wave-of-humanoid-robots/">announcing Gemini Robotics</a> earlier this year, Google DeepMind has now revealed a new on-device VLA (vision language action) model to control robots. Unlike the previous release, there's <a href="https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/">no cloud component</a>, allowing robots to operate with full autonomy.</p>
+<p>Carolina Parada, head of robotics at Google DeepMind, says this approach to AI robotics could make robots more reliable in challenging situations. This is also the first version of Google's robotics model that developers can tune for their specific uses.</p>
+<p>Robotics is a unique problem for AI because, not only does the robot exist in the physical world, but it also changes its environment. Whether you're having it move blocks around or tie your shoes, it's hard to predict every eventuality a robot might encounter. The traditional approach of training a robot on action with reinforcement was very slow, but generative AI allows for much greater generalization.</p>
+<p>"It's drawing from Gemini's multimodal world understanding in order to do a completely new task," explains Carolina Parada. "What that enables is in that same way Gemini can produce text, write poetry, just summarize an article, you can also write code, and you can also generate images. It also can generate robot actions."</p>
+<h2>General robots, no cloud needed</h2>
+<p>In the previous Gemini Robotics release (which is still the "best" version of Google's robotics tech), the platforms ran a hybrid system with a small model on the robot and a larger one running in the cloud. You've probably watched chatbots "think" for measurable seconds as they generate an output, but robots need to react quickly. If you tell the robot to pick up and move an object, you don't want it to pause while each step is generated. The local model allows quick adaptation, while the server-based model can help with complex reasoning tasks. Google DeepMind is now unleashing the local model as a standalone VLA, and it's surprisingly robust.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+
+<p>The new Gemini Robotics On-Device model is only a little less accurate than the hybrid version. According to Parada, many tasks will work out of the box. "When we play with the robots, we see that they're surprisingly capable of understanding a new situation," Parada tells Ars.</p>
+<p>By putting this model out with a full SDK, the team hopes developers will give Gemini-powered robots new tasks and show them new environments, which could reveal actions that don't work with the model's stock tuning. With the SDK, robotics researchers will be able to adapt the VLA to new tasks with as little as 50 to 100 demonstrations.</p>
+ 
+
+<p>A "demonstration" in AI robotics is a bit different than in other areas of AI research. Parada explains that demonstrations typically involve tele-operating the robot&#8212;controlling the machinery manually to complete a task actually tunes the model to handle that task autonomously. While synthetic data is an element of Google's training, it's not a substitute for the real thing. "We still find that in the most complex, dexterous behaviors, we need real data," says Parada. "But there is quite a lot that you can do with simulation."</p>
+<p>But those highly complex behaviors may be beyond the capabilities of the on-device VLA. It should have no problem with straightforward actions like tying a shoe (a traditionally difficult task for AI robots) or folding a shirt. If, however, you wanted a robot to make you a sandwich, it would probably need a more powerful model to go through the multi-step reasoning required to get the bread in the right place.</p>
+<p>The team sees Gemini Robotics On-Device as ideal for environments where connectivity to the cloud is spotty or non-existent. Processing the robot's visual data locally is also better for privacy, for example, in a health care environment.</p>
+
+          
+                   
+            
+
+              
+          
+          
+<h2>Building safe robots</h2>
+<p>Safety is always a concern with AI systems, be that a chatbot that provides dangerous information or a robot that goes Terminator. We've all seen generative AI chatbots and image generators hallucinate falsehoods in their outputs, and the generative systems powering Gemini Robotics are no different&#8212;the model doesn't get it right every time, but giving the model a physical embodiment with cold, unfeeling metal graspers makes the issue a little more thorny.</p>
+<p>To ensure robots behave safely, Gemini Robotics uses a multi-layered approach. "With the full Gemini Robotics, you are connecting to a model that is reasoning about what is safe to do, period," says Parada. "And then you have it talk to a VLA that actually produces options, and then that VLA calls a low-level controller, which typically has safety critical components, like how much force you can move or how fast you can move this arm."</p>
+ 
+
+<p>Importantly, the new on-device model is just a VLA, so developers will be on their own to build in safety. Google suggests they replicate what the Gemini team has done, though. It's recommended that developers in the early tester program connect the system to the standard Gemini Live API, which includes a safety layer. They should also implement a low-level controller for critical safety checks.</p>
+<p>Anyone interested in testing Gemini Robotics On-Device should apply for access to Google's trusted tester program. Google's Carolina Parada says there have been a lot of robotics breakthroughs in the past three years, and this is just the beginning&#8212;the current release of Gemini Robotics is still based on <a href="https://arstechnica.com/information-technology/2024/12/google-goes-agentic-with-gemini-2-0s-ambitious-ai-agent-features/">Gemini 2.0</a>. Parada notes that the Gemini Robotics team typically trails behind Gemini development by one version, and Gemini 2.5 has been cited as a <a href="https://arstechnica.com/ai/2025/03/google-says-the-new-gemini-2-5-pro-model-is-its-smartest-ai-yet/">massive improvement</a> in chatbot functionality. Maybe the same will be true of robots.</p>
+
+
+          
+                  
+
+                  
+          </div>
