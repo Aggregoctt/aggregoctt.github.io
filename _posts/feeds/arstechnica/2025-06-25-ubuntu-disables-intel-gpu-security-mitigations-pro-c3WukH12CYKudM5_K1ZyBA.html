@@ -1,0 +1,48 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/06/ubuntu-disables-intel-gpu-security-mitigations-promises-20-performance-boost/
+date: '2025-06-25T19:39:19'
+excerpt: Overtime defenses for Spectre-based attacks have taken their toll.
+image: assets/media/c3WukH12CYKudM5_K1ZyBA-ifcjx9Wq9KSYf9NSM0_VKA.webp
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- intel gpu
+- Ubuntu
+title: Ubuntu disables Intel GPU security mitigations, promises 20% performance boost
+---
+<div>
+                      
+                      
+          <p>Ubuntu users could see up to a 20 percent boost in graphics performance on Intel-based systems under a change that will turn off security mitigations for blunting a class of attacks known as Spectre.</p>
+<p>Spectre, you may recall, <a href="https://arstechnica.com/gadgets/2018/01/meltdown-and-spectre-every-modern-processor-has-unfixable-security-flaws/">came to public notice</a> in 2018. Spectre attacks are based on the observation that performance enhancements built into modern CPUs open a <a href="https://en.wikipedia.org/wiki/Side-channel_attack">side channel</a> that can leak secrets a CPU is processing. The performance enhancement, known as <a href="https://en.wikipedia.org/wiki/Speculative_execution">speculative execution</a>, predicts future instructions a CPU might receive and then performs the corresponding tasks before they are even called. If the instructions never come, the CPU discards the work it performed. When the prediction is correct, the CPU has already completed the task.</p>
+<p>By using code that forces a CPU to execute carefully selected instructions, Spectre attacks can extract confidential data that the CPU would have accessed had it carried out the ghost instructions. Over the past seven years, researchers have uncovered multiple attack variants based on the architectural flaws, which are unfixable. CPU manufacturers have responded by creating patches in both micro code and binary code that restrict speculative execution operations in certain scenarios. These restrictions, of course, usually degrade CPU performance.</p>
+<h2>When the investment costs more than the return</h2>
+<p>Over time, those mitigations have degraded graphics processing performance by as much as 20 percent, a member of the Ubuntu development team recently <a href="https://bugs.launchpad.net/ubuntu/+source/intel-compute-runtime/+bug/2110131">reported</a>. Additionally, the team member said, Ubuntu will integrate many of the same mitigations directly into its Kernel, specifically in the Questing Quokka release scheduled for October. In consultation with their counterparts at Intel, Ubuntu security engineers have decided to disable the mitigations in the device driver for the Intel <a href="https://github.com/intel/compute-runtime">Graphics Compute Runtime</a>.</p>
+<p>&#8220;After discussion between Intel and Canonical&#8217;s security teams, we are in agreement that Spectre no longer needs to be mitigated for the GPU at the Compute Runtime level,&#8221; Ubuntu developer Shane McKee wrote. He continued:</p>
+<blockquote><p>At this point, Spectre has been mitigated in the kernel, and a clear warning from the Compute Runtime build serves as a notification for those running modified kernels without those patches. For these reasons, we feel that Spectre mitigations in Compute Runtime no longer offer enough security impact to justify the current performance tradeoff.</p></blockquote>
+<p>McKee went on to say that as a result, &#8220;Users can expect up to 20% performance improvement.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The developer acknowledged that the change could open security holes or introduce bugs but said that both Ubuntu and Intel have confidence that disabled versions will be safe.</p>
+<p>Most of the researchers Ars consulted agreed. They reasoned that the mitigations built into the kernel are likely to protect against most if not all Spectre attack scenarios. They also noted that there are no known reports of Spectre attacks ever being actively used in the wild.</p>
+<p>&#8220;Nobody bothers attacking these vulns because it takes a lot of engineering time to implement attacks against them to any useful level of rigor, and getting any interesting data back outside very targeted scenarios is very unlikely (plus it's noisy due to the number of iterations you need to do on these types of side-channels),&#8221; independent researcher Graham Sutherland <a href="https://infosec.exchange/@gsuberland@chaos.social/114739934685909023">wrote on Mastodon</a>. &#8220;The economics just don't stack up for attackers, especially when there are so many lower-effort higher-reward attack approaches they can throw at stuff.&#8221;</p>
+<p>&#8220;From the user perspective it&#8217;s risk/reward too,&#8221; a researcher going by the handle demize <a href="https://infosec.exchange/@demize@unstable.systems/114739958244265650">added</a>. &#8220;Probably don&#8217;t disable side-channel mitigations on multitenant servers. ...&#8221; But for typical users, &#8220;you have a much higher threat from downloading malware that does literally anything else.&#8221;</p>
+<p>Ultimately, cryptography engineer Sophie Schmieg said, the benefit of the mitigations isn't worth the performance costs to GPU performance, where predicting instruction branches is more critical than for CPU performance.</p>
+<p>&#8220;The system can effectively parallelize a lot more actions without requiring expensive synchronization points between the cores,&#8221; Schmieg <a href="https://infosec.exchange/@sophieschmieg/114740726177973552">said</a>. &#8220;If anything, something massively parallel like a GPU wants to do branch prediction even more liberally than a CPU.&#8221;</p>
+<p>One thing Ubuntu users should know is that the change will only provide performance boosts when GPUs are handling workloads running the <a href="https://www.khronos.org/opencl/">OpenCL</a> framework or the <a href="https://www.intel.com/content/www/us/en/docs/dpcpp-cpp-compiler/developer-guide-reference/2023-0/intel-oneapi-level-zero.html">OneAPI Level Zero</a> interface. That likely means that people using games and similar apps will see no benefit.</p>
+<p>Ubuntu users who run a custom Linux kernel without Spectre GPU mitigations should keep the compute runtime level mitigations on, a spokesman for Ubuntu developer Canonical said. These users can build a Compute Runtime themselves with the <code>NEO_DISABLE_MITIGATIONS=false</code> flag added.</p>
+
+
+          
+                  
+
+                  
+          </div>
