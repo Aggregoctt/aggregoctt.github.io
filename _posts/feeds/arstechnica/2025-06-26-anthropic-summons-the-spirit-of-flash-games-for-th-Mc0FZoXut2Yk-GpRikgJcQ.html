@@ -1,0 +1,79 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/06/anthropic-summons-the-spirit-of-flash-games-for-the-ai-age/
+date: '2025-06-26T20:33:20'
+excerpt: AI chatbot codes browser-based apps from plain English with classic web vibes.
+image: assets/media/Mc0FZoXut2Yk-GpRikgJcQ-ri_5Y5O7Dc0Z3-LqUFVGqA.webp
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI assistants
+- AI development tools
+- AI programming
+- Anthropic
+- Anthropic Claude
+- API
+- Claude
+- Flash games
+- generative ai
+- large language models
+- machine learning
+- newgrounds
+- Simon Willison
+- vibe coding
+- vibecoding
+title: Anthropic summons the spirit of Flash games for the AI age
+---
+<div>
+                      
+                      
+          <p>On Wednesday, Anthropic <a href="https://www.anthropic.com/news/claude-powered-artifacts">announced</a> a new feature that expands its Artifacts document management system into the basis of a personal AI app gallery resembling something from the <a href="https://arstechnica.com/information-technology/2020/07/the-rise-and-fall-of-adobe-flash/">Flash game era</a> of the early 2000s&#8212;though these apps run on modern web code rather than Adobe's defunct plugin.</p>
+<p>Using plain English dialogue, users can build and share interactive applications <a href="https://claude.ai/artifacts">directly within</a> Claude's chatbot interface using a new API capability that lets artifacts interact with Claude itself. Claude is an AI assistant similar to <a href="https://arstechnica.com/information-technology/2023/11/chatgpt-was-the-spark-that-lit-the-fire-under-generative-ai-one-year-ago-today/">ChatGPT</a>.</p>
+<p>Claude has been capable of building web apps for some time, but Anthropic has put renewed focus on the feature that many have overlooked. "I'm amused that Anthropic turned 'we added a window.claude.complete() function to Artifacts' into what looks like a major new product launch," <a href="https://simonwillison.net/2025/Jun/25/ai-powered-apps-with-claude/">wrote</a> independent AI researcher Simon Willison in a blog post, "but I can't say it's bad marketing for them to do that!"</p>
+ 
+
+<p>On the Anthropic gallery site, example artifact apps come organized into categories like "Learn something," "Life hacks," and "Be creative." Featured artifacts at launch include an interactive writing editor, a bedtime story generator, a molecule visualizer, and a 3D first-person "Anthropic office simulator" where you can walk around and interact with simple representations of real Anthropic employees.</p>
+<p>Users can examine the prompts and the chats that made those examples possible and even modify them for their own purposes. The beta Artifacts gallery feature is currently available to users on Claude's Free, Pro, and Max plans, and it's accessible through the Claude app's sidebar.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>How it works: AI as the coder</h2>
+<p>When users ask Claude to create an artifact, the AI model writes the HTML, CSS, and JavaScript codef, typically using <a href="https://en.wikipedia.org/wiki/React_(software)">React</a> (a JavaScript library for web interfaces) for interactive components. Anthropic provided a demo video that showcases the process.</p>
+ 
+<p>The key addition in the latest update is a "window.claude.complete()" function that AI-generated apps can use to make their own requests back to Claude, enabling in-app conversational chatbot features like dynamic NPCs or tutors that users can talk to. Inspired by a demo created by Anthropic, we created a simple 2D simulation where the users move around an office and chat with some members of Ars Technica staff as if they were chatbot characters themselves.</p>
+<p>It's worth noting that the experience is entirely sandboxed for now. Unlike traditional web development, where developers manually integrate APIs and services, Claude creates self-contained applications that can only communicate with Claude itself&#8212;no external API calls ("yet," as Anthropic notes), no database connections, and no local browser storage.</p>
+ 
+
+<p>All state management happens in-memory through React components or JavaScript variables that Claude implements, creating a simplified environment where users describe their ideas and Claude handles both the interface code and the AI logic. In a way, it's a form of <a href="https://arstechnica.com/ai/2025/03/is-vibe-coding-with-ai-gnarly-or-reckless-maybe-some-of-both/">vibe coding</a>&#160;but self-contained entirely within its own web environment.</p>
+<h2>Web portal throwback</h2>
+<p>Perhaps unintentionally, Anthropic's <a href="https://claude.ai/artifacts">artifact gallery interface</a> reminds us of classic Flash gaming portals, with each tile in the gallery showing a snapshot of the interactive experience waiting inside&#8212;similar to how Flash portals <a href="https://www.flashgamehistory.com/">teased players</a> with game screenshots back in the early 2000s.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>For those who missed the Flash era, these in-browser apps feel somewhat like the vintage apps that <a href="https://www.gameinformer.com/2018/12/22/how-flash-games-changed-video-game-history">defined</a> a generation of Internet culture from the late 1990s through the 2000s when it first became possible to create complex in-browser experiences. Adobe Flash (originally Macromedia Flash) began as animation software for designers but quickly became the backbone of interactive web content when it gained its own programming language, <a href="https://en.wikipedia.org/wiki/ActionScript">ActionScript</a>, in 2000.</p>
+<p>But unlike Flash games, where hosting costs fell on portal operators, Anthropic has crafted a system where users pay for their own fun through their existing Claude subscriptions. "When someone uses your Claude-powered app, they authenticate with their existing Claude account," Anthropic <a href="https://www.anthropic.com/news/claude-powered-artifacts">explained</a> in its announcement. "Their API usage counts against their subscription, not yours. You pay nothing for their usage."</p>
+ 
+
+<p>Like the Flash games of yesteryear, any Claude-powered apps you build run in the browser and can be shared with anyone who has a Claude account. They're interactive experiences shared with a simple link, no installation required, created by other people for the sake of creating, except now they're powered by JavaScript instead of ActionScript.</p>
+<p>While you can share these apps with others individually, right now Anthropic's Artifact gallery only shows examples made by Anthropic and your own personal Artifacts. (If Anthropic expanded it into the future, it might end up feeling a bit like <a href="https://en.wikipedia.org/wiki/Scratch_(programming_language)">Scratch</a> meets <a href="https://en.wikipedia.org/wiki/Newgrounds">Newgrounds</a>, but with AI doing the coding.) Ultimately, humans are still behind the wheel, describing what kinds of apps they want the AI model to build and guiding the process when it inevitably makes mistakes.</p>
+<p>Speaking of mistakes, don't expect perfect results at first. Usually, building an app with Claude is an interactive experience that requires some guidance to achieve your desired results. But with a little patience and a lot of tokens, you'll be vibe coding in no time.</p>
+
+
+          
+                  
+
+                  
+          </div>
