@@ -1,0 +1,66 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2025/06/microsoft-is-trying-to-get-antivirus-software-away-from-the-windows-kernel/
+date: '2025-06-27T16:55:14'
+excerpt: AV vendors have worried that this could advantage Microsoft's security software.
+image: assets/media/erVH-A2lIs0Q8itXBd2wjA-8Kvo__cYDxTXaAhLQ2g-Uw.webp
+source: arstechnica
+tags:
+- Security
+- Tech
+- microsoft
+- Windows
+- windows 10
+- windows 11
+- windows 11 24h2
+title: Microsoft changes Windows in attempt to prevent next CrowdStrike-style catastrophe
+---
+<div>
+                      
+                      
+           
+<p>In the summer of 2024, corporate anti-malware provider CrowdStrike <a href="https://arstechnica.com/information-technology/2024/07/major-outages-at-crowdstrike-microsoft-leave-the-world-with-bsods-and-confusion/">pushed a broken update to millions of PCs and servers</a> running some version of Microsoft's Windows software, taking down systems that both companies and consumers relied on for air travel, payments, emergency services, and their morning coffee. It was a huge outage, and it caused days and weeks of pain as the world's permanently beleaguered IT workers brought systems back online, in some cases touching each affected PC individually to remove the bad update and get the systems back up and running.</p>
+<p>The outage was ultimately CrowdStrike's fault, and in the aftermath of the incident, the company promised a long list of process improvements to keep a bad update like that from going out again. But because the outage affected Windows systems, Microsoft often had <a href="https://www.washingtonpost.com/business/2024/07/19/windows-outage-crowdstrike-cancellations-computer/">shared</a> and sometimes even <a href="https://www.nytimes.com/2024/07/19/technology/microsoft-crowdstrike-outage-what-happened.html">top billing</a> in mainstream news coverage&#8212;another in <a href="https://arstechnica.com/information-technology/2024/04/microsoft-blamed-for-a-cascade-of-security-failures-in-exchange-breach-report/">a string of security-related embarrassments</a> that prompted <a href="https://arstechnica.com/information-technology/2024/05/microsoft-ties-executive-pay-to-security-following-multiple-failures-and-breaches/">CEO Satya Nadella</a> and <a href="https://arstechnica.com/tech-policy/2024/06/microsoft-in-damage-control-mode-says-it-will-prioritize-security-over-ai/">other executives</a> to promise that the company would refocus its efforts on improving the security of its products.</p>
+<p>The CrowdStrike crash was possible partly due to how anti-malware software works in Windows. Security vendors and their AV products generally have access to the Windows kernel, the cornerstone of the operating system that sits between your hardware and most user applications. But most user applications don't have kernel access specifically because a buggy app (or one hijacked by malware) with kernel access can bring the entire system down rather than just affecting the app. The bad CrowdStrike update was bad mostly because it was being loaded so early in Windows' boot process that many systems couldn't check for and download CrowdStrike's fix before they crashed.</p>
+<p>As part of <a href="https://blogs.windows.com/windowsexperience/2025/06/26/the-windows-resiliency-initiative-building-resilience-for-a-future-ready-enterprise/">a wide-ranging security blog post</a> earlier this week, Microsoft announced a seemingly minor change that could have a big impact: "a private preview of the Windows endpoint security platform" that "will allow [endpoint security vendors] to start building their solutions to run outside the Windows kernel."</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>"This means security products like anti-virus and endpoint protection solutions can run in user mode just as apps do," wrote David Weston, Microsoft's VP of Enterprise and OS Security. "This change will help security developers provide a high level of reliability and easier recovery resulting in less impact on Windows devices in the event of unexpected issues."</p>
+<p>This preview will be delivered to companies that participate in Microsoft's Microsoft Virus Initiative (MVI), a list that includes CrowdStrike, Bitdefender, ESET, SentinelOne, Trellix, Trend Micro, and WithSecure. Those companies all have representatives quoted in Microsoft's blog post, all offering some version of (to paraphrase) "security is important and we are pleased to be working with Microsoft to make it better."</p>
+<p>Microsoft's language says that security vendors&#160;can develop security apps that operate in user mode but not that they must do so. It's not clear whether this announcement is a first step toward booting third-party security companies out of the Windows kernel entirely or if it's simply a new, more foolproof option for companies whose software doesn't need that level of access.</p>
+<h2>An idea with some baggage</h2>
+<p>Microsoft's attempts to restrict third-party security companies from accessing the Windows kernel have been contentious in the past. Back in 2006, when Microsoft was simultaneously developing Windows Vista and building the foundation for what would become today's 64-bit editions of Windows, Microsoft <a href="https://arstechnica.com/information-technology/2006/10/7998/">wanted to restrict security companies</a> from patching the kernel as they'd been able to in 32-bit editions of Windows, insisting that they do so using more restricted security APIs instead.</p>
+ 
+<p>But Microsoft was also <a href="https://arstechnica.com/uncategorized/2006/05/6952-2/">beginning to offer its own antivirus products at the time</a>, including the first version of Windows Defender. Companies like Symantec argued that restricting their access to the kernel was anti-competitive and that it would give Microsoft's own security products capabilities that third parties couldn't provide.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Working with third-party companies to define these standards and address those companies' concerns seems to be Microsoft's way of trying to avoid that kind of controversy this time around.</p>
+<p>"We will continue to collaborate deeply with our MVI partners throughout the private preview," wrote Weston.</p>
+<h2>Death comes for the blue screen</h2>
+ 
+
+<p>Microsoft's post outlines a handful of other security-related Windows tweaks, including some that take alternate routes to preventing more CrowdStrike-esque outages.</p>
+<p>Multiple changes are coming for the "unexpected restart screen," the less-derogatory official name for what many Windows users know colloquially as the "blue screen of death." For starters, the screen will now be black instead of blue, a change that Microsoft briefly attempted to make in the early days of Windows 11 <a href="https://arstechnica.com/gadgets/2021/11/next-windows-11-update-makes-the-blue-screen-of-death-blue-again/">but subsequently rolled back</a>.</p>
+<p>The unexpected restart screen has been "simplified" in a way that "improves readability and aligns better with Windows 11 design principles, while preserving the technical information on the screen for when it is needed."</p>
+<p>But the more meaningful change is under the hood, in the form of a new feature called "quick machine recovery" (QMR).</p>
+<p>If a Windows PC has multiple unexpected restarts or gets into a boot loop&#8212;as happened to many systems affected by the CrowdStrike bug&#8212;the PC will try to boot into Windows RE, a stripped-down recovery environment that offers a handful of diagnostic options and can be used to enter Safe Mode or open the PC's UEFI firmware. QMR will allow Microsoft to "broadly deploy targeted remediations to affected devices via Windows RE," making it possible for some problems to be fixed even if the PCs can't be booted into standard Windows, "quickly getting users to a productive state without requiring complex manual intervention from IT."</p>
+<p>QMR will be enabled by default on Windows 11 Home, while the Pro and Enterprise versions will be configurable by IT administrators. The QMR functionality and the black version of the blue screen of death will both be added to Windows 11 24H2 later this summer. Microsoft plans to add additional customization options for QMR "later this year."</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
