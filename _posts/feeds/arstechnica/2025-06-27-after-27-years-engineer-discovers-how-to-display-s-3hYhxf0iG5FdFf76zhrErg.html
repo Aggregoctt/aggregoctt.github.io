@@ -1,0 +1,59 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/gadgets/2025/06/after-27-years-engineer-discovers-how-to-display-secret-photo-in-power-mac-rom/
+date: '2025-06-27T21:32:07'
+excerpt: Developer solves mystery of hidden JPEG from the beige G3 era.
+image: assets/media/3hYhxf0iG5FdFf76zhrErg-T3g_Mv-Ldr_vwbZMaAnBtg.webp
+source: arstechnica
+tags:
+- Tech
+- Apple History
+- classic mac
+- easter egg
+- easter eggs
+- Mac OS
+- Macintosh
+- PowerPC
+- Retro computing
+- retrotech
+- Reverse-engineering
+- rom hacking
+- Vintage computing
+title: After 27 years, engineer discovers how to display secret photo in Power Mac
+  ROM
+---
+<div>
+                      
+                      
+          <p>On Tuesday, software engineer Doug Brown <a href="https://www.downtowndougbrown.com/2025/06/finding-a-27-year-old-easter-egg-in-the-power-mac-g3-rom/">published</a> his discovery of how to trigger a long-known but previously inaccessible <a href="https://en.wikipedia.org/wiki/Easter_egg_(media)">Easter egg</a> in the Power Mac G3's ROM: a hidden photo of the development team that nobody could figure out how to display for 27 years. While Pierre Dandumont <a href="https://www.journaldulapin.com/2014/08/19/easter-egg-les-images-cachees-dans-les-roms/">first documented</a> the JPEG image itself in 2014, the method to view it on the computer remained a mystery until Brown's reverse engineering work revealed that users must format a RAM disk with the text "secret ROM image."</p>
+<p>Brown stumbled upon the image while using a hex editor tool called <a href="https://hexfiend.com/">Hex Fiend</a> with <a href="https://github.com/eharmon/rom_fiend">Eric Harmon's Mac ROM template</a> to explore the resources stored in the beige Power Mac G3's ROM. The ROM appeared in desktop, minitower, and <a href="https://arstechnica.com/gadgets/2024/01/macintosh-at-40-the-oddest-and-rarest-macs-ever-built/">all-in-one G3 models</a> from 1997 through 1999.</p>
+<p>"While I was browsing through the ROM, two things caught my eye," Brown wrote. He found both the HPOE resource containing the JPEG image of team members and a suspicious set of Pascal strings in the PowerPC-native SCSI Manager 4.3 code that included ".Edisk," "secret ROM image," and "The Team."</p>
+ 
+
+<p>The strings provided the crucial clue Brown needed. After extracting and disassembling the code using Ghidra, he discovered that the SCSI Manager was checking for a RAM disk volume named "secret ROM image." When found, the code would create a file called "The Team" containing the hidden JPEG data.</p>
+<h2>Solving the mystery</h2>
+<p>Brown initially shared his findings on the #mac68k IRC channel, where a user named Alex quickly figured out the activation method. The trick requires users to enable the RAM Disk in the Memory control panel, restart, select the RAM Disk icon, choose "Erase Disk" from the Special menu, and type "secret ROM image" into the format dialog.</p>
+
+          
+                       
+                   
+                  
+
+              
+          
+          
+<p>"If you double-click the file, SimpleText will open it," Brown explains on his blog just before displaying the hidden team photo that emerges after following the steps.</p>
+<p>The discovery represents one of the last undocumented Easter eggs from the <a href="https://lowendmac.com/2013/next-years-steve-jobs-before-triumphant-return-apple/">pre-Steve Jobs return era</a> at Apple. The Easter egg works through Mac OS 9.0.4 but appears to have been disabled by version 9.1, Brown notes. The timing aligns with Jobs' reported ban on Easter eggs when he returned to Apple in 1997, though Brown wonders whether Jobs ever knew about this particular secret.</p>
+ 
+
+<p>In his post, Brown expressed hope that he might connect with the Apple employees featured in the photo&#8212;a hope that was quickly fulfilled. In the comments, a man named Bill Saperstein identified himself as the leader of the G3 team (pictured fourth from left in the second row) in the hidden image.</p>
+<p>"We all knew about the Easter egg, but as you mention; the technique to extract it changed from previous Macs (although the location was the same)," Saperstein wrote in the comment. "This resulted from an Easter egg in the original PowerMac that <a href="https://www.nwitimes.com/uncategorized/article_52314f1f-f1d3-54ba-ba25-3a9bcf69d32a.html">contained Paula Abdul</a> (without permissions, of course). So the G3 team wanted to still have our pictures in the ROM, but we had to keep it very secret."</p>
+<p>He also shared behind-the-scenes details in another comment, noting that his "bunch of ragtag engineers" developed the successful G3 line as a skunk works project, with hardware that Jobs later turned into the groundbreaking iMac series of computers. "The team was really a group of talented people (both hw and sw) that were believers in the architecture I presented," Saperstein wrote, "and executed the design behind the scenes for a year until Jon Rubenstein got wind of it and presented it to Steve and the rest is 'history.'"</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
