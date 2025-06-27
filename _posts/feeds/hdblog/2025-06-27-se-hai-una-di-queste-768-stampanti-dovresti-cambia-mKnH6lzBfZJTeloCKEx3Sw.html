@@ -1,0 +1,28 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/hardware/articoli/n623354/stampanti-password-rischio-brother-minolta-toshiba/
+date: '2025-06-27T09:55:00'
+excerpt: 'Scoperti 8 gravi bug di sicurezza in 748 modelli di stampanti: ecco l''elenco
+  e come mettere al sicuro i dispositivi'
+image: assets/media/mKnH6lzBfZJTeloCKEx3Sw-L2eCJpFX-fjny3Qxk9hlZw.webp
+source: hdblog
+tags:
+- Business
+title: Se hai una di queste 768 stampanti dovresti cambiare password subito
+---
+<div><p>In molti film e serie TV recenti le <strong>stampanti</strong> vengono usate <a href="https://www.hdblog.it/attacchi-hacker/">per <strong>violare sistemi informatici</strong> </a>di governi, aziende e semplici cittadini privati, al fine di spiarli o infettare i dispositivi connessi con malware di ogni tipo. Gli esperti di sicurezza sanno che non si tratta di pura fiction ma che, al contrario, un fondo di verit&#224; in queste storie c'&#232;.</p>    <p>E lo dimostra il recentissimo allarme lanciato dalla societ&#224; di cybersicurezza <strong>Rapid7</strong> in merito a 8 vulnerabilit&#224; che affliggono la bellezza di <strong>748 modelli di stampanti</strong> (alcune multifunzione), di 5 produttori diversi: Brother, Fujifilm, Konica Minolta, Ricoh e Toshiba.</p>    <p>Le vulnerabilit&#224; hanno gravit&#224; media, alta e critica e, in alcuni casi, non possono essere risolte dal produttore della stampante, cosa che costringe l'utente ad una azione mirata per mettere al sicuro la stampante e tutti i dispositivi ad essa collegati.</p><p>Alle vulnerabilit&#224; scoperte &#232; stato assegnato il consueto <strong>codice CVE</strong> e lo <strong>score di rischio</strong>. Come si pu&#242; facilmente intuire, il bug peggiore &#232; il <strong>CVE-2024-51978</strong>, al quale &#232; stato dato uno stratosferico <strong>9.8/10</strong> a testimonianza di quanto tale vulnerabilit&#224; sia pericolosa. </p>    <p>Ecco l'elenco delle CVE registrate da Rapid7:</p>
+
+<ul>
+	<li>CVE-2024-51977 (5.3): possibilit&#224; di esfiltrare informazioni sensibili</li>
+	<li>CVE-2024-51978 (9.8): possibilit&#224; di scoprire la password dell'amministratore</li>
+	<li>CVE-2024-51979 (7.2): possibilit&#224; di eseguire buffer overflow</li>
+	<li>CVE-2024-51980 (5.3): possibilit&#224; di forzare connessioni TCP </li>
+	<li>CVE-2024-51981 (5.3): possibilit&#224; di forzare connessioni TCP </li>
+	<li>CVE-2024-51982 (7.5): possibilit&#224; di mandare in crash il dispositivo</li>
+	<li>CVE-2024-51983 (7.5): possibilit&#224; di mandare in crash il dispositivo</li>
+	<li>CVE-2024-51984 (6.8): possibilit&#224; di scoprire la password di un servizio esterno</li>
+</ul>
+
+
+
+<p>La vulnerabilit&#224; <strong>CVE-2024-51978</strong> deriva dal metodo usato dal produttore della stampante per generare la password di fabbrica del dispositivo, quindi <strong>non pu&#242; essere corretta</strong> tramite un aggiornamento firmware. </p>    <p>Chi indovina la password di una stampante connessa in rete, in parole molto povere, apre una falla nella sicurezza della rete stessa eseguendo codice remoto. Ci&#242; vale anche per le stampanti non connesse in rete, ma in tal caso a rischiare &#232; solo il computer connesso fisicamente alla stampante.</p><p>Per alcune di queste vulnerabilit&#224; i produttori hanno pubblicato dei fix, tramite <strong>aggiornamenti firmware</strong>, che correggono i relativi bug. Per la CVE-2024-51978, invece, non ci sono fix possibili.</p>    <p>Tuttavia, &#232; possibile aggirare il problema <strong>cambiando manualmente la password</strong> della stampante, in modo da assegnare una parola chiave non generata con l'algoritmo di fabbrica e, quindi, non facile da indovinare per l'attaccante.</p><p>Le stampanti affette da almeno una di queste 8 vulnerabilit&#224; sono 748 e noi le abbiamo trovate praticamente tutte. Pubblichiamo, per questo, l'<strong>elenco dei modelli</strong> di ogni produttore con la consapevolezza che non &#232; facile consultarlo, viste le dimensioni.</p>    <p>Vi consigliamo, per questo, di visualizzare questo elenco da un computer e non dallo smartphone e di cercare, all'interno di questa pagina, la stringa identificativa del vostro modello di stampante. <strong>Se la vostra stampante &#232; in questo elenco</strong>, infatti, &#232; seriamente a rischio attacco.</p></div>
