@@ -1,0 +1,35 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142664/wayback-experimental-layer-to-run-x-desktop-environments-on-wayland/
+date: '2025-06-29T20:43:55'
+excerpt: With X.org being in maintenance mode, with the process of replacing it with
+  Wayland accelerating pretty quickly now, a lot of projects using X.org are looking
+  for ways to prepare for the future. Alpine Linux, a distribution focused on musl,
+  BusyBox, and OpenRC, also wants to reduce its maintenance burden for X11 applications,
+  and so Alpine Linux maintainer Ariadne Conill has come up with something interesting.
+  Wayback is an experimental X compatibility layer which allows for running full X
+  desktop environments using Wayland components. It is essentially a stub compositor
+  which provides just enough Wayland capabilities to host a rootful Xwayland server.
+  It is intended to eventually replace the classic X.org server in Alpine, thus reducing
+  maintenance burden of X applications in Alpine, but a lot of work needs to be done
+  first. ↫ Wayback GitHub page It&#8217;s nowhere near done and most likely contains
+  massive amounts of bugs and issues, but the seed has been planted. Wayback will
+  make it possible to keep running X11-based desktop environments even in a full-Wayland
+  environment. This may be necessary in case you need a specific feature not yet available
+  in the Wayland version of your desktop environment, or if your desktop environment
+  of choice simply isn&#8217;t going to move to Wayland at all (due to lack of maintainers
+  or whatever). It&#8217;ll also be a boon for retrocomputing, especially as over
+  the coming years and decades unmaintained X11 desktop environments become become
+  ever harder to keep running on modern Linux distributions. While X.org as it exists
+  today certainly isn&#8217;t going anywhere any time soon, it will, eventually, stop
+  working properly on Linux distributions who don&#8217;t ship it by default anymore,
+  and it&#8217;s awesome to already have the beginnings of a project to address this
+  problem.
+image: null
+source: osnews
+tags:
+- Wayland
+title: 'Wayback: experimental layer to run X desktop environments on Wayland'
+---
+<div><p>With X.org being in maintenance mode, with the process of replacing it with Wayland accelerating pretty quickly now, a lot of projects using X.org are looking for ways to prepare for the future. <a href="https://alpinelinux.org/">Alpine Linux</a>, a distribution focused on musl, BusyBox, and OpenRC, also wants to reduce its maintenance burden for X11 applications, and so Alpine Linux maintainer Ariadne Conill has come up with something interesting.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Wayback is an experimental X compatibility layer which allows for running full X desktop environments using Wayland components. It is essentially a stub compositor which provides just enough Wayland capabilities to host a rootful Xwayland server.</p><p>It is intended to eventually replace the classic X.org server in Alpine, thus reducing maintenance burden of X applications in Alpine, but a lot of work needs to be done first.</p>
+<a href="https://github.com/kaniini/wayback">&#8619; Wayback GitHub page</a></blockquote><p>It&#8217;s nowhere near done and most likely contains massive amounts of bugs and issues, but the seed has been planted. Wayback will make it possible to keep running X11-based desktop environments even in a full-Wayland environment. This may be necessary in case you need a specific feature not yet available in the Wayland version of your desktop environment, or if your desktop environment of choice simply isn&#8217;t going to move to Wayland at all (due to lack of maintainers or whatever).</p><p>It&#8217;ll also be a boon for retrocomputing, especially as over the coming years and decades unmaintained X11 desktop environments become become ever harder to keep running on modern Linux distributions. While X.org as it exists today certainly isn&#8217;t going anywhere any time soon, it will, eventually, stop working properly on Linux distributions who don&#8217;t ship it by default anymore, and it&#8217;s awesome to already have the beginnings of a project to address this problem.</p></div>
