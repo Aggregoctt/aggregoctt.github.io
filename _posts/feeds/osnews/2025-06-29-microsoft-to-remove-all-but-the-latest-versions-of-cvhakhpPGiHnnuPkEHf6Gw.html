@@ -1,0 +1,55 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142662/microsoft-to-remove-all-but-the-latest-versions-of-drivers-from-windows-update/
+date: '2025-06-29T20:15:25'
+excerpt: This blog post is intended to notify all Windows Hardware program partners
+  that Microsoft has taken a strategic initiative to clean up legacy drivers published
+  on Windows Update to reduce security and compatibility risks. The rationale behind
+  this initiative is to ensure that we have the optimal set of drivers on Windows
+  Update that cater to a variety of hardware devices across the windows ecosystem,
+  while making sure that Microsoft Windows security posture is not compromised. This
+  initiative involves periodic cleanup of drivers from Windows Update, thereby resulting
+  in some drivers not being offered to any systems in the ecosystem. ↫ Microsoft&#8217;s
+  Hardware Dev Center The general gist is that Microsoft is going to remove all drivers
+  from Windows Update for which newer versions exist &#8211; or, to put it in a different
+  way, only the latest versions of a driver are going to remain available on Windows
+  Update. It&#8217;s effectively a clean-up of Windows Update, and the only way older
+  versions of drivers will remain available on Windows Update is if the manufacturer
+  in question can make a &#8220;business justification&#8221; to keep them around.
+  Some of this may sound surprising, since many people assume Windows Update only
+  offers the latest versions of drivers &#8211; annoyingly so, sometimes &#8211; but
+  this isn&#8217;t the case. Corporations with fleets of devices can actually determine
+  exactly which drivers get sent to their devices, including opting for older versions
+  in case newer versions have regressions or otherwise cause issues. Sometimes you
+  just don&#8217;t have a choice. According to Adam Demasi, the creator and maintainer
+  of the amazing Legacy Update service, Microsoft hasn&#8217;t deleted a single driver
+  or update from Windows Update since 2001 (save for problematic updates). This results
+  in a truly massive collection of updates and drivers, and that&#8217;s causing real
+  problems for Microsoft. Windows Update has a pretty cool system of describing whether
+  an update is necessary to be installed on the current system, or if it is already
+  installed. It also builds a relationship graph between updates, to indicate when
+  they have been replaced by a newer update that includes all changes from the previous
+  update. That system is also its downfall, causing the Windows Update service to
+  be incredibly slow in checking for updates, possibly never completing the check
+  at all. This issue also applies to WSUS, which despite being based on the very robust SQL
+  Server, struggles with the number of drivers Microsoft hosts on Windows Update. As
+  of April, we know that Windows Update hosts 1,799,339 drivers, and this creates
+  a 138 GB database that requires almost 16 days to synchronise down from the main
+  servers. The WSUS server is brought to its knees, with frequent timeouts while it
+  furiously tries to complete database queries. (The PC used is a Ryzen 5700G with
+  32 GB of 3600 MHz RAM and 500 GB of NVMe, running Windows Server 2025 and SQL Server
+  2022.) ↫ Adam Demasi From this, it&#8217;s easy to understand why Microsoft would
+  want to perform some housekeeping, followed by a new set of rules around only keeping
+  the latest versions of drivers around in Windows Update. Demasi also notes that
+  these plans by Microsoft won&#8217;t affect drivers for old devices, since they
+  will still be served their &#8220;newest&#8221; driver version, and it won&#8217;t
+  affect Legacy Update either.
+image: null
+source: osnews
+tags:
+- Windows
+title: Microsoft to remove all but the latest versions of drivers from Windows Update
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>This blog post is intended to notify all Windows Hardware program partners that Microsoft has taken a strategic initiative to clean up legacy drivers published on Windows Update to reduce security and compatibility risks. The rationale behind this initiative is to ensure that we have the optimal set of drivers on Windows Update that cater to a variety of hardware devices across the windows ecosystem, while making sure that Microsoft Windows security posture is not compromised. This initiative involves periodic cleanup of drivers from Windows Update, thereby resulting in some drivers not being offered to any systems in the ecosystem.</p>
+<a href="https://techcommunity.microsoft.com/blog/HardwareDevCenter/removal-of-unwanted-drivers-from-windows-update/4425647">&#8619; Microsoft&#8217;s Hardware Dev Center</a></blockquote><p>The general gist is that Microsoft is going to remove all drivers from Windows Update for which newer versions exist &#8211; or, to put it in a different way, only the latest versions of a driver are going to remain available on Windows Update. It&#8217;s effectively a clean-up of Windows Update, and the only way older versions of drivers will remain available on Windows Update is if the manufacturer in question can make a &#8220;business justification&#8221; to keep them around.</p><p>Some of this may sound surprising, since many people assume Windows Update only offers the latest versions of drivers &#8211; annoyingly so, sometimes &#8211; but this isn&#8217;t the case. Corporations with fleets of devices can actually determine exactly which drivers get sent to their devices, including opting for older versions in case newer versions have regressions or otherwise cause issues. Sometimes you just don&#8217;t have a choice.</p><p>According to Adam Demasi, the creator and maintainer of the amazing <a href="https://legacyupdate.net/">Legacy Update</a> service, Microsoft hasn&#8217;t deleted a single driver or update from Windows Update since 2001 (save for problematic updates). This results in a truly massive collection of updates and drivers, and that&#8217;s causing real problems for Microsoft.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Windows Update has a pretty cool system of describing whether an update is necessary to be installed on the current system, or if it is already installed. It also builds a relationship graph between updates, to indicate when they have been replaced by a newer update that includes all changes from the previous update. That system is also its downfall, causing the Windows Update service to be&#160;<a href="https://legacyupdate.net/help/performance">incredibly slow</a>&#160;in checking for updates, possibly never completing the check at all. This issue also applies to WSUS, which despite being based on the very robust&#160;<a href="https://en.wikipedia.org/wiki/Microsoft_SQL_Server">SQL Server</a>, struggles with the number of drivers Microsoft hosts on Windows Update.&#160;<a href="https://bsky.app/profile/legacyupdate.net/post/3ln5i3i3p4k2h">As of April</a>, we know that Windows Update hosts 1,799,339 drivers, and this creates a 138 GB database that requires almost 16 days to synchronise down from the main servers. The WSUS server is brought to its knees, with frequent timeouts while it furiously tries to complete database queries. (The PC used is a Ryzen 5700G with 32 GB of 3600 MHz RAM and 500 GB of NVMe, running Windows Server 2025 and SQL Server 2022.)</p>
+<a href="https://adamdemasi.com/2025/06/28/what-is-going-on-with-windows-update-drivers.html">&#8619; Adam Demasi</a></blockquote><p>From this, it&#8217;s easy to understand why Microsoft would want to perform some housekeeping, followed by a new set of rules around only keeping the latest versions of drivers around in Windows Update. Demasi also notes that these plans by Microsoft won&#8217;t affect drivers for old devices, since they will still be served their &#8220;newest&#8221; driver version, and it won&#8217;t affect Legacy Update either.</p></div>
