@@ -1,0 +1,72 @@
+---
+author: Jacek Krywko
+canonical_url: https://arstechnica.com/science/2025/06/a-neural-brain-implant-provides-near-instantaneous-speech/
+date: '2025-06-29T11:00:58'
+excerpt: Focusing on sound production instead of word choice makes for a flexible
+  system.
+image: assets/media/GG_0i3hhbYLm0iKxd5eytw-VcFOudrry0ih6-t2UpNtgA.webp
+source: arstechnica
+tags:
+- Science
+- Biology
+- brain implants
+- neurobiology
+- neuroprosthesis
+- Speech
+title: A neural brain implant provides near instantaneous speech
+---
+<div>
+                      
+                      
+           
+<p>Stephen Hawking, a British physicist and arguably the most famous man suffering from amyotrophic lateral sclerosis (ALS), communicated with the world using a sensor installed in his glasses. That sensor used tiny movements of a single muscle in his cheek to select characters on a screen. Once he typed a full sentence at a rate of roughly one word per minute, the text was synthesized into speech by a DECtalk TC01 synthesizer, which gave him his iconic, robotic voice.</p>
+<p>But a lot has changed since Hawking died in 2018. Recent brain-computer-interface (BCI) devices have made it possible to translate neural activity directly into text and even speech. Unfortunately, these systems had significant latency, often limiting the user to a predefined vocabulary, and they did not handle nuances of spoken language like pitch or prosody. Now, a team of scientists at the University of California, Davis has built a neural prosthesis that can instantly translate brain signals into sounds&#8212;phonemes and words. It may be the first real step we have taken toward a fully digital vocal tract.</p>
+<h2>Text messaging</h2>
+<p>&#8220;Our main goal is creating a flexible speech neuroprosthesis that enables a patient with paralysis to speak as fluently as possible, managing their own cadence, and be more expressive by letting them modulate their intonation,&#8221; says Maitreyee Wairagkar, a neuroprosthetics researcher at UC Davis who led the study. Developing a prosthesis ticking all these boxes was an enormous challenge because it meant Wairagkar&#8217;s team had to solve nearly all the problems BCI-based communication solutions have faced in the past. And they had quite a lot of problems.</p>
+<p>The first issue was moving beyond text&#8212;most successful neural prostheses developed so far have translated brain signals into text&#8212;the words a patient with an implanted prosthesis wanted to say simply appeared on a screen. Francis R. Willett led a team at Stanford University that <a href="https://www.nature.com/articles/s41586-023-06377-x">achieved</a> brain-to-text translation with around a 25 percent error rate. &#8220;When a woman with ALS was trying to speak, they could decode the words. Three out of four words were correct. That was super exciting but not enough for daily communication,&#8221; says Sergey Stavisky, a neuroscientist at UC Davis and a senior author of the study.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Delays and dictionaries</h2>
+<p>One year after the Stanford work, in 2024, Stavisky&#8217;s team <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2314132">published</a> its own research on a brain-to-text system that bumped the accuracy to 97.5 percent. &#8220;Almost every word was correct, but communicating over text can be limiting, right?&#8221; Stavisky said. &#8220;Sometimes you want to use your voice. It allows you to make interjections, it makes it less likely other people interrupt you&#8212;you can sing, you can use words that aren&#8217;t in the dictionary.&#8221; But the most common approach to generating speech relied on synthesizing it from text, which led straight into another problem with BCI systems: very high latency.</p>
+<p>In nearly all BCI speech aids, sentences appeared on a screen after a significant delay, long after the patient finished stringing the words together in their mind. The speech synthesis part usually happened after the text was ready, which caused even more delay. Brain-to-text solutions also suffered from a limited vocabulary. The latest system of this kind supported a dictionary of roughly 1,300 words. When you tried to speak a different language, use more elaborate vocabulary, or even say the unusual name of a caf&#233; just around the corner, the systems failed.</p>
+<p>So, Wairagkar designed her prosthesis to translate brain signals into sounds, not words&#8212;and do it in real time.</p>
+<h2>Extracting sound</h2>
+<p>The patient who agreed to participate in Wairagkar&#8217;s study was codenamed T15 and was a 46-year-old man suffering from ALS. &#8220;He is severely paralyzed and when he tries to speak, he is very difficult to understand. I&#8217;ve known him for several years, and when he speaks, I understand maybe 5 percent of what he&#8217;s saying,&#8221; says David M. Brandman, a neurosurgeon and co-author of the study. Before working with the UC Davis team, T15 communicated using a gyroscopic head mouse to control a cursor on a computer screen.</p>
+
+          
+                  
+
+              
+          
+          
+<p>To use an early version of Stavisky&#8217;s brain-to-text system, the patient had 256 microelectrodes implanted into his ventral precentral gyrus, an area of the brain responsible for controlling vocal tract muscles.</p>
+<p>For the new brain-to-speech system, Wairagkar and her colleagues relied on the same 256 electrodes. &#8220;We recorded neural activities from single neurons, which is the highest resolution of information we can get from our brain,&#8221; Wairagkar says. The signal registered by the electrodes was then sent to an AI algorithm called a neural decoder that deciphered those signals and extracted speech features such as pitch or voicing. In the next step, these features were fed into a vocoder, a speech synthesizing algorithm designed to sound like the voice that T15 had when he was still able to speak normally. The entire system worked with latency down to around 10 milliseconds&#8212;the conversion of brain signals into sounds was effectively instantaneous.</p>
+<p>Because Wairagkar&#8217;s neural prosthesis converted brain signals into sounds, it didn&#8217;t come with a limited selection of supported words. The patient could say anything he wanted, including pseudo-words that weren&#8217;t in a dictionary and interjections like &#8220;um,&#8221; &#8220;hmm,&#8221; or &#8220;uh.&#8221; Because the system was sensitive to features like pitch or prosody, he could also vocalize questions saying the last word in a sentence with a slightly higher pitch and even sing a short melody.</p>
+<p>But Wairagkar&#8217;s prosthesis had its limits.</p>
+ 
+<h2>Intelligibility improvements</h2>
+<p>To test the prosthesis&#8217;s performance, Wairagkar&#8217;s team first asked human listeners to match a recording of some synthesized speech by the T15 patient with one transcript from a set of six candidate sentences of similar length. Here, the results were completely perfect, with the system achieving 100 percent intelligibility.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The issues began when the team tried something a bit harder: an open transcription test where listeners had to work without any candidate transcripts. In this second test, the word error rate was 43.75 percent, meaning participants identified a bit more than half of the recorded words correctly. This was certainly an improvement compared to the intelligibility of the T15&#8217;s unaided speech where the word error in the same test with the same group of listeners was 96.43 percent. But the prosthesis, while promising, was not yet reliable enough to use it for day-to-day communication.</p>
+<p>&#8220;We&#8217;re not at the point where it could be used in open-ended conversations. I think of this as a proof of concept,&#8221; Stavisky says. He suggested that one way to improve future designs would be to use more electrodes. &#8220;There are a lot of startups right now building BCIs that are going to have over a thousand electrodes. If you think about what we&#8217;ve achieved with just 250 electrodes versus what could be done with a thousand or two thousand&#8212;I think it would just work,&#8221; he argued. And the work to make that happen is already underway.</p>
+<p>Paradromics, a BCI-focused startup based in Austin, Texas, wants to go ahead with clinical trials of a speech neural prosthesis and is already seeking FDA approval. &#8220;They have a 1,600 electrode system, and they publicly stated they are going to do speech,&#8221; Stavisky says. &#8220;David Brandman, our co-author, is going to be the lead principal investigator for these trials, and we&#8217;re going to do it here at UC Davis.&#8221;</p>
+<p>Nature, 2025. &#160;DOI: <a href="https://doi.org/10.1038/s41586-025-09127-3">10.1038/s41586-025-09127-3</a></p>
+
+
+          
+                  
+
+                  
+          </div>
