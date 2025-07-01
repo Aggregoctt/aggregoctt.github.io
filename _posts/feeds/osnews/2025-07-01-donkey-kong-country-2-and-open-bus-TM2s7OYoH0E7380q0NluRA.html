@@ -1,0 +1,24 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142673/donkey-kong-country-2-and-open-bus/
+date: '2025-07-01T20:48:53'
+excerpt: Apparently, Donkey Kong Country 2 has runs into a bug in the old SNES emulator
+  ZSNES, where one of the barrels that you&#8217;re supposed to be able to precisely
+  control the spinning direction of ends up spinning forever. This bug is caused by
+  ZSNES not emulating open bus behavior. I believe this was originally discovered
+  by Anomie roughly two decades ago, who subsequently fixed the same bug in Snes9x.
+  This original fix hardcoded the specific addresses to return the values that the
+  game depends on rather than properly emulating open bus, but it fixed DKC2 and probably
+  didn’t break anything else. The bug was never fixed in ZSNES, which is now a long
+  abandoned project (last release in 2007). Purely out of curiosity, I wanted to dig
+  into this a little more to figure out what exactly in the game code causes these
+  barrels to spin forever in an emulator that doesn’t emulate open bus behavior. ↫
+  jsgroth Just in case you&#8217;ve always wanted to know.
+image: null
+source: osnews
+tags:
+- Games
+title: Donkey Kong Country 2 and open bus
+---
+<div><p>Apparently, Donkey Kong Country 2 has runs into a bug in the old SNES emulator ZSNES, where one of the barrels that you&#8217;re supposed to be able to precisely control the spinning direction of ends up spinning forever.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>This bug is caused by ZSNES not emulating open bus behavior. I believe this was originally discovered by Anomie roughly two decades ago, who subsequently fixed the same bug in Snes9x. This original fix hardcoded the specific addresses to return the values that the game depends on rather than properly emulating open bus, but it fixed DKC2 and probably didn&#8217;t break anything else. The bug was never fixed in ZSNES, which is now a long abandoned project (last release in 2007).</p><p>Purely out of curiosity, I wanted to dig into this a little more to figure out what exactly in the game code causes these barrels to spin forever in an emulator that doesn&#8217;t emulate open bus behavior.</p>
+<a href="https://jsgroth.dev/blog/posts/dkc2-open-bus/">&#8619; jsgroth</a></blockquote><p>Just in case you&#8217;ve always wanted to know.</p></div>
