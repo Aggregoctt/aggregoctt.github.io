@@ -28,19 +28,62 @@ window.Aggregoctt = {
 
 <div class="container">
     {% if page.url == "/" %}
-        <div class="row remove-site-content-margin" id="Posts"></div>
-        <button class="btn" onclick="window.Aggregoctt.addPosts();">Load older</button>
+        <p><table class="remove-site-content-margin" id="Filters"><tbody><tr>
+            <td><select name="categories">
+                <option value="">All Categories</option>
+            </select></td>
+            <td><select name="sources">
+                <option value="">All Sources</option>
+            </select></td>
+        </tr></tbody></table></p>
+        <div class="row" id="Posts"></div>
+        <button class="btn" id="AddPosts">Load older</button>
     {% endif %}
 </div>
 
 <script>(function(){
 
-var postsStart = 0;
+var postsStart, postsList;
 
-window.Aggregoctt.addPosts = function(){
+var categories = Filters.querySelector('[name="categories"]');
+var sources = Filters.querySelector('[name="sources"]');
+
+for (var id in Aggregoctt.data.sources) {
+    var source = Aggregoctt.data.sources[id];
+    if (!categories.querySelector('option[value="'+source.category+'"]')) {
+        categories.innerHTML += '<option value="'+source.category+'">'+source.category+'</option>';
+    }
+    sources.innerHTML += '<option value="'+id+'" data-category="'+source.category+'">'+(source.name?source.name:id)+'</option>';
+}
+
+function resetPosts(resetSource) {
+    postsStart = 0;
+    postsList = Aggregoctt.posts.filter(function(post){
+        var category = Aggregoctt.data.sources[post.source].category;
+        return (
+            (!categories.value || (category === categories.value)) &&
+            (!sources.value || (post.source === sources.value)));
+    });
+
+    if (resetSource) {
+        sources.value = '';
+        return resetPosts();
+    }
+
+    var sourcesList = sources.querySelectorAll('option');
+    for (var i=1; i<sourcesList.length; i++) {
+        var source = sourcesList[i];
+        source.hidden = (categories.value && (source.getAttribute('data-category') !== categories.value));
+    }
+
+    Posts.innerHTML = '';
+    addPosts();
+}
+
+function addPosts() {
     var count = 20;
     var start = postsStart;
-    var posts = window.Aggregoctt.posts.slice(start, (start + count));
+    var posts = postsList.slice(start, (start + count));
     postsStart = (start + count);
 
     var site = window.Aggregoctt.site;
@@ -72,6 +115,10 @@ window.Aggregoctt.addPosts = function(){
     }
 }
 
-window.Aggregoctt.addPosts();
+resetPosts();
+
+categories.onchange = function(){ resetPosts(true); };
+sources.onchange = function(){ resetPosts(false); };
+AddPosts.onclick = addPosts;
 
 })();</script>

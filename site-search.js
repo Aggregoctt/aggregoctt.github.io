@@ -13,14 +13,13 @@ var documents = [{% for page in site.posts %}{
     "id": {{ counter }},
     "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
     "link": {{ page.canonical_url | jsonify }},
-    "title": {{ page.title | jsonify }},
-    "body": "{{ page.date | date: "%Y/%m/%d" }} - {{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
+    "title": {{ page.title | jsonify }}{% assign counter = counter | plus: 1 %}
     }{% if forloop.last %}{% else %}, {% endif %}{% endfor %}];
 
 var idx = lunr(function(){
     this.ref('id');
     this.field('title');
-    this.field('body');
+    // this.field('body');
     documents.forEach(function(doc){
         this.add(doc);
     }, this);
@@ -39,7 +38,7 @@ function lunr_search(term) {
                 var url = documents[ref]['url'];
                 var link = documents[ref]['link'];
                 var title = documents[ref]['title'];
-                var body = documents[ref]['body'].substring(0,160)+'...';
+                var body = ''; // documents[ref]['body'].substring(0,160)+'...';
                 document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML = document.querySelectorAll('#lunrsearchresults ul')[0].innerHTML + `<li class='lunrsearchresult'>
                     <a href="${link}" target="_blank">
                         <span class='title'>${title}</span><br />

@@ -33,6 +33,11 @@ dexerto:
   url: https://www.dexerto.com/feed/
   category: News
 
+ign:
+  name: IGN
+  url: https://www.ign.com/rss/v2/articles/feed
+  category: Games
+
 gamingtalker:
   name: GamingTalker
   url: https://www.gamingtalker.it/feed/
@@ -177,3 +182,43 @@ feddit-giappone:
   name: Feddit - Giappone
   url: https://feddit.it/feeds/c/giappone.xml?sort=New
   category: Feeds
+
+animalcrossinglife:
+  name: Animal Crossing Life
+  url: https://animalcrossinglife.com/feed
+  category: Games
+
+animalcrossingworld:
+  name: Animal Crossing World
+  url: https://animalcrossingworld.com/feed/
+  category: Games
+
+kikifrommeadow:
+  name: Kiki From Meadow
+  url: https://kikifrommeadow.com/feed/
+  category: Blogs
+
+jvgs:
+  name: Jeff's Gaming Blog
+  url: https://www.jvgs.net/blog/feed/
+  category: Games
+
+zechs:
+  name: Zechs.it
+  url: https://www.zechs.it/feed/
+  category: Series
+
+gundamverse:
+  name: Gundamverse.it
+  url: https://gundamverse.blogspot.com/feeds/posts/default
+  category: Series
+
+meikasensei:
+  name: やさしい日本語ブログ Meika Sensei's Easy Japanese Blog
+  url: https://meikasensei.com/feed/
+  category: Blogs
+
+nihongoblog:
+  name: NIHONGOBLOG
+  url: https://www.nihongoschool.co.uk/blog-feed.xml
+  category: Blogs
