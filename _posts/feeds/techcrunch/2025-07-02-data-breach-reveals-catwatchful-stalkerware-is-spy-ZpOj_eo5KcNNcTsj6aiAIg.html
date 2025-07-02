@@ -1,0 +1,115 @@
+---
+author: Zack Whittaker
+canonical_url: https://techcrunch.com/2025/07/02/data-breach-reveals-catwatchful-stalkerware-spying-on-thousands-android-phones/
+date: '2025-07-02T14:05:00'
+excerpt: The spyware operation's exposed customer email addresses and passwords were
+  shared with data breach notification service Have I Been Pwned.
+image: assets/media/ZpOj_eo5KcNNcTsj6aiAIg-xTTQVuhEz9gLIdfucpIEvg.webp
+source: techcrunch
+tags:
+- Security
+- Android
+- cybersecurity
+- data breach
+- Exclusive
+- Spyware
+- stalkerware
+title: Data breach reveals Catwatchful ‘stalkerware’ is spying on thousands of phones
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">A security vulnerability in a stealthy Android spyware operation called Catwatchful has exposed thousands of its customers, including its administrator.&#160;</p>
+
+<p class="wp-block-paragraph">The bug, which was discovered by security researcher Eric Daigle, spilled the spyware app&#8217;s full database of email addresses and plaintext passwords that Catwatchful customers use to access the data stolen from the phones of their victims.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Catwatchful is spyware masquerading as a child monitoring app that claims to be &#8220;invisible and cannot be detected,&#8221; all the while uploading the victim&#8217;s phone&#8217;s private contents to a dashboard viewable by the person who planted the app. The stolen data includes the victims&#8217; photos, messages, and real-time location data. The app can also remotely tap into the live ambient audio from the phone&#8217;s microphone and access both front and rear phone cameras.</p>
+
+<p class="wp-block-paragraph">Spyware apps like Catwatchful are banned from the app stores and rely on being downloaded and planted by someone with physical access to a person&#8217;s phone. As such, these apps are commonly referred to as <a href="https://techcrunch.com/2025/04/25/techcrunch-reference-guide-to-security-terminology/#stalkerware" target="_blank" rel="noreferrer noopener">&#8220;stalkerware&#8221; (or spouseware)</a> for their propensity to facilitate non-consensual surveillance of spouses and romantic partners, which is illegal.</p>
+
+<p class="wp-block-paragraph">Catwatchful is the latest example in a growing list of stalkerware operations that have been hacked, breached, or otherwise exposed the data they obtain, and is <a href="https://techcrunch.com/2025/02/20/hacked-leaked-exposed-why-you-should-stop-using-stalkerware-apps/" target="_blank" rel="noreferrer noopener">at least the fifth spyware operation this year</a> to have experienced a data spill. The incident shows that consumer-grade spyware continues to proliferate, despite being prone to shoddy coding and security failings that expose both paying customers and unsuspecting victims to data breaches.</p>
+
+<p class="wp-block-paragraph">According to a copy of the database from early June, which TechCrunch&#160;has seen, Catwatchful had email addresses and passwords on more than 62,000 customers and the phone data from 26,000 victims&#8217; devices.</p>
+
+<p class="wp-block-paragraph">Most of the compromised devices were located in Mexico, Colombia, India, Peru, Argentina, Ecuador, and Bolivia (in order of the number of victims). Some of the records date back to 2018, the data shows.</p>
+
+<p class="wp-block-paragraph">The Catwatchful database also revealed the identity of the spyware operation&#8217;s administrator, Omar Soca Charcov, a developer based in Uruguay. Charcov opened our emails, but did not respond to our requests for comment sent in both English and Spanish. TechCrunch asked if he was aware of the Catwatchful data breach, and if he plans to disclose the incident to its customers.</p>
+
+<p class="wp-block-paragraph">Without any clear indication that Charcov will disclose the incident, TechCrunch provided a copy of the Catwatchful database to data breach notification service <a href="https://haveibeenpwned.com/" target="_blank" rel="noreferrer noopener nofollow">Have I Been Pwned</a>.</p>
+
+<h2 class="wp-block-heading" id="h-catwatchful-hosting-spyware-data-on-google-s-servers">Catwatchful hosting spyware data on Google&#8217;s servers</h2>
+
+<p class="wp-block-paragraph">Daigle, a security researcher in Canada who <a href="https://techcrunch.com/2024/05/25/spyware-app-pctattletale-was-hacked-and-its-website-defaced/" target="_blank" rel="noreferrer noopener">has previously investigated stalkerware abuses</a>, detailed his findings in a <a href="https://ericdaigle.ca/posts/taking-over-60k-spyware-user-accounts/" target="_blank" rel="noreferrer noopener nofollow">blog post</a>.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">According to Daigle, Catwatchful uses a custom-made API, which every one of the planted Android apps relies on to communicate with and send data to Catwatchful&#8217;s servers. The spyware also uses Google&#8217;s Firebase, a web and mobile development platform, to host and store the victim&#8217;s stolen phone data, including their photos and ambient audio recordings.</p>
+
+<p class="wp-block-paragraph">Daigle told TechCrunch that the API was unauthenticated, allowing anyone on the internet to interact with the Catwatchful user database without needing a login, which exposed the entire Catwatchful database of customer email addresses and passwords.&#160;</p>
+
+<p class="wp-block-paragraph">When contacted by TechCrunch, the web company hosting the Catwatchful API suspended the spyware developer&#8217;s account, briefly blocking the spyware from operating, but the API returned later on HostGator. A spokesperson for HostGator, Kristen Andrews, did not respond to requests for comment regarding the company hosting the spyware&#8217;s operations.</p>
+
+<p class="wp-block-paragraph">TechCrunch confirmed that Catwatchful uses Firebase by downloading and installing the Catwatchful spyware on a virtualized Android device, which allows us to run the spyware in an isolated sandbox without giving it any real-world data, like our location.&#160;</p>
+
+<p class="wp-block-paragraph">We examined the network traffic flowing in and out of the device, which showed data from the phone uploading to a specific Firebase instance used by Catwatchful to host the victim&#8217;s stolen data.</p>
+
+<p class="wp-block-paragraph">After TechCrunch provided Google with copies of the Catwatchful malware, Google said it added new protections for <a rel="nofollow" href="https://support.google.com/googleplay/answer/2812853?hl=en">Google Play Protect</a>, a security tool that scans Android phones for malicious apps, like spyware. Now, Google Play Protect will alert users when it detects the Catwatchful spyware or its installer on a user&#8217;s phone.</p>
+
+<p class="wp-block-paragraph">TechCrunch also provided Google with details of the Firebase instance involved in storing data for the Catwatchful operation. Asked whether the stalkerware operation violates Firebase&#8217;s terms of service, Google told TechCrunch on June 25 that it was investigating but would not immediately commit to taking down the operation.</p>
+
+<p class="wp-block-paragraph">&#8220;All apps using Firebase products must abide by our terms of service and policies. We are investigating this particular issue, and if we find that an app is in violation, appropriate action will be taken. Android users that attempt to install these apps are protected by Google Play Protect,&#8221; said Ed Fernandez, a spokesperson for Google.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">As of publication, Catwatchful remains hosted on Firebase.&#160;</p>
+
+<h2 class="wp-block-heading" id="h-opsec-mistake-exposes-spyware-administrator">Opsec mistake exposes spyware administrator</h2>
+
+<p class="wp-block-paragraph">Like many spyware operations, Catwatchful does not publicly list its owner or disclose who runs the operation. It&#8217;s <a href="https://techcrunch.com/2023/07/20/thetruthspy-stalkerware-forged-passports-millions/" target="_blank" rel="noreferrer noopener">not uncommon for stalkerware and spyware operators to hide their real identities</a>, given the legal and reputational risks associated with facilitating illegal surveillance.</p>
+
+<p class="wp-block-paragraph">But an <a href="https://techcrunch.com/2025/04/25/techcrunch-reference-guide-to-security-terminology/#operational-security" target="_blank" rel="noreferrer noopener">operational security</a> mishap in the dataset exposed Charcov as the operation&#8217;s administrator.&#160;</p>
+
+<p class="wp-block-paragraph">A review of the Catwatchful database lists Charcov as the first record in one of the files in the dataset. (In past spyware-related data breaches, some operators have been identified by early records in the database, as oftentimes the developers are testing the spyware product on their own devices.)</p>
+
+<p class="wp-block-paragraph">The dataset included Charcov&#8217;s full name, phone number, and the web address of the specific Firebase instance where Catwatchful&#8217;s database is stored on Google&#8217;s servers.</p>
+
+<p class="wp-block-paragraph">Charcov&#8217;s personal email address, found in the dataset, is the same email that he lists on his LinkedIn page, which has since been set to private. Charcov also configured his Catwatchful administrator&#8217;s email address as the password recovery address on his personal email account in the event he gets locked out, which directly links Charcov to the Catwatchful operation.</p>
+
+<h2 class="wp-block-heading" id="h-how-to-remove-catwatchful-spyware">How to remove Catwatchful spyware</h2>
+
+<p class="wp-block-paragraph">While Catwatchful claims it &#8220;cannot be uninstalled,&#8221; there are ways to detect and remove the app from an affected device.</p>
+
+<p class="wp-block-paragraph">Before you start, it&#8217;s important to have <a href="https://stopstalkerware.org/resources/" target="_blank" rel="noreferrer noopener nofollow">a safety plan in place</a>, as disabling spyware can alert the person who planted it. The <a href="https://stopstalkerware.org/" target="_blank" rel="noreferrer noopener nofollow">Coalition Against Stalkerware</a> does important work in this space and has resources to help victims and survivors.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Android users can detect Catwatchful, even if it is hidden from view, by dialing <strong>543210</strong> into your Android phone app&#8217;s keypad and then hitting the call button. If Catwatchful is installed, the app should appear on your screen. This code is a built-in <a href="https://techcrunch.com/2025/04/25/techcrunch-reference-guide-to-security-terminology/#backdoor" target="_blank" rel="noreferrer noopener">backdoor feature</a> that allows whoever planted the app to regain access to the settings once the app is hidden. This code can also be used by anyone to see if the app is installed.</p>
+
+ 
+
+<p class="wp-block-paragraph">As for removing the app, TechCrunch has a <a href="https://techcrunch.com/2022/02/22/remove-android-spyware/" target="_blank" rel="noreferrer noopener">general how-to guide for removing Android spyware</a> that can help you identify and remove common types of phone stalkerware, and then enable the various settings you need to secure your Android device.</p>
+
+<p class="has-text-align-center wp-block-paragraph">&#8212;</p>
+
+ 
+
+
+			
+
+			</div>
