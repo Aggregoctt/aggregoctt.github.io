@@ -5,9 +5,7 @@ permalink: /
 ---
 
 <script>
-
 window.Aggregoctt = {
-    templates: {},
     data: {{ site.data | jsonify }},
     posts: [{% for post in site.posts %}{
         url: {{ post.url | jsonify }},
@@ -23,22 +21,31 @@ window.Aggregoctt = {
         baseurl: {{ site.baseurl | jsonify }},
     },
 };
-
 </script>
 
 <div class="container">
     {% if page.url == "/" %}
-        <p><table class="remove-site-content-margin" id="Filters"><tbody><tr>
-            <td><select name="categories">
+        <p><table id="Filters"><tbody><tr>
+            <td><select name="categories" style="width: 100%;">
                 <option value="">All Categories</option>
             </select></td>
-            <td><select name="sources">
+            <td><select name="sources" style="width: 100%;">
                 <option value="">All Sources</option>
             </select></td>
         </tr></tbody></table></p>
-        <div class="row" id="Posts"></div>
+        <div class="row" id="Posts">
+            <noscript><p>This site requires JavaScript.</p></noscript>
+        </div>
         <button class="btn" id="AddPosts">Load older</button>
     {% endif %}
+</div>
+
+<div id="Reader" hidden="true" style="display: none; position: fixed; z-index: 1999; left: 0; right: 0; top: 0; bottom: 0; margin: auto; width: 90%; height: 90%; border: 10px solid gray; background: gray;">
+    <span style="background: lightgray; width: 100%; display: block; height: 32px; padding: 4px;">
+        <span style="width: calc(100% - 3em); display: inline-block; overflow: hidden; text-overflow: ellipsis; text-wrap: nowrap;"></span>
+        <button class="btn" style="float: right; height: 24px; width: 3em; line-height: 16px; padding: 4px;" title="Close">❌</button>
+    </span>
+    <iframe style="height: calc(100% - 32px); width: 100%; border: none;"></iframe>
 </div>
 
 <script>(function(){
@@ -54,6 +61,12 @@ for (var id in Aggregoctt.data.sources) {
         categories.innerHTML += '<option value="'+source.category+'">'+source.category+'</option>';
     }
     sources.innerHTML += '<option value="'+id+'" data-category="'+source.category+'">'+(source.name?source.name:id)+'</option>';
+}
+
+function setReader(url) {
+    Reader.querySelector('iframe').src = (url ? (Aggregoctt.site.baseurl + url + '#aggregoctt-embedded') : '');
+    Reader.style.display = (url ? '' : 'none');
+    Reader.hidden = !url;
 }
 
 function resetPosts(resetSource) {
@@ -88,23 +101,24 @@ function addPosts() {
 
     var site = window.Aggregoctt.site;
     var data = window.Aggregoctt.data;
+    var postsHtml = '';
     for (var i in posts) {
         var post = posts[i];
-        Posts.innerHTML += '{% raw %}<div class="col-md-6">'+
+        postsHtml += '{% raw %}<div class="col-md-6">'+
             '<div class="card border-0 mb-4 box-shadow">'+
-                '<a data-href="{{ site.baseurl }}{{ post.url }}" href="'+post.link+'" target="_blank">'+
-                    '<div class="topfirstimage" style="background-image: url('+(post.image ? site.baseurl+'/'+post.image : '')+');"></div>'+
+                '<a data-href="'+post.url+'" href="'+post.link+'" target="_blank">'+
+                    '<div class="topfirstimage" style="background-image: url(\''+(post.image ? site.baseurl+'/'+post.image : '')+'\');"></div>'+
                 '</a>'+
                 '<div class="card-body px-0 pb-0 d-flex flex-column align-items-start">'+
-                    '<h2 class="h4 font-weight-bold">'+
-                        '<a class="text-dark" data-href="{{ site.baseurl }}{{ post.url }}" href="'+post.link+'" target="_blank">'+post.title+'</a>'+
+                    '<h2 class="h4 font-weight-bold" style="width: 100%;">'+
+                        '<a class="text-dark" data-href="'+post.url+'" href="'+post.link+'" target="_blank">'+post.title+'</a>'+
                     '</h2>'+
-                    '<p class="excerpt">'+post.excerpt.trim().slice(0, 150)+'...</p>'+
+                    '<p class="excerpt" style="width: 100%;">'+post.excerpt.trim().slice(0, 150)+'...</p>'+
                     '<div>'+
                         '<small class="d-block text-muted">'+
                             'In <span class="catlist">'+
                                 '<a class="text-capitalize text-muted smoothscroll">'+post.source+'</a><span class="sep">, </span>'+
-                                '<a class="text-capitalize text-muted smoothscroll" data-href="{{ site.baseurl }}/categories.html#{{ category | downcase }}">'+data.sources[post.source].category+'</a><span class="sep">, </span>'+
+                                '<a class="text-capitalize text-muted smoothscroll">'+data.sources[post.source].category+'</a><span class="sep">, </span>'+
                             '</span>'+
                         '</small>'+
                         '<small class="text-muted">'+post.date.slice(0, -6)+'</small>'+
@@ -113,6 +127,21 @@ function addPosts() {
             '</div>'+
         '</div>{% endraw %}';
     }
+    Posts.innerHTML += postsHtml;
+
+    var posts = Posts.querySelectorAll('a[data-href]');
+    for (var i=0; i<posts.length; i++) {
+        (function(post){
+            var url = post.getAttribute('data-href');
+            post.removeAttribute('data-href');
+            post.onclick = function(ev){
+                if (!ev.ctrlKey) {
+                    ev.preventDefault();
+                    setReader(url);
+                }
+            };
+        })(posts[i]);
+    }
 }
 
 resetPosts();
@@ -120,5 +149,12 @@ resetPosts();
 categories.onchange = function(){ resetPosts(true); };
 sources.onchange = function(){ resetPosts(false); };
 AddPosts.onclick = addPosts;
+Reader.querySelector('button').onclick = function(){ setReader(); };
+
+window.addEventListener('keydown', function(ev){
+    if (ev.key === 'Escape') {
+        setReader();
+    }
+});
 
 })();</script>

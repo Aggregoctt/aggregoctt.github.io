@@ -17,9 +17,9 @@ MEDIA_DIR = "assets/media"
 SEEN_FILE = "seen_urls.txt"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
 
-IMAGE_FORMAT = "WEBP"
+IMAGE_FORMAT = "JPEG"
 IMAGE_WIDTH = 1000
-IMAGE_QUALITY = 60
+IMAGE_QUALITY = 75
 
 with open("_data/sources.yml", "r", encoding="utf-8") as f:
     feeds = yaml.safe_load(f)
@@ -48,6 +48,66 @@ def http_request(url:str) -> requests.get:
 def get_mime_type(headers:dict) -> str:
     return headers["content-type"].split(";")[0]
 
+def resize_gif(image:bytes, save_as:str, resize_to=None):
+    all_frames = extract_and_resize_frames(image, resize_to)
+    if len(all_frames) == 1:
+        print("Warning: only 1 frame found")
+        all_frames[0].save(save_as, optimize=True)
+    else:
+        all_frames[0].save(save_as, optimize=True, save_all=True, append_images=all_frames[1:], loop=1000)
+
+def analyseImage(image:bytes):
+    im = Image.open(BytesIO(image))
+    results = {
+        'size': im.size,
+        'mode': 'full',
+    }
+    try:
+        while True:
+            if im.tile:
+                tile = im.tile[0]
+                update_region = tile[1]
+                update_region_dimensions = update_region[2:]
+                if update_region_dimensions != im.size:
+                    results['mode'] = 'partial'
+                    break
+            im.seek(im.tell() + 1)
+    except EOFError:
+        pass
+    return results
+
+def extract_and_resize_frames(image:bytes, resize_to=None):
+    mode = analyseImage(image)['mode']
+    im = Image.open(BytesIO(image))
+
+    if not resize_to:
+        resize_to = (im.size[0] // 2, im.size[1] // 2)
+
+    i = 0
+    p = im.getpalette()
+    last_frame = im.convert('RGBA')
+    all_frames = []
+
+    try:
+        while True:
+            if not im.getpalette():
+                im.putpalette(p)
+
+            new_frame = Image.new('RGBA', im.size)
+            if mode == 'partial':
+                new_frame.paste(last_frame)
+            new_frame.paste(im, (0, 0), im.convert('RGBA'))
+            new_frame.thumbnail(resize_to, Image.ANTIALIAS)
+
+            all_frames.append(new_frame)
+            i += 1
+            last_frame = new_frame
+            im.seek(im.tell() + 1)
+    except EOFError:
+        pass
+
+    return all_frames
+
 def compress_image(image:bytes, output_path:str) -> bool:
     try:
         image = Image.open(BytesIO(image))
@@ -58,7 +118,11 @@ def compress_image(image:bytes, output_path:str) -> bool:
                 new_height = int(image.height * ratio)
                 image = image.resize((IMAGE_WIDTH, new_height), Image.LANCZOS)
             image = image.convert("RGB") # to ensure compatibility
-            image.save(f"{os.path.splitext(output_path)[0]}.{IMAGE_FORMAT.lower()}", format=IMAGE_FORMAT, quality=IMAGE_QUALITY, optimize=True)
+            PIL.ImageFile.MAXBLOCK = image.size[0] * image.size[1]
+            image.save(f"{os.path.splitext(output_path)[0]}.{IMAGE_FORMAT.lower()}", format=IMAGE_FORMAT, quality=IMAGE_QUALITY, optimize=True, progressive=True)
+            return True
+        elif image_format in ["GIF"]:
+            resize_gif(image, output_path)
             return True
     except Exception as e:
         print(f"Error compressing image {url}: {e}")

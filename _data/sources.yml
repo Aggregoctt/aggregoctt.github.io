@@ -36,7 +36,7 @@ dexerto:
 ign:
   name: IGN
   url: https://www.ign.com/rss/v2/articles/feed
-  category: Games
+  category: Tech
 
 gamingtalker:
   name: GamingTalker
