@@ -9,7 +9,7 @@ from slugify import slugify
 import yaml
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
-from PIL import Image
+from PIL import Image, ImageFile
 from io import BytesIO
 
 OUTPUT_DIR = "_posts/feeds"
@@ -108,9 +108,9 @@ def extract_and_resize_frames(image:bytes, resize_to=None):
 
     return all_frames
 
-def compress_image(image:bytes, output_path:str) -> bool:
+def compress_image(url:str, img_bytes:bytes, output_path:str) -> bool:
     try:
-        image = Image.open(BytesIO(image))
+        image = Image.open(BytesIO(img_bytes))
         image_format = image.format
         if image_format in ["JPEG", "JPG", "WEBP", "PNG", "AVIF"]: # do NOT convert GIFs
             if image.width > IMAGE_WIDTH:
@@ -118,11 +118,11 @@ def compress_image(image:bytes, output_path:str) -> bool:
                 new_height = int(image.height * ratio)
                 image = image.resize((IMAGE_WIDTH, new_height), Image.LANCZOS)
             image = image.convert("RGB") # to ensure compatibility
-            PIL.ImageFile.MAXBLOCK = image.size[0] * image.size[1]
+            ImageFile.MAXBLOCK = image.size[0] * image.size[1]
             image.save(f"{os.path.splitext(output_path)[0]}.{IMAGE_FORMAT.lower()}", format=IMAGE_FORMAT, quality=IMAGE_QUALITY, optimize=True, progressive=True)
             return True
         elif image_format in ["GIF"]:
-            resize_gif(image, output_path)
+            resize_gif(img_bytes, output_path)
             return True
     except Exception as e:
         print(f"Error compressing image {url}: {e}")
@@ -133,7 +133,7 @@ def cache_image(url:str, post_id:str) -> str:
     ext = os.path.splitext(urlparse(url).path)[1].strip('.') or get_mime_type(r.headers).split("/")[1]
     img_name = f"{post_id}-{hashed_id(url)}.{ext}"
     local_path = os.path.join(MEDIA_DIR, img_name)
-    if compress_image(r.content, local_path):
+    if compress_image(url, r.content, local_path):
         img_name = f"{os.path.splitext(img_name)[0]}.{IMAGE_FORMAT.lower()}"
     else:
         with open(local_path, "wb") as f:
@@ -155,7 +155,7 @@ def download_media_and_replace(html:str, base_url:str, post_id:str) -> list[str,
                 first_img = src_new
             img["src"] = f"/{src_new}"
         except Exception as e:
-            print(f"Failed to download {abs_url}: {e}")
+            print(f"Failed to download {abs_url}: {e} [download_media_and_replace]")
             return None
     return [str(soup), first_img]
 
@@ -180,6 +180,7 @@ for feed in feeds:
         link = entry.get("link")
         guid = entry.get("id")
         if not link or (link in seen) or (guid and guid in seen):
+            print(f"⏭ Seen: {link or guid}")
             continue
 
         date_struct = (
@@ -216,10 +217,10 @@ for feed in feeds:
                             try:
                                 cover_img = cache_image(cover_url, post_id)
                             except Exception as e:
-                                print(f"Failed to download {cover_url}: {e}")
+                                print(f"Failed to download {cover_url}: {e} [main>try]")
                                 continue
             except Exception as e:
-                print(f"Failed to download {link}: {e}")
+                print(f"Failed to download {link}: {e} [main>except]")
                 continue
 
         try:

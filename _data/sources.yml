@@ -222,3 +222,13 @@ nihongoblog:
   name: NIHONGOBLOG
   url: https://www.nihongoschool.co.uk/blog-feed.xml
   category: Blogs
+
+euromaidanpress:
+  name: Euromaidan Press
+  url: https://euromaidanpress.com/feed/
+  category: News
+
+kyivindependent:
+  name: The Kyiv Independent
+  url: https://kyivindependent.com/news-archive/rss/
+  category: News
