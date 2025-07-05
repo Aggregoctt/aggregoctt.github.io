@@ -1,0 +1,26 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142704/redox-gets-network-booting-work-on-unix-domain-sockets-continues/
+date: '2025-07-05T06:58:36'
+excerpt: Redox continues to make progress, and as another month has passed us by,
+  it&#8217;s time for another monthly update. This past month, the focus has been
+  on UNIX domain sockets, which are needed for Redox&#8217; goal of running Wayland.
+  As we continue to move forward with our plans for Wayland, a key technology for
+  Wayland support is the ability to send file descriptors over Unix Domain Sockets.
+  File descriptor sending is also an important part of many other OS features, including
+  Capability-based Security. Our Redox Summer of Code project to implement that ability
+  has been progressing very well. Ibuki, a new member of the Redox team, has jumped
+  right into the deep end, and implemented the sendmg and recvmsg functionality, and
+  continues to move forward with work on UDS. ↫ Ribbon and Ron Williams You can read
+  more about the UNIX domain sockets progress in a detailed post on the Redox website.
+  Redox now also supports network booting through PXE, but for now, only UEFI is supported.
+  Of course, all of this work is topped off with the usual slew of fixes in relibc,
+  RedoxFS, various drivers, and more, as well updated ports across the board.
+image: null
+source: osnews
+tags:
+- Redox OS
+title: Redox gets network booting, work on UNIX domain sockets continues
+---
+<div><p>Redox continues to make progress, and as another month has passed us by, it&#8217;s time for another monthly update. This past month, the focus has been on UNIX domain sockets, which are needed for Redox&#8217; goal of running Wayland.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>As we continue to move forward with our plans for Wayland, a key technology for Wayland support is the ability to send file descriptors over Unix Domain Sockets. File descriptor sending is also an important part of many other OS features, including Capability-based Security.</p><p>Our Redox Summer of Code project to implement that ability has been progressing very well. Ibuki, a new member of the Redox team, has jumped right into the deep end, and implemented the&#160;<a href="https://www.man7.org/linux/man-pages/man3/sendmsg.3p.html"><code>sendmg</code></a>&#160;and&#160;<a href="https://www.man7.org/linux/man-pages/man3/recvmsg.3p.html"><code>recvmsg</code></a>&#160;functionality, and continues to move forward with work on UDS.</p>
+<a href="https://www.redox-os.org/news/this-month-250630/">&#8619; Ribbon and Ron Williams</a></blockquote></div>
