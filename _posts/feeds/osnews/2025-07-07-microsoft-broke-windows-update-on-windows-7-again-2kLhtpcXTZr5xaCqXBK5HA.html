@@ -1,0 +1,33 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142715/microsoft-broke-windows-update-on-windows-7-again/
+date: '2025-07-07T21:01:21'
+excerpt: The developers of Legacy Update, the tool that allows users of older Windows
+  versions to keep downloading updates from Microsoft, recently discovered that users
+  of the tool on Windows 7 were having issues. After doing some debugging they figured
+  out it was DNS it was an expired Microsoft certificate. This certificate was set
+  to expire on 1 July 2025, and when it did, nobody at Microsoft bothered to correct
+  it until a few days later. As you can see from &#38;lt;ExpiryDate&#62;, it definitely
+  stopped working because the expiry date lapsed. As seems to happen too often in
+  our industry, apparently nobody set a reminder to make sure it would be updated
+  in advance of the date. You might notice that it has an &#38;lt;IssuedDate&#62;
+  of 2017-12-01. That’s fairly recent! After digging further, we learned that this
+  already happened once! On the 4th of that month, Bleeping Computer covered an error
+  Windows 7 users were receiving when checking for updates. That error is 80248015 &#8211;
+  pretty familiar, right? Microsoft allowed this file to expire, not on the 1st but
+  rather on the 4th (more specifically, 35 seconds before midnight in US Pacific time,
+  or 8:00 PM UTC), and did not manage to upload a new file until the 6th at 10:02
+  AM Pacific (6:02 PM UTC). This left Microsoft Update broken for 3 days. ↫ Adam Demasi
+  Microsoft moved the expiry date up to 2033, thereby fixing the problem. Legacy Update&#8217;s
+  developer Adam Demasi expected that once 2033 comes around, Legacy Update will probably
+  have to add Widnows 7 to its proxy server that it&#8217;s already using for older
+  versions, as improvements in TLS and ciphers will probably lock Windows 7 out of
+  Windows Update definitively. But hey, 2033 is decades away. Right?
+image: null
+source: osnews
+tags:
+- Windows
+title: Microsoft broke Windows Update on Windows 7 (again)
+---
+<div><p>The developers of Legacy Update, the tool that allows users of older Windows versions to keep downloading updates from Microsoft, recently discovered that users of the tool on Windows 7 were having issues. After doing some debugging they figured out it was DNS it was an expired Microsoft certificate. This certificate was set to expire on 1 July 2025, and when it did, nobody at Microsoft bothered to correct it until a few days later.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>As you can see from&#160;<code>&amp;lt;ExpiryDate&gt;</code>, it definitely stopped working because the expiry date lapsed. As seems to happen too often in our industry, apparently nobody set a reminder to make sure it would be updated in advance of the date.</p><p>You might notice that it has an <code>&amp;lt;IssuedDate&gt;</code> of 2017-12-01. That&#8217;s fairly recent! After digging further, we learned that&#160;this already happened once!&#160;On the 4th of that month,&#160;<a href="https://www.bleepingcomputer.com/news/microsoft/windows-7-update-giving-a-80248015-error-heres-why-and-how-to-fix-it-/">Bleeping Computer covered</a>&#160;an error Windows 7 users were receiving when checking for updates. That error is&#160;80248015&#160;&#8211; pretty familiar, right? Microsoft allowed this file to expire, not on the 1st but rather on the 4th (more specifically, 35 seconds before midnight in US Pacific time, or 8:00 PM UTC), and did not manage to upload a new file until the 6th at 10:02 AM Pacific (6:02 PM UTC). This left Microsoft Update broken for 3 days.</p>
+<a href="https://adamdemasi.com/2025/07/04/windows-7-microsoft-update-issue.html">&#8619; Adam Demasi</a></blockquote><p>Microsoft moved the expiry date up to 2033, thereby fixing the problem. Legacy Update&#8217;s developer Adam Demasi expected that once 2033 comes around, Legacy Update will probably have to add Widnows 7 to its proxy server that it&#8217;s already using for older versions, as improvements in TLS and ciphers will probably lock Windows 7 out of Windows Update definitively.</p><p>But hey, 2033 is decades away. Right?</p></div>
