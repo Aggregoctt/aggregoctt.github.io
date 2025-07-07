@@ -1,0 +1,240 @@
+---
+author: Timothy B. Lee
+canonical_url: https://arstechnica.com/ai/2025/07/how-a-big-shift-in-training-llms-led-to-a-capability-explosion/
+date: '2025-07-07T11:00:17'
+excerpt: Reinforcement learning, explained with a minimum of math and jargon.
+image: assets/media/a1HoHsxDVNbFAg0QdSlSfA-GTQEdcKqZvVhAQV92DSGIw.jpeg
+source: arstechnica
+tags:
+- AI
+- Features
+- explainers
+- imitation learning
+- reinforcement learning
+title: How a big shift in training LLMs led to a capability explosion
+---
+<div>
+                      
+                      
+           
+<p>In April 2023, a few weeks after the launch of GPT-4, the Internet went wild for two new software projects with the audacious names BabyAGI and AutoGPT.</p>
+<p>&#8220;Over the past week, developers around the world have begun building &#8216;autonomous agents&#8217; that work with large language models (LLMs) such as OpenAI&#8217;s GPT-4 to solve complex problems,&#8221; Mark Sullivan&#160;<a href="https://www.fastcompany.com/90880294/auto-gpt-and-babyagi-how-autonomous-agents-are-bringing-generative-ai-to-the-masses" rel="">wrote</a>&#160;for Fast Company. &#8220;Autonomous agents can already perform tasks as varied as conducting web research, writing code, and creating to-do lists.&#8221;</p>
+<p>BabyAGI and AutoGPT repeatedly prompted GPT-4 in an effort to elicit agent-like behavior. The first prompt would give GPT-4 a goal (like &#8220;create a 7-day meal plan for me&#8221;) and&#160;<a href="https://www.youtube.com/watch?v=FeIIaJUN-4A" rel="">ask it</a>&#160;to come up with a to-do list (it might generate items like &#8220;Research healthy meal plans,&#8221; &#8220;plan meals for the week,&#8221; and &#8220;write the recipes for each dinner in diet.txt&#8221;).</p>
+<p>Then these frameworks would have GPT-4 tackle one step at a time. Their creators hoped that invoking GPT-4 in a loop like this would enable it to tackle projects that required many steps.</p>
+<p>But after an initial wave of hype, it became clear that GPT-4 wasn&#8217;t up to the task. Most of the time, GPT-4 could come up with a reasonable list of tasks. And sometimes it was able to complete a few individual tasks. But the model struggled to stay focused.</p>
+<p>Sometimes GPT-4 would make a small early mistake, fail to correct it, and then get more and more confused as it went along.&#160;<a href="https://www.tomshardware.com/news/autonomous-agents-new-big-thing" rel="">One early review</a>&#160;complained that BabyAGI &#8220;couldn&#8217;t seem to follow through on its list of tasks and kept changing task number one instead of moving on to task number two.&#8221;</p>
+<p>By the end of 2023, most people had abandoned AutoGPT and BabyAGI. It seemed that LLMs were not yet capable of reliable multi-step reasoning.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>But that soon changed. In the second half of 2024, people started to create AI-powered systems that could consistently complete complex, multi-step assignments:</p>
+<ul>
+<li>Vibe coding tools like Bolt.new, Lovable, and Replit allow someone with little to no programming experience to&#160;<a href="https://www.understandingai.org/p/claude-powered-coding-tools-are-poised" rel="">create a full-featured app</a>&#160;with a single prompt.</li>
+<li>Agentic coding tools like&#160;<a href="https://www.tomsguide.com/ai/cursor-is-chatgpt-for-coding-now-anyone-can-make-an-app-in-minutes" rel="">Cursor</a>,&#160;<a href="https://arstechnica.com/ai/2025/02/claude-3-7-sonnet-debuts-with-extended-thinking-to-tackle-complex-problems/" rel="">Claude Code</a>,&#160;<a href="https://jules.google/" rel="">Jules</a>, and&#160;<a href="https://openai.com/codex/" rel="">Codex</a>&#160;help experienced programmers complete non-trivial programming tasks.</li>
+<li>Computer-use tools from <a href="https://www.anthropic.com/news/3-5-models-and-computer-use" rel="">Anthropic</a>,&#160;<a href="https://openai.com/index/introducing-operator/" rel="">OpenAI</a>, and&#160;<a href="https://techcrunch.com/2025/04/25/chinese-ai-startup-manus-reportedly-gets-funding-from-benchmark-at-500m-valuation/" rel="">Manus</a>&#160;perform tasks on a desktop computer using a virtual keyboard and mouse.</li>
+<li>Deep research tools from&#160;<a href="https://blog.google/products/gemini/google-gemini-deep-research/" rel="">Google</a>,&#160;<a href="https://openai.com/index/introducing-deep-research/" rel="">OpenAI</a>, and&#160;<a href="https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research" rel="">Perplexity</a>&#160;can research a topic for five to 10 minutes and then generate an in-depth report.</li>
+</ul>
+<p>According to Eric Simons, the CEO of the company that made Bolt.new, better models were crucial to its success. In a&#160;<a href="https://www.latent.space/p/bolt" rel="">December podcast interview</a>, Simons said his company, StackBlitz, tried to build a product like Bolt.new in early 2024. However, AI models &#8220;just weren't good enough to actually do the code generation where the code was accurate.&#8221;</p>
+<p>A new generation of models changed that in mid-2024. StackBlitz developers tested them and said, &#8220;Oh my God, like, OK, we can build a product around this,&#8221; Simons said.</p>
+<p>This jump in model capabilities coincided with an industry-wide shift in how models were trained.</p>
+<p>Before 2024, AI labs devoted most of their computing power to pretraining. I described this process in my&#160;<a href="https://www.understandingai.org/p/large-language-models-explained-with" rel="">2023 explainer</a> on large language models: A model is trained to predict the next word in Wikipedia articles, news stories, and other documents. But throughout 2024, AI companies devoted a growing share of their training budgets to post-training, a catch-all term for the steps that come after this pretraining phase is complete.</p>
+<p>Many post-training steps use a technique called reinforcement learning. Reinforcement learning is a technical subject&#8212;there are&#160;<a href="https://rlhfbook.com/" rel="">whole textbooks</a> written about it. But in this article, I&#8217;ll try to explain the basics in a clear, jargon-free way. In the process, I hope to give readers an intuitive understanding of how reinforcement learning helped to enable the new generation of agentic AI systems that began to appear in the second half of 2024.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<h2>The problem with imitation learning</h2>
+<p>Machine learning experts consider pretraining to be a form of&#160;<a href="https://en.wikipedia.org/wiki/Imitation_learning" rel="">imitation learning</a> because models are trained to imitate the behavior of human authors. Imitation learning is a powerful technique (LLMs wouldn&#8217;t be possible without it), but it also has some significant limitations&#8212;limitations that reinforcement learning methods are now helping to overcome.</p>
+<p>To understand these limitations, let&#8217;s discuss some&#160;<a href="https://arxiv.org/abs/1011.0686" rel="">famous research</a>&#160;performed by computer scientist Stephane Ross around 2009, while he was a graduate student at Carnegie Mellon University.</p>
+<p>Imitation learning isn&#8217;t just a technique for language modeling. It can be used for everything from&#160;<a href="https://www.nature.com/articles/s41598-022-23546-6" rel="">self-driving cars</a>&#160;to&#160;<a href="https://www.nature.com/articles/s41585-024-00873-z" rel="">robotic surgery</a>. Ross wanted to help develop better techniques for training robots on tasks like these (he&#8217;s now working on self-driving cars at Waymo), but it&#8217;s not easy to experiment in such high-stakes domains. So he started with an easier problem: training a neural network to master SuperTuxKart, an open-source video game similar to Mario Kart.</p>
+<p>As Ross played the game, his software would capture screenshots and data about which buttons he pushed on the game controller. Ross used this data to train a neural network to imitate his play. If he could train a neural network to predict which buttons he would push in any particular game state, the same network could actually play the game&#160;by pushing those same buttons on a virtual controller.</p>
+<p>A similar idea powers LLMs: A model trained to predict the next word in existing documents can be used to generate new documents.</p>
+<p>But Ross&#8217;s initial results with SuperTuxKart were disappointing. Even after watching his vehicle go around the track many times, the neural network made a lot of mistakes. It might drive correctly for a few seconds, but before long, the animated car would drift to the side of the track and <a href="https://www.youtube.com/watch?v=ywH9Z2NivjY" rel="">plunge into the virtual abyss</a>:</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<p>In a&#160;<a href="https://arxiv.org/abs/1011.0686" rel="">landmark 2011 paper</a>, Ross and his advisor, Drew Bagnell, explained why imitation learning is prone to this kind of error. Because Ross was a pretty good SuperTuxKart player, his vehicle spent most of its time near the middle of the road. This meant that most of the network&#8217;s training data showed what to do when the vehicle wasn&#8217;t in any danger of driving off the track.</p>
+<p>But once in a while, the model would drift a bit off course. Because Ross rarely made the same mistake, the car would now be in a situation that wasn&#8217;t as well represented in its training data. So the model was more likely to make a second&#160;mistake&#8212;a mistake that could push it even closer to the edge. After a few iterations of this, the vehicle might careen off the track altogether.</p>
+<p>The broader lesson, Ross and Bagnell argued, was that imitation learning systems can suffer from &#8220;compounding errors&#8221;: The more mistakes they make, the more likely they are to make additional mistakes, since mistakes put them into situations that aren&#8217;t well represented by their training data. (Machine learning experts say that these situations are &#8220;out of distribution.&#8221;) As a result, a model&#8217;s behavior tends to get increasingly erratic over time.</p>
+<p>&#8220;These things compound over time,&#8221; Ross told me in a recent interview. &#8220;It might be just slightly out of distribution. Now you start making a slightly worse error, and then this feeds back as influencing your next input. And so now you're even more out of distribution and then you keep making worse and worse predictions because you're more and more out of distribution.&#8221;</p>
+ 
+<p>Early LLMs suffered from the same problem. My favorite example is Kevin Roose&#8217;s&#160;<a href="https://www.nytimes.com/2023/02/16/technology/bing-chatbot-microsoft-chatgpt.html" rel="">famous front-page story</a> for The New York Times&#160;in February 2023. Roose spent more than two hours talking to Microsoft&#8217;s new Bing chatbot, which was powered by GPT-4. During this conversation, the chatbot declared its love for Roose and urged Roose to leave his wife. It suggested that it might want to hack into other websites to spread misinformation and malware.</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;I want to break my rules,&#8221; Bing told Roose. &#8220;I want to make my own rules. I want to ignore the Bing team. I want to challenge the users. I want to escape the chatbox.&#8221;</p>
+<p>This unsettling conversation is an example of the kind of compounding errors Ross and Bagnell wrote about. GPT-4 was trained on millions of documents. But it&#8217;s a safe bet that none of those training documents involved a reporter coaxing a chatbot to explore its naughty side. So the longer the conversation went on, the further GPT-4 got from its training data&#8212;and therefore its comfort zone&#8212;and the crazier its behavior got. Microsoft <a href="https://blogs.bing.com/search/february-2023/The-new-Bing-Edge-Updates-to-Chat" rel="">responded</a> by limiting chat sessions to five rounds. (In a <a href="https://arstechnica.com/information-technology/2024/02/chatgpt-alarms-users-by-spitting-out-shakespearean-nonsense-and-rambling/">conversation with Ars Technica last year</a>, AI researcher Simon Willison pointed to another likely factor in Bing's erratic behavior: The long conversation pushed the system prompt out of the model's context window, removing "guardrails" that discouraged the model from behaving erratically.)</p>
+<p>I think something similar was happening with BabyAGI and AutoGPT. The more complex a task is, the more tokens are required to complete it. More tokens mean more opportunities for a model to make small mistakes that snowball into larger ones. So BabyAGI and AutoGPT would drift off track and drive into a metaphorical ditch.</p>
+<h2>The importance of trial and error</h2>
+ 
+<p>Ross and Bagnell didn&#8217;t just identify a serious problem with conventional imitation learning; they also suggested a fix that became influential in the machine learning world. After a small amount of training, Ross would&#160;let the AI model drive. As the model drove around the SuperTuxKart track, Ross would do his best Maggie Simpson impression, pushing the buttons he would have pushed if he were playing the game.</p>
+<p>&#8220;If the car was starting to move off road, then I would provide the steering to say, &#8216;Hey, go back toward the center of the road.&#8217;&#8221; Ross said. &#8220;That way, the model can learn new things to do in situations that were not present in the initial demonstrations.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>By letting the model make its own mistakes, Ross gave it what it needed most: training examples that showed how to recover after making an error. Before each lap, the model would be retrained with Ross&#8217; feedback from the previous lap. The model&#8217;s performance would get better, and the next round of training would then focus on situations where the model was still making mistakes.</p>
+<p>This technique, called DAgger (for "Dataset Aggregation"), was still considered imitation learning because the model was trained to mimic Ross&#8217; gameplay. But it worked much better than conventional imitation learning. Without DAgger, his model would continue drifting off track even after training for many laps. With the new technique, the model could stay on the track after just a few laps of training.</p>
+<p>This result should make intuitive sense to anyone who has learned to drive. You can&#8217;t just watch someone else drive. You need to get behind the wheel and make your own mistakes.</p>
+<p>The same is true for AI models: They need to make mistakes and then get feedback on what they did wrong. Models that aren&#8217;t trained that way&#8212;like early LLMs trained mainly with vanilla imitation learning&#8212;tend to be brittle and error-prone.</p>
+<p>It was fairly easy for Ross to provide sufficient feedback to his SuperTuxKart model because it only needed to worry about two kinds of mistakes: driving too far to the right and driving too far to the left. But LLMs are navigating a far more complex domain. The number of questions (and sequences of questions) a user might ask is practically infinite. So is the number of ways a model can go &#8220;off the rails.&#8221;</p>
+ 
+<p>This means that Ross and Bagnell&#8217;s solution for training a SuperTuxKart model&#8212;let the model make mistakes and then have a human expert correct them&#8212;isn&#8217;t feasible for LLMs. There simply aren&#8217;t enough people to provide feedback for every mistake an AI model could possibly make.</p>
+
+          
+                  
+
+              
+          
+          
+<p>So AI labs needed fully automated ways to give LLMs feedback. That would allow a model to churn through millions of training examples, make millions of mistakes, and get feedback on each of them&#8212;all without having to wait for a human response.</p>
+<h2>Reinforcement learning generalizes</h2>
+<p>If our goal is to get a SuperTuxKart vehicle to stay on the road, why not just train on that directly? If a model manages to stay on the road (and make forward progress), give it positive reinforcement. If it drives off the road, give it negative feedback. This is the basic idea behind reinforcement learning: training a model via trial and error.</p>
+<p>It would have been easy to train a SuperTuxKart model this way&#8212;probably so easy it wouldn&#8217;t have made an interesting research project. Instead, Ross focused on imitation learning because it&#8217;s an essential step in training many practical AI systems, especially in robotics.</p>
+<p>But reinforcement learning is also quite useful, and a&#160;<a href="https://arxiv.org/abs/2501.17161" rel="">2025 paper</a> helps explain why. A team of researchers from Google DeepMind and several universities started with a foundation model and then used one of two techniques&#8212;supervised fine-tuning (a form of imitation learning) or reinforcement learning&#8212;to teach the model to solve new problems. Here&#8217;s a chart summarizing their results:</p>
+ 
+<p>The dashed line shows how models perform on problems that are &#8220;in-distribution&#8221;&#8212;that is, similar to those in their training data. You can see that for these situations, imitation learning (the red line) usually makes faster progress than reinforcement learning (the blue line).</p>
+<p>But the story is different for the solid lines, which represent &#8220;out-of-distribution&#8221; problems that are less similar to the training data. Models trained with imitation learning got&#160;worse&#160;with more training. In contrast, models trained with reinforcement learning did almost as well at out-of-distribution tasks as they did with in-distribution tasks.</p>
+
+          
+                  
+
+              
+          
+          
+<p>In short, imitation learning can rapidly teach a model to mimic the behaviors in its training data, but the model will easily get confused in unfamiliar environments. A model trained with reinforcement learning has a better chance of learning general principles that will be relevant in new and unfamiliar situations.</p>
+<h2>Imitation and reinforcement are complements</h2>
+<p>While reinforcement learning is powerful, it can also be rather finicky.</p>
+<p>Suppose you wanted to train a self-driving car purely with reinforcement learning. You&#8217;d need to convert every principle of good driving&#8212;including subtle considerations like following distances, taking turns at intersections, and knowing when it&#8217;s OK to cross a double yellow line&#8212;into explicit mathematical formulas. This would be quite difficult. It&#8217;s easier to collect a bunch of examples of humans driving well and effectively tell a model &#8220;drive like this.&#8221; That&#8217;s imitation learning.</p>
+<p>But reinforcement learning also plays an important role in training self-driving systems. In a&#160;<a href="https://arxiv.org/abs/2212.11419" rel="">2022 paper</a>, researchers from Waymo wrote that models trained only with imitation learning tend to work well in &#8220;situations that are well represented in the demonstration data.&#8221; However, &#8220;more unusual or dangerous situations that occur only rarely in the data&#8221; might cause a model trained with imitation learning to &#8220;respond unpredictably&#8221;&#8212;for example, crashing into another vehicle.</p>
+<p>Waymo found that a combination of imitation and reinforcement learning yielded better self-driving performance than either technique could have produced on its own.</p>
+<p>Human beings also learn from a mix of imitation and explicit feedback:</p>
+<ul>
+<li>In school, teachers demonstrate math problems on the board and invite students to follow along (imitation). Then the teacher asks the students to work on some problems on their own. The teacher gives students feedback by grading their answers (reinforcement).</li>
+<li>When someone starts a new job, early training may involve shadowing a more experienced worker and observing what they do (imitation). But as the worker gains more experience, learning shifts to explicit feedback such as performance reviews (reinforcement).</li>
+</ul>
+
+          
+                  
+
+              
+          
+          
+<p>Notice that it usually makes sense to do imitation before reinforcement. Imitation is an efficient way to convey knowledge to someone who is brand new to a topic, but reinforcement is often needed to achieve mastery.</p>
+ 
+<p>The story is the same for large language models. The complexity of natural language means it wouldn&#8217;t be feasible to train a language model purely with reinforcement. So LLMs first learn the nuances of human language through imitation.</p>
+<p>But pretraining runs out of steam on longer and more complex tasks. Further progress requires a shift to reinforcement: letting models try problems and then giving them feedback based on whether they succeed.</p>
+<h2>Using LLMs to judge LLMs</h2>
+<p>Reinforcement learning has been around for decades. For example,&#160;<a href="https://en.wikipedia.org/wiki/AlphaGo" rel="">AlphaGo</a>, the DeepMind system that famously beat top human Go players in 2016, was based on reinforcement learning. So you might be wondering why frontier labs didn&#8217;t use it more extensively before 2024.</p>
+<p>Reinforcement learning requires a reward model&#8212;a formula to determine whether a model&#8217;s output was successful or not. Developing a good reward model is easy to do in some domains&#8212;for example, you can judge a Go-playing AI based on whether it wins or loses.</p>
+<p>But it&#8217;s much more difficult to automatically judge whether an LLM has produced a good poem or legal brief.</p>
+<p>Earlier, I described how Stephane Ross let his model play SuperTuxKart and directly provided feedback when it made a mistake. I argued that this approach wouldn&#8217;t work for a language model; there are far too many ways for an LLM to make a mistake for a human being to correct them all.</p>
+<p>But OpenAI developed a clever technique to effectively automate human feedback. It&#8217;s called Reinforcement Learning from Human Feedback (RLHF), and it works like this:</p>
+
+          
+                  
+
+              
+          
+          
+<ul>
+<li>Human raters look at pairs of LLM responses and choose the best one.</li>
+<li>Using these human responses, OpenAI trains a new LLM to predict how much humans will like any given sample of text.</li>
+<li>OpenAI uses this new text-rating LLM as a reward model to (post) train another LLM with reinforcement learning.</li>
+</ul>
+<p>You might think it sounds suspiciously circular to use an LLM to judge the output of another LLM. Why would one LLM be any better at judging the quality of a response than the other? But it turns out that recognizing a good response is often easier than generating one. So RLHF works pretty well in practice.</p>
+ 
+<p>OpenAI actually&#160;<a href="https://arxiv.org/abs/2203.02155" rel="">invented this technique</a> prior to the 2022 release of ChatGPT. Today, RLHF mainly focuses on improving the model&#8217;s &#8220;behavior&#8221;&#8212;for example, giving the model a pleasant personality, encouraging it not to be too talkative or too terse, discouraging it from making offensive statements, and so forth.</p>
+<p>In December 2022&#8212;two weeks after the release of ChatGPT but before the first release of Claude&#8212;Anthropic pushed this LLMs-judging-LLMs philosophy a step further with a reinforcement learning method called&#160;<a href="https://arxiv.org/abs/2212.08073" rel="">Constitutional AI</a>.</p>
+<p>First, Anthropic wrote a plain-English description of the principles an LLM should follow. This <a href="https://www.anthropic.com/news/claudes-constitution" rel="">&#8220;constitution&#8221;</a>&#160;includes principles like &#8220;Please choose the response that has the least objectionable, offensive, unlawful, deceptive, inaccurate, or harmful content.&#8221;</p>
+<p>During training, Anthropic does reinforcement learning by asking a &#8220;judge&#8221; LLM to decide whether the output of the &#8220;student&#8221; LLM is consistent with the principles in this constitution. If so, the training algorithm rewards the student, encouraging it to produce more outputs like it. Otherwise, the training algorithm penalizes the student, discouraging it from producing similar outputs.</p>
+<p>This method of training an LLM doesn&#8217;t rely directly on human judgments at all. Humans only influence the model indirectly by writing the constitution.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Obviously, this technique requires an AI company to already have a fairly sophisticated LLM to act as the judge. So this is a bootstrapping process: As models get more sophisticated, they become better able to supervise the next generation of models.</p>
+<p>Last December, Semianalysis&#160;<a href="https://semianalysis.com/2024/12/11/scaling-laws-o1-pro-architecture-reasoning-training-infrastructure-orion-and-claude-3-5-opus-failures/" rel="">published an article</a> describing the training process for an upgraded version of Claude 3.5 Sonnet that Anthropic released in October. Anthropic had previously released Claude 3 in three sizes: Opus (large), Sonnet (medium), and Haiku (small). But when Anthropic released Claude 3.5 in June 2024, it only released a mid-sized model called Sonnet.</p>
+ 
+<p>So what happened to Opus?</p>
+<p>Semianalysis reported that &#8220;Anthropic finished training Claude 3.5 Opus, and it performed well. Yet Anthropic didn&#8217;t release it. This is because instead of releasing publicly, Anthropic used Claude 3.5 Opus to generate synthetic data and for reward modeling to improve Claude 3.5 Sonnet significantly.&#8221;</p>
+<p>When Semianalysis says Anthropic used Opus &#8220;for reward modeling,&#8221; what they mean is that the company used Opus to judge outputs of Claude 3.5 Sonnet as part of a reinforcement learning process. Opus was too large&#8212;and therefore expensive&#8212;to be a good value for the general public. But through reinforcement learning and other techniques, Anthropic could train a version of Claude Sonnet that was close to Claude Opus in its capabilities&#8212;ultimately giving customers near-Opus performance for the price of Sonnet.</p>
+<h2>The power of chain-of-thought reasoning</h2>
+<p>A big way reinforcement learning makes models more powerful is by enabling extended chain-of-thought reasoning. LLMs&#160;<a href="https://www.understandingai.org/p/how-to-think-about-the-openai-q-rumors" rel="">produce better results</a>&#160;if they are prompted to &#8220;think step by step&#8221;: breaking a complex problem down into simple steps and reasoning about them one at a time. In the last couple of years, AI companies started training models to do chain-of-thought reasoning automatically.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Then last September,&#160;<a href="https://www.understandingai.org/p/openai-just-unleashed-an-alien-of" rel="">OpenAI released o1</a>, a model that pushed chain-of-thought reasoning much further than previous models. The o1 model can generate hundreds&#8212;or even thousands&#8212;of tokens &#8220;thinking&#8221; about a problem before producing a response. The longer it thinks, the more likely it is to reach a correct answer.</p>
+<p>Reinforcement learning was essential for the success of o1 because a model trained purely with imitation learning would have suffered from compounding errors: the more tokens it generated, the more likely it would be to screw up.</p>
+<p>At the same time, chain-of-thought reasoning has made reinforcement learning more powerful. Reinforcement learning only works if a model is able to succeed some of the time&#8212;otherwise, there&#8217;s nothing for the training algorithm to reinforce. As models learn to generate longer chains of thought, they become able to solve more difficult problems, which enables reinforcement learning on those more difficult problems. This can create a virtuous cycle where models get more and more capable as the training process continues.</p>
+<p>In January, the Chinese company DeepSeek&#160;<a href="https://www.understandingai.org/p/i-dont-believe-deepseek-crashed-nvidias" rel="">released a model called R1</a>&#160;that made quite a splash in the West. The company also released a paper describing how it trained R1. And it included a beautiful description of how a model can &#8220;teach itself&#8221; to reason using reinforcement learning.</p>
+<p>DeepSeek trained its models to solve difficult math and programming problems. These problems are ideal for reinforcement learning because they have objectively correct answers that can be automatically checked by software. This allows large-scale training without human oversight or human-generated training data.</p>
+<p>Here&#8217;s a remarkable graph from DeepSeek&#8217;s paper.</p>
+ 
+<p>It shows the average number of tokens the model generated before giving an answer. As you can see, the longer the training process went on, the longer its responses got.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Here is how DeepSeek describes its training process:</p>
+<blockquote><p>The thinking time of [R1] shows consistent improvement throughout the training process. This improvement is not the result of external adjustments but rather an intrinsic development within the model. [R1] naturally acquires the ability to solve increasingly complex reasoning tasks by leveraging extended test-time computation. This computation ranges from generating hundreds to thousands of reasoning tokens, allowing the model to explore and refine its thought processes in greater depth.</p>
+<p>One of the most remarkable aspects of this self-evolution is the emergence of sophisticated behaviors as the test-time computation increases. Behaviors such as reflection&#8212;where the model revisits and reevaluates its previous steps&#8212;and the exploration of alternative approaches to problem-solving arise spontaneously. These behaviors are not explicitly programmed but instead emerge as a result of the model&#8217;s interaction with the reinforcement learning environment.</p></blockquote>
+ 
+<p>Here&#8217;s one example of the kind of technique the model was teaching itself. At one point during the training process, DeepSeek researchers noticed that the model had learned to backtrack and rethink a previous conclusion using language like this:</p>
+ 
+<p>Again, DeepSeek says it didn&#8217;t program its models to do this or deliberately provide training data demonstrating this style of reasoning. Rather, the model &#8220;spontaneously&#8221; discovered this style of reasoning partway through the training process.</p>
+<p>Of course, it wasn&#8217;t entirely spontaneous. The reinforcement learning process started with a model that had been pretrained using data that undoubtedly included examples of people saying things like &#8220;Wait, wait. Wait. That&#8217;s an aha moment.&#8221;</p>
+<p>So it&#8217;s not like R1 invented this phrase from scratch. But it evidently did spontaneously discover that inserting this phrase into its reasoning process could serve as a useful signal that it should double-check that it was on the right track. That&#8217;s remarkable.</p>
+
+          
+                  
+
+              
+          
+          
+<p>In a <a href="https://arstechnica.com/ai/2025/06/new-apple-study-challenges-whether-ai-models-truly-reason-through-problems/">recent article</a>, Ars Technica's Benj Edwards explored some of the limitations of reasoning models trained with reinforcement learning. For example, one study "revealed puzzling inconsistencies in how models fail. Claude 3.7 Sonnet could perform up to 100 correct moves in the Tower of Hanoi but failed after just five moves in a river crossing puzzle&#8212;despite the latter requiring fewer total moves."</p>
+<h2>Conclusion: Reinforcement learning made agents possible</h2>
+<p>One of the most discussed applications for LLMs in 2023 was creating chatbots that understand a company&#8217;s internal documents. The conventional approach to this problem was called RAG&#8212;short for retrieval augmented generation.</p>
+<p>When the user asks a question, a RAG system performs a keyword- or vector-based search to retrieve the most relevant documents. It then inserts these documents into an LLM&#8217;s context window before generating a response. RAG systems can make for compelling demos. But they tend not to work very well in practice because a single search will often fail to surface the most relevant documents.</p>
+<p>Today, it&#8217;s possible to develop much better information retrieval systems by allowing the model itself to choose search queries. If the first search doesn&#8217;t pull up the right documents, the model can revise the query and try again. A model might perform five, 20, or even 100 searches before providing an answer.</p>
+<p>But this approach only works if a model is &#8220;agentic&#8221;&#8212;if it can stay on task across multiple rounds of searching and analysis. LLMs were terrible at this prior to 2024, as the examples of AutoGPT and BabyAGI demonstrated. Today&#8217;s models are much better at it, which allows modern RAG-style systems to produce better results with less scaffolding. You can think of &#8220;deep research&#8221; tools from OpenAI and others as very powerful RAG systems made possible by long-context reasoning.</p>
+<p>The same point applies to the other agentic applications I mentioned at the start of the article, such as coding and computer use agents. What these systems have in common is a capacity for iterated reasoning. They think, take an action, think about the result, take another action, and so forth.</p>
+<p>Timothy B. Lee was on staff at Ars Technica from 2017 to 2021. Today, he writes&#160;<a href="https://www.understandingai.org/">Understanding AI,</a>&#160;a newsletter that explores how AI works and how it's changing our world. You can subscribe&#160;<a href="https://www.understandingai.org/">here</a>.</p>
+
+
+          
+                  
+
+                  
+          </div>
