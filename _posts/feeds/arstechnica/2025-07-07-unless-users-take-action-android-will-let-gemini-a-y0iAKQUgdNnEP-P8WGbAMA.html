@@ -1,0 +1,58 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/07/unless-users-take-action-android-will-let-gemini-access-third-party-apps/
+date: '2025-07-07T23:46:14'
+excerpt: Important changes to Android devices took effect starting Monday.
+image: assets/media/y0iAKQUgdNnEP-P8WGbAMA-_6NaiuAJnJiklud26zQScg.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Google
+- Security
+- android
+- gemini
+- security
+title: Unless users take action, Android will let Gemini access third-party apps
+---
+<div>
+                      
+                      
+          <p>Starting today, Google is implementing a change that will enable its Gemini AI engine to interact with third-party apps, such as WhatsApp, even when users previously configured their devices to block such interactions. Users who don't want their previous settings to be overridden may have to take action.</p>
+<p>An email Google sent recently informing users of the change linked to a <a href="https://support.google.com/gemini/answer/13594961?hl=en&amp;visit_id=638842317183560022-880737628&amp;p=e_live_data&amp;rd=1#extensions">notification page</a> that said that &#8220;human reviewers (including service providers) read, annotate, and process&#8221; the data Gemini accesses. The email provides no useful guidance for preventing the changes from taking effect. The email said users can block the apps that Gemini interacts with, but even in those cases, data is stored for 72 hours.</p>
+ 
+
+<h2>No, Google, it&#8217;s not good news</h2>
+<p>The email never explains how users can fully extricate Gemini from their Android devices and seems to contradict itself on how or whether this is even possible. At one point, it says the changes &#8220;will automatically start rolling out&#8221; today and will give Gemini access to apps such as WhatsApp, Messages, and Phone &#8220;whether your Gemini apps activity is on or off.&#8221; A few sentences later, the email says, &#8220;If you have already turned these features off, they will remain off.&#8221; Nowhere in the email or the support pages it links to are Android users informed how to remove Gemini integrations completely.</p>
+<p>Compounding the confusion, one of the linked <a href="https://support.google.com/gemini/answer/13278892?hl=en&amp;co=GENIE.Platform%3DAndroid#zippy=%2Cin-the-gemini-mobile-app">support pages</a> requires users to open a <a href="https://support.google.com/gemini/answer/13278668?sjid=18416362331108297465-NC">separate support page</a> to learn how to control their Gemini app settings. Following the directions from a computer browser, I accessed the <a href="https://gemini.google.com/u/1/apps">settings</a> of my account&#8217;s Gemini app. I was reassured to see the text indicating no activity has been stored because I have Gemini turned off. Then again, the page also said that Gemini was &#8220;not saving activity beyond 72 hours.&#8221;</p>
+
+          
+                       
+                   
+            
+
+              
+          
+          
+ 
+<p>I got similarly tripped up while trying to follow the guidance on my Pixel 7. Google support said to access the mobile Gemini app from my device. I tried, but the app was nowhere to be found.</p>
+<p>Nowhere in the email or any of the Support pages did Google say how to remove all Gemini integrations from my phone. All of this left me wondering: Was Gemini completely disabled or not? When I discussed the <a href="https://infosec.exchange/@dangoodin/114790267037917736">lack of clarity</a> on Mastodon, I quickly learned I wasn't the only one asking this question.</p>
+<p>I then emailed Google PR and included a link to the Mastodon thread. I asked if someone could provide actionable guidance for my readers who want to ensure Gemini integrations are completely disabled. Instead of answering the question, the person responding to my email wrote, in part: &#8220;This update is good for users: they can now use Gemini to complete daily tasks on their mobile devices like send messages, initiate phone calls, and set timers while Gemini Apps Activity is turned off. With Gemini Apps Activity turned off, their Gemini chats are not being reviewed or used to improve our AI models.&#8221; The representative included a link to one of the same unclear support pages mentioned above.</p>
+<p>A researcher at Tuta, a cloud-based provider of a privacy-focused email and calendar service, on Monday attempted to fill the void of actionable guidance. The immediate takeaway seems to be that Google may be bolting Gemini into Android in much the way Microsoft did with Internet Explorer into Windows, a move that landed the software maker in a protracted antitrust suit with the federal government and a dozen states, commonwealths, or districts in the late 1990s.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The Tuta post says disabling Gemini app activity is likely to prevent data collection beyond the activity temporarily stored for 72 hours. It goes on to say that if the Gemini app isn't installed already, it will not be installed after the change takes effect. That likely means my phone is safe, since Gemini isn't installed. I'm not sure if the absence of Gemini from my device is the result of me manually removing the app at some point and forgetting I had done so, or if, for some reason, it was never installed in the first place.</p>
+<p>The Tuta post goes on to say that another remedy is to completely uninstall Gemini from the device. Of course, Google doesn't make this easy for people who aren't comfortable mucking around with a command-line terminal and making under-the-hood changes to their Android settings. This can be done by using the Android debug bridge that Google makes available to developers. Once it's installed (not easy for the faint of heart), users must uninstall the app by entering the <code>adb shell pm uninstall com.google.android.apps.bard</code> command. When I tried this, the operating system returned a message saying <code>Failure [DELETE_FAILED_INTERNAL_ERROR</code>. I'm not sure if that means the package can't be removed or it was never on my Pixel in the first place.</p>
+<p>Google is no doubt correct in saying that many Android users will find Gemini integrations useful. Google marketers may claim the integration is good news, and for these users, this is likely to be true. A significant number of others, however, don't want Gemini or other AI engines anywhere near their devices. For the time being, these users are being left completely in the dark.</p>
+
+
+          
+                  
+
+                  
+          </div>
