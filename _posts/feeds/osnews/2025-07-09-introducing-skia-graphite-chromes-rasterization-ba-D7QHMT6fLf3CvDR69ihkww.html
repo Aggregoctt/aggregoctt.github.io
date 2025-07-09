@@ -1,0 +1,37 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142739/introducing-skia-graphite-chromes-rasterization-backend-for-the-future/
+date: '2025-07-09T21:48:02'
+excerpt: In Chrome, Skia is used to render paint commands from Blink and the browser
+  UI into pixels on your screen, a process called rasterization. Skia has powered
+  Chrome Graphics&#160;since the very beginning. Skia eventually ran into performance
+  issues as the web evolved and became more complex, which led Chrome and Skia to
+  invest in a GPU accelerated rasterization backend called Ganesh. Over the years,
+  Ganesh matured into a solid highly performant rasterization backend and GPU rasterization
+  launched on all platforms in Chrome on top of GL (via ANGLE on Windows D3D9/11).
+  However, Ganesh always had a GL-centric design with too many specialized code paths
+  and the team was hitting a wall when trying to implement optimizations that took
+  advantage of modern graphics APIs in a principled manner. This set the stage for
+  the team to rethink GPU rasterization from the ground up in the form of a new rasterization
+  backend, Graphite. Graphite was developed from the start to be principled by having
+  fewer and more comprehensible code paths. This forward looking design helps take
+  advantage of modern graphics APIs like Metal, Vulkan and D3D12 and paradigms like
+  compute based path rasterization, and is multithreaded by default. ↫ Michael Ludwig
+  and Sunny Sachanandani at the Chromium Blog The level of complexity in browsers
+  and their rendering engines blows my mind every time I read about it. When I first
+  got access to the internet, it consisted of static pages with text and still images,
+  but now browser engines are almost as complex as entire operating systems. Not all
+  of that progress has been good &#8211; boy has a lot of it not been good &#8211;
+  but we&#8217;re stuck with it now, and thus people making browsers have to deal
+  with stuff like this. If you ever wonder why there really only are two browser engines
+  in the world &#8211; Google&#8217;s Blink and Apple&#8217;s WebKit &#8211; this
+  is your answer. Who in their right mind wants to develop something like this from
+  scratch and compete with Google and Apple?
+image: null
+source: osnews
+tags:
+- Google
+title: 'Introducing Skia Graphite: Chrome’s rasterization backend for the future'
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>In Chrome, Skia is used to render paint commands from Blink and the browser UI into pixels on your screen, a process called rasterization. Skia has powered Chrome Graphics&#160;<a href="https://www.google.com/url?q=https://blog.chromium.org/2008/10/graphics-in-google-chrome.html&amp;sa=D&amp;source=docs&amp;ust=1744655288075052&amp;usg=AOvVaw2iZg3ILJvcyGeG8RDYzVNv">since the very beginning</a>. Skia eventually ran into performance issues as the web evolved and became more complex, which led Chrome and Skia to invest in a GPU accelerated rasterization backend called Ganesh.</p><p>Over the years, Ganesh matured into a solid highly performant rasterization backend and GPU rasterization launched on all platforms in Chrome on top of GL (via ANGLE on Windows D3D9/11). However, Ganesh always had a GL-centric design with too many specialized code paths and the team was hitting a wall when trying to implement optimizations that took advantage of modern graphics APIs in a principled manner.</p><p>This set the stage for the team to rethink GPU rasterization from the ground up in the form of a new rasterization backend, Graphite. Graphite was developed from the start to be principled by having fewer and more comprehensible code paths. This forward looking design helps take advantage of modern graphics APIs like Metal, Vulkan and D3D12 and paradigms like compute based path rasterization, and is multithreaded by default.</p>
+<a href="https://blog.chromium.org/2025/07/introducing-skia-graphite-chromes.html">&#8619; Michael Ludwig and Sunny Sachanandani at the Chromium Blog</a></blockquote><p>The level of complexity in browsers and their rendering engines blows my mind every time I read about it. When I first got access to the internet, it consisted of static pages with text and still images, but now browser engines are almost as complex as entire operating systems. Not all of that progress has been good &#8211; boy has a lot of it not been good &#8211; but we&#8217;re stuck with it now, and thus people making browsers have to deal with stuff like this.</p><p>If you ever wonder why there really only are two browser engines in the world &#8211; Google&#8217;s Blink and Apple&#8217;s WebKit &#8211; this is your answer. Who in their right mind wants to develop something like this from scratch and compete with Google and Apple?</p></div>
