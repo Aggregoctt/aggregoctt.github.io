@@ -1,0 +1,68 @@
+---
+author: Lorenzo Franceschi-Bicchierai
+canonical_url: https://techcrunch.com/2025/07/09/jack-dorsey-says-his-secure-new-bitchat-app-has-not-been-tested-for-security/
+date: '2025-07-09T18:37:06'
+excerpt: Dorsey admitted that his new messaging app had not been reviewed or tested
+  for security issues prior to its launch.
+image: assets/media/uJYK1pmX-_MdUmXgccAnQA-9wro8RVmqm5PfgM47LjDPg.jpeg
+source: techcrunch
+tags:
+- Security
+- Bitchat
+- e2e encryption
+- encryption
+- jack dorsey
+title: Jack Dorsey says his ‘secure’ new Bitchat app has not been tested for security
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">On Sunday, Block CEO and Twitter co-founder Jack Dorsey <a href="https://techcrunch.com/2025/07/07/jack-dorsey-working-on-bluetooth-messaging-app-bitchat/">launched an open source chat app called Bitchat</a>, <a rel="nofollow" href="https://github.com/jackjackbits/bitchat/blob/main/WHITEPAPER.md#:~:text=secure%2C%20private%20messaging">promising</a> to deliver &#8220;secure&#8221; and &#8220;private&#8221; messaging without a centralized infrastructure.</p>
+
+<p class="wp-block-paragraph">The app relies on Bluetooth and end-to-end encryption, unlike traditional messaging apps that rely on the internet. By being decentralized, Bitchat has potential for being a secure app in high-risk environments where the internet is monitored or inaccessible. According to Dorsey&#8217;s <a rel="nofollow" href="https://github.com/jackjackbits/bitchat/blob/main/WHITEPAPER.md#encryption-and-security">white paper</a> detailing the app&#8217;s protocols and privacy mechanisms, Bitchat&#8217;s system design &#8220;prioritizes&#8221; security.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">But the claims that the app is secure, however, are already facing scrutiny by security researchers, given that the app and its code have not been reviewed or tested for security issues at all &#8212; by Dorsey&#8217;s own admission.</p>
+
+<p class="wp-block-paragraph">Since launching, Dorsey has <a rel="nofollow" href="https://github.com/jackjackbits/bitchat/commit/d296f1d6a4ff8ee60c5c15d19e9178a244cf3e5c">added a warning</a> to Bitchat&#8217;s GitHub page: &#8220;This software has not received external security review and may contain vulnerabilities and does not necessarily meet its stated security goals. Do not use it for production use, and do not rely on its security whatsoever until it has been reviewed.&#8221;&#160;</p>
+
+<p class="wp-block-paragraph">This warning now also appears on Bitchat&#8217;s main GitHub project page, but was not there at the time the app debuted.</p>
+
+<p class="wp-block-paragraph">As of Wednesday, Dorsey <a rel="nofollow" href="https://github.com/jackjackbits/bitchat/commit/ad3afab943efac33505e247e5567a17e5d4c6b90#diff-b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5L5">added</a>: &#8220;Work in progress,&#8221; next to the warning on GitHub.&#160;</p>
+
+<p class="wp-block-paragraph">This latest disclaimer came after security researcher Alex Rodocea found that it&#8217;s possible to impersonate someone else and trick a person&#8217;s contacts into thinking they are talking to the legitimate contact, <a rel="nofollow" href="https://www.supernetworks.org/pages/blog/agentic-insecurity-vibes-on-bitchat">as the researcher explained in a blog post</a>.&#160;</p>
+ 
+
+<p class="wp-block-paragraph">Rodocea wrote that Bitchat has a &#8220;broken identity authentication/verification&#8221; system that allows an attacker to intercept someone&#8217;s &#8220;identity key&#8221; and &#8220;peer id pair&#8221; &#8212; essentially a digital handshake that is supposed to establish a trusted connection between two people using the app. Bitchat calls these &#8220;Favorite&#8221; contacts and marks them with a star icon. The goal of this feature is to allow two Bitchat users to interact, knowing that they are talking to the same person they talked to before.&#160;</p>
+
+<p class="wp-block-paragraph">Dorsey did not respond to TechCrunch&#8217;s request for comment sent to his Block email address.&#160;</p>
+
+ 
+
+<p class="wp-block-paragraph">On Monday, Radocea filed a ticket on the GitHub project to ask how to report the security flaw he discovered in the Bitchat Favorites system. Soon after, Dorsey marked it as &#8220;completed,&#8221; without comment. (<a rel="nofollow" href="https://github.com/jackjackbits/bitchat/issues/19">Dorsey re-opened the ticket</a> on Wednesday, saying security issues can be reported by posting on GitHub directly.)</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Another person <a rel="nofollow" href="https://github.com/jackjackbits/bitchat/issues/78">reported</a> concerns with Dorsey&#8217;s claims that Bitchat has &#8220;forward secrecy,&#8221; a cryptographic technique that ensures that even if an attacker steals or compromises an encryption key, that attacker still cannot decrypt previously-sent messages.</p>
+
+<p class="wp-block-paragraph">Someone also <a rel="nofollow" href="https://github.com/jackjackbits/bitchat/pull/96">pointed out</a> a potential buffer overflow bug, which is a common type of security vulnerability where a hacker can force a device&#8217;s memory to spill out to other locations, opening the door for a data compromise.</p>
+
+<p class="wp-block-paragraph">Radocea warned that Bitchat users should not trust the app yet.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;Security is a great feature to have for going viral. But a basic sanity check, like, do the identity keys actually do any cryptography, would be a very obvious thing to test when building something like this,&#8221; Radocea told TechCrunch. &#8220;There are people out there that would take the messaging around security literally and could rely on it for their safety, so the project in its current state could endanger them.&#8221;</p>
+
+<p class="wp-block-paragraph">Referring to his and other people&#8217;s findings, Radocea criticized Dorsey&#8217;s warning that Bitchat has not been tested for security.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;I&#8217;d argue it has received external security review, and it&#8217;s not looking good,&#8221; he said.</p>
+
+
+			
+
+			</div>

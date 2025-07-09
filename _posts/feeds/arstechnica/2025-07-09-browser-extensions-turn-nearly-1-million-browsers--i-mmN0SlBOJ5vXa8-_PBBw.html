@@ -1,0 +1,63 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/07/browser-extensions-turn-nearly-1-million-browsers-into-website-scraping-bots/
+date: '2025-07-09T20:08:27'
+excerpt: Extensions load unknown sites into invisible Windows. What could go wrong?
+image: assets/media/i-mmN0SlBOJ5vXa8-_PBBw-0nO1ofxhD2MqyE0_nvHxcA.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- browsers
+- extensions
+- privacy
+- security
+title: Browser extensions turn nearly 1 million browsers into website-scraping bots
+---
+<div>
+                      
+                      
+          <p>Extensions installed on almost 1 million devices have been overriding key security protections to turn browsers into engines that scrape websites on behalf of a paid service, a researcher said.</p>
+<p>The 245 extensions, available for Chrome, Firefox, and Edge, have racked up nearly 909 million downloads, John Tuckner of SecurityAnnex <a href="https://secureannex.com/blog/mellow-drama/">reported</a>. The extensions serve a wide range of purposes, including managing bookmarks and clipboards, boosting speaker volumes, and generating random numbers. The common thread among all of them: They incorporate <a href="https://github.com/mellowtel-inc/mellowtel-js">MellowTel-js</a>, an open source JavaScript library that allows developers to monetize their extensions.</p>
+<h2>Intentional weakening of browsing protections</h2>
+<p>Tuckner and critics say the monetization works by using the browser extensions to scrape websites on behalf of paying customers, which include advertisers. Tuckner reached this conclusion after uncovering close ties between MellowTel and <a href="https://www.olostep.com/">Olostep</a>, a company that bills itself as "the world's most reliable and cost-effective Web scraping API." Olostep says its service &#8220;avoids all bot detection and can parallelize up to 100K requests in minutes.&#8221; Paying customers submit the locations of browsers they want to access specific webpages. Olostep then uses its installed base of extension users to fulfill the request.</p>
+<p>&#8220;This seems very similar to the scraping instructions we saw while watching the MellowTel library in action,&#8221; Tuckner wrote after analyzing the MellowTel code. &#8220;I believe we have good reason to think that scraping requests from Olostep are distributed to any of the active extensions which are running the MellowTel library.&#8221;</p>
+<p>MellowTel&#8217;s founder, for his part, <a href="https://github.com/PlasmoHQ/docs/pull/137#issuecomment-2448769654">has said</a> the purpose of the library is &#8220;sharing [users&#8217;] bandwidth (without stuffing affiliate links, unrelated ads, or having to collect personal data).&#8221; He went on to say that the &#8220;primary reason why companies are paying for the traffic is to access publicly available data from websites in a reliable and cost-effective way.&#8221; The founder said extension developers receive 55 percent of the revenue, and MellowTel pockets the rest.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Despite the assurances, Tuckner said the extensions that incorporate MellowTel pose a risk to users who install them. One reason for this is that MellowTel causes extensions to activate a <a href="https://en.wikipedia.org/wiki/WebSocket">websocket</a> that connects to an AWS server that collects the location, available bandwidth, heartbeats, and status of extension users. Besides the privacy erosions, the websocket also injects a hidden <a href="https://www.w3schools.com/html/html_iframe.asp">iframe</a> into the page the user is currently viewing that connects to a list of websites specified by the AWS server. There&#8217;s no way ordinary end users can determine what sites are being opened in the invisible iframe.</p>
+<p>Tuckner wrote:</p>
+<blockquote><p>Shouldn't there be some protections to stop this from happening? How can you so easily load unintended content inside of any website?</p>
+<p>Well, normally there are protections to prevent this. Common web server security headers like Content-Security-Policy and X-Frame-Options should stop this from happening. However, remember that the library requested declarativeNetRequest and access be added to the manifest if it isn't already? Those permissions allow for modification of web requests and responses as they are being made. The library dynamically modifies rules that will remove security headers from web server responses and then claims to add them back after the web page has loaded.</p></blockquote>
+<p>&#8220;This weakening of all web browsing can open users up to attacks like cross-site scripting that would generally be prevented under normal conditions,&#8221; Tuckner went on to write. &#8220;Not only are your users unintentionally becoming bots, but their actual web browsing is more vulnerable as well.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>MellowTel is also problematic because the sites it opens are unknown to end users. That means they must trust MellowTel to vet the security and trustworthiness of each site being accessed. And, of course, that security and trustworthiness can change with a single compromise of a site. MellowTel also poses a risk to enterprise networks that closely restrict the types of code users are permitted to run and the sites they visit.</p>
+<p>Attempts to reach MellowTel representatives weren&#8217;t successful.</p>
+<p>Tuckner&#8217;s discovery is reminiscent of a 2019 analysis that found browser extensions installed on 4 million browsers collected users&#8217; every movement on the web and shared them with customers of Nacho Analytics, which went defunct shortly after <a href="https://arstechnica.com/information-technology/2019/07/dataspii-inside-the-debacle-that-dished-private-data-from-apple-tesla-blue-origin-and-4m-people/">Ars exposed</a> the operation.</p>
+<p>Some of the data swept up in the collection free-for-all included surveillance videos hosted on Nest, tax returns, billing invoices, business documents, and presentation slides posted to, or hosted on, Microsoft OneDrive and Intuit.com, vehicle identification numbers of recently bought automobiles along with the names and addresses of the buyers, patient names and the doctors they saw, travel itineraries hosted on Priceline, Booking.com, and airline websites, Facebook Messenger attachments and Facebook photos, even when the photos were set to be private. The dragnet also collected proprietary information belonging to Tesla, Blue Origin, Amgen, Merck, Pfizer, Roche, and dozens of other companies.</p>
+<p>Tuckner said in an email Wednesday that the most recent status of the affected extensions is:</p>
+<ul>
+<li><span>Of 45 known Chrome extensions, 12 are now inactive. Some of the extensions were removed for malware explicitly. Others have removed the library.</span></li>
+<li><span>Of 129 Edge extensions incorporating the library, eight are now inactive.</span></li>
+<li><span>Of 71 affected Firefox extensions, two are now inactive.</span></li>
+</ul>
+<p>Some of the inactive extensions were removed for malware explicitly. Others have removed the library in more recent updates. A complete list of extensions found by Tuckner is <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT1XgBs25gRlg5e3nYCAff967WMtZZTO-TB3rR9zszaJpTpCVFg8j7FkBxnHb3tw3aHGjKBGSxYyLgV/pubhtml">here</a>.</p>
+
+
+          
+                  
+
+                  
+          </div>
