@@ -1,0 +1,55 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/07/13/pignio-pignatico-si-rende-superpignastico-per-pignare-cose-e-cosine/
+date: '2025-07-13T09:11:20'
+excerpt: L&#8217;altro giorno mi è venuta l&#8217;idea pazza che più pazza non si
+  può etc etc&#8230; solito andazzo. Ma, per quanto l&#8217;andazzo sia sempre lo
+  stesso del cazzo, il risultato delle mie macchinazioni è anche stavolta originale,
+  e la primissima versione utilizzabile di esso è già in produzione da ieri sera.
+  Occhi aperti sul nuovissimo gnammifico [&#8230;]
+image: assets/media/70atjx8JtA5dgSRra2osxQ-Hv23u1gDDVh17464fJ4Z8w.jpeg
+source: octospacc
+tags:
+- Senza categoria
+- media
+- webapp
+- webdev
+- sviluppo
+- Pinterest
+- selfhost
+- Dev
+- Pignio
+- FlatFile
+title: Pignio pignatico si rende superpignastico per pignare cose e cosine
+---
+<div>
+
+		
+<p>L&#8217;altro giorno mi &#232; venuta l&#8217;idea pazza che pi&#249; pazza non si pu&#242; etc etc&#8230; solito andazzo. Ma, per quanto l&#8217;andazzo sia sempre lo stesso del cazzo, il risultato delle mie macchinazioni &#232; anche stavolta originale, e <strong>la primissima versione utilizzabile di esso &#232; gi&#224; in produzione</strong> da ieri sera. Occhi aperti sul nuovissimo gnammifico pezzo di software che &#232; <strong><a href="https://pignio.octt.eu.org">Pignio.octt.eu.org</a></strong>!!! (Che per poco non rischiava di chiamarsi Octterest&#8230;) &#128163;&#128171;&#128165;</p>
+
+
+
+ 
+
+
+
+<p>Questo coso spunta fuori dal fatto che, negli ultimi tempi, <strong>stava uscendo sempre pi&#249; la necessit&#224; per me di avere un merdino per salvare ed organizzare elementi</strong> come link singoli o file multimediali, anche e soprattutto <strong>al volo</strong>, e potenzialmente renderli <strong>accessibili al pubblico</strong>&#8230; non so: memini, reference, cose da stampare, forse roba PDF file, tutto <strong>sotto il mio controllo a prova di sparizione</strong>. Ovviamente, una cartella con varie sottocartelle (magari sincronizzata su una repo Git pubblica), che in altri casi sarebbe l&#8217;opzione pi&#249; ovvia, nel complesso qui non va bene, perch&#233; l&#8217;agilit&#224; va a farsi benedire&#8230; ma, <strong>io sono pur sempre una ragazza magica, dunque non devo accontentarmi delle soluzioni esistenti!!!</strong> &#128525;</p>
+
+
+
+<p>In effetti, <strong>di software specializzati per salvare cose ce ne sono a bizzeffe</strong>&#8230; ne hosto io stessa da anni uno per link e articoli dal web, <a href="https://articles.octt.eu.org">Shiori</a>&#8230; per&#242;, non so, <strong>manca in tutti quella cosa in pi&#249;</strong> per questo caso d&#8217;uso&#8230; Tra cui, il fatto che &#232; bello facile a salvare elementi singoli dentro tutti quei robi, ma se io ipoteticamente (&#8230;e praticamente) <strong>avessi cartelle gi&#224; piene di roba sul PC, che stracavolo dovrei fare?</strong> Quindi, beh, semplicemente <strong>ho progettato Pignio per operare direttamente sul file system</strong>, pescando e salvando sia file che metadati da e su file nella cartella del server, e ho fuso insieme quei due universi che mai devono toccarsi, rispettivamente della banalit&#224; informatica e dell&#8217;alta informatica&#8230; <strong>in altre parole, &#232; flat-file</strong>, e sono negativamente stupita del fatto che non esista alcun altro software lato server per questo scopo qui ma con questa caratteristica. &#129317;</p>
+
+
+
+<p><strong>Ora &#232; davvero nelle fasi iniziali, e funziona bene&#8230;</strong> bisogner&#224; vedere poi quanto regge, soprattutto con decine o centinaia di migliaia di file multimediali da trovare sul disco, con altrettanti <strong>file INI messi affianco da cui vengono letti i metadati</strong> (e quanto sar&#224; l&#8217;overhead sul disco avendo tutti questi file da poche centinaia di byte ciascuno), ma la struttura del file system (per gli elementi creati dalla app stessa, identificati da un ID Snowflake, non i file tirati da fuori) penso di averla architettata bene. <strong>Sar&#224; davvero la prova definitiva per l&#8217;architettura flat-file</strong>, se davvero finisco per riempire il sistema con questo passo&#8230; ma, in compenso, una repo Git sar&#224; perfetta per fare il backup di tali questi miei preziosi dati (cosiddetto &#8220;mio tessoro&#8220;), non avendo blob di database. &#129316;</p>
+
+
+
+<p>Lo stile dell&#8217;interfaccia, e a breve anche il sistema di raggruppamento di elementi in collezioni, vabb&#233;, <strong>l&#8217;ho copiato spudoratamente da Pinterest</strong>, e mi sembra ben ovvio&#8230; ma, differenza di Pinterest, Pignio ha vantaggi molto tosti&#8230; in primis <strong>&#232; mio</strong>, quindi posso sistemarlo per non avere tutti i bug di merda (Pinterest ne ha infiniti!), poi <strong>&#232; self-hostabile</strong>, quindi i dati sono gi&#224; sempre fisicamente in mano a me; e, in pi&#249;, <strong>funziona senza JavaScript</strong>, e quindi anche su browser vecchi (pur se con un layout mezzo rotto su quelli, per via del framework che ho usato, UIKit)&#8230; figurarsi se io trascuravo proprio una cosa del genere. &#128548;</p>
+
+
+
+<p><strong>Il lavoro da fare &#232; ancora tantino</strong> per&#242; (e te pareva), perch&#233;, a parte le collezioni, ci sono cose solo da sistemare. Cose piccole, come <strong>l&#8217;importazione automatica</strong> di elementi da feed RSS esterni (&#8230;ed implementare i feed della roba dalla app stessa)&#8230; ma poi anche cose grosse ma assolutamente necessarie, come avere <strong>un OCR automatico</strong> sulle immagini, o pi&#249; in generale <strong>il riconoscimento dei contenuti per fare tagging automatico</strong>, cos&#236; da ottimizzare la ricerca e potenzialmente avere un algoritmo di suggerimento utile in un&#8217;istanza con pi&#249; utenti. A proposito&#8230; ancora non ho nemmeno finito di implementare i permessi per gli utenti, quindi non posso invitare ancora nessuno a provare la mia istanza&#8230; per&#242;, <strong>ho reso pubblico il codice gi&#224; da ieri</strong> (nonostante inizialmente pensavo di aspettare un po&#8217;, perch&#233; potrei cambiare alcune cose della struttura dati&#8230; ma francamente non freca): <a href="https://gitlab.com/octospacc/Pignio">https://gitlab.com/octospacc/Pignio</a>. <strong>GODETE!!!</strong> &#128520;&#128563;</p>
+ 
+ 
+	 </div>
