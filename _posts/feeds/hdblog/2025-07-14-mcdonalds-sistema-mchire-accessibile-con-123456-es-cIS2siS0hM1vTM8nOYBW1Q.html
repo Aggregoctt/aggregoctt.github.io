@@ -1,0 +1,36 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/sicurezza/articoli/n625194/mcdonalds-falle-piattaforma-mchire/
+date: '2025-07-14T07:20:00'
+excerpt: Una password banale e un'API senza controlli hanno messo a rischio nomi,
+  contatti, test della personalità e chat dei candidati
+image: assets/media/cIS2siS0hM1vTM8nOYBW1Q-NCMDb-CSjHYjqI1vgIllHQ.jpeg
+source: hdblog
+tags:
+- Sicurezza
+title: 'McDonald’s, sistema McHire accessibile con "123456": esposti 64 milioni di
+  profili'
+---
+<div>
+	
+				<p>Secondo quanto rivelato dai ricercatori di sicurezza Ian Carroll e Sam Curry, la piattaforma McHire.com &#8211; utilizzata da McDonald&#8217;s per la selezione del personale attraverso il chatbot Olivia &#8211; <strong>ha esposto dati sensibili appartenenti a oltre 64 milioni di candidati</strong>. I due esperti hanno deciso di esaminare il sistema dopo aver letto su Reddit numerose <strong>segnalazioni di utenti frustrati dalla scarsa efficacia del chatbot</strong>, spesso accusato di fornire risposte senza senso o del tutto inconcludenti.</p>SCOPERTE DUE VULNERABILIT&#192; CRITICHE<p>Dietro a un'interfaccia conversazionale apparentemente innocua <strong>si celavano due falle di sicurezza particolarmente gravi</strong>. La prima riguardava <strong>l'accesso amministrativo riservato ai titolari dei ristoranti</strong>: sulla pagina di login era presente un link dedicato ai &#8220;Paradox team members&#8221; &#8211; Paradox.ai &#232; l'azienda che ha sviluppato la piattaforma &#8211; attraverso cui Carroll e Curry sono riusciti ad <strong>autenticarsi usando la combinazione &#8220;123456:123456&#8221;</strong>. Questo semplice tentativo ha dato loro accesso a <strong>un account di test con privilegi da amministratore,</strong> confermando l'assenza di misure di protezione elementari. In base a quanto ricostruito, quell'account era legato a un'istanza di test interna di Paradox, ma <strong>dava comunque accesso a dati reali.</strong></p><p><br>
+Il secondo problema &#8211; ben pi&#249; critico &#8211; &#232; stato <strong>identificato analizzando il funzionamento delle API della piattaforma</strong>. Durante una simulazione di candidatura, i ricercatori hanno scoperto un endpoint interno (/api/lead/cem-xhr) che utilizzava come parametro un semplice numero identificativo (lead_id). Decrementando manualmente quel valore, &#232; stato possibile <strong>accedere ai dati di altri utenti.</strong> <strong>Nessun controllo lato server impediva la consultazione di record altrui</strong>: bastava cambiare cifra per ottenere accesso a informazioni personali complete.</p>DATI SENSIBILI CONSULTABILI CON SEMPLICI VARIAZIONI DI ID<p>I dati accessibili includevano informazioni personali complete e non mascherate: <strong>nome, indirizzo email, numero di telefono e indirizzo di residenza</strong>, sufficienti gi&#224; da soli a identificare univocamente ogni candidato. A questi si aggiungevano i <strong>dettagli relativi alla candidatura stessa</strong>, come lo stato del processo selettivo, la cronologia delle modifiche intervenute nel tempo, le preferenze dichiarate per i turni di lavoro e tutte le risposte fornite nei form preliminari.<br>
+<br>
+Particolarmente delicati erano anche<strong> i risultati del test della personalit&#224;, obbligatorio nella fase iniziale del percorso</strong>, che includevano<strong> valutazioni soggettive su attitudini e tratti comportamentali</strong>. Ogni interazione era inoltre accompagnata da timestamp precisi, permettendo di ricostruire la tempistica delle attivit&#224; e dei passaggi svolti dal candidato. A completare il quadro, i token di autenticazione dell'utente permettevano<strong> l'accesso diretto all'interfaccia riservata,</strong> rendendo di fatto impersonabile qualsiasi candidato tramite login automatizzato.</p><p>Infine, <strong>l'intero storico delle conversazioni con il chatbot Olivia</strong> risultava liberamente consultabile, <strong>comprensivo di tutte le domande poste e delle risposte fornite durante la simulazione del colloquio</strong>. In molti casi, questo includeva anche dati sensibili inseriti spontaneamente dai candidati, come motivazioni personali, disponibilit&#224; logistiche o indicazioni sul proprio stato occupazionale.<br>
+<br>
+Questa esposizione, resa possibile da un classico caso di Insecure Direct Object Reference (IDOR), ha permesso l'accesso non solo a un set di dati personali statici, ma a <strong>un'intera struttura dinamica di contenuti tracciabili e collegabili</strong>. Un insieme che, secondo diversi esperti interpellati dalla stampa specializzata, costituisce <strong>una base estremamente vulnerabile per potenziali attacchi di social engineering, <a href="https://www.hdblog.it/phishing/">phishing</a> o <a href="https://www.hdblog.it/sicurezza/articoli/n625082/sms-ingannevoli-finto-messaggio-asl/">smishing</a> su misura</strong>. La combinazione tra dati sensibili, contenuti testuali, interazioni temporali e strumenti AI, se non adeguatamente protetta, <strong>aumenta in modo significativo il livello di esposizione e i rischi associati.</strong></p>RISPOSTA RAPIDA DI MCDONALD'S E PARADOX.AI<p>Una volta compreso l'impatto della vulnerabilit&#224;,<strong> Carroll e Curry hanno avviato la procedura di disclosure</strong>, cio&#232; la segnalazione responsabile della falla alle aziende coinvolte prima di renderla pubblica. In mancanza di canali ufficiali per la sicurezza,<strong> hanno dovuto contattare indirizzi generici.</strong> La segnalazione &#232; stata inviata il 30 giugno 2025 alle 17:46 ET sia a Paradox.ai sia a McDonald's. Dopo meno di un'ora, McDonald's ha confermato la ricezione e richiesto dettagli tecnici. Gi&#224; entro la sera,<strong> le credenziali di test risultavano disattivate </strong>e l'endpoint vulnerabile &#232; stato messo in sicurezza il giorno successivo.<br>
+<br>
+In una nota pubblicata sul proprio sito, <strong>Paradox ha affermato che l'incidente ha coinvolto esclusivamente un account di tes</strong>t relativo a una singola istanza cliente, e che nessun dato &#232; stato reso pubblico o sottratto da terze parti. Secondo l'azienda, sono <strong>solo cinque i profili effettivamente visualizzati durante i test condotti dai ricercatori.</strong></p> 
+
+	
+				
+
+
+ 
+
+
+	
+				 
+			
+	
+			</div>
