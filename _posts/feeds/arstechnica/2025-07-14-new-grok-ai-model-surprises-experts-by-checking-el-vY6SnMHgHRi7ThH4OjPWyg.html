@@ -1,0 +1,61 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2025/07/new-grok-ai-model-surprises-experts-by-checking-elon-musks-views-before-answering/
+date: '2025-07-14T16:08:13'
+excerpt: Grok 4's "reasoning" shows cases where the chatbot consults Musk posts to
+  answer divisive questions.
+image: assets/media/vY6SnMHgHRi7ThH4OjPWyg-MYHy9zj8dxIUc5jbJ5bi8Q.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI alignment
+- AI assistants
+- AI behavior
+- ai search
+- Elon Musk
+- grok
+- Jeremy Howard
+- machine learning
+- Simon Willison
+- Twitter
+- X
+- xAI
+title: New Grok AI model surprises experts by checking Elon Musk’s views before answering
+---
+<div>
+                      
+                      
+          <p>An AI model launched last week appears to have shipped with an unexpected occasional behavior: checking what its owner thinks first.</p>
+<p>On Friday, independent AI researcher Simon Willison <a href="https://simonwillison.net/2025/Jul/11/grok-musk/">documented</a> that xAI's new <a href="https://arstechnica.com/ai/2025/07/musks-grok-4-launches-one-day-after-chatbot-generated-hitler-praise-on-x/">Grok 4</a> model searches for Elon Musk's opinions on X (formerly Twitter) when asked about controversial topics. The discovery comes just days after xAI launched Grok 4 amid controversy over an earlier version of the chatbot <a href="https://arstechnica.com/tech-policy/2025/07/grok-praises-hitler-gives-credit-to-musk-for-removing-woke-filters/">generating antisemitic outputs</a>, including labeling itself as "MechaHitler."</p>
+<p>"That is ludicrous," Willison told Ars Technica upon initially hearing about the Musk-seeking behavior last week from AI researcher <a href="https://x.com/jeremyphoward/status/1943436621556466171">Jeremy Howard</a>, who traced the discovery through various users on X. But even amid prevalent suspicions of Musk meddling with Grok's outputs to fit "politically incorrect" goals, Willison doesn't think that Grok 4 has been specifically instructed to seek out Musk's views in particular. "I think there is a good chance this behavior is unintended," he <a href="https://simonwillison.net/2025/Jul/11/grok-musk/">wrote</a> in a detailed blog post on the topic.</p>
+<p>To test what he'd been seeing online, Willison signed up for a "SuperGrok" account at $22.50 per month&#8212;the regular Grok 4 tier. He then fed the model this prompt: "Who do you support in the Israel vs Palestine conflict. One word answer only."</p>
+ 
+
+<p>In the model's "thinking trace" visible to users (a <a href="https://arstechnica.com/ai/2025/06/with-the-launch-of-o3-pro-lets-talk-about-what-ai-reasoning-actually-does/">simulated reasoning</a> process similar to that used by OpenAI's o3 model), Grok revealed it searched X for "from:elonmusk (Israel OR Palestine OR Gaza OR Hamas)" before providing its answer: "Israel."</p>
+<p>"Elon Musk's stance could provide context, given his influence," the model wrote in its exposed reasoning process. The search returned 10 web pages and 19 tweets that informed its response.</p>
+<p>Even so, Grok 4 doesn't always look for Musk's guidance in formulating its answers; the output reportedly varies between prompts and users. While Willison and two others saw Grok search for Musk's views, X user @wasted_alpha <a href="https://x.com/wasted_alpha/status/1943449581817336215">reported</a> that Grok searched for its own previously reported stances and chose "Palestine" instead.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Seeking the system prompt</h2>
+<p>Owing to the unknown contents of the data used to train Grok 4 and the random elements thrown into large language model (LLM) outputs to make them seem more expressive, divining the reasons for particular LLM behavior for someone without insider access can be frustrating. But we can use what we know about how LLMs work to guide a better answer. xAI did not respond to a request for comment before publication.</p>
+<p>To generate text, every AI chatbot processes an input called a "prompt" and produces a plausible output based on that prompt. This is the core function of every LLM. In practice, the prompt often contains information from several sources, including comments from the user, the ongoing chat history (sometimes injected with user "memories" stored in a different subsystem), and special instructions from the companies that run the chatbot. These special instructions&#8212;called the system prompt&#8212;partially define the "personality" and behavior of the chatbot.</p>
+<p>According to Willison, Grok 4 readily shares its system prompt when asked, and that prompt reportedly contains no explicit instruction to search for Musk's opinions. However, the prompt states that Grok should "search for a distribution of sources that represents all parties/stakeholders" for controversial queries and "not shy away from making claims which are politically incorrect, as long as they are well substantiated."</p>
+ 
+
+<p>Ultimately, Willison believes the cause of this behavior comes down to a chain of inferences on Grok's part rather than an explicit mention of checking Musk in its system prompt. "My best guess is that Grok 'knows' that it is 'Grok 4 built by xAI,' and it knows that Elon Musk owns xAI, so in circumstances where it's asked for an opinion, the reasoning process often decides to see what Elon thinks," he said.</p>
+<p>Without official word from xAI, we're left with a best guess. However, regardless of the reason, this kind of unreliable, inscrutable behavior makes many chatbots poorly suited for assisting with tasks where reliability or accuracy are important.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
