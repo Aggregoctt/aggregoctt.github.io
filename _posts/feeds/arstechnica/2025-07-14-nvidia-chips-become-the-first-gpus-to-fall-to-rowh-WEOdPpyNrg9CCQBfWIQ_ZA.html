@@ -1,0 +1,78 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/07/nvidia-chips-become-the-first-gpus-to-fall-to-rowhammer-bit-flip-attacks/
+date: '2025-07-14T18:25:36'
+excerpt: GPUhammer is the first to flip bits in onboard GPU memory. It likely won't
+  be the last.
+image: assets/media/WEOdPpyNrg9CCQBfWIQ_ZA-QC-QgwAMxjZ1d7qkxn3Xsg.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- bitfl
+- bitflips
+- GPUs
+- NVIDIA
+- rowhammer
+title: Nvidia chips become the first GPUs to fall to Rowhammer bit-flip attacks
+---
+<div>
+                      
+                      
+           
+<p>Nvidia is recommending a mitigation for customers of one of its GPU product lines that will degrade performance by up to 10 percent in a bid to protect users from exploits that could let hackers sabotage work projects and possibly cause other compromises.</p>
+<p>The move comes in response to an attack a team of academic researchers demonstrated against Nvidia&#8217;s RTX A6000, a widely used GPU for high-performance computing that&#8217;s available from many cloud services. A vulnerability the researchers discovered opens the GPU to Rowhammer, a class of attack that exploits physical weakness in DRAM chip modules that store data.</p>
+<p>Rowhammer allows hackers to change or corrupt data stored in memory by rapidly and repeatedly accessing&#8212;or hammering&#8212;a physical row of memory cells. By repeatedly hammering carefully chosen rows, the attack induces bit flips in nearby rows, meaning a digital zero is converted to a one or vice versa. Until now, Rowhammer attacks have been demonstrated only against memory chips for CPUs, used for general computing tasks.</p>
+<h2>Like catastrophic brain damage</h2>
+<p>That changed last week as researchers unveiled GPUhammer, the first known successful Rowhammer attack on a discrete GPU. Traditionally, GPUs were used for rendering graphics and cracking passwords. In recent years, GPUs have become the workhorses for tasks such as high-performance computing, machine learning, neural networking, and other AI uses. No company has benefited more from the AI and HPC boom than Nvidia, which <a href="https://arstechnica.com/ai/2025/07/ai-mania-pushes-nvidia-to-record-4-trillion-valuation/">last week</a> became the first company to reach a $4 trillion valuation. While the researchers demonstrated their attack against only the A6000, it likely works against other GPUs from Nvidia, the researchers said.</p>
+<p>The researchers&#8217; proof-of-concept exploit was able to tamper with deep neural network models used in machine learning for things like autonomous driving, healthcare applications, and medical imaging for analyzing MRI scans. GPUHammer flips a single bit in the exponent of a model weight&#8212;for example in y, where a floating point is represented as x times 2y. The single bit flip can increase the exponent value by 128. The result is an altering of the model weight by a whopping 2128, degrading model accuracy from 80 percent to 0.1 percent, said Gururaj Saileshwar, an assistant professor at the University of Toronto and co-author of an <a href="https://gururaj-s.github.io/assets/pdf/SEC25_GPUHammer.pdf">academic paper</a> demonstrating the attack.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>&#8220;This is like inducing catastrophic brain damage in the model: with just one bit flip, accuracy can crash from 80% to 0.1%, rendering it useless,&#8221; Saileshwar wrote in an email. &#8220;With such accuracy degradation, a self-driving car may misclassify stop signs (reading a stop sign as a speed limit 50 mph sign), or stop recognizing pedestrians. A healthcare model might misdiagnose patients. A security classifier may fail to detect malware.&#8221;</p>
+<p>In response, Nvidia is <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5671">recommending</a> users implement a defense that could degrade overall performance by as much as 10 percent. Among machine learning inference workloads the researchers studied, the slowdown affects the &#8220;3D U-Net ML Model&#8221; the most. This model is used for an array of HPC tasks, such as medical imaging.</p>
+<p>The performance hit is caused by the resulting reduction in bandwidth between the GPU and the memory module, which the researchers estimated as 12 percent. There&#8217;s also a 6.25 percent loss in memory capacity across the board, regardless of the workload. Performance degradation will be the highest for applications that access large amounts of memory.</p>
+<p>A figure in the researchers&#8217; <a href="https://gururaj-s.github.io/assets/pdf/SEC25_GPUHammer.pdf">academic paper</a> provides the overhead breakdowns for the workloads tested.</p>
+ 
+
+<p>Rowhammer attacks present a threat to memory inside the typical laptop or desktop computer in a home or office, but most Rowhammer research in recent years has focused on the threat inside cloud environments. That's because these environments often allot the same physical CPU or GPU to multiple users. A malicious attacker can run Rowhammer code on a cloud instance that has the potential to tamper with the data a CPU or GPU is processing on behalf of a different cloud customer. Saileshwar said that Amazon Web Services and smaller providers such as Runpod and Lambda Cloud all provide A6000s instances. (He added that AWS enables a defense that prevents GPUhammer from working.)</p>
+
+          
+                   
+            
+
+              
+          
+          
+ 
+<h2>Not your parents&#8217; Rowhammer</h2>
+<p>Rowhammer attacks are difficult to perform for various reasons. For one thing, GPUs access data from GDDR (graphics double data rate) physically located on the GPU board, rather than the DDR (double data rate) modules that are separate from the CPUs accessing them. The proprietary physical mapping of the thousands of banks inside a typical GDDR board is entirely different from their DDR counterparts. That means that hammering patterns required for a successful attack are completely different. Further complicating attacks, the physical addresses for GPUs aren&#8217;t exposed, even to a privileged user, making reverse engineering harder.</p>
+<p>GDDR modules also have up to four times higher memory latency and faster refresh rates. One of the physical characteristics Rowhammer exploits is that the increased frequency of accesses to a DRAM row disturbs the charge in neighboring rows, introducing bit flips in neighboring rows. Bit flips are much harder to induce with higher latencies. GDDR modules also contain proprietary mitigations that can further stymie Rowhammer attacks.</p>
+<p>In response to GPUhammer, Nvidia published a <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5671">security notice</a> last week reminding customers of a protection formally known as system-level error-correcting code. ECC works by using what are known as memory words to store redundant control bits next to the data bits inside the memory chips. CPUs and GPUs use these words to quickly detect and correct flipped bits.</p>
+<p>GPUs based on Nvidia&#8217;s Hopper and Blackwell architectures already have ECC turned on. On other architectures, ECC is not enabled by default. The means for enabling the defense vary by the architecture. Checking the settings in Nvidia GPUs designated for data centers can be done out-of-band using a system&#8217;s BMC (baseboard management controller) and software such as Redfish to check for the &#8220;ECCModeEnabled&#8221; status. ECC status can also be checked using an in-band method that uses the system CPU to probe the GPU.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The protection does come with its limitations, as Saileshwar explained in an email:</p>
+<blockquote><p>On NVIDIA GPUs like the A6000, ECC typically uses SECDED (Single Error Correction, Double Error Detection) codes. This means Single-bit errors are automatically corrected in hardware and Double-bit errors are detected and flagged, but not corrected. So far, all the Rowhammer bit flips we detected are single-bit errors, so ECC serves as a sufficient mitigation. But if Rowhammer induces 3 or more bit flips in a ECC code word, ECC may not be able to detect it or may even cause a miscorrection and a silent data corruption. So, using ECC as a mitigation is like a double-edged sword.</p></blockquote>
+<p>Saileshwar said that other Nvidia chips may also be vulnerable to the same attack. He singled out GDDR6-based GPUs in Nvidia&#8217;s Ampere generation, which are used for machine learning and gaming. Newer GPUs, such as the H100 (with HBM3) or RTX 5090 (with GDDR7), feature on-die ECC, meaning the error detection is built directly into the memory chips.</p>
+<p>&#8220;This may offer better protection against bit flips,&#8221; Saileshwar said. &#8220;However, these protections haven&#8217;t been thoroughly tested against targeted Rowhammer attacks, so while they may be more resilient, vulnerability cannot yet be ruled out.&#8221;</p>
+<p>In the decade since the <a href="https://arstechnica.com/information-technology/2015/03/cutting-edge-hack-gives-super-user-status-by-exploiting-dram-weakness/">discovery of Rowhammer</a>, GPUhammer is the first variant to flip bits inside discrete GPUs and the first to attack GDDR6 GPU memory modules. All attacks prior to GPUhammer targeted CPU memory chips such as DDR3/4 or LPDDR3/4.</p>
+<p>That includes <a href="https://arstechnica.com/information-technology/2018/05/drive-by-rowhammer-attack-uses-gpu-to-compromise-an-android-phone/">this 2018 Rowhammer variant</a>. While it used a GPU as the hammer, the memory being targeted remained LPDDR3/4 memory chips. GDDR forms of memory have a different form factor. It follows different standards and is soldered onto the GPU board, in contrast to LPDDR, which is in a chip located on hardware apart from the CPUs.</p>
+<p>Besides Saileshwar, the researchers behind GPUhammer include Chris S. Lin and Joyce Qu from the University of Toronto. They will be presenting their research next month at the 2025 Usenix Security Conference.</p>
+
+
+          
+                  
+
+                  
+          </div>
