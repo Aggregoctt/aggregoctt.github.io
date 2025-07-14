@@ -1,0 +1,51 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/07/14/procrastinanza-sisamministrativa-aggiungere-le-righe-e-roba-di-notte/
+date: '2025-07-14T17:52:28'
+excerpt: Se qualcuno mai stesse cercando prove della mia assoluta pigrizia, o comunque
+  della mia ormai sempre incontrastata procrastinazione, sicuramente non avrebbe molta
+  difficoltà a trovarne&#8230; tra le volte che non rifaccio il letto o che non spolvero
+  la stanza, o come mi riduco sempre letteralmente al giorno prima per studiare (cioè
+  proprio oggi 14 luglio, [&#8230;]
+image: assets/media/XqATarfstfvortc-kxAZTw-Y83PBpit3a6aftxmZePXvA.jpeg
+source: octospacc
+tags:
+- Senza categoria
+- sysadmin
+- procrastinazione
+- pigrizia
+- nginx
+- webapps
+title: 'procrastinanza sisamministrativa: aggiungere le righe è roba di notte…'
+---
+<div>
+
+		
+<p><strong>Se qualcuno mai stesse cercando prove della mia assoluta pigrizia, o comunque della mia ormai sempre incontrastata procrastinazione, sicuramente non avrebbe molta difficolt&#224; a trovarne&#8230;</strong> tra le volte che non rifaccio il letto o che non spolvero la stanza, o come mi riduco sempre letteralmente al giorno prima per studiare (cio&#232; proprio oggi 14 luglio, ma questa &#232; un&#8217;altra storia), o alle 23:55 per fare Duolingo, o come ci sono tanti miei post che durante la giornata ritardano e spesse volte addirittura spariscono, o tranquillamente <a href="https://octospacc.altervista.org/2025/07/09/non-dormire-od-alzarsi-codesto-e-il-perenne-dilemma/">come finisco sempre a letto 2 ore pi&#249; tardi del normale</a>, insomma&#8230; &#128128;</p>
+
+
+
+<p>Eppure, nonostante <strong>la mia esistenza altro non &#232; che una sfilza di fallimenti</strong>, certi sbagli sono pi&#249; sbagliati di altri, come si suol dire&#8230; Quella che penso sia <strong>la dimostrazione pi&#249; semplice e lampante</strong> della mia incapacit&#224; di fare, infatti, si &#232; vista ieri sera, quando <strong>finalmente mi sono decisa a sistemare una fonte di disperazione che parzialmente mi attanagliava: ho aggiunto un WebManifest <a href="https://articles.octt.eu.org/">alla mia istanza di Shiori</a></strong>, cos&#236; che il sito possa essere da me installato come PWA su Android anche da Chromium, e non solo da Firefox (dove invece ho <a href="https://octospacc.altervista.org/2024/03/25/volpepivvuaiutooo/">il mio userscript marcio per forzare qualsiasi sito come PWA</a>)&#8230; vabb&#233;, e quindi? &#128564;</p>
+
+
+
+<p>Beh, <strong>questa era una cosa che banalmente andava fatta da secoli&#8230;</strong> non solo perch&#233; la app nativa di Shiori fa cadere i maroni (e quindi non la uso), e la webapp in Firefox altrettanto (visto che Firefox di per s&#233; li fa cadere, essendo che ci mette tipo il triplo del tempo di Chromium a partire e poi lagga pure)&#8230; ma perch&#233; <strong>bastava aggiungere una (1) riga nella mia configurazione di nginx</strong>. <code>sub_filter '&lt;/head&gt;' '&lt;link rel=\'manifest\' href=\'data:application/json;utf8,{ ... malloppone di roba tra nome ed icone ... }\' /&gt;&lt;/head&gt;';</code>. Basta, (almeno nel suo modo pi&#249; semplice) era solo questo. &#128528;</p>
+
+
+
+ 
+
+
+
+<p>&#8230;Cio&#232;, rendiamoci un attimino conto della situazione. <strong>Io ho procrastinato per anni</strong> &#8212; non ricordo pi&#249; quanti anni ormai, ma decisamente troppi, considerato che quando ho iniziato ad usare questo software ero ancora al liceo e hostavo ancora sul Raspino &#8212; <strong>una procedura che ammontava a spendere 5 minuti di tempo</strong> per copiare i link alle icone dal sorgente della pagina HTML, incollarle in una singola fottuta riga cos&#236;, <strong>e buttare tutto in un file di configurazione gi&#224; esistente</strong>. <strong>Tutte cose che ho gi&#224; fatto in tanti altri casi</strong> eh, che quindi non mi hanno richiesto di scervellarmi neanche un po&#8217;, ma, per qualche motivo, porca di quella puttana, <strong>quando c&#8217;avevo voglia non mi ricordavo e quando invece serviva mi seccavo</strong>. &#128557;</p>
+
+
+
+<p>La beffa (la cui presenza, come dico ogni volta, con me &#232; la costante di autenticit&#224; delle mie storie disperate) stavolta &#232; che ho fatto questa semplice operazione, che avrei dovuto fare letterali anni fa, praticamente giusto il giorno dopo <a href="https://octospacc.altervista.org/2025/07/13/pignio-pignatico-si-rende-superpignastico-per-pignare-cose-e-cosine/">quello in cui ho rilasciato Pignio&#8230;</a> software che di per s&#233; non centra niente ma che, con i prossimi aggiornamenti, potrebbe potenzialmente inglobare tutte le funzioni [che mi servono] di Shiori, e in tal caso sarebbe per me assolutamente ovvio togliere di mezzo un software che si rivelerebbe completamente ridondante. (C&#8217;&#232; in realt&#224; un motivo per questa coincidenza, stavolta non sono stati gli spiriti a dirmi di fare cos&#236;&#8230; c&#8217;&#232; una sequenza pi&#249; logica che, nel caso, approfondir&#242;.) &#128574;</p>
+
+
+
+<p>Giusto per chiarezza, comunque: in realt&#224; Shiori include un WebManifest, <a href="https://github.com/go-shiori/shiori/blame/9f6a4c39d4f9f1d90e81092db0be9ed3d6eb01ad/internal/view/index.html#L16">ma solo da 4-5 mesi, stando a quanto vedo dai commit</a>; pochissimo tempo rispetto a quello in cui ho avuto questa maledetta applicazione&#8230; e <strong>stavo per dire che allora avrei in teoria dovuto avere la funzione a quest&#8217;ora, ma invece no</strong>, perch&#233; anche i manutentori di questo progetto sono grandi procrastinatori, e <strong>non fanno uscire una release precompilata da gennaio</strong>, e io ovviamente non mi sbatter&#242; per compilare da sorgente. Meglio cos&#236;, dai&#8230; altrimenti avrei dovuto ammettere che <strong>sono talmente pigra che non aggiorno il software dal giorno in cui lo installai sul nuovo server, ~2 anni fa!</strong> (Ok, no, scherzi a parte, <strong>non sono cos&#236; pigra&#8230; bens&#236; &#232; anche peggio</strong>: non aggiorno da quando l&#8217;ho installato per la prima volta, perch&#233; se lo facessi non avrei pi&#249; accesso <a href="https://github.com/go-shiori/shiori/issues/578">ad una vulnerabilit&#224; che io stessa scoprii e riportai agli sviluppatori</a>, ma di cui faccio uso&#8230; se fosse patchata sulla mia istanza, <a href="https://shiorifeed.octt.eu.org/">uno script che feci all&#8217;epoca</a> non funzionerebbe pi&#249; bene e, neanche a dirlo, dover sistemare pure quello mi seccherebbe tremendamente&#8230; <strong>Sono veramente irrecuperabile!!!</strong>)</p>
+ 
+ 
+	 </div>
