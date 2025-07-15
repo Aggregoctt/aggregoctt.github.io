@@ -1,0 +1,29 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142821/haiku-gets-proper-hidpi-cursor-scaling-improved-colour-schemes-and-more/
+date: '2025-07-15T19:18:44'
+excerpt: Haiku also survived another month of development, so it&#8217;s time for
+  another roundup of what they&#8217;ve been doing. Considering it&#8217;s the height
+  of Summer, it&#8217;s no surprise the list of changes is a bit shorter, consisting
+  mostly of smaller bugfixes and minor improvements. A few standout changes are that
+  cursors can now be properly scaled in HiDPI, the iprowifi3945 driver from FreeBSD
+  has been replaced by the OpenBSD one because it performs better, and several improvements
+  to how colour schemes work. waddlesplash refactored how control edge (borders, etc.)
+  colors are computed inside HaikuControlLook (the class that renders UI controls
+  under the default appearance), cleaning up a lot of convoluted computations. He
+  also fixed some color handling in the progress bar control, and then along with
+  nephele, refactored how control colors are used and computed across the system.
+  The “Control background” color in Appearance preferences now has a new default and
+  is much more properly used across the Interface Kit; under the default colors, renderings
+  should be basically the same as before, but for users on “dark mode” or other custom
+  color schemes, it will now be much easier to pick control colors. ↫ waddlesplash
+  on the Haiku website There&#8217;s more, of course, so be sure to read the whole
+  thing.
+image: null
+source: osnews
+tags:
+- Haiku
+title: Haiku gets proper HiDPI cursor scaling, improved colour schemes, and more
+---
+<div><p>Haiku also survived another month of development, so it&#8217;s time for another roundup of what they&#8217;ve been doing. Considering it&#8217;s the height of Summer, it&#8217;s no surprise the list of changes is a bit shorter, consisting mostly of smaller bugfixes and minor improvements. A few standout changes are that cursors can now be properly scaled in HiDPI, the iprowifi3945 driver from FreeBSD has been replaced by the OpenBSD one because it performs better, and several improvements to how colour schemes work.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>waddlesplash refactored how control edge (borders, etc.) colors are computed inside HaikuControlLook (the class that renders UI controls under the default appearance), cleaning up a lot of convoluted computations. He also fixed some color handling in the progress bar control, and then along with nephele, refactored how control colors are used and computed across the system. The &#8220;Control background&#8221; color in Appearance preferences now has a new default and is much more properly used across the Interface Kit; under the default colors, renderings should be basically the same as before, but for users on &#8220;dark mode&#8221; or other custom color schemes, it will now be much easier to pick control colors.</p>
+<a href="https://www.haiku-os.org/blog/waddlesplash/2025-07-12-haiku_activity_contract_report_june_2025/">&#8619; waddlesplash on the Haiku website</a></blockquote><p>There&#8217;s more, of course, so be sure to read the whole thing.</p></div>
