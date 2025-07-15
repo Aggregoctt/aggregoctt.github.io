@@ -1,0 +1,64 @@
+---
+author: Russell Brandom
+canonical_url: https://techcrunch.com/2025/07/15/ai-coding-tools-are-shifting-to-a-surprising-place-the-terminal/
+date: '2025-07-15T16:30:00'
+excerpt: For years, code-editing tools like Cursor, Windsurf, and GitHub’s Copilot
+  have been the standard for AI-powered software development. But as agentic AI grows
+  more powerful and vibe-coding takes off, a subtle shift has changed how AI systems
+  are interacting with software. Instead of working on code, they’re increasingly
+  interacting directly with the shell of whatever system they’re installed in. It’s
+  a significant change in how AI-powered software development happens – and despite
+  the low profile, it could have significant implications for where the field goes
+  from here.
+image: assets/media/qTVgM6aKlddZ91YhhwB4xg-dQLLgwKOZL_f83ZCesW-xg.jpeg
+source: techcrunch
+tags:
+- AI
+title: 'AI coding tools are shifting to a surprising place: the terminal'
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">For years, code-editing tools like Cursor, Windsurf, and GitHub&#8217;s Copilot have been the standard for AI-powered software development. But as agentic AI grows more powerful and vibe coding takes off, a subtle shift has changed how AI systems are interacting with software. Instead of working on code, they&#8217;re increasingly interacting directly with the shell of whatever system they&#8217;re installed in. It&#8217;s a significant change in how AI-powered software development happens &#8211; and despite the low profile, it could have significant implications for where the field goes from here.</p>
+
+<p class="wp-block-paragraph">The terminal is best known as the black-and-white screen you remember from 90s hacker movies &#8211; a very old-school way of running programs and manipulating data. It&#8217;s not as visually impressive as contemporary code editors, but it&#8217;s an extremely powerful interface if you know how to use it. And while code-based agents can write and debug code, terminal tools are often needed to get software from written code to something that can actually be used.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The clearest sign of the shift to the terminal has come from major labs. Since February, Anthropic, DeepMind and OpenAI have all released command-line coding tools (Claude Code, Gemini CLI, and CLI Codex respectively), and they&#8217;re already among the companies&#8217; most popular products. That shift has been easy to miss, since they&#8217;re largely operating under the same branding as previous coding tools. But under the hood, there have been real changes in how agents interact with other computers, both online and offline. Some believe those changes are just getting started.</p>
+
+<p class="wp-block-paragraph">&#8220;Our big bet is that there&#8217;s a future in which 95% of LLM-computer interaction is through a terminal-like interface,&#8221; says Alex Shaw, co-creator of the leading terminal-focused benchmark TerminalBench.&#160;</p>
+
+<p class="wp-block-paragraph">Terminal-based tools are also coming into their own just as prominent code-based tools are starting to look shaky. The AI code editor Windsurf has been torn apart by dueling acquisitions, with senior executives <a href="https://techcrunch.com/2025/07/11/windsurfs-ceo-goes-to-google-openais-acquisition-falls-apart/">hired away by Google</a> and the remaining company <a href="https://techcrunch.com/2025/07/14/cognition-maker-of-the-ai-coding-agent-devin-acquires-windsurf/">acquired by Cognition</a> &#8211; leaving the consumer product&#8217;s long-term future uncertain.</p>
+
+<p class="wp-block-paragraph">At the same time, new research suggests programmers may be overestimating productivity gains from conventional tools. <a rel="nofollow" href="https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study.pdf">A METR study</a> testing out Cursor Pro, Windsurf&#8217;s main competitor, found that while developers estimated they could complete tasks 20-30 percent faster, the observed process was nearly 20 percent slower. In short, the code assistant was actually costing programmers time.</p>
+
+<p class="wp-block-paragraph">That has left an opening for companies like Warp, which currently holds the top spot on TerminalBench. Warp bills itself as an &#8220;agentic development environment,&#8221; a middle ground between IDE programs and command-line tools like Claude Code. But Warp founder Zach Lloyd is still bullish on the terminal, seeing it as a way to tackle problems that would be out of scope for a code editor like Cursor.&#160;</p>
+ 
+
+<p class="wp-block-paragraph">&#8220;The terminal occupies a very low level in the developer stack, so it&#8217;s the most versatile place to be running agents,&#8221; Lloyd says.</p>
+
+<p class="wp-block-paragraph">To understand how the new approach is different, it can be helpful to look at the benchmarks used to measure them. The code-based generation of tools was focused on solving GitHub issues, the basis of the SWE-Bench test. Each problem on SWE-Bench is an open issue from GitHub &#8212; essentially, a piece of code that doesn&#8217;t work. Models iterate on the code until they find something that works, solving the problem. Integrated products like Cursor have built more sophisticated approaches to the problem, but the GitHub/SWE-Bench model is still the core of how these tools approach the problem: starting with broken code and turning it into code that works.</p>
+
+<p class="wp-block-paragraph">Terminal-based tools take a wider view, looking beyond the code to the whole environment a program is running in. That includes coding but also more DevOps-oriented tasks like configuring a Git server or troubleshooting why a script won&#8217;t run. In <a rel="nofollow" href="https://www.tbench.ai/tasks/write-compressor">one TerminalBench problem</a>, the instructions give a decompression program and a target text file, challenging the agent to reverse-engineer a matching compression algorithm. <a rel="nofollow" href="https://www.tbench.ai/tasks/build-linux-kernel-qemu">Another</a> asks the agent to build the Linux kernel from source, failing to mention that the agent will have to download the source code itself. Solving the issues requires the kind of bull-headed problem-solving ability that programmers need.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;What makes TerminalBench hard is not just the questions that we&#8217;re giving the agents,&#8221; says Shaw, &#8220;it&#8217;s the environments that we&#8217;re placing them in.&#8221;</p>
+
+<p class="wp-block-paragraph">Crucially, this new approach means tackling a problem step-by-step &#8211; the same skill that makes agentic AI so powerful. But even state-of-the-art agentic models can&#8217;t handle all of those environments. Warp earned its high score on TerminalBench by solving just over half of the problems &#8211; a mark of how challenging the benchmark is, but also how much work still needs to be done to unlock the terminal&#8217;s full potential.&#160;</p>
+
+<p class="wp-block-paragraph">Still, Lloyd believes we&#8217;re already at a point where terminal-based tools can reliably handle much of a developer&#8217;s non-coding work &#8211; a value proposition that&#8217;s hard to ignore.</p>
+
+<p class="wp-block-paragraph">&#8220;If you think of the daily work of setting up a new project, figuring out the dependencies and getting it runnable, Warp can pretty much do that autonomously,&#8221; says Lloyd. &#8220;And if it can&#8217;t do it, it will tell you why.&#8221;</p>
+
+
+			
+
+			</div>
