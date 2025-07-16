@@ -1,0 +1,31 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/07/16/lalacre-castoro/
+date: '2025-07-16T02:51:34'
+excerpt: Una funzione che cresce tanto, ma tanto davvero.
+image: assets/media/JxAG8bHOupg7yOCj50Bg_g-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: L’alacre castoro
+---
+<div>
+			<p>Non so se avete mai visto il nome scritto in italiano &#8211; credo ci fosse nelle traduzioni dei giochi matematici di Martin Gardner &#8211; ma se avete un po&#8217; di dimestichezza con l&#8217;informatica teorica dovreste sapere che cos&#8217;&#232; il <a href="https://it.wikipedia.org/wiki/Alacre_castoro">Busy Beaver</a>. O meglio non dovreste essere sicuri di saperlo, perch&#233; ci sono due diverse definizioni. Quella originale, proposta da Tibor Rado come funzione Sigma, rappresenta il massimo numero di 1 che una macchina di Turing a <i>n</i> stati con due simboli (0 e 1) che termina la sua computazione pu&#242; stampare. Rapido ripasso: una macchina di Turing &#232; composta da un nastro infinito, una testina che pu&#242; leggere un simbolo per volta, e un insieme di stati che sono il suo programma, perch&#233; dicono cosa pu&#242; fare (scrivere un simbolo, eventualmente cancellarlo anche se nel nostro caso si suppone che il nastro contenga infiniti 0, spostarsi a sinistra o a destra ed entrare in un nuovo stato). Ci sono macchine di Turing che non terminano mai la computazione: per esempio se partiamo con un nastro pieno di zeri e abbiamo lo stato &#8220;se trovi scritto 0, scrivi 1 e vai a destra&#8221; avremo un nastro che si riempir&#224; di 1 dal punto di partenza a destra verso l&#8217;infinito. Queste macchine non sono cos&#236; interessanti, quindi per il Busy Beaver si richiede che la macchina si ferma. La seconda definizione, indicata come BB(<i>n</i>), non conta gli uni scritti ma il numero massimo di passi che una macchina di Turing con <i>n</i> stati pu&#242; compiere prima di fermarsi: anche in questo caso si richiede che la macchina effettivamente si fermi. </p>
+<p>Possiamo trovare i primi valori di queste funzioni, come al solito, su OEIS. Per quanto riguarda la funzione Sigma, <a href="https://oeis.org/A028444">abbiamo</a> </p>
+<p>$$\Sigma(1) = 1; \Sigma(2) = 4; \Sigma(3) = 6; \Sigma(4) = 13; \Sigma(5) = 4098.$$</p>
+<p>I primi valori di BB() sono invece i seguenti: </p>
+<p>$$ BB(1) = 1; BB(2) = 6; BB(3) = 21; BB(4) = 107; BB(5) = 47176870.$$</p>
+<p>Il valore di BB(5) &#232; stato congetturato nel 1990 e <a href="https://bbchallenge.org/story">dimostrato nel 2024</a>: per verificarlo si sono dovute studiare 88664064 macchine di Turing e decidere se si fermano oppure no. La macchina &#8220;vincente&#8221; ha questa definizione:</p>
+<pre>
+         0       1
+A       1RB 	1LC
+B 	1RC 	1RB
+C 	1RD 	0LE
+D 	1LA 	1LD
+E 	--- 	0LA
+</pre>
+<p>La tabella si legge in questo modo: la colonna di sinistra indica in che stato si trova la macchina, la colonna centrale cosa succede se c&#8217;&#232; scritto 0 sotto la testina e quella di destra cosa succede se c&#8217;&#232; scritto 1; le triplette di caratteri dicono cosa scrivere (0 oppure 1), se andare a destra (R) o sinistra (L), e infine in quale stato posizionarsi. Non &#232; mai possibile arrivare nello stato E e vedere uno 0, quindi quella casella &#232; vuota. </p>
+<p>E quali sono i valori successivi delle due successioni? Non solo non lo si sa ma non lo si potr&#224; nemmeno sapere. Nel caso di &#931;, sappiamo che &#931;(6) &gt; 10^^15. La notazione con doppio cappello, indicata a volte con l&#8217;esponente a sinistra ( 1510 ), &#232; la tetrazione, la generalizzazione di moltiplicazione ed elevamento a potenza. Come 3&#215;5 = 3+3+3+3+3 e 3^5 = 3&#215;3&#215;3&#215;3&#215;3&#215;, 3^^5 = 3^(3^(3^(3^3)))). 10^^15 &#232; insomma un numero cos&#236; grande che &#232; praticamente inconcepibile. Ma BB(6) &#232; molto, molto, molto pi&#249; grande: Scott Aaronson <a href="https://scottaaronson.blog/?p=8972">riporta</a> che BB(6) &gt; 2^^^5, dove il triplo cappelletto indica la pentazione, cio&#232; il passo successivo alla tetrazione. Questo risultato surclassa il vecchio limite che era &#8220;solo&#8221; 10^^10000000. Quanto &#232; grande quel numero? Aaronson spiega che se avessimo 10^^10000000 granelli di sabbia potremmo riempire 10^^10000000 copie dell&#8217;universo osservabile. S&#236;, lo stesso numero, tanto il valore &#232; cos&#236; grande che non ci si accorge della differenza. Numeri oltre ogni comprensione umana, insomma!</p>
+ 
+  					</div>
