@@ -1,0 +1,52 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/07/google-finds-custom-backdoor-being-installed-on-sonicwall-network-devices/
+date: '2025-07-16T20:29:38'
+excerpt: Overstep backdoor nukes key log entries, making detection hard.
+image: assets/media/7mX0UqRFNZW4Nc_pDZpnug-Cut0DNw9Pu5N4AE4rdRA1w.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- hackers
+- sonicwall
+- vulnerabilities
+title: Google finds custom backdoor being installed on SonicWall network devices
+---
+<div>
+                      
+                      
+          <p>Researchers from the Google Threat Intelligence Group said that hackers are compromising SonicWall Secure Mobile Access (SMA) appliances, which sit at the edge of enterprise networks and manage and secure access by mobile devices.</p>
+<p>The targeted devices are end of life, meaning they no longer receive regular updates for stability and security. Despite the status, many organizations continue to rely on them. That has left them prime targets by UNC6148, the name Google has given to the unknown hacking group.</p>
+<p>&#8220;GTIG recommends that all organizations with SMA appliances perform analysis to determine if they have been compromised,&#8221; a <a href="https://cloud.google.com/blog/topics/threat-intelligence/sonicwall-secure-mobile-access-exploitation-overstep-backdoor">report</a> published Wednesday said, using the abbreviation for Google Threat Intelligence Group. &#8220;Organizations should acquire disk images for forensic analysis to avoid interference from the rootkit anti-forensic capabilities. Organizations may need to engage with SonicWall to capture disk images from physical appliances.&#8221;</p>
+<h2>Lacking specifics</h2>
+<p>Many key details remain unknown. For one thing, the attacks are exploiting leaked local administrator credentials on the targeted devices, and so far, no one knows how the credentials were obtained. It&#8217;s also not known what vulnerabilities UNC6148 is exploiting. It&#8217;s also unclear precisely what the attackers are doing after they take control of a device.</p>
+<p>The lack of details is largely the result of the functioning on Overstep, the name of custom backdoor malware UNC6148 is installing after initial compromise of the devices. Overstep allows the attackers to selectively remove log entries, a technique that is hindering forensic investigation. Wednesday&#8217;s report also posits that the attackers may be armed with a zero-day&#160;exploit, meaning it targets a vulnerability that&#8217;s currently publicly unknown. Possible vulnerabilities UNC6148 may be exploiting include:</p>
+<ul>
+<li>CVE-2021-20038: An unauthenticated remote code execution made possible by a memory corruption vulnerability.</li>
+<li>CVE-2024-38475: An unauthenticated path traversal vulnerability in Apache HTTP Server, which is present in the SMA 100. It can be exploited to extract two separate SQLite databases that store user account credentials, session tokens, and seed values for generating one-time passwords.</li>
+<li>CVE-2021-20035: An authenticated remote code execution vulnerability. Security firm Arctic Wolf and SonicWall reported in April that this vulnerability was under active exploitation.</li>
+<li>CVE-2021-20039: An authenticated remote code execution vulnerability. There have been reports that this vulnerability was under active exploitation to install ransomware in 2024.</li>
+<li>CVE-2025-32819: An authenticated file deletion vulnerability that can be exploited to cause a targeted device to revert the built-in administrator credentials to a password so that attackers can gain administrator access.</li>
+</ul>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The researchers from GTIG, which includes Google&#8217;s Mandiant division, wrote:</p>
+<blockquote><p>There are several different paths UNC6148 could have taken with the aforementioned vulnerabilities, or possibly a different vulnerability not mentioned here. CVE-2024-38475 would have provided local administrator credentials and valid session tokens that UNC6148 could reuse, making it an attractive target, but Mandiant was not able to confirm abuse of that vulnerability. Exploitation of the previously mentioned authenticated bugs would require UNC6148 to already have some level of credentials to the SMA appliance, making them less likely to have been abused, but still worth mentioning due to their in-the-wild exploited status. It is also possible that credentials could have been obtained through infostealer logs or credential marketplaces, but GTIG was unable to identify any direct credential exposure related to the abused SMA appliance credentials.</p></blockquote>
+<p>Also unknown is how UNC6148 was able to install a reverse shell that gave them a web interface for running commands and installing Overstep.</p>
+<p>&#8220;Shell access should not be possible by design on these appliances, and Mandiant's joint investigation with the SonicWall Product Security Incident Response Team (PSIRT) did not identify how UNC6148 established this reverse shell,&#8221; the researchers wrote. &#8220;It's possible the reverse shell was established via exploitation of an unknown vulnerability by UNC6148.&#8221;</p>
+<p>Finally, the motivations of the group and what they do after Overstep is installed have also yet to be uncovered.</p>
+<p>With key log entries being deleted on compromised devices, detecting infections is hard. The post provides technical indicators SonicWall customers can use to determine if they have been targeted or hacked.</p>
+
+
+          
+                  
+
+                  
+          </div>
