@@ -1,0 +1,48 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/07/17/pignastico-aggiornamento-sulla-via-della-persistente-miglioranza-aggiornamenti-pignio/
+date: '2025-07-17T11:15:18'
+excerpt: È incredibile e pazzesco quanto in questi giorni sto migliorando infinitamente
+  il mio Pignio, anziché marcire spiritualmente (&#8230;per quanto continuando a farlo
+  fisicamente perché, se pur posso programmare in giro, è chiaramente più comodo e
+  produttivo farlo a casina). Soprattutto, penso di aver risolto diversi problemi
+  in un colpo solo stavolta, quindi miao!!! Poi oh, [&#8230;]
+image: assets/media/LFW3MYWE6dCFuQRPFjpSzg-THZ5adNYbggw3ml3IUciJQ.jpeg
+source: octospacc
+tags:
+- Senza categoria
+- frontend
+- OpenSource
+- webdev
+- Pignio
+- Unpoly
+title: pignastico aggiornamento sulla via della persistente miglioranza! (aggiornamenti
+  Pignio)
+---
+<div>
+
+		
+<p>&#200; incredibile e pazzesco quanto <strong>in questi giorni <a href="https://octospacc.altervista.org/2025/07/13/pignio-pignatico-si-rende-superpignastico-per-pignare-cose-e-cosine/">sto migliorando infinitamente il mio Pignio</a></strong>, anzich&#233; marcire spiritualmente (&#8230;per quanto continuando a farlo fisicamente perch&#233;, se pur posso programmare in giro, &#232; chiaramente pi&#249; comodo e produttivo farlo a casina). Soprattutto, <strong>penso di aver risolto diversi problemi in un colpo solo stavolta</strong>, quindi miao!!! Poi oh, certamente Pignio non mi liberer&#224; in maniera magicamente definitiva dalla brama profonda che avrei per il ficcarmi un coltello in gola, per&#242; finch&#233; dura &#232; la distrazione migliore che ho; mi salvo le mie immaginette perverse, e <strong>da stamattina pure i video</strong>, e faccio finta che vada tutto bene. &#128123;</p>
+
+
+
+<p>Per prima cosa&#8230; cercavo, gi&#224; da quando la settimana scorsa ho iniziato a sviluppare, <strong>un metodo per rendere l&#8217;esperienza di navigazione del sito pi&#249; simile ad una SPA</strong>, cio&#232; quelle webapp moderne tutte lato client che da anni vanno tanto di moda e non funzionano su nessun cazzo di browser se non le ultime 3 versioni major dei 3 browser esistenti&#8230; <strong>ma, ovviamente, tenendo il cuore della app sempre lato server</strong>. Ecco, <strong>la conseguenza di ci&#242; &#232; gi&#224; in produzione, ma io ancora non riesco a credere che, alla base, sia stato cos&#236; semplice</strong>: <a href="https://memos.octt.eu.org/m/BN432FBbSEjN2Qsf8oJfZH">ho trovato questo coso chiamato Unpoly</a> (cio&#232;, Copilot me lo ha detto, ops), ed <strong>&#232; bastato aggiungere il suo bundle JavaScript al mio HTML, + 3 righe di setup, per avere la navigazione senza refresh della pagina&#8230;</strong> sia i link che i form vengono gestiti infinitamente pi&#249; velocemente, perch&#233; il browser non deve distruggere e ricreare tutto il DOM e gli affarini connessi ogni volta. &#128563;</p>
+
+
+
+<p><strong>Dovr&#242; sistemarlo meglio nei giorni a venire</strong>, soprattutto perch&#233; di default non ha animazioni, ma &#232; fantastico che <strong>alla base funzioni gi&#224; completamente da solo&#8230; senza n&#233; cambi alla marcatura HTML, n&#233; l&#8217;aggiunta di codice sul server; cosa che quindi lo rende completamente plug and play</strong>, a differenza di (se ho capito bene) HTMX, un&#8217;altra libreria per fare questo tipo di fancy (e mi sa che, se le cose stanno cos&#236;, implementer&#242; questa libreria anche sui miei siti statici). L&#8217;unica cosa per cui dovr&#242; aggiungere degli attributi HTML specifici (e solo quelli, nient&#8217;altro!) &#232; per il caricamento progressivo nelle pagine degli elementi&#8230; che comunque &#232; qualcosa che, se avessi fatto con codice custom, avrebbe richiesto ben pi&#249; dell&#8217;aggiunta di 2 attributi HTML, quindi <strong>non c&#8217;&#232; proprio niente di cui lamentarsi</strong>. <strong>Per ora l&#8217;ho fatto solo sulla home</strong>, che era la sezione pi&#249; urgente su cui implementare una qualche paginazione, e cos&#236; ho modo di testare se ho fatto le cose per bene, prima di passare alla ricerca e alle collezioni. (Spoiler: NON le ho fatte per bene; c&#8217;&#232; un bug lieve che, ovviamente, ho scoperto solo in produzione&#8230;) &#128012;</p>
+
+
+
+ 
+
+
+
+<p>E, nel frattempo&#8230; <strong>sto provando anche ad usare la funzione di gestione dei progetti di GitHub</strong>, per evitare di perdermi le cose da fare per strada (cosa che, ahim&#232;, succede spesso)&#8230; e per evitare di perdere il mio spirito per strada, perch&#233; <strong>credo che la lavagna kanban, con le cose che si accumulano da una parte per poi spostarsi via via dall&#8217;altra man mano che si completano, sia segretamente soddisfacente.</strong> Forse &#232; anche un&#8217;arma a doppio taglio, perch&#233;, casomai finir&#242; con task arretrate di mesi (e, statisticamente, succeder&#224;), queste staranno l&#236; belline, e la gente potr&#224; rinfacciarmelo&#8230; ma pazienza, la tabella resta comunque pubblica per chi vuole spoilerarsi le prossime schifezze (o, non sia mai, contribuire con codice o documentazione a quello che &#232; un progetto open-source, non sia mai!!!): <a href="https://github.com/octospacc/Pignio/projects">https://github.com/octospacc/Pignio/projects</a>. &#129471;</p>
+
+
+
+<p>Boh, comunque sia, per chi ancora non ha goduto e sente l&#8217;impellente bisogno di farlo (adesso ben pi&#249; di prima) ricordo che l&#8217;applicazione &#232; su <a href="https://pignio.octt.eu.org/"><strong>pignio.octt.eu.org</strong></a>&#8230; Con anche il manifest PWA e tutto, tra l&#8217;altro, con cui si aggiunge per bene come webapp su Chromium&#8230; ma non su Firefox, perch&#233; ancora non ho un&#8217;icona pronta&#8230; e pure questa &#232; una questione da risolvere velocemente, perch&#233; altrimenti ho difficolt&#224; a trovare la app sulla mia stessa schermata home del telefono. (&#8220;Se tornate ancora indietro vi do un pignio!&#8221;) &#128548;</p>
+ 
+ 
+	 </div>
