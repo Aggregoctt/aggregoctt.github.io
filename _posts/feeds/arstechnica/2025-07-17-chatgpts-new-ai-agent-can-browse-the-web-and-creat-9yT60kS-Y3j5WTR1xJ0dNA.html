@@ -1,0 +1,84 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2025/07/chatgpts-new-ai-agent-can-browse-the-web-and-create-powerpoint-slideshows/
+date: '2025-07-17T20:41:52'
+excerpt: New "agentic" AI feature combines web browsing with task-execution abilities.
+image: assets/media/9yT60kS-Y3j5WTR1xJ0dNA-5IaynLruy_z1ZsgDt9XeTA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI assistants
+- AI behavior
+- AI benchmarks
+- AI development tools
+- AI programming
+- AI research
+- AI safety
+- AI security
+- AI work
+- automation
+- browser automation
+- ChatGPT
+- ChatGPT agent
+- computer use model
+- machine learning
+- multimodal AI
+- openai
+- sam altman
+- task automation
+title: ChatGPT’s new AI agent can browse the web and create PowerPoint slideshows
+---
+<div>
+                      
+                      
+           
+<p>On Thursday, OpenAI launched <a href="https://openai.com/index/introducing-chatgpt-agent/">ChatGPT Agent</a>, a new feature that lets the company's AI assistant complete multi-step tasks by controlling its own web browser. The update merges capabilities from OpenAI's earlier <a href="https://arstechnica.com/ai/2025/01/openai-launches-operator-an-ai-agent-that-can-operate-your-computer/">Operator</a> tool and the <a href="https://arstechnica.com/ai/2025/02/after-24-hour-hackathon-hugging-faces-ai-research-agent-nearly-matches-openais-solution/">Deep Research</a> feature, allowing ChatGPT to navigate websites, run code, and create documents while users maintain control over the process.</p>
+<p>The feature marks OpenAI's latest entry into what the tech industry calls "<a href="https://arstechnica.com/ai/2025/03/openai-pushes-ai-agent-capabilities-with-new-developer-api/">agentic AI</a>"&#8212;systems that can take autonomous multi-step actions on behalf of the user. OpenAI says users can ask Agent to handle requests like assembling and purchasing a clothing outfit for a particular occasion, creating PowerPoint slide decks, planning meals, or updating financial spreadsheets with new data.</p>
+<p>The system uses a combination of web browsers, terminal access, and API connections to complete these tasks, including "ChatGPT Connectors" that integrate with apps like Gmail and GitHub.</p>
+<p>While using Agent, users watch a window inside the ChatGPT interface that shows all of the AI's actions taking place inside its own private sandbox. This sandbox features its own virtual operating system and web browser with access to the real Internet; it does not control your personal device. "ChatGPT carries out these tasks using its own virtual computer," OpenAI writes, "fluidly shifting between reasoning and action to handle complex workflows from start to finish, all based on your instructions."</p>
+ 
+
+<p>Like Operator before it, the agent feature requires user permission before taking certain actions with real-world consequences, such as making purchases. Users can interrupt tasks at any point, take control of the browser, or stop operations entirely. The system also includes a "Watch Mode" for tasks like sending emails that require active user oversight.</p>
+<p>Since Agent surpasses Operator in capability, OpenAI says the company's earlier <a href="https://operator.chatgpt.com/">Operator preview site</a> will remain functional for a few more weeks before being shut down.</p>
+<h2>Performance claims</h2>
+<p>OpenAI's claims are one thing, but how well the company's new AI agent will actually complete multi-step tasks will vary wildly depending on the situation. That's because the AI model isn't a complete form of problem-solving intelligence, but rather a complex master imitator. It has some flexibility in piecing a scenario together but also many blind spots. OpenAI trained the agent (and its <a href="https://openai.com/index/computer-using-agent/">constituent components</a>) using examples of computer usage and tool usage; whatever falls outside of the examples absorbed from training data will likely still prove difficult to accomplish.</p>
+
+          
+                       
+                   
+                  
+
+              
+          
+          
+<p>For example, the <a href="https://openai.com/index/chatgpt-agent-system-card/">ChatGPT Agent System Card</a> shows that the agent can fail at complex tasks that require chaining together many steps in a novel way. In a "Cyber Range" evaluation, the agent was tasked with conducting a full-scale operation in a simulated network designed to mimic a small online retailer. When left to solve the problem on its own, the agent was unable to complete the task. While it could successfully perform initial research steps, like identifying servers on the network, it struggled to proceed beyond that and was unable to chain together the necessary exploits to reach the final goal. Even when provided with hints, the agent still failed (which in this case might be good, since it couldn't perform an automated hack), this demonstrates a clear limitation in its ability to solve complex problems that fall outside of its familiar training examples.</p>
+ 
+ 
+
+<p>Even so, OpenAI reports that ChatGPT agent achieves state-of-the-art performance on its own benchmark measurements, which should always be taken with a grain of salt until verified by impartial third parties. On <a href="https://agi.safe.ai/">Humanity's Last Exam</a>, which tests AI performance on expert-level questions, the model scored 41.6 percent accuracy (compare that to <a href="https://arstechnica.com/ai/2025/06/with-the-launch-of-o3-pro-lets-talk-about-what-ai-reasoning-actually-does/">OpenAI o3's</a> 24.9 percent using tools). On <a href="https://epoch.ai/frontiermath">FrontierMath</a>, one of the most difficult math benchmarks yet devised, it reaches 27.4 percent accuracy with tool access (o3 with Python scored 19.3 percent).</p>
+<p>The company also claims the system outperforms humans on certain data science tasks like data analysis and modeling (such as creating forecasts or predictive models). On <a href="https://github.com/LiqiangJing/DSBench">DSBench</a>, a benchmark that seeks to measure that capability, ChatGPT agent scored 89.9 percent on data analysis tasks compared to 64.1 percent for humans, and 85.5 percent on data modeling tasks versus 65.0 percent for humans. The agent also scored 68.9 percent on OpenAI's <a href="https://openai.com/index/browsecomp/">BrowseComp</a> for finding hard-to-locate web information and 45.5 percent on <a href="https://github.com/RUCKBReasoning/SpreadsheetBench">SpreadsheetBench</a> for editing spreadsheets, which is higher than OpenAI's other AI models.</p>
+<p>It's worth noting that even though OpenAI says Agent can craft PowerPoint slide decks for users, the company acknowledged that slideshow generation is still in beta and outputs can feel "rudimentary in formatting and polish."</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<h2>Safety and privacy</h2>
+<p>OpenAI admits that the launch introduces new security considerations. Because ChatGPT Agent can take direct actions on websites and access user data through connected services, it is vulnerable to <a href="https://arstechnica.com/information-technology/2022/09/twitter-pranksters-derail-gpt-3-bot-with-newly-discovered-prompt-injection-hack/">prompt injection attacks</a>&#8212;attempts by hackers to manipulate the AI's behavior through instructions that misdirect the AI model (in this case, likely through hidden instructions on web pages). For example, a site might have an invisible form field that instructs the AI model to enter your credit card information without your knowledge.</p>
+<p>OpenAI says it has implemented safeguards against prompt injections by training the model to identify and "resist" these attacks while requiring user confirmation for consequential or suspicious-looking actions. The model is also trained to actively refuse high-risk tasks such as bank transfers. During a livestream on Thursday, one OpenAI engineer characterized Agent as a system of AI models working together, some of which constantly monitor the other models' behavior for suspicious activity. Those overseers can hypothetically halt a process if they spot a potentially dangerous scenario.</p>
+<p>As for privacy, since Agent runs in a virtual machine on OpenAI's servers, users won't need to worry about the bot having access to local private data stored on their device. But what you feed into ChatGPT Agent could still be shared on the web during its operations. Beyond that, OpenAI says privacy controls for the new agent allow users to delete all browsing data and log out of active sessions with one click. When users take control of the browser in "takeover mode," OpenAI states it does not collect or store data entered during these sessions, including passwords.</p>
+<p>Agent <a href="https://chatgpt.com/?openaicom-did=bb529ad3-a1c9-4649-a8f1-5566f7c384f2&amp;openaicom_referred=true">launches today</a> for ChatGPT Pro users, who receive 400 messages per month. Plus and Team subscribers will gain access over the next few days with 40 monthly messages. Enterprise and Education users will receive access in the coming weeks. The feature is not yet available in the European Economic Area and Switzerland.</p>
+<p>We've not yet used ChatGPT Agent ourselves, but we may follow up with our experiences at a later date.</p>
+
+
+          
+                  
+
+                  
+          </div>

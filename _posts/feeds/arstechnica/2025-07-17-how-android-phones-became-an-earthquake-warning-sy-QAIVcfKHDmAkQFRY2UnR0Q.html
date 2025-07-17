@@ -1,0 +1,60 @@
+---
+author: John Timmer
+canonical_url: https://arstechnica.com/science/2025/07/how-android-phones-became-an-earthquake-warning-system/
+date: '2025-07-17T21:45:36'
+excerpt: The system uses phones' accelerometers to trigger warnings ahead of the shaking.
+image: assets/media/QAIVcfKHDmAkQFRY2UnR0Q-B4V1bmn41pD43Eioi5jUnQ.jpeg
+source: arstechnica
+tags:
+- Google
+- Science
+- accelerometers
+- android
+- Android Earthquake Alert
+- earthquakes
+- seismology
+- smart phones
+title: How Android phones became an earthquake warning system
+---
+<div>
+                      
+                      
+           
+<p>If you're the owner of an Android phone and live in a seismically active region, there's a chance your phone has popped up an unusual warning. Not one that asks for permission to share personal information, or potential malware, but something far more serious: There's an earthquake nearby, and you have up to a minute or two to get to a safer location.</p>
+<p>Starting in the US in 2020 and expanding internationally since, the system is called Android Earthquake Alert (AEA), and it's on by default in most Android phones. And today, Google has a paper in Science that describes how the system works, how the company has improved it, and what it has seen during the first few years of operation, including what caused a handful of false alarms.</p>
+<h2>Shaking things up</h2>
+<p>Smartphones come with accelerometers, small devices that enable them to sense changes in motion. This is how they manage to do tricks like figuring out how many steps you're walking. If your phone is sitting quietly on a table, however, the accelerometer shouldn't be registering much significant motion. But anything from you walking across the room to a truck going by outside can cause vibrations that your phone's accelerometer can pick up. As can the often less subtle vibrations of earthquakes.</p>
+<p>Part of the system Google has devised is a method of telling the two apart. And part of it is using that determination to alert people with enough time to do something about the impending arrival of potentially destructive seismic waves.</p>
+<p>If you happen to be right near the epicenter, your phone will be among the first to pick up the shaking of the earthquake, and there's no way for an alert to do you much good. However, your phone could potentially help others, as the vibrations that it senses move through the Earth's crust at speeds that are relatively slow compared to the sorts of low-latency signals that convey information on the Internet, some of which operate at the speed of light. That means the phones that are initially shaken can be used to trigger a system that will get off a warning that can potentially reach other phones seconds or even minutes ahead of destructive seismic waves.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Of course, the trick is that you only send out the warning if there's an actual earthquake, and not when a truck is passing by. Here, the sheer volume of Android phones sold plays a key role. As a first pass, AEA can simply ignore events that aren't picked up by a lot of phones in the same area. But we also know a lot about the patterns of shaking that earthquakes produce. Different waves travel at different speeds, cause different types of ground motion, and may be produced at different intensities as the earthquake progresses.</p>
+<p>So, the people behind AEA also include a model of earthquakes and seismic wave propagation, and check whether the pattern seen in phones' accelerometers is consistent with that model. It only triggers an alert when there's widespread phone activity that matches the pattern expected for an earthquake.</p>
+ 
+<h2>Raising awareness</h2>
+<p>In practical terms, AEA is distributed as part of the core Android software, and is set to on by default, so it is active in most Android phones. It starts monitoring when the phone has been stationary for a little while, checking for acceleration data that's consistent with the P or S waves produced by earthquakes. If it gets a match, it forwards the information along with some rough location data (to preserve privacy) to Google servers. Software running on those servers then performs the positional analysis to see if the waves are widespread enough to have been triggered by an earthquake.</p>
+<p>If so, it estimates the size and location, and uses that information to estimate the ground motion that will be experienced in different locations. Based on that, AEA sends out one of two alerts, either "be aware" or "take action." The "be aware" alert is similar to a standard Android notification, but it plays a distinctive sound and is sent to users further from the epicenter. In contrast, the "take action" warning that's sent to those nearby will display one of two messages in the appropriate language, either "Protect yourself" or "Drop, cover, and hold on." It ignores any do-not-disturb settings, takes over the entire screen, and also plays a distinct noise.</p>
+
+          
+                  
+
+              
+          
+          
+<p>If, for some reason, the alert reaches the phone after the seismic waves would have, it simply lets the user know that an earthquake has occurred, and gives them the option of learning more about the event.</p>
+<p>As of the end of March last year, the system has sent a total of 1,279 events, ranging in magnitude from 1.9 to 7.8, with the largest event occurring in T&#252;rkiye. Over that time, software updates have improved the service, with things like the error in magnitude estimates dropping considerably. Some of these things involved improvements in the earthquake modeling based on local conditions in different parts of the world, in terms of both rock structure and building construction. Others were considerably more practical, such as ensuring the alerts didn't include vibrating the phone, which would make them useless for gathering data that would refine location and magnitude estimates.</p>
+<p>And the system is remarkably fast. A 2023 event that took place 40 kilometers offshore in the Philippines took about 12 seconds before phones on shore started picking up the initial seismic waves. Alerts started going out about six seconds later and gave those who would experience the worst shaking up to 15 seconds of warning. For the larger event in T&#252;rkiye, warnings could have been received well over a minute before shaking started.</p>
+<p>Overall, over a third of the people who could have received alerts say they got one before the shaking started. Roughly a quarter report receiving it during the sharking, and another quarter immediately after the quake became perceptible.</p>
+<h2>Widespread service</h2>
+<p>Of those roughly 1,300 events that triggered alerts, only three were false positives. One of those was triggered by a different system sending an alert that vibrated a lot of phones, something that should be relatively easy to compensate for in software. The other two were both due to thunderstorms, where heavy thunder caused widespread vibrations centered on a specific location. This led the team to better model acoustic events, which should prevent something similar from happening in the future.</p>
+
+          
+                  
+
+              </div>
