@@ -1,0 +1,31 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142830/tilck-a-tiny-linux-compatible-kernel/
+date: '2025-07-17T12:51:30'
+excerpt: Tilck is an educational monolithic kernel designed to be Linux-compatible
+  at binary level. It runs on i686 and RISCV64 at the moment. Project&#8217;s small-scale
+  and simple design makes it the perfect playground for playing in kernel mode while
+  retaining the ability to compare how the very same usermode bits run on the Linux
+  kernel as well. That&#8217;s a rare feature in the realm of educational kernels.
+  Because of that, building a program for Tilck requires just a gcc-musl toolchain
+  from bootlin.com. Tilck has no need to have its own set of custom written applications,
+  like most educational kernels do. It just runs mainstream Linux programs like the BusyBox suite.
+  While the Linux-compatibility and the monolithic design might seem a limitation
+  from the OS research point of view, on the other side, such design bring the whole
+  project much closer to real-world applications in the future, compared to the case
+  where some serious (or huge) effort is required to port pre-existing software on
+  it. Also, nothing stops Tilck from implementing custom non-Linux syscalls that aware
+  apps might take advantage of. ↫ Tilck GitHub page Tilck implements about 100 Linux
+  syscalls, and is not focused on replacing the Linux kernel or even becoming a generic
+  desktop or server operating system. It supports both i686 and RISC-V, has support
+  for FAT, and a whole slew of other features. It can run a number of console and
+  even a few framebuffer applications, but don&#8217;t expect things like X11 to work,
+  or to ever work.
+image: null
+source: osnews
+tags:
+- OS News
+title: 'Tilck: a tiny Linux-compatible kernel'
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Tilck&#160;is an educational&#160;monolithic&#160;kernel designed to be Linux-compatible at binary level. It runs on i686 and RISCV64 at the moment. Project&#8217;s small-scale and simple design makes it the&#160;perfect playground&#160;for playing in kernel mode while retaining the ability to compare how the&#160;very same&#160;usermode bits&#160;run on the Linux kernel as well. That&#8217;s a&#160;rare feature&#160;in the realm of educational kernels. Because of that, building a program for Tilck requires just a&#160;gcc-musl&#160;toolchain from&#160;<a href="https://toolchains.bootlin.com/">bootlin.com</a>. Tilck has&#160;no need&#160;to have its own set of custom written applications, like most educational kernels do. It just runs mainstream Linux programs like the&#160;BusyBox&#160;suite. While the Linux-compatibility and the monolithic design might seem a limitation from the OS research point of view, on the other side, such design bring the whole project much closer to&#160;real-world&#160;applications in the future, compared to the case where some serious (or huge) effort is required to port pre-existing software on it. Also, nothing stops Tilck from implementing custom non-Linux syscalls that aware apps might take advantage of.</p>
+<a href="https://github.com/vvaltchev/tilck">&#8619; Tilck GitHub page</a></blockquote><p>Tilck implements about 100 Linux syscalls, and is not focused on replacing the Linux kernel or even becoming a generic desktop or server operating system. It supports both i686 and RISC-V, has support for FAT, and a whole slew of other features. It can run a number of console and even a few framebuffer applications, but don&#8217;t expect things like X11 to work, or to ever work.</p></div>
