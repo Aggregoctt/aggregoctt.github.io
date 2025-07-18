@@ -1,0 +1,45 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/07/malware-as-a-service-caught-using-github-to-distribute-its-payloads/
+date: '2025-07-17T22:16:09'
+excerpt: The repository offered the MaaS a distribution channel not blocked in many
+  networks.
+image: assets/media/gKj53phgalFy2yw4-NSHXQ-482B22WWnkZ5rzFQ3U8ajQ.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- GitHub
+- malware
+title: GitHub abused to distribute payloads on behalf of malware-as-a-service
+---
+<div>
+                      
+                      
+          <p>Researchers from Cisco&#8217;s Talos security team have uncovered a malware-as-a-service operator that used public GitHub accounts as a channel for distributing an assortment of malicious software to targets.</p>
+<p>The use of GitHub gave the malware-as-a-service (MaaS) a reliable and easy-to-use platform that&#8217;s greenlit in many enterprise networks that rely on the code repository for the software they develop. GitHub removed the three accounts that hosted the malicious payloads shortly after being notified by Talos.</p>
+<p>&#8220;In addition to being an easy means of file hosting, downloading files from a GitHub repository may bypass Web filtering that is not configured to block the GitHub domain,&#8221; Talos researchers Chris Neal and Craig Jackson <a href="https://blog.talosintelligence.com/maas-operation-using-emmenhtal-and-amadey-linked-to-threats-against-ukrainian-entities/">wrote Thursday</a>. &#8220;While some organizations can block GitHub in their environment to curb the use of open-source offensive tooling and other malware, many organizations with software development teams require GitHub access in some capacity. In these environments, a malicious GitHub download may be difficult to differentiate from regular web traffic.&#8221;</p>
+<h2>Emmenhtal, meet Amadey</h2>
+<p>The campaign, which Talos said had been ongoing since February, used a previously known malware loader tracked under names including Emmenhtal and PeakLight. Researchers from security firm <a href="https://unit42.paloaltonetworks.com/unit-42-scpc-ssscip-uncover-smoke-loader-phishing/">Palo Alto Networks</a> and Ukraine&#8217;s major state cyber agency <a href="https://scpc.gov.ua/en/articles/356">SSSCIP</a> had already documented the use of Emmenhtal in a separate campaign that embedded the loader into malicious emails to distribute malware to Ukrainian entities. Talos found the same Emmenhtal variant in the MaaS operation, only this time the loader was distributed through GitHub.</p>
+<p>The campaign using GitHub was different from one targeting Ukrainian entities in another key way. Whereas the final payload in the one targeting the Ukrainian entities was a malicious backdoor known as SmokeLoader, the GitHub one installed Amadey, a separate malware platform known. Amadey was first seen in 2018 and was initially used to assemble botnets. Talos said the primary function of Amadey is to collect system information from infected devices and download a set of secondary payloads that are customized to their individual characteristics, based on the specific purpose in different campaigns.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Once a target was infected with Amadey, the campaign operators could choose which payloads to deliver to it through a simple GitHub URL. Talos found that the GitHub-hosted campaign was likely part of a larger MaaS operation. The researchers explained:</p>
+<blockquote><p>MaaS is a business model in which the operators of the service sell access to malware or pre-existing infrastructure. In the operation Talos identified, the operators utilized Amadey to download a variety of malware families from fake GitHub repositories onto infected hosts. Initial activity appeared in February 2025, around the same time as the SmokeLoader campaign.</p>
+<p>This distribution of several disparate malware families from a single infrastructure suggests that the threat actors behind the instances of Amadey are distributing payloads for other individuals or groups. In addition, the command and control (C2) infrastructures for the secondary payloads do not overlap with that of Amadey.</p></blockquote>
+<p>The Emmenhtal scripts in the campaign contained the same four-layer design. Three of the layers acted as obfuscation measures. The fourth layer delivered a final PowerShell downloader script.</p>
+<p>Talos also found the GitHub accounts hosting malware disguised as MP4 files and a custom Python-based loader named checkbalance.py.</p>
+<p>Thursday&#8217;s post provides a list of indicators admins and defenders can use to determine if a network has been targeted in the campaign.</p>
+
+
+          
+                  
+
+                  
+          </div>
