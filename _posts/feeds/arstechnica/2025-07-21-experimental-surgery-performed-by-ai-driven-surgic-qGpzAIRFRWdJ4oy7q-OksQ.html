@@ -1,0 +1,66 @@
+---
+author: Jacek Krywko
+canonical_url: https://arstechnica.com/science/2025/07/experimental-surgery-performed-by-ai-driven-surgical-robot/
+date: '2025-07-21T17:15:00'
+excerpt: In experimental surgery on pig organs, the robot performed well.
+image: assets/media/qGpzAIRFRWdJ4oy7q-OksQ-wgYIAyQTugOldATiC8qJ6A.jpeg
+source: arstechnica
+tags:
+- AI
+- Science
+- Biology
+- medicine
+- neural networks
+- robotic surgery
+- Robotics
+- surgical robots
+title: Experimental surgery performed by AI-driven surgical robot
+---
+<div>
+                      
+                      
+           
+<p>Intuitive Surgical, an American biotechnology company, introduced DaVinci surgical robots in the late 1990s, and they became groundbreaking teleoperation equipment. Expert surgeons could operate on patients remotely, manipulating the robotic arms and their surgical tools based on a video feed from DaVinci&#8217;s built-in cameras and endoscopes.</p>
+<p>Now, John Hopkins University researchers put a ChatGPT-like AI in charge of a DaVinci robot and taught it to perform a gallbladder-removal surgery.</p>
+<h2>Kuka surgeries</h2>
+<p>The idea to put a computer behind the wheel of a surgical robot is not entirely new, but these had mostly relied on using pre-programmed actions. &#8220;The program told the robot exactly how to move and what to do. It worked like in these Kuka robotic arms, welding cars on factory floors,&#8221; says Ji Woong Kim, a robotics researcher who led the study on autonomous surgery. To improve on that, a team led by Axel Krieger, an assistant professor of mechanical engineering at John Hopkins University, built STAR: the Smart Tissue Autonomous Robot. In 2022, it successfully performed a surgery on a live pig.</p>
+<p>But even STAR couldn&#8217;t do it without specially marked tissues and a predetermined plan. STAR&#8217;s key difference was that its AI could make adjustments to this plan based on the feed from cameras.</p>
+<p>The new robot can do considerably more. &#8220;Our current work is much more flexible,&#8221; Kim says. &#8220;It is an AI that learns from demonstrations.&#8221; The new system is called SRT-H (Surgical Robot Transformer) and was developed by Kim and his colleagues, Krieger added.</p>
+<p>The first change they made was to the hardware. Instead of using a custom robot like STAR, the new work relied on the DaVinci robot, which has become a de facto industry standard in teleoperation surgeries, with over 10,000 units already deployed in hospitals worldwide. The second change was the software driving the system. It relied on two transformer models, the same architecture that powers ChatGPT. One was a high-level policy module, which was responsible for task planning and ensuring the procedure went smoothly. The low-level module was responsible for executing the tasks issued by the high-level module, translating its instructions into specific trajectories for the robotic arms.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>When the system was ready, Kim&#8217;s team put it through a training phase that looked a bit like mentoring a novice human doctor.</p>
+<h2>Imitation learning</h2>
+<p>The procedure Kim chose for the robot to master was cholecystectomy, a surgical gallbladder removal routinely performed in US hospitals (roughly 700,000 times a year). &#8220;The objective is to remove the tubes connecting the gallbladder to other organs without causing the internal fluids to flow out,&#8221; Kim explained. To make that happen, a surgeon has to place three clips on the cystic duct (the first tube), cut&#160;it, and then clip and cut the cystic artery (the second tube) in a similar way.</p>
+<p>Kim&#8217;s team broke this procedure down into 17 steps, sourced lots of porcine gallbladder and liver samples from pig cadavers to experiment on, and had a trained research assistant operate a DaVinci robot, performing the procedure over and over again to build the training data set for the robot.</p>
+<p>Algorithms that would power the SRT-H were trained on over 17 hours of video captured from the DaVinci endoscope and cameras installed on its robotic arms. This video feed was complemented by the kinematics data&#8212;the exact motions made by the robotic arms&#8212;and natural language annotations.</p>
+<p>Based on this data, Kim&#8217;s robot learned to perform a cholecystectomy with 100 percent success rate when operating on samples it has not been trained on. It could also accept human feedback in natural language&#8212;simple tips like &#8220;move your arm a bit to the left&#8221; or &#8220;put the clip a bit higher.&#8221; These are the sorts of hints a mentoring surgeon would give to a student and, in a similar way, SRT-H could learn from them over time.</p>
+<p>&#8220;You can take any kind of surgery, not just this one, train the robot in the same way, and it will be able to perform that surgery,&#8221; Kim says. SRT-H was also robust to differences in anatomy between samples, other tissue getting in the way, and imperfect imagery. It could even recover from all the tiny mistakes it was making during the training process. Compared to an expert human surgeon performing the same procedure, the robot was equally precise, although a bit slower.</p>
+
+          
+                  
+
+              
+          
+          
+<p>But it wasn&#8217;t robust against corporate affairs.</p>
+ 
+<h2>Robotic secrets</h2>
+<p>To move from operating on pig cadaver samples to live pigs and then, potentially, to humans, robots like SRT-H need training data that is extremely hard to come by. Intuitive Surgical is apparently OK with releasing the video feed data from the DaVinci robots, but the company does not release the kinematics data. And that&#8217;s data that Kim says is necessary for training the algorithms. &#8220;I know people at Intuitive Surgical headquarters, and I&#8217;ve been talking to them,&#8221; Kim says. &#8220;I&#8217;ve been begging them to give us the data. They did not agree.&#8221;</p>
+<p>The explanation Intuitive Surgical leadership offered for restricting access to the kinematics data, according to Kim, was they were worried about the competition reverse-engineering the mechanics of their robot. &#8220;It&#8217;s really the upper management who is not up to speed with AI,&#8221; Kim argued. &#8220;They don&#8217;t realize the potential of these things. Their engineers, every scientist, they want to open-source the data. It&#8217;s just their legal department is very conservative.&#8221;</p>
+<p>But he already sees a way around this problem. &#8220;We can start with attaching motion-tracking sensors to manual surgical tools, and get the kinematics data this way,&#8221; Kim told Ars. Then, the movements of these tools guided by the hands of expert human surgeons could be recreated by conventional robotic arms like the ones used in STAR.</p>
+<p>And then, Kim thinks, we can go even more sci-fi than that. &#8220;I&#8217;m currently at Stanford, and I&#8217;m very involved in a humanoid robotics project&#8212;building a general-purpose model. And one of the possible applications is in the operating room,&#8221; Kim says.</p>
+<p>Science Robotics, 2025. &#160;DOI: <a href="http://dx.doi.org/10.1126/scirobotics.adt5254">10.1126/scirobotics.adt5254</a></p>
+
+
+          
+                  
+
+                  
+          </div>

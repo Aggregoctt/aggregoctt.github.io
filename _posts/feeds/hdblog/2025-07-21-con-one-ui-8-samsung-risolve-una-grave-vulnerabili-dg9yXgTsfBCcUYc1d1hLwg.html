@@ -1,0 +1,14 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/samsung/articoli/n626046/one-ui-8-area-personale-bug-fix-samsung-galaxy/
+date: '2025-07-21T17:30:00'
+excerpt: L'ultima release corregge un problema noto e rende finalmente i dati protetti
+  più sicuri.
+image: assets/media/dg9yXgTsfBCcUYc1d1hLwg-0ZXolBDno2BgZYcZ3d3fog.jpeg
+source: hdblog
+tags:
+- Android
+- Samsung
+title: Con One UI 8 Samsung risolve una grave vulnerabilità dell'Area Personale
+---
+<div><p>Per comprendere la natura del problema, &#232; fondamentale conoscere il concetto di "profili" di Android. Questi sono spazi isolati con dati delle app separati dall'utente principale, ma che condividono con il resto dei dati alcune impostazioni a livello di sistema. Il "work profile" &#232; il tipo pi&#249; noto, ma ne esistono altri. Ad esempio, <a href="https://www.hdblog.it/android-14/">Android 14</a> ha introdotto i profili "clone" per eseguire pi&#249; istanze di un'app, mentre <a href="https://www.hdblog.it/android-15/">Android 15</a> ha aggiunto i profili "privati" per supportare la funzione Private Space di Google.</p><p>Quando Samsung ha introdotto l'Area Personale nel 2017, l'unica opzione era implementarla come un "work profile". Sebbene questo funzionasse nella maggior parte dei casi, creava un problema fondamentale: alcuni componenti di sistema identificavano erroneamente l'Area Personale come un profilo di lavoro standard. Questo era problematico perch&#233; tali componenti non lo trattavano come lo spazio altamente sicuro che doveva essere, il che poteva portare a rivelare involontariamente le informazioni sensibili al suo interno.</p>    <p>Fortunatamente, <strong>One UI 8 risolve questa falla riclassificando l'Area Personale come un "profilo privato"</strong>. La modifica, apparentemente minore, fa la differenza, assicurando che il Photo Picker e il Permission Controller di Google ora riconoscano correttamente l'Area Personale come uno spazio protetto e nascondano adeguatamente i suoi file e le informazioni sulle app.</p>    <p>Nonostante questo significativo miglioramento, persiste una questione: l'Area Personale aggiornata non si integra ancora con i launcher di terze parti nonostante Google ne abbia abilitato il supporto con Android 15. Sta a Samsung, dunque, riempire questa lacuna implementando le API necessarie.</p></div>
