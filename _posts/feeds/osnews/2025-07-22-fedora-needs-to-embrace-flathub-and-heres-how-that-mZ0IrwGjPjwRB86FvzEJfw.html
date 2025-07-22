@@ -1,0 +1,54 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142867/fedora-needs-to-embrace-flathub-and-heres-how-that-could-be-done/
+date: '2025-07-22T18:17:54'
+excerpt: 'Earlier this year, we talked about a peculiar oddity concerning Flatpaks
+  and Fedora: unlike just about any other distribution, Fedora maintains its own Flatpak
+  repository, while everyone else just defaults to Flathub. While there&#8217;s a
+  few technical differences between Fedora Flatpaks and Flathub Flatpaks, the main
+  gist is that the Fedora ones are built using Fedora&#8217;s own RPMs, while Flathub&#8217;s
+  are built using different means. This is an odd situation, since it does not reflect
+  what users really want &#8211; users seem to greatly prefer Flatpaks from Flathub,
+  since they have fewer bugs, are packaged by the applications&#8217; creators, and
+  bugs in Flathub Flatpaks can be reported to the actual developers, whereas bugs
+  in Fedora Flatpaks generally cannot. As such, Fedora users are often surprised to
+  learn that the Flatpak they installed came from Fedora instead of Flathub. Now,
+  since Fedora&#8217;s long-term goal is to make their immutable, Flatpak-focused
+  variants the default, this situation needs to be addressed. As such, Fedora and
+  GNOME developer Michael Catanzaro has published an incredibly detailed article outlining
+  all the issues and possible solutions and courses of action. The basic gist is that
+  before Fedora can consider switching from its own Flatpak repository to Flathub,
+  a number of shortcomings in Flathub must be addressed: Some of these points are
+  fairly obvious, but let&#8217;s go over them anyway. A lot of binaries on Flathub
+  are pre-built in that they are not built using Flathub&#8217;s infrastructure, and
+  as such, you don&#8217;t know if anything has been done to the code between, say,
+  the code&#8217;s release on GitHub and the Flatpak you install on your computer.
+  This obviously needs to change, and ideally, all Flatpaks on Flathub should be reproducible.
+  End-of-life runtimes should obviously also not be a thing, for entirely obvious
+  reasons. Currently, a little under a third of applications on Flathub use end-of-life
+  runtimes, meaning the runtimes they use are not receiving any security updates.
+  The same applies to external dependencies packaged inside Flatpaks; they can be
+  outdated too, but many Flatpaks do not use the designated tool to deal with this
+  issue. Obviously, holes in the Flatpak sandbox should not exist either, again for
+  entirely obvious reasons. Catanzaro proposes a number of solutions to all of these
+  problems, which require work from both Fedora and Flathub to be implemented. On
+  top of that, even once these issues are satisfactorily addressed, there&#8217;s
+  a debate to be had over the exact way in which both the traditional and immutable
+  variants of Fedora move on over to Flathub &#8211; the variant I personally like
+  the most is where the core applications installed by default remain in control of
+  Fedora, while everything else gets installed from Flathub. Of course, this is not
+  of much relevance to people who prefer plain, traditional RPMs &#8211; such as myself
+  &#8211; to whom Flatpaks are more of a &#8220;if all else fails&#8221; option than
+  a default. While the immutable, Flatpak-based variants of Fedora are definitely
+  on their way to become the default option, the traditional RPM variants will not
+  be going anywhere, and will remain an option as well. I think defaulting new users
+  to the immutable variants is the way to go, even if I personally won&#8217;t be
+  using them.'
+image: null
+source: osnews
+tags:
+- Fedora Core
+title: Fedora needs to embrace Flathub, and here’s how that could be done
+---
+<div><p>Earlier this year, we talked about a peculiar oddity concerning Flatpaks and Fedora: unlike just about any other distribution, <a href="https://www.osnews.com/story/141723/fedora-should-not-push-its-users-to-its-own-flatpak-repository/">Fedora maintains its own Flatpak repository</a>, while everyone else just defaults to Flathub. While there&#8217;s a few technical differences between Fedora Flatpaks and Flathub Flatpaks, the main gist is that the Fedora ones are built using Fedora&#8217;s own RPMs, while Flathub&#8217;s are built using different means.</p><p>This is an odd situation, since it does not reflect what users really want &#8211; users seem to greatly prefer Flatpaks from Flathub, since they have fewer bugs, are packaged by the applications&#8217; creators, and bugs in Flathub Flatpaks can be reported to the actual developers, whereas bugs in Fedora Flatpaks generally cannot. As such, Fedora users are often surprised to learn that the Flatpak they installed came from Fedora instead of Flathub.</p><p>Now, since Fedora&#8217;s long-term goal is to make their immutable, Flatpak-focused variants the default, this situation needs to be addressed. As such, Fedora and GNOME developer Michael Catanzaro has published an incredibly detailed article outlining all the issues and possible solutions and courses of action. The basic gist is that before Fedora can consider switching from its own Flatpak repository to Flathub, a number of shortcomings in Flathub must be addressed:</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><ul class="wp-block-list"><li>Open source software must be built from source on trusted infrastructure.</li><li>Applications must not depend on end-of-life runtimes.</li><li>Applications must use flatpak-external-data-checker to monitor bundled dependencies wherever possible.</li><li>Sandbox holes must be phased out, except where this is fundamentally technically infeasible.</li></ul>
+<a href="https://blogs.gnome.org/mcatanzaro/2025/07/21/fedora-must-carefully-embrace-flathub/">&#8619; Michael Catanzaro</a></blockquote><p>Some of these points are fairly obvious, but let&#8217;s go over them anyway. A lot of binaries on Flathub are pre-built in that they are not built using Flathub&#8217;s infrastructure, and as such, you don&#8217;t know if anything has been done to the code between, say, the code&#8217;s release on GitHub and the Flatpak you install on your computer. This obviously needs to change, and ideally, all Flatpaks on Flathub should be reproducible.</p><p>End-of-life runtimes should obviously also not be a thing, for entirely obvious reasons. Currently, a little under a third of applications on Flathub use end-of-life runtimes, meaning the runtimes they use are not receiving any security updates. The same applies to external dependencies packaged inside Flatpaks; they can be outdated too, but many Flatpaks do not use the <a href="https://github.com/flathub-infra/flatpak-external-data-checker">designated tool</a> to deal with this issue. Obviously, holes in the Flatpak sandbox should not exist either, again for entirely obvious reasons.</p><p>Catanzaro proposes a number of solutions to all of these problems, which require work from both Fedora and Flathub to be implemented. On top of that, even once these issues are satisfactorily addressed, there&#8217;s a debate to be had over the exact way in which both the traditional and immutable variants of Fedora move on over to Flathub &#8211; the variant I personally like the most is where the core applications installed by default remain in control of Fedora, while everything else gets installed from Flathub.</p><p>Of course, this is not of much relevance to people who prefer plain, traditional RPMs &#8211; such as myself &#8211; to whom Flatpaks are more of a &#8220;if all else fails&#8221; option than a default. While the immutable, Flatpak-based variants of Fedora are definitely on their way to become the default option, the traditional RPM variants will not be going anywhere, and will remain an option as well. I think defaulting new users to the immutable variants is the way to go, even if I personally won&#8217;t be using them.</p></div>
