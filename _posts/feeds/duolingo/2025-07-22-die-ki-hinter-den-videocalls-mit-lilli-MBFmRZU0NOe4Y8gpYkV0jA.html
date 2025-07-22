@@ -1,0 +1,148 @@
+---
+author: Parker Henry
+canonical_url: https://blog.duolingo.com/ki-videocalls-lilli/
+date: '2025-07-22T12:00:53'
+excerpt: Wirf einen Blick hinter die Kulissen unseres immersiven Features für freies
+  Sprechen.
+image: assets/media/MBFmRZU0NOe4Y8gpYkV0jA-9RDKZfx8NWsamYQgCBVkaw.jpeg
+source: duolingo
+tags:
+- Sprachen (DE)
+- Produkt (DE)
+- Lernen (DE)
+- Einführung in Duolingo (DE)
+- Unterhaltung (DE)
+- Features (DE)
+- Sprechen (DE)
+- Hörverstehen (DE)
+title: Die KI hinter den Videocalls mit Lilli
+---
+<div>
+                
+    
+    
+
+
+    
+        
+            
+                  
+                    <h1 class="section-title post-title">Die KI hinter den Videocalls mit Lilli</h1>
+                                <p>Wirf einen Blick hinter die Kulissen unseres immersiven Features f&#252;r freies Sprechen.</p>
+                 
+            
+             
+        
+         
+        
+            
+                <p>Large Language Models (LLMs, dt. gro&#223;e Sprachmodelle) wie ChatGPT, Claude und Gemini wurden mit gigantischen Mengen an Sprachdaten trainiert, damit wir mit ihnen nat&#252;rliche &#8222;Gespr&#228;che&#8220; f&#252;hren k&#246;nnen. Sie f&#252;r den <a href="https://blog.duolingo.com/de/sprachen-ueben-mit-chatgpt/">Sprachunterricht</a> einzusetzen ist allerdings nicht so einfach, denn es gen&#252;gt nicht zu sagen: &#8222;Hey, sprich mit diesem Lernenden mal auf Spanisch!&#8220;</p><p>Um KI-gest&#252;tzte Funktionen wie den <a href="https://blog.duolingo.com/de/videocall/">Videocall mit Lilli</a> zu entwickeln, k&#246;nnen wir das Modell nicht einfach machen lassen, was es will. Stattdessen verwenden wir gezielte Anweisungen und eine vorgegebene Struktur (siehe unten), um sicherzustellen, dass die Anrufe stets unterhaltsam sind, eine Prise frechen Humor seitens Lilli enthalten &#8211; und nat&#252;rlich die Gelegenheit bieten, in der Zielsprache Sprechen zu &#252;ben.</p><h2 id="so-bauen-wir-unsere-videocalls-auf">So bauen wir unsere Videocalls auf</h2><p>Damit jeder Anruf lehrreich und unterhaltsam wird, m&#252;ssen wir viele wichtige Punkte unter einen Hut bringen:</p><ul><li>Der Anruf muss dem passenden <a href="https://blog.duolingo.com/de/welches-ger-niveau-enspricht-meinen-zielen/">Niveau nach GER</a> (engl. CEFR) entsprechen.</li><li>Er muss einen Zweck haben, z. B. eine Geschichte erz&#228;hlen, nach deiner Meinung fragen, dir etwas beibringen oder dir einfach nur die M&#246;glichkeit bieten, etwas zu plaudern.</li><li>Du sollst das Gef&#252;hl haben, der Anruf k&#228;me wirklich von Lilli, einem sarkastischen <a href="https://blog.duolingo.com/duolingo-female-character-origin-stories/">Emo-Teenager</a> (Artikel auf Englisch) und nicht von einem KI-Chatbot.</li></ul><p>Um das richtige Gleichgewicht zu finden, <a href="https://blog.duolingo.com/de/llm-duolingo-lektionen/">erstellen wir einen Prompt</a> (also eine Aufeinanderfolge von Anweisung) f&#252;r das LLM. Man kann sich den Prompt wie ein Gespr&#228;ch mit drei Teilnehmern vorstellen:</p><ul><li><strong>Assistent</strong>: Das ist Lilli, der KI-Bot, der auf das reagiert, was du als <strong>User</strong> sagst, und sich dabei an die Anweisungen des Systems h&#228;lt.</li><li><strong>System</strong>: Dieses kann man sich als Coach des <strong>Assistenten</strong> vorstellen. Die Lernspezialisten von Duolingo schreiben die Anweisungen, die das <strong>System</strong> dem <strong>Assistenten</strong> (Lilli) gibt. In diesen Anweisungen steht, wie Lilli sich verhalten und was sie sagen soll.</li><li><strong>User</strong>: Das bist du &#8211; die lernende Person, die mit dem <strong>Assistenten </strong>(Lilli) interagiert.</li></ul><p>In all unseren Videocalls geben wir dem <strong>System</strong> eine umfassende Reihe von Anweisungen dazu, wie Lilli sich verhalten soll. Diese enthalten Informationen &#252;ber Lilli, ihre Pers&#246;nlichkeit sowie ihren Hintergrund. Sie schreiben Lilli auch vor, wie sie dir helfen soll, wenn du beim Sprechen nicht weiterkommst, sie sorgen daf&#252;r, dass Lilli auf dem f&#252;r dich passenden Niveau spricht usw.</p><p>Au&#223;erdem &#8211; und das ist sehr wichtig &#8211; geben wir einen grundlegenden Gespr&#228;chsleitfaden vor. Auch wenn jedes Gespr&#228;ch mit Lilli einzigartig ist, folgen sie alle einem &#228;hnlichen Aufbau:</p><p><strong>Teil 1: Gespr&#228;chser&#246;ffnung</strong><br>Das <strong>System</strong> sagt Lilli, wie sie das Gespr&#228;ch beginnen soll. Das ist fast immer eine Begr&#252;&#223;ung in der Lernsprache. Unsere Entwickler haben eine aufeinanderfolgende Reihe von Begr&#252;&#223;ungen programmiert, die Lilli f&#252;r jedes GER-Niveau durchl&#228;uft.</p><p><strong>Teil 2: Erste Frage</strong><br>Hier wird das Thema des Gespr&#228;chs eingef&#252;hrt. Lilli k&#246;nnte dir eine Frage &#252;ber dich selbst stellen, ein fr&#252;heres Thema wieder aufgreifen oder sagen, dass sie dir etwas &#252;ber die Kultur deiner Lernsprache erz&#228;hlen m&#246;chte.</p><p><strong>Teil 3: Gespr&#228;ch</strong><br>Jetzt k&#246;nnt ihr frei miteinander sprechen. Das <strong>System </strong>hat Lilli die Anweisung gegeben, darauf zu reagieren, was du sagst, und das <strong>Gespr&#228;ch </strong>dann auf nat&#252;rliche Weise weiterzuf&#252;hren.</p><p><strong>Teil 4: Gespr&#228;chsbeendigung</strong><br>Das LLM wurde so programmiert, dass das <strong>System</strong> nach einer bestimmten Anzahl an Gespr&#228;chswechseln Lilli zufl&#252;stert: &#8222;Hallo! Sag, dass du jetzt gehen musst.&#8220; So wird verhindert, dass das Gespr&#228;ch ewig weitergeht.</p><h2 id="hinter-den-kulissen">Hinter den Kulissen</h2><h3 id="lillis-ged%C3%A4chtnis">Lillis Ged&#228;chtnis</h3><p>Wenn du schon mehrere Videocalls mit Lilli hattest und sie dann Informationen aus vorigen Gespr&#228;chen erw&#228;hnt, fragst du dich vielleicht, wie Lilli sich das alles merkt. Ganz einfach: Jedes Mal, wenn Lilli auflegt, nehmen wir das Transkript des Calls, zeigen es dem Sprachmodell und fragen: &#8222;Welche wichtigen Informationen &#252;ber den <strong>User</strong> k&#246;nnen wir dem Gespr&#228;ch entnehmen?&#8220; Die gewonnenen Informationen werden dann in eine Faktenliste aufgenommen. Diese aktualisierte Liste wird Teil der Anweisungen, die das <strong>System</strong> Lilli beim n&#228;chsten Anruf gibt.</p><p>Noch bevor Lilli anf&#228;ngt zu sprechen, sagt das <strong>System</strong> also: &#8222;Erinnerst du dich noch an diesen <strong>User</strong>? Hier ist eine Faktenliste: Die Person besitzt zwei Hunde, studiert Architektur und isst am liebsten Pizza.&#8220; Also k&#246;nnte Lilli sagen: &#8222;Wie geht&#8217;s deinen Hunden?&#8220; oder &#8222;Hast du in letzter Zeit eine gute Pizza gegessen?&#8220;, um im Gespr&#228;ch ein pers&#246;nliches Element herbeizuzaubern.</p><h3 id="die-erstellung-der-ersten-frage">Die Erstellung der ersten Frage</h3><p>Die erste Frage ist ein wichtiger Ausgangspunkt f&#252;r das Gespr&#228;ch. Sie muss gut gew&#228;hlt sein: Sie soll zu dem passen, was du gerade lernst, das richtige <a href="https://blog.duolingo.com/right-level-of-difficulty/">Schwierigkeitsniveau</a> (Artikel auf Englisch) haben und die Grundlage f&#252;r ein gutes Gespr&#228;ch schaffen. Damit die Frage all diesen Anforderungen gerecht wird, schreiben wir ganz genaue Anweisungen speziell daf&#252;r, wie man eine gute Einstiegsfrage formuliert!</p><p>Das <strong>System </strong>formuliert die erste Frage genau in dem Moment, in dem der Videoanruf bei dir eingeht.</p>
+ 
+
+  
+    Vorbereitung des Gespr&#228;chs
+  
+  
+     
+    Hey, LLM! Schreibe eine Frage, die der Assistent Lilli dem User stellen kann.
+    <ul>
+      <li>Die Frage muss auf das GER-Niveau des Lerners abgestimmt sein.</li>
+      <li>Die Frage muss die W&#246;rter <b>music</b> (Musik) und <b>like</b> (m&#246;gen) beinhalten.</li>
+      <li>Die Frage muss &#8230; (usw.)</li>
+    </ul>
+    
+  
+  
+     
+    Hier ist die Frage!
+    <br><br>
+    &#8222;<b>What kind of music do you like listening to?</b>&#8220; (Welche Art von Musik h&#246;rst du gern?)
+  
+
+ 
+<p>Dann nehmen wir diese Frage aus der Vorbereitung des Gespr&#228;chs und geben sie an den Hauptteil des Gespr&#228;chs weiter, in dem das <strong>System</strong> Lilli vorschreibt, wie sie das Gespr&#228;ch mit dir f&#252;hren soll:</p>
+ 
+
+  
+    Hauptteil des Gespr&#228;chs
+  
+  
+     
+    Du bist Lilli und hier sind ein paar Informationen &#252;ber dich:
+    <ul>
+      <li>Du bist weiblich und Teenager.</li>
+      <li>Du bist sehr sarkastisch.</li>
+      <li>Du bist introvertiert.</li>
+    </ul>
+    Du sprichst mit einer Person, die Englisch auf GER-Niveau A2 lernt. Hier sind ein paar Informationen &#252;ber diese Person:
+    <ul>
+      <li>Sie hat zwei Hunde.</li>
+      <li>Sie studiert Architektur.</li>
+      <li>Ihr Lieblingsessen ist Pizza.</li>
+    </ul>
+    Beginne das Gespr&#228;ch mit der folgenden Er&#246;ffnung: &#8222;<b>Hey!</b>&#8220;
+    <br><br>
+    Stelle anschlie&#223;end die erste Frage: &#8222;<b>What kind of music do you like listening to?</b>&#8220; (Welche Art von Musik h&#246;rst du gern?)
+  
+  
+     
+    Verstanden. Ich werde jetzt das Gespr&#228;ch beginnen.
+    <br><br>
+    &#8222;<b>Hey!</b>&#8220;
+  
+
+ 
+<p>W&#228;hrend wir das Feature <strong>Videocall</strong> entwickelten, erkannten wir, dass es wichtig ist, die erste Frage separat vom Rest schreiben zu lassen. Wenn wir die Anweisungen f&#252;r die erste Frage zusammen mit den Anweisungen f&#252;r den restlichen Gespr&#228;chsverlauf geben w&#252;rden, k&#246;nnten wir das LLM &#252;berfordern &#8211; mit dem Ergebnis, dass die S&#228;tze zu komplex werden, oder dass das in der Gespr&#228;chsvorbereitung bereitgestellte Vokabular fehlt. Das ist in etwa so, als w&#252;rde man dir gleich morgens f&#252;nfzig Aufgaben geben: Du w&#252;rdest wahrscheinlich einige davon vergessen oder alle f&#252;nfzig nur halbherzig erledigen. Weil wir jedoch m&#246;chten, dass alles gr&#252;ndlich und durchdacht erledigt wird, bereiten wir die erste Frage separat vor.</p><h3 id="die-auswertung-der-gespr%C3%A4che">Die Auswertung der Gespr&#228;che</h3><p>Nicht nur die erste Frage ist wichtig &#8211; wir wollen nat&#252;rlich auch, dass Lilli w&#228;hrend des kompletten Gespr&#228;chs auf das Gesagte dynamisch reagiert!</p><p>Zu Beginn des Jahres sahen wir, dass die Lernenden manchmal nicht &#252;ber das Thema sprechen wollten, auf das Lilli den Fokus legen sollte. Es konnte passieren, dass Lilli fragte: &#8222;Hast du schon mal von Schweizer Volksmusik geh&#246;rt?&#8220; und der Lerner antwortete: &#8222;Du wirst es nicht glauben, Lilli! Ich habe gerade den gesamten Spanischkurs abgeschlossen!&#8220; Lilli antwortete dann: &#8222;Das ist sch&#246;n. Zur&#252;ck zur Schweizer Volksmusik, kennst du einige Lieder?&#8220; &#129763;</p><p>Damit die <strong>User </strong>die Gespr&#228;chsleitung &#252;bernehmen k&#246;nnen, haben wir einen Zwischenschritt eingebaut, in dem wir fragen: &#8222;Scheint es, als wolle der User das Gespr&#228;ch leiten? Wenn ja, ignoriere, wor&#252;ber du urspr&#252;nglich sprechen wolltest.&#8220; Wir sind zuversichtlich, dass dieser neue Schritt das Gespr&#228;ch verbessert, da das Sprachmodell dann sogar w&#228;hrend des Videoanrufs daran arbeitet, das Nutzererlebnis zu optimieren.</p><p>In der Auswertung w&#228;hrend des Gespr&#228;chs analysiert das <strong>System</strong>, was du gesagt hast, und stellt Lilli gezielte Fragen, um das Gespr&#228;ch interessant und im Fluss zu halten.</p>
+ 
+
+  
+    Auswertung w&#228;hrend des Gespr&#228;chs
+  
+  
+     
+    Hey Lilli! Reagiere auf das, was der User gerade zu dir gesagt hat:
+    <ul>
+      <li>Hat der Lerner gerade &#252;ber etwas gesprochen, das du magst? Wenn ja, dann reagiere positiv &#252;berrascht!</li>
+      <li>Hat der Lerner etwas Unangemessenes gesagt? Wenn ja, dann leg jetzt auf!</li>
+      <li>Scheint der Lerner verwirrt zu sein? Wenn ja, dann formuliere das um, was du gerade gesagt hast!</li>
+    </ul>
+    
+  
+  
+     
+    Verstanden! Der Lerner hat gerade erw&#228;hnt, dass er ziemlich gut Gitarre spielt. Und so habe ich darauf reagiert:
+    <br><br>
+    &#8222;<b>Wow, I'm actually impressed. What&#8217;s your favorite song to play?</b>&#8221; (Wow, ich bin beeindruckt. Welches Lied spielst du am liebsten?)
+  
+
+ 
+<h2 id="intelligente-sprech%C3%BCbungen-immer-griffbereit">Intelligente Sprech&#252;bungen immer griffbereit</h2><p>Das alles mag kompliziert erscheinen und das ist es auch! W&#228;hrend unser Team weiter t&#252;ftelt und die KI st&#228;ndig neue Wege er&#246;ffnet, bringen wir Lilli bei, dich auf deinem Niveau abzuholen und dir zu helfen, Sprechpraxis zu sammeln &#8211; ganz ohne Druck!</p>
+            
+        
+         
+         
+    
+             
+             
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+     
+
+
+
+        
+        </div>
