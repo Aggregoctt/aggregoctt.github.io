@@ -1,0 +1,25 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/07/23/qual-e-la-probabilita-che-due-numeri-presi-a-caso-siano-primi-tra-loro/
+date: '2025-07-23T18:04:52'
+excerpt: La risposta è inaspettata
+image: assets/media/_3bDf6w68za7SgZCR7jG8A-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Qual è la probabilità che due numeri presi a caso siano primi tra loro?
+---
+<div>
+			<p>Prendete due numeri naturali a caso: per esempio 42 e 2025. Come vedete, in questo caso i numeri hanno un fattore in comune, per la precisione 3. Se invece avessimo scelto 42 = 2&#215;3&#215;7 e 2035 = 5&#215;11&#215;37 non ci sarebbe stato nessun fattore in comune, e quindi sono primi tra loro. Se vi piace la matematica, una domanda sorge spontanea: qual &#232; la probabilit&#224; che se scegliamo due numeri a caso essi siano primi tra loro? </p>
+<p>La domanda &#232; pi&#249; insidiosa di quanto possa sembrare a prima vista. Come &#232; possibile scegliere un numero a caso, visto che ce ne sono infiniti? La probabilit&#224; di sceglierne uno &#232; zero, come ci insegna Kolmogorov. I matematici per&#242; non si lasciano fermare da queste quisquilie, e hanno trovato un modo ragionevole per scegliere un numero a caso: calcolare il limite per $n \to \infty$ di cosa succede se scegliamo due numeri a caso tra 1 e $n$. Questo &#232; un semplice trucco formale: i conti li si fa lo stesso all&#8217;infinito&#8230;</p>
+<p>Vediamo ora i conti effettivi. Preso un numero primo $p$, la probabilit&#224; che due numeri casuali abbiano entrambi un fattore $p$ &#232; $1\!/\!p^2$, e quindi quella che non abbiano quel fattore &#232; $1 &#8211; 1\!/\!p^2$. Dato che la probabilit&#224; &#232; indipendente dal numero primo scelto, la probabilit&#224; che due numeri non abbiano fattori primi in comune &#232; </p>
+<p>$$ P = (1 &#8211; 1\!/\!2^2)(1 &#8211; 1\!/\!3^2)(1 &#8211; 1\!/\!5^2)(1 &#8211; 1\!/\!7^2)(1 &#8211; 1\!/\!11^2)\cdots $$</p>
+<p>Ma sappiamo che possiamo scrivere $1\!/\!(1-x) = 1 + x + x^2 + x^3 + \cdots$. Sostituendo queste successioni infinite nella formula sopra ricaviamo </p>
+<p>$$ P = \left( (1 + 1\!/\!2^2 + 1\!/\!2^4 + \cdots)(1 + 1\!/\!3^3 + 1\!/\!3^4 + \cdots) \cdots \right) ^{-1}. $$</p>
+<p>Qui arriva il colpo di genio, che elimina uno dei due livelli di infinito nel prodotto qui sopra. Un qualunque numero &#232; sempre esprimibile in un unico modo come prodotto di numeri primi. Questo significa che tutti e soli i quadrati dei numeri naturali si troveranno una e una sola volta come demoninatore, scegliendo opportunamente i fattori, (Chiaramente non si pu&#242; ottenere un numero che non &#232; un quadrato perfetto, se moltiplichiamo solo quadrati perfetti). Dunque la somma vale </p>
+<p>$$ P = (1 + 1\!/\!2^2 + 1\!/\!3^2 + 1\!/\!4^2 + 1\!/\!5^2 + \cdots )^{-1} $$</p>
+<p>Non si direbbe abbiamo fatto un grande passo avanti, vero? Ma qui possiamo farci aiutare da zio Eulero, che nel 1735 risolse il &#8220;Problema di Basilea&#8221; e dimostr&#242; che la somma degli inversi dei quadrati dei numeri naturali vale $\pi^2\!/\!6$. (Oggi chiamiamo quella somma $\zeta(2)$, usando la zeta di Riemann, ma quella &#232; un&#8217;altra storia). Pertanto la probabilit&#224; che cerchiamo &#232; il suo inverso, cio&#232; $6/\pi^2$, pari a circa il 61%. </p>
+<p>L&#8217;avreste mai detto, che pi greco sarebbe spuntato </p>
+ 
+  					</div>
