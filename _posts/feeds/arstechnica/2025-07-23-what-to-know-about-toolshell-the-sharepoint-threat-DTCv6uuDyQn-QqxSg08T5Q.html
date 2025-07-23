@@ -1,0 +1,69 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/07/what-to-know-about-toolshell-the-sharepoint-threat-under-mass-exploitation/
+date: '2025-07-23T20:14:40'
+excerpt: Easy to exploit. Unauthenticated access. Massive reach. ToolShell has it
+  all.
+image: assets/media/DTCv6uuDyQn-QqxSg08T5Q-Cut0DNw9Pu5N4AE4rdRA1w.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- exploits
+- SharePoint
+- toolshell
+- vulnerabilities
+title: What to know about ToolShell, the SharePoint threat under mass exploitation
+---
+<div>
+                      
+                      
+          <p>Government agencies and private industry have been under siege over the past four days following the discovery that a critical vulnerability in SharePoint, the widely used document-sharing app made by Microsoft, is under mass exploitation. Since that <a href="https://arstechnica.com/security/2025/07/sharepoint-vulnerability-with-9-8-severity-rating-is-under-exploit-across-the-globe/">revelation</a>, the fallout and the ever-increasing scope of the attacks have been hard to keep track of.</p>
+<p>What follows are answers to some of the most common questions about the vulnerability and the ongoing exploitation of it, which collectively is being called ToolShell by people tracking the activity.</p>
+<h2>What&#8217;s known so far</h2>
+<p><strong>Question: What&#8217;s SharePoint?</strong></p>
+<p><strong>Answer:</strong> SharePoint is server software that companies use for storing, managing, sharing, and collaborating on internal documents, typically from inside an organization&#8217;s intranet. Microsoft has been selling it <a href="https://web.archive.org/web/20100818011041/http://blogs.msdn.com/b/joelo/archive/2007/12/28/7-years-of-sharepoint-a-history-lesson.aspx">since 2001</a>. In 2020, Microsoft <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2020/12/08/over-200-million-users-rely-on-sharepoint-as-microsoft-is-again-recognized-as-a-leader-in-the-2020-gartner-content-services-platforms-magic-quadrant-report/">said</a> that SharePoint had 200 million users. As of last year, more than 400,000 customer organizations used the software, with roughly 80 percent of them being Fortune 500 companies, according to IT jobs site <a href="https://jobera.com/sharepoint-statistics/">Jobera</a>.</p>
+<p><strong>Q: So, what&#8217;s the vulnerability?</strong></p>
+<p><strong>A:</strong> The vulnerability, which is formally tracked as <a href="%E2%80%8B%E2%80%8Bhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-53770">CVE-2025-53770</a>, enables unauthenticated remote code execution on servers running SharePoint. The ease of exploitation, the damage it causes, and the ongoing targeting of it in the wild have earned it a severity rating of 9.8 out of a possible 10.</p>
+<p>It allows unauthenticated attackers with no system rights to remotely execute malicious code. It was <a href="https://research.eye.security/sharepoint-under-siege/">first spotted</a> on Saturday by Eye Security. The security firm reported the vulnerability had been actively exploited in two waves starting a day earlier and had already compromised &#8220;dozens of systems&#8221; around the world. Eye Security raised the estimate to 400 compromised systems on Wednesday. Bloomberg <a href="https://www.bloomberg.com/news/articles/2025-07-23/us-nuclear-weapons-agency-breached-in-microsoft-sharepoint-hack">reported</a> that the US National Nuclear Security Administration's network was among the casualties.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>On Tuesday, Microsoft <a href="https://www.microsoft.com/en-us/security/blog/2025/07/22/disrupting-active-exploitation-of-on-premises-sharepoint-vulnerabilities/">said</a> it unearthed evidence showing active exploitation began no later than July 7, meaning it was exploited as a zeroday, before Microsoft and defenders knew of the threat. The vulnerability affects only SharePoint systems customers run internally inside their organizations. There is no threat to users of Microsoft&#8217;s cloud-based SharePoint service.</p>
+<p><strong>Q: Who&#8217;s exploiting the vulnerability?</strong></p>
+<p><strong>A:</strong> Microsoft said it observed active exploitation for three separate groups, all of which are connected to the Chinese government. Two of the groups were previously known to Microsoft. One of them&#8212;tracked under the name Linen Typhoon&#8212;performs espionage attacks for scooping up intellectual property. The second is Violet Typhoon, which performs more traditional forms of espionage.</p>
+<p>The third group was previously not tracked and has been designated Storm-2603. Microsoft said it knew little about the group other than it has been linked to ransomware attacks in the past. So far, no one has ruled out the possibility that other groups&#8212;possibly from different governments or private crime syndicates&#8212;are also exploiting CVE-2025-53770.</p>
+<p><strong>Q: Why is the vulnerability being dubbed ToolShell?</strong></p>
+<p><strong>A:</strong> ToolShell was the name given to a pair of vulnerabilities used in an exploit chain that was <a href="https://www.zerodayinitiative.com/blog/2025/5/16/pwn2own-berlin-2025-day-two-results">demonstrated</a> at the Pwn2Own hacking competition in Berlin in May. The exploit was able to execute code on SharePoint servers without requiring authentication.</p>
+<p>The name was coined by Dinh Ho Anh, a researcher from Khoa of Viettel Cyber Security, who developed the exploit. The researcher said he picked the name because it exploited ToolPane.aspx, a component for assembling the side panel view in the SharePoint user interface.</p>
+<p>Anh&#8217;s attack was an authentication bypass that allowed the researcher to manipulate an insecure deserialization routine. Serialization is a coding process that translates data structures and object states into formats that can be stored or transmitted and then reconstructed later. Deserialization is the process in reverse.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Microsoft fixed the vulnerability pair&#8212;CVE-2025-49706 and CVE-2025-49704&#8212;<a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-49706">two weeks ago</a> as part of the company's monthly update release. As the world learned over the weekend, the patches were incomplete, a lapse that opened organizations around the world to the new attacks.</p>
+<p><strong>Q: What sorts of malicious things are attackers doing with these newer ToolShell exploits?</strong></p>
+<p><strong>A:</strong> According to numerous technical analyses, the attackers first infect vulnerable systems with a webshell-based backdoor that gains access to some of the most sensitive parts of a SharePoint Server. From there the webshell extracts tokens and other sorts of credentials that allow the attackers to gain administrative privileges, even when systems are protected by multifactor authentication and single sign-on. Once inside, the attackers exfiltrate sensitive data and deploy additional backdoors that provide persistent access for future use.</p>
+<p>For those who want more technical details, the opening volley in the attack is POST Web requests the attackers send to the ToolPane endpoint. The requests look like this:</p>
+ 
+
+<p>Microsoft said these requests upload a malicious script named spinstall0.aspx, or alternately spinstall.aspx, spinstall1.aspx, spinstall2.aspx, and so on. The script contains commands for retrieving a SharePoint server&#8217;s encrypted MachineKey configuration and returning the decrypted results to the attacker through a GET request.</p>
+<p><strong>Q: I maintain an on-premises SharePoint server. What should I do?</strong></p>
+<p><strong>A:</strong> In short, drop whatever else you were doing and take time to carefully inspect your system. The first thing to look for is whether it has received <a href="https://msrc.microsoft.com/blog/2025/07/customer-guidance-for-sharepoint-vulnerability-cve-2025-53770/">emergency patches</a> Microsoft released Saturday. Install the patch immediately if it hasn&#8217;t already been done.</p>
+<p>Patching the vulnerability is only the first step, since systems infected through the vulnerability show few or no signs of compromise. The next step is to pour through system event logs in search of indicators of compromise. These indicators can be found in numerous writeups, including those from Microsoft and Eye Security (at the links above), the US <a href="https://www.cisa.gov/news-events/alerts/2025/07/20/update-microsoft-releases-guidance-exploitation-sharepoint-vulnerabilities">Cybersecurity and Information Security Agency</a>, and security firms <a href="https://www.sentinelone.com/blog/defending-against-toolshell-sharepoints-latest-critical-vulnerability/">Sentinel One</a>, <a href="https://www.akamai.com/blog/security-research/sharepoint-vulnerability-rce-active-exploitation-detections-mitigations">Akamai</a>, <a href="https://www.tenable.com/blog/cve-2025-53770-frequently-asked-questions-about-zero-day-sharepoint-vulnerability-exploitation">Tenable</a>, and <a href="https://unit42.paloaltonetworks.com/microsoft-sharepoint-cve-2025-49704-cve-2025-49706-cve-2025-53770/">Palo Alto Networks</a>.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>

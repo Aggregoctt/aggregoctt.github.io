@@ -1,0 +1,68 @@
+---
+author: Nate Anderson
+canonical_url: https://arstechnica.com/security/2025/07/how-do-hackers-get-passwords-sometimes-they-just-ask/
+date: '2025-07-23T19:46:30'
+excerpt: Massive 2023 hack was easily preventable, Clorox says.
+image: assets/media/5JESqh-fGSOCKwUG5CQHog-6bfGlmY6Ljex9XBp7CBLCg.jpeg
+source: arstechnica
+tags:
+- Security
+- Clorox
+- hacking
+- outsourcing
+- security
+title: After $380M hack, Clorox sues its “service desk” vendor for simply giving out
+  passwords
+---
+<div>
+                      
+                      
+          <p>Hacking is hard. Well, sometimes.</p>
+<p>Other times, you just call up a company's IT service desk and pretend to be an employee who needs a password reset, an Okta multifactor authentication reset, and a Microsoft multifactor authentication reset... and it's done. Without even verifying your identity.</p>
+<p>So you use that information to log in to the target network and discover a more trusted user who works in IT security. You call the IT service desk back, acting like you are now this second person, and you request the same thing: a password reset, an Okta multifactor authentication reset, and a Microsoft multifactor authentication reset. Again, the desk provides it, no identity verification needed.</p>
+<p>So you log in to the network with these new credentials and set about planting ransomware or exfiltrating data in the target network, eventually doing an estimated $380 million in damage. Easy, right?</p>
+<p>According to The Clorox Company, which makes everything from lip balm to cat litter to charcoal to bleach, this is exactly what happened to it in 2023. But Clorox says that the "debilitating" breach was not its fault. It had outsourced the "service desk" part of its IT security operations to the massive services company Cognizant&#8212;and Clorox says that Cognizant failed to follow even the most basic agreed-upon procedures for running the service desk.</p>
+<p>In the words of a new Clorox lawsuit, Cognizant's behavior was "all a devastating lie," it "failed to show even scant care," and it was "aware that its employees were not adequately trained."</p>
+<p>"Cognizant was not duped by any elaborate ploy or sophisticated hacking techniques," says the lawsuit, using italics to indicate outrage emphasis. "The cybercriminal just called the Cognizant Service Desk, asked for credentials to access Clorox&#8217;s network, and Cognizant handed the credentials right over. Cognizant is on tape handing over the keys to Clorox&#8217;s corporate network to the cybercriminal&#8212;no authentication questions asked."</p>
+<h2>I can has password reset?</h2>
+<p>From 2013 through 2023, Cognizant had helped "guard the proverbial front door" to Clorox's network by running a "service desk" that handled common access requests around passwords, VPNs, and multifactor authentication (MFA) such as SMS codes.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>When a purported Clorox employee called the service desk, protocol demanded that the employee use an internal verification and self-reset password tool called MyID. If that wasn't possible, the service desk should have verified the person's identity using their manager's name and the user's MyID username, after which the password could be reset but the manager and employee would both be notified by email.</p>
+<p>Instead, says Clorox, this happened on August 11, 2023:</p>
+<blockquote><p><strong>Cybercriminal</strong>: I don&#8217;t have a password, so I can&#8217;t connect.<br>
+<strong>Cognizant Agent</strong>: Oh, ok. Ok. So let me provide the password to you ok?<br>
+<strong>Cybercriminal</strong>: Alright. Yep. Yeah, what&#8217;s the password?<br>
+<strong>Cognizant Agent</strong>: Just a minute. So it starts with the word "Welcome"...</p></blockquote>
+<p>When this worked, and the caller had a working password, he moved on to asking about an MFA reset:</p>
+<blockquote><p><strong>Cybercriminal:</strong> My Microsoft MFA isn&#8217;t working.<br>
+<strong>Cognizant Agent:</strong> Oh, ok...<br>
+<strong>Cybercriminal</strong>: Can you reset my MFA? It&#8217;s on my old phone ... [inaudible] old phone.<br>
+<strong>Cognizant Agent:</strong> [Following a brief hold]. So thanks for being on hold, Alex. So multifactor authentication reset has been done now. Ok. So can you check if you&#8217;re able to login ...<br>
+<strong>Cybercriminal</strong>: Alright. It let me sign in now. Thank you.</p></blockquote>
+<p>After adopting the ID of a second Clorox user in IT security and calling back later that same day, the hacker tried all the same tricks again. And they worked, even across multiple Cognizant agents.</p>
+<blockquote><p><strong>Cognizant Agent:</strong> How can I help you today?<br>
+<strong>Cybercriminal:</strong> Um my password on Okta was not working ...<br>
+<strong>Cognizant Agent:</strong> I&#8217;m going to have your password reset from my end right away. Ok. And we&#8217;ll see how it&#8217;s going to work. Ok. [Following a brief hold] Thank you ... I&#8217;m extremely sorry for the long hold. So ... password is going to be Clorox@123.<br>
+<strong>Cybercriminal:</strong> What&#8217;s that?<br>
+<strong>Cognizant Agent:</strong> Yeah it was Clorox@123...Ok.<br>
+<strong>Cybercriminal:</strong> Yep.<br>
+<strong>Cognizant Agent:</strong> Want me to wait over the phone while you are trying it?<br>
+<strong>Cybercriminal:</strong> Yes, yes, please.<br>
+<strong>Cognizant Agent:</strong> Sure ... sure.</p></blockquote>
+<p>Clorox says that it held regular meetings with Cognizant to ensure that everyone was following the same playbook. Cognizant gave "explicit acknowledgments and consistent reassurance that it was following Clorox's credential support procedures." But the cybercriminal calls in 2023 showed this to be a "blatant lie," says Clorox.</p>
+<p>The new lawsuit, filed in California state courts, wants Cognizant to cough up millions of dollars to cover the damage Clorox says it suffered after weeks of disruption to its factories and ordering systems. (You can <a href="https://nationalcioreview.com/articles-insights/news/a-bleach-breach-timeline-of-the-clorox-cyberattack/">read a brief timeline of the disruption here</a>.)</p>
+<p>Our request for comment to Cognizant's PR email address was returned with an "access denied" error.</p>
+
+
+          
+                  
+
+                  
+          </div>
