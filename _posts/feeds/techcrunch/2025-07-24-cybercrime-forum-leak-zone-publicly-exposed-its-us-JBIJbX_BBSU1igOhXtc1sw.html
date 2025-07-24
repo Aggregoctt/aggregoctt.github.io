@@ -1,0 +1,57 @@
+---
+author: Zack Whittaker
+canonical_url: https://techcrunch.com/2025/07/24/cybercrime-forum-leak-zone-publicly-exposed-its-users-ip-addresses/
+date: '2025-07-24T15:30:20'
+excerpt: 'Exclusive: The popular "leaking and cracking" forum left one of its databases
+  exposed to the internet without a password, exposing the IP addresses of its users
+  logging in.'
+image: assets/media/JBIJbX_BBSU1igOhXtc1sw-PJPpyxWwvrrmHhrNVPf89Q.jpeg
+source: techcrunch
+tags:
+- Security
+- cybercrime
+- cybersecurity
+- data breach
+- data exposure
+- Exclusive
+title: Cybercrime forum Leak Zone publicly exposed its users’ IP addresses
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">A self-styled &#8220;leaking and cracking forum&#8221; where users advertise and share breached databases, stolen credentials, and pirated software was leaking the IP addresses of its logged-in users to the open web, security researchers have found.</p>
+
+<p class="wp-block-paragraph">Leak Zone left an Elasticsearch database exposed to the internet without a password, according to researchers at UpGuard. In <a href="https://www.upguard.com/breaches/leakzone-net" target="_blank" rel="noreferrer noopener nofollow">a blog post</a> shared with TechCrunch ahead of its publication, the researchers said they discovered the database on July 18 and found its data was accessible to anyone with a web browser.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The exposed database contained more than 22 million records storing the IP address and precise timestamp of when Leak Zone users logged in. The records were dated as recently as June 25, and the database was updating in real-time.</p>
+
+<p class="wp-block-paragraph">While the records were not linked to individual users, the data could be used to identify users who logged into Leak Zone without using any anonymization tools. Some of the records, seen by TechCrunch, indicate whether a user is believed to have logged in through <a href="https://techcrunch.com/2025/05/09/fbi-and-dutch-police-seize-and-shut-down-botnet-of-hacked-routers/" target="_blank" rel="noreferrer noopener">a proxy</a>, such as <a href="https://techcrunch.com/2024/09/30/we-are-skeptical-of-vpn-providers-and-you-should-be-too/" target="_blank" rel="noreferrer noopener">a VPN</a>, which can help conceal the user&#8217;s real-world location.</p>
+
+<p class="wp-block-paragraph">Leak Zone, which gained popularity in 2020, advertises access to a &#8220;vast collection of leaks ranging from breached databases to cracked accounts,&#8221; referring to stolen credentials used for logging into a person&#8217;s online accounts. The forum also offers a marketplace that explicitly promotes &#8220;illegal services,&#8221; the site&#8217;s guide reads. A page on Leak Zone&#8217;s website claims the forum has more than 109,000 users.</p>
+
+<p class="wp-block-paragraph">According to UpGuard, 95% of the records in the exposed database relate to Leak Zone user logins. The remaining data reference accounts associated with AccountBot, another site for selling access to compromised accounts used for streaming services.</p>
+
+<p class="wp-block-paragraph">TechCrunch verified that the exposed database was recording users logging into Leak Zone by creating a new account and logging in to the site. A corresponding record immediately appeared in the exposed database containing our IP address and the timestamp of the exact moment we logged in.</p>
+
+<p class="wp-block-paragraph">It&#8217;s not known why the database was publicly exposed. Human error or misconfigurations are often a cause of data exposures, rather than malicious actions.</p>
+
+<p class="wp-block-paragraph">TechCrunch was unable to contact the Leak Zone administrators for comment as the forum software denied our ability to send them messages. It&#8217;s not clear if the Leak Zone administrators are aware of the exposure or if they plan to notify their users about the security lapse.</p>
+
+<p class="wp-block-paragraph">The database is no longer online, UpGuard told TechCrunch.&#160;</p>
+
+ 
+
+
+ 
+
+
+ 
+
+
+			
+
+			</div>

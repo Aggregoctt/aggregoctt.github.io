@@ -1,0 +1,98 @@
+---
+author: Lorenzo Franceschi-Bicchierai
+canonical_url: https://techcrunch.com/2025/07/24/ai-slop-and-fake-reports-are-exhausting-some-security-bug-bounties/
+date: '2025-07-24T15:00:00'
+excerpt: '"We''re getting a lot of stuff that looks like gold, but it''s actually
+  just crap,” said the founder of one security testing firm. AI-generated security
+  vulnerability reports are already having an effect on bug hunting, for better and
+  worse.'
+image: assets/media/JRErKxHzlgNfhrcQehQc1w-KbsvexCype-ayWLRWuSwCw.jpeg
+source: techcrunch
+tags:
+- Security
+- AI
+- Google
+- hackers
+- Microsoft
+- hacking
+- Mozilla
+- Meta
+- cybersecurity
+- bug bounty
+- HackerOne
+- Bugcrowd
+- Bug bounty programs
+- ai slop
+title: AI slop and fake reports are exhausting some security bug bounties
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">So-called AI slop, meaning <a href="https://techcrunch.com/2025/05/25/from-llms-to-hallucinations-heres-a-simple-guide-to-common-ai-terms/#large-language-model">LLM</a>-generated low quality images, videos, and text, has taken over the internet in the last couple of years, polluting <a href="https://techcrunch.com/2025/07/09/youtube-prepares-crackdown-on-mass-produced-and-repetitive-videos-as-concern-over-ai-slop-grows/">websites</a>, <a rel="nofollow" href="https://www.404media.co/where-facebooks-ai-slop-comes-from/">social media platforms</a>, at least <a rel="nofollow" href="https://www.404media.co/viral-ai-generated-summer-guide-printed-by-chicago-sun-times-was-made-by-magazine-giant-hearst/">one newspaper</a>, and even <a href="https://techcrunch.com/2025/01/08/ces-2025-was-full-of-irl-ai-slop/">real-world events</a>.&#160;</p>
+
+<p class="wp-block-paragraph">The world of cybersecurity is not immune to this problem, either. In the last year, people across the cybersecurity industry have raised concerns about AI slop bug bounty reports, meaning reports that claim to have found vulnerabilities that do not actually exist, because they were created with a <a href="https://techcrunch.com/2024/06/01/what-is-ai-how-does-ai-work/">large language model</a> that simply made up the vulnerability, and then packaged it into a professional-looking writeup.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;People are receiving reports that sound reasonable, they look technically correct. And then you end up digging into them, trying to figure out, &#8216;oh no, where is this vulnerability?&#8217;,&#8221; Vlad Ionescu, the co-founder and CTO of <a rel="nofollow" href="https://www.runsybil.com/">RunSybil</a>, a startup that develops AI-powered bug hunters, told TechCrunch.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;It turns out it was just a hallucination all along. The technical details were just made up by the LLM,&#8221; said Ionescu.&#160;</p>
+
+<p class="wp-block-paragraph">Ionescu, who used to work at Meta&#8217;s red team tasked with hacking the company from the inside, explained that one of the issues is that LLMs are designed to be helpful and give positive responses. &#8220;If you ask it for a report, it&#8217;s going to give you a report. And then people will copy and paste these into the bug bounty platforms and overwhelm the platforms themselves, overwhelm the customers, and you get into this frustrating situation,&#8221; said Ionescu.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;That&#8217;s the problem people are running into, is we&#8217;re getting a lot of stuff that looks like gold, but it&#8217;s actually just crap,&#8221; said Ionescu.&#160;</p>
+
+<p class="wp-block-paragraph">Just in the last year, there have been real-world examples of this. Harry Sintonen, a security researcher, revealed that the open source security project Curl received a fake report. &#8220;The attacker miscalculated badly,&#8221; Sintonen wrote <a rel="nofollow" href="https://infosec.exchange/@harrysintonen/114455549143577092">in a post on Mastodon</a>. &#8220;Curl can smell AI slop from miles away.&#8221;</p>
+
+<p class="wp-block-paragraph">In response to Sitonen&#8217;s post, Benjamin Piouffle of Open Collective, a tech platform for nonprofits, <a rel="nofollow" href="https://framapiaf.org/@Betree/114456180452192212">said</a> that they have the same problem: that their inbox is &#8220;flooded with AI garbage.&#8221;&#160;</p>
+
+<p class="wp-block-paragraph">One open-source developer, who maintains the CycloneDX project on GitHub, <a rel="nofollow" href="https://github.com/CycloneDX/cyclonedx-rust-cargo/commit/93b19cb4ac96d1b8f51647df2b89ec4359becae1">pulled their bug bounty down entirely</a> earlier this year after receiving &#8220;almost entirely AI slop reports.&#8221;</p>
+
+<p class="wp-block-paragraph">The leading bug bounty platforms, which essentially work as intermediaries between bug bounty hackers and companies who are willing to pay and reward them for finding flaws in their products and software, are also seeing a spike in AI-generated reports, TechCrunch has learned.&#160;</p>
+
+ 
+
+
+ 
+
+  
+		
+
+<p class="wp-block-paragraph">Michiel Prins, the co-founder and senior director of product management at HackerOne, told TechCrunch that the company has encountered some AI slop.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;We&#8217;ve also seen a rise in false positives &#8212; vulnerabilities that appear real but are generated by LLMs and lack real-world impact,&#8221; said Prins. &#8220;These low-signal submissions can create noise that undermines the efficiency of security programs.&#8221;</p>
+
+<p class="wp-block-paragraph">Prins added that reports that contain &#8220;hallucinated vulnerabilities, vague technical content, or other forms of low-effort noise are treated as spam.&#8221;</p>
+
+<p class="wp-block-paragraph">Casey Ellis, the founder of Bugcrowd, said that there are definitely researchers who use AI to find bugs and write the reports that they then submit to the company. Ellis said they are seeing an overall increase of 500 submissions per week.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;AI is widely used in most submissions, but it hasn&#8217;t yet caused a significant spike in low-quality &#8216;slop&#8217; reports,&#8221; Ellis told TechCrunch. &#8220;This&#8217;ll probably escalate in the future, but it&#8217;s not here yet.&#8221;</p>
+
+<p class="wp-block-paragraph">Ellis said that the Bugcrowd team who analyze submissions review the reports manually using established playbooks and workflows, as well as with machine learning and AI &#8220;assistance.&#8221;</p>
+
+<p class="wp-block-paragraph">To see if other companies, including those who run their own bug bounty programs, are also receiving an increase in invalid reports or reports containing non-existent vulnerabilities hallucinated by LLMs, TechCrunch contacted Google, Meta, Microsoft, and Mozilla.&#160;</p>
+
+<p class="wp-block-paragraph">Damiano DeMonte, a spokesperson for Mozilla, which develops the Firefox browser, said that the company has &#8220;not seen a substantial increase in invalid or low quality bug reports that would appear to be AI-generated,&#8221; and the rejection rate of reports &#8212; meaning how many reports get flagged as invalid &#8212; has remained steady at 5 or 6 reports per month, or less than 10% of all monthly reports.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Mozilla&#8217;s employees who review bug reports for Firefox don&#8217;t use AI to filter reports, as it would likely be difficult to do so without the risk of rejecting a legitimate bug report,&#8221; DeMonte said in an email.</p>
+
+<p class="wp-block-paragraph">Microsoft and Meta, companies that have both bet heavily on AI, declined to comment. Google did not respond to a request for comment.&#160;</p>
+
+<p class="wp-block-paragraph">Ionescu predicts that one of the solutions to the problem of rising AI slop will be to keep investing in AI-powered systems that can at least perform a preliminary review and filter submissions for accuracy.&#160;</p>
+
+<p class="wp-block-paragraph">In fact, on Tuesday, HackerOne <a rel="nofollow" href="https://www.hackerone.com/press-release/hackerone-unveils-hai-triage-upgraded-ai-powered-vulnerability-response">launched</a> Hai Triage, a new triaging system that combines humans and AI. According to HackerOne spokesperson Randy Walker, this new system leveraging &#8220;AI security agents to cut through noise, flag duplicates, and prioritize real threats.&#8221; Human analysts then step in to validate the bug reports and escalate as needed.</p>
+
+<p class="wp-block-paragraph">As hackers increasingly use LLMs and companies rely on AI to triage those reports, it remains to be seen which of the two AIs will prevail.</p>
+
+
+			
+
+			</div>
