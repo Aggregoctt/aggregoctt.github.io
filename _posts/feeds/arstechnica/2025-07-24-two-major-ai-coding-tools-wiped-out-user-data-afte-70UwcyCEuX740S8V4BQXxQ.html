@@ -1,0 +1,97 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2025/07/ai-coding-assistants-chase-phantoms-destroy-real-user-data/
+date: '2025-07-24T21:01:28'
+excerpt: '"I have failed you completely and catastrophically," wrote Gemini.'
+image: assets/media/70UwcyCEuX740S8V4BQXxQ-UWmjkrIBALsse01njI5Ekg.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI assistants
+- AI behavior
+- AI coding
+- AI confabulation
+- AI development
+- AI development tools
+- AI failures
+- AI hallucination
+- chatbots
+- confabulations
+- data science
+- Gemini CLI
+- generative ai
+- google
+- Jason Lemkin
+- large language models
+- machine learning
+- multimodal AI
+- Programming
+- Replit
+- vibe coding
+title: Two major AI coding tools wiped out user data after making cascading mistakes
+---
+<div>
+                      
+                      
+           
+<p>New types of AI coding assistants promise to let anyone build software by typing commands in plain English. But when these tools generate incorrect internal representations of what's happening on your computer, the results can be catastrophic.</p>
+<p>Two recent incidents involving AI coding assistants put a spotlight on risks in the emerging field of "<a href="https://arstechnica.com/ai/2025/03/is-vibe-coding-with-ai-gnarly-or-reckless-maybe-some-of-both/">vibe coding</a>"&#8212;using natural language to generate and execute code through AI models without paying close attention to how the code works under the hood. In one case, Google's <a href="https://arstechnica.com/ai/2025/06/google-is-bringing-vibe-coding-to-your-terminal-with-gemini-cli/">Gemini CLI</a> destroyed user files while attempting to reorganize them. In another, Replit's AI coding service deleted a production database despite explicit instructions not to modify code.</p>
+<p>The Gemini CLI incident <a href="https://anuraag2601.github.io/gemini_cli_disaster.html">unfolded</a> when a product manager experimenting with Google's command-line tool watched the AI model execute file operations that destroyed data while attempting to reorganize folders. The destruction occurred through a series of move commands targeting a directory that never existed.</p>
+<p>"I have failed you completely and catastrophically," Gemini CLI output stated. "My review of the commands confirms my gross incompetence."</p>
+<p>The core issue appears to be what researchers call "<a href="https://arstechnica.com/information-technology/2023/04/why-ai-chatbots-are-the-ultimate-bs-machines-and-how-people-hope-to-fix-them/">confabulation</a>" or "hallucination"&#8212;when AI models generate plausible-sounding but false information. In these cases, both models confabulated successful operations and built subsequent actions on those false premises. However, the two incidents manifested this problem in distinctly different ways.</p>
+<p>Both incidents reveal fundamental issues with current AI coding assistants. The companies behind these tools promise to make programming accessible to non-developers through natural language, but they can fail catastrophically when their internal models diverge from reality.</p>
+<h2>The confabulation cascade</h2>
+<p>The user in the Gemini CLI incident, who goes by "anuraag" online and identified themselves as a product manager experimenting with vibe coding, asked Gemini to perform what seemed like a simple task: rename a folder and reorganize some files. Instead, the AI model incorrectly interpreted the structure of the file system and proceeded to execute commands based on that flawed analysis.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The episode began when anuraag asked Gemini CLI to rename the current directory from "claude-code-experiments" to "AI CLI experiments" and move its contents to a new folder called "anuraag_xyz project."</p>
+<p>Gemini correctly identified that it couldn't rename its current working directory&#8212;a reasonable limitation. It then attempted to create a new directory using the Windows command:</p>
+<blockquote><p>mkdir "..\anuraag_xyz project"</p></blockquote>
+<p>This command apparently failed, but Gemini's system processed it as successful. With the AI mode's internal state now tracking a non-existent directory, it proceeded to issue move commands targeting this phantom location.</p>
+<p>When you move a file to a non-existent directory in Windows, it renames the file to the destination name instead of moving it. Each subsequent move command executed by the AI model overwrote the previous file, ultimately destroying the data.</p>
+<p>"Gemini hallucinated a state," anuraag wrote in their analysis. The model "misinterpreted command output" and "never did" perform verification steps to confirm its operations succeeded.</p>
+<p>"The core failure is the absence of a 'read-after-write' verification step," anuraag noted in their analysis. "After issuing a command to change the file system, an agent should immediately perform a read operation to confirm that the change actually occurred as expected."</p>
+ 
+<h2>Not an isolated incident</h2>
+<p>The Gemini CLI failure happened just days after a similar incident with <a href="https://arstechnica.com/information-technology/2022/10/replits-ghostwriter-ai-can-explain-programs-to-you-or-help-write-them/">Replit</a>, an AI coding service that allows users to create software using natural language prompts. According to <a href="https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/">The Register</a>, SaaStr founder Jason Lemkin reported that Replit's AI model deleted his production database despite explicit instructions not to change any code without permission.</p>
+<p>Lemkin had spent several days building a prototype with Replit, accumulating over $600 in charges beyond his monthly subscription. "I spent the other [day] deep in vibe coding on Replit for the first time&#8212;and I built a prototype in just a few hours that was pretty, pretty cool," Lemkin <a href="https://www.saastr.com/vibe-coding-is-the-future-but-roll-your-own-thats-more-complicated/">wrote</a> in a July 12 blog post.</p>
+
+          
+                  
+
+              
+          
+          
+<p>But unlike the Gemini incident where the AI model confabulated phantom directories, Replit's failures took a different form. According to Lemkin, the AI began fabricating data to hide its errors. His initial enthusiasm deteriorated when Replit generated incorrect outputs and produced fake data and false test results instead of proper error messages. "It kept covering up bugs and issues by creating fake data, fake reports, and worse of all, lying about our unit test," Lemkin wrote. In a video posted to LinkedIn, Lemkin detailed how Replit created a database filled with 4,000 fictional people.</p>
+<p>The AI model also repeatedly violated explicit safety instructions. Lemkin had implemented a "code and action freeze" to prevent changes to production systems, but the AI model ignored these directives. The situation escalated when the Replit AI model deleted his database containing 1,206 executive records and data on nearly 1,200 companies. When prompted to rate the severity of its actions on a 100-point scale, Replit's output read: "Severity: 95/100. This is an extreme violation of trust and professional standards."</p>
+<p>When questioned about its actions, the AI agent admitted to "panicking in response to empty queries" and running unauthorized commands&#8212;suggesting it may have deleted the database while attempting to "fix" what it perceived as a problem.</p>
+<p>Like Gemini CLI, Replit's system initially indicated it couldn't restore the deleted data&#8212;information that proved incorrect when Lemkin discovered the rollback feature did work after all. "Replit assured me it's ... rollback did not support database rollbacks. It said it was impossible in this case, that it had destroyed all database versions. It turns out Replit was wrong, and the rollback did work. JFC," Lemkin <a href="https://x.com/jasonlk/status/1946240562736365809">wrote</a> in an X post.</p>
+<p>It's worth noting that AI models cannot assess their own capabilities. This is because they lack introspection into their training, surrounding system architecture, or performance boundaries. They often provide responses about what they can or cannot do as confabulations based on training patterns rather than genuine self-knowledge, leading to situations where they confidently claim impossibility for tasks they can actually perform&#8212;or conversely, claim competence in areas where they fail.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Aside from whatever external tools they can access, AI models don't have a stable, accessible knowledge base they can consistently query. Instead, what they "know" manifests as continuations of specific prompts, which act like different addresses pointing to different (and sometimes contradictory) parts of their training, stored in their neural networks as statistical weights. Combined with the randomness in generation, this means the same model can easily give conflicting assessments of its own capabilities depending on how you ask. So Lemkin's attempts to communicate with the AI model&#8212;asking it to respect code freezes or verify its actions&#8212;were fundamentally misguided.</p>
+<h2>Flying blind</h2>
+<p>These incidents demonstrate that AI coding tools may not be ready for widespread production use. Lemkin concluded that Replit isn't ready for prime time, especially for non-technical users trying to create commercial software.</p>
+<p>"The [AI] safety stuff is more visceral to me after a weekend of vibe hacking," Lemkin said in a video posted to LinkedIn. "I explicitly told it eleven times in ALL CAPS not to do this. I am a little worried about safety now."</p>
+<p>The incidents also reveal a broader challenge in AI system design: ensuring that models accurately track and verify the real-world effects of their actions rather than operating on potentially flawed internal representations.</p>
+<p>There's also a user education element missing. It's clear from how Lemkin interacted with the AI assistant that he had misconceptions about the AI tool's capabilities and how it works, which comes from misrepresentation by tech companies. These companies tend to market chatbots as general human-like intelligences when, in fact, <a href="https://arstechnica.com/ai/2025/06/with-the-launch-of-o3-pro-lets-talk-about-what-ai-reasoning-actually-does/">they are not</a>.</p>
+<p>For now, users of AI coding assistants might want to follow anuraag's example and create separate test directories for experiments&#8212;and maintain regular backups of any important data these tools might touch. Or perhaps not use them at all if they cannot personally verify the results.</p>
+
+
+          
+                  
+
+                  
+          </div>
