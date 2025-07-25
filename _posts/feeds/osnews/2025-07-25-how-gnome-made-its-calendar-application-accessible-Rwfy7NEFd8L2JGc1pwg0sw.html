@@ -1,0 +1,37 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142900/how-gnome-made-its-calendar-application-accessible/
+date: '2025-07-25T20:50:19'
+excerpt: This article will explain in details about the fundamental issues that held
+  back accessibility in GNOME Calendar since the very beginning of its existence,
+  the progress we have made with accessibility as well as our thought process in achieving
+  it, and the now and future of accessibility in GNOME Calendar. ↫ Hari &#8220;TheEvilSkeleton&#8221;
+  Rana You&#8217;d think it would be easy to make a &#8220;simple&#8221; calendar
+  application properly accessible, but boy would you be wrong. In this article, Hari
+  &#8220;TheEvilSkeleton&#8221; Rana details just how much work had to be done in
+  order to turn GNOME Calendar from entirely inaccessible into an accessible application,
+  and considering the length of the article, you can see it wasn&#8217;t a weekend
+  effort. There were apparently two primary reasons why making GNOME Calendar accessible
+  was so hard. First, maximising GNOME Calendar&#8217;s performance optimisations
+  had significant negative implications for accessibility, and two, the effectively
+  endless flexibility a calendar needs to offer makes it very difficult to create
+  a usable accessibility tree. Both the events on a calendar as well as the zooming
+  view of a calendar lead to a ton of complexity in creating this tree. GNOME Calendar
+  uses a ton of custom widgets, and these all needed specific, individual solutions
+  to be made accessible. As an example, the article mentions that while it was possible
+  to use the keyboard to create an event, it was not possible to use the keyboard
+  to select created events. Obviously, even this one shortcoming alone effectively
+  makes the entire application inaccessible to anyone relying solely on keyboard navigation.
+  The article goes into great detail how both the above widget and countless other
+  widgets were changed to make them accessible to both the keyboard and screen reader.
+  If you&#8217;re working on GTK applications, or even applications using other toolkits,
+  Rana&#8217;s article is a great resource to start to understand the complexities
+  and creative thinking needed to implement accessibility in software properly.
+image: null
+source: osnews
+tags:
+- Gnome
+title: How GNOME made its Calendar application accessible
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>This article will explain in details about the fundamental issues that held back accessibility in GNOME Calendar since the very beginning of its existence, the progress we have made with accessibility as well as our thought process in achieving it, and the now and future of accessibility in GNOME Calendar.</p>
+<a href="https://tesk.page/2025/07/25/gnome-calendar-a-new-era-of-accessibility-achieved-in-90-days/">&#8619; Hari &#8220;TheEvilSkeleton&#8221; Rana</a></blockquote><p>You&#8217;d think it would be easy to make a &#8220;simple&#8221; calendar application properly accessible, but boy would you be wrong. In this article, Hari &#8220;TheEvilSkeleton&#8221; Rana details just how much work had to be done in order to turn GNOME Calendar from entirely inaccessible into an accessible application, and considering the length of the article, you can see it wasn&#8217;t a weekend effort.</p><p>There were apparently two primary reasons why making GNOME Calendar accessible was so hard. First, maximising GNOME Calendar&#8217;s performance optimisations had significant negative implications for accessibility, and two, the effectively endless flexibility a calendar needs to offer makes it very difficult to create a usable <a href="https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree">accessibility tree</a>. Both the events on a calendar as well as the zooming view of a calendar lead to a ton of complexity in creating this tree.</p><p>GNOME Calendar uses a ton of custom widgets, and these all needed specific, individual solutions to be made accessible. As an example, the article mentions that while it was possible to use the keyboard to create an event, it was not possible to use the keyboard to select created events. Obviously, even this one shortcoming alone effectively makes the entire application inaccessible to anyone relying solely on keyboard navigation.</p><p>The article goes into great detail how both the above widget and countless other widgets were changed to make them accessible to both the keyboard and screen reader. If you&#8217;re working on GTK applications, or even applications using other toolkits, Rana&#8217;s article is a great resource to start to understand the complexities and creative thinking needed to implement accessibility in software properly.</p></div>
