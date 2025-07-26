@@ -1,0 +1,51 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142902/freebsd-installer-to-get-lua-scripting-support-proof-of-concept-graphical-installer-shown-off/
+date: '2025-07-25T23:01:13'
+excerpt: Becoming friendlier to desktop users is one of the goals of the FreeBSD project
+  at the moment, as we recently saw with the new ability to install a full KDE Plasma
+  desktop environment during FreeBSD&#8217;s initial installation. This is just one
+  small piece of a larger effort, though, to improve, modernise, and possibly even
+  replace the current FreeBSD installer entirely. As such, Pierre Pronchery, a Security
+  Engineer for the FreeBSD Foundation and member of their team as a Userland Software
+  Developer, published a blog post today with more information around this effort.
+  The article goes into great detail to compare the installation procedures of other
+  operating systems to that of FreeBSD, and the conclusion is that FreeBSD is lagging
+  behind in quite a few areas. Among other shortcomings, the FreeBSD installer has
+  no support for different languages, very little accessibility features, no niceties
+  like progress bars or lists of steps, and most notably, no graphical mode. Some
+  of these are already being addressed. The current FreeBSD installer (a combination
+  of bsddialog, bsdconfig, and bsdinstall) consists of a number of shell scripts with
+  some small C programs here and there, and the downside of this is that this is really
+  only suitable for creating very basic steps and user interfaces. As an example,
+  Pronchery mentions values during network setup, like network mask, DNS server or
+  gateway, can&#8217;t be prepopulated with the most likely values, which puts quite
+  a burden on the user. This specific issue is being worked on by one of the original
+  creators of bsddialog, and the solution they settled on is adding Lua scripting,
+  which would give developers an avenue to fix some of these shortcomings. As far
+  as a possible graphical installer goes, Pronchery looked at the various options
+  out there, both from the Linux world and the few graphical installers that exist
+  for a few desktop-oriented FreeBSD distributions, but for a variety of reasons,
+  none of them proved to be particularly suitable for FreeBSD. As such, Pronchery
+  created a quick proof-of-concept for a graphical installer by implementing bsddialog
+  as a GTK+ application which he calls gbsddialog. It&#8217;s important to note that
+  this proof-of-concept is not suitable for FreeBSD, as GTK+ is licensed under the
+  LGPL, but it does illustrate that by &#8220;simply&#8221; reimplenting bsddialog
+  using a graphical toolkit, you can get quite a long way to a usable FreeBSD installer
+  that mimics the traditional installer quite well. The article covers a number of
+  other topics, such as setting up a development environment to make it more straightforward
+  and easier to work on the FreeBSD installer, as well as various steps that need
+  to be taken to improve the accessibility of the installer. It concludes with a mention
+  of the possibility of a complete rewrite of the installer, but such decisions are
+  of course not made by a single person and require a lot more discussion and input.
+  Regardless, the amount of work being done to improve FreeBSD for generic desktop
+  use is exciting, as we need a viable, competitive alternative to that other open
+  source desktop operating system.
+image: null
+source: osnews
+tags:
+- FreeBSD
+title: FreeBSD installer to get Lua scripting support; proof-of-concept graphical
+  installer shown off
+---
+<div><p>Becoming friendlier to desktop users is one of the goals of the FreeBSD project at the moment, as we recently saw with the new ability to <a href="https://www.osnews.com/story/142871/freebsd-15-0s-installer-to-gain-option-to-install-a-full-kde-plasma-desktop-environment/">install a full KDE Plasma desktop environment during FreeBSD&#8217;s initial installation</a>. This is just one small piece of a larger effort, though, to improve, modernise, and possibly even replace the current FreeBSD installer entirely. As such, Pierre Pronchery, a Security Engineer for the FreeBSD Foundation and member of their team as a Userland Software Developer, <a href="https://freebsdfoundation.org/our-work/journal/browser-based-edition/networking-3/installer-usability/">published a blog post today with more information around this effort</a>.</p><p>The article goes into great detail to compare the installation procedures of other operating systems to that of FreeBSD, and the conclusion is that FreeBSD is lagging behind in quite a few areas. Among other shortcomings, the FreeBSD installer has no support for different languages, very little accessibility features, no niceties like progress bars or lists of steps, and most notably, no graphical mode. Some of these are already being addressed.</p><p>The current FreeBSD installer (a combination of <code>bsddialog</code>, <code>bsdconfig</code>, and <code>bsdinstall</code>) consists of a number of shell scripts with some small C programs here and there, and the downside of this is that this is really only suitable for creating very basic steps and user interfaces. As an example, Pronchery mentions values during network setup, like network mask, DNS server or gateway, can&#8217;t be prepopulated with the most likely values, which puts quite a burden on the user. This specific issue is being worked on by one of the original creators of <code>bsddialog</code>, and the solution they settled on is adding Lua scripting, which would give developers an avenue to fix some of these shortcomings.</p><p>As far as a possible graphical installer goes, Pronchery looked at the various options out there, both from the Linux world and the few graphical installers that exist for a few desktop-oriented FreeBSD distributions, but for a variety of reasons, none of them proved to be particularly suitable for FreeBSD. As such, Pronchery created a quick proof-of-concept for a graphical installer by implementing <code>bsddialog</code> as a GTK+ application which he calls <code>gbsddialog</code>. It&#8217;s important to note that this proof-of-concept is not suitable for FreeBSD, as GTK+ is licensed under the LGPL, but it does illustrate that by &#8220;simply&#8221; reimplenting <code>bsddialog</code> using a graphical toolkit, you can get quite a long way to a usable FreeBSD installer that mimics the traditional installer quite well.</p><p>The article covers a number of other topics, such as setting up a development environment to make it more straightforward and easier to work on the FreeBSD installer, as well as various steps that need to be taken to improve the accessibility of the installer. It concludes with a mention of the possibility of a complete rewrite of the installer, but such decisions are of course not made by a single person and require a lot more discussion and input.</p><p>Regardless, the amount of work being done to improve FreeBSD for generic desktop use is exciting, as we need a viable, competitive alternative to that other open source desktop operating system.</p></div>
