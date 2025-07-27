@@ -1,0 +1,71 @@
+---
+author: Jacek Krywko
+canonical_url: https://arstechnica.com/science/2025/07/robots-eating-other-robots-the-benefits-of-machine-metabolism/
+date: '2025-07-27T11:00:51'
+excerpt: If you define "metabolism" loosely enough, these robots may have one.
+image: assets/media/bJaiiwiXjcrPqmSjZJc7wA-BxTPGVi8EwTEQthKz39OUg.jpeg
+source: arstechnica
+tags:
+- Science
+- Computer science
+- metabolism
+- Robotics
+title: 'Robots eating other robots: The benefits of machine metabolism'
+---
+<div>
+                      
+                      
+           
+<p>For decades we&#8217;ve been trying to make the robots smarter and more physically capable by mimicking biological intelligence and movement. &#8220;But in doing so, we&#8217;ve been just replicating the results of biological evolution&#8212;I say we need to replicate its methods,&#8221; argues Philippe Wyder, a developmental robotics researcher at Columbia University. Wyder led a team that demonstrated a machine with a rudimentary form of what they&#8217;re calling a metabolism.</p>
+<p>He and his colleagues built a robot that could consume other robots to physically grow, become stronger, more capable, and continue functioning.</p>
+<h2>Nature&#8217;s methods</h2>
+<p>The idea of robotic metabolism combines various concepts in AI and robotics. The first is artificial life, which Wyder termed &#8220;a field where people study the evolution of organisms through computer simulations.&#8221; Then there is the idea of modular robots: reconfigurable machines that can change their architecture by rearranging collections of basic modules. That was pioneered in the US by Daniela Rus or Mark Yim at Carnegie Mellon University in the 1990s.</p>
+<p>Finally, there is the idea that we need a shift from a goal-oriented design we&#8217;ve been traditionally implementing in our machines to a survivability-oriented design found in living organisms, which Magnus Egerstedt proposed in his book Robot Ecology.</p>
+<p>Wyder&#8217;s team took all these ideas, merged them, and prototyped a robot that could &#8220;eat&#8221; other robots. &#8220;I kind of came at this from many different angles,&#8221; Wyder says.</p>
+<p>The key source of inspiration, though, was the way nature builds its organisms. There are 20 standard amino acids universally used by life that can be combined into trillions of proteins, forming the building blocks of countless life forms. Wyder started his project by designing a basic robotic module that was intended to play a role roughly equivalent to a single amino acid. This module, called a Truss Link, looked like a rod, being 16 centimeters long and containing batteries, electronic controllers, and servomotors than enabled them to expand, contract, and crawl in a straight line. They had permanent magnets at each end, which let them connect to other rods and form lightweight lattices.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Wyder&#8217;s idea was to throw a number of these modules in a confined space to see if they would assemble into more complex structures by bumping into each other. The process might be analogous to how amino acids spontaneously formed simple organic molecules roughly 4 billion years ago.</p>
+<h2>Robotic growth</h2>
+<p>The first stage of Wyder&#8217;s experiment was set up in a space with a few terrain features, like a drop, a few obstacles, and a standing cylinder. The robots were operated by the team, which directed them to form various structures. Three Truss Links connected with the magnets at one center point formed a three-pointed star. Other structures they formed included a triangle, a diamond with a tail that was a triangle connected with a three-pointed star, or a tetrahedron, and a 3D structure that looked like a triangular pyramid. The robots had to find other Truss Links and make them part of their bodies to grow into more complex forms.</p>
+<p>As they were growing, they were also becoming more capable. A single Truss Link could only move in a straight line, a triangle could turn left and right, a diamond with a tail could traverse small bumps, while a tetrahedron could move itself over small walls. Finally, a tetrahedron with a ratchet&#8212;an additional Truss Link the robot could use a bit like a walking stick&#8212;could assist other robots in forming tetrahedrons, which was a difficult, risky maneuver that took multiple attempts even for the skilled operators.</p>
+<p>Still, all this growth in size and capability was orchestrated by the researchers controlling the hardware. The question was whether these self-assembly processes could work with no human overlords around.</p>
+<p>&#8220;We wanted to know if the Truss Links would meet on their own,&#8221; Wyder says. &#8220;If the Truss Links are exactly parallel, they will never connect. But being parallel is just one configuration, and there are infinite configurations where they are not parallel.&#8221; To check how this would play out, the team used computer simulations of six randomly spawned and randomly moving Truss Links in a walled environment. In 2,000 runs, each 20 minutes long, the modules ended up with a 64 percent chance of forming two three-pointed star shapes; a roughly 8.4 percent of assembling into two triangles, and nearly 45 percent of ending up as a diamond with a tail. (Some of these configurations were intermediates on the pathway to others, so the numbers add up to more than 100 percent.)</p>
+
+          
+                  
+
+              
+          
+          
+<p>When moving randomly, Truss Links could also repair structures after their magnets got disconnected and even replace a malfunctioning Truss Link in the structure with a new one. But did they really metabolize anything?</p>
+ 
+<h2>Searching for purpose</h2>
+<p>The name &#8220;metabolism&#8221; comes from the Greek word &#8220;metabol&#275;&#8221; which means &#8220;change.&#8221; Wyder&#8217;s robots can assemble, grow, reconfigure, rebuild, and, to a limited extent, sustain themselves, which definitely qualifies as change.</p>
+<p>But metabolism, as it&#8217;s commonly understood, involves consuming materials in ways that extract energy and transform their chemicals. The Truss Links are limited to using prefabricated, compatible modules&#8212;they can&#8217;t consume some plastic and old lithium-ion batteries and metabolize them into brand-new Truss Links. Whether this qualifies as metabolism depends more on how far we want to stretch the definition than on what the actual robots can do.</p>
+<p>And stretching definitions, so far, may be their strongest use case. &#8220;I can&#8217;t give you a real-world use case,&#8221; Wyder acknowledges. &#8220;We tried to make the truss robots carry loads from one point to another, but it&#8217;s not even included in our paper&#8212;it&#8217;s a research platform at this point.&#8221; The first thing he thinks the robotic metabolism platform is missing is a wider variety of modules. The team used homogeneous modules in this work but is already thinking about branching out. &#8220;Life uses around 20 different amino acids to work, so we&#8217;re currently focusing on integrating additional modules with various sensors,&#8221; Wyder explains. But the robots &#160;are also lacking something way more fundamental: a purpose.</p>
+<p>Life evolves to improve the chances of survival. It does so in response to pressures like predators or a challenging environment. A living thing is usually doing its best to avoid dying.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Egerstedt in &#8220;Robot Ecology&#8220; argues we should build and program robots the same way with &#8220;survivability constraints&#8221; in mind. Wyder, in his paper, also claims we need to develop a &#8220;self-sustained robot ecology&#8221; in the future. But he also thinks we shouldn&#8217;t take this life analogy too far. His goal is not creating a robotic ecosystem where robots would hunt and feed on other robots, constantly improving their own designs.</p>
+<p>&#8220;We would give robots a purpose. Let&#8217;s say a purpose is to build a lunar colony,&#8221; Wyder says. Survival should be the first objective, because if the platform doesn&#8217;t survive on the Moon, it won&#8217;t build a lunar colony. Multiple small units would first disperse to explore the area and then assemble into a bigger structure like a building or a crane. &#8220;And this large structure would absorb, recycle, or eat, if you will, all these smaller robots to integrate and make use of them,&#8221; Wyder claims.</p>
+<p>A robotic platform like this, Wyder thinks, should adapt to unexpected circumstances even better than life itself. &#8220;There may be a moment where having a third arm would really save your life, but you can&#8217;t grow one. A robot, given enough time, won&#8217;t have that problem,&#8221; he says.</p>
+<p>Science Advances, 2025. &#160;DOI: <a href="https://www.science.org/doi/10.1126/sciadv.adu6897">10.1126/sciadv.adu6897</a></p>
+
+
+          
+                  
+
+                  
+          </div>
