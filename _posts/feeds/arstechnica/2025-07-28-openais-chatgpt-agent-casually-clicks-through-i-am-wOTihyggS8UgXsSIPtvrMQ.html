@@ -1,0 +1,72 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2025/07/openais-chatgpt-agent-casually-clicks-through-i-am-not-a-robot-verification-test/
+date: '2025-07-28T20:07:29'
+excerpt: '"This step is necessary to prove I''m not a bot," wrote the bot as it passed
+  an anti-AI screening step.'
+image: assets/media/wOTihyggS8UgXsSIPtvrMQ-Omw5B89ufF1DYDqLisAYuA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI behavior
+- AI development tools
+- AI security
+- authentication
+- CAPTCHA
+- ChatGPT
+- cloudflare
+- computer use model
+- Computer-Using Agent
+- machine learning
+- openai
+- Web security
+title: OpenAI’s ChatGPT Agent casually clicks through “I am not a robot” verification
+  test
+---
+<div>
+                      
+                      
+          <p>Maybe they should change the button to say, "I am a robot"?</p>
+<p>On Friday, OpenAI's new <a href="https://arstechnica.com/information-technology/2025/07/chatgpts-new-ai-agent-can-browse-the-web-and-create-powerpoint-slideshows/">ChatGPT Agent</a>, which can perform multistep tasks for users, proved it can pass through one of the Internet's most common security checkpoints by clicking Cloudflare's anti-bot verification&#8212;the same checkbox that's supposed to keep automated programs like itself at bay.</p>
+<p>ChatGPT Agent is a feature that allows OpenAI's AI assistant to control its own web browser, operating within a sandboxed environment with its own virtual operating system and browser that can access the real Internet. Users can watch the AI's actions through a window in the ChatGPT interface, maintaining oversight while the agent completes tasks. The system requires user permission before taking actions with real-world consequences, such as making purchases. Recently, Reddit users discovered the agent could do something particularly ironic.</p>
+<p>The evidence came from Reddit, where a user named "logkn" of the r/OpenAI community <a href="https://www.reddit.com/r/OpenAI/comments/1m9c15h/agent_casually_clicking_the_i_am_not_a_robot/">posted screenshots</a> of the AI agent effortlessly clicking through the screening step before it would otherwise present a <a href="https://www.howtogeek.com/777804/why-do-i-have-to-prove-that-im-not-a-robot/">CAPTCHA</a> (short for "Completely Automated Public Turing tests to tell Computers and Humans Apart") while completing a video conversion task&#8212;narrating its own process as it went.</p>
+ 
+
+<p>The screenshots shared on Reddit capture the agent navigating a two-step verification process: first clicking the "Verify you are human" checkbox, then proceeding to click a "Convert" button after the Cloudflare challenge succeeds. The agent provides real-time narration of its actions, stating "The link is inserted, so now I'll click the 'Verify you are human' checkbox to complete the verification on Cloudflare. This step is necessary to prove I'm not a bot and proceed with the action."</p>
+<p>The absurdity of an AI agent declaring it needs to prove it's "not a bot" while clicking through anti-bot measures has not been lost on observers. "In all fairness, it&#8217;s been trained on human data why would it identify as a bot? We should respect that choice," <a href="https://www.reddit.com/r/OpenAI/comments/1m9c15h/comment/n5fozgf/">joked</a> one Reddit user in a reply.</p>
+
+          
+                       
+                   
+                  
+
+              
+          
+          
+<h2>The CAPTCHA arms race</h2>
+<p>While the agent didn't face an actual CAPTCHA puzzle with images in this case, successfully passing Cloudflare's behavioral screening that determines whether to present such challenges demonstrates sophisticated browser automation.</p>
+<p>To understand the significance of this capability, it's important to know that CAPTCHA systems have served as a security measure on the web for decades. Computer researchers invented the technique in the 1990s to screen bots from entering information into websites, originally using images with letters and numbers written in wiggly fonts, often obscured with lines or noise to foil computer vision algorithms. The assumption is that the task will be easy for humans but difficult for machines.</p>
+<p>Cloudflare's screening system, called <a href="https://www.cloudflare.com/application-services/products/turnstile/">Turnstile</a>, often precedes actual CAPTCHA challenges and represents one of the most widely deployed bot-detection methods today. The checkbox analyzes multiple signals, including mouse movements, click timing, browser fingerprints, IP reputation, and JavaScript execution patterns to determine if the user exhibits human-like behavior. If these checks pass, users proceed without seeing a CAPTCHA puzzle. If the system detects suspicious patterns, it escalates to visual challenges.</p>
+<p>The ability for an AI model to defeat a CAPTCHA isn't entirely new (although having one narrate the process feels fairly novel). AI tools have been able to defeat certain CAPTCHAs for a while, which has led to an arms race between those that create them and those that defeat them. <a href="https://arstechnica.com/ai/2025/01/openai-launches-operator-an-ai-agent-that-can-operate-your-computer/">OpenAI's Operator</a>, an experimental web-browsing AI agent launched in January, <a href="https://www.reddit.com/r/singularity/comments/1i9qcle/chatgpt_operator_trying_to_solve_google_captcha/">faced difficulty</a> clicking through some CAPTCHAs (and was also trained to stop and ask a human to complete them), but the latest ChatGPT Agent tool has seen a much wider release.</p>
+<p>It's tempting to say that the ability of AI agents to pass these tests puts the future effectiveness of CAPTCHAs into question, but for as long as there have been CAPTCHAs, there have been bots that could later defeat them. As a result, recent CAPTCHAs have become more of a way to <a href="https://www.arkoselabs.com/blog/captcha-a-cost-proof-solution-not-a-turing-test/">slow down bot attacks</a> or make them <a href="https://arxiv.org/pdf/2103.01748">more expensive</a> rather than a way to defeat them entirely. Some malefactors even hire out <a href="https://www.f5.com/labs/articles/cisotociso/i-was-a-human-captcha-solver">farms of humans</a> to defeat them in bulk.</p>
+
+          
+                  
+
+              
+          
+          
+<p>CAPTCHAs also have unexpected benefits for those who run them. Since 2007, the <a href="https://en.wikipedia.org/wiki/ReCAPTCHA">reCAPTCHA project</a> began using its tests as a form of free labor for tasks like digitizing books and training machine-learning algorithms. Google acquired reCAPTCHA in 2009 and expanded its use to decode Google Street View addresses, extracting vision knowledge from human users solving challenges. Today's reCAPTCHA challenges help Google train AI models for image recognition&#8212;creating an ironic cycle where humans proving they're not robots are actually helping to make AI better at defeating future CAPTCHAs.</p>
+<p>In a way, that future may have arrived. ChatGPT Agent's demonstration showcases the agent tool's ability to process visual context and navigate multi-step processes that would typically require human judgment. In the screenshots, the agent recognizes when verification is needed and completes it as part of a larger workflow&#8212;behavior that goes beyond simple scripted automation.</p>
+<p>CAPTCHAs are just one example of the complex tasks ChatGPT Agent can handle. For example, another Reddit user <a href="https://www.reddit.com/r/OpenAI/comments/1m9u7e6/agent_mode_ordered_this_grocery_haul/?share_id=7tyrRbXVzc1Psha2gHLhs&amp;utm_content=1&amp;utm_medium=ios_app&amp;utm_name=ioscss&amp;utm_source=share&amp;utm_term=10">showed off</a> a photo of a load of groceries that Agent apparently purchased. "I had agent mode order me some groceries from a local supermarket while I worked yesterday for pickup this morning," the Reddit user <a href="https://www.reddit.com/r/OpenAI/comments/1m9u7e6/agent_mode_ordered_this_grocery_haul/">wrote</a>. "It actually worked without any issue and did an okay job making a grocery list that works for me. I gave it barely any detail in my instructions other than to avoid red meat, prioritize health and keep it under $150."</p>
+<p>But ChatGPT Agent isn't perfect. Some terrible website user interfaces are apparently better than CAPTCHA checkpoints at foiling the new bot. "Your agent did way better than mine," <a href="https://www.reddit.com/r/OpenAI/comments/1m9u7e6/comment/n59uar1/">wrote</a> one Reddit reply. "Mine couldn&#8217;t figure out how to get to the stop and shop website."</p>
+
+
+          
+                  
+
+                  
+          </div>
