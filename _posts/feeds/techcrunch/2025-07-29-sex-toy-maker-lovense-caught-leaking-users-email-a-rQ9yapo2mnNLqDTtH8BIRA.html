@@ -1,0 +1,67 @@
+---
+author: Zack Whittaker
+canonical_url: https://techcrunch.com/2025/07/29/sex-toy-maker-lovense-caught-leaking-users-email-addresses-and-exposing-accounts-to-takeovers/
+date: '2025-07-29T12:00:44'
+excerpt: A security researcher went public after the sex toy maker asked for more
+  than a year to fix the vulnerabilities, which leak users' private email addresses
+  and allow for accounts to be hijacked.
+image: assets/media/rQ9yapo2mnNLqDTtH8BIRA-bOifemKo0LEyJn3iwThcjw.jpeg
+source: techcrunch
+tags:
+- Hardware
+- Privacy
+- Security
+- cybersecurity
+- data breach
+- lovense
+- sex toys
+title: Sex toy maker Lovense caught leaking users’ email addresses and exposing accounts
+  to takeovers
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">A security researcher says sex toy maker Lovense has failed to fully fix two security flaws that expose the private email address of its users and allow the takeover of any user&#8217;s account.</p>
+
+<p class="wp-block-paragraph">The researcher, who goes by the handle BobDaHacker, <a href="https://bobdahacker.com/blog/lovense-still-leaking-user-emails" target="_blank" rel="noreferrer noopener nofollow">published details of the bugs on Monday</a> after Lovense claimed it would need 14 months to fix the flaws so as to not inconvenience users of some of its legacy products.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Lovense is one of the largest makers of internet-connected sex toys, and is said to have <a href="https://www.ean-online.com/company-news/lovense-triumphs-with-a-20-million-jury-award-in-ip-conflict/" target="_blank" rel="noreferrer noopener nofollow">more than 20 million users</a>. The company made headlines in 2023 for becoming one of the first sex toy makers <a href="https://techcrunch.com/2023/07/05/lovense-chatgpt-pleasure-companion/" target="_blank" rel="noreferrer noopener">to integrate ChatGPT into its products</a>.&#160;</p>
+
+<p class="wp-block-paragraph">But the inherent security risks in connecting sex toys to the internet can put users at risk of real-world harm if something goes wrong, including <a href="https://techcrunch.com/2020/10/06/qiui-smart-chastity-sex-toy-security-flaw/" target="_blank" rel="noreferrer noopener">device lock-ins</a> and <a href="https://techcrunch.com/2023/09/02/smart-chastity-cage-emails-passwords-location/" target="_blank" rel="noreferrer noopener">data privacy leaks</a>.</p>
+
+<p class="wp-block-paragraph">BobDaHacker said they discovered that Lovense was leaking other people&#8217;s email addresses while using the app. Although other users&#8217; email addresses were not visible to users in the app, anyone using a network analysis tool to inspect the data flowing in and out of the app would see the other user&#8217;s email address when interacting with them, such as muting them.&#160;</p>
+
+<p class="wp-block-paragraph">By modifying the network request from a logged-in account, BobDaHacker said they could associate any Lovense username with their registered email address, potentially exposing any customer who has signed up to Lovense with an identifiable email address.</p>
+
+<p class="wp-block-paragraph">&#8220;This was especially bad for cam models who share their usernames publicly but obviously don&#8217;t want their personal emails exposed,&#8221; BobDaHacker wrote in their blog post.</p>
+
+<p class="wp-block-paragraph">TechCrunch verified this bug by creating a new account on Lovense and asking BobDaHacker to reveal our registered email address, which they did in about a minute. By automating the process with a computer script, the researcher said they could obtain a user&#8217;s email address in less than a second.</p>
+
+<p class="wp-block-paragraph">BobDaHacker said a second vulnerability allowed them to take over any Lovense user&#8217;s account using just their email address, which could be derived from the earlier bug. This bug lets anyone create authentication tokens for accessing a Lovense account without needing a password, allowing an attacker to remotely control the account as if they were the real user.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;Cam models use these tools for work, so this was a huge deal. Literally anyone could take over any account just by knowing the email address,&#8221; said BobDaHacker.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The bugs affect anyone with a Lovense account or device.</p>
+
+<p class="wp-block-paragraph">BobDaHacker disclosed the bugs to Lovense on March 26 via the <a href="https://internetofdon.gs/about/" target="_blank" rel="noreferrer noopener nofollow">Internet of Dongs</a>, a project that aims to improve the security and privacy of sex toys, and helps <a href="https://internetofdon.gs/lovense/" target="_blank" rel="noreferrer noopener nofollow">report and disclose flaws to device makers</a>.&#160;</p>
+
+<p class="wp-block-paragraph">According to BobDaHacker, they were awarded a total of $3,000 via bug bounty site HackerOne. But after several weeks of back and forth disputing whether the bugs were actually fixed, the researcher went public this week after Lovense requested 14 months to fix the flaws. (Security researchers typically grant vendors three months or less to fix a security bug before going public with their findings.) The company told BobDaHacker in the same email that it decided against a &#8220;faster, one-month fix,&#8221; which would have required forcing customers using older products to upgrade their apps immediately.</p>
+
+<p class="wp-block-paragraph">The researcher notified the company ahead of disclosure, per an email seen by TechCrunch. BobDaHacker said in a blog post update on Tuesday that the bug may have been identified by another researcher as far back as September 2023, but the bug was allegedly closed without a fix.&#160;</p>
+
+<p class="wp-block-paragraph">Lovense did not respond to an email from TechCrunch.</p>
+
+
+			
+
+			</div>
