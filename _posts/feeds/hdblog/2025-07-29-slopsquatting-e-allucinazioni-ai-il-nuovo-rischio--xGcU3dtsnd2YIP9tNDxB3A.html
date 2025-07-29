@@ -1,0 +1,25 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/business/articoli/n626786/slopsquatting-allucinazioni-ai-nuovo-rischio/
+date: '2025-07-29T08:15:00'
+excerpt: Una ricerca mostra la portata del fenomeno e la necessità di nuove strategie
+  di sicurezza.
+image: assets/media/xGcU3dtsnd2YIP9tNDxB3A-qY7bn-jc9GlA-l_gzFATiQ.jpeg
+source: hdblog
+tags:
+- Business
+title: Slopsquatting e allucinazioni AI, il nuovo rischio per la sicurezza aziendale
+---
+<div><p>dall'intelligenza artificiale,Gli assistenti di codifica alimentati <a href="https://www.hdblog.it/ia/">dall'intelligenza artificiale</a>, come <strong>GitHub Copilot</strong>, <strong>Cursor AI</strong> e <a href="https://www.hdblog.it/chatgpt/">ChatGPT</a>, sono diventati strumenti centrali per gli sviluppatori, <strong>accelerando i flussi di lavoro</strong> e <strong>migliorando la produttivit&#224;</strong>. Secondo una recente ricerca di Stack Overflow, oltre il 76% degli sviluppatori utilizza questi sistemi e pi&#249; dell'80% ha riscontrato<strong> benefici significativi in termini di efficienza.</strong> Tuttavia, a questa diffusione si accompagna l'emergere di nuove tipologie di rischio: tra queste, <strong>le cosiddette "allucinazioni"</strong>, ovvero la generazione da parte dei modelli di <strong>raccomandazioni di pacchetti software inesistenti ma credibili.</strong></p><p>Uno studio recente ha evidenziato come i modelli open-source presentino<strong> un tasso medio di pacchetti "allucinati" pari al 21,7%</strong>, molto superiore al 5,2% rilevato per i modelli commerciali. I ricercatori hanno identificato <strong>oltre 200.000 nomi unici di pacchetti inesistenti,</strong> sottolineando la pervasivit&#224; del problema. Non si tratta di errori evidenti:<strong> i nomi creati assomigliano a quelli di pacchetti autentici</strong> e possono trarre in inganno anche sviluppatori esperti. &#200; emerso inoltre un aspetto "interlinguistico", con <strong>modelli di generazione di codice per Python che "allucinano" pacchetti JavaScript</strong>, aumentando la confusione negli ecosistemi software.<br>
+<br>
+Questa vulnerabilit&#224; ha dato origine a u<strong>na nuova forma di attacco alla supply chain denominata "slopsquatting"</strong>. A differenza del typosquatting, che sfrutta gli errori di digitazione umani, lo slopsquatting si basa proprio sulle allucinazioni dei sistemi AI. Gli attaccanti monitorano i pacchetti suggeriti dall'intelligenza artificiale, registrano rapidamente quei nomi su repository come npm o PyPI e <strong>diffondono cos&#236; codice malevolo</strong>. Un caso emblematico &#232; quello di "huggingface-cli": nel 2023 un ricercatore ha registrato su PyPI questo pacchetto inesistente, ripetutamente suggerito dall'AI, come esperimento innocuo. In pochi giorni migliaia di sviluppatori, inclusi team di Alibaba, l<strong>o hanno integrato inconsapevolmente nei propri progetti,</strong> dimostrando la facilit&#224; con cui simili falle possono essere sfruttate.</p><p>Uno scenario su scala pi&#249; ampia, con attaccanti intenzionati a danneggiare sistemi critici, potrebbe provocare c<strong>ompromissioni estese, violazioni di dati, backdoor persistenti e interruzioni gravi. </strong>La natura automatizzata della gestione delle dipendenze nelle moderne pipeline CI/CD <strong>facilita infatti la propagazione rapida del codice dannoso dagli ambienti di sviluppo ai sistemi di produzione</strong>. Le <a href="https://www.hdblog.it/cybersecurity/">pratiche di sicurezza tradizionali risultano spesso inefficaci</a>, poich&#233; molti scanner di dipendenze si basano sulla reputazione storica e non riescono a rilevare pacchetti appena registrati.<br>
+<br>
+Secondo Aaron Rose, Office of the CTO di Check Point Software, <strong>&#232; essenziale adottare contromisure rigorose.</strong> Gli sviluppatori e i team di sicurezza devono trattare con scetticismo le raccomandazioni dell'AI, verificando manualmente i pacchetti sconosciuti e utilizzando strumenti come lockfile, versioni fissate e verifica degli hash crittografici. L'impiego di <strong>mirror interni o di elenchi di pacchetti fidati </strong>pu&#242; ridurre l'esposizione alle nuove minacce.<br>
+<br>
+I ricercatori hanno inoltre sperimentato tecniche come la retrieval augmented generation (RAG) e la messa a punto supervisionata, riuscendo a <strong>ridurre le allucinazioni fino all'85%</strong>, ma <strong>con</strong> <strong>un impatto negativo sulla qualit&#224; complessiva del codice</strong>. Questo evidenzia la necessit&#224; di soluzioni di sicurezza che individuino in modo proattivo le minacce senza compromettere l'efficienza dello sviluppo.</p>
+
+	
+				
+
+
+</div>
