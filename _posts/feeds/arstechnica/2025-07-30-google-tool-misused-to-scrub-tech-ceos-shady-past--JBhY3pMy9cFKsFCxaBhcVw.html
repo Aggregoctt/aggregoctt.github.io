@@ -1,0 +1,44 @@
+---
+author: Ryan Whitwam
+canonical_url: https://arstechnica.com/gadgets/2025/07/google-tool-misused-to-scrub-tech-ceos-shady-past-from-search/
+date: '2025-07-30T20:18:18'
+excerpt: Google has fixed the bug, which it says affected only "a tiny fraction of
+  websites."
+image: assets/media/JBhY3pMy9cFKsFCxaBhcVw-YDDWO468Dzfz1gTHnj-L3Q.jpeg
+source: arstechnica
+tags:
+- Google
+- Tech
+- google
+- search
+title: Google tool misused to scrub tech CEO’s shady past from search
+---
+<div>
+                      
+                      
+          <p>Google is fond of saying its mission is to "organize the world's information," but who gets to decide what information is worthy of organization? A San Francisco tech CEO has spent the past several years attempting to remove unflattering information about himself from Google's search index, and the nonprofit Freedom of the Press Foundation <a href="https://freedom.press/issues/censorship-whac-a-mole-google-search-exploited-to-scrub-articles-on-san-francisco-tech-exec/">says</a> he's still at it. Most recently, an unknown bad actor used a bug in one of Google's search tools to scrub the offending articles.</p>
+<p>The saga began in 2023 when independent journalist Jack Poulson <a href="https://jackpoulson.substack.com/p/the-covert-gig-work-surveillance">reported</a> on Maury Blackman's 2021 domestic violence arrest. Blackman, who was then the CEO of surveillance tech firm Premise Data Corp., took offense at the publication of his legal issues. The case did not lead to charges after Blackman's 25-year-old girlfriend recanted her claims against the 53-year-old CEO, but Poulson reported on some troubling details of the public arrest report.</p>
+<p>Blackman has previously used tools like DMCA takedowns and lawsuits to stifle reporting on his indiscretion, but that campaign now appears to have co-opted part of Google's search apparatus. The Freedom of the Press Foundation (FPF) reported on Poulson's work and Blackman's attempts to combat it late last year. In June, Poulson contacted the Freedom of the Press Foundation to report that the article had mysteriously vanished from Google search results.</p>
+<p>The foundation began an investigation immediately, which led them to a little-known Google search feature known as Refresh Outdated Content. Google created this tool for users to report links with content that is no longer accurate or that lead to error pages. When it works correctly, Refresh Outdated Content can help make Google's search results more useful. However, Freedom of the Press Foundation now says that a bug allowed an unknown bad actor to scrub mentions of Blackman's arrest from the Internet.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Capital F for &#8220;Frustrating&#8221;</h2>
+<p>Upon investigating, FPF found that its article on Blackman was completely absent from Google results, even through a search with the exact title. Poulson later realized that two of his own Substack articles were similarly affected. The Foundation was led to the Refresh Outdated Content tool upon checking its search console.</p>
+<p>Google's tool doesn't just take anyone's word for it when they suggest the removal of search results. However, a bug in the tool made it an ideal way to suppress information in search results. When inputting a URL, the tool allowed users to change the capitalization in the URL slug. The Foundation's article was titled "<a href="https://freedom.press/issues/anatomy-of-a-censorship-campaign-a-tech-execs-crusade-to-silence-a-journalist/">Anatomy of a censorship campaign: A tech exec&#8217;s crusade to stifle journalism</a>," but the requests logged in Google's tool included variations like "AnAtomy" and "censorSHip."</p>
+<p>Because the Refresh Outdated Content was seemingly case-insensitive, the crawler would check the URL, encounter a 404 error, and then de-index the working URL. Investigators determined this method was used by Blackman or someone with a suspicious interest in his online profile dozens of times between May and June 2025. Amusingly, since leaving Premise, Blackman has landed in the CEO role at online reputation management firm The Transparency Company.</p>
+<p>If you go looking for the Freedom of the Press Foundation article or Poulson's own reporting, it should appear normally in Google's search results. The FPF contacted Google about the issue, and the company confirmed the bug. It issued a fix with unusual swiftness, telling the Foundation that the bug affected "a tiny fraction of websites."</p>
+<p>It is unclear whether Google was aware of the bug previously or if its exploitation was widespread. The Internet is vast, and those who seek to maliciously hide information are not prone to publicizing their methods. It's somewhat unusual for Google to admit fault so readily, but at least it addressed the issue.</p>
+<p>The Refresh Outdated Content tool doesn't log who submits requests, but whoever was behind this disinformation campaign may want to look into the <a href="https://arstechnica.com/gadgets/2016/08/the-new-streisand-effect-barbra-calls-tim-cook-to-change-siris-pronunciation/">Streisand Effect</a>.</p>
+
+
+          
+                  
+
+                  
+          </div>
