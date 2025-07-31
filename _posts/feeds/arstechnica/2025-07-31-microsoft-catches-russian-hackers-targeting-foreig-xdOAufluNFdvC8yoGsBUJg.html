@@ -1,0 +1,53 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/information-technology/2025/07/microsoft-catches-russian-hackers-targeting-foreign-embassies/
+date: '2025-07-31T21:43:51'
+excerpt: End goal is the installation of a malicious TLS root certificate for use
+  in intel gathering.
+image: assets/media/xdOAufluNFdvC8yoGsBUJg-av7oNMVMwkeBgJEsyHwTeg.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- apts
+- embassies
+- russia
+- secret blizzard
+title: Microsoft catches Russian hackers targeting foreign embassies
+---
+<div>
+                      
+                      
+          <p>Russian-state hackers are targeting foreign embassies in Moscow with custom malware that gets installed using adversary-in-the-middle attacks that operate at the ISP level, Microsoft warned Thursday.</p>
+<p>The campaign has been ongoing since last year. It leverages ISPs in that country, which are obligated to work on behalf of the Russian government. With the ability to control the ISP network, the threat group&#8212;which Microsoft tracks under the name Secret Blizzard&#8212;positions itself between a targeted embassy and the end points they connect to, a form of attack known as an <a href="https://attack.mitre.org/techniques/T1557/">adversary in the middle</a>, or AitM. The position allows Secret Blizzard to send targets to malicious websites that appear to be known and trusted.</p>
+<h2>Objective: Install ApolloShadow</h2>
+<p>&#8220;While we previously assessed with low confidence that the actor conducts cyberespionage activities within Russian borders against foreign and domestic entities, this is the first time we can confirm that they have the capability to do so at the Internet Service Provider (ISP) level,&#8221; members of the Microsoft Threat Intelligence team <a href="https://www.microsoft.com/en-us/security/blog/2025/07/31/frozen-in-transit-secret-blizzards-aitm-campaign-against-diplomats/">wrote</a>. &#8220;This means that diplomatic personnel using local ISP or telecommunications services in Russia are highly likely targets of Secret Blizzard&#8217;s AiTM position within those services.&#8221;</p>
+<p>Secret Blizzard is among the world's most active and sophisticated state-sponsored hacking groups. It has been active since at least 1996 and, <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a">according to</a> the Cybersecurity and Infrastructure Security Agency, is a unit of the Russian Federal Security Service. The group is also tracked under names including Turla Venomous Bear, Uroburos, Snake, Blue Python, Wraith, ATG26, and Waterbug.</p>
+<p>The goal of the campaign is to induce targets to install custom malware tracked as ApolloShadow. ApolloShadow, in turn, installs a TLS root certificate that allows Secret Blizzard to cryptographically impersonate trusted websites visited by an infected system inside the embassy.</p>
+<p>An AitM that Microsoft observed in February started by putting targets behind a captive portal. These portals are widely used in legitimate settings to manage Internet access at hotels and airports by requiring newly connected users to authenticate themselves, provide payment card information, or accept terms of service.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Once behind the captive portal, the page initiates the Windows Test Connectivity Status Indicator, a legitimate service that determines whether a device has Internet access by sending an HTTP GET request to hxxp://www.msftconnecttest[.]com/redirect. That site, in turn, redirects the browser to msn[.]com. As Thursday&#8217;s post explained:</p>
+<blockquote><p>Once the system opens the browser window to this address, the system is redirected to a separate actor-controlled domain that likely displays a certificate validation error which prompts the target to download and execute ApolloShadow. Following execution, ApolloShadow checks for the privilege level of the ProcessToken and if the device is not running on default administrative settings, then the malware displays the user access control (UAC) pop-up window to prompt the user to install certificates with the file name CertificateDB.exe, which masquerades as a Kaspersky installer to install root certificates and allow the actor to gain elevated privileges in the system.</p></blockquote>
+<p>The following diagram illustrates the infection chain:</p>
+ 
+<p>ApolloShadow invokes the <code>GetTokenInformationType</code> API to check if it has sufficient system rights to install the root certificate. If not, the malware uses a sophisticated process that spoofs a page at hxxp://timestamp.digicert[.]com/registered, which in turn sends the system a second-stage payload in the form of a VBScript.</p>
+<p>Once decoded, ApolloShadow relaunches itself and presents the user with a User Access Control window seeking to elevate its system access. (Microsoft provided many more technical details about the technique in Thursday&#8217;s post.)</p>
+ 
+<p>If ApolloShadow already has sufficient system rights, the malware configures all networks the host connects to as private.</p>
+<p>&#8220;This induces several changes including allowing the host device to become discoverable and relaxing firewall rules to enable file sharing,&#8221; Microsoft explained. &#8220;While we did not see any direct attempts for lateral movement, the main reason for these modifications is likely to reduce the difficulty of lateral movement on the network.&#8221; (The Microsoft post also provided technical details about this technique.)</p>
+<p>Microsoft said the ability to cause infected devices to trust malicious sites allows the threat actor to maintain persistence, likely for use in intelligence collection.</p>
+<p>The company is advising all customers operating in Moscow, particularly sensitive organizations, to tunnel their traffic through encrypted tunnels that connect to a trusted ISP.</p>
+
+
+          
+                  
+
+                  
+          </div>
