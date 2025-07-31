@@ -1,0 +1,57 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/07/in-search-of-riches-hackers-plant-4g-enabled-raspberry-pi-in-bank-network/
+date: '2025-07-30T22:21:56'
+excerpt: Sophisticated group also used novel means to disguise their custom malware.
+image: assets/media/YlzVHyI_Xkxi8B05e2_8KA-3PYVR9fOaZs0MWT2f4vyvg.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- ATM
+- banks
+- hackers
+- Raspberry Pi
+title: In search of riches, hackers plant 4G-enabled Raspberry Pi in bank network
+---
+<div>
+                      
+                      
+          <p>Hackers planted a Raspberry Pi equipped with a 4G modem in the network of an unnamed bank in an attempt to siphon money out of the financial institution's ATM system, researchers reported Wednesday.</p>
+<p>The researchers with security firm Group-IB said the &#8220;unprecedented tactic allowed the attackers to bypass perimeter defenses entirely.&#8221; The hackers combined the physical intrusion with remote access malware that used another novel technique to conceal itself, even from sophisticated forensic tools. The technique, known as a <a href="https://unix.stackexchange.com/questions/198590/what-is-a-bind-mount">Linux bind mount</a>, is used in IT administration but had never been seen used by threat actors. The trick allowed the malware to operate similarly to a rootkit, which uses advanced techniques to hide itself from the operating system it runs on.</p>
+<h2>End goal: Backdooring the ATM switching network</h2>
+<p>The Raspberry Pi was connected to the same network switch used by the bank&#8217;s ATM system, a position that effectively put it inside the bank&#8217;s internal network. The goal was to compromise the ATM switching server and use that control to manipulate the bank&#8217;s hardware security module, a tamper-resistant physical device used to store secrets such as credentials and digital signatures and run encryption and decryption functions.</p>
+<p>The group behind the attack is tracked in the industry under the name UNC2891. The financially motivated threat group has been active since at least 2017 in targeting the infrastructures of banks. It has earned a well-deserved reputation for proficiency in its use of custom malware in attacks targeting Linux, Unix, and Oracle Solaris systems.</p>
+<p>In 2022, Google&#8217;s Mandiant division <a href="https://cloud.google.com/blog/topics/threat-intelligence/unc2891-overview/">said</a> it had observed UNC2891 spending years inside a targeted network, during which time the intrusion went largely unnoticed. Mandiant researchers went on to identify CakeTap, a custom rootkit for Solaris systems. Among other things, CakeTap manipulated messages passing through an infected ATM switching network, most likely for use in unauthorized cash withdrawals using fraudulent bank cards. Mandiant documented two other custom pieces of malware, which the company named SlapStick and TinyShell.</p>
+<p>Group-IB&#8217;s <a href="https://www.group-ib.com/blog/unc2891-bank-heist/">report on Wednesday</a> shows that UNC2891 is still active and finding new and advanced ways to burrow into bank networks without detection.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>&#8220;One of the most unusual elements of this case was the attacker&#8217;s use of physical access to install a Raspberry Pi device,&#8221; Group-IB Senior Digital Forensics and Incident Response Specialist Nam Le Phuong wrote. &#8220;This device was connected directly to the same network switch as the ATM, effectively placing it inside the bank&#8217;s internal network. The Raspberry Pi was equipped with a 4G modem, allowing remote access over mobile data.&#8221;</p>
+<p>To maintain persistence, UNC2891 also compromised a mail server because it had constant Internet connectivity. The Raspberry Pi and the mail server backdoor would then communicate by using the bank&#8217;s monitoring server as an intermediary. The monitoring server was chosen because it had access to almost every server within the data center.</p>
+ 
+
+<p>As Group-IB was initially investigating the bank&#8217;s network, researchers noticed some unusual behaviors on the monitoring server, including an outbound beaconing signal every 10 minutes and repeated connection attempts to an unknown device. The researchers then used a forensic tool to analyze the communications. The tool identified the endpoints as a Raspberry Pi and the mail server but was unable to identify the process names responsible for the beaconing.</p>
+ 
+
+<p>The researchers then captured the system memory as the beacons were sent. The review identified the process as <code>lightdm</code>, a process associated with an open source <a href="https://wiki.archlinux.org/title/LightDM">LightDM</a> display manager. The process appeared to be legitimate, but the researchers found it suspicious because the LightDM binary was installed in an unusual location. After further investigation, the researchers discovered that the processes of the custom backdoor had been deliberately disguised in an attempt to throw researchers off the scent.</p>
+<p>Phuong explained:</p>
+<blockquote><p>The backdoor process is deliberately obfuscated by the threat actor through the use of process masquerading. Specifically, the binary is named &#8220;lightdm&#8221;, mimicking the legitimate LightDM display manager commonly found on Linux systems. To enhance the deception, the process is executed with command-line arguments resembling legitimate parameters &#8211; for example,</p>
+<p>lightdm &#8211;session child 11 19 &#8212; in an effort to evade detection and mislead forensic analysts during post-compromise investigations.</p>
+<p>These backdoors were actively establishing connections to both the Raspberry Pi and the internal Mail Server.</p></blockquote>
+<p>As noted earlier, the processes were disguised using the Linux bind mount. Following that discovery, Group-IB added the technique to the MITRE ATT&amp;CK framework as &#8220;T1564.013 &#8211; Hide Artifacts: Bind Mounts.&#8221;</p>
+<p>Group-IB didn&#8217;t say where the compromised switching equipment was located or how attackers managed to plant the Raspberry Pi. The attack was detected and shut down before UNC2891 was able to achieve its final goal of infecting the ATM switching network with the CakeTap backdoor.</p>
+
+
+          
+                   
+             
+            
+
+                  
+          </div>
