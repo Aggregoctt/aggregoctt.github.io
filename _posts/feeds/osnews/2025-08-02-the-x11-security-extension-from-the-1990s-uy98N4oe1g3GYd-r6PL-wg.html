@@ -1,0 +1,53 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142962/the-x11-security-extension-from-the-1990s/
+date: '2025-08-02T21:37:35'
+excerpt: 'Security isn&#8217;t exactly a strong point of X11, and improving it is
+  one of the main reasons why Wayland is such a vast improvement over X11. Just one
+  of the many examples of X11 being inherently insecure is that keyloggers are entirely
+  trivial on X11, because keylogger functionality is effectively built into it. Of
+  course, this isn&#8217;t exactly news, and as Peter Hofmann details, there is an
+  old X11 extension that adds somewhat rudimentary security to X11: the X11 SECURITY
+  extension. This extension is part of every X.org installation, but it hasn&#8217;t
+  seen any meaningful work in a long, long time. What it does is allow you to do is
+  set X11 clients as &#8220;trusted&#8221; and &#8220;untrusted&#8221;, where untrusted
+  clients cannot interact with tusted ones. This provides some basic security &#8211;
+  it actually prevents keylogging! &#8211; but only very basic, as Hoffman notes:
+  The thing is that it&#8217;s immediately clear that this extension &#8212;&#160;in
+  its current state&#160;&#8212; is not the answer to &#8220;X11 is insecure&#8221;:
+  You only have two classes, trusted and untrusted. That&#8217;s not enough. For example:
+  When you run your browser as untrusted, you can&#8217;t simultaneously run some
+  sandboxed program (Snap, Flatpak, &#8230;)&#160;in a meaningful way, because those
+  two clients can spy on each other again. You want a proper per-client isolation
+  instead. Sandboxing plays an important role here. If you run programs &#8220;the
+  traditional way&#8221; (i.e., full access to the filesystem and network), then an
+  attacker can do all kinds of things and X11 keylogging is just one of a million
+  concerns. ↫ Peter Hofmann but it also happens to break a lot of things, and many
+  applications simply don&#8217;t work with it at all. Oddly enough, Firefox has no
+  issues with it, and will happily run in untrusted mode. The biggest problem, however,
+  is that untrusted clients only have access to exactly two other X11 extensions,
+  which leads to a whole host of problems, like no scaling, broken keyboard layouts,
+  no 3D acceleration, and so on. On top of all of that, it breaks clipboard functionality,
+  as anything copied in an untrusted client cannot be pasted anywhere else. As such,
+  Hoffman concludes: In its current state, I&#8217;d say the SECURITY extension is
+  &#8220;somewhat useful&#8221;, but more work would have to be done. Both in X.Org
+  and in the clients. You would have to come up with a new clipboard protocol, for
+  example. And the list goes on. (See where I&#8217;m going with this?) It&#8217;s
+  not that simple. ↫ Peter Hofmann Since pretty much nobody adopted it when this extension
+  came out in the &#8217;90s, and it hasn&#8217;t seen much work since, the amount
+  of work that would be required to bring it up to modern standards would be astronomical,
+  and trying to get clients to adopt it would probably prove fruitless considering
+  Wayland already exists, and offers all of the potential security benefits and then
+  some. People often claim it would be &#8220;easy&#8221; to modernise X11, but just
+  this one particular issue &#8211; security, kind of important &#8211; shows just
+  how quickly the X11 house of cards comes crashing down if you try to do anything
+  to drag it out of its &#8217;80s and &#8217;90s mindset.'
+image: null
+source: osnews
+tags:
+- Retro computing
+title: The X11 SECURITY extension from the 1990s
+---
+<div><p>Security isn&#8217;t exactly a strong point of X11, and improving it is one of the main reasons why Wayland is such a vast improvement over X11. Just one of the many examples of X11 being inherently insecure is that keyloggers are entirely trivial on X11, because keylogger functionality is effectively built into it. Of course, this isn&#8217;t exactly news, and as Peter Hofmann details, there is an old X11 extension that adds somewhat rudimentary security to X11: the&#160;<a href="https://www.x.org/releases/X11R7.7/doc/xextproto/security.html">X11 SECURITY extension</a>.</p><p>This extension is part of every X.org installation, but it hasn&#8217;t seen any meaningful work in a long, long time. What it does is allow you to do is set X11 clients as &#8220;trusted&#8221; and &#8220;untrusted&#8221;, where untrusted clients cannot interact with tusted ones. This provides some basic security &#8211; it actually prevents keylogging! &#8211; but only very basic, as Hoffman notes:</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>The thing is that it&#8217;s immediately clear that this extension &#8212;&#160;in its current state&#160;&#8212; is not the answer to &#8220;X11 is insecure&#8221;: You only have two classes, trusted and untrusted. That&#8217;s not enough. For example: When you run your browser as untrusted, you can&#8217;t simultaneously run some sandboxed program (Snap, Flatpak, &#8230;)&#160;in a meaningful way, because those two clients can spy on each other again. You want a proper per-client isolation instead.</p><p>Sandboxing plays an important role here. If you run programs &#8220;the traditional way&#8221; (i.e., full access to the filesystem and network), then an attacker can do all kinds of things and X11 keylogging is just one of a million concerns.</p>
+<a href="https://www.uninformativ.de/blog/postings/2025-08-02/0/POSTING-en.html">&#8619; Peter Hofmann</a></blockquote><p>but it also happens to break a lot of things, and many applications simply don&#8217;t work with it at all. Oddly enough, Firefox has no issues with it, and will happily run in untrusted mode.</p><p>The biggest problem, however, is that untrusted clients only have access to exactly two other X11 extensions, which leads to a whole host of problems, like no scaling, broken keyboard layouts, no 3D acceleration, and so on. On top of all of that, it breaks clipboard functionality, as anything copied in an untrusted client cannot be pasted anywhere else.</p><p>As such, Hoffman concludes:</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>In its current state, I&#8217;d say the SECURITY extension is &#8220;somewhat useful&#8221;, but more work would have to be done. Both in X.Org and in the clients. You would have to come up with a new clipboard protocol, for example. And the list goes on. (See where I&#8217;m going with this?) It&#8217;s not that simple.</p>
+<a href="https://www.uninformativ.de/blog/postings/2025-08-02/0/POSTING-en.html">&#8619; Peter Hofmann</a></blockquote><p>Since pretty much nobody adopted it when this extension came out in the &#8217;90s, and it hasn&#8217;t seen much work since, the amount of work that would be required to bring it up to modern standards would be astronomical, and trying to get clients to adopt it would probably prove fruitless considering Wayland already exists, and offers all of the potential security benefits and then some. People often claim it would be &#8220;easy&#8221; to modernise X11, but just this one particular issue &#8211; security, kind of important &#8211; shows just how quickly the X11 house of cards comes crashing down if you try to do anything to drag it out of its &#8217;80s and &#8217;90s mindset.</p></div>
