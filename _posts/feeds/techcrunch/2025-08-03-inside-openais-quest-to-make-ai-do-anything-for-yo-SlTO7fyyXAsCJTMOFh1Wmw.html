@@ -1,0 +1,202 @@
+---
+author: Maxwell Zeff
+canonical_url: https://techcrunch.com/2025/08/03/inside-openais-quest-to-make-ai-do-anything-for-you/
+date: '2025-08-03T14:00:00'
+excerpt: OpenAI developed the first AI reasoning model less than a year ago, but the
+  technology has shifted Silicon Valley's focus to agents.
+image: assets/media/SlTO7fyyXAsCJTMOFh1Wmw-govONMELl2NtnLb9jKsvIQ.jpeg
+source: techcrunch
+tags:
+- AI
+- Exclusive
+- OpenAI
+- ChatGPT
+- agents
+title: Inside OpenAI’s quest to make AI do anything for you
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">Shortly after Hunter Lightman joined OpenAI as a researcher in 2022, he watched his colleagues launch ChatGPT, one of the fastest-growing products ever. Meanwhile, Lightman quietly worked on a team teaching OpenAI&#8217;s models to solve high school math competitions.&#160;</p>
+
+<p class="wp-block-paragraph">Today that team, known as MathGen, is considered instrumental to OpenAI&#8217;s industry-leading effort to create AI reasoning models: the core technology behind AI agents that can do tasks on a computer like a human would.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;We were trying to make the models better at mathematical reasoning, which at the time they weren&#8217;t very good at,&#8221; Lightman told TechCrunch, describing MathGen&#8217;s early work.</p>
+
+<p class="wp-block-paragraph">OpenAI&#8217;s models are far from perfect today &#8212; the company&#8217;s latest AI systems <a href="https://techcrunch.com/2025/04/18/openais-new-reasoning-ai-models-hallucinate-more/">still hallucinate</a> and its agents <a rel="nofollow" href="https://www.wired.com/story/browser-haunted-by-ai-agents/">struggle with complex tasks.</a></p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">But its state-of-the-art models have improved significantly on mathematical reasoning. One of OpenAI&#8217;s models recently won a <a href="https://techcrunch.com/2025/07/21/openai-and-google-outdo-the-mathletes-but-not-each-other/">gold medal </a>at the International Math Olympiad, a math competition for the world&#8217;s brightest high school students. OpenAI believes these reasoning capabilities will translate to other subjects, and ultimately power general-purpose agents that the company has always dreamed of building.</p>
+
+<p class="wp-block-paragraph">ChatGPT was a happy accident &#8212; a lowkey research preview turned viral consumer business &#8212; but OpenAI&#8217;s agents are the product of a years-long, deliberate effort within the company.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;Eventually, you&#8217;ll just ask the computer for what you need and it&#8217;ll do all of these tasks for you,&#8221; said OpenAI CEO Sam Altman at the company&#8217;s <a href="https://techcrunch.com/2023/11/06/everything-announced-at-openais-first-developer-event/">first developer conference</a> in 2023. &#8220;These capabilities are often talked about in the AI field as agents. The upsides of this are going to be tremendous.&#8221;</p>
+ 
+
+ 
+
+<p class="wp-block-paragraph">Whether agents will meet Altman&#8217;s vision remains to be seen, but OpenAI shocked the world with the release of <a href="https://techcrunch.com/2024/09/12/openai-unveils-a-model-that-can-fact-check-itself/">its first AI reasoning model, o1,</a> in the fall of 2024. Less than a year later, the 21 foundational researchers behind that breakthrough are the most highly sought-after talent in Silicon Valley.</p>
+
+<p class="wp-block-paragraph">Mark Zuckerberg <a href="https://techcrunch.com/2025/06/26/meta-hires-key-openai-researcher-to-work-on-ai-reasoning-models/">recruited</a> five of the o1 researchers to work on Meta&#8217;s new superintelligence-focused unit, offering some compensation packages north of $100 million. One of them, Shengjia Zhao, was recently <a href="https://techcrunch.com/2025/07/25/meta-names-shengjia-zhao-as-chief-scientist-of-ai-superintelligence-unit/">named</a> chief scientist of Meta Superintelligence Labs.</p>
+
+<h2 class="wp-block-heading" id="h-the-reinforcement-learning-renaissance">The reinforcement learning renaissance</h2>
+
+<p class="wp-block-paragraph">The rise of OpenAI&#8217;s reasoning models and agents are tied to a machine learning training technique known as reinforcement learning (RL). RL provides feedback to an AI model on whether its choices were correct or not in simulated environments.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">RL has been used for decades. For instance, in 2016, about a year after OpenAI was founded in 2015, an AI system created by Google DeepMind using RL, <a href="https://techcrunch.com/2016/03/15/google-ai-beats-go-world-champion-again-to-complete-historic-4-1-series-victory/">AlphaGo</a>, gained global attention after beating a world champion in the board game, Go.</p>
+
+ 
+
+<p class="wp-block-paragraph">Around that time, one of OpenAI&#8217;s first employees, Andrej Karpathy, began pondering how to leverage RL to create an AI agent that could use a computer. But it would take years for OpenAI to develop the necessary models and training techniques.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">By 2018, OpenAI pioneered its first large language model in the GPT series, pretrained on massive amounts of internet data and a large clusters of GPUs. GPT models excelled at text processing, eventually leading to ChatGPT, but struggled with basic math.&#160;</p>
+
+<p class="wp-block-paragraph">It took until 2023 for OpenAI to achieve a breakthrough, initially dubbed &#8220;Q*&#8221; and then &#8220;Strawberry,&#8221; by combining LLMs, RL, and a technique called test-time computation. The latter gave the models extra time and computing power to plan and work through problems, verifying its steps, before providing an answer. </p>
+
+<p class="wp-block-paragraph">This allowed OpenAI to introduce a new approach called &#8220;chain-of-thought&#8221; (CoT), which improved AI&#8217;s performance on math questions the models hadn&#8217;t seen before.</p>
+
+<p class="wp-block-paragraph">&#8220;I could see the model starting to reason,&#8221; said El Kishky. &#8220;It would notice mistakes and backtrack, it would get frustrated. It really felt like reading the thoughts of a person.&#8221;&#160;</p>
+
+<p class="wp-block-paragraph">Though individually these techniques weren&#8217;t novel, OpenAI uniquely combined them to create Strawberry, which directly led to the development of o1. OpenAI quickly identified that the planning and fact checking abilities of AI reasoning models could be useful to power AI agents.</p>
+
+<p class="wp-block-paragraph">&#8220;We had solved a problem that I had been banging my head against for a couple of years,&#8221; said Lightman. &#8220;It was one of the most exciting moments of my research career.&#8221;</p>
+
+<h2 class="wp-block-heading" id="h-scaling-reasoning">Scaling reasoning</h2>
+
+<p class="wp-block-paragraph">With AI reasoning models, OpenAI determined it had two new axes that would allow it to improve AI models: using more computational power during the post-training of AI models, and giving AI models more time and processing power while answering a question.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;OpenAI, as a company, thinks a lot about not just the way things are, but the way things are going to scale,&#8221; said Lightman.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Shortly after the 2023 Strawberry breakthrough, OpenAI spun up an &#8220;Agents&#8221; team led by OpenAI researcher Daniel Selsam to make further progress on this new paradigm, two sources told TechCrunch. Although the team was called &#8220;Agents,&#8221;&#160; OpenAI didn&#8217;t initially differentiate between reasoning models and agents as we think of them today. The company just wanted to make AI systems capable of completing complex tasks.</p>
+
+<p class="wp-block-paragraph">Eventually, the work of Selsam&#8217;s Agents team became part of a larger project to develop the o1 reasoning model, with leaders including OpenAI co-founder Ilya Sutskever, chief research officer Mark Chen, and chief scientist Jakub Pachocki.</p>
+
+ 
+
+<p class="wp-block-paragraph">OpenAI would have to divert precious resources &#8212; mainly talent and GPUs &#8212; to create o1. Throughout OpenAI&#8217;s history, researchers have had to negotiate with company leaders to obtain resources; demonstrating breakthroughs was a surefire way to secure them.</p>
+
+<p class="wp-block-paragraph">&#8220;One of the core components of OpenAI is that everything in research is bottom up,&#8221; said Lightman. &#8220;When we showed the evidence [for o1], the company was like, &#8216;This makes sense, let&#8217;s push on it.&#8217;&#8221;</p>
+
+<p class="wp-block-paragraph">Some former employees say that the startup&#8217;s mission to develop AGI was the key factor in achieving breakthroughs around AI reasoning models. By focusing on developing the smartest-possible AI models, rather than products, OpenAI was able to prioritize o1 above other efforts.&#160;That type of large investment in ideas wasn&#8217;t always possible at competing AI labs.</p>
+
+<p class="wp-block-paragraph">The decision to try new training methods proved prescient. By late 2024, several leading AI labs started seeing<a href="https://techcrunch.com/2024/11/20/ai-scaling-laws-are-showing-diminishing-returns-forcing-ai-labs-to-change-course/"> diminishing returns</a> on models created through traditional pretraining scaling. Today, much of the AI field&#8217;s momentum comes from advances in reasoning models.</p>
+
+<h2 class="wp-block-heading" id="h-what-does-it-mean-for-an-ai-to-reason"><strong>What does it mean for an AI to &#8220;reason?&#8221;</strong></h2>
+
+<p class="wp-block-paragraph">In many ways, the goal of AI research is to recreate human intelligence with computers. Since the launch of o1, ChatGPT&#8217;s UX has been filled with more human-sounding features such as &#8220;thinking&#8221; and &#8220;reasoning.&#8221;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">When asked whether OpenAI&#8217;s models were truly reasoning, El Kishky hedged, saying he thinks about the concept in terms of computer science. </p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;We&#8217;re teaching the model how to efficiently expend compute to get an answer. So if you define it that way, yes, it is reasoning,&#8221; said El Kishky.</p>
+
+<p class="wp-block-paragraph">Lightman takes the approach of focusing on the model&#8217;s results and not as much on the means or their relation to human brains.</p>
+
+ 
+
+<p class="wp-block-paragraph">&#8220;If the model is doing hard things, then it is doing whatever necessary approximation of reasoning it needs in order to do that,&#8221; said Lightman. &#8220;We can call it reasoning, because it looks like these reasoning traces, but it&#8217;s all just a proxy for trying to make AI tools that are really powerful and useful to a lot of people.&#8221;</p>
+
+<p class="wp-block-paragraph">OpenAI&#8217;s researchers note people may disagree with their nomenclature or definitions of reasoning &#8212; and surely, <a rel="nofollow" href="https://garymarcus.substack.com/p/a-knockout-blow-for-llms?r=8tdk6&amp;utm_campaign=post&amp;utm_medium=web&amp;triedRedirect=true">critics have emerged</a> &#8212; but they argue it&#8217;s less important than the capabilities of their models. Other AI researchers tend to agree.</p>
+
+<p class="wp-block-paragraph">Nathan Lambert, an AI researcher with the non-profit AI2, compares AI reasoning modes to airplanes in a <a rel="nofollow" href="https://www.interconnects.ai/p/the-rise-of-reasoning-machines">blog post</a>. Both, he says, are manmade systems inspired by nature &#8212; human reasoning and bird flight, respectively &#8212; but they operate through entirely different mechanisms. That doesn&#8217;t make them any less useful, or any less capable of achieving similar outcomes.</p>
+
+<p class="wp-block-paragraph">A group of AI researchers from OpenAI, Anthropic, and Google DeepMind agreed in a recent <a href="https://techcrunch.com/2025/07/15/research-leaders-urge-tech-industry-to-monitor-ais-thoughts/">position paper</a> that AI reasoning models are not well understood today, and more research is needed. It may be too early to confidently claim what exactly is going on inside them.</p>
+
+<h2 class="wp-block-heading" id="h-the-next-frontier-ai-agents-for-subjective-tasks"><strong>The next frontier: AI agents for subjective tasks</strong></h2>
+
+<p class="wp-block-paragraph">The AI agents on the market today work best for well-defined, verifiable domains such as coding. OpenAI&#8217;s <a href="https://techcrunch.com/2025/05/16/openai-launches-codex-an-ai-coding-agent-in-chatgpt/">Codex agent</a> aims to help software engineers offload simple coding tasks. Meanwhile, Anthropic&#8217;s models have become particularly <a href="https://techcrunch.com/2025/07/31/enterprises-prefer-anthropics-ai-models-over-anyone-elses-including-openais/">popular</a> in AI coding tools like Cursor and Claude Code &#8212; these are some of the first AI agents that people are willing to <a href="https://techcrunch.com/2025/06/05/cursors-anysphere-nabs-9-9b-valuation-soars-past-500m-arr/">pay up for</a>.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">However, general purpose AI agents like OpenAI&#8217;s <a href="https://techcrunch.com/2025/07/17/openai-launches-a-general-purpose-agent-in-chatgpt/">ChatGPT Agent</a> and Perplexity&#8217;s <a href="https://techcrunch.com/2025/07/09/perplexity-launches-comet-an-ai-powered-web-browser/">Comet</a> struggle with many of the complex, subjective tasks people want to automate. When trying to use these tools for online shopping or finding a long-term parking spot, I&#8217;ve found the agents take longer than I&#8217;d like and make <a href="https://techcrunch.com/2025/02/04/openais-operator-agent-helped-me-move-but-i-had-to-help-it-too/?_thumbnail_id=2593103">silly mistakes</a>.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Agents are, of course, early systems that will undoubtedly improve. But researchers must first figure out how to better train the underlying models to complete tasks that are more subjective.</p>
+
+ 
+
+<p class="wp-block-paragraph">&#8220;Like many problems in machine learning, it&#8217;s a data problem,&#8221; said Lightman, when asked about the limitations of agents on subjective tasks. &#8220;Some of the research I&#8217;m really excited about right now is figuring out how to train on less verifiable tasks. We have some leads on how to do these things.&#8221;&#160;</p>
+
+<p class="wp-block-paragraph">Noam Brown, an OpenAI researcher who helped create the IMO model and o1, told TechCrunch that OpenAI has new general-purpose RL techniques which allow them to teach AI models skills that aren&#8217;t easily verified. This was how the company built the model which achieved a gold medal at IMO, he said.</p>
+
+<p class="wp-block-paragraph">OpenAI&#8217;s IMO model was a newer AI system that spawns multiple agents, which then simultaneously explore several ideas, and then choose the best possible answer. These types of AI models are becoming more popular; <a href="https://techcrunch.com/2025/08/01/google-rolls-out-gemini-deep-think-ai-a-reasoning-model-that-tests-multiple-ideas-in-parallel/">Google</a> and <a href="https://techcrunch.com/2025/07/09/elon-musks-xai-launches-grok-4-alongside-a-300-monthly-subscription/">xAI</a> have recently released state-of-the-art models using this technique.</p>
+
+<p class="wp-block-paragraph">&#8220;I think these models will become more capable at math, and I think they&#8217;ll get more capable in other reasoning areas as well,&#8221; said Brown. &#8220;The progress has been incredibly fast. I don&#8217;t see any reason to think it will slow down.&#8221;</p>
+
+<p class="wp-block-paragraph">These techniques may help OpenAI&#8217;s models become more performant, gains that could show up in the company&#8217;s upcoming GPT-5 model. OpenAI hopes to assert its dominance over competitors with the launch of GPT-5, ideally offering the <a rel="nofollow" href="https://www.theinformation.com/articles/inside-openais-rocky-path-gpt-5?rc=dp0mql">best AI model</a> to power agents for developers and consumers. </p>
+
+<p class="wp-block-paragraph">But the company also wants to make its products simpler to use. El Kishky says OpenAI wants to develop AI agents that intuitively understand what users want, without requiring them to select specific settings. He says OpenAI aims to build AI systems that understand when to call up certain tools, and how long to reason for.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">These ideas paint a picture of an ultimate version of ChatGPT: an agent that can do anything on the internet for you, and understand how you want it to be done. That&#8217;s a much different product than what ChatGPT is today, but the company&#8217;s research is squarely headed in this direction.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">While OpenAI undoubtedly led the AI industry a few years ago, the company now faces a tranche of worthy opponents. The question is no longer just whether OpenAI can deliver its agentic future, but can the company do so before Google, Anthropic, xAI, or Meta beat them to it?</p>
+
+
+			
+
+			</div>
