@@ -1,0 +1,47 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/information-technology/2025/08/ai-site-perplexity-uses-stealth-tactics-to-flout-no-crawl-edicts-cloudflare-says/
+date: '2025-08-04T19:16:26'
+excerpt: The allegations are the latest to accuse Perplexity of improper web crawling.
+image: assets/media/4NDfiU9ePEyK_WJkOomWmA-O7bz9esfAF7vrWKrEuYDZA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Security
+- robots.txt
+- scraping
+title: AI site Perplexity uses “stealth tactics” to flout no-crawl edicts, Cloudflare
+  says
+---
+<div>
+                      
+                      
+          <p>AI search engine Perplexity is using stealth bots and other tactics to evade websites&#8217; no-crawl directives, an allegation that if true violates Internet norms that have been in place for more than three decades, network security and optimization service Cloudflare said Monday.</p>
+<p>In a <a href="https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/">blog post</a>, Cloudflare researchers said the company received complaints from customers who had disallowed Perplexity scraping bots by implementing settings in their sites&#8217; robots.txt files and through Web application firewalls that blocked the declared Perplexity crawlers. Despite those steps, Cloudflare said, Perplexity continued to access the sites&#8217; content.</p>
+<p>The researchers said they then set out to test it for themselves and found that when known Perplexity crawlers encountered blocks from robots.txt files or firewall rules, Perplexity then searched the sites using a stealth bot that followed a range of tactics to mask its activity.</p>
+<h2>&gt;10,000 domains and millions of requests</h2>
+<p>&#8220;This undeclared crawler utilized multiple IPs not listed in Perplexity&#8217;s official IP range, and would rotate through these IPs in response to the restrictive robots.txt policy and block from Cloudflare," the researchers wrote. &#8220;In addition to rotating IPs, we observed requests coming from different ASNs in attempts to further evade website blocks. This activity was observed across tens of thousands of domains and millions of requests per day.&#8221;</p>
+<p>The researchers provided the following diagram to illustrate the flow of the technique they allege Perplexity used.</p>
+ 
+<p>If true, the evasion flouts Internet norms in place for more than three decades. In 1994, engineer Martijn Koster proposed the <a href="https://ksi.cpsc.ucalgary.ca/archives/WWW-TALK/www-talk-1994q3/0007.html">Robots Exclusion Protocol</a>, which provided a machine-readable format for informing crawlers they weren&#8217;t permitted on a given site. Sites that their content indexed installed the simple robots.txt file at the top of their homepage. The standard, which has been widely observed and endorsed ever since, formally became a standard under the Internet Engineering Task Force in <a href="https://datatracker.ietf.org/doc/html/rfc9309">2022</a>.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Cloudflare isn&#8217;t the first to say that Perplexity violates the spirit if not the letter of the norm. Last year, Reddit CEO Steve Huffman told The Verge that stopping Perplexity&#8212;and two other AI engines from Microsoft and Anthropic&#8212;was a <a href="https://arstechnica.com/gadgets/2024/07/reddit-ceo-stands-by-change-that-blocks-most-non-google-search-engines/">real pain in the ass</a>.&#8221; Huffman went on to say: &#8220;We&#8217;ve had Microsoft, Anthropic, and Perplexity act as though all of the content on the Internet is free for them to use. That&#8217;s their real position.&#8221;</p>
+<p>Perplexity has faced allegations from several other publishers that it plagiarized their content. Forbes, <a href="https://www.forbes.com/sites/randalllane/2024/06/11/why-perplexitys-cynical-theft-represents-everything-that-could-go-wrong-with-ai/">for instance</a>, accused Perplexity of &#8220;cynical theft&#8221; after publishing a post that was &#8220;extremely similar to Forbes&#8217; proprietary article&#8221; posted a day earlier. Ars Technica sister publication Wired has <a href="https://www.wired.com/story/perplexity-plagiarized-our-story-about-how-perplexity-is-a-bullshit-machine/">leveled similar claims</a>. It cited what it said were suspicious traffic patterns from IP addresses, likely linked to Perplexity, that were ignoring robots.txt exclusions. Perplexity was also found to have manipulated its crawling bots' ID string to bypass website blocks.</p>
+<p>The Cloudflare researchers said that in response to their findings, the company is taking actions to prevent crawlers from accessing sites that use its content-delivery service.</p>
+<p>&#8220;There are clear preferences that crawlers should be transparent, serve a clear purpose, perform a specific activity, and, most importantly, follow website directives and preferences,&#8221; they wrote. &#8220;Based on Perplexity&#8217;s observed behavior, which is incompatible with those preferences, we have de-listed them as a verified bot and added heuristics to our managed rules that block this stealth crawling.&#8221;</p>
+<p>Perplexity representatives didn&#8217;t respond to an email asking if the allegations are true.</p>
+
+
+          
+                  
+
+                  
+          </div>
