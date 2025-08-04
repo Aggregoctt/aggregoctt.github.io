@@ -1,0 +1,43 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/08/04/generanza-spaccanza-in-javascript-e-mancocaspt/
+date: '2025-08-04T14:18:17'
+excerpt: Nel mentre che, in questo nuovo round dell&#8217;estate attuale (&#8220;mese
+  di agosto &#8211; inizio&#8221;), praticamente tutte le persone sulla faccia della
+  Terra di stato socioeconomico comparabile al mio si divertono, io rimango inevitabilmente
+  in questo mio stato di sofferenza semi-indefinito&#8230; ma non sono da sola. Infatti,
+  a farmi compagnia, sulla base della mia sempreverde necessità [&#8230;]
+image: null
+source: octospacc
+tags:
+- Senza categoria
+- documentation
+- issues
+- SSG
+- documentazione
+- rogne
+title: generanza spaccanza in JavaScript e mancocaspt
+---
+<div>
+
+		
+<p>Nel mentre che, in questo nuovo round dell&#8217;estate attuale (&#8220;mese di agosto &#8211; inizio&#8221;), praticamente tutte le persone sulla faccia della Terra di stato socioeconomico comparabile al mio si divertono, <strong>io rimango inevitabilmente in questo mio stato di sofferenza semi-indefinito&#8230;</strong> ma non sono da sola. Infatti, a farmi compagnia, <strong>sulla base della mia sempreverde necessit&#224; di sviluppare ancora nuovi progetti magici</strong> (top secret!!!) cos&#236; come migliorare quelli esistenti, <strong>c&#8217;&#232; da un lato </strong><strong>il fottuto</strong><strong> CSS&#8230;</strong> e dall&#8217;altro <strong>i generatori di siti per documentazione basati su JavaScript</strong>, che mi trovo a dover usare ma <strong>mi lasciano semplicemente esterrefatta</strong>. &#128574;</p>
+
+
+
+<p>Il punto bello di questi affari &#232; che <strong>sono molto pi&#249; comodi dei generatori di siti statici pi&#249; classici, per creare documentazione di roba frontend</strong>, incluso il testare tutto strada facendo&#8230; usando <strong>rendering sia client-side che server-side, la robetta che si scrive cambia in automatico nel browser</strong>, senza ricaricare la pagina, cos&#236; come anche gli stili e la struttura effettiva della pagina: &#232; goduria. Purtroppo, il brutto &#232; che, chiss&#224; perch&#233;, <strong>sono (quasi) tutti </strong><strong>fottutamente</strong><strong> rotti!!!</strong> E non generatori mezzi sconosciuti e abbandonati (perch&#233; ovviamente quelli non escono proprio, cercando tra consigli o classifiche), o applicando temi di terze parti vecchi e marci (quelli danno problemi pure sui generatori della Madonna)&#8230; ma la roba pi&#249; popolare. Ma non c&#8217;&#232; nemmeno molto da dire a riguardo, perch&#233; <strong>il modo in cui &#232; tutto fuori posto &#232; semplicemente cos&#236; anticlimatico&#8230;</strong> &#128148;</p>
+
+
+
+<p>Per esempio, per una roba adesso (&#8230;cio&#232; l&#8217;altra sera, abbiate pazienza) <strong>volevo tentare </strong><strong><a href="https://memos.octt.eu.org/m/8R8cuepE2g8SijeDtPjH7h">VuePress</a></strong>, perch&#233; sembrava abbastanza rapido modificare il layout a partire dal tema di base&#8230; e si, <strong>di per s&#233; funziona, ma ho dovuto </strong><strong>buttare via tutto</strong> appena ho visto che qualsiasi HTML indentato io inserissi in pagine di documentazione Markdown veniva renderizzato come blocchi di codice formattato. Lo specificare blocchi di codice con la sola indentazione, anzich&#233; con i caratteri di contenimento (<code>```</code>), &#232; una funzione di Markdown, per&#242; non dovrebbe attivarsi per dell&#8217;HTML innestato prima in un contenitore HTML che non &#232; indentato&#8230; e, dovrei poter disattivare la funzione completamente&#8230; Purtroppo, non solo <strong>nessuna IA ha saputo suggerirmi una via che funzionasse</strong> per farlo, ma <strong>la documentazione di VuePress passa dall&#8217;incompleto al rotto</strong>: le spiegazioni su queste cose pi&#249; specifiche sono parziali e poco comprensibili, e <strong>la documentazione in s&#233; &#232; per qualche motivo copiata su pi&#249; siti</strong>, alcuni pi&#249; o meno aggiornati, da cui <strong>si hanno link a pagine interne non pi&#249; esistenti&#8230;</strong> WTF??? &#9760;&#65039;</p>
+
+
+
+<p>A seguire, come seconda idea, <strong>avrei provato </strong><strong><a href="https://memos.octt.eu.org/m/AH7soBJvPqmMqkE6VgEih5">VitePress</a></strong> &#8212; che &#232; praticamente un mezzo clone di VuePress, usa le stesse tecnologie &#8212; <strong>ma quello invece attualmente &#232; proprio rotto e basta</strong>: qualunque configurazione io scegliessi, <strong>con lo script di creazione rapida, il sito risultante dava errore 404 ad ogni cazzo di pagina</strong>, sia con la home che i miei file Markdown&#8230; vai a capire che minchia hanno rotto in upstream! E poi ne ho trovato <strong>un altro apparentemente simpatico, </strong><strong><a href="https://memos.octt.eu.org/m/7tsfHd3bvng2LfN4BGuckL">RsPress</a></strong> &#8212; che, come suggerisce il nome, &#232; basato in parte su Rust, anche se non ho ben capito in che misura &#8212; che per&#242; <strong>da errore ad installarsi su Termux, perch&#233; vuole usare npm per tirarsi appresso dipendenze native</strong> (EW!), ma per la stringa della piattaforma (android-qualcosa-aarch64) non trova niente&#8230; (E menomale che per questo caso ero fuori casa, quindi da telefono e non da PC come per i due prima; sarebbe stato un problema se avessi scoperto che su Android non gira solo dopo averlo visto funzionare su desktop!) &#129447;</p>
+
+
+
+<p>Quindi, alla fine dei conti, tra tutti questi generatorini, <strong>quello su cui finisco sempre per ripiegare &#232; </strong><strong><a href="https://memos.octt.eu.org/m/AFUqnMsYTvJcFEgwaRxSG7">Docusaurus</a></strong><strong>&#8230;</strong> che, grazie al cielo, funziona e basta. Non perch&#233; &#232; scritto in React, ma perch&#233; <strong>&#232; mantenuto da Meta, </strong><strong>anzich&#233; da dei completi scappati di casa</strong> (e menomale che i prodotti open-source li fanno curati, a differenza di quelle lote fumanti di Facebook, Instagram e WhatsApp!). Tenderei a pensare sia meno personalizzabile, perch&#233; sembrano esserci pochi temi di terze parti in giro&#8230; eppure, pur col solo meccanismo interno dello swizzle, senza duplicare l&#8217;intero tema (che &#232; sempre una cosa grossa in pi&#249; da mantenere personalmente), <strong>ho fatto in un attimo quello che mi serviva &#8212; e poi ancora altre cose</strong> uscite strada facendo. Quindi boh, dai, bene cos&#236;, che almeno una (1) cosa che funziona c&#8217;&#232; a questo mondo&#8230; (oltre ad alcune librerie JavaScript per creare questi siti, che per&#242; di per s&#233; non sono programmi gi&#224; pronti, e io tempo da perdere non ne ho.) &#129430;&#129429;&#128010;&#128009;!!!</p>
+ 
+ 
+	 </div>
