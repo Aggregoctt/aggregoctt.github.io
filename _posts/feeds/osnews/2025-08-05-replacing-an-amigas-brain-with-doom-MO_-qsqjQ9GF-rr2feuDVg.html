@@ -1,0 +1,24 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/142983/replacing-an-amigas-brain-with-doom/
+date: '2025-08-05T14:05:36'
+excerpt: There&#8217;s a lovely device called a&#160;pistorm, an adapter board that
+  glues a Raspberry Pi GPIO bus to a Motorola 68000 bus. The intended use case is
+  that you plug it into a 68000 device and then run an emulator that reads instructions
+  from hardware (ROM or RAM) and emulates them. You&#8217;re still limited by the
+  ~7MHz bus that the hardware is running at, but you can run the instructions as fast
+  as you want. These days you&#8217;re supposed to run a custom built OS on the Pi
+  that just does 68000 emulation, but initially it ran Linux on the Pi and a userland
+  68000 emulator process. And, well, that got me thinking. The emulator takes 68000
+  instructions, emulates them, and then talks to the hardware to implement the effects
+  of those instructions. What if we, well, just don&#8217;t? What if we just run all
+  of our code in Linux on an ARM core and then talk to the Amiga hardware? ↫ Matthew
+  Garrett This is so cursed. I love it.
+image: null
+source: osnews
+tags:
+- Amiga & AROS
+title: Replacing an Amiga’s brain with Doom
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>There&#8217;s a lovely device called a&#160;<a href="https://github.com/captain-amygdala/pistorm">pistorm</a>, an adapter board that glues a Raspberry Pi GPIO bus to a Motorola 68000 bus. The intended use case is that you plug it into a 68000 device and then run an emulator that reads instructions from hardware (ROM or RAM) and emulates them. You&#8217;re still limited by the ~7MHz bus that the hardware is running at, but you can run the instructions as fast as you want.</p><p>These days you&#8217;re supposed to run a custom built OS on the Pi that just does 68000 emulation, but initially it ran Linux on the Pi and a userland 68000 emulator process. And, well, that got me thinking. The emulator takes 68000 instructions, emulates them, and then talks to the hardware to implement the effects of those instructions. What if we, well, just don&#8217;t? What if we just run all of our code in Linux on an ARM core and then talk to the Amiga hardware?</p>
+<a href="https://mjg59.dreamwidth.org/73001.html">&#8619; Matthew Garrett</a></blockquote><p>This is so cursed. I love it.</p></div>
