@@ -1,0 +1,79 @@
+---
+author: Julie Bort
+canonical_url: https://techcrunch.com/2025/08/05/some-people-are-defending-perplexity-after-cloudflare-named-and-shamed-it/
+date: '2025-08-05T16:33:03'
+excerpt: In a debate likely to get louder as AI agent usage grows, some people say
+  Perplexity crawling blocked websites isn't a simple matter.
+image: assets/media/wGdGJ2wGo3z9nyC41X1e6g-bEcAmsqUwmK72XnejA-ewg.jpeg
+source: techcrunch
+tags:
+- AI
+- ai agent
+- ai bots
+- cloudflare
+- Perplexity
+- web scraping
+title: Some people are defending Perplexity after Cloudflare ‘named and shamed’ it
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">When Cloudflare accused AI search engine Perplexity of <a href="https://techcrunch.com/2025/08/04/perplexity-accused-of-scraping-websites-that-explicitly-blocked-ai-scraping/">stealthily scraping websites</a> on Monday, while ignoring a site&#8217;s specific methods to block it, this wasn&#8217;t a clear-cut case of an AI web crawler gone wild.</p>
+
+<p class="wp-block-paragraph">Many people came to Perplexity&#8217;s defense. They argued that Perplexity accessing sites in defiance of the website owner&#8217;s wishes, while controversial, is acceptable. And this is a controversy that will certainly grow as AI agents flood the internet: Should an agent accessing a website on behalf of its user be treated like a bot? Or like a human making the same request?</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Cloudflare is known for providing anti-bot crawling and other web security services to millions of websites. Essentially, Cloudflare&#8217;s test case involved setting up a new website with a new domain that had never been crawled by any bot, setting up a robots.txt file that specifically blocked Perplexity&#8217;s known AI crawling bots, and then asking Perplexity about the website&#8217;s content.&#160;And Perplexity answered the question. </p>
+
+<p class="wp-block-paragraph">Cloudflare researchers found the AI search engine used &#8220;a generic browser intended to impersonate Google Chrome on macOS&#8221; when its web crawler itself was blocked. Cloudflare CEO Matthew Prince <a href="https://x.com/eastdakota/status/1952379571527193017" target="_blank" rel="noreferrer noopener nofollow">posted </a>the research on X, writing, &#8220;Some supposedly &#8216;reputable&#8217; AI companies act more like North Korean hackers. Time to name, shame, and hard block them.&#8221;</p>
+
+<p class="wp-block-paragraph">But many people disagreed with Prince&#8217;s assessment that this was actual bad behavior. Those defending Perplexity on sites <a href="https://x.com/Chikor_Zi/status/1952382355059913193" target="_blank" rel="noreferrer noopener nofollow">like X</a> and <a href="https://news.ycombinator.com/item?id=44785636" target="_blank" rel="noreferrer noopener nofollow">Hacker News</a> pointed out that what Cloudflare seemed to document was the AI accessing a specific public website when its user asked about that specific website.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;If I as a human request a website, then I should be shown the content,&#8221; one person on <a href="https://news.ycombinator.com/item?id=44786039" target="_blank" rel="noreferrer noopener nofollow">Hacker News</a> wrote, adding, &#8220;why would the LLM accessing the website on my behalf be in a different legal category as my Firefox web browser?&#8221;</p>
+
+<p class="wp-block-paragraph">A Perplexity spokesperson <a href="https://techcrunch.com/2025/08/04/perplexity-accused-of-scraping-websites-that-explicitly-blocked-ai-scraping/">previously</a> denied to TechCrunch that the bots were the company&#8217;s and called Cloudflare&#8217;s blog post a sales pitch for Cloudflare. Then on Tuesday, Perplexity <a href="https://www.perplexity.ai/hub/blog/agents-or-bots-making-sense-of-ai-on-the-open-web" target="_blank" rel="noreferrer noopener nofollow">published a blog</a> in its defense (and generally attacking Cloudflare), claiming the behavior was from a third-party service it uses occasionally.</p>
+ 
+
+<p class="wp-block-paragraph">But the crux of Perplexity&#8217;s post made a similar appeal as its online defenders did.</p>
+
+<p class="wp-block-paragraph">&#8220;The difference between automated crawling and user-driven fetching isn&#8217;t just technical &#8212; it&#8217;s about who gets to access information on the open web,&#8221; the post said. &#8220;This controversy reveals that Cloudflare&#8217;s systems are fundamentally inadequate for distinguishing between legitimate AI assistants and actual threats.&#8221;</p>
+
+<p class="wp-block-paragraph">Peplexity&#8217;s accusations aren&#8217;t exactly fair, either. One argument that Prince and Cloudflare used for calling out Perplexity&#8217;s methods was that OpenAI doesn&#8217;t behave in the same way.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;OpenAI is an example of a leading AI company that follows these best practices,&#8221; <a href="https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives" target="_blank" rel="noreferrer noopener nofollow">Cloudflare wrote</a>.&#160;&#8220;They respect robots.txt and do not try to evade either a robots.txt directive or a network level block. And ChatGPT Agent is signing http requests using the newly proposed open standard Web Bot Auth.&#8221; &#160;</p>
+
+<p class="wp-block-paragraph"><a href="https://developers.cloudflare.com/bots/concepts/bot/verified-bots/web-bot-auth/" target="_blank" rel="noreferrer noopener nofollow">Web Bot Auth</a> is a Cloudflare-supported standard being developed by the Internet Engineering Task Force that hopes to create a cryptographic method for identifying AI agent web requests.</p>
+
+<p class="wp-block-paragraph">The debate comes as bot activity reshapes the internet. As TechCrunch has previously reported, bots seeking to scrape massive amounts of content to train AI models <a href="https://techcrunch.com/2025/03/27/open-source-devs-are-fighting-ai-crawlers-with-cleverness-and-vengeance/">have become a menace</a>, especially to smaller sites.&#160;</p>
+
+<p class="wp-block-paragraph">For the first time in the internet&#8217;s history, <a href="https://www.imperva.com/resources/resource-library/reports/2025-bad-bot-report/" target="_blank" rel="noreferrer noopener nofollow">bot activity is currently outstripping human activity online</a>, with AI traffic accounting for over 50%, according to Imperva&#8217;s Bad Bot report released last month. Most of that activity is coming from LLMs. But the report also found that malicious bots now make up 37% of all internet traffic. That&#8217;s activity that includes everything from persistent scraping to unauthorized login attempts.</p>
+
+<p class="wp-block-paragraph">Until LLMs, the internet generally accepted that websites could and should block most bot activity given how often it was malicious by using CAPTCHAs and other services (such as Cloudflare). Websites also had a clear incentive to work with specific good actors, such as Googlebot, guiding it on what not to index through robots.txt. Google indexed the internet, which sent traffic to sites. </p>
+
+<p class="wp-block-paragraph">Now, LLMs are eating an increasing amount of that traffic. Gartner predicts <a href="https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents" target="_blank" rel="noreferrer noopener nofollow">that search engine volume</a> will drop by 25% by 2026.&#160;&#160;Right now humans tend to click website links from LLMs at the point they are most valuable to the website, which is when they are ready to conduct a transaction.</p>
+
+<p class="wp-block-paragraph">But if humans <a href="https://techcrunch.com/2024/12/15/what-exactly-is-an-ai-agent/">adopt agents</a> as the tech industry predicts they will &#8212; to arrange our travel, book our dinner reservations, and shop for us &#8212; would websites hurt their business interests by blocking them? The debate on X captured the dilemma perfectly:</p>
+
+<p class="wp-block-paragraph">&#8220;I WANT perplexity to visit any public content on my behalf when I give it a request/task!&#8221; wrote <a href="https://x.com/denisandrejew/status/1952384393147736294" target="_blank" rel="noreferrer noopener nofollow">one person</a> in response to Cloudflare calling Perplexity out.  &#8220;What if the site owners don&#8217;t want it? they just want you [to] directly visit the home, see their stuff&#8221; <a href="https://x.com/denisandrejew/status/1952384393147736294" target="_blank" rel="noreferrer noopener nofollow">argued another</a>, pointing out that the site owner who created the content wants the traffic and potential ad revenue, not to let Perplexity take it.</p>
+
+ 
+
+
+ 
+
+
+ 
+
+
+			
+
+			</div>

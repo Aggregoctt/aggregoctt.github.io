@@ -1,0 +1,94 @@
+---
+author: Maxwell Zeff
+canonical_url: https://techcrunch.com/2025/08/05/openai-launches-two-open-ai-reasoning-models/
+date: '2025-08-05T17:00:00'
+excerpt: For the first time in more than five years, OpenAI is launching a new open
+  language model that appears to be state-of-the-art.
+image: assets/media/fLliTcvsmWWv7OX2OQdQBQ-Tr0-mLipJshfDaULZNfarw.jpeg
+source: techcrunch
+tags:
+- AI
+- OpenAI
+- open model
+title: OpenAI launches two ‘open’ AI reasoning models
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">OpenAI announced Tuesday the launch of two open-weight AI reasoning models with similar capabilities <a href="https://techcrunch.com/2024/12/20/openai-announces-new-o3-model/">to its o-series</a>. Both are freely available to download from the online developer platform, <a rel="nofollow" href="https://huggingface.co/">Hugging Face</a>, the company said, describing the models as &#8220;state-of-the-art&#8221; when measured across several benchmarks for comparing open models.</p>
+
+<p class="wp-block-paragraph">The models come in two sizes: a larger and more capable gpt-oss-120b model that can run on a single Nvidia GPU, and a lighter-weight gpt-oss-20b model that can run on a consumer laptop with 16GB of memory.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The launch marks OpenAI&#8217;s first &#8216;open&#8217; language model since <a href="https://techcrunch.com/2019/02/17/openai-text-generator-dangerous/">GPT-2</a>, which was released more than five years ago. </p>
+
+<p class="wp-block-paragraph">In a briefing, OpenAI said its open models will be capable of sending complex queries to <a href="https://techcrunch.com/2025/04/24/openai-wants-its-open-ai-model-to-call-models-in-the-cloud-for-help/">AI models in the cloud,</a> as TechCrunch previously reported. That means if OpenAI&#8217;s open model is not capable of a certain task, such as processing an image, developers can connect the open model to one of the company&#8217;s more capable closed models.</p>
+
+<p class="wp-block-paragraph">While OpenAI open-sourced AI models in its early days, the company has generally favored a proprietary, closed-source development approach. The latter strategy has helped OpenAI build a large business selling access to its AI models via an API to enterprises and developers. </p>
+
+<p class="wp-block-paragraph">However, CEO Sam Altman said in January he believes OpenAI has been &#8220;on the wrong side of history&#8221; when it comes to open sourcing its technologies. The company today faces growing pressure from Chinese AI labs &#8212; including DeepSeek, Alibaba&#8217;s Qwen, and Moonshot AI &#8212;which have developed several of the world&#8217;s most capable and popular open models. (While Meta previously dominated the open AI space, the company&#8217;s Llama AI models have <a href="https://techcrunch.com/2025/04/05/meta-releases-llama-4-a-new-crop-of-flagship-ai-models/">fallen behind</a> in the last year.)</p>
+
+<p class="wp-block-paragraph">In July, the Trump Administration also urged U.S. AI developers to <a href="https://techcrunch.com/2025/07/23/trumps-ai-strategy-trades-guardrails-for-growth-in-race-against-china/">open source more technology</a> to promote global adoption of AI aligned with American values. </p>
+ 
+
+<p class="wp-block-paragraph">With the release of gpt-oss, OpenAI hopes to curry favor with developers and the Trump Administration alike, both of which have watched the Chinese AI labs rise to prominence in the open source space. </p>
+
+<p class="wp-block-paragraph">&#8220;Going back to when we started in 2015, OpenAI&#8217;s mission is to ensure AGI that benefits all of humanity,&#8221; said OpenAI CEO Sam Altman in a statement shared with TechCrunch. &#8220;To that end, we are excited for the world to be building on an open AI stack created in the United States, based on democratic values, available for free to all and for wide benefit.&#8221;</p>
+
+ 
+
+<h2 class="wp-block-heading" id="h-how-the-models-performed">How the models performed</h2>
+
+<p class="wp-block-paragraph">OpenAI aimed to make its <a href="https://techcrunch.com/2025/04/23/openai-seeks-to-make-its-upcoming-open-ai-model-best-in-class/">open model a leader</a> among other open-weight AI models, and the company claims to have done just that. </p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">On Codeforces (with tools), a competitive coding test, gpt-oss-120b and gpt-oss-20b score 2622 and 2516, respectively, outperformed DeepSeek&#8217;s R1 while underperforming o3 and o4-mini.</p>
+
+ 
+
+<p class="wp-block-paragraph">On Humanity&#8217;s Last Exam, a challenging test of crowd-sourced questions across a variety of subjects (with tools), gpt-oss-120b and gpt-oss-20b score 19% and 17.3%, respectively. Similarly, this underperforms o3 but outperforms leading open models from DeepSeek and Qwen.</p>
+
+ 
+
+<p class="wp-block-paragraph">Notably, OpenAI&#8217;s open models hallucinate significantly more than its latest AI reasoning models, o3 and o4-mini. </p>
+
+<p class="wp-block-paragraph">Hallucinations have been <a href="https://techcrunch.com/2025/04/18/openais-new-reasoning-ai-models-hallucinate-more/">getting more severe</a> in OpenAI&#8217;s latest AI reasoning models, and the company previously said it doesn&#8217;t quite understand why. In a white paper, OpenAI says this is &#8220;expected, as smaller models have less world knowledge than larger frontier models and tend to hallucinate more.&#8221;</p>
+
+<p class="wp-block-paragraph">OpenAI found that gpt-oss-120b and gpt-oss-20b hallucinated in response to 49% and 53% of questions on PersonQA, the company&#8217;s in-house benchmark for measuring the accuracy of a model&#8217;s knowledge about people. That&#8217;s more than triple the hallucination rate of OpenAI&#8217;s o1 model, which scored 16%, and higher than its o4-mini model, which scored 36%.</p>
+
+<h2 class="wp-block-heading" id="h-training-the-new-models">Training the new models</h2>
+
+<p class="wp-block-paragraph">OpenAI says its open models were trained with similar processes to its proprietary models. The company says each open model leverages mixture-of-experts (MoE) to tap fewer parameters for any given question, making it run more efficiently. For gpt-oss-120b, which has 117 billion total parameters, OpenAI says the model only activates 5.1 billion parameters per token.</p>
+
+<p class="wp-block-paragraph">The company also says its open model was trained using high-compute <a href="https://techcrunch.com/2025/08/03/inside-openais-quest-to-make-ai-do-anything-for-you/">reinforcement learning (RL)</a> &#8212; a post-training process to teach AI models right from wrong in simulated environments using large clusters of Nvidia GPUs. This was also used to train OpenAI&#8217;s o-series of models, and the open models have a similar chain-of-thought process in which they take additional time and computational resources to work through their answers.</p>
+
+<p class="wp-block-paragraph">As a result of the post-training process, OpenAI says its open AI models excel at powering AI agents, and are capable of calling tools such as web search or Python code execution as part of its chain-of-thought process. However, OpenAI says its open models are text-only, meaning they will not be able to process or generate images and audio like the company&#8217;s other models.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">OpenAI is releasing gpt-oss-120b and gpt-oss-20b under the Apache 2.0 license, which is generally considered one of the most permissive. This license will allow enterprises to monetize OpenAI&#8217;s open models without having to pay or obtain permission from the company. </p>
+
+<p class="wp-block-paragraph">However, unlike fully open source offerings from AI labs like AI2, OpenAI says it will not be releasing the training data used to create its open models. This decision is not surprising given that several active lawsuits against AI model providers, including OpenAI, have alleged that these companies inappropriately trained their AI models on copyrighted works.</p>
+
+<p class="wp-block-paragraph">OpenAI <a href="https://techcrunch.com/2025/06/10/openais-open-model-is-delayed/">delayed</a> the release of its open models <a href="https://techcrunch.com/2025/07/11/openai-delays-the-release-of-its-open-model-again/">several</a> times in recent months, partially to address safety concerns. Beyond the company&#8217;s typical safety policies, OpenAI says in a white paper that it also investigated whether bad actors could fine-tune its gpt-oss models to be more helpful in cyber attacks or the creation of biological or chemical weapons.</p>
+
+<p class="wp-block-paragraph">After testing from OpenAI and third-party evaluators, the company says gpt-oss may marginally increase biological capabilities. However, it did not find evidence that these open models could reach its &#8220;high capability&#8217; threshold for danger in these domains, even after fine-tuning. </p>
+
+<p class="wp-block-paragraph">While OpenAI&#8217;s model appears to be state-of-the-art among open models, developers are eagerly awaiting the release of DeepSeek R2, its next AI reasoning model, as well as a new open model from Meta&#8217;s new superintelligence lab.</p>
+
+
+			
+
+			</div>

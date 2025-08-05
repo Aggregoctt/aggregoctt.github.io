@@ -1,0 +1,43 @@
+---
+author: Ryan Whitwam
+canonical_url: https://arstechnica.com/ai/2025/08/openai-releases-its-first-open-source-models-since-2019/
+date: '2025-08-05T17:00:27'
+excerpt: OpenAI's new open models can run on your hardware instead of in the cloud.
+image: assets/media/6ibNxDQpWHBy7cjT9JquEg-R8S0NWwcm0wNETuF9YLlvA.jpeg
+source: arstechnica
+tags:
+- AI
+- Artificial Intelligence
+- open source
+- openai
+title: OpenAI announces two “gpt-oss” open AI models, and you can download them today
+---
+<div>
+                      
+                      
+          <p>OpenAI is releasing new generative AI models today, and no, <a href="https://arstechnica.com/ai/2025/07/openais-most-capable-ai-model-gpt-5-may-be-coming-in-august/">GPT-5</a> is not one of them. Depending on how you feel about generative AI, these new models may be even more interesting, though. The company is rolling out gpt-oss-120b and gpt-oss-20b, its first <a href="https://openai.com/open-models">open-weight models</a> since the release of GPT-2 in 2019. You can download and run these models on your own hardware, with support for simulated reasoning, tool use, and deep customization.</p>
+<p>When you access the company's proprietary models in the cloud, they're running on powerful server infrastructure that cannot be replicated easily, even in enterprise. The new OpenAI models come in two variants (120b and 20b) to run on less powerful hardware configurations. Both are transformers with a configurable chain of thought (CoT), supporting low, medium, and high settings. The lower settings are faster and use fewer compute resources, but the outputs are better with the highest setting. You can set the CoT level with a single line in the system prompt.</p>
+<p>The smaller gpt-oss-20b has a total of 21 billion parameters, utilizing mixture-of-experts (MoE) to reduce that to 3.6 billion parameters per token. As for gpt-oss-120b, its 117 billion parameters come down to 5.1 billion per token with MoE. The company says the smaller model can run on a consumer-level machine with 16GB or more of memory. To run gpt-oss-120b, you need 80GB of memory, which is more than you're likely to find in the average consumer machine. It should fit on a single AI accelerator GPU like the Nvidia H100, though. Both models have a context window of 128,000 tokens.</p>
+ 
+<p>The team says users of gpt-oss can expect robust performance similar to its leading cloud-based models. The larger one benchmarks between the o3 and o4-mini proprietary models in most tests, with the smaller version running just a little behind. It gets closest in math and coding tasks. In the knowledge-based Humanity's Last Exam, o3 is far out in front with 24.9 percent (with tools), while gpt-oss-120b only manages 19 percent. For comparison, Google's leading <a href="https://arstechnica.com/ai/2025/08/google-releases-gemini-2-5-deep-think-for-ai-ultra-subscribers/">Gemini Deep Think</a> hits 34.8 percent in that test.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Not good at being evil</h2>
+<p>OpenAI says it doesn't intend for anyone to replace its proprietary models with the new OSS releases. It did not set out to replicate what you can do with the mainline GPT releases here, and there are some notable limitations. For example, gpt-oss-120b and gpt-oss-20b are text-only with no multimodality out of the box. However, the company acknowledges there are times when someone might not want to rely on a big cloud-based AI&#8212;locally managed AI has lower latency and more opportunities for customization, and it can keep sensitive data secure on site.</p>
+<p>OpenAI is cognizant that many users of the company's proprietary models are also leveraging open source models for these reasons. Currently, those firms are using non-OpenAI products for local AI, but the team designed the gpt-oss models to integrate with the proprietary GPT models. So customers can now use end-to-end OpenAI products even if they need to process some data locally.</p>
+<p>Because these models are fully open and governed by the Apache 2.0 license, developers will be able to tune them for specific use cases. Like all AI firms, OpenAI builds controls into its models to limit malicious behavior, but it's been a few years since the company released an open model&#8212;the gpt-oss models are much more powerful than GPT-2 was in 2019.</p>
+<p>To ensure it was doing all it could in terms of safety, OpenAI decided to test some worst-case scenarios by tuning gpt-oss to be evil. The devs say that even after trying to make the model misbehave, it never reached a high level of quality doing evil things, based on the company's <a href="https://openai.com/index/updating-our-preparedness-framework/">Preparedness Framework</a>. OpenAI claims this means its use of deliberative alignment and instruction hierarchy will prevent serious misuse of the open models.</p>
+<p>If you want to test that claim yourself, gpt-oss-120b and gpt-oss-20b are available for <a href="https://huggingface.co/collections/openai/gpt-oss-68911959590a1634ba11c7a4">download today on HuggingFace</a>. There are also <a href="https://github.com/openai/gpt-oss">GitHub repos</a> for your perusal, and OpenAI will <a href="https://gpt-oss.com/">host stock versions</a> of the models on its own infrastructure for testing. If you are interested in more technical details, the company has provided both a <a href="http://openai.com/index/gpt-oss-model-card">model card</a> and a <a href="https://openai.com/index/introducing-gpt-oss">research blog post</a>.</p>
+
+
+          
+                  
+
+                  
+          </div>
