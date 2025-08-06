@@ -1,0 +1,24 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/08/06/il-triangolo-magico/
+date: '2025-08-06T02:51:06'
+excerpt: 'Il triangolo di lato 10 mostrato nella figura qui sotto ha la prima riga
+  con i cerchi colorati di rosso, giallo o blu. Non sono colorati proprio a caso:
+  ho preso le prime cifre decimali di pi greco e usato il rosso se sono uguali a 0
+  modulo 3, in giallo se sono 1 mod [&#8230;]'
+image: assets/media/470qdE_76N35zeT0ECPNeg-7huit08bkmdcIhGVemFjkw.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Il triangolo magico
+---
+<div>
+			<p>Il triangolo di lato 10 mostrato nella figura qui sotto ha la prima riga con i cerchi colorati di rosso, giallo o blu. Non sono colorati proprio a caso: ho preso le prime cifre decimali di pi greco e usato il rosso se sono uguali a 0 modulo 3, in giallo se sono 1 mod 3, in blu se sono 2 mod 3. Ma questo non importa. Supponete ora di colorare tutto il triangolo in questo modo: se i due cerchi soprastanti sono dello stesso colore si usa quel colore, mentre se sono di colore diverso si usa il terzo colore. Bene: io non ho fatto la prova, ma sono certo che il cerchio pi&#249; in basso sar&#224; rosso. Come mai?</p>
+ 
+<p>Il trucco &#232; guardare solamente i due cerchi estremi nella prima riga, e applicare alla coppia le regole che ho definito qui sopra. Quei due cerchi sono rossi, quindi anche quello in basso dovr&#224; essere rosso. Semplice, no? Gary Antonick ne aveva parlato <a href="https://archive.nytimes.com/wordplay.blogs.nytimes.com/2013/05/13/triangle-mysteries/">sul NYT</a>: la propriet&#224; &#232; stata scoperta da Steve Humble, che insegna didattica della matematica all&#8217;universit&#224; di Newcastle, e dimostrata e generalizzata da Ehrhard Behrends.   Notate che la regola non funziona sempre: nel triangolo di lato 3 mostrato qui a destra &#232; immediato notare che se il cerchio in mezzo nella prima riga fosse blu e non giallo allora quello in bssso sarebbe giallo e non blu. Con il lato 2 e quello 4 invece funziona, cos&#236; come con il lato 10: pi&#249; in generale Behrends ha mostrato che perch&#233; valga quella propriet&#224; il lato del triangolo deve essere della forma 3k+1. Voi come lo dimostrereste? Qui c&#8217;&#232; il mio approccio (non ho letto l&#8217;articolo citato sul NYT, ma mi stupirei se la dimostrazione fosse essenzialmente diversa dalla mia).</p>
+<p><br>
+La mia dimostrazione comincia con il caso <i>n</i> = 4. (Il caso <i>n</i> = 2 &#232; vero per definizione.) Invece che i tre colori, difficili da gestire matematicamente, uso i numeri 0, 1, 2; la regola per calcolare il numero da inserire sotto la coppia $a, b$ &#232; dato da $a &#8853; b = -(a+b) \mod 3$. Se abbiamo nella prima riga i valori $a, b, c, d$ quelli della seconda riga (modulo 3, come per le righe seguenti) saranno $-(a+b), -(b+c), -(c+d)$; la terza riga avr&#224; $a+2b+c, b+2c+d$ e l&#8217;elemento dell&#8217;ultima riga sar&#224; $-(a+3b+3c+d)$. Ma $3b \mod 3 = 3c \mod 3 = 0$, quindi l&#8217;elemento sar&#224; $-(a+d)$ che &#232; esattamente $a &#8853; d$. Per il caso generale, possiamo &#8220;esplodere&#8221; un triangolo di lato 3k+1 collocando due cerchi di un colore qualunque tra ciascuna coppia di cerchi di ogni riga e facendo i passaggi corrispondenti per scendere alla riga di sotto: per quanto abbiamo appena visto, tutti queste aggiunte sono ininfluenti, e quindi il risultato &#232; quello voluto. </p>
+<p>Se qualcuno si chiedesse come sia arrivato a trovare questa operazione algebrica, la risposta &#232; semplice. Avevo il grande vantaggio di conoscere gi&#224; il risultato; lavorare modulo 3 &#232; poi ovvio visto che abbiamo solo a disposizione tre colori. Ho scritto le sei possibilit&#224; essenzialmente diverse di accoppiare due numeri in ${0, 1, 2}$, le ho guardate, ho ricavato la regola e trovato poi un modo per descriverla formalmente. Mi sono insomma sporcato un po&#8217; le mani con i conti, ma quella &#232; sempre stata una mia cifra stilistica, proprio come il lavorare molto con relazioni ricorsive, forse a causa della mia matrice che &#232; anche informatica. Mi sarei accorto della propriet&#224; se non ne avessi sentito parlare? Probabilmente no, a meno che non avessi molto tempo da perdere, nel qual caso sarei comunque arrivato alla soluzione. Per&#242; il bello della matematica &#232; (anche) trovare per caso cose e poi vedere che deve essere per forza cos&#236;, non lo pensate anche voi?</p>
+ 
+  					</div>
