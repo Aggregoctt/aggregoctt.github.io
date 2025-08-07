@@ -1,0 +1,43 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/information-technology/2025/08/google-sales-data-breached-in-the-same-scam-it-discovered/
+date: '2025-08-07T20:05:34'
+excerpt: Disclosure comes two months after Google warned the world of ongoing spree.
+image: assets/media/LxewHNHs2vkE9bhq1yoW1Q-xOXFScaAExLO0Ph07wlqVg.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- google
+- Salesforce
+- social engineering
+title: Google discovered a new scam—and then fell victim to it
+---
+<div>
+                      
+                      
+          <p>In June, Google <a href="https://cloud.google.com/blog/topics/threat-intelligence/voice-phishing-data-extortion">said</a> it unearthed a campaign that was mass-compromising accounts belonging to customers of Salesforce. The means: an attacker pretending to be someone in the customer's IT department feigning some sort of problem that required immediate access to the account. Two months later, Google has disclosed that it, too, has been a victim.</p>
+<p>The series of hacks are being carried out by financially motivated threat actors out to steal data in hopes of selling it back to the targets at sky-high prices. Rather than exploiting software or website vulnerabilities, they take a much simpler approach: calling the target and asking for access. The technique has proven remarkably successful. Companies whose Salesforce instances have been breached in the campaign, <a href="https://www.bleepingcomputer.com/news/security/google-suffers-data-breach-in-ongoing-salesforce-data-theft-attacks/">Bleeping Computer reported, </a>include Adidas, Qantas, Allianz Life, Cisco, and the LVMH subsidiaries Louis Vuitton, Dior, and Tiffany &amp; Co.</p>
+<h2>Better late than never</h2>
+<p>The attackers abuse a Salesforce feature that allows customers to link their accounts to third-party apps that integrate data with in-house systems for blogging, mapping tools, and similar resources. The attackers in the campaign contact employees and instruct them to connect an external app to their Salesforce instance. As the employee complies, the attackers ask the employee for an eight-digit security code that the Salesforce interface requires before a connection is made. The attackers then use this number to gain access to the instance and all data stored in it.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Google said that its Salesforce instance was among those that were compromised. The breach occurred in June, but Google only disclosed it on Tuesday, presumably because the company only learned of it recently.</p>
+<p>&#8220;Analysis revealed that data was retrieved by the threat actor during a small window of time before the access was cut off,&#8221; the company said.</p>
+<p>Data retrieved by the attackers was limited to business information such as business names and contact details, which Google said was &#8220;largely public&#8221; already.</p>
+<p>Google initially attributed the attacks to a group traced as UNC6040. The company went on to say that a second group, UNC6042, has engaged in extortion activities, &#8220;sometimes several months after&#8221; the UNC6040 intrusions. This group brands itself under the name ShinyHunters.</p>
+<p>&#8220;In addition, we believe threat actors using the 'ShinyHunters' brand may be preparing to escalate their extortion tactics by launching a data leak site (DLS),&#8221; Google said. &#8220;These new tactics are likely intended to increase pressure on victims, including those associated with the recent UNC6040 Salesforce-related data breaches.&#8221;</p>
+<p>With so many companies falling to this scam&#8212;including Google, which only disclosed the breach two months after it happened&#8212;the chances are good that there are many more we don&#8217;t know about. All Salesforce customers should carefully audit their instances to see what external sources have access to it. They should also implement multi-factor authentication and train staff how to detect scams before they succeed.</p>
+
+
+          
+                  
+
+                  
+          </div>
