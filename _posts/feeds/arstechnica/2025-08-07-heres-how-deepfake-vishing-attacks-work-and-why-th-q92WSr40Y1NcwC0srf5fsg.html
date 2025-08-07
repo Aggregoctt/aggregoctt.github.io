@@ -1,0 +1,54 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/08/heres-how-deepfake-vishing-attacks-work-and-why-they-can-be-hard-to-detect/
+date: '2025-08-07T11:00:02'
+excerpt: Why AI-based voice cloning is the next frontier social-engineering attacks.
+image: assets/media/q92WSr40Y1NcwC0srf5fsg-BTdSgPy4Cz5y7_E2OrE_dA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Security
+- deepfakes
+- fraud
+- speech synthesis
+title: Here’s how deepfake vishing attacks work, and why they can be hard to detect
+---
+<div>
+                      
+                      
+          <p>By now, you&#8217;ve likely heard of fraudulent calls that use AI to clone the voices of people the call recipient knows. Often, the result is what sounds like a grandchild, CEO, or work colleague you&#8217;ve known for years reporting an urgent matter requiring immediate action, saying to wire money, divulge login credentials, or visit a malicious website.</p>
+<p>Researchers and <a href="https://www.dhs.gov/sites/default/files/publications/increasing_threats_of_deepfake_identities_0.pdf">government officials</a> have been warning of the threat for years, with the Cybersecurity and Infrastructure Security Agency <a href="https://www.cisa.gov/news-events/alerts/2023/09/12/nsa-fbi-and-cisa-release-cybersecurity-information-sheet-deepfake-threats">saying</a> in 2023 that threats from deepfakes and other forms of synthetic media have increased &#8220;exponentially.&#8221; Last year, Google&#8217;s Mandiant security division <a href="https://cloud.google.com/blog/topics/threat-intelligence/ai-powered-voice-spoofing-vishing-attacks">reported</a> that such attacks are being executed with &#8220;uncanny precision, creating for more realistic phishing schemes.&#8221;</p>
+<h2>Anatomy of a deepfake scam call</h2>
+<p>On Wednesday, security firm Group-IB <a href="https://www.group-ib.com/blog/voice-deepfake-scams/">outlined</a> the basic steps involved in executing these sorts of attacks. The takeaway is that they&#8217;re easy to reproduce at scale and can be challenging to detect or repel.</p>
+ 
+
+<p>The basic steps are:</p>
+<p><b>Collecting voice samples of the person who will be impersonated.</b> Samples as short as three seconds are sometimes adequate. They can come from videos, online meetings, or previous voice calls.</p>
+<p><b>Feeding the samples into AI-based speech synthesis engines</b>, such as Google&#8217;s Tacotron 2, Microsoft&#8217;s Vall-E, or services from ElevenLabs and Resemble AI. These engines allow the attacker to use a text-to-speech interface that produces user-chosen words in a voice tone and conversational tics of the person being impersonated. Most services bar such use of deepfakes, but as Consumer Reports <a href="https://www.consumerreports.org/media-room/press-releases/2025/03/consumer-reports-assessment-of-ai-voice-cloning-products/">found in March</a>, the safeguards these companies have in place to curb the practice could be bypassed with minimal effort.</p>
+<p><b>An optional step</b> is to spoof the number belonging to the person or organization being impersonated. These sorts of techniques have been in use for decades.</p>
+<p>Next, attackers <b>initiate the scam call.</b> In some cases, the cloned voice will follow a script. In other, more sophisticated attacks, the faked speech is generated in real time, using voice masking or transformation software. The real-time attacks can be more convincing because they allow the attacker to respond to questions a skeptical recipient may ask.</p>
+<p>&#8220;Although real-time impersonation has been demonstrated by open-source projects and commercial APIs, real-time deepfake vishing in-the-wild remains limited,&#8221; Group-IB said. &#8220;However, given ongoing advancements in processing speed and model efficiency, real-time usage is expected to become more common in the near future.&#8221;</p>
+
+          
+                       
+                   
+            
+
+              
+          
+          
+<p>In either case, the attacker uses the fake voice to generate a pretense for needing the recipient to take immediate action. The narrative might simulate a granddaughter in jail urgently seeking bail money, a CEO directing someone in an accounts payable department to wire money to cover an expense that&#8217;s past due, or an IT person instructing an employee to reset a password following a purported breach.</p>
+<p><b>Collecting</b> the cash, stolen credential, or other asset. Often, once the action is taken, it's irreversible.</p>
+<h2>Shields down</h2>
+<p>The Mandiant post showed the relative ease with which members of its security team had in executing such a scam in a simulated red team exercise, designed to test defenses and train personnel. The red teamers collected publicly available voice samples of someone inside the targeted organization who had employees report to them. The red teamers then used publicly available information to identify employees most likely to work under the person being faked and called them. To make the call more convincing, it used a real outage of a VPN service as a pretense for the employee to take immediate action.</p>
+<p>&#8220;Due to the trust in the voice on the phone, the victim bypassed security prompts from both Microsoft Edge and Windows Defender SmartScreen, unknowingly downloading and executing a pre-prepared malicious payload onto their workstation,&#8221; Mandiant said. &#8220;The successful detonation of the payload marked the completion of the exercise, showcasing the alarming ease with which AI voice spoofing can facilitate the breach of an organization.&#8221;</p>
+<p>Precautions for preventing such scams from succeeding can be as simple as parties agreeing to a randomly chosen word or phrase that the caller must provide before the recipient complies with a request. Recipients can also end the call and call the person back at a number known to belong to the caller. But it's best to follow both steps.</p>
+<p>Both of these precautions require the recipient to remain calm and alert, despite the legitimate sense of urgency that would arise if the feigned scenario were real. This can be even harder when the recipient is tired, overextended, or otherwise not at their best. And for that reason, so-called vishing attacks&#8212;whether AI-enabled or not&#8212;aren&#8217;t likely to go away anytime soon.</p>
+
+
+          
+                  
+
+                  
+          </div>
