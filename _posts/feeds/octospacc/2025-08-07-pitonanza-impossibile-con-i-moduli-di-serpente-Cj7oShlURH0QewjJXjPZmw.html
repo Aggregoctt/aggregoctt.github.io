@@ -1,0 +1,43 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/08/08/pitonanza-impossibile-con-i-moduli-di-serpente/
+date: '2025-08-07T22:50:46'
+excerpt: Certo che è incredibile che più passa il tempo e più mi accorgo di quanto
+  infinitamente Python sia pestilenziale, sempre più di quanto avrei finito per pensare
+  in un momento precedente&#8230; E ok, non che gli altri linguaggi non siano comunque
+  terrificanti, per carità, ma Python è una roba grave. Purtroppo, ahinoi, l&#8217;ecosistema
+  è comodo, [&#8230;]
+image: null
+source: octospacc
+tags:
+- Senza categoria
+- pestilenziale
+- crap
+- rant
+- Python
+- Mannaggia
+title: pitonanza impossibile con i moduli di serpente
+---
+<div>
+
+		
+<p>Certo che &#232; incredibile che pi&#249; passa il tempo e <strong>pi&#249; mi accorgo di quanto infinitamente Python sia </strong><strong>pestilenziale</strong>, sempre pi&#249; di quanto avrei finito per pensare in un momento precedente&#8230; E ok, non che gli altri linguaggi non siano comunque terrificanti, per carit&#224;, ma <strong>Python &#232; una roba grave</strong>. Purtroppo, ahinoi, l&#8217;ecosistema &#232; comodo, i pacchetti che stanno a giro facilitano il vibe coding (in senso classico eh, senza parlare di IA), e quindi <strong>cosa mai si potr&#224; fare per rimediare?</strong><strong> Assolutamente niente</strong>, perch&#233; noi ragazze magiche (&#8230;io in special modo) esistiamo per soffrire, e quindi <strong>la sofferenza continuer&#224; fin quando non esploder&#242; definitivamente</strong>. &#128148;</p>
+
+
+
+<p>Giustamente &#8212; <a href="https://octospacc.altervista.org/2025/08/06/misschiavanza-senza-chiavina-trasformazione-squalotica-nuova-mia-istanza-sharkey/">progetto segreto pretende</a> &#8212; <strong>mi serve usare la API di Misskey</strong> nel programma che sto cercando di mettere su, e quindi <strong>dal web ho preso una bella libreria </strong><strong>ormai abbandonata</strong> (e con la documentazione perlopi&#249; in giapponese senza controparte inglese; un fatto che attorno a Misskey &#232; una costante, ma ops), che per&#242; fortunatamente ancora funziona: <a href="https://memos.octt.eu.org/m/3j9AqjHUinz7aXaVFAwBCW"><strong>Misskey.py</strong></a>. <strong>Il problema &#232; che non &#232; completa</strong>, e mancano (a parte certi metodi di convenienza, immagino) diverse funzioni necessarie&#8230; prima tra tutte, una per aggiornare i metadati del profilo utente, cosa che mi serve. E quindi <strong>le rogne sono ufficialmente certificate infinite da questo momento</strong>. &#129396;</p>
+
+
+
+<p>Non volendo fare un fork della libreria, che poi diventa un casino, <strong>ho provato a risolvere il problema </strong><strong>nel modo corretto</strong><strong>, ossia estendendo la classe</strong>, come il modello OOP prevede&#8230; ma, purtroppo, Python &#232; per l&#8217;appunto pestilenziale, e <strong>tra moduli nelle classi permette di fare delle schifezze allucinanti</strong>; e quindi, in questo caso, per come la libreria &#232; strutturata internamente, da nuovi metodi che aggiungo alla classe estesa non riesco a chiamare il metodo interno <code>_api_request</code> (e ricrearlo io sarebbe una porcheria, quindi evito). Avrei allora provato semplicemente a ridefinire io la classe principale (che &#232; semplicemente una composita dei vari pezzi divisi in moduli interni della libreria, mamma mia che roba!), ma Python &#232; pestilenziale, e nel percorso della mia app non vuole saperne di importare quegli specifici moduli, che palesemente sono scritti per essere solo interni&#8230; ma, appunto, <strong>non voglio ricopiarmi l&#8217;intera libreria, quindi bella rogna</strong>. &#129326;</p>
+
+
+
+<p>Vabb&#232;: dopo fin troppi minuti di lavoro effettivo, il risultato &#232; insomma che <strong>alla fine ho reimplementato io una versione molto base della libreria da zero</strong>, con la stessa interfaccia&#8230; <strong>una classe di meno di una ventina di righe e appena 5 metodi</strong>, cio&#232; quelli che al volo mi sono serviti ora, pi&#249; cosa aggiunger&#242; strada facendo (poca roba, credo). Ovviamente senza tipi stretti, o controllo di errori, o chiss&#224; che altro, ma purtroppo sono stata costretta a fare cos&#236; dalla corrente pestilenza&#8230; e a funzionare funziona, quindi mi sa che me ne sbatter&#242; il pitone, perch&#233; qui senn&#242; <strong>vado davvero ai matti, fa tutto schifo</strong>. &#128371;&#65039;</p>
+
+
+
+<p>&#8230;Tra l&#8217;altro, qualcuno qui dir&#224; sicuramente &#8220;skill issue&#8220;, ma io i miei metodi li ho provati, su Internet ho cercato, alle IA ho chiesto&#8230; e niente, <strong>nessun modo pulito, corretto, piacevole, per sistemare questa merdata</strong>. Boh&#8230; se non mi piacesse Flask, mi sa che lo butterei via Python, in casi come questo, in cui mi serve giusto qualcosa che interagisca con delle API e mostri un pannello admin&#8230; uffa. (Diventer&#242; &#8220;pestilenzioctt&#8221; a brevissimo, se nessuno inventer&#224; octolang per salvarmi, <strong>mannaggia!!!</strong>) &#128553;</p>
+ 
+ 
+	 </div>
