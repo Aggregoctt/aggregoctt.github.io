@@ -1,0 +1,56 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/ai/2025/08/researchers-find-llms-are-bad-at-logical-inference-good-at-fluent-nonsense/
+date: '2025-08-11T17:16:46'
+excerpt: Chain-of-thought AI "degrades significantly" when asked to generalize beyond
+  training.
+image: assets/media/qx1hSjDC6DH4p1UabWxG1w-GZ2jROAejbCouFjemchnjA.jpeg
+source: arstechnica
+tags:
+- AI
+title: LLMs’ “simulated reasoning” abilities are a “brittle mirage,” researchers find
+---
+<div>
+                      
+                      
+          <p>In recent months, the AI industry has started <a href="https://arstechnica.com/ai/2025/04/openai-releases-new-simulated-reasoning-models-with-full-tool-access/">moving toward</a> so-called <a href="https://arstechnica.com/ai/2025/01/china-is-catching-up-with-americas-best-reasoning-ai-models/">simulated reasoning models</a> that <a href="https://arstechnica.com/ai/2025/02/claude-3-7-sonnet-debuts-with-extended-thinking-to-tackle-complex-problems/">use a "chain of thought" process</a> to work through tricky problems in multiple logical steps. At the same time, <a href="https://arstechnica.com/ai/2025/06/new-apple-study-challenges-whether-ai-models-truly-reason-through-problems/">recent</a> <a href="https://arstechnica.com/ai/2025/04/new-study-shows-why-simulated-reasoning-ai-models-dont-yet-live-up-to-their-billing/">research</a> has <a href="https://arstechnica.com/ai/2025/04/researchers-concerned-to-find-ai-models-hiding-their-true-reasoning-processes/">cast doubt</a> on whether those models <a href="https://arstechnica.com/ai/2025/06/with-the-launch-of-o3-pro-lets-talk-about-what-ai-reasoning-actually-does/">have even a basic understanding of general logical concepts</a> or an accurate grasp of their own "thought process." Similar research shows that these "reasoning" models can often produce incoherent, logically unsound answers when questions include irrelevant clauses or deviate even slightly from common templates found in their training data.</p>
+<p>In <a href="https://arxiv.org/pdf/2508.01191">a recent pre-print paper</a>, researchers from the University of Arizona summarize this existing work as "suggest[ing] that LLMs are not principled reasoners but rather sophisticated simulators of reasoning-like text." To pull on that thread, the researchers created a carefully controlled LLM environment in an attempt to measure just how well chain-of-thought reasoning works when presented with "out of domain" logical problems that don't match the specific logical patterns found in their training data.</p>
+<p>The results suggest that the seemingly large performance leaps made by chain-of-thought models are "largely a brittle mirage" that "become[s] fragile and prone to failure even under moderate distribution shifts," the researchers write. "Rather than demonstrating a true understanding of text, CoT reasoning under task transformations appears to reflect a replication of patterns learned during training."</p>
+<h2>No one trained me for this!</h2>
+<p>To test an LLM's generalized reasoning capability in an objective, measurable way, the researchers created a specially controlled LLM training environment <a href="https://github.com/ChengshuaiZhao0/DataAlchemy">called DataAlchemy</a>. This setup creates small models trained on examples of two extremely simple text transformations&#8212;an <a href="https://www.dcode.fr/rot-cipher">ROT cypher</a> and <a href="https://www.computer.org/csdl/proceedings-article/icee/2010/3997d483/12OmNvo67DA">cyclical shifts</a>&#8212;followed by additional training that demonstrates those two functions performed in various orders and combinations.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+
+<p>These simplified models were then tested using a variety of tasks, some of which precisely or closely matched the function patterns in the training data and others that required function compositions that were either partially or fully "out of domain" for the training data. For instance, a model trained on data showing two cyclical shifts might be asked to perform a novel transformation involving two ROT shifts (with basic training on what a single example of either shift looks like). The final answers and reasoning steps were compared to the desired answer using <a href="https://huggingface.co/spaces/evaluate-metric/bleu">BLEU scores</a> and <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein Distance</a> for an objective measure of their accuracy.</p>
+<p>As the researchers hypothesized, these basic models started to fail catastrophically when asked to generalize novel sets of transformations that were not directly demonstrated in the training data. While the models would often try to generalize new logical rules based on similar patterns in the training data, this would quite often lead to the model laying out "correct reasoning paths, yet incorrect answer[s]." In other cases, the LLM would sometimes stumble onto correct answers paired with "unfaithful reasoning paths" that didn't follow logically.</p>
+<p>"Rather than demonstrating a true understanding of text, CoT reasoning under task transformations appears to reflect a replication of patterns learned during training," the researchers write.</p>
+ 
+
+<p>The researchers went on to test their controlled system using input text strings slightly shorter or longer than those found in the training data, or that required function chains of different lengths than those it was trained on. In both cases the accuracy of the results "deteriorates as the [length] discrepancy increases," thus "indicating the failure of generalization" in the models. Small, unfamiliar-to-the-model discrepancies in the format of the test tasks (e.g., the introduction of letters or symbols not found in the training data) also caused performance to "degrade sharply" and "affect[ed] the correctness" of the model's responses, the researchers found.</p>
+
+          
+                   
+             
+            
+
+              
+          
+          
+<h2>&#8220;A false aura of dependability&#8221;</h2>
+<p>Using supervised fine-tuning (SFT) to introduce even a small amount of relevant data to the training set can often lead to strong improvements in this kind of "out of domain" model performance. But the researchers say that this kind of "patch" for various logical tasks "should not be mistaken for achieving true generalization. ... Relying on SFT to fix every [out of domain] failure is an unsustainable and reactive strategy that fails to address the core issue: the model&#8217;s lack of abstract reasoning capability."</p>
+<p>Rather than showing the capability for generalized logical inference, these chain-of-thought models are "a sophisticated form of structured pattern matching" that "degrades significantly" when pushed even slightly outside of its training distribution, the researchers write. Further, the ability of these models to generate "fluent nonsense" creates "a false aura of dependability" that does not stand up to a careful audit.</p>
+<p>As such, the researchers warn heavily against "equating [chain-of-thought]-style output with human thinking" especially in "high-stakes domains like medicine, finance, or legal analysis." Current tests and benchmarks should prioritize tasks that fall outside of any training set to probe for these kinds of errors, while future models will need to move beyond "surface-level pattern recognition to exhibit deeper inferential competence," they write.</p>
+
+
+          
+                  
+
+                  
+          </div>
