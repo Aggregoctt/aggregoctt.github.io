@@ -1,0 +1,33 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143040/kde-improves-focus-stealing-prevention-on-wayland/
+date: '2025-08-11T21:39:15'
+excerpt: You click a link in your chat app, your browser with a hundred tabs comes
+  to the front and opens that page. How hard can it be? Well, you probably know by
+  now that Wayland, unlike X, doesn’t let one application force its idiot wishes on
+  everyone else. In order for an application to bring its window to the front, it
+  needs to make use of the XDG Activation protocol. In essence, an application cannot
+  take focus, it can only receive focus. In the example above, your chat app would
+  request an XDG Activation token from the compositor. It then asks the system to
+  open the given URL (typically launching the web browser) and sends along the token.
+  The browser can then use this token to activate its window. ↫ Kai Uwe After explaining
+  exactly how this mechanism works, KDE developer Kai Uwe details the issue that not
+  every application yet properly supports the XDG Activation protocol, and some that
+  do have bugs that, say, might make an application discard its token too early. In
+  other words, it&#8217;s time to start testing. You&#8217;ll need to use the latest
+  git master brach of KWin, and enable set the &#8220;Focus Stealing Prevention&#8221;
+  option in Window Management to &#8220;Extreme&#8221;. When set to &#8220;Extreme&#8221;,
+  KWin will exclusively activate windows that request activation with a valid token.
+  They&#8217;ve already found and fixed a number of issues in KDE using this method,
+  but more are bound to found, particularly in third-party applications. They&#8217;re
+  planning on turning on KWin&#8217;s focus stealing prevention on Wayland with forgiving
+  settings at first, but increase the strictness of the feature as time progresses
+  and issues are fixed.
+image: null
+source: osnews
+tags:
+- KDE
+title: KDE improves focus stealing prevention on Wayland
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>You click a link in your chat app, your browser with a hundred tabs comes to the front and opens that page. How hard can it be? Well, you probably know by now that Wayland, unlike X, doesn&#8217;t let one application force its idiot wishes on everyone else. In order for an application to bring its window to the front, it needs to make use of the <a target="_blank" rel="noreferrer noopener" href="https://wayland.app/protocols/xdg-activation-v1">XDG Activation</a> protocol.</p><p>In essence, an application cannot take focus, it can only receive focus. In the example above, your chat app would request an XDG Activation token from the compositor. It then asks the system to open the given URL (typically launching the web browser) and sends along the token. The browser can then use this token to activate its window.</p>
+<a href="https://blog.broulik.de/2025/08/on-window-activation/"><strong>&#8619;</strong> Kai Uwe</a></blockquote><p>After explaining exactly how this mechanism works, KDE developer Kai Uwe details the issue that not every application yet properly supports the XDG Activation protocol, and some that do have bugs that, say, might make an application discard its token too early. In other words, it&#8217;s time to start testing.</p><p>You&#8217;ll need to use the latest git master brach of KWin, and enable set the &#8220;Focus Stealing Prevention&#8221; option in Window Management to &#8220;Extreme&#8221;. When set to &#8220;Extreme&#8221;, KWin will exclusively activate windows that request activation with a valid token. They&#8217;ve already found and fixed a number of issues in KDE using this method, but more are bound to found, particularly in third-party applications.</p><p>They&#8217;re planning on turning on KWin&#8217;s focus stealing prevention on Wayland with forgiving settings at first, but increase the strictness of the feature as time progresses and issues are fixed.</p></div>
