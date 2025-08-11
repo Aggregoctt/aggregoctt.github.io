@@ -1,0 +1,88 @@
+---
+author: Zack Whittaker
+canonical_url: https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/
+date: '2025-08-11T00:00:00'
+excerpt: Security researcher Eaton Zveare told TechCrunch that the flaws he discovered
+  in the carmaker's centralized dealer portal exposed vast access to customer and
+  vehicle data. With this access, Zveare said he could remotely take over a customer's
+  account and unlock their cars, and more.
+image: assets/media/mIe6xlVLTqGN8OBwsjrD7Q-HVF2AK2O97UnqOtdhPO6BA.jpeg
+source: techcrunch
+tags:
+- Transportation
+- Security
+- privacy
+- Remote Control
+- cybersecurity
+- car security
+- Def Con 2025
+title: Security flaws in a carmaker’s web portal let one hacker remotely unlock cars
+  from anywhere
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">A security researcher said flaws in a carmaker&#8217;s online dealership portal exposed the private information and vehicle data of its customers, and could have allowed hackers to remotely break into any of its customers&#8217; vehicles.</p>
+
+<p class="wp-block-paragraph">Eaton Zveare, who works as a security researcher at software delivery company Harness, told TechCrunch the flaw he discovered allowed the creation of an admin account that granted &#8220;unfettered access&#8221; to the unnamed carmaker&#8217;s centralized web portal.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">With this access, a malicious hacker could have viewed the personal and financial data of the carmaker&#8217;s customers, track vehicles, and enroll customers in features that allow owners &#8212; or the hackers &#8212; control some of their car&#8217;s functions from anywhere.</p>
+
+<p class="wp-block-paragraph">Zveare said he doesn&#8217;t plan on naming the vendor, but said it was a widely known automaker with several popular sub-brands.&#160;</p>
+
+<p class="wp-block-paragraph">In an interview with TechCrunch ahead of his talk at the Def Con security conference in Las Vegas on Sunday, Zveare said the bugs put a spotlight on the security of these dealership systems, which grant their employees and associates broad access to customer and vehicle information.</p>
+
+<p class="wp-block-paragraph">Zveare, who has found bugs in <a href="https://eaton-works.com/2023/03/06/toyota-c360-hack/" target="_blank" rel="noreferrer noopener nofollow">carmakers&#8217; customer systems</a> and <a href="https://eaton-works.com/2023/02/06/toyota-gspims-hack/" target="_blank" rel="noreferrer noopener nofollow">vehicle management systems</a> before, found the flaw earlier this year as part of a weekend project, he told TechCrunch.&#160;</p>
+
+<p class="wp-block-paragraph">He said while the security flaws in the portal&#8217;s login system was a challenge to find, once he found it, the bugs let him bypass the login mechanism altogether by permitting him to create a new &#8220;national admin&#8221; account.&#160;</p>
+
+<p class="wp-block-paragraph">The flaws were problematic because the buggy code loaded in the user&#8217;s browser when opening the portal&#8217;s login page, allowing the user &#8212; in this case, Zveare &#8212; to modify the code to bypass the login security checks. Zveare told TechCrunch that the carmaker found no evidence of past exploitation, suggesting he was the first to find it and report it to the carmaker.</p>
+
+<p class="wp-block-paragraph">When logged in, the account granted access to more than 1,000 of the carmakers&#8217; dealers across the United States, he told TechCrunch.</p>
+
+<p class="wp-block-paragraph">&#8220;No one even knows that you&#8217;re just silently looking at all of these dealers&#8217; data, all their financials, all their private stuff, all their leads,&#8221; said Zveare, in describing the access.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Zveare said one of the things he found inside the dealership portal was a national consumer lookup tool that allowed logged-in portal users to look-up the vehicle and driver data of that carmaker.&#160;</p>
+
+<p class="wp-block-paragraph">In one real-world example, Zveare took a vehicle&#8217;s unique identification number from the windshield of a car in a public parking lot and used the number to identify the car&#8217;s owner. Zveare said the tool could be used to look-up someone using only a customer&#8217;s first and last name.</p>
+
+<p class="wp-block-paragraph">With access to the portal, Zveare said it was also possible to pair any vehicle with a mobile account, which allows customers to remotely control some of their car&#8217;s functions from an app, such as unlocking their cars.</p>
+
+<p class="wp-block-paragraph">Zveare said he tried this out in a real-world example using a friend&#8217;s account and with their consent. In transferring ownership to an account controlled by Zveare, he said the portal requires only an attestation &#8212; effectively a pinky promise &#8212; that the user performing the account transfer is legitimate.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;For my purposes, I just got a friend who consented to me taking over their car, and I ran with that,&#8221; Zveare told TechCrunch. &#8220;But [the portal] could basically do that to anyone just by knowing their name &#8212; which kind-of freaks me out a bit &#8212; or I could just look up a car in the parking lots.&#8221;</p>
+
+<p class="wp-block-paragraph">Zveare said he did not test whether he could drive away, but said the exploit could be abused by thieves to break into and steal items from vehicles, for example.</p>
+
+<p class="wp-block-paragraph">Another key problem with access to this carmaker&#8217;s portal was that it was possible to access other dealer&#8217;s systems linked to the same portal through single sign-on, a feature that allows users to login into multiple systems or applications with just one set of login credentials. Zveare said the carmaker&#8217;s systems for dealers are all interconnected so it&#8217;s easy to jump from one system to another.</p>
+
+<p class="wp-block-paragraph">With this, he said, the portal also had a feature that allowed admins, such as the user account he created, to &#8220;impersonate&#8221; other users, effectively allowing access to other dealer systems as if they were that user without needing their logins. Zveare said this was similar to a feature found in a Toyota dealer portal <a href="https://eaton-works.com/2023/02/06/toyota-gspims-hack/" target="_blank" rel="noreferrer noopener nofollow">discovered in 2023</a>.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;They&#8217;re just security nightmares waiting to happen,&#8221; said Zveare, speaking of the user-impersonation feature.&#160;</p>
+
+<p class="wp-block-paragraph">Once in the portal Zveare found personally identifiable customer data, some financial information, and telematics systems that allowed the real-time location tracking of rental or courtesy cars, as well as cars being shipped across the country, and the option to cancel them &#8212; though, Zveare didn&#8217;t try.</p>
+
+<p class="wp-block-paragraph">Zveare said the bugs took about a week to fix in February 2025 soon after his disclosure to the carmaker.</p>
+
+<p class="wp-block-paragraph">&#8220;The takeaway is that only two simple API vulnerabilities blasted the doors open, and it&#8217;s always related to authentication,&#8221; said Zveare. &#8220;If you&#8217;re going to get those wrong, then everything just falls down.&#8221;</p>
+
+
+			
+
+			</div>
