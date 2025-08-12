@@ -1,0 +1,71 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/08/why-its-a-mistake-to-ask-chatbots-about-their-mistakes/
+date: '2025-08-12T19:52:39'
+excerpt: The tendency to ask AI bots to explain themselves reveals widespread misconceptions
+  about how they work.
+image: assets/media/8iwQEFZdAgonpIFUUp5LtA-mxtRH53lx2gmH-bU-B1hBQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- machine learning
+title: Why it’s a mistake to ask chatbots about their mistakes
+---
+<div>
+                      
+                      
+           
+<p>When something goes wrong with an AI assistant, our instinct is to ask it directly: "What happened?" or "Why did you do that?" It's a natural impulse&#8212;after all, if a human makes a mistake, we ask them to explain. But with AI models, this approach rarely works, and the urge to ask reveals a fundamental misunderstanding of what these systems are and how they operate.</p>
+<p>A <a href="https://arstechnica.com/information-technology/2025/07/ai-coding-assistants-chase-phantoms-destroy-real-user-data/">recent incident</a> with Replit's AI coding assistant perfectly illustrates this problem. When the AI tool deleted a production database, user Jason Lemkin <a href="https://x.com/jasonlk/status/1946240562736365809">asked it</a> about rollback capabilities. The AI model confidently claimed rollbacks were "impossible in this case" and that it had "destroyed all database versions." This turned out to be completely wrong&#8212;the rollback feature worked fine when Lemkin tried it himself.</p>
+<p>And after xAI recently reversed a temporary suspension of the Grok chatbot, users asked it directly for explanations. It offered multiple conflicting reasons for its absence, some of which were controversial enough that NBC reporters <a href="https://www.nbcnews.com/tech/tech-news/grok-xai-temporary-suspension-rcna224426">wrote about Grok</a> as if it were a person with a consistent point of view, titling an article, "xAI's Grok offers political explanations for why it was pulled offline."</p>
+<p>Why would an AI system provide such confidently incorrect information about its own capabilities or mistakes? The answer lies in understanding what AI models actually are&#8212;and what they aren't.</p>
+<h2>There&#8217;s nobody home</h2>
+<p>The first problem is conceptual: You're not talking to a consistent personality, person, or entity when you interact with ChatGPT, Claude, Grok, or Replit. These names suggest individual agents with self-knowledge, but that's <a href="https://arstechnica.com/information-technology/2023/04/why-ai-chatbots-are-the-ultimate-bs-machines-and-how-people-hope-to-fix-them/">an illusion</a> created by the conversational interface. What you're actually doing is guiding a statistical text generator to produce outputs based on your prompts.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>There is no consistent "ChatGPT" to interrogate about its mistakes, no singular "Grok" entity that can tell you why it failed, no fixed "Replit" persona that knows whether database rollbacks are possible. You're interacting with a system that generates plausible-sounding text based on patterns in its training data (usually trained months or years ago), not an entity with genuine self-awareness or system knowledge that has been reading everything about itself and somehow remembering it.</p>
+<p>Once an AI language model is trained (which is a laborious, energy-intensive process), its foundational "knowledge" about the world is baked into its neural network and is rarely modified. Any external information comes from a prompt supplied by the chatbot host (such as xAI or OpenAI), the user, or a software tool the AI model uses to <a href="https://arstechnica.com/ai/2024/06/can-a-technology-called-rag-keep-ai-models-from-making-stuff-up/">retrieve external information</a> on the fly.</p>
+<p>In the case of Grok above, the chatbot's main source for an answer like this would probably originate from conflicting reports it found in a search of recent social media posts (using an external tool to retrieve that information), rather than any kind of self-knowledge as you might expect from a human with the power of speech. Beyond that, it will likely just <a href="https://arstechnica.com/information-technology/2023/04/why-ai-chatbots-are-the-ultimate-bs-machines-and-how-people-hope-to-fix-them/">make something up</a> based on its text-prediction capabilities. So asking it why it did what it did will yield no useful answers.</p>
+<h2>The impossibility of LLM introspection</h2>
+<p>Large language models (LLMs) alone cannot meaningfully assess their own capabilities for several reasons. They generally lack any introspection into their training process, have no access to their surrounding system architecture, and cannot determine their own performance boundaries. When you ask an AI model what it can or cannot do, it generates responses based on patterns it has seen in training data about the known limitations of previous AI models&#8212;essentially providing educated guesses rather than factual self-assessment about the current model you're interacting with.</p>
+
+          
+                  
+
+              
+          
+          
+<p>A <a href="https://arxiv.org/html/2410.13787v1">2024 study</a> by Binder et al. demonstrated this limitation experimentally. While AI models could be trained to predict their own behavior in simple tasks, they consistently failed at "more complex tasks or those requiring out-of-distribution generalization." Similarly, <a href="https://arxiv.org/html/2407.18219v1">research on "Recursive Introspection"</a> found that without external feedback, attempts at self-correction actually degraded model performance&#8212;the AI's self-assessment made things worse, not better.</p>
+<p>This leads to paradoxical situations. The same model might confidently claim impossibility for tasks it can actually perform, or conversely, claim competence in areas where it consistently fails. In the Replit case, the AI's assertion that rollbacks were impossible wasn't based on actual knowledge of the system architecture&#8212;it was a plausible-sounding confabulation generated from training patterns.</p>
+ 
+<p>Consider what happens when you ask an AI model why it made an error. The model will generate a plausible-sounding explanation because that's what the pattern completion demands&#8212;there are plenty of examples of written explanations for mistakes on the Internet, after all. But the AI's explanation is just another generated text, not a genuine analysis of what went wrong. It's inventing a story that sounds reasonable, not accessing any kind of error log or internal state.</p>
+<p>Unlike humans who can introspect and assess their own knowledge, AI models don't have a stable, accessible knowledge base they can query. What they "know" only manifests as continuations of specific prompts. Different prompts act like different addresses, pointing to different&#8212;and sometimes contradictory&#8212;parts of their training data, stored as statistical weights in neural networks.</p>
+<p>This means the same model can give completely different assessments of its own capabilities depending on how you phrase your question. Ask "Can you write Python code?" and you might get an enthusiastic yes. Ask "What are your limitations in Python coding?" and you might get a list of things the model claims it cannot do&#8212;even if it regularly does them successfully.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The randomness inherent in AI text generation compounds this problem. Even with identical prompts, an AI model might give slightly different responses about its own capabilities each time you ask.</p>
+<h2>Other layers also shape AI responses</h2>
+<p>Even if a language model somehow had perfect knowledge of its own workings, other layers of AI chatbot applications might be completely opaque. For example, modern AI assistants like ChatGPT aren't single models but <a href="https://medium.com/@munsifrazaofficial/inside-the-brain-of-ai-assistants-how-modern-ai-agents-really-work-26529ddd7d9a">orchestrated systems</a> of multiple AI models working together, each largely "unaware" of the others' existence or capabilities. For instance, OpenAI uses separate <a href="https://platform.openai.com/docs/guides/moderation">moderation layer</a> models whose operations are completely separate from the underlying language models generating the base text.</p>
+<p>When you ask ChatGPT about its capabilities, the language model generating the response has no knowledge of what the moderation layer might block, what tools might be available in the broader system, or what post-processing might occur. It's like asking one department in a company about the capabilities of a department it has never interacted with.</p>
+<p>Perhaps most importantly, users are always directing the AI's output through their prompts, even when they don't realize it. When Lemkin asked Replit whether rollbacks were possible after a database deletion, his concerned framing likely prompted a response that matched that concern&#8212;generating an explanation for why recovery might be impossible rather than accurately assessing actual system capabilities.</p>
+<p>This creates a feedback loop where worried users asking "Did you just destroy everything?" are more likely to receive responses confirming their fears, not because the AI system has assessed the situation, but because it's generating text that fits the emotional context of the prompt.</p>
+<p>A lifetime of hearing humans explain their actions and thought processes has led us to believe that these kinds of written explanations must have some level of self-knowledge behind them. That's just not true with LLMs that are merely mimicking those kinds of text patterns to guess at their own capabilities and flaws.</p>
+
+
+          
+                  
+
+                  
+          </div>
