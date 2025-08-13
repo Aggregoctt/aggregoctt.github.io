@@ -1,0 +1,159 @@
+---
+author: Zack Whittaker
+canonical_url: https://techcrunch.com/2025/08/13/how-we-found-teaonher-spilling-users-drivers-licenses-in-less-than-10-minutes/
+date: '2025-08-13T14:00:00'
+excerpt: 'Exclusive: A dating gossip app for men exposed thousands of users'' personal
+  data, including scans of driver''s licenses. The app''s developer, Xavier Lampkin,
+  won''t say if he plans to notify affected users about the app''s security lapse.'
+image: assets/media/IBCf0bINovJBxzR6SuZrLA-KEWF8d0BWeK11xunrSvm0g.jpeg
+source: techcrunch
+tags:
+- Privacy
+- Security
+- cybersecurity
+- data breach
+- age verification
+- vibe coding
+title: How we found TeaOnHer spilling users’ driver’s licenses in less than 10 minutes
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">For an app all about spilling the beans on who you&#8217;re allegedly dating, it&#8217;s ironic that TeaOnHer was spilling the personal information of thousands of its users to the open web.</p>
+
+<p class="wp-block-paragraph">TeaOnHer was designed for men to share photos and information about women they claim to have been dating. But much like <a href="https://techcrunch.com/2025/07/26/dating-safety-app-tea-breached-exposing-72000-user-images/" target="_blank" rel="noreferrer noopener">Tea, the dating-gossip app for women</a> it was trying to replicate, TeaOnHer had gaping holes in its security that exposed its users&#8217; personal information, including photos of their driver&#8217;s licenses and other government-issued identity documents, as <a href="https://techcrunch.com/2025/08/06/a-rival-tea-app-for-men-is-leaking-its-users-personal-data-and-drivers-licenses/" target="_blank" rel="noreferrer noopener">TechCrunch reported</a> last week.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">These gated community-like apps were created ostensibly to let users share information about their relationships under the guise of personal safety. However, shoddy coding and security flaws highlight the ongoing privacy risks inherent in requiring users to submit sensitive information to use apps and websites.</p>
+
+<p class="wp-block-paragraph">Such risks are only going to worsen; popular apps and web services are already having to <a href="https://techcrunch.com/2025/07/15/reddit-rolls-out-age-verification-in-the-uk-to-comply-with-new-rules/" target="_blank" rel="noreferrer noopener">comply with age verification laws</a> that require people to <a href="https://techcrunch.com/2025/07/29/youtube-rolls-out-age-estimatation-tech-to-identify-u-s-teens-and-apply-additional-protections/" target="_blank" rel="noreferrer noopener">submit their identity documents</a> before they can be granted access to adult-themed content, despite the privacy and security risks associated with storing databases of people&#8217;s personal information.</p>
+
+<p class="wp-block-paragraph">When TechCrunch published our story last week, we did not publish specific details of the bugs we discovered in TeaOnHer, erring on the side of caution so as to not help bad actors exploit the bug. Instead, <a href="https://techcrunch.com/2025/08/06/a-rival-tea-app-for-men-is-leaking-its-users-personal-data-and-drivers-licenses/" target="_blank" rel="noreferrer noopener">we decided to publish a limited disclosure</a>, because of the app&#8217;s rising popularity and the immediate risks that users faced when using the app. </p>
+
+<p class="wp-block-paragraph">As of the time of disclosure, TeaOnHer was #2 in the free app charts on the Apple App Store, a position still held by the app today.</p>
+
+<p class="wp-block-paragraph">The flaws we found appear to be resolved. TechCrunch can now share how we were able to find users&#8217; driver&#8217;s licenses within 10 minutes of being sent a link to the app in the App Store, thanks to easy to find flaws in the app&#8217;s public-facing backend system, or API.</p>
+
+<p class="wp-block-paragraph">The app&#8217;s developer, Xavier Lampkin, did not respond to multiple requests for comment after we submitted details of the security flaws, nor would Lampkin commit to notifying affected TeaOnHer users or state regulators of the security lapse.</p>
+
+<p class="wp-block-paragraph">We also asked Lampkin if any security reviews were carried out before the TeaOnHer app was launched, but we got no reply. (We have more on disclosure later on.)</p>
+
+<p class="wp-block-paragraph">Alright, start the clock.</p>
+
+<h2 class="wp-block-heading" id="h-teaonher-exposed-admin-panel-credentials">TeaOnHer exposed &#8216;admin panel&#8217; credentials</h2>
+
+<p class="wp-block-paragraph">Before we even downloaded the app, we first wanted to find out where TeaOnHer was hosted on the internet by looking at its public-facing infrastructure, such as its website and anything hosted on its domain.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">This is usually a good place to start as it helps understand what other services the domain is connected to on the internet.&#160;</p>
+
+<p class="wp-block-paragraph">To find the domain name, we first looked (by chance) at the <a href="https://web.archive.org/web/20250812173917/https://apps.apple.com/us/app/teaonher-dating-advice/id6749215648?platform=iphone" target="_blank" rel="noreferrer noopener nofollow">app&#8217;s listing on the Apple App Store</a> to find the app&#8217;s website. This can usually be found in its privacy policy, which apps must include before Apple will list them. (The app listing also claims the developer &#8220;does not collect any data from this app,&#8221; which is demonstrably false, so take that as you will.)</p>
+
+<p class="wp-block-paragraph">TeaOnHer&#8217;s privacy policy was in the form of a published Google Doc, which included an email address with a <code>teaonher.com</code> domain, but no website.</p>
+
+<p class="wp-block-paragraph">The website wasn&#8217;t public at the time, so with no website loading, we looked at the domain&#8217;s public-facing DNS records, which can help to identify what else is hosted on the domain, such as the type of email servers or web hosting. We also wanted to look for any public subdomains that the developer might use to host functionality for the app (or host other resources that <a href="https://techcrunch.com/2020/08/08/sorry-i-gatecrashed-your-zoom-meeting/" target="_blank" rel="noreferrer noopener">should probably not be public</a>), such as admin dashboards, databases, or other web-facing services.</p>
+
+<p class="wp-block-paragraph">But when we looked at the TeaOnHer&#8217;s public internet records, it had no meaningful information other than a single subdomain, <code>appserver.teaonher.com</code>.</p>
+
+<p class="wp-block-paragraph">When we opened this page in our browser, what loaded was the landing page for TeaOnHer&#8217;s API (for the curious, <a href="https://www.documentcloud.org/documents/26048764-teaonher-api-backend-page/" target="_blank" rel="noreferrer noopener nofollow">we uploaded a copy here</a>). An API simply allows things on the internet to communicate with each other, such as linking an app to its central database.</p>
+
+<p class="wp-block-paragraph">It was on this landing page that we found the exposed email address and plaintext password (which <a href="https://www.documentcloud.org/documents/26048764-teaonher-api-backend-page/#document/p1/a2666767" target="_blank" rel="noreferrer noopener nofollow">wasn&#8217;t that far off &#8220;password&#8221;</a>) for Lampkin&#8217;s account to access the TeaOnHer &#8220;admin panel.&#8221;</p>
+
+<p class="wp-block-paragraph">The API page showed that the admin panel, used for the document verification system and user management, was located at &#8220;localhost,&#8221; which simply refers to the physical computer running the server and may not have been directly accessible from the internet. It&#8217;s unclear if anyone could have used the credentials to access the admin panel, but this was in itself a sufficiently alarming finding.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">At this point, we were only about two minutes in.</p>
+
+<p class="wp-block-paragraph">Otherwise, the API landing page didn&#8217;t do much other than offer some indication as to what the API can do. The page listed several API endpoints, which the app needs to access in order to function, such as retrieving user records from TeaOnHer&#8217;s database, for users to leave reviews, and sending notifications.</p>
+
+<p class="wp-block-paragraph">With knowledge of these endpoints, it can be easier to interact with the API directly, as if we were imitating the app itself. Every API is different, so learning how an API works and how to communicate with one can take time to figure out, such as which endpoints to use and the parameters needed to effectively speak its language. Apps like Postman can be helpful for accessing and interacting directly with APIs, but this requires time and a certain degree of trial and error (and patience) to make APIs spit out data when they shouldn&#8217;t.</p>
+
+<p class="wp-block-paragraph">But in this case, there was an even easier way.&#160;</p>
+
+<h2 class="wp-block-heading" id="h-teaonher-api-allowed-unauthenticated-access-to-user-data">TeaOnHer API allowed unauthenticated access to user data</h2>
+
+<p class="wp-block-paragraph">This API landing page included <a href="https://www.documentcloud.org/documents/26048764-teaonher-api-backend-page/#document/p1/a2666752" target="_blank" rel="noreferrer noopener nofollow">an endpoint called <code>/docs</code></a>, which contained the API&#8217;s auto-generated documentation (powered by a product called Swagger UI) that contained the full list of commands that can be performed on the API.&#160;</p>
+
+<p class="wp-block-paragraph">This documentation page was effectively a master sheet of all the actions you can perform on the TeaOnHer API as a regular app user, and more importantly, as the app&#8217;s administrator, such as creating new users, verifying users&#8217; identity documents, moderating comments, and more.&#160;</p>
+
+<p class="wp-block-paragraph">The API documentation also featured the ability to query the TeaOnHer API and return user data, essentially letting us retrieve data from the app&#8217;s backend server and display it in our browser.</p>
+
+<p class="wp-block-paragraph">While it&#8217;s not uncommon for developers to publish their API documentation, the problem here was that some API requests could be made without any authentication &#8212; no passwords or credentials were needed to return information from the TeaOnHer database. In other words, you could run commands on the API to access users&#8217; private data that should not have been accessible to a user of the app, let alone anyone on the internet.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">All of this was conveniently and publicly documented for anyone to see.</p>
+
+<p class="wp-block-paragraph">Requesting a list of users currently in the TeaOnHer identity verification queue, for example &#8212; no more than pressing a button on the API page, nothing fancy here &#8212; would return dozens of account records on people who had recently signed up to TeaOnHer.</p>
+
+<p class="wp-block-paragraph">The records returned from TeaOnHer&#8217;s server contained users&#8217; unique identifiers within the app (essentially a string of random letters and numbers), their public profile screen name, and self-reported age and location, along with their private email address. The records also included web address links containing photos of the users&#8217; driver&#8217;s licenses and corresponding selfies.&#160;</p>
+
+<p class="wp-block-paragraph">Worse, these photos of driver&#8217;s licenses, government-issued IDs, and selfies were stored in an Amazon-hosted S3 cloud server set as publicly accessible to anyone with their web addresses. This public setting lets anyone with a link to someone&#8217;s identity documents open the files from anywhere with no restrictions.</p>
+
+ 
+
+<p class="wp-block-paragraph">With that unique user identifier, we could also use the API page to directly look up individual users&#8217; records, which would return their account data and any of their associated identity documents. With uninhibited access to the API, a malicious user could have scraped huge amounts of user data from the app, much like what happened with <a href="https://www.404media.co/women-dating-safety-app-tea-breached-users-ids-posted-to-4chan/" target="_blank" rel="noreferrer noopener nofollow">the Tea app to begin with</a>.</p>
+
+<p class="wp-block-paragraph">From bean to cup, that was about 10 minutes, and we hadn&#8217;t even logged-in to the app yet. The bugs were so easy to find that it would be sheer luck if nobody malicious found them before we did.</p>
+
+<p class="wp-block-paragraph">We asked, but Lampkin would not say if he has the technical ability, such as logs, to determine if anyone had used (or misused) the API at any time to gain access to users&#8217; verification documents, such as by scraping web addresses from the API.</p>
+
+<p class="wp-block-paragraph">In the days since our report to Lampkin, the API landing page has been taken down, along with its documentation page, and it now displays only the state of the server that the TeaOnHer API is running on as &#8220;healthy.&#8221; At least on cursory tests, the API now appears to rely on authentication, and the previous calls made using the API no longer work.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The web addresses containing users&#8217; uploaded identity documents have also been restricted from public view.&#160;</p>
+
+<h2 class="wp-block-heading">TeaOnHer developer dismissed efforts to disclose flaws</h2>
+
+<p class="wp-block-paragraph">Given that TeaOnHer had no official website at the time of our findings, TechCrunch contacted the email address listed on the privacy policy in an effort to disclose the security lapses.&#160;</p>
+
+<p class="wp-block-paragraph">But the email bounced back with an error saying the email address couldn&#8217;t be found. We also tried contacting Lampkin through the email address on his website, Newville Media, but our email bounced back with the same error message.</p>
+
+<p class="wp-block-paragraph">TechCrunch reached Lampkin via LinkedIn message, asking him to provide an email address where we could send details of the security flaws. Lampkin responded with a general &#8220;support&#8221; email address in response.</p>
+
+<p class="wp-block-paragraph">When TechCrunch discloses a security flaw, we reach out to confirm first that a person or company is the correct recipient. Otherwise, blindly sending details of a security bug to the wrong person could create a risk. Before sharing specific details of the flaws, we asked the recipient of the &#8220;support&#8221; email address if this was the correct address to disclose a security exposure involving TeaOnHer user data.</p>
+
+<p class="wp-block-paragraph">&#8220;You must have us confused with &#8216;the Tea app&#8217;,&#8221; Lampkin replied by email. (We hadn&#8217;t.) &#8220;We don&#8217;t have a security breach or data leak,&#8221; he said. (It did.) &#8220;We have some bots at most but we haven&#8217;t scaled big enough to be in that conversation yet, sorry you were misinformed.&#8221; (We weren&#8217;t)</p>
+
+<p class="wp-block-paragraph">Satisfied that we had established contact with the correct person (albeit not with the response we received), TechCrunch shared details of the security flaws, as well as several links to exposed driver&#8217;s licenses, and a copy of Lampkin&#8217;s own data to underscore the severity of the security issues.</p>
+
+<p class="wp-block-paragraph">&#8220;Thank you for this information. This is very concerning. We are going to jump on this right now,&#8221; said Lampkin.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Despite several follow-up emails, we have not heard from Lampkin since we disclosed the security flaws.</p>
+
+<p class="wp-block-paragraph">It doesn&#8217;t matter if you&#8217;re a one-person software shop or <a href="https://techcrunch.com/2025/07/09/jack-dorsey-says-his-secure-new-bitchat-app-has-not-been-tested-for-security/" target="_blank" rel="noreferrer noopener">a billionaire vibe coding through a weekend</a>: Developers still have a responsibility to keep their users&#8217; data safe. If you can&#8217;t keep your users&#8217; private data safe, don&#8217;t build it to begin with.</p>
+
+<p class="wp-block-paragraph">If you have evidence of a popular app or service leaking or exposing information, get in touch. You can securely contact this reporter via encrypted message at zackwhittaker.1337 on Signal.</p>
+
+
+			
+
+			</div>
