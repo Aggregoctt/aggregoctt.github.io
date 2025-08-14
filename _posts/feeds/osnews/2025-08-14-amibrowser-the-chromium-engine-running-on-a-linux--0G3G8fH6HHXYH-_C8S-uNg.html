@@ -1,0 +1,46 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143070/amibrowser-the-chromium-engine-running-on-a-linux-host-talking-to-a-68k-amiga-application/
+date: '2025-08-14T20:45:45'
+excerpt: 'We removed ads from OSNews. Donate to our fundraiser to ensure our future!
+  Covering the Amiga world is always a bit of a crapshoot, since for what is surely
+  an incredibly small segment of the computing world, it happens to be incredibly
+  complex, with multiple competing Amiga-ish operating systems and hardware platforms,
+  all worsened by many empty promises and bitter animosity flying every which way.
+  This makes it hard for an outsider to get a firm grasp on what&#8217;s going on,
+  but as always, I&#8217;ll try my best. The news here is that AmiKit has released
+  a new browser for the classic 68k Amiga that can load modern websites. The browser
+  is called AmiBrowser. AmiBrowser is an HTML 5 capable web browser built for 68K
+  with Zune/MUI. Ituses ARM libraries to power the native rendering of the web pages.
+  ↫ AmiKit press release AmiBrowser is exclusive to AmiKit&#8217;s own Amiga-like
+  hardware, the A600 GS and A1200 NG, both of which are replacement boards for the
+  original Amiga 600 and 1200, respectively. How do these machines work? Well, they
+  come in the shape of their original counterparts, but with far fewer chips, and
+  one crucial addition: a little Orange Pi Zero 3 (in the case of the A1200 NG, at
+  least) daughterboard that contains the actual ARM SoC that powers the machine. The
+  way this setup works is that the Orange Pi Zero 3 boots into a minimal Linux environment
+  with a launcher-like interface, which can in turn load up the Amiberry classic 68K
+  Amiga emulator that can communicate with its ARM Linux host. It&#8217;s inside this
+  68K emulator where the actual operating system runs. This Amiga-like operating system
+  is called AmiBench, which is, very simply put, a modified variant of the 68K version
+  of AROS, combined with libraries and components that can make use of the ARM processor.
+  And so we finally arrive at this new browser. This new browser runs the Chromium
+  Embedded Framework in the host Linux environment on the ARM processor, forwarding
+  its rendering towards a native 68K Amiga/AROS application that&#8217;s running inside
+  the 68K emulator. In between the CEF running on the Linux host and the native Amiga
+  68K application running inside the emulator sits a glue layer that takes care of
+  the communication between the two sides. It&#8217;s an interesting approach to a
+  very difficult problem: how do you run a modern browser on a hardware platform &#8211;
+  68K, in this case &#8211; that is horribly outdated and far too slow to deal with
+  modern websites? It&#8217;s an interesting approach, but it also feels a little
+  bit like a house of cards. That being said, if the choice is between no access to
+  the modern web and shaky access to the modern web, I&#8217;d still choose the latter.'
+image: null
+source: osnews
+tags:
+- Amiga & AROS
+title: 'AmiBrowser: the Chromium engine running on a Linux host talking to a 68K Amiga
+  application running inside a 68K emulator'
+---
+<div><p class="has-text-align-center">We <a href="https://www.osnews.com/story/143052/osnews-goes-ad-free-for-everyone-and-we-need-your-support/">removed ads</a> from OSNews. Donate to <a href="https://ko-fi.com/thomholwerda/goal?g=0">our fundraiser</a> to ensure our future!</p><p>Covering the Amiga world is always a bit of a crapshoot, since for what is surely an incredibly small segment of the computing world, it happens to be incredibly complex, with multiple competing Amiga-ish operating systems and hardware platforms, all worsened by many empty promises and bitter animosity flying every which way. This makes it hard for an outsider to get a firm grasp on what&#8217;s going on, but as always, I&#8217;ll try my best.</p><p>The news here is that AmiKit has released a new browser for the classic 68k Amiga that can load modern websites. The browser is called AmiBrowser.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>AmiBrowser is an HTML 5 capable web browser built for 68K with Zune/MUI. It<br>uses ARM libraries to power the native rendering of the web pages.</p>
+<a href="https://www.a600gs.com/news/News_Release_AmiBrowser.pdf">&#8619; AmiKit press release</a></blockquote><p>AmiBrowser is exclusive to AmiKit&#8217;s own Amiga-like hardware, the <a href="https://www.a600gs.com/">A600 GS</a> and <a href="https://www.a1200.com/index.php/the-a1200-ng/">A1200 NG</a>, both of which are replacement boards for the original Amiga 600 and 1200, respectively. How do these machines work? Well, they come in the shape of their original counterparts, but with far fewer chips, and one crucial addition: a little Orange Pi Zero 3 (in the case of the A1200 NG, at least) daughterboard that contains the actual ARM SoC that powers the machine.</p><p>The way this setup works is that the Orange Pi Zero 3 boots into a minimal Linux environment with a launcher-like interface, which can in turn load up the <a href="https://blitterstudio.com/amiberry/">Amiberry classic 68K Amiga emulator</a> that can communicate with its ARM Linux host. It&#8217;s inside this 68K emulator where the actual operating system runs. This Amiga-like operating system is called <a href="https://wiki.amiga.org/index.php/AmiBench">AmiBench</a>, which is, very simply put, a modified variant of the <a href="http://www.aros.org/introduction/ports.html#aros-amiga-m68k">68K version of AROS</a>, combined with libraries and components that can make use of the ARM processor.</p><p>And so we finally arrive at this new browser. This new browser runs the <a href="https://en.wikipedia.org/wiki/Chromium_Embedded_Framework">Chromium Embedded Framework</a> in the host Linux environment on the ARM processor, forwarding its rendering towards a native 68K Amiga/AROS application that&#8217;s running inside the 68K emulator. In between the CEF running on the Linux host and the native Amiga 68K application running inside the emulator sits a glue layer that takes care of the communication between the two sides. It&#8217;s <a href="https://www.amigans.net/modules/newbb/viewtopic.php?post_id=156086#forumpost156086">an interesting approach</a> to a very difficult problem: how do you run a modern browser on a hardware platform &#8211; 68K, in this case &#8211; that is horribly outdated and far too slow to deal with modern websites?</p><p>It&#8217;s an interesting approach, but it also feels a little bit like a house of cards. That being said, if the choice is between no access to the modern web and shaky access to the modern web, I&#8217;d still choose the latter.</p></div>
