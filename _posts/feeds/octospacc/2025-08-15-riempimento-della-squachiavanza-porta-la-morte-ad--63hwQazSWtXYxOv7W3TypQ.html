@@ -1,0 +1,50 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/08/15/riempimento-della-squachiavanza-porta-la-morte-ad-essere-dischica-sharkey-prende-troppo-spazio-ed-e-un-problema/
+date: '2025-08-15T12:21:17'
+excerpt: È doloroso trovarmi qui ad ammetterlo a me stessa ma, ancora una volta, scopro
+  che i miei piani di dominazione del mondo sono stati troppo ambiziosi; almeno per
+  ora, in questa fase più iniziale. Ovviamente tutto bene col mio codice, anche se
+  è ancora nelle fasi iniziali&#8230; i problemi inaspettati sono piuttosto arrivati
+  con Sharkey, [&#8230;]
+image: assets/media/63hwQazSWtXYxOv7W3TypQ-uJ1KE-97wKwP0ltqBtfpVw.jpeg
+source: octospacc
+tags:
+- Senza categoria
+- '1017'
+- Sharkey
+- storage
+- Misskey
+- database
+- spazio
+- server
+title: riempimento della squachiavanza porta la morte ad essere dischica… (Sharkey
+  prende troppo spazio ed è un problema)
+---
+<div>
+
+		
+<p><strong>&#200; </strong><strong>doloroso</strong><strong> trovarmi qui ad ammetterlo</strong> a me stessa ma, ancora una volta, scopro che <a href="https://octospacc.altervista.org/2025/08/06/misschiavanza-senza-chiavina-trasformazione-squalotica-nuova-mia-istanza-sharkey/"><strong>i miei piani di dominazione del mondo</strong></a><a href="https://octospacc.altervista.org/2025/08/06/misschiavanza-senza-chiavina-trasformazione-squalotica-nuova-mia-istanza-sharkey/"><strong> sono stati troppo ambiziosi</strong></a>; almeno per ora, in questa fase pi&#249; iniziale. Ovviamente tutto bene col mio codice, anche se &#232; ancora nelle fasi iniziali&#8230; <strong>i problemi inaspettati sono piuttosto arrivati con Sharkey</strong>, che <strong>nell&#8217;arco di una settimana mi avr&#224; sequestrato almeno 1 GB di disco</strong> col suo database di merda, e non penso di dover spiegare quali calcoli fare per capire che <strong>una situazione del genere &#232; insostenibile</strong>. Quindi, ho dovuto per il momento abbassare il tiro, prima che il disco del server mi si riempia in misura da costringermi a levare tutto quanto&#8230; &#128534;</p>
+
+
+
+ 
+
+
+
+<p>Il problema &#232; sostanzialmente una combinazione di 3 fattori: <strong>la mole di dati in ingresso generata da migliaia di utenti di migliaia di istanze ogni giorno &#232; gigantesca</strong> (e il mio server non ha problemi a processarla, ma ecco, sono troppi miliardi di byte), <strong>il database &#232; strutturato di merda</strong> (con troppi dati derivati che occupano inutilmente spazio, nonch&#233; francamente colonne inutili)&#8230; e, soprattutto, <strong>il software non ha alcun meccanismo per cancellare dati vecchi</strong>, quindi per ripulire periodicamente le note di utenti di istanze terze, o comunque quei dati che sono riottenibili. E <strong>per Misskey &#232; da anni che la gente chiede aiuto</strong> per questo problema, ma <strong>la richiesta continua a naufragare</strong>, si vedano&#160;<a href="https://github.com/misskey-dev/misskey/issues/13157">#13157 e linkate</a>&#8230; e per Sharkey ugualmente &#232; da un po&#8217; di tempo che si parla di questo schifo, ma, forse, il fato per una buona volta mi vuole bene: 3 settimane fa <a href="https://activitypub.software/TransFem-org/Sharkey/-/issues/1017">in #1017 qualcuno sembra aver preso interesse a lavorarci&#8230;</a> &#128552;</p>
+
+
+
+<p>Comunque sia, <strong>il problema per me &#232; ora</strong>, e quindi <strong>ho come minimo dovuto disattivare i relay</strong>, che sono dei cosi che si aggiungono per far scambiare i messaggi tra la propria istanza ed altre pur senza avere relazioni di follow con migliaia di utenti (&#8230;perch&#233; non so chi cavolo seguire io, e a me pochi mi cagano), e <strong>cos&#236; l&#8217;influsso di note e allegati &#232; passato da decine di migliaia al giorno a poche decine e basta al giorno</strong>, che &#232; persino meno di quanto ho sulla Spacc BBS&#8230; Ma questo quindi significa direttamente che, <strong>per il momento, non avr&#242; un flusso costante </strong><strong>estremamente sparso e variegato</strong><strong> di conversazioni che posso passare all&#8217;intelligenza artificiale</strong> per farla funzionare in modo completamente autonomo e a dir poco extracircostanziale. (Non che io avessi finito di scrivere il codice per questa parte, eh, ma prima o poi quello sar&#224; pronto&#8230; e i dati allora mancheranno.) &#128168;</p>
+
+
+
+<p>Avrei quasi la mezza idea di, pur non sapendo se questa mossa potrebbe in parte rompere l&#8217;applicazione (ma, come si suol dire, cip ciop fa l&#8217;uccellino, YOLO fa il cormorano&#8230; e in ogni caso farei un backup prima), <strong>creare uno script per fare in modo grezzo la pulizia del database&#8230; ma purtroppo non &#232; affatto una stronzata</strong> filtrare tutto per cancellare solo i dati effettivamente ridondanti, ossia <strong>le note solo da server terzi</strong> (e fin qui ok) <strong>che non hanno relazioni internamente alla mia istanza</strong> (niente reazioni o commenti o boost da parte dei miei utenti, non sono salvate tra i preferiti, e cos&#236; via), <strong>e poi cancellare anche i file a queste associati</strong> dall&#8217;altra tabella (aiuto!!!). E oltre alle note, che sono rogne, e agli allegati, che invece mi fanno proprio incazzare visto quanto occupano pur essendo solo metadati (il contenuto dei file non viene scaricato!), <strong>volendo pulire pure gli utenti &#232; la fine&#8230;</strong> &#128557;</p>
+
+
+
+<p>Vabb&#232;, viste le parole (&#8230;poco attendibili?) di quella persona sconosciuta di cui sopra, per&#242;, <strong>mi conviene </strong><strong>evitare di sbattermi</strong><strong>, e piuttosto </strong><strong>semplicemente pregare</strong> affinch&#233; tale promessa si trasformi in codice&#8230; al pi&#249; presto. <strong>Se la mia speranza (e i miei </strong><strong>bot potentissimi&#8230;</strong><strong>) proprio deve morire, allora lo far&#224; solo </strong><strong>dopo</strong><strong> la mia istanza, non prima!!!</strong> &#128574;</p>
+ 
+ 
+	 </div>
