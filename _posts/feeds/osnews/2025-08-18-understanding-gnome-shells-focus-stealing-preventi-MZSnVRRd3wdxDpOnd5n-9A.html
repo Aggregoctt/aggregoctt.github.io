@@ -1,0 +1,34 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143117/understanding-gnome-shells-focus-stealing-prevention/
+date: '2025-08-18T20:35:01'
+excerpt: 'A week ago we talked about focus stealing prevention on KDE and Wayland,
+  and this time we have a similar article, but detailing GNOME&#8217;s approach instead.
+  Many of the underlying mechanisms are the same, of course, but since GNOME uses
+  a different window manager, the details are different. The problem GNOME faces is
+  the same as KDE, though: application and toolkit developers need to adopt the XDG
+  Activation protocol, but the question is how to get there. While some people have
+  asked for focus stealing prevention to be disabled completely until it’s implemented
+  by most apps and toolkits, I’m not sure this is the best way forward. If we did
+  that, nobody would notice which apps don’t implement it, so there’d be no reason
+  for toolkits to do so. On the other hand, there are some remaining issues around
+  terminal applications and similar use cases that we don’t have a plan for yet, so
+  just switching to&#160;strict&#160;to flush out app bugs isn’t ideal either at the
+  moment. ↫ Julian Sparber Basically, the GNOME team doesn&#8217;t yet know how to
+  move forward, and is collecting feedback and gathering information to see where
+  to go from here. My suggestion would be to coordinate this effort with the KDE team,
+  as the underlying systems and protocols are identical and the end goal is the same:
+  get applications and toolkits to properly support XDG Activation. Many popular applications
+  are shared between the two desktop environments anyway, so it makes sense to apply
+  some mild pressure together, as one. Once support has permeated enough of the ecosystem
+  to allow for focus stealing prevention to become stricter, GNOME and KDE would still
+  be free to go off into their own directions. We removed ads from OSNews. Donate
+  to our fundraiser to ensure our future!'
+image: null
+source: osnews
+tags:
+- Gnome
+title: Understanding GNOME Shell’s focus stealing prevention
+---
+<div><p>A week ago we talked about <a href="https://www.osnews.com/story/143040/kde-improves-focus-stealing-prevention-on-wayland/">focus stealing prevention on KDE and Wayland</a>, and this time we have a similar article, but detailing GNOME&#8217;s approach instead. Many of the underlying mechanisms are the same, of course, but since GNOME uses a different window manager, the details are different. The problem GNOME faces is the same as KDE, though: application and toolkit developers need to adopt the <a href="https://wayland.app/protocols/xdg-activation-v1">XDG Activation</a> protocol, but the question is how to get there.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>While some people have asked for focus stealing prevention to be disabled completely until it&#8217;s implemented by most apps and toolkits, I&#8217;m not sure this is the best way forward. If we did that, nobody would notice which apps don&#8217;t implement it, so there&#8217;d be no reason for toolkits to do so.</p><p>On the other hand, there are some remaining issues around terminal applications and similar use cases that we don&#8217;t have a plan for yet, so just switching to&#160;<code>strict</code>&#160;to flush out app bugs isn&#8217;t ideal either at the moment.</p>
+<a href="https://blogs.gnome.org/shell-dev/2024/09/20/understanding-gnome-shells-focus-stealing-prevention/">&#8619; Julian Sparber</a></blockquote><p>Basically, the GNOME team doesn&#8217;t yet know how to move forward, and is collecting feedback and gathering information to see where to go from here. My suggestion would be to coordinate this effort with the KDE team, as the underlying systems and protocols are identical and the end goal is the same: get applications and toolkits to properly support XDG Activation. Many popular applications are shared between the two desktop environments anyway, so it makes sense to apply some mild pressure together, as one.</p><p>Once support has permeated enough of the ecosystem to allow for focus stealing prevention to become stricter, GNOME and KDE would still be free to go off into their own directions.</p></div>
