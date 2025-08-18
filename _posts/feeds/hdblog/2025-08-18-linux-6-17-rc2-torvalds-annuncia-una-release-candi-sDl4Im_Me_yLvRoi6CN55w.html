@@ -1,0 +1,17 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/linux/articoli/n628551/linux-617-rc2-release-torvalds/
+date: '2025-08-18T08:05:00'
+excerpt: Linus Torvalds annuncia un aggiornamento dal profilo contenuto, con interventi
+  mirati a driver e filesystem
+image: assets/media/sDl4Im_Me_yLvRoi6CN55w-wwrI38C_B1urqjoNZ6AXww.jpeg
+source: hdblog
+tags:
+- Sicurezza
+title: Linux 6.17-rc2, Torvalds annuncia una release candidate insolitamente contenuta
+---
+<div><p><a href="https://www.hdblog.it/2018/10/23/linus-torvalds-linux-kernel-pausa-comportamento/">Linus Torvalds</a>, fondatore del kernel Linux, ha annunciato la <strong>disponibilit&#224; di Linux 6.17-rc2</strong>, definendo questa release candidate "molto calma" e una delle "pi&#249; piccole rc2 degli ultimi tempi". Un risultato che lo soddisfa, ma che allo stesso tempo lo induce a sospettare che la quiete di questa settimana possa preludere a <strong>un'attivit&#224; pi&#249; intensa nelle prossime.</strong> Secondo Torvalds, le dimensioni ridotte dell'aggiornamento potrebbero dipendere dal fatto che in Europa &#232; ancora periodo di ferie estive, oppure semplicemente dal m<strong>inor numero di correzioni necessarie</strong> dopo la <a href="https://www.hdblog.it/linux/articoli/n619670/linux-6-15-kernel-completo-novita-rilascio/">recente fase di merge window</a>.</p><p>La merge window &#232; il periodo di due settimane successivo a una release stabile in cui <strong>vengono integrate nel kernel le principali nuove funzionalit&#224;.</strong> A questa fase seguono solitamente sette o otto release candidate, finalizzate a stabilizzare il codice.<br>
+<br>
+Nel caso di Linux 6.17-rc2, <strong>la maggior parte delle correzioni riguarda i driver, </strong>in particolare quelli pe<strong>r block, GPU, rete e audio,</strong> con alcuni interventi anche su SCSI e Firewire. La modifica pi&#249; consistente &#232; stata la <strong>rimozione del codice relativo al drbd page pool. </strong>Al di fuori dei driver, sono stati aggiornati diversi filesystem, tra cui SMB, XFS, EROFS e BTRFS, oltre ad alcune aree del networking core e correzioni architetturali per x86.<br>
+<br>
+<a href="https://lkml.org/lkml/2025/8/17/340">Il changelog pubblicato insieme all'annuncio</a> elenca fix provenienti da numerosi contributori. Tra questi figurano la risoluzione di un <strong>bug use-after-free in habanalabs</strong>, la correzione di u<strong>na race condition nella gestione della memoria (mm) legata a collapse</strong> e un <strong>fix per gli attributi sysfs di SCSI.</strong> In evidenza anche interventi su BTRFS per correggere problemi di iterazione e deadlock in sottopagine, assert nel filesystem XFS, la soluzione di un potenziale deadlock in io_uring e vari fix per netfilter.</p><p>Nonostante i suoi timori che la settimana successiva possa essere pi&#249; movimentata, <strong>Torvalds ha espresso l'auspicio che anche la prossima mantenga la stessa tranquillit&#224;.</strong> Ha ricordato che sar&#224; nuovamente in viaggio, quindi meno problemi da gestire significherebbero una situazione migliore. Con due settimane ancora davanti alla fine di agosto e molti sviluppatori potenzialmente ancora in vacanza, resta possibile che il fondatore del progetto ottenga il risultato che spera.</p></div>
