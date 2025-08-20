@@ -1,0 +1,45 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2025/08/having-recovery-and-or-ssd-problems-after-recent-windows-updates-youre-not-alone/
+date: '2025-08-20T17:45:37'
+excerpt: Recovery issue is already resolved; SSD problems have been trickier to diagnose.
+image: assets/media/2WCK6IdieYZyC7BaZxosUA-8Kvo__cYDxTXaAhLQ2g-Uw.jpeg
+source: arstechnica
+tags:
+- Tech
+- microsoft
+- windows 10
+- windows 10 22h2
+- windows 11
+- windows 11 22h2
+- windows 11 23h2
+- windows 11 24h2
+title: Having recovery and/or SSD problems after recent Windows updates? You’re not
+  alone.
+---
+<div>
+                      
+                      
+          <p>When updating a piece of software as large and complex and old as Windows, you're inevitably going to break something every once in a while. Microsoft tracks known issues <a href="https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2#3640msgdesc">here</a>&#8212;generally they affect lesser-used features or obscure edge cases, but every once in a while you run into something bigger and more disruptive.</p>
+<p>August's updates have introduced a couple of more noticeable problems. The first was caused by <a href="https://support.microsoft.com/en-us/topic/august-12-2025-kb5063875-os-builds-22621-5768-and-22631-5768-c67aac47-127c-4bd1-b92d-ebd9093f031d">update KB5063875</a>, a relatively minor security update for older versions of Windows 10 and 11. This update broke Windows' built-in reset and recovery features, used to restore a Windows installation to its factory defaults if you're experiencing a problem or are planning on handing down or otherwise getting rid of your PC. After installing the update, users of Windows 11 23H2 and 22H2 and Windows 10 22H2 who tried to reset their PCs would see the process silently fail with no explanation.</p>
+<p>Microsoft quickly resolved this one with update KB5066189&#8212;the issue was opened on August 18 and marked as resolved on August 19&#8212;so if you're still having issues, check for the update that will fix your update.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The other issue some users have been experiencing is potentially more serious, but also harder to track down. Tom's Hardware <a href="https://www.tomshardware.com/pc-components/ssds/latest-windows-11-security-patch-might-be-breaking-ssds-under-heavy-workloads-users-report-disappearing-drives-following-file-transfers-including-some-that-cannot-be-recovered-after-a-reboot">has a summary</a> of the problem: At some point after installing <a href="https://support.microsoft.com/en-us/topic/august-12-2025-kb5063878-os-build-26100-4946-e4b87262-75c8-4fef-9df7-4a18099ee294">update KB5063878</a> on Windows 11 24H2, some users began <a href="https://x.com/Necoru_cat/status/1956130393050243325">noticing issues with large file transfers</a> on some SSDs. When installing a large update for&#160;Cyberpunk 2077, a large game that requires dozens of gigabytes of storage, Windows abruptly stopped seeing the SSD that the game was installed on.</p>
+<p>The issues are apparently more pronounced on disks that are more than 60 percent full, when transferring at least 50GB of data. Most of the SSDs were visible again after a system reboot, though one&#8212;a 2TB Western Digital SA510 drive&#8212;didn't come back after a reboot.</p>
+<p>These issues could be specific to this user's configuration, and the culprit may not be the Windows update.&#160;Microsoft has yet to add the SSD problem to its list of known issues with Windows, but the company confirmed to Ars that it was studying the complaints.</p>
+<p>"We're aware of these reports and are investigating with our partners," a Microsoft spokesperson told Ars.</p>
+<p>SSD controller manufacturer Phison told Tom's Hardware that it was also looking into the problem.</p>
+
+
+          
+                  
+
+                  
+          </div>
