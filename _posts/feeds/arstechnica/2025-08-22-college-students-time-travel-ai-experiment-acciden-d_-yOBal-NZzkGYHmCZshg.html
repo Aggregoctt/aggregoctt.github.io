@@ -1,0 +1,80 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2025/08/ai-built-from-1800s-texts-surprises-creator-by-mentioning-real-1834-london-protests/
+date: '2025-08-22T22:13:56'
+excerpt: Hobbyist training AI on Victorian texts gets an unexpected history lesson
+  from his own creation.
+image: assets/media/d_-yOBal-NZzkGYHmCZshg-Mc3RBXHQkeC0RGxyULPEGQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI development
+- AI research
+- AI training
+- computational archaeology
+- digital archaeology
+- GitHub
+- historical AI
+- historical research
+- language models
+- large language models
+- LocalLLaMA
+- London history
+- machine learning
+- open source
+- reddit
+- TimeCapsuleLLM
+- Victorian era
+title: College student’s “time travel” AI experiment accidentally outputs real 1834
+  history
+---
+<div>
+                      
+                      
+           
+<p>A hobbyist developer building AI language models that speak Victorian-era English "just for fun" got an unexpected history lesson this week when his latest creation mentioned real protests from 1834 London&#8212;events the developer didn't know had actually happened until he Googled them.</p>
+<p>"I was interested to see if a protest had actually occurred in 1834 London and it really did happen," <a href="https://www.reddit.com/r/LocalLLaMA/comments/1mvnmjo/my_llm_trained_from_scratch_on_only_1800s_london/">wrote</a> Reddit user Hayk Grigorian, who is a computer science <a href="https://github.com/haykgrigo3">student</a> at Muhlenberg College in Pennsylvania.</p>
+<p>For the past month, Grigorian has been developing what he calls <a href="https://github.com/haykgrigo3/TimeCapsuleLLM">TimeCapsuleLLM</a>, a small AI language model (like a pint-sized distant cousin to ChatGPT) which has been trained entirely on texts from 1800&#8211;1875 London. Grigorian wants to capture an authentic Victorian voice in the AI model's outputs. As a result, the AI model ends up spitting out text that's heavy with biblical references and period-appropriate rhetorical excess.</p>
+<p>Grigorian's project joins a growing field of researchers exploring what some call "<a href="https://www.pnas.org/doi/10.1073/pnas.2407639121">Historical Large Language Models</a>" (HLLMs) if they feature a larger base model than the small one Grigorian is using. Similar projects include <a href="https://huggingface.co/Pclanglais/MonadGPT">MonadGPT</a>, which was trained on 11,000 texts from 1400 to 1700 CE that can discuss topics using 17th-century knowledge frameworks, and <a href="https://github.com/Xunzi-LLM-of-Chinese-classics/XunziALLM">XunziALLM</a>, which generates classical Chinese poetry following ancient formal rules. These models offer researchers a chance to interact with the linguistic patterns and thought processes of past eras.</p>
+<p>According to Grigorian, TimeCapsuleLLM's most intriguing recent output emerged from a simple test. When he prompted it with "It was the year of our Lord 1834," the AI model&#8212;which is trained to continue text from wherever a user leaves off&#8212;generated the following:</p>
+<blockquote><p>It was the year of our Lord 1834 and the streets of London were filled with protest and petition. The cause, as many re counted, was not bound in the way of private, but having taken up the same day in the day of Lord Palmerston, the public will receive a short statement of the difficulties under which the day of law has reached us. It is a matter of deep regret, that the present events in the history of the world are clear, and consequently will be'known. It is not true that the very men who first settled in the Gospel at Jerusalem should have so extensive and so interesting a record of the prosperity and prosperity</p></blockquote>
+<p>Curious about the accuracy, Grigorian did some fact-checking. "The output also brought up Lord Palmerston," he wrote, "and after a google search I learned that his actions resulted in the 1834 protests."</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The details mentioned in the AI-generated text do appear to align with historical fact: 1834 saw <a href="https://en.wikipedia.org/wiki/Opposition_to_the_English_poor_laws">significant civil unrest</a> in England following the <a href="https://en.wikipedia.org/wiki/Poor_Law_Amendment_Act_1834">Poor Law Amendment Act 1834</a>, and <a href="https://en.wikipedia.org/wiki/Henry_John_Temple,_3rd_Viscount_Palmerston">Palmerston</a> served as Foreign Secretary for Great Britain during this turbulent period, later becoming prime minister.</p>
+<p>On the one hand, this output is not very surprising. AI researchers who create AI language models like the kind that power ChatGPT have known for years that these models can synthesize realistic permutations of information learned from those texts. It's how every AI assistant today works.</p>
+<p>But what makes this episode especially interesting is that a small hobbyist model trained by one man appears to have surprised him by reconstructing a coherent historical moment from scattered references across thousands of documents, connecting a specific year to actual events and figures without being explicitly taught these relationships. Grigorian hadn't intentionally trained the model on 1834 protest documentation; the AI assembled these connections from the ambient patterns in 6.25GB of Victorian-era writing.</p>
+<p>"This is all from just 5-6GB of data," Grigorian wrote on Reddit. "Imagine the results with 30GB or more. I&#8217;m not sure if just scaling the data up will ever result in reasoning but even now it kinda feels like digital time travel."</p>
+ 
+<h2>Linguistic time travel through statistics</h2>
+<p>Rather than fine-tuning AI language models on modern text sources, developer Hayk Grigorian trains his hobbyist AI models from scratch using exclusively Victorian-era sources&#8212;over 7,000 books, legal documents, and newspapers published in London between 1800 and 1875.&#160;He calls the process "Selective Temporal Training" or STT. A custom <a href="https://en.wikipedia.org/wiki/Large_language_model#Tokenization">tokenizer</a> that chops words into simplified representations for easier processing excludes modern vocabulary entirely.</p>
+<p>"If I fine-tune something like GPT-2, it's already pre-trained and that information won't go away," Grigorian <a href="https://github.com/haykgrigo3/TimeCapsuleLLM">explained</a> on GitHub about modern data contamination. "If I train from scratch the language model won't pretend to be old, it just will be."</p>
+
+          
+                  
+
+              
+          
+          
+<p>Using architectures from the "small language models" <a href="https://github.com/karpathy/nanoGPT">nanoGPT</a> and Microsoft's <a href="https://www.microsoft.com/en-us/research/publication/textbooks-are-all-you-need-ii-phi-1-5-technical-report/">Phi 1.5</a>, Grigorian has trained three AI models so far, each showing improved historical coherence. Version 0, trained on just 187MB, produced Victorian-flavored gibberish. Version 0.5 achieved grammatically correct period prose but hallucinated facts. The current 700-million parameter version, trained on a rented A100 GPU, has begun generating historical references like the one seen above.</p>
+ 
+
+<p>Grigorian is finding a reduction in confabulations over time as the emergent effect of scaling the size of high-quality training data, a <a href="https://arxiv.org/html/2502.20750">well-known effect</a> among AI researchers, especially when the models are very small. "Earlier models (v0 and v0.5) could mimic writing styles of the 19th century but would always hallucinate events, people, and facts," Grigorian <a href="https://github.com/haykgrigo3/TimeCapsuleLLM">wrote</a> on Github. "This shows the model is beginning to remember things from the dataset."</p>
+<p>For historians and digital humanities researchers, these kinds of experiments may be useful. Training AI language models on period texts may allow for the creation of interactive period linguistic models that offer a researcher a chance to converse with a simulated speaker of an extinct vernacular or language of the past.&#160;The results would not necessarily be factually rigorous due to confabulations, but they could be stylistically illuminating for someone studying antique syntax or vocabulary in use.</p>
+<p>"I want to eventually try different cities also, maybe a Chinese, Russian, or Indian city model," Grigorian <a href="https://www.reddit.com/r/LocalLLaMA/comments/1g7yw3q/my_llm_trained_from_scratch_on_only_1800s_london/">wrote</a>, inviting collaboration with others on future AI models he might train. He makes the code, AI model weights, and documentation of his work <a href="https://github.com/haykgrigo3/TimeCapsuleLLM">publicly available</a> on GitHub.</p>
+<p>In an era of frequent AI <a href="https://arstechnica.com/information-technology/2023/04/why-ai-chatbots-are-the-ultimate-bs-machines-and-how-people-hope-to-fix-them/">confabulations</a>, there's something refreshing about a model that accidentally tells the truth about the past. It's almost the opposite of hallucination&#8212;an AI model accidentally getting something correct. Call it a "factcident."</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
