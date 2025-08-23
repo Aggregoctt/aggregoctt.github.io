@@ -1,0 +1,64 @@
+---
+author: Jacek Krywko
+canonical_url: https://arstechnica.com/science/2025/08/an-inner-speech-decoder-reveals-some-mental-privacy-issues/
+date: '2025-08-23T11:00:57'
+excerpt: Words you'll never speak still cause activity in the brain's speech centers.
+image: assets/media/3Tl4echdVOd-NMgVcC9bEg-MXxUl72vZuUBSJgJdYXJog.jpeg
+source: arstechnica
+tags:
+- Science
+- Biology
+- brain-computer interface
+- inner speech
+- neurobiology
+- Neuroscience
+title: An inner-speech decoder reveals some mental privacy issues
+---
+<div>
+                      
+                      
+          <p>Most experimental brain-computer interfaces (BCIs) that have been used for synthesizing human speech have been implanted in the areas of the brain that translate the intention to speak into the muscle actions that produce it. A patient has to physically attempt to speak to make these implants work, which is tiresome for severely paralyzed people.</p>
+<p>To go around it, researchers at the Stanford University built a BCI that could decode inner speech&#8212;the kind we engage in silent reading and use for all our internal monologues. The problem is that those inner monologues often involve stuff we don&#8217;t want others to hear. To keep their BCI from spilling the patients&#8217; most private thoughts, the researchers designed a first-of-its-kind &#8220;mental privacy&#8221; safeguard.</p>
+<h2>Overlapping signals</h2>
+<p>The reason nearly all neural prostheses used for speech are designed to decode attempted speech is that our first idea was to try the same thing we did with controlling artificial limbs: record from the area of the brain responsible for controlling muscles. &#8220;Attempted movements produced very strong signal, and we thought it could also be used for speech,&#8221; says Benyamin Meschede Abramovich Krasa, a neuroscientist at Stanford University who, along with Erin M. Kunz, was a co-lead author of the study.</p>
+<p>The vocal tract, at the end of the day, relies on the movement of muscles. Fishing out the signals in the brain that engage these muscles seemed like a good way to bypass the challenge of decoding higher-level language processing that we don&#8217;t fully understand.</p>
+<p>But for people suffering from ALS or tetraplegia, attempting to speak is a real effort. This is why Krasa&#8217;s team changed course and tried decoding the inner, or silent speech, which doesn&#8217;t ever engage the muscles.</p>
+<p>The work started with collecting data to train AI algorithms that were supposed to take neural signals involved in inner speech and translate them into words. The team worked with four participants, each almost completely paralyzed, who had micro electrode arrays implanted in slightly different areas of the motor cortex. They were given a few tasks that involved listening to recorded words or engaging in silent reading.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Based on this data, the team found representations of inner speech in the signals recorded in the same regions of the brain that are responsible for attempted speech. This immediately raised a question: whether a system trained to decode attempted speech could sometimes catch inner speech by accident. The team tested that with an attempted speech decoding system they developed in one of their previous studies&#8212;and it turned out it totally could.</p>
+<p>&#8220;We demonstrated that traditional BCI systems that were trained on attempted speech could be activated when a subject was looking at a sentence on the screen and imagined speaking that sentence in their head,&#8221; Krasa explains.</p>
+<h2>Mental passwords</h2>
+<p>The idea of extracting words and sentences directly from our thoughts comes with its fair share of privacy concerns&#8212;especially since our knowledge about the brain is still very limited. Back in June 2025, when a system that could translate brain signals into sounds was <a href="https://arstechnica.com/science/2025/06/a-neural-brain-implant-provides-near-instantaneous-speech/">demonstrated</a> at the University of California&#8212;Davis, Ars asked Maitreyee Wairagkar, a neuroprosthetics researcher who led this effort, how her BCI could differentiate between inner and attempted speech. She responded that it wasn&#8217;t a problem because they were recording signals from the region of the brain responsible for controlling muscles.</p>
+<p>&#8220;To be fair, accidental inner speech decoding didn&#8217;t happen in their study,&#8221; says Krasa. &#8220;But we had a hunch it might be possible, and it was.&#8221; So, his team came up with two different safeguards against this.</p>
+<p>One solution for attempted speech BCIs worked automatically and relied on catching subtle differences between the brain signals for attempted and inner speech. &#8220;If you included inner speech signals and labeled them as silent, you could train AI decoder neural networks to ignore them&#8212;and they were pretty good at that,&#8221; Krasa says.</p>
+<p>Their alternate safeguard was a bit less seamless. Krasa&#8217;s team simply trained their decoder to recognize a password patients had to imagine speaking in their heads to activate the prosthesis. The password? &#8220;Chitty chitty bang bang,&#8221; which worked like the mental equivalent of saying &#8220;Hey Siri.&#8221; The prosthesis recognized this password with 98 percent accuracy.</p>
+
+          
+                  
+
+              
+          
+          
+<p>But it struggled with more complex phrases.</p>
+<h2>Pushing the frontier</h2>
+<p>Once the mental privacy safeguard was in place, the team started testing their inner speech system with cued words first. The patients sat in front of the screen that displayed a short sentence and had to imagine saying it. The performance varied, reaching 86 percent accuracy with the best performing patient and on a limited vocabulary of 50 words, but dropping to 74 percent when the vocabulary was expanded to 125,000 words.</p>
+<p>But when the team moved on to testing if the prosthesis could decode unstructured inner speech, the limitations of the BCI became quite apparent.</p>
+<p>The first unstructured inner speech test involved watching arrows pointing up, right, or left in a sequence on a screen. The task was to repeat that sequence after a short delay using a joystick. The expectation was that the patients would repeat sequences like &#8220;up, right, up&#8221; in their heads to memorize them&#8212;the goal was to see if the prosthesis would catch it. It kind of did, but the performance was just above chance level.</p>
+<p>Finally, Krasa and his colleagues tried decoding more complex phrases without explicit cues. They asked the participants to think of the name of their favorite food or recall their favorite quote from a movie. &#8220;This didn&#8217;t work,&#8221; Krasa says. &#8220;What came out of the decoder was kind of gibberish.&#8221;</p>
+<p>In its current state, Krasa thinks, the inner speech neural prosthesis is a proof of concept. &#8220;We didn&#8217;t think this would be possible, but we did it and that&#8217;s exciting! The error rates were too high, though, for someone to use it regularly,&#8221; Krasa says. He suggested the key limitation might be in hardware&#8212;the number of electrodes implanted in the brain and precision with which we can record the signal from the neurons. Inner speech representations might also be stronger in other brain regions than they are in the motor cortex.</p>
+<p>Krasa&#8217;s team is currently involved in two projects that stemmed from the inner speech neural prosthesis. &#8220;The first is asking the question [of] how much faster an inner speech BCI would be compared to an attempted speech alternative,&#8221; Krasa says. The second one is looking at people with a condition called aphasia, where people have motor control of their mouths but are unable to produce words. &#8220;We want to assess if inner speech decoding would help them,&#8221; Krasa adds.</p>
+<p>Cell, 2025. &#160;DOI: <a href="http://dx.doi.org/10.1016/j.cell.2025.06.015">10.1016/j.cell.2025.06.015</a></p>
+
+
+          
+                  
+
+                  
+          </div>
