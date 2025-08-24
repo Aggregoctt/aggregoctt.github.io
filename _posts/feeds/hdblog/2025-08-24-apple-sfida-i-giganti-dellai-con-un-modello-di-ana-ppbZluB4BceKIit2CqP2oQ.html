@@ -1,0 +1,29 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/apple/articoli/n629206/apple-ai-algoritmo-analisi-video-record-benchmark/
+date: '2025-08-24T08:35:00'
+excerpt: 'Doppio flusso, risultati record: il nuovo modello AI di Apple analizza video
+  lunghi in modo rapido e preciso, battendo i colossi del settore. Ma ci sono dei
+  limiti importanti da tenere presente.'
+image: assets/media/ppbZluB4BceKIit2CqP2oQ-NE9c4LvgHKS0fMMvtgrN4Q.jpeg
+source: hdblog
+tags:
+- Apple
+title: Apple sfida i giganti dell’AI con un modello di analisi video molto promettente
+---
+<div>
+	
+				<p>Apple ha presentato una nuova famiglia di <a href="https://www.hdblog.it/ia/">modelli AI</a> open source, SlowFast-LLaVA-1.5, che promette di rivoluzionare l&#8217;analisi dei video lunghi. L&#8217;idea di fondo: invece di affidarsi a sistemi giganteschi e costosi, Cupertino ha puntato su un approccio pi&#249; efficiente e &#8220;furbo&#8221;, <strong>capace di fare meglio con meno</strong>.</p>    <p>Ma perch&#233; &#232; importante? Semplificando molto, i modelli di intelligenza artificiale che si occupano di analizzare e capire i video funzionano generalmente in modo piuttosto lineare: <strong>scompongono un filmato in fotogrammi, analizzano ci&#242; che succede in ciascuno e poi mettono insieme tutti i dati</strong>, in modo tale da descrivere la scena o rispondere a domande su di essa. Il problema &#232; che, se presi in sequenza, i fotogrammi di un video sono praticamente tutti uguali: analizzarli tutti rappresenta un gigantesco spreco di tempo e risorse hardware - con la pressoch&#233; assoluta garanzia di saturare la &#8220;context window&#8221;, essenzialmente la memoria del modello.</p><p>Ci sono sistemi pi&#249; evoluti ed efficienti per svolgere questi compiti, ma quello di Apple &#232; particolarmente innovativo e funziona, almeno in determinati contesti. Come lascia intendere il nome, <strong>il modello &#232; costituito da due flussi di analisi complementari</strong>: uno &#8220;lento&#8221;, che elabora pochi fotogrammi ma in modo molto approfondito, per capire bene cosa c&#8217;&#232; e cosa succede nella scena; e uno &#8220;veloce&#8221;, che osserva molti frame ma in modo pi&#249; superficiale, cos&#236; da comprendere come evolve la scena nel tempo. Questo mix permette al modello di essere efficiente senza perdere i dettagli.</p>    <p>I risultati sono molto promettenti. SlowFast-LLaVA-1.5, disponibile in <strong>varianti da 1, 3 e 7 miliardi di parametri</strong>, ha superato modelli molto pi&#249; grandi nei test standard di comprensione video, come LongVideoBench e MLVU. Persino la versione pi&#249; compatta (quella da 1 miliardo di parametri, appunto) ha stabilito nuovi record. Non solo: il modello funziona bene anche su immagini statiche, dimostrando di essere un sistema versatile, utile anche per OCR, ragionamento logico e scenari complessi ricchi di testo.</p><p>Ci sono per&#242; dei limiti molto significativi. Per scelta dei ricercatori stessi, <strong>il modello pu&#242; elaborare al massimo 128 fotogrammi per ogni video</strong>, selezionati a intervalli regolari. 32 di questi vengono analizzati dall&#8217;algoritmo &#8220;Slow&#8221;, gli altri 96 da quello &#8220;Fast&#8221;. Per contesto, ricordiamo che al giorno d&#8217;oggi la maggior parte dei flussi video che vediamo su internet o in TV si aggira tra i 24 e i 120 fotogrammi al secondo: questo significa che l&#8217;algoritmo non analizza mai pi&#249; di qualche secondo. &#200; evidente che in un video lungo qualche minuto rischia di perdersi moltissimi momenti chiave.</p>    <p>Ciononostante, il valore dell&#8217;esperimento &#232; concreto e innegabile. Apple ha ottenuto uno stato dell&#8217;arte - e l'ha fatto peraltro <strong>usando solo dataset pubblici</strong>, evitando approcci un po&#8217; pi&#249; questionabili e poco trasparenti che usano diverse grandi realt&#224; del settore AI. E ora il modello &#232; disponibile <a href="https://github.com/apple/ml-slowfast-llava" target="_blank">su GitHub</a> e <a href="https://huggingface.co/papers/2503.18943" target="_blank">Hugging Face</a>, pronto per essere testato da sviluppatori e ricercatori.</p> 
+
+	
+				
+
+
+ 
+
+
+	
+				 
+			
+	
+			</div>
