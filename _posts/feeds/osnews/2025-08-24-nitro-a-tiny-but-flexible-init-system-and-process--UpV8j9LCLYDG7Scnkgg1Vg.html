@@ -1,0 +1,37 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143156/nitro-a-tiny-but-flexible-init-system-and-process-supervisor/
+date: '2025-08-24T19:19:23'
+excerpt: The most unlikely subsystem of contention is definitely the init system used
+  by Linux, with most popular distributions opting for systemd, while a vocal minority
+  prefers to use something else. Neither of these two groups are wrong or right, as
+  we live in a free world and different people have different needs and desires. Personally,
+  I don&#8217;t think there&#8217;s a more utterly pointless and meaningless debate
+  than this, and people who make the init system they use their entire personality
+  more often than not come across as really, really sad. It&#8217;s a tool; use the
+  one you like and move on with life. A brand new init system was recently released
+  by Leah Neukirchen, who among a ton of other things, contributes to Void Linux.
+  It&#8217;s called nitro, and it&#8217;s a &#8220;tiny process supervisor that also
+  can be used as pid 1 on Linux&#8221;, and it also can be used on FreeBSD supervised
+  by FreeBSD&#8217;s init. There&#8217;s some overlap with runit here, so Neukirchen
+  published a blog post detailing the differences between the two, which should help
+  in getting a better understanding of what makes nitro stand apart. While both use
+  a directory of services managed by small scripts, nitro seems to opt for a more
+  contained, monolithic approach, as it keeps everything in a single process. On top
+  of that, Nitro contains some new features runit doesn&#8217;t have. The focus seems
+  to be on integrating a few capabilities that on runit require hacks, but on nitro
+  are just built-in, like &#8220;support for one-shot &#8216;services&#8217;, i.e.
+  running scripts on up/down without a process to supervise (e.g. persist audio volume,
+  keep RNG state)&#8221;, running service directories multiple times, and more. Nitro
+  also maintains its runtime state in RAM and provides an IPC service to query it,
+  meaning it can be run on read-only filesystems without special configuration. There&#8217;s
+  a lot more information in Neukirchen&#8217;s blog post, including a look at some
+  of the current limitations of Nitro. I highly suggest reading it, and perhaps we
+  will see nitro as another valid alternative to the popular systemd.
+image: null
+source: osnews
+tags:
+- Unix
+title: 'Nitro: a tiny but flexible init system and process supervisor'
+---
+<div><p>The most unlikely subsystem of contention is definitely the init system used by Linux, with most popular distributions opting for systemd, while a vocal minority prefers to use something else. Neither of these two groups are wrong or right, as we live in a free world and different people have different needs and desires. Personally, I don&#8217;t think there&#8217;s a more utterly pointless and meaningless debate than this, and people who make the init system they use their entire personality more often than not come across as really, really sad.</p><p>It&#8217;s a tool; use the one you like and move on with life.</p><p>A brand new init system was recently released by Leah Neukirchen, who among a ton of other things, contributes to Void Linux. <a href="https://git.vuxu.org/nitro/about/">It&#8217;s called nitro</a>, and it&#8217;s a &#8220;tiny process supervisor that also can be used as pid 1 on Linux&#8221;, and it also can be used on FreeBSD supervised by FreeBSD&#8217;s init. There&#8217;s some overlap with <a href="https://smarden.org/runit/">runit</a> here, so Neukirchen published a blog post <a href="https://leahneukirchen.org/blog/archive/2025/08/comparing-nitro-to-runit.html">detailing the differences between the two</a>, which should help in getting a better understanding of what makes nitro stand apart. While both use a directory of services managed by small scripts, nitro seems to opt for a more contained, monolithic approach, as it keeps everything in a single process.</p><p>On top of that, Nitro contains some new features runit doesn&#8217;t have. The focus seems to be on integrating a few capabilities that on runit require hacks, but on nitro are just built-in, like &#8220;support for one-shot &#8216;services&#8217;, i.e. running scripts on up/down without a process to supervise (e.g. persist audio volume, keep RNG state)&#8221;, running service directories multiple times, and more. Nitro also maintains its runtime state in RAM and provides an IPC service to query it, meaning it can be run on read-only filesystems without special configuration.</p><p>There&#8217;s a lot more information in Neukirchen&#8217;s blog post, including a look at some of the current limitations of Nitro. I highly suggest reading it, and perhaps we will see nitro as another valid alternative to the popular systemd.</p></div>
