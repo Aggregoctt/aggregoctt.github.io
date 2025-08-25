@@ -1,0 +1,50 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143168/i-revived-pkgsrc-on-aix/
+date: '2025-08-25T13:49:18'
+excerpt: 'Earlier this year, I was trying to get actual daily work done on HP-UX 11.11
+  (11i v1) running on HP&#8217;s last and greatest PA-RISC workstation, the HP c8000.
+  After weeks of frustration caused first by outdated software no longer working properly
+  with the modern web, and then by modern software no longer compiling on HP-UX 11.11,
+  I decided to play the ace up my sleeve: NetBSD&#8217;s pkgsrc has support for HP-UX.
+  Sadly, HP-UX is obviously not a main platform or even a point of interest for pkgsrc
+  developers &#8211; as it should be, nobody uses this combination &#8211; so various
+  incompatibilities and more modern requirements had snuck into pkgsrc, and I couldn&#8217;t
+  get it to bootstrap. I made some minor progress here and there with the help of
+  people far smarter than I, but in the end I just lacked the skills to progress any
+  further. This story will make it to OSNews in a more complete form, I promise. Anyway,
+  in May of this year, it seems Brian Robert Callahan was working on a very similar
+  problem: getting pkgsrc to work properly on IBM&#8217;s AIX. The state of packages
+  on AIX genuinely surprises me. IBM hosts a&#160;repository&#160;of open source software
+  for AIX. But it seems pretty sparse compared to what you&#160;could&#160;get with
+  pkgsrc. Another&#160;website&#160;offering AIX packages seems quite old. I think
+  pkgsrc would be a great way to bring modern packages to AIX. I am not the first
+  to think this. There are AIX 7.2 pkgsrc packages available at&#160;this repository,
+  however all the packages are compiled as 32-bit RISC System/6000 objects. I would
+  greatly prefer to have everything be 64-bit XCOFF objects, as we could do more with
+  64-bit programs. There also aren&#8217;t too many packages in that repository, so
+  I think starting fresh is in our best interest. As we shall see, this was not as
+  straightforward as I would have hoped. ↫ Brian Robert Callahan Reading through his
+  journey getting pkgsrc to work properly on AIX, I can&#8217;t help but feel a bit
+  better about myself not being to get it to work on HP-UX 11.11. Callahan was working
+  with AIX 7.2 TL4, which was released in November 2019 and still actively supported
+  by IBM on a maintained architecture, while I was working with HP-UX 11.11 (or 11i
+  v1), which last got some updates in and around 2005, running on an architecture
+  that&#8217;s well dead and buried. Looking at what Callahan still had to figure
+  out and do, it&#8217;s not surprising someone with my lack of skill in this area
+  couldn&#8217;t get it working. I&#8217;m still hoping someone far smarter than I
+  stumbles upon a HP c8000 and dives into getting pkgsrc to work on HP-UX, because
+  I feel pkgsrc could turn an otherwise incredibly powerful HP c8000 from a strictly
+  retro machine into something borderline usable in the modern world. HP-UX is much
+  harder to virtualise &#8211; if it&#8217;s even possible at all &#8211; so real
+  hardware is probably going to be required. The NetBSD people on Mastodon suggested
+  I could possibly give remote access to my machine so someone could dive into this,
+  which is something I&#8217;ll keep under consideration.'
+image: null
+source: osnews
+tags:
+- Unix
+title: “I revived pkgsrc on AIX”
+---
+<div><p>Earlier this year, I was trying to get actual daily work done on HP-UX 11.11 (11i v1) running on HP&#8217;s last and greatest PA-RISC workstation, the HP c8000. After weeks of frustration caused first by outdated software no longer working properly with the modern web, and then by modern software no longer compiling on HP-UX 11.11, I decided to play the ace up my sleeve: NetBSD&#8217;s pkgsrc has support for HP-UX. Sadly, HP-UX is obviously not a main platform or even a point of interest for pkgsrc developers &#8211; as it should be, nobody uses this combination &#8211; so various incompatibilities and more modern requirements had snuck into pkgsrc, and I couldn&#8217;t get it to bootstrap. I made some minor progress here and there with the help of people far smarter than I, but in the end I just lacked the skills to progress any further.</p><p>This story will make it to OSNews in a more complete form, I promise.</p><p>Anyway, in May of this year, it seems Brian Robert Callahan was working on a very similar problem: getting pkgsrc to work properly on IBM&#8217;s AIX.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>The state of packages on AIX genuinely surprises me. IBM hosts a&#160;<a href="https://www.ibm.com/support/pages/aix-toolbox-open-source-software-downloads-alpha" target="_blank" rel="noreferrer noopener">repository</a>&#160;of open source software for AIX. But it seems pretty sparse compared to what you&#160;could&#160;get with pkgsrc. Another&#160;<a href="http://v14700.1blu.de/aix/" target="_blank" rel="noreferrer noopener">website</a>&#160;offering AIX packages seems quite old. I think pkgsrc would be a great way to bring modern packages to AIX.</p><p>I am not the first to think this. There are AIX 7.2 pkgsrc packages available at&#160;<a href="http://45.76.81.249/AIX/aix-7.2/pkgsrc/All/" target="_blank" rel="noreferrer noopener">this repository</a>, however all the packages are compiled as 32-bit RISC System/6000 objects. I would greatly prefer to have everything be 64-bit XCOFF objects, as we could do more with 64-bit programs. There also aren&#8217;t too many packages in that repository, so I think starting fresh is in our best interest.</p><p>As we shall see, this was not as straightforward as I would have hoped.</p>
+<a href="https://briancallahan.net/blog/20250516.html">&#8619; Brian Robert Callahan</a></blockquote><p>Reading through his journey getting pkgsrc to work properly on AIX, I can&#8217;t help but feel a bit better about myself not being to get it to work on HP-UX 11.11. Callahan was working with AIX 7.2 TL4, which was released in November 2019 and still actively supported by IBM on a maintained architecture, while I was working with HP-UX 11.11 (or 11i v1), which last got some updates in and around 2005, running on an architecture that&#8217;s well dead and buried. Looking at what Callahan still had to figure out and do, it&#8217;s not surprising someone with my lack of skill in this area couldn&#8217;t get it working.</p><p>I&#8217;m still hoping someone far smarter than I stumbles upon a HP c8000 and dives into getting pkgsrc to work on HP-UX, because I feel pkgsrc could turn an otherwise incredibly powerful HP c8000 from a strictly retro machine into something borderline usable in the modern world. HP-UX is much harder to virtualise &#8211; if it&#8217;s even possible at all  &#8211; so real hardware is probably going to be required. The NetBSD people on Mastodon suggested I could possibly give remote access to my machine so someone could dive into this, which is something I&#8217;ll keep under consideration.</p></div>
