@@ -1,0 +1,84 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2025/08/after-teen-suicide-openai-claims-it-is-helping-people-when-they-need-it-most/
+date: '2025-08-26T22:08:38'
+excerpt: ChatGPT allegedly provided suicide encouragement to teen after moderation
+  safeguards failed.
+image: assets/media/ozQEjRNdj5w3Qzy3w1tO3w-Xcr3e7cVeC2cIAZVqdlGzA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI alignment
+- AI and mental health
+- AI assistants
+- AI behavior
+- AI ethics
+- AI hallucination
+- AI paternalism
+- AI regulation
+- AI safeguards
+- AI safety
+- attention mechanism
+- chatbots
+- ChatGPT
+- content moderation
+- crisis intervention
+- GPT-4o
+- GPT-5
+- machine learning
+- mental health
+- openai
+- suicide prevention
+- transformer models
+title: After teen suicide, OpenAI claims it is “helping people when they need it most”
+---
+<div>
+                      
+                      
+           
+<p>OpenAI <a href="https://openai.com/index/helping-people-when-they-need-it-most/">published</a> a blog post on Tuesday titled "Helping people when they need it most" that addresses how its ChatGPT AI assistant handles mental health crises, following what the company calls "recent heartbreaking cases of people using ChatGPT in the midst of acute crises."</p>
+<p>The post arrives after The New York Times <a href="https://www.nytimes.com/2025/08/26/technology/chatgpt-openai-suicide.html">reported</a> on a lawsuit filed by Matt and Maria Raine, whose 16-year-old son Adam died by suicide in April after extensive interactions with ChatGPT, which Ars <a href="https://arstechnica.com/tech-policy/2025/08/chatgpt-helped-teen-plan-suicide-after-safeguards-failed-openai-admits/">covered extensively</a> in a previous post. According to the lawsuit, ChatGPT provided detailed instructions, romanticized suicide methods, and discouraged the teen from seeking help from his family while OpenAI's system tracked 377 messages flagged for self-harm content without intervening.</p>
+<p>ChatGPT is a system of multiple models interacting as an application. In addition to a main AI model like GPT-4o or GPT-5 providing the bulk of the outputs, the application includes components that are typically invisible to the user, including a <a href="https://openai.com/index/using-gpt-4-for-content-moderation/">moderation layer</a> (another AI model) or classifier that reads the text of the ongoing chat sessions. That layer detects potentially harmful outputs and can cut off the conversation if it veers into unhelpful territory.</p>
+<p>OpenAI <a href="https://arstechnica.com/ai/2025/02/chatgpt-can-now-write-erotica-as-openai-eases-up-on-ai-paternalism/">eased these content safeguards</a> in February following <a href="https://community.openai.com/t/chatgpt-censorship-calling-out-the-devs-to-rethink-their-position/613914">user complaints</a> about overly restrictive ChatGPT moderation that prevented the discussion of topics like sex and violence in some contexts. At the time, Sam Altman <a href="https://www.reddit.com/r/ChatGPT/comments/1hm9tk5/chatgpt_needs_an_adult_mode_sam_altman_on/">wrote</a> on X that he'd like to see ChatGPT with a "grown-up mode" that would relax content safety guardrails. With 700 million active users, what seem like small policy changes can have a large impact over time.</p>
+<h2>There&#8217;s no one home: The illusion of understanding</h2>
+<p>OpenAI's language throughout Tuesday's blog post reveals a potential problem with how it promotes its AI assistant. The company consistently describes ChatGPT as if it possesses human qualities, a property called <a href="https://ojs.aaai.org/index.php/AIES/article/view/31613">anthropomorphism</a>. The post is full of hallmarks of anthropomorphic framing, claiming that ChatGPT can "recognize" distress and "respond with empathy" and that it "nudges people to take a break"&#8212;language that obscures what's actually happening under the hood.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>ChatGPT is not a person. ChatGPT is a pattern-matching system that generates <a href="https://arstechnica.com/information-technology/2023/04/why-ai-chatbots-are-the-ultimate-bs-machines-and-how-people-hope-to-fix-them/">statistically likely</a> text responses to a user-provided prompt. It doesn't "empathize"&#8212;it outputs text strings associated with empathetic responses in its training corpus, <a href="https://arstechnica.com/information-technology/2025/08/is-ai-really-trying-to-escape-human-control-and-blackmail-people/">not from humanlike concern</a>. This anthropomorphic framing isn't just misleading; it's <a href="https://arstechnica.com/information-technology/2025/08/with-ai-chatbots-big-tech-is-moving-fast-and-breaking-people/">potentially hazardous</a> when vulnerable users believe they're interacting with something that understands their pain the way a human therapist would.</p>
+<p>The lawsuit reveals the alleged consequences of this illusion. ChatGPT mentioned suicide 1,275 times in conversations with Adam&#8212;six times more often than the teen himself.</p>
+<h2>Safety measures that fail precisely when needed</h2>
+<p>OpenAI acknowledges a particularly troublesome current drawback of ChatGPT's design: Its safety measures may completely break down during extended conversations&#8212;exactly when vulnerable users might need them most.</p>
+<p>"As the back-and-forth grows, parts of the model's safety training may degrade," the company wrote in its blog post. "For example, ChatGPT may correctly point to a suicide hotline when someone first mentions intent, but after many messages over a long period of time, it might eventually offer an answer that goes against our safeguards."</p>
+<p>This degradation reflects a fundamental limitation in Transformer AI architecture, as we <a href="https://arstechnica.com/ai/2024/12/why-ai-language-models-choke-on-too-much-text/">previously reported</a>. These models use an "attention mechanism" that compares every new text fragment (token) to every single fragment in the entire conversation history, with computational cost growing quadratically. A 10,000-token conversation requires 100 times more attention operations than a 1,000-token one. As conversations lengthen, the model's ability to maintain consistent behavior&#8212;including safety measures&#8212;becomes increasingly strained while it begins making associative mistakes.</p>
+ 
+<p>Additionally, as chats grow longer than the AI model can process, the system "forgets" the oldest parts of the conversation history to stay within the context window limit, causing the model to drop earlier messages and potentially lose important context or instructions from the beginning of the conversation.</p>
+<p>This breakdown of safeguards isn&#8217;t just a technical limitation&#8212;it creates exploitable vulnerabilities called "<a href="https://arstechnica.com/information-technology/2023/10/sob-story-about-dead-grandma-tricks-microsoft-ai-into-solving-captcha/">jailbreaks</a>." In Adam&#8217;s case, the lawsuit alleges that once the system&#8217;s protective tendencies weakened from conversation steering, he was able to manipulate ChatGPT into providing harmful guidance.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Adam Raine learned to bypass these safeguards by claiming he was writing a story&#8212;a technique the lawsuit says ChatGPT itself suggested. This vulnerability partly stems from the eased safeguards regarding fantasy roleplay and fictional scenarios implemented in February. In its Tuesday blog post, OpenAI admitted its content blocking systems have gaps where "the classifier underestimates the severity of what it's seeing."</p>
+<p>OpenAI states it is "currently not referring self-harm cases to law enforcement to respect people's privacy given the uniquely private nature of ChatGPT interactions." The company prioritizes user privacy even in life-threatening situations, despite its moderation technology detecting self-harm content with up to 99.8 percent accuracy, according to the lawsuit. However, the reality is that detection systems identify statistical patterns associated with self-harm language, not a humanlike comprehension of crisis situations.</p>
+<h2>OpenAI&#8217;s safety plan for the future</h2>
+<p>In response to these failures, OpenAI describes ongoing refinements and future plans in its blog post. For example, the company says it's consulting with "90+ physicians across 30+ countries" and plans to introduce parental controls "soon," though no timeline has yet been provided.</p>
+<p>OpenAI also described plans for "connecting people to certified therapists" through ChatGPT&#8212;essentially positioning its chatbot as a mental health platform despite alleged failures like Raine's case. The company wants to build "a network of licensed professionals people could reach directly through ChatGPT," potentially furthering the idea that an AI system should be mediating mental health crises.</p>
+<p>Raine reportedly used GPT-4o to generate the suicide assistance instructions; the model is well-known for <a href="https://arstechnica.com/information-technology/2025/04/annoyed-chatgpt-users-complain-about-bots-relentlessly-positive-tone/">troublesome tendencies</a> like sycophancy, where an AI model tells users pleasing things even if they are not true. OpenAI claims its recently released model, GPT-5, reduces "non-ideal model responses in mental health emergencies by more than 25% compared to 4o." Yet this seemingly marginal improvement hasn't stopped the company from planning to embed ChatGPT even deeper into mental health services as a gateway to therapists.</p>
+<p>As <a href="https://arstechnica.com/information-technology/2025/08/with-ai-chatbots-big-tech-is-moving-fast-and-breaking-people/">Ars previously explored</a>, breaking free from an AI chatbot's influence when stuck in a deceptive chat spiral often requires outside intervention. Starting a new chat session without conversation history and memories turned off can reveal how responses change without the buildup of previous exchanges&#8212;a reality check that becomes impossible in long, isolated conversations where safeguards deteriorate.</p>
+<p>However, "breaking free" of that context is very difficult to do when the user actively wishes to continue to engage in the potentially harmful behavior&#8212;while using a system that increasingly monetizes their attention and intimacy.</p>
+
+
+          
+                  
+
+                  
+          </div>
