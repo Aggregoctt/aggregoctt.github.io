@@ -1,0 +1,59 @@
+---
+author: Zack Whittaker
+canonical_url: https://techcrunch.com/2025/08/26/security-researcher-maps-hundreds-of-teslamate-servers-spilling-tesla-vehicle-data/
+date: '2025-08-26T14:23:00'
+excerpt: A security researcher mapped TeslaMate servers that are publicly exposed
+  to the internet, including sensitive Tesla vehicle data, such as their locations.
+image: assets/media/Th4Pa4ORs0ej2N8x1ADHNg-_9Z0mXnMbMGWZHW3eBbDpA.jpeg
+source: techcrunch
+tags:
+- Security
+- Transportation
+- cybersecurity
+- data exposure
+- Tesla
+- Vehicles
+title: Security researcher maps hundreds of TeslaMate servers spilling Tesla vehicle
+  data
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">A security researcher has found over a thousand publicly exposed hobby servers run by Tesla vehicle owners that are spilling sensitive data about their vehicles, including their granular location histories.</p>
+
+<p class="wp-block-paragraph">Seyfullah Kili&#231;, founder of cybersecurity company SwordSec, said he found over 1,300 internet-exposed TeslaMate dashboards on the internet, likely made public by mistake, allowing anyone to access the person&#8217;s Tesla data stored inside without needing a password.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">TeslaMate is an open source data logger that allows Tesla owners to self-host and <a href="https://docs.teslamate.org/docs/screenshots/" target="_blank" rel="noreferrer noopener nofollow">visualize their vehicle&#8217;s data</a> from their own computers, such as their vehicle&#8217;s temperature, battery health, and charging sessions, but also more sensitive information, like vehicle speed and the location data of recent trips.&#160;</p>
+
+<p class="wp-block-paragraph">In <a href="https://s3yfullah.medium.com/how-exposed-teslamate-instances-leak-sensitive-tesla-data-80bedd123166?7194ef805fa2d04b0f7e8c9521f97343" target="_blank" rel="noreferrer noopener nofollow">a blog post</a>, Kili&#231; said he scanned the internet for public-facing TeslaMate dashboards and scraped the vehicle&#8217;s last-seen location and Tesla model names, and visualized the vehicles on a map to show their locations.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;You&#8217;re unintentionally sharing your car&#8217;s movements, charging habits, and even vacation times with the entire world,&#8221; wrote Kili&#231;.</p>
+
+<p class="wp-block-paragraph">Kili&#231; told TechCrunch that this was to raise awareness of the number of exposed servers, and urged TeslaMate users to secure their dashboards.</p>
+
+<p class="wp-block-paragraph">&#8220;The goal was to show Tesla owners and the open source community that without basic [authentication] or firewall rules, sensitive data (GPS, charging, trips) can be leaked,&#8221; said Kili&#231;.</p>
+
+<p class="wp-block-paragraph">While not a new problem, Kili&#231; shows that the number of exposed TeslaMate dashboards has gone up significantly since the last count back in 2022, when a security researcher at the time <a href="https://techcrunch.com/2022/01/24/teslamate-bug-teslas-exposed-remote/">found dozens of public TeslaMate dashboards</a> exposed to the web.&#160;</p>
+
+<p class="wp-block-paragraph">Now, more than three years later, another security researcher has found more than a thousand self-hosted TeslaMate servers on the web and mapped them, showing that the problem has seemingly gotten worse.</p>
+
+<p class="wp-block-paragraph">TeslaMate&#8217;s founder, Adrian Kumpf, told TechCrunch in 2022 that a bug fix was rolled out that aimed to protect against public access to customers&#8217; dashboards, but warned that the project could not protect against users accidentally exposing their TeslaMate servers to the internet.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Kili&#231; said TeslaMate users should enable authentication on their servers to prevent public access.</p>
+
+<p class="wp-block-paragraph">&#8220;If you plan to run TeslaMate on a public-facing server, you must secure it,&#8221; wrote Kili&#231;.</p>
+
+
+			
+
+			</div>
