@@ -1,0 +1,62 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2025/08/new-ai-browser-agents-create-risks-if-sites-hijack-them-with-hidden-instructions/
+date: '2025-08-27T16:17:29'
+excerpt: Malicious websites can embed invisible commands that AI agents will follow
+  blindly.
+image: assets/media/ULUHoiRVT92N9GeJ6RtDKw-HZF5JulAhcAFbuhNQL8MXA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI safety
+- AI security
+- AI vulnerability
+- Anthropic
+- browser security
+- Chrome extension
+- Claude
+- computer use model
+- machine learning
+- prompt injections
+- Simon Willison
+- web browsers
+title: Anthropic’s auto-clicking AI Chrome extension raises browser-hijacking concerns
+---
+<div>
+                      
+                      
+          <p>As AI assistants become capable of controlling web browsers, a new security challenge has emerged: users must now trust that every website they visit won't try to hijack their AI agent with hidden malicious instructions. Experts voiced concerns about this emerging threat this week after testing from a leading AI chatbot vendor revealed that AI browser agents can be successfully tricked into harmful actions nearly a quarter of the time.</p>
+<p>On Tuesday, Anthropic <a href="https://www.anthropic.com/news/claude-for-chrome">announced</a> the launch of Claude for Chrome, a web browser-based AI agent that can take actions on behalf of users. Due to security concerns, the extension is only rolling out as a research preview to 1,000 subscribers on Anthropic's <a href="https://arstechnica.com/ai/2025/04/anthropic-launches-200-claude-max-ai-plan-with-20x-higher-usage-limits/">Max plan</a>, which costs between $100 and $200 per month, with a waitlist available for other users.</p>
+<p>The Claude for Chrome extension allows users to chat with the Claude AI model in a sidebar window that maintains the context of everything happening in their browser. Users can grant Claude permission to perform tasks such as managing calendars, scheduling meetings, drafting email responses, handling expense reports, and testing website features.</p>
+<p>The browser extension builds on Anthropic's <a href="https://arstechnica.com/ai/2024/10/anthropic-publicly-releases-ai-tool-that-can-take-over-the-users-mouse-cursor/">Computer Use</a> capability, which the company released in October 2024. Computer Use is an experimental feature that allows Claude to take screenshots and control a user's mouse cursor to perform tasks, but the new Chrome extension provides more direct browser integration.</p>
+ 
+<p>Zooming out, it appears Anthropic's browser extension reflects a new phase of AI lab competition. In July, Perplexity <a href="https://arstechnica.com/ai/2025/02/perplexitys-comet-aims-to-reinvent-the-web-browser-with-ai-but-its-not-saying-how/">launched</a> its own browser, Comet, which features an AI agent that attempts to offload tasks for users. OpenAI recently released <a href="https://arstechnica.com/information-technology/2025/07/openais-chatgpt-agent-casually-clicks-through-i-am-not-a-robot-verification-test/">ChatGPT Agent</a>, a bot that uses its own sandboxed browser to take actions on the web. Google has also <a href="https://arstechnica.com/gadgets/2025/05/gemini-2-5-is-leaving-preview-just-in-time-for-googles-new-250-ai-subscription/">launched</a> Gemini integrations with Chrome in recent months.</p>
+<p>But this rush to integrate AI into browsers has exposed a fundamental security flaw that could put users at serious risk.</p>
+<h2>Security challenges and safety measures</h2>
+<p>In preparation for the Chrome extension launch, Anthropic says it has conducted extensive testing that revealed browser-using AI models can face prompt injection attacks, where malicious actors embed hidden instructions into websites to trick AI systems into performing harmful actions without user knowledge.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The company tested 123 cases representing 29 different attack scenarios and found a 23.6 percent attack success rate when browser use operated without safety mitigations.</p>
+<p>One example involved a malicious email that instructed Claude to delete a user's emails for "mailbox hygiene" purposes. Without safeguards, Claude followed these instructions and deleted the user's emails without confirmation.</p>
+<p>Anthropic says it has implemented several defenses to address these vulnerabilities. Users can grant or revoke Claude's access to specific websites through site-level permissions. The system requires user confirmation before Claude takes high-risk actions like publishing, purchasing, or sharing personal data. The company has also blocked Claude from accessing websites offering financial services, adult content, and pirated content by default.</p>
+<p>These safety measures reduced the attack success rate from 23.6 percent to 11.2 percent in autonomous mode. On a specialized test of four browser-specific attack types, the new mitigations reportedly reduced the success rate from 35.7 percent to 0 percent.</p>
+<p>Independent AI researcher Simon Willison, who has extensively written about AI security risks and <a href="https://arstechnica.com/information-technology/2022/09/twitter-pranksters-derail-gpt-3-bot-with-newly-discovered-prompt-injection-hack/">coined</a> the term "prompt injection" in 2022, called the remaining 11.2 percent attack rate "catastrophic," <a href="https://simonwillison.net/2025/Aug/26/piloting-claude-for-chrome/">writing</a> on his blog that "in the absence of 100% reliable protection I have trouble imagining a world in which it's a good idea to unleash this pattern."</p>
+<p>By "pattern," Willison is referring to the recent trend of integrating AI agents into web browsers. "I strongly expect that the entire concept of an agentic browser extension is fatally flawed and cannot be built safely," he <a href="https://simonwillison.net/2025/Aug/25/agentic-browser-security/">wrote</a> in an earlier post on similar prompt injection security issues recently found in Perplexity Comet.</p>
+<p>The security risks are no longer theoretical. Last week, Brave's security team <a href="https://brave.com/blog/comet-prompt-injection/">discovered</a> that Perplexity's Comet browser could be tricked into accessing users' Gmail accounts and triggering password recovery flows through malicious instructions hidden in Reddit posts. When users asked Comet to summarize a Reddit thread, attackers could embed invisible commands that instructed the AI to open Gmail in another tab, extract the user's email address, and perform unauthorized actions. Although Perplexity attempted to fix the vulnerability, Brave later confirmed that its mitigations were defeated and the security hole remained.</p>
+<p>For now, Anthropic plans to use its new research preview to identify and address attack patterns that emerge in real-world usage before making the Chrome extension more widely available. In the absence of good protections from AI vendors, the burden of security falls on the user, who is taking a large risk by using these tools on the open web. As Willison noted in his post about Claude for Chrome, "I don't think it's reasonable to expect end users to make good decisions about the security risks."</p>
+
+
+          
+                  
+
+                  
+          </div>
