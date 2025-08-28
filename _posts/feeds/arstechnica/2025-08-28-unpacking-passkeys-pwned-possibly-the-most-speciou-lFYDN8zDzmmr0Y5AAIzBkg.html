@@ -1,0 +1,80 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/08/new-research-claiming-passkeys-can-be-stolen-is-pure-nonsense/
+date: '2025-08-28T13:00:10'
+excerpt: 'Researchers take note: When the endpoint is compromised, all bets are off.'
+image: assets/media/lFYDN8zDzmmr0Y5AAIzBkg-OVuVnJ_f4KE9cyj92qNJLA.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+title: 'Unpacking Passkeys Pwned: Possibly the most specious research in decades'
+---
+<div>
+                      
+                      
+           
+<p>Don&#8217;t believe everything you read&#8212;especially when it&#8217;s part of a marketing pitch designed to sell security services.</p>
+<p>The latest example of the runaway hype that can come from such pitches is <a href="https://labs.sqrx.com">research</a> published today by <a href="https://sqrx.com">SquareX</a>, a startup selling services for securing browsers and other client-side applications. It claims, without basis, to have found a &#8220;major passkey vulnerability&#8221; that undermines the lofty security promises made by Apple, Google, Microsoft, and thousands of other companies that have enthusiastically embraced passkeys.</p>
+<h2>Ahoy, face-palm ahead</h2>
+<p>&#8220;Passkeys Pwned,&#8221; the attack described in the research, was demonstrated earlier this month in a <a href="https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60384">Defcon presentation</a>. It relies on a malicious browser extension, installed in an earlier social engineering attack, that hijacks the process for creating a passkey for use on Gmail, Microsoft 365, or any of the other thousands of sites that now use the alternative form of authentication.</p>
+<p>Behind the scenes, the extension allows a keypair to be created and binds it to the legitimate gmail.com domain, but the keypair is created by the malware and controlled by the attacker. With that, the adversary has access to cloud apps that organizations use for their most sensitive operations.</p>
+<p>&#8220;This discovery breaks the myth that passkeys cannot be stolen, demonstrating that &#8216;passkey stealing&#8217; is not only possible, but as trivial as traditional credential stealing,&#8221; SquareX researchers wrote in a draft version of Thursday&#8217;s research paper sent to me. &#8220;This serves as a wake up call that while passkeys appear more secure, much of this perception stems from a new technology that has not yet gone through decades of security research and trial by fire.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>In fact, this claim is the thing that's untested. More on that later. For now, here&#8217;s a recap of passkeys.</p>
+<h2>FIDO recap</h2>
+<p>Passkeys are a core part of the <a href="https://fidoalliance.org/specifications/download/">FIDO specifications</a> drafted by the FIDO (Fast IDentity Online) Alliance, a coalition of hundreds of companies around the world. A passkey is a public-private cryptographic keypair that uses <a href="https://ldapwiki.com/wiki/Wiki.jsp?page=ES256">ES256</a> or one of several other time-tested cryptographic algorithms. During the registration process, a unique key pair is made for&#8212;and cryptographically bound to&#8212;each website the user enrolls. The website stores the public key. The private key remains solely on the user&#8217;s authentication device, which can be a smartphone, dedicated security key, or other device.</p>
+<p>When the user logs in, the website sends the user a pseudo-random string of data. The authentication device then uses the private key bound to the website domain to cryptographically sign the challenge string. The browser then sends the signed challenge back to the website. The site then uses the user&#8217;s public key to verify that the challenge was signed by the private key. If the signature is valid, the user is logged in. The entire process is generally as quick, if not quicker, than logging in to the site with a password.</p>
+<p>As I&#8217;ve <a href="https://arstechnica.com/security/2024/12/passkey-technology-is-elegant-but-its-most-definitely-not-usable-security/">noted before</a>, passkeys still have a long way to go before they&#8217;re ready for many users. That&#8217;s mainly because passkeys don&#8217;t always interoperate well between different platforms. What&#8217;s more, they&#8217;re so new that no service yet provides accounts that can only be logged in to using a passkey and instead require a password to be registered as a fallback. And as long as attackers can still phish or steal a user&#8217;s password, much of the benefit of passkeys is undermined.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<p>That said, passkeys provide an authentication alternative that&#8217;s by far the most resistant to date to the types of account takeovers that have vexed online services and their users for decades. Unlike passwords, passkey keypairs can&#8217;t be phished. If a user gets redirected to a fake Gmail page, the passkey won&#8217;t work since it&#8217;s bound to the real gmail.com domain. Passkeys can&#8217;t be divulged in phone calls or text messages sent by attackers masquerading as trusted IT personnel. They can&#8217;t be sniffed over the wire. They can&#8217;t be leaked in database breaches. To date, there have been no vulnerabilities reported in the FIDO spec.</p>
+ 
+<h2>A fundamental misunderstanding of security</h2>
+<p>SquareX is now claiming all of that has changed because it found a way to hijack the passkey registration process. Those claims are based on a lack of familiarity with the FIDO spec, flawed logic, and a fundamental misunderstanding of security in general.</p>
+<p>First, the claim that Passkeys Pwned shows that passkeys can be stolen is flat-out wrong. If the targeted user has already registered a passkey for Gmail, that key will remain safely stored on the authenticator device. The attacker never comes close to stealing it. Using malware to hijack the registration process is something altogether different. If a user already has a passkey registered, Passkeys Pwned will block the login and return an error message that prompts the user to register a new passkey. If the user takes the bait, the new key will be controlled by the attacker. At no time are any passkeys stolen.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The research also fails to take into account that the FIDO spec makes clear that passkeys provide no defense against attacks that rely on the operating system, or browser running on it, being compromised and hence aren't part of the FIDO threat model.</p>
+<p>Section 6 of the document lists specific &#8220;security assumptions&#8221; inherent in the passkeys trust model. SA-3 states that &#8220;Applications on the user device are able to establish secure channels that provide trustworthy server authentication, and confidentiality and integrity for messages.&#8221; SA-4 holds that &#8220;the computing environment on the FIDO user device and the&#8230; applications involved in a FIDO operation act as trustworthy agents of the user.&#8221; <a href="https://www.w3.org/TR/webauthn-3/#sctn-code-injection">WebAuthn</a>, the predecessor spec to FIDO, hints at the same common-sense limitation.</p>
+<p>By definition, an attack that relies on a browser infected by malware falls well outside the scope of protections passkeys were designed to provide. If passkeys are weak because they can&#8217;t withstand a compromise of the endpoint they run on, so too are protections we take for granted in TLS encryption and end-to-end encryption in messengers such as Signal&#8212;not to mention the security of SquareX services themselves. Further discrediting itself, Thursday&#8217;s writeup includes a marketing pitch for the SquareX platform.</p>
+<p>&#8220;In my personal view, this seems like a dubious sales pitch for a commercial product,&#8221; Kenn White, a security engineer who works for banking, health care, and defense organizations, wrote in an interview. &#8220;If you are social engineered into adding a malicious extension, ALL web trust models are broken. I know that on the conference program committees I participate in, a submission like this would be eliminated in the first round."</p>
+
+          
+                  
+
+              
+          
+          
+<h2>When you&#8217;re in a hole, stop digging</h2>
+<p>I enumerated these criticisms in an interview with SquareX lead developer Shourya Pratap Singh. He held his ground, saying that since Passkeys Pwned binds an attacker-controlled passkey to a legitimate site, &#8220;the passkey is effectively stolen.&#8221; He also bristled when I told him his research didn&#8217;t appear to be well thought out or when I pointed out that the FIDO spec&#8212;just like those for TLS, SSH, and others&#8212;explicitly excludes attacks relying on trojan infections.</p>
+<p>He wrote:</p>
+<blockquote><p>This research was presented on the DEFCON Main Stage, which means it went through peer review by technical experts before selection. The warnings cited in the FIDO documents read like funny disclaimers, listing numerous conditions and assumptions before concluding that passkeys can be used securely. If we stick with that logic, then no authentication protocol would be considered secure. The purpose of a secure authentication method or protocol is not to remain secure in the face of a fully compromised device, but it should account for realistic client-side risks such as malicious extensions or injected JavaScript.</p>
+<p>Passkeys are being heavily promoted today, but the average user is not aware of these hidden conditions. This research aims to highlight that gap and show why client-side risks need to be part of the conversation around passkeys.</p></blockquote>
+<p>The Passkeys Pwned research was presented just weeks after a separate security company <a href="https://arstechnica.com/security/2025/07/no-phishers-are-not-bypassing-fido-mfa-at-least-not-yet-heres-why/">made</a>&#8212;and promptly withdrew&#8212;claims that it devised an attack that bypassed FIDO-based two-factor authentication. In fact, the sites that were attacked offered FIDO as only one means for 2FA, but also allowed other, less secure forms of 2FA. The attacks attacked those other forms, not the one specified by FIDO. Had the sites not allowed fallbacks to the weaker 2FA forms, the attack would have failed.</p>
+<p>SquareX is right in saying that passkeys haven&#8217;t withstood decades of security research the way more traditional forms of authentication have. There very possibly will be vulnerabilities discovered in either the FIDO spec or various implementations of it. For now, though, passkeys remain the best defense against attacks relying on things like credential phishing, password reuse, and database breaches.</p>
+
+
+          
+                  
+
+                  
+          </div>
