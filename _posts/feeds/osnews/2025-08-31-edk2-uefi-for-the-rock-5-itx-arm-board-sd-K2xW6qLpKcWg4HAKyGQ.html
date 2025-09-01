@@ -1,0 +1,33 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143229/edk2-uefi-for-the-rock-5-itx-arm-board/
+date: '2025-08-31T22:31:46'
+excerpt: 'I am a huge fan of my&#160;Rock 5 ITX+. It wraps an ATX power connector,
+  a 4-pin Molex, PoE support, 32 GB of eMMC, front-panel USB 2.0, and two Gen 3×2
+  M.2 slots around a Rockchip 3588 SoC that can slot into any Mini-ITX case. Thing
+  is, I never put it in a case because the microSD slot lives on the side of the board,
+  and pulling the case out and removing the side panel to install a new OS got old
+  with a quickness. I originally wanted to rackmount the critter, but adding a deracking
+  difficulty multiplier to the microSD slot minigame seemed a bit souls-like for my
+  taste. So what am I going to do? Grab a microSD extender and hang that out the back?
+  Nay! I’m going to neuralyze the SPI flash and install some Kelvin Timeline firmware
+  that will allow me to boot and install generic ARM Linux images from USB. ↫ Interfacing
+  Linux Using EDK2 to add UEFI to an ARM board is awesome, as it solves some of the
+  most annoying problems of these ARM boards: they require custom images specifically
+  prepared for the board in question. After flashing EDK2 to this board, you can just
+  boot any ARM Linux distribution &#8211; or Windows, NetBSD, and so on &#8211; from
+  USB and install it from there. There&#8217;s still a ton of catches, but it&#8217;s
+  a clear improvement. The funniest detail for sure, at least for this very specific
+  board, is that the SPI flash is exposed as a block device, so you can just use,
+  say the GNOME Disk Utility to flash any new firmware into it. The board in question
+  is a Radxa ROCK 5 ITX+, and they&#8217;re not all that expensive, so I&#8217;m kind
+  of tempted here. I&#8217;m not entirely sure what I&#8217;d need yet another computer
+  for, honestly, but it&#8217;s not like that&#8217;s ever stopped any of us before.'
+image: null
+source: osnews
+tags:
+- Hardware
+title: 'EDK2: UEFI for the ROCK 5 ITX+ ARM board'
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>I am a huge fan of my&#160;<a href="https://radxa.com/products/rock5/5itxp/" target="_blank" rel="noreferrer noopener">Rock 5 ITX+</a>. It wraps an ATX power connector, a 4-pin Molex, PoE support, 32 GB of eMMC, front-panel USB 2.0, and two Gen 3&#215;2 M.2 slots around a Rockchip 3588 SoC that can slot into any Mini-ITX case. Thing is, I never put it in a case because the microSD slot lives on the side of the board, and pulling the case out and removing the side panel to install a new OS got old with a quickness.</p><p>I originally wanted to rackmount the critter, but adding a deracking difficulty multiplier to the microSD slot minigame seemed a bit souls-like for my taste. So what am I going to do? Grab a microSD extender and hang that out the back? Nay! I&#8217;m going to neuralyze the SPI flash and install some Kelvin Timeline firmware that will allow me to boot and install generic ARM Linux images from USB.</p>
+<a href="https://interfacinglinux.com/2025/08/25/edk2-uefi-for-the-rock-5-itx/">&#8619; Interfacing Linux</a></blockquote><p>Using EDK2 to add UEFI to an ARM board is awesome, as it solves some of the most annoying problems of these ARM boards: they require custom images specifically prepared for the board in question. After flashing EDK2 to this board, you can just boot any ARM Linux distribution &#8211; or Windows, NetBSD, and so on &#8211; from USB and install it from there. There&#8217;s still a ton of catches, but it&#8217;s a clear improvement.</p></div>
