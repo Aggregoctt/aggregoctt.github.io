@@ -1,0 +1,15 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/microsoft/articoli/n630077/windows-11-iis-tls-1-3-renegotiation-sicurezza/
+date: '2025-09-01T09:55:00'
+excerpt: L'addio della tecnica di "Renegotiation" implicherà che molti professionisti
+  dovranno mettere mano alla configurazione di IIS per continuare a farlo funzionare
+  correttamente.
+image: assets/media/0tTqW9Gtu8aS1ZTqb_aoMA-WQ59BUgR5SHFSPg-WEQnug.jpeg
+source: hdblog
+tags:
+- Windows
+- Microsoft
+title: 'Windows 11: più sicurezza con TLS 1.3, ma c''è un prezzo da pagare'
+---
+<div><p>Microsoft ha deciso di spingere ancora pi&#249; forte su sicurezza e <a href="https://www.hdblog.it/windows-10-sun-valley/">performance con Windows 11</a>, ma la scelta sta creando <strong>qualche grattacapo agli sviluppatori web</strong>. La conferma arriva da Matt Hamrick, dipendente Microsoft, che ha spiegato come il passaggio alla <strong>versione 1.3 di TLS</strong> come nuovo default causi alcune modifiche significative al comportamento di Internet Information Services (IIS) e della sua versione &#8220;leggera&#8221; IIS Express.</p>    <p>TLS 1.3, infatti, elimina del tutto il vecchio meccanismo chiamato &#8220;renegotiation&#8221;, presente nelle versioni precedenti dello standard, che in buona sostanza <strong>permetteva al server di chiedere un certificato al client anche dopo che la connessione era gi&#224; stata stabilita</strong>. L&#8217;abbandono di questo meccanismo garantisce, a detta di Microsoft, connessioni pi&#249; veloci, handshake pi&#249; sicuri, perfino meno carico per la CPU... ma anche meno compatibilit&#224;.</p><p>Il driver preposto a questo tipo di operazioni &#232; lo storico http.sys. In edizioni di Windows 11 precedenti alla 24H2 e alla futura Windows Server 2025,  se il client non supportava la richiesta di certificato "a posteriori", il driver terminava la connessione e la reinizializzava, invece dalla 24H2 in poi restituir&#224; un errore &#8220;not supported&#8221;. Di conseguenza, IIS a quel punto risponde con un <strong>errore HTTP codice 500</strong>, che s&#236;, conferma che qualcosa non quadra, ma &#232; un messaggio di errore molto generico che non aiuta granch&#233; a capirne le origini.</p>    <p>Il problema principale &#232; che, come osserva Microsoft stessa, la maggior parte dei browser e dei client non supportano ancora l&#8217;alternativa moderna alla renegotiation, ovvero la post-handshake client authentication; e quindi, se il certificato non viene richiesto subito al primo handshake, non lo si pu&#242; pi&#249; ottenere - a meno di mettere mano al codice e alle opzioni di configurazione. Hamrick, sul suo post, ammette di dubitare fortemente che arrivi mai una soluzione vera e propria, ma propone <strong>alcuni workaround</strong>: disabilitare TLS 1.3 per le connessioni in ingresso, modificare i binding via netsh per forzare la richiesta di certificato gi&#224; all&#8217;inizio, oppure rimuovere l&#8217;obbligo del certificato. Chi &#232; interessato ad approfondire e ottenere una spiegazione pi&#249; dettagliata di queste procedure pu&#242; seguire il link FONTE qui di seguito.</p></div>
