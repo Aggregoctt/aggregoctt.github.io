@@ -1,0 +1,71 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/gaming/2025/09/over-30-years-later-a-rare-laserdisc-game-console-gets-its-first-pc-emulator/
+date: '2025-09-02T18:57:19'
+excerpt: You don't have to track down pricey retro hardware to play the Pioneer LaserActive
+  anymore.
+image: assets/media/wqFMFDeZY2_2KbOvc668qA-o-QAvWUAplEcVs_dU9Kmdg.jpeg
+source: arstechnica
+tags:
+- Gaming
+- 90s
+- emulation
+- gaming
+- laseractive
+- Laserdisc
+- laserdiscs
+- mega drive
+- mega-ld
+- Pioneer
+- retro
+- Sega
+title: This ultra-rare ’90s LaserDisc game console can finally be emulated on a PC
+---
+<div>
+                      
+                      
+           
+<p>Here in the year 2025, it's not every day that a classic gaming console from the 20th century becomes playable via emulation for the first time. But that's just what happened last week with <a href="https://ares-emu.net/news/ares-v146-released?ref=readonlymemo.com">the release of Ares v146</a> and its first-of-its-kind <a href="https://techdocs.exodusemulator.com/Console/PioneerLaserActive/Software.html#emulation">support for Mega LD titles designed for the Pioneer LaserActive</a>.</p>
+<p>Even retro console superfans would be forgiven for not knowing about the <a href="https://en.wikipedia.org/wiki/LaserActive">LaserActive</a>, a pricey LaserDisc player released in 1994 alongside swappable hardware modules that could add support for Sega Genesis and NEC TurboGrafx-16 games and controllers. Using those add-ons, you could also play <a href="https://segaretro.org/List_of_LaserActive_games">a handful of games specifically designed for the LaserActive format</a>, which combined game data and graphics with up to 60 minutes of full-screen, standard-definition analog video per side.</p>
+<p>Mega-LD games (as the Genesis-compatible LaserActive titles were called) were, for the most part, super-sized versions of the types of games you'd find on early CD-ROM console of the era. That means a lot of edutainment titles, branching dungeon crawlers, Dragon's Lair-style animated quick-time event challenges, and rail shooters that overlayed standard Genesis or TG-16 graphics on top of elaborate animated video backgrounds (sometimes complete with filmed actors).</p>
+ 
+<p>The LaserActive's sky-high prices ($970 for the base unit; $600 for console add-on modules; $120 for LaserDisc games in '90s dollars) and lack of must-have software made it a relative curiosity even among the many game console curiosities of the mid-1990s, with total sales across Japan and the US <a href="https://web.archive.org/web/20150211202811/http://www.pinkgorillagames.com/console_histories">estimated around 10,000 units</a>. Yet the obscure console has <a href="https://www.pcenginefans.com/forum/index.php?topic=10096.0">still developed a small cult following</a> of <a href="https://laseractive.wordpress.com/">fans</a> who <a href="https://www.youtube.com/watch?v=AfHxPjD7PAc">seem to revel</a> in <a href="https://www.reddit.com/r/gamecollecting/comments/8wyesp/got_a_pioneer_laseractive_clda100_laserdisc/">tracking down the hard-to-find hardware and software</a> to play some of the few '90s console games that couldn't be enjoyed via emulation.</p>
+<h2>&#8220;I really don't think it would be very hard to do&#8221;</h2>
+<p>The new emulator, which has finally made the LaserActive accessible to the masses, was a long-time passion project from a coder going by the handle Nemesis. The excellent Read Only Memo newsletter has <a href="https://www.readonlymemo.com/this-is-the-first-the-16-year-odyssey-of-time-money-wrong-turns-and-frustration-it-took-to-finally-emulate-the-pioneer-laseractive/?ref=read-only-memo-newsletter">an excellent interview with Nemesis</a>, who spent over 15 years working on and off to intimately understand the inner workings of the LaserActive and apply that knowledge to an emulator.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>A Sega fan and collector since his youth and an emulator hobbyist since the early '00s, Nemesis tracked down his first LaserActive unit for $200 in 2004. By 2009, he was <a href="https://gendev.spritesmind.net/forum/viewtopic.php?t=563&amp;ref=readonlymemo.com">publicly musing</a> about what might be needed to finally get emulation support working for the short-lived system. "I really don't think it would be very hard to do," Nemesis wrote in a forum thread at the time, in what would end up being a hilariously large understatement.</p>
+<p>While monitoring memory registers and reverse-engineering the actual system logic of the LaserActive was relatively straightforward, getting the necessary game and video data from the Mega-LD discs was a massive undertaking. Nemesis explained that the only way to get at the crucial "table of contents" data (needed to make sense of everything else on the Mega-LD disc) was "solder[ing] a bunch of physical tapping wires into my Sega PAC-S10 module, and us[ing] a Saleae logic analyzer clone to do a streaming capture of the data lines."</p>
+<p>Then there was the problem of capturing the massive amounts of analog video on a LaserActive disc in a lossless format suitable for emulation. Commercial analog capture cards that worked for standard LaserDisc movies proved unequal to the task, since they usually ignored the <a href="https://en.wikipedia.org/wiki/Vertical_blanking_interval?ref=readonlymemo.com">VBI control data</a> that was hidden beyond the borders of the 480i CRT displays of the time. The lossy capture cards also often had trouble correctly interpreting the multiple streams of overlapping video data that could be arranged in nonstandard ways on a LaserActive disc.</p>
+ 
+ 
+
+<p>"Rarely is the [LaserActive] player just playing back a video normally," Nemesis explained to Read Only Memo. "Games will often have completely different video footage per field, with only one shown, or skip over every second frame, to mix four or more video streams in the same area of the disc. Many games use this for seamless 'branching' such as whether you go left or right, and this can change constantly and seamlessly during playback."</p>
+
+          
+                   
+            
+
+              
+          
+          
+<p>By 2016, Nemesis had resorted to building his only video capture setup, tapping directly into his LaserActive hardware to get the raw video signal out. But he couldn't decode that raw footage into a usable format until years later, when community work on <a href="https://www.youtube.com/watch?v=QDlbwl3f39Q">the Domesday Duplicator project</a> and Nemesis' own work on <a href="https://github.com/happycube/ld-decode">the open source ld-decode software</a> finally allowed lossless versions of full, uncut Mega-LD video to be captured digitally for the first time (albeit in a format that requires upwards of 28GB per game).</p>
+<p>Once those Mega-LD discs were finally ripped successfully, Nemesis said getting the actual emulation working was surprisingly&#160;pain-free. "Space Berserker was quickly running, and after that, as more games finished decoding most of them worked on the first try, with no issues," Nemesis said. "Since I'd set out to emulate the complete hardware, with all its quirks and unusual features, whatever a game tried to do, it should just work."</p>
+ 
+
+<p>Some might scoff at all this effort to emulate what Wired's Chris Kohler called "quite possibly the most poorly conceived and spectacularly useless game console ever created" <a href="https://www.wired.com/2009/09/laseractive/">back in 2009</a>. Still, for gaming preservationists, the new emulator provides a valuable opportunity to study these gaming curiosities without having to track down rare physical hardware and software that's prone to age-related wear or disposal.</p>
+<p>And even casual retro gaming fans may get a kick out of <a href="https://techdocs.exodusemulator.com/Console/PioneerLaserActive/Software.html#emulation">digging through the Mega LD library</a> and imagining an alternate reality version of the '90s where LaserDiscs, rather than CD-ROMs, offered gamers a very different take on the full-motion-video fad of the day.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
