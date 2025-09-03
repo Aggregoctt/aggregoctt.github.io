@@ -1,0 +1,75 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/09/new-ai-model-turns-photos-into-explorable-3d-worlds-with-caveats/
+date: '2025-09-03T21:56:07'
+excerpt: Openly available AI tool creates steerable 3D-like video, but requires serious
+  GPU muscle.
+image: assets/media/haeof9HppcwDNXWyE_DXBg-bSE5AvmWwDpbswYqOQuv3g.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- 3D generation
+- 3D reconstruction
+- AI research
+- Ai video
+- computer vision
+- depth estimation
+- generative ai
+- machine learning
+- multimodal AI
+- open source
+- scene generation
+- Tencent
+- video synthesis
+- world models
+title: New AI model turns photos into explorable 3D worlds, with caveats
+---
+<div>
+                      
+                      
+           
+<p>On Tuesday, Tencent <a href="https://github.com/Tencent-Hunyuan/HunyuanWorld-Voyager">released</a> HunyuanWorld-Voyager, a new open-weights AI model that generates 3D-consistent video sequences from a single image, allowing users to pilot a camera path to "explore" virtual scenes. The model simultaneously generates RGB video and depth information to enable direct 3D reconstruction without the need for traditional modeling techniques. However, it won't be replacing video games anytime soon.</p>
+<p>The results aren't true 3D models, but they achieve a similar effect: The AI tool generates 2D video frames that maintain spatial consistency as if a camera were moving through a real 3D space. Each generation produces just 49 frames&#8212;roughly two seconds of video&#8212;though multiple clips can be chained together for sequences lasting "several minutes," according to Tencent. Objects stay in the same relative positions when the camera moves around them, and the perspective changes correctly as you would expect in a real 3D environment. While the output is video with depth maps rather than true 3D models, this information can be converted into 3D point clouds for reconstruction purposes.</p>
+<p>The system works by accepting a single input image and a user-defined camera trajectory. Users can specify camera movements like forward, backward, left, right, or turning motions through the provided interface. The system combines image and depth data with a memory-efficient "world cache" to produce video sequences that reflect user-defined camera movement.</p>
+ 
+
+<p>A major limitation of all AI models based on the <a href="https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)">Transformer</a> architecture is that they fundamentally imitate patterns found in training data, which limits their ability to "generalize," which means to apply those patterns to novel situations not found in the training data. To train Voyager, researchers used over 100,000 video clips, including computer-generated scenes from <a href="https://www.unrealengine.com/en-US">Unreal Engine</a>&#8212;essentially teaching the model to imitate how cameras move through 3D video game environments.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Most AI video generators, like <a href="https://arstechnica.com/ai/2024/12/ten-months-after-first-tease-openai-launches-sora-video-generation-publicly/">Sora</a>, create frames that look plausible one after another without attempting to track or maintain spatial consistency. Notably, Voyager has been trained to recognize and reproduce patterns of spatial consistency, but with an added geometric feedback loop. As it generates each frame, it converts the output into 3D points, then projects these points back into 2D for future frames to reference.</p>
+<p>This technique forces the model to match its learned patterns against geometrically consistent projections of its own previous outputs. While this creates much better spatial consistency than standard video generators, it's still fundamentally pattern-matching guided by geometric constraints rather than true 3D "understanding." This explains why the model can maintain consistency for several minutes but struggles with full 360-degree rotations&#8212;small errors in pattern matching accumulate over many frames until the geometric constraints can no longer maintain coherence.</p>
+<p>The system utilizes two main parts working together, according to Tencent's <a href="https://3d-models.hunyuan.tencent.com/voyager/voyager_en/assets/HYWorld_Voyager.pdf">technical report</a>. First, it generates color video and depth information simultaneously, making sure they match up perfectly&#8212;when the video shows a tree, the depth data knows exactly how far away that tree is. Second, it uses what Tencent calls a "world cache"&#8212;a growing collection of 3D points created from previously generated frames. When generating new frames, this point cloud is projected back into 2D from the new camera angle to create partial images showing what should be visible based on previous frames. The model then uses these projections as a consistency check, ensuring new frames align with what was already generated.</p>
+<p>The release adds to a growing collection of world generation models from various companies. <a href="https://arstechnica.com/ai/2025/08/deepmind-reveals-genie-3-world-model-that-creates-real-time-interactive-simulations/">Google's Genie 3</a>, announced in August 2025, generates interactive worlds at 720p resolution and 24 frames per second from text prompts, allowing real-time navigation for several minutes. <a href="https://blog.dynamicslab.ai/">Mirage 2 from Dynamics Lab</a> offers browser-based world generation, allowing users to upload images and transform them into playable environments with real-time text prompting. While Genie 3 focuses on training AI agents and isn't publicly available, and Mirage 2 emphasizes user-generated content for gaming, Voyager targets video production and 3D reconstruction workflows with its RGB-depth output capabilities.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<h2>Training with automated data pipeline</h2>
+<p>Voyager builds on Tencent's earlier <a href="https://github.com/Tencent-Hunyuan/HunyuanWorld-1.0">HunyuanWorld 1.0</a>, released in July. Voyager is also part of Tencent's broader "Hunyuan" ecosystem, which includes the <a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-2">Hunyuan3D-2</a> model for text-to-3D generation and the previously covered&#160;<a href="https://arstechnica.com/ai/2024/12/a-new-uncensored-ai-video-model-may-spark-a-new-ai-hobbyist-movement/">HunyuanVideo</a> for video synthesis.</p>
+<p>To train Voyager, researchers developed software that automatically analyzes existing videos to process camera movements and calculate depth for every frame&#8212;eliminating the need for humans to manually label thousands of hours of footage. The system processed over 100,000 video clips from both real-world recordings and the aforementioned Unreal Engine renders.</p>
+ 
+
+<p>The model demands serious computing power to run, requiring at least 60GB of GPU memory for 540p resolution, though Tencent recommends 80GB for better results. Tencent <a href="https://huggingface.co/tencent/HunyuanWorld-Voyager">published the model weights</a> on Hugging Face and included code that works with both single and multi-GPU setups.</p>
+<p>The model comes with notable <a href="https://github.com/Tencent-Hunyuan/HunyuanWorld-Voyager/blob/main/LICENSE">licensing restrictions</a>. Like other Hunyuan models from Tencent, the license prohibits usage in the European Union, the United Kingdom, and South Korea. Additionally, commercial deployments serving over 100 million monthly active users require separate licensing from Tencent.</p>
+<p>On the <a href="https://github.com/haoyi-duan/WorldScore">WorldScore</a> benchmark developed by Stanford University researchers, Voyager reportedly achieved the highest overall score of 77.62, compared to 72.69 for <a href="https://arxiv.org/abs/2406.09394">WonderWorld</a> and 62.15 for <a href="https://huggingface.co/zai-org/CogVideoX-5b-I2V">CogVideoX-I2V</a>. The model reportedly excelled in object control (66.92), style consistency (84.89), and subjective quality (71.09), though it placed second in camera control (85.95) behind WonderWorld's 92.98. WorldScore evaluates world generation approaches across multiple criteria, including 3D consistency and content alignment.</p>
+<p>While these self-reported benchmark results seem promising, wider deployment still faces challenges due to the computational muscle involved. For developers needing faster processing, the system supports parallel inference across multiple GPUs using the <a href="https://github.com/xdit-project/xDiT">xDiT framework</a>. Running on eight GPUs delivers processing speeds 6.69 times faster than single-GPU setups.</p>
+<p>Given the processing power required and the limitations in generating long, coherent "worlds," it may be a while before we see real-time interactive experiences using a similar technique. But as we've seen so far with experiments like Google's Genie, we're potentially witnessing very early steps into a new interactive, generative art form.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
