@@ -1,0 +1,31 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143263/towards-rust-in-windows-drivers/
+date: '2025-09-03T13:12:41'
+excerpt: Microsoft has been working on allowing driver developers to write Windows
+  drivers in Rust, and the company has published a progress report detailing this
+  effort. In the windows-drivers-rs GitHub repository you&#8217;ll find a bunch of
+  Rust crates for writing Windows drivers in Rust. Using these crates, driver developers
+  can create valid WDM, KMDF, and UMDF driver binaries that load and run on a Windows
+  11 machine.  Drivers written in this manner still need to make use of unsafe blocks
+  for interacting with the Windows operating system, but can take advantage of Rust’s
+  rich type system as well as its safety guarantees for business logic implemented
+  in safe Rust.  Though there is still significant work to be done on abstracting
+  away these unsafe blocks (more on this below), these Rust drivers can load and run
+  on Windows systems just like their C counterparts. ↫ Nate Deisinger at the Windows
+  Driver Developer Blog As mentioned above, there&#8217;s still work to be done with
+  reducing the amount of unsafe Rust code in these drivers, and Microsoft is working
+  on just that. The company is developing safe Rust bindings and abstractions, as
+  well as additional safe structs and APIs beyond the Windows Driver Framework, but
+  due to the complexity of Windows drivers, this will take a while. Microsoft states
+  that it believes memory-safe languages like Rust are the future of secure software
+  development, but of course, in true Microsoft fashion, the company doesn&#8217;t
+  want to alienate developers writing traditional drivers in C either.
+image: null
+source: osnews
+tags:
+- Windows
+title: Towards Rust in Windows drivers
+---
+<div><p>Microsoft has been working on allowing driver developers to write Windows drivers in Rust, and the company has published a progress report detailing this effort. In the <a href="https://github.com/microsoft/windows-drivers-rs/" target="_blank" rel="noreferrer noopener">windows-drivers-rs</a>&#160;GitHub repository you&#8217;ll find a bunch of Rust crates for writing Windows drivers in Rust.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Using these crates, driver developers can create valid WDM, KMDF, and UMDF driver binaries that load and run on a Windows 11 machine.</p>[&#8230;]<p>Drivers written in this manner still need to make use of unsafe blocks for interacting with the Windows operating system, but can take advantage of Rust&#8217;s rich type system as well as its safety guarantees for business logic implemented in safe Rust.&#160; Though there is still significant work to be done on abstracting away these unsafe blocks (more on this below), these Rust drivers can load and run on Windows systems just like their C counterparts.</p>
+<a href="https://techcommunity.microsoft.com/blog/windowsdriverdev/towards-rust-in-windows-drivers/4449718">&#8619; Nate Deisinger at the Windows Driver Developer Blog</a></blockquote><p>As mentioned above, there&#8217;s still work to be done with reducing the amount of unsafe Rust code in these drivers, and Microsoft is working on just that. The company is developing safe Rust bindings and abstractions, as well as additional safe structs and APIs beyond the Windows Driver Framework, but due to the complexity of Windows drivers, this will take a while.</p><p>Microsoft states that it believes memory-safe languages like Rust are the future of secure software development, but of course, in true Microsoft fashion, the company doesn&#8217;t want to alienate developers writing traditional drivers in C either.</p></div>
