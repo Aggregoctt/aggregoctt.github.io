@@ -1,0 +1,24 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/09/03/tf-idf/
+date: '2025-09-03T02:51:40'
+excerpt: Come si può vedere quali sono le eventuali somiglianze di contenuto tra i
+  documenti di una collezione?
+image: assets/media/Qhr06cGzzjwOgo8tL2JLOA-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: tf–idf
+---
+<div>
+			<p>Non avevo mai sentito parlare di <a href="https://it.wikipedia.org/wiki/Tf-idf">questa funzione</a>, il cui nome completo &#232; &#8220;term frequency&#8211;inverse document frequency&#8221;. Eppure &#232; una funzione del tutto naturale nel caso si voglia trovare documenti &#8220;simili&#8221; a quello di partenza in una collezione di testi. </p>
+<p>L&#8217;idea sottostante &#232; a posteriori ovvia. Se ho un documento in cui una parola appare molto spesso, altri documenti in cui questa parola compare spesso dovrebbero essere simili. Ma ci accorgiamo subito che questa euristica non funziona: connettivi come &#8220;che&#8221;, &#8220;perci&#242;&#8221; oppure articoli e forme dei verbi ausiliari appariranno spesso in praticamente ogni documento. La funzione tf-idf relativa a una parola P tiene conto di tutto questo: &#232; direttamente proporzionale alla probabilit&#224; che P appaia nel testo, ma inversamente proporzionale alla probabilit&#224; che P appaia nella collezione completa di testi. In altri termini, la funzione assume un valore tanto maggiore quanto la parola &#232; in genere meno usata rispetto a quanto lo sia nel testo iniziale; una parola usata sempre pi&#249; o meno allo stesso modo ha i due fattori che si elidono a vicenda. </p>
+<p>In formule, abbiamo che tf-idf &#232; il prodotto di due funzioni: tf, la frequenza del termine nel nostro documento, e idf, l&#8217;inverso della frequenza in tutti i documenti. Pi&#249; precisamente, </p>
+<p>$$\mathrm{tf_{i,j}} = \frac{n_{i,j}}{|d_j|},$$</p>
+<p>dove $n_{i,j}$ &#232; il numero di occorrenze del termine $i$ nel documento $j$ e il denominatore (il numero di parole nel documento) serve per perequare i valori per i documenti di lunghezza variabile, e </p>
+<p>$$\mathrm{idf_{i}} =  \log_{10} \frac{|D|}{|\{d: i \in d\}|},$$</p>
+<p>dove $|D|$ &#232; il numero di documenti nella collezione e al denominatore c&#8217;&#232; il numero di documenti che contengono il termine $i$. (Per definizione ce n&#8217;&#232; almeno uno, altrimenti non calcoleremmo idf, e quindi il denominatore non pu&#242; mai essere nullo).</p>
+<p>Il tutto funziona? Diciamo che funzionicchia. Gi&#224; il concetto di idf &#232; pi&#249; euristico che altro, perch&#233; applica la legge di Zipf che come sappiamo non &#232; scolpita nel granito; e visto che a quanto pare le raccomandazioni di libri simili nelle librerie online pare basarsi anche su tf-idf direi che ci sono ampi margini di miglioramento. Secondo <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">Wikipedia in inglese</a> la formula &#232; stata anche applicata in altri campi, con risultati deludenti. Per&#242; &#232; sempre meglio una cattiva formula che nessuna formula, e spesso si pu&#242; usare il sistema &#8220;al rovescio&#8221;, per esempio cercando di scoprire se alcune delle lettere paoline siano o no state effettivamente scritte dall&#8217;apostolo. L&#8217;idea &#232; che in questo modo brutale non si pu&#242; riconoscere lo stile ma almeno si verifica che la terminologia non sia cambiata troppo, e si ha un punteggio numerico e non una sensazione come si faceva un tempo. Insomma, &#232; comunque una freccia all&#8217;arco dei filologi.</p>
+ 
+  					</div>
