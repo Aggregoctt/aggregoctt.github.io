@@ -1,0 +1,49 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/09/mis-issued-certificates-for-1-1-1-1-dns-service-pose-a-threat-to-the-internet/
+date: '2025-09-03T18:40:38'
+excerpt: The three certificates were issued in May but only came to light Wednesday.
+image: assets/media/Ej7RwcXLqs3EZ3hZzgpv8A-zbTuMnvIglhGM-vhAWDNWw.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- Certificates
+- encryption
+- tls
+- transport layer security
+title: Mis-issued certificates for 1.1.1.1 DNS service pose a threat to the Internet
+---
+<div>
+                      
+                      
+          <p>People in Internet security circles are sounding the alarm over the issuance of three TLS certificates for 1.1.1.1, a widely used DNS service from content delivery network Cloudflare and the Asia Pacific Network Information Centre (APNIC) Internet registry.</p>
+<p>The certificates, issued in May, can be used to decrypt domain lookup queries encrypted through DNS over HTTPS, a protocol that provides end-to-end encryption when end-user devices seek the IP address of a particular domain they want to access. Some security experts are also concerned that the certificates may underpin other sensitive services, such as <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/download-warp/">WARP</a>, a VPN offered by Cloudflare. The certificates remained valid at the time this post went live on Ars.</p>
+<h2>Key failures</h2>
+<p>Although the certificates were issued four months ago, their existence came to public notice only on Wednesday in a <a href="https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/SgwC1QsEpvc">post</a> to an online discussion forum. They were issued by Fina RDC 2020, a certificate authority that&#8217;s subordinate to the root certificate holder Fina Root CA. The Fina Root CA, in turn, is trusted by the Microsoft Root Certificate Program, which governs which certificates are trusted by the Windows operating system. Microsoft Edge accounts for approximately 5 percent of the browsers actively used on the Internet.</p>
+<p>Microsoft said in a statement that it has &#8220;engaged the certificate authority to request immediate action. We&#8217;re also taking steps to block the affected certificates through our disallowed list to help keep customers protected.&#8221; The statement didn't say how it failed to identify the improperly issued certificate for such a long period of time.</p>
+<p>Representatives from Google and Mozilla said in emails that their Chrome and Firefox browsers have never trusted the certificates, and there was no need for users to take any action. It wasn&#8217;t immediately known if a similar certificate program from Apple trusts the certificate. It was also not immediately known which organization or person requested and obtained the credentials. Representatives from Fina, Microsoft, and Apple didn&#8217;t immediately provide answers to emails seeking details.</p>
+<p>The certificates are a key part of the Transport Layer Protocol. They bind a specific domain to a public key. The certificate authority posesses the private key certifying that the certificate is valid. Anyone in possession of a TLS certificate can cryptographically impersonate the domain for which it was issued.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The holder of the 1.1.1.1 certificates could potentially use them in active adversary-in-the-middle attacks that intercept communications passing between end users and the Cloudflare DNS service, Ryan Hurst, CEO of Peculiar Ventures and a TLS and public key infrastructure expert, told Ars.</p>
+<p>&#8220;Doing so would require a BGP hijack to trick your host to think your [rogue] 1.1.1.1 was the one I should connect to,&#8221; he explained. BGP is short for Border Gateway Protocol, a specification used to link regional networks scattered around the world, known as Autonomous Systems, to each other. By manipulating the system through false notices, attackers regularly take control of legitimate IP addresses, including those belonging to telecoms, banks, and Internet services.</p>
+<p>As several Ars commenters have noted, there are likely many other ways an attacker could exploit the certificates to mount an adversary-in-the-middle attack.</p>
+<p>From there, attackers with possession of the 1.1.1.1 certificates could decrypt, view, and tamper with traffic from the Cloudflare DNS service, Hurst said. He added that Cloudflare&#8217;s WARP VPN service may also be similarly affected.</p>
+<p>Wednesday&#8217;s discovery exposes key failures of the public key infrastructure that&#8217;s responsible for ensuring trust of the entire Internet. They are the only thing ensuring that gmail.com, bankofamerica.com, irs.gov, and any other sensitive website is controlled by the entity claiming ownership.</p>
+<p>Given the pivotal role of certificates, CAs are required to provide the IP addresses they used to verify that a party applying for a certificate controls the address they want covered. None of <a href="https://crt.sh/?id=18603461241">the</a> <a href="https://crt.sh/?id=19749721864">three</a> <a href="https://crt.sh/?id=20582951233">certificates</a> provides that information. The incident also reflects poorly on Microsoft for failing to catch the mis-issued certificate and allowing Windows to trust it for such a long period of time.</p>
+<p>Also at partial fault are Cloudflare and the PKI stakeholders at large, since all issued certificates are published to a publicly available transparency log. The purpose of the log is to quickly identify mis-issued certificates before they can be actively used. The public discovery of the certificates four months after they were issued suggests the transparency logs didn&#8217;t receive the attention they were intended to get.</p>
+<p>Post updated to correct explanation of TLS certificates.</p>
+
+
+          
+                  
+
+                  
+          </div>
