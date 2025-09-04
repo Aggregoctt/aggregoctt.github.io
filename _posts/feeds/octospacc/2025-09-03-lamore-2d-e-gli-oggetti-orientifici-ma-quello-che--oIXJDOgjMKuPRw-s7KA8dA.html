@@ -1,0 +1,61 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/09/04/lamore-2d-e-gli-oggetti-orientifici-ma-quello-che-accade-non-fa-divertire/
+date: '2025-09-03T22:43:56'
+excerpt: Visti gli imprevisti con HaxeFlixel che non ho ancora avuto il tempo di elaborare
+  qui, stavo (ri)considerando il basato Love2D che, ultimamente mi sono (ri)accorta,
+  gira su talmente tante piattaforme da rendere inutile anche fare degli esempi qui.
+  La cosa seccante di quel coso, però, è che non è esattamente un motore di gioco,
+  quanto [&#8230;]
+image: assets/media/oIXJDOgjMKuPRw-s7KA8dA-EcK_jrgDP7Hlw7nT6qtc8g.jpeg
+source: octospacc
+tags:
+- Senza categoria
+- benchmark
+- Lua
+- LOVE2D
+- development
+- testing
+- test
+title: l’amore 2d e gli oggetti orientifici, ma quello che accade non fa divertire
+  (test e valutazioni prestazioni OOP su Love2D)
+---
+<div>
+
+		
+<p>Visti gli imprevisti con HaxeFlixel che non ho ancora avuto il tempo di elaborare qui, <strong>stavo (ri)considerando <a href="https://memos.octt.eu.org/m/bDDj57cuyg55CGx3qK6W7q">il basato Love2D</a></strong> che, ultimamente mi sono (ri)accorta, <strong>gira su talmente tante piattaforme</strong> da rendere inutile anche fare degli esempi qui. La cosa seccante di quel coso, per&#242;, &#232; che <strong>non &#232; esattamente un motore di gioco</strong>, quanto pi&#249; un framework multimediale&#8230; e quindi, a differenza di Flixel e altri robini, non ha tutte le varie utilit&#224; che &#232; bene avere per poter sviluppare qualcosa senza partire dallo zero assoluto&#8230; e quindi, <strong>l&#8217;idea sarebbe di creare una specie di motorino per esso</strong> per gestire cose comuni come sprite, fisica, boh, queste cose (non) belle. &#129317;</p>
+
+
+
+<p>Ovviamente, <strong>il problema inevitabile &#232; sorto immediatamente</strong> dopo una giornata di lavoro iniziale &#8212; a dire il vero, fatta per fortuna con le pinze, perch&#233; ero sotto sotto pronta a vedere cose storte accadere &#8212; e cio&#232; che, <strong>con una dose di OOP in realt&#224; nemmeno troppo grossa per gli standard comuni, le prestazioni sono crollate cos&#236; tanto a picco</strong> che, per <a href="https://haxeflixel.com/demos/Breakout/">un semplice giochino di Breakout (la demo di HaxeFlixel</a>, che ho adattato strada facendo per testare), da un lato su PC l&#8217;uso di CPU si aggirava attorno al 10-15% (che &#232; tipo il quintuplo di cosa fa la stessa demo in HaxeFlixel)&#8230; mentre, su piattaforme pazzurde come il 3DS era letteralmente ingiocabile, facendo 5 secondi a frame (e pensare che io ho il new, che &#232; pi&#249; veloce). &#128128;</p>
+
+
+
+<p>Ho fatto un po&#8217; di ricerca e &#8212; per quanto fosse a me comunque ovvio che una programmazione ad oggetti basata principalmente sull&#8217;ereditariet&#224; rende un programma pi&#249; lento, perch&#233; i sassi elettronici sono fatti per eseguire istruzioni sequenziali e lavorare con memoria quanto pi&#249; continua possibile, che &#232; il contrario di cosa succede con tutte quelle classi che estendono classi che estendono il mercato che mio padre compr&#242; &#8212; <strong>non immaginavo che su Lua il calo prestazionale fosse tale</strong> da essere non solo evidente, ma proprio fuori scala in certi casi. E ora, dunque, <strong>i problemi sono grossissimi</strong>. &#128548;</p>
+
+
+
+<p><a href="https://memos.octt.eu.org/m/bM2QXjUQwZndjWaMxaBjoM">Anche stavolta ho raccolto molti link</a> a riguardo di questa ennesima causa di sofferenza per me, e in realt&#224; ancora non ho capito bene la questione, ma <strong>un grande problema sembra essere causato dagli accessi a tabelle nidificate, e alle chiamate di funzioni fatte pi&#249; del necessario</strong> anche per operazioni altrimenti veloci&#8230; e nel mio caso certamente una buona parte di overhead in questo senso sar&#224; causata dal fatto di non scrivere Lua nativo, bens&#236; usare <a href="https://memos.octt.eu.org/m/KwWPZEcfgygRVGFQt3EEVg">Haxe</a> (o in alternativa, <a href="https://memos.octt.eu.org/m/fiDD7gpDGBJWdRvbw9grzf">TypescriptToLua</a>) per traspilare a Lua, ma sentivo che il problema non poteva essere solo il codice bloattato generato da questi affari&#8230; &#129512;</p>
+
+
+
+<p>E infatti, <strong>scrivendo in Lua puro un piccolo benchmark</strong> (battezzato al volo solo per dare un titolo al memo: <a href="https://memos.octt.eu.org/m/2HEiRTfKFKreMyBZbxourz"><strong>&#8220;Love2D fucking rectangles&#8220;</strong></a>, genera innumerevoli rettangoli e li fa muovere calcolando le collisioni), <strong>prima in modo classico e poi con un minimo di OOP</strong>, ed eseguendolo oltre i limiti del ragionevole, ho visto le cose brutte: <strong>la versione OOP &#232; in effetti pi&#249; lenta</strong>. Non tanto pi&#249; lenta, e comunque dipende dalle opzioni con cui la si fa girare, ma solo perch&#233; &#232; comunque molto semplice&#8230; a differenza del motorino che tanto vorrei creare per replicare la API di HaxeFlixel in Love2D per quanto possibile (evidentemente, non molto possibile). &#128557;</p>
+
+
+
+ 
+
+
+
+<p>Dopo ben 4 (quattro) immagini non so se ho voglia di elaborare oltre&#8230; Ma, in sostanza: <strong>in una modalit&#224;, il programma genera solo X (200mila) rettangoli all&#8217;avvio</strong>, mentre <strong>nell&#8217;altra ne genera X (200) a frame, andando all&#8217;infinito, calcolando sempre le collisioni&#8230;</strong> e quindi con la prima si esclude una lentezza dovuta alla continua istanziazione di oggetti, mentre la seconda da modo di vedere come un programma rallenta nel tempo rispetto all&#8217;altro (generando meno oggetti a parit&#224; di tempo). &#128165;</p>
+
+
+
+<p>Nella prima modalit&#224;, il carico &#232; basato principalmente sull&#8217;accesso alla chiamata draw, quindi non potevo limitare il numero di quadrati effettivamente visibili, e quindi ho potuto eseguirla solo su PC, dove si nota in media un <strong>rallentamento di circa il doppio per la versione OOP</strong>, che accede a svariate propriet&#224; nidificate per fare il disegno&#8230; Mentre, nella seconda la prova il carico era pi&#249; il resto, quindi ho deciso di limitare il numero di rettangoli visibili a schermo ad ogni frame agli ultimi X (500), e questo mi ha permesso di eseguire il programma pure sul 3DS senza che crashasse (credo ci siano limiti di VRAM l&#236;), ma sia su PC che su 3DS si vede che <strong>la versione non-OOP riesce a generare in media 1,2 sprite in pi&#249;</strong> per delta di tempo, differenza che nel corso di minuti diventa di migliaia di sprite. &#128565;</p>
+
+
+
+<p>Incredibile, spassoso, magicante, ma&#8230; e adesso??? Boh! <strong>Dovr&#242; ingegnarmi pesantemente</strong> per creare un motorino sufficientemente generalizzato da poter essere usato come comoda libreria per molti giochi Love2D, ma che allo stesso tempo sia efficiente&#8230; ma qui casca l&#8217;asino, perch&#233; per implementare concetti come uno sprite, che oltre ai classici dati come posizione X e Y ha un oggetto &#8220;disegnabile&#8221;, che pu&#242; essere un&#8217;immagine o una forma geometrica, che quindi richiede chiamate della API Love2D completamente diverse dietro le quinte, non vedo alternativa non incasinata se non l&#8217;OOP; ma non baster&#224; usare pi&#249; la composizione che l&#8217;ereditariet&#224;, bens&#236; <strong>per sconfiggere l&#8217;overhead serviranno mosse di design interne talmente scomode che ho davvero tanta paura anche solo a pensare di scriverle&#8230;</strong> &#128561;</p>
+ 
+ 
+	 </div>
