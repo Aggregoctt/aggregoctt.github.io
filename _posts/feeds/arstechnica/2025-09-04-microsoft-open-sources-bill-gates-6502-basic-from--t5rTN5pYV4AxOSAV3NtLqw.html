@@ -1,0 +1,66 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/gadgets/2025/09/microsoft-open-sources-bill-gates-6502-basic-from-1978/
+date: '2025-09-04T16:56:13'
+excerpt: Historic interpreter taught millions to program on Commodore and Apple computers.
+image: assets/media/t5rTN5pYV4AxOSAV3NtLqw-W2hcVjVH7LWXd0j2q6gX9g.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Tech
+- '6502'
+- Apple II
+- assembly language
+- BASIC
+- Bill Gates
+- commodore 64
+- Commodore PET
+- GitHub
+- microsoft
+- open source
+- Programming
+- retrocomputing
+- retrotech
+- VIC-20
+- Vintage computing
+title: Microsoft open-sources Bill Gates’ 6502 BASIC from 1978
+---
+<div>
+                      
+                      
+          <p>On Wednesday, Microsoft <a href="https://opensource.microsoft.com/blog/2025/09/03/microsoft-open-source-historic-6502-basic/">released</a> the complete source code for Microsoft BASIC for 6502 Version 1.1, the 1978 interpreter that powered the Commodore PET, VIC-20, Commodore 64, and Apple II through custom adaptations. The company posted 6,955 lines of assembly language code to <a href="https://github.com/microsoft/BASIC-M6502">GitHub</a> under an MIT license, allowing anyone to freely use, modify, and distribute the code that helped launch the personal computer revolution.</p>
+<p>"Rick Weiland and I (Bill Gates) <a href="https://www.pagetable.com/?p=43#comment-1033">wrote</a> the 6502 BASIC," Gates commented on the Page Table blog in 2010. "I put the WAIT command in."</p>
+<p>For millions of people in the late 1970s and early 1980s, variations of Microsoft's BASIC interpreter provided their first experience with programming. Users could type simple commands like "10 PRINT 'HELLO'" and "20 GOTO 10" to create an endless loop of text on their screens, for example&#8212;often their first taste of controlling a computer directly. The interpreter translated these human-readable commands into instructions that the processor could execute, one line at a time.</p>
+ 
+
+<p>At just 6,955 lines of assembly language&#8212;Microsoft's low-level 6502 code talked almost directly to the processor. Microsoft's BASIC squeezed remarkable functionality into minimal memory, a key achievement when RAM cost hundreds of dollars per kilobyte.</p>
+<p>In the early personal computer space, cost was king. The MOS 6502 processor that ran this BASIC&#160;<a href="https://spectrum.ieee.org/chip-hall-of-fame-mos-technology-6502-microprocessor" target="_blank" rel="noopener">cost about $25,</a> while&#160;competitors charged $200 for similar chips. Designer Chuck Peddle created the 6502 specifically to bring computing to the masses, and manufacturers built variations of the chip into the Atari 2600, Nintendo Entertainment System, and millions of Commodore computers.</p>
+<h2>The deal that got away</h2>
+<p>In 1977, Commodore licensed Microsoft's 6502 BASIC for a flat fee of $25,000. Jack Tramiel's company got perpetual rights to ship the software on unlimited machines&#8212;no royalties, no per-unit fees. While $25,000 seemed substantial then, Commodore went on to sell millions of computers with Microsoft BASIC inside. Had Microsoft negotiated a per-unit licensing fee like they did with later products, the deal could have generated tens of millions in revenue.</p>
+<p>The version Microsoft released&#8212;labeled 1.1&#8212;contains bug fixes that Commodore engineer John Feagans and Gates jointly implemented in 1978 when Feagans traveled to Microsoft's Bellevue, Washington, offices. The code includes memory management improvements (called "garbage collection" in programming terms) and shipped as "BASIC V2" on the Commodore PET.</p>
+
+          
+                       
+                   
+                  
+
+              
+          
+          
+<p>The source tree Microsoft released also contains conditional compilation support for multiple systems of the era. Developers could build versions for the Apple II (where it became Applesoft BASIC), Ohio Scientific computers, and the KIM-1 single-board computer from the same codebase by toggling different options during the build process.</p>
+<h2>Why old code still matters</h2>
+<p>While modern computers can't run this 1978 assembly code directly, emulators and FPGA implementations keep the software alive for study and experimentation. The code reveals how programmers squeezed maximum functionality from minimal resources&#8212;lessons that remain relevant as developers optimize software for everything from smartwatches to spacecraft.</p>
+<p>This kind of officially sanctioned release is important because without proper documentation and legal permission to study historical software, future generations risk <a href="https://technologizer.com/2012/01/23/why-history-needs-software-piracy/index.html">losing the ability</a> to understand how early computers worked in detail. This will deprive historians without firsthand experience of the machines of the ability to place these cultural artifacts into a larger context.</p>
+ 
+
+<p>Still, it's worth noting that the official release provides a license for what retrocomputing enthusiasts have studied through unofficial channels for decades. Michael Steil, a researcher who has extensively <a href="https://github.com/mist64/msbasic">documented</a> Microsoft BASIC's evolution, previously reconstructed build environments that can produce byte-exact copies of the original ROM chips&#8212;meaning the compiled code matches the historical versions bit for bit. His work porting the code to modern assemblers like cc65 means researchers can now build and study this foundational software on current systems.</p>
+<p>Microsoft has gradually open-sourced other historical software in recent years, including <a href="https://github.com/microsoft/GW-BASIC">GW-BASIC</a> (which descended from the 6502 version and shipped in the IBM PC's ROM), <a href="https://arstechnica.com/gadgets/2024/04/microsoft-and-ibm-release-source-code-for-one-of-the-weirdest-versions-of-ms-dos/">MS-DOS 4.0</a>, and the original <a href="https://github.com/option8/Altair-BASIC">Altair BASIC</a> from 1975. The company's shift toward open source under CEO Satya Nadella contrasts sharply with its hostile stance toward open source in the 1990s and early 2000s, when CEO Steve Ballmer compared the famous open source project Linux to <a href="https://www.theregister.com/2001/06/02/ballmer_linux_is_a_cancer/">cancer</a> and <a href="https://www.theregister.com/2000/07/31/ms_ballmer_linux_is_communism/">communism</a>.</p>
+<p>The tech industry rarely stands still, and neither does Microsoft. The company that once fought open source now hosts the world's largest repository of it on GitHub, which it <a href="https://news.microsoft.com/source/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/">acquired</a> in 2018. In fact, the Github repository Microsoft created for 6502 BASIC includes a clever historical touch as a nod to the ancient code&#8212;the Git timestamps show commits from July 27, 1978.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
