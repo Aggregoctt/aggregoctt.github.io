@@ -1,0 +1,46 @@
+---
+author: Andy Greenberg, wired.com
+canonical_url: https://arstechnica.com/security/2025/09/sextortion-with-a-twist-spyware-takes-webcam-pics-of-users-watching-porn/
+date: '2025-09-04T21:12:20'
+excerpt: Spyware monitors the infected user's browser for NSFW content before activating
+  itself.
+image: assets/media/1CVL6sAyIgFBhLSoTDTydg-gu9zOrovxUfG9PhEj5Ywmw.jpeg
+source: arstechnica
+tags:
+- Security
+- spyware
+- Stealerium
+- syndicated
+- syndication
+title: 'Sextortion with a twist: Spyware takes webcam pics of users watching porn'
+---
+<div>
+                      
+                      
+          <p>Sextortion-based hacking, which hijacks a victim's webcam or blackmails them with nudes they're tricked or coerced into sharing, has long represented one of <a href="https://www.wired.com/story/jeff-bezos-sextortion-allegation/">the most disturbing forms of cybercrime</a>. Now one specimen of widely available spyware has turned that relatively manual crime into an automated feature, detecting when the user is browsing pornography on their PC, screenshotting it, and taking a candid photo of the victim through their webcam.</p>
+<p>On Wednesday, researchers at security firm Proofpoint published their <a href="https://www.proofpoint.com/us/blog/threat-insight/not-safe-work-tracking-and-investigating-stealerium-and-phantom-infostealers">analysis</a>of an open-source variant of <a href="https://www.wired.com/story/infostealer-malware-password-theft/">&#8220;infostealer&#8221; malware</a> known as Stealerium that the company has seen used in multiple cybercriminal campaigns since May of this year. The malware, like all infostealers, is designed to infect a target's computer and automatically send a hacker a wide variety of stolen sensitive data, including banking information, usernames and passwords, and keys to victims' crypto wallets. Stealerium, however, adds another, more humiliating form of espionage: It also monitors the victim's browser for web addresses that include certain NSFW keywords, screenshots browser tabs that include those words, photographs the victim via their webcam while they're watching those porn pages, and sends all the images to a hacker&#8212;who can then blackmail the victim with the threat of releasing them.</p>
+<p>&#8220;When it comes to infostealers, they typically are looking for whatever they can grab,&#8221; says Selena Larson, one of the Proofpoint researchers who worked on the company's analysis. &#8220;This adds another layer of privacy invasion and sensitive information that you definitely wouldn't want in the hands of a particular hacker.&#8221;</p>
+<p>&#8220;It's gross,&#8221; Larson adds. &#8220;I hate it.&#8221;</p>
+<p>Proofpoint dug into the features of Stealerium after finding the malware in tens of thousands of emails sent by two different hacker groups it tracks (both relatively small-scale cybercriminal operations), as well as a number of other email-based hacking campaigns. Stealerium, strangely, is distributed as a free, open source tool available on GitHub. The malware&#8217;s developer, who goes by the named witchfindertr and describes themselves as a &#8220;malware analyst&#8221; based in London, notes on the page that the program is for &#8220;educational purposes only.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>&#8220;How you use this program is your responsibility,&#8221; the page reads. &#8220;I will not be held accountable for any illegal activities. <i>Nor do i give a shit how u use it.&#8221;</i></p>
+<p>In the hacking campaigns Proofpoint analyzed, cybercriminals attempted to trick users into downloading and installing Stealerium as an attachment or a web link, luring victims with typical bait like a fake payment or invoice. The emails targeted victims inside companies in the hospitality industry, as well as in education and finance, though Proofpoint notes that users outside of companies were also likely targeted but wouldn't be seen by its monitoring tools.</p>
+<p>Once it's installed, Stealerium is designed to steal a wide variety of data and send it to the hacker via services like Telegram, Discord, or the SMTP protocol in some variants of the spyware, all of which is relatively standard in infostealers. The researchers were more surprised to see the automated sextortion feature, which monitors browser URLs for a list of pornography-related terms such as &#8220;sex&#8221; and &#8220;porn," which can be customized by the hacker and trigger simultaneous image captures from the user's webcam and browser. Proofpoint notes that it hasn't identified any specific victims of that sextortion function, but suggests that the existence of the feature means it has likely been used.</p>
+<p>More hands-on sextortion methods are a common blackmail tactic among cybercriminals, and scam campaigns in which hackers claim to have obtained webcam pics of victims looking at pornography have also plagued inboxes in recent years&#8212;including some that even try to bolster their credibility with <a href="https://krebsonsecurity.com/2024/09/sextortion-scams-now-include-photos-of-your-home/">pictures of the victim's home</a> pulled from Google Maps. But actual, automated webcam pics of users browsing porn is &#8220;pretty much unheard of,&#8221; says Proofpoint researcher Kyle Cucci. The only similar known example, he says, was a malware campaign that <a href="https://www.welivesecurity.com/2019/08/08/varenyky-spambot-campaigns-france/">targeted French-speaking users in 2019</a>, discovered by the Slovakian cybersecurity firm ESET.</p>
+<p>The pivot to targeting individual users with automated sextortion features may be part of a larger trend of some cybercriminals&#8212;particularly lower-tier groups&#8212;turning away from high-visibility, large-scale ransomware campaigns and botnets that tend to attract the attention of law enforcement, says Proofpoint's Larson.</p>
+<p>&#8220;For a hacker, it's not like you're taking down a multimillion-dollar company that is going to make waves and have a lot of follow-on impacts,&#8221; Larson says, contrasting the sextortion tactics to ransomware operations that attempt to extort seven-figure sums from companies. &#8220;They're trying to monetize people one at a time. And maybe people who might be ashamed about reporting something like this.&#8221;</p>
+<p>This story originally appeared on <a href="https://www.wired.com/story/stealerium-infostealer-porn-sextortion/">wired.com</a>.</p>
+
+
+          
+                  
+
+                  
+          </div>
