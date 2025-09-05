@@ -1,0 +1,57 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/09/05/love2d-stavolta-che-gira-nonostante-la-octo-oriented-programming/
+date: '2025-09-04T23:19:13'
+excerpt: Sorprendentemente, appena qualche ora di sonno e qualche ora di scrittura
+  magica un pochino avanti e indietro più tardi, e ho effettivamente trovato una soluzione
+  al problema problemoso delle prestazioni imbarazzanti di Love2D caricato di una
+  tale OOP che non gira affatto bene su una viemmina come quella di Lua&#8230; e,
+  anche se come previsto [&#8230;]
+image: null
+source: octospacc
+tags:
+- Senza categoria
+- programmazione
+- demo
+- development
+- ottimizzazione
+- LOVE2D
+- Lua
+- typescript
+- TypeScriptToLua
+- optimizing
+- optimization
+- OOP
+title: love2d stavolta che gira, nonostante la octo-oriented programming!
+---
+<div>
+
+		
+<p>Sorprendentemente, appena qualche ora di sonno e qualche ora di scrittura magica un pochino avanti e indietro pi&#249; tardi, e <strong>ho effettivamente trovato una soluzione </strong><strong><a href="https://octospacc.altervista.org/2025/09/04/lamore-2d-e-gli-oggetti-orientifici-ma-quello-che-accade-non-fa-divertire/">al </a></strong><strong><a href="https://octospacc.altervista.org/2025/09/04/lamore-2d-e-gli-oggetti-orientifici-ma-quello-che-accade-non-fa-divertire/">problema problemoso</a></strong><strong><a href="https://octospacc.altervista.org/2025/09/04/lamore-2d-e-gli-oggetti-orientifici-ma-quello-che-accade-non-fa-divertire/"> delle prestazioni imbarazzanti di Love2D caricato di una tale OOP</a></strong> che non gira affatto bene su una viemmina come quella di Lua&#8230; e, anche se come previsto il modo che ho dovuto mettere in atto &#232; abbastanza spaventoso, non &#232; nemmeno inadatto alla produzione, e anzi: <strong>&#232; </strong><strong>gnammastico</strong>. &#128563;</p>
+
+
+
+<p>L&#8217;obiettivo in mente era una roba del tipo: <strong>avere nel possibile una programmazione orientata ad oggetti</strong> che, per <strong>ridurre l&#8217;overhead causato da troppi lookup in tabelle e troppe chiamate di funzioni</strong> in poco tempo, fosse <strong>basata principalmente sulla composizione</strong>, desiderio che &#232; anche comune in Lua&#8230; ma, <strong>volendo evitare Lua</strong><strong>, perch&#233; voglio invece qualcosa di fortemente tipizzato</strong>, perch&#233; altrimenti so che finisce rapidamente tutto a spacc. In questo senso, <a href="https://memos.octt.eu.org/m/Pc2rtyhRBV5xSKKTckLB6G">Teal &#232; interessante</a>, per&#242;, per motivi che ora non frecano, non mi convince pi&#249; di tanto&#8230; e allora ho ragionato su cosa si potesse fare con TypeScript&#8230; &#128552;</p>
+
+
+
+<p>Ecco: sorprendentemente, <strong>sfruttando semplicemente gli oggetti anonimi</strong> (uguali a quelli di JavaScript, che si mappano perfettamente a tabelle di Lua) <strong>in congiunzione con il sistema di tipi composti di TypeScript</strong> (che funzionano come le interfacce nella OOP, ma indicano tipi di oggetti), <strong>evitando completamente le classi del linguaggio&#8230;</strong> con la propriet&#224; intrinseca degli oggetti in JavaScript (e in Lua, duh, in qualunque linguaggio interpretato) di essere componibili, ma combinati coi tipi l&#236;, <strong>si riesce ad avere a livello di sviluppo tutta la sicurezza dei tipi di TypeScript, ma in output codice Lua estremamente pulito!!!</strong> (E che, per inciso, evita completamente l&#8217;uso delle metatabelle, anch&#8217;esse causa di rallentamenti.) &#129327;</p>
+
+
+
+<p>Benchmark stavolta niente, poich&#233; palle, e anche perch&#233; i &#8220;<a href="https://memos.octt.eu.org/m/2HEiRTfKFKreMyBZbxourz">fottuti rettangoli</a>&#8221; hanno mostrato prestazioni negative inaspettate rispetto alle 2 versioni scritte a mano ieri in Lua&#8230; ma non perch&#233; <strong>il codice </strong><strong>sputato fuori</strong><strong> da </strong><strong><a href="https://memos.octt.eu.org/m/fiDD7gpDGBJWdRvbw9grzf">TypeScriptToLua</a></strong><strong> in questo caso</strong> sia sporco, quanto pi&#249; perch&#233; <strong>ho gi&#224; iniziato a reimplementare con questo nuovo paradigma il mio </strong><strong>motorino</strong><strong> desiderato,</strong> che ovviamente dell&#8217;overhead in pi&#249; lo ha comunque, ma&#8230; <strong>Stavolta, la demo di Breakout sul 3DS &#232; magicamente giocabile</strong>, non va pi&#249; a 5 secondi al frame!!! (E sul PC mi si aggira su 1-2% di CPU, che &#232; wow.) &#128509;</p>
+
+
+
+ 
+
+
+
+<p>Ora&#8230; boh, solo le pareti che mi tengono compagnia quando programmo sapranno dirmi come andr&#224; avanti questo affarino. A parte il fatto che <strong>ho dovuto gi&#224; ripensare abbastanza la API da come l&#8217;avrei voluta inizialmente</strong> &#8212; dovendo farla deviare gi&#224; parecchio da HaxeFlixel, perch&#233; non sembra esserci modo di avere i tipi completamente sicuri dovendo allo stesso tempo minimizzare gli oggetti nidificati e le catene di funzioni &#8212; ci sono alcuni dettagli per cui questa cosa degli oggetti pseudoclassisti funzionano che mi sanno di strano, perch&#233; praticamente devo tenere le definizioni all&#8217;effettivo completamente separate dalle implementazioni (quindi, per esempio, devo usare <code>Cacca.new()</code> per creare una nuova <code>cacca</code>, ma <code>TCacca</code> per riferirmi al tipo&#8230;), ma sar&#224; un TypeScript skill issue. &#128566;</p>
+
+
+
+<p>C&#8217;&#232; anche da dire che con questo mio accrocco non c&#8217;&#232; incapsulazione, implementarla sarebbe un casino e costerebbe (per via di come funziona Lua, che costringe ad usare funzioni anonime per implementare questa cosa; funzioni che verrebbero interamente copiate su ogni singolo oggetto) lo spreco di un fottio di memoria (termine tecnico)&#8230; ma non lo vedo come un problema; casomai dovesse servire il distinguere campi pubblici da privati, baster&#224; rubare la convenzione di Python per cui le variabili che iniziano con gli underscore sono ad uso interno. E, davvero, <strong>l&#8217;unico aspetto negativo di questa </strong><strong>macchinazione</strong><strong> credo sia il fatto di non poter ottimizzare ulteriormente</strong> senza ridurre il riuso del codice, avendo svariate chiamate a funzioni miste che per quanto piccole sarebbero meglio inlinate, cio&#232; copincollate dal compilatore anzich&#233; lo sviluppatore, se solo Lua lo permettesse&#8230; (&#8230;E se scrivessi un postprocessore Lua per fare esattamente ci&#242;???)</p>
+ 
+ 
+	 </div>

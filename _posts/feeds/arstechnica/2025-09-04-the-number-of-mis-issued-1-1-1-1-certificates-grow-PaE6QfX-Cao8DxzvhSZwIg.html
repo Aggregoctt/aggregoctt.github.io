@@ -1,0 +1,97 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/information-technology/2025/09/the-number-of-mis-issued-1-1-1-1-certificates-grows-heres-the-latest/
+date: '2025-09-04T22:29:34'
+excerpt: Everything to know about about the mishap that threatened to expose millions
+  of users' queries.
+image: assets/media/PaE6QfX-Cao8DxzvhSZwIg-FYYdGkyPi3WoVxG_ZcsDuQ.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- Certificates
+- HTTPS
+- tls
+- transport layer security
+title: The number of mis-issued 1.1.1.1 certificates grows. Here’s the latest.
+---
+<div>
+                      
+                      
+           
+<p>Wednesday&#8217;s discovery of <a href="https://arstechnica.com/security/2025/09/mis-issued-certificates-for-1-1-1-1-dns-service-pose-a-threat-to-the-internet/">three mis-issued TLS certificates</a> for Cloudflare&#8217;s 1.1.1.1 encrypted DNS lookup service generated intense interest and concern among Internet security practitioners. The revelation raised the possibility that an unknown entity had obtained the cryptographic equivalent of a skeleton key that could be used to surreptitiously decrypt millions of users&#8217; DNS queries that were encrypted through DNS over TLS or DNS over HTTPS. From there, the scammers could have read queries or even tampered with results to send 1.1.1.1 users to malicious sites.</p>
+<p>Since then, new information and analysis have become available, including the issuance of nine additional certificates since February 2024. This FAQ list is designed to answer questions raised in comments to the story and to provide the latest on what&#8217;s known about the incident, which Cloudflare <a href="https://blog.cloudflare.com/unauthorized-issuance-of-certificates-for-1-1-1-1/">said Thursday</a> constituted an &#8220;unacceptable lapse in security by Fina CA," the Microsoft-trusted certificate authority (CA) responsible for all 12 of the mis-issued certificates.</p>
+<h2>You asked; we answer</h2>
+<p><b>Has new information come to light since Wednesday morning?</b></p>
+<p>Yes, multiple details. First, Cloudflare said that an audit it conducted following the discovery found that Fina CA mis-issued a total of 12 certificates, nine more than previously known. All certificates have since been revoked.</p>
+<p>Cloudflare said that it has not yet found any evidence that any of them were used maliciously, meaning used to cryptographically impersonate services offered by its 1.1.1.1 DNS resolver. Cloudflare said it "should have caught and responded to [the mis-issuances] earlier," through Certificate Transparency, a program the company helps administer (more about that later).</p>
+<p>Fina CA, for its part, said in a short email that the certificates were &#8220;issued for internal testing of the certificate issuance process in the production environment. An error occurred during the issuance of the test certificates due to incorrect entry of IP addresses. As part of the standard procedure, the certificates were published on Certificate Transparency log servers.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The CA went on to say that the private keys remained inside an environment controlled by Fina and were &#8220;destroyed immediately, even before the certificates were revoked.&#8221; The company asserted that the mis-issued certificates &#8220;did not compromise users or any other systems in any way.&#8221;</p>
+<p><b>So does that mean Fina did nothing wrong?</b></p>
+<p>No. Fina never had Cloudflare's permission to issue certificates for an IP it controls. Consent of the owning party is a cardinal rule that Fina didn't follow.</p>
+<p><b>What are TLS certificates? How do they work?</b></p>
+<p>In short, these certificates are the only thing ensuring that gmail.com, bankofamerica.com, or any other website is controlled by the entity claiming ownership. By now, many Internet users know they should only trust a website when its real domain name appears correctly in the address bar and is accompanied by the HTTPS label. This prevents many attacks that use lookalike domain names or hacks such as DNS cache poisoning to create rogue sites masquerading as the real, trusted ones. It&#8217;s not an exaggeration to say TLS is the entire root of trust on the World Wide Web.</p>
+<p>More technically, the TLS protocol provides a comprehensive framework for ensuring this trust. Certificates are a core part of <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a>, a protocol that uses a cryptographic key pair to prove that a site appearing in a browser window is, in fact, the authentic one operated by the true owner of the domain, not a scammer running a lookalike site.</p>
+<p>This complex system works something like this:</p>
+<p>An owner of a domain name such as example.com creates a public-private key pair, the basic building blocks of asymmetric cryptography. The domain owner then creates a certificate request that includes its public key and the identifying information to be embedded into the certificate. The owner then digitally signs the request with the private key to prove to the CA that the requester does, in fact, have control of the private key. With that, the request is sent to the CA.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The CA is an entity that receives certificate requests, verifies that the requester has control of the domain, and issues the final certificate&#8212;all under a strict regimen spelled out in <a href="https://cabforum.org/working-groups/server/baseline-requirements/">baseline requirements</a> dictated by a body known as the CA/Browser Forum. In return, browser and operating system vendors add the CA&#8217;s cryptographic credentials to their root certificate store.</p>
+<p>Once the CA receives the request, it must take several steps to validate it. First, the CA verifies the digital signature on the request, confirming that the private key that signed the request corresponds to the public key included in the request body. Next, the CA requires proof that the applicant is the rightful owner of the domain or IP address requested to be bound to the public key inside the certificate. Different CAs handle this validation process differently. Many require the applicant to post a token in a DNS record for the domain name or accessible from the IP address covered in the certificate request.</p>
+<p>Once the CA validates the request, it issues the certificate. It contains the public key, the applicant&#8217;s identifying information, and is signed with the CA's private key. Then the CA returns the completed certificate to the applicant. The applicant is now the certificate holder.</p>
+<p>The certificate holder installs the credential on its web server, along with the public and private key pair. From then on, when someone visits the site, the server uses its key pair and its digital certificate with the TLS protocol to authenticate itself and to establish a secure communication channel with the other connecting party. As part of the protocol, the certificate is sent to the other connecting party as evidence that the server&#8217;s public key actually belongs to the web server/website operator.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Once the connecting browser receives the certificate, it checks to see if it was issued (signed) by a CA it trusts (technically, if the CA&#8217;s key or a parent of the CA is stored in the browser&#8217;s root store). Confusing matters a bit, often there may be one or more intermediate CAs whose keys aren&#8217;t in the root store but rather are part of a chain of certificates that are cryptographically linked to a &#8220;root&#8221; CA that is explicitly trusted by the browser.</p>
+ 
+<h2>No, it&#8217;s not victim-blaming</h2>
+<p><b>How big a deal is this incident really?</b></p>
+<p>There are a couple of ways to answer that. If Fina is correct and the private keys never left its control and were subsequently securely deleted, there is no danger. And ultimately, all of this was a false alarm.</p>
+<p>That said, Cloudflare said it&#8217;s taking the incident &#8220;extremely seriously.&#8221; The company also said it &#8220;must assume that a corresponding private key exists [and] is not under Cloudflare's control,&#8221; because it has no way of verifying Fina&#8217;s claims.</p>
+<p>The reason for the caution is the pivotal role TLS plays in securing the web and the fragility of the public key infrastructure that the entire system relies on. This root of trust can come crashing down with the failure of a single CA. Once a valid certificate is issued to an unauthorized party, it&#8217;s trivial for that party to cryptographically impersonate the site the mis-issued certificate lists.</p>
+<p><b>Wednesday&#8217;s article said Cloudflare was partially responsible for the incident because it didn&#8217;t spot the mis-issued certificates until they came to light in a discussion group four months after the fact. Isn&#8217;t that victim-blaming?</b></p>
+<p>No. Cloudflare isn&#8217;t the victim here. The millions of Windows users who rely on 1.1.1.1 were the victims, because it was their queries that were at risk of being intercepted. Cloudflare, just like custodians of all web properties, has an affirmative duty to secure the service. Part of that obligation is checking <a href="https://certificate.transparency.dev/">Certificate&#160;Transparency</a> logs, which index the issuance of every TLS certificate issued by a browser-trusted CA. It's a trivial programming task to automate historical certificate transparency checks at scale.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Cloudflare on Thursday acknowledged this failure, writing:</p>
+<blockquote><p>We failed three times. The first time because 1.1.1.1 is an IP certificate and our system failed to alert on these. The second time because even if we were to receive certificate issuance alerts, as any of our customers can, we did not implement sufficient filtering. With the sheer number of names and issuances we manage it has not been possible for us to keep up with manual reviews. Finally, because of this noisy monitoring, we did not enable alerting for all of our domains. We are addressing all three shortcomings.</p></blockquote>
+<p>Ultimately, the fault lies with Fina; however, given the fragility of the TLS PKI, it&#8217;s incumbent on all stakeholders to ensure system requirements are being met.</p>
+<p><b>And what about Microsoft? Is it at fault, too?</b></p>
+<p>There's some controversy on this point, as I quickly learned on Wednesday from social media and Ars reader comments. Critics of Microsoft's handling of this case say that, among other things, its responsibility for ensuring the security of its Root Certificate Program includes checking the transparency logs. Had it done so, critics said, the company would have found that Fina had never issued certificates for 1.1.1.1 and looked further into the matter.</p>
+<p>Additionally, at least some of the certificates had non-compliant encoding, and listed domain names with non-existent top-level&#160;domains. <a href="https://crt.sh/?id=14793030836&amp;opt=pkimetal">This certificate</a>, for example, lists ssltest5 as its common name.</p>
+<p>Instead, like the rest of the world, Microsoft learned of the certificates from an online discussion forum.</p>
+<p>Some TLS experts I spoke to said it's not within the scope of a root program to do continuous monitoring for these types of problems.</p>
+<p>In any event, Microsoft said it's in the process of making all certificates part of a disallow list.</p>
+<p>Microsoft has also faced long-standing criticism that it's too lenient in the requirements it imposes on CAs included in its Root Certificate Program. In fact, Microsoft and one other entity, the <a href="https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls">EU Trust Service</a>, are the only ones that, by default, trust Fina. Google, Apple, and Mozilla don't.</p>
+<p>"The story here is less the 1.1.1.1 certificate and more why Microsoft trusts this carelessly operated CA," Filippo Valsorda, a Web/PKI expert, said in an interview.</p>
+<p>I asked Microsoft about all of this and have yet to receive a response.</p>
+
+
+          
+                  
+
+                  
+          </div>
