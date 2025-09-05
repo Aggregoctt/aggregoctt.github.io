@@ -1,0 +1,79 @@
+---
+author: Lorenzo Franceschi-Bicchierai
+canonical_url: https://techcrunch.com/2025/09/05/x-is-now-offering-me-end-to-end-encrypted-chat-you-probably-shouldnt-trust-it-yet/
+date: '2025-09-05T16:04:03'
+excerpt: X's new encrypted messaging feature, XChat, has some red flags.
+image: assets/media/4W3aqxT2kUGAtWfHqjpl3A-3YFbio9RjS3lqIBzqmBHBQ.jpeg
+source: techcrunch
+tags:
+- Apps
+- Security
+- Social
+- cryptography
+- cybersecurity
+- encryption
+- end-to-end encryption
+- privacy
+- Twitter
+- X
+- X Chat
+title: X is now offering me end-to-end encrypted chat. You probably shouldn’t trust
+  it yet.
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">X, formerly Twitter, has <a href="https://techcrunch.com/2025/09/04/xs-encrypted-dm-feature-xchat-is-rolling-out-more-broadly/">started rolling out</a> its new encrypted messaging feature called &#8220;Chat&#8221; or &#8220;XChat.&#8221;&#160;</p>
+
+<p class="wp-block-paragraph">The company claims the new communication feature is <a href="https://techcrunch.com/2025/04/25/techcrunch-reference-guide-to-security-terminology/#end-to-end-encryption">end-to-end encrypted</a>, meaning messages exchanged on it can only be read by the sender and their receiver, and &#8212; in theory &#8212; no one else, including X, can access them.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Cryptography experts, however, are warning that X&#8217;s current implementation of encryption in XChat should not be trusted. They&#8217;re saying it&#8217;s far worse than Signal, a technology widely considered the state of the art when it comes to end-to-end encrypted chat.&#160;</p>
+
+ 
+
+<p class="wp-block-paragraph">In XChat, once a user clicks on &#8220;Set up now,&#8221; X prompts them to create a 4-digit PIN, which will be used to encrypt the user&#8217;s private key. This key is then stored on X&#8217;s servers. The private key is essentially a secret cryptographic key assigned to each user, serving the purpose of decrypting messages. As in many end-to-end encrypted services, a private key is paired with a public key, which is what a sender uses to encrypt messages to the receiver.&#160;</p>
+
+<p class="wp-block-paragraph">This is the first red flag for XChat. Signal stores a user&#8217;s private key on their device, not on its servers. How and where exactly the private keys are stored on the X servers is also important.&#160;</p>
+
+<p class="wp-block-paragraph">Matthew Garrett, a security researcher <a rel="nofollow" href="https://mjg59.dreamwidth.org/71646.html">who published a blog post</a> about XChat in June, when X announced the new service and slowly <a href="https://techcrunch.com/2025/05/30/xs-new-dm-feature-xchat-is-rolling-out-in-beta/">started rolling it out</a>, wrote that if the company doesn&#8217;t use what are called Hardware Security Modules, or HSMs, to store the keys, then the company could tamper with the keys and potentially decrypt messages. HSMs are servers made specifically to make it harder for the company that owns them to access the data inside.&#160;</p>
+
+<p class="wp-block-paragraph">An X engineer <a rel="nofollow" href="https://x.com/cambridgemike/status/1932260008278012265?s=46">said</a> in a post in June that the company does use HSMs, but neither he nor the company has provided any proof so far. &#8220;Until that&#8217;s done, this is &#8216;trust us, bro&#8217; territory,&#8221; Garrett told TechCrunch.&#160;</p>
+
+<p class="wp-block-paragraph">The second red flag, <a rel="nofollow" href="https://help.x.com/en/using-x/encrypted-direct-messages#:~:text=Currently%2C%20we%20do,release%20that%20will%3A">which X itself admits</a> in the X Chat support page, is that the current implementation of the service could allow &#8220;a malicious insider or X itself&#8221; to compromise encrypted conversations. </p>
+
+<p class="wp-block-paragraph">This is what is technically called an &#8220;<a href="https://techcrunch.com/2025/04/25/techcrunch-reference-guide-to-security-terminology/#adversary-in-the-middle">adversary-in-the-middle</a>,&#8221; or AITM attack. That makes the whole point of an end-to-end encrypted messaging platform moot.&#160;</p>
+
+<p class="wp-block-paragraph">Garrett said that X &#8220;gives you the public key whenever you communicate with them, so even if they&#8217;ve implemented this properly, you can&#8217;t prove they haven&#8217;t made up a new key,&#8221; and performed an AITM attack.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Another red flag is that none of XChat&#8217;s implementation, at this point, is open source, unlike Signal&#8217;s, which is <a rel="nofollow" href="https://signal.org/docs/">openly documented in detail</a>. X <a rel="nofollow" href="https://help.x.com/en/using-x/encrypted-direct-messages#:~:text=open%20source%20our%20implementation%20and%20describe%20the%20encryption%20technology%20in%20depth%20through%20a%20technical%20whitepaper%20later%20this%20year.">says</a> it aims to &#8220;open source our implementation and describe the encryption technology in depth through a technical whitepaper later this year.&#8221;</p>
+
+<p class="wp-block-paragraph">Finally, X doesn&#8217;t offer &#8220;<a rel="nofollow" href="https://threema.com/en/faq/perfect-forward-secrecy">Perfect Forward Secrecy</a>,&#8221; a cryptographic mechanism by which every new message is encrypted with a different key, which means that if an attacker compromises the user&#8217;s private key, they can only decrypt the last message, and not all the preceding ones. The company itself also <a rel="nofollow" href="https://help.x.com/en/using-x/encrypted-direct-messages#:~:text=the%20near%20future.-,Forward%20secrecy%C2%A0,-If%20the%20private">admits</a> this shortcoming.&#160;</p>
+
+<p class="wp-block-paragraph">As a result, Garrett doesn&#8217;t think XChat is at a point where users should trust it just yet.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;If everyone involved is fully trustworthy, the X implementation is technically worse than Signal,&#8221; Garrett told TechCrunch. &#8220;And even if they were fully trustworthy to start with, they could stop being trustworthy and compromise trust in multiple ways [&#8230;] If they were either untrustworthy or incompetent during initial implementation, it&#8217;s impossible to demonstrate that there&#8217;s any security at all.&#8221;</p>
+
+<p class="wp-block-paragraph">Garrett isn&#8217;t the only expert raising concerns. Matthew Green, a cryptography expert who teaches at Johns Hopkins University, agrees.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;For the moment, until it gets a full audit by someone reputable, I would not trust this any more than I trust current unencrypted DMs,&#8221; Green told TechCrunch.&#160; (XChat is a separate feature that lives, at least for now, along with the legacy Direct Messages.)</p>
+
+ 
+
+<p class="wp-block-paragraph">X did not respond to several questions sent to its press email address.</p>
+
+ 
+
+
+			
+
+			</div>
