@@ -1,0 +1,37 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143294/kde-releases-first-alpha-of-kde-linux/
+date: '2025-09-06T11:42:51'
+excerpt: Akademy 2025, KDE&#8217;s yearly developer and community event, this year
+  held in Berlin, Germany. Amid all the various talks and informal meetings, the KDE
+  project also officially unveiled the first alpha release of KDE Linux, a project
+  they&#8217;ve been working on for a while now. KDE Linux will serve as a &#8220;reference
+  implementation&#8221; of KDE Plasma and official KDE applications, for use by developers
+  and regular users alike. KDE Linux will have a quick update cycle, to ensure its
+  users always have the latest releases of KDE Plasma and various other KDE applications
+  and related technologies. It may, however, not be as optimised as other KDE distributions,
+  and the intent of KDE Linux is not to compete with or replace other distributions.
+  The goal is to show other distributions how KDE itself intends for its software
+  to be presented. So, what is KDE Linux based on? KDE Linux is an “immutable base
+  OS” Linux distro with a core created using Arch Linux packages — but it should not
+  be considered part of the Arch family of distributions. Some very fundamental Arch
+  technologies (like the pacman package manager!) have been removed. KDE software
+  is then built on top of this core using KDE&#8217;s homegrown development tools
+  and Flatpak. KDE Linux leans on Systemd for a great deal of functionality. Updates
+  are atomic and image-based, with the last 5 OS images cached on disk for safety.
+  Only the Wayland session is supported. Apps primarily come from Flatpak and Snap.
+  ↫ KDE Linux&#8217; website The overview of the KDE Linux&#8217; architecture provides
+  some more details. I like that it eschews GRUB in favour of systemd-boot (GRUB should
+  be retired in this, the year of our lord 2025) and relies on systemd-sysupdate for
+  operating system updates. Of note is that the mention of Snap is merely for convenience&#8217;s
+  sake as an option; Snap is not a requirement, nor are any Snap packages installed
+  by default. Since this is the first alpha release, expect bugs and issues, and don&#8217;t
+  use it on any production machines until they&#8217;re a few more releases in.
+image: null
+source: osnews
+tags:
+- KDE
+title: KDE releases first alpha of KDE Linux
+---
+<div><p><a href="https://akademy.kde.org/2025/">Akademy 2025</a>, KDE&#8217;s yearly developer and community event, this year held in Berlin, Germany. Amid all the various talks and informal meetings, the KDE project also officially unveiled <a href="https://kde.org/linux/">the first alpha release of KDE Linux</a>, a project they&#8217;ve been working on <a href="https://www.osnews.com/story/141031/gnome-and-kde-working-on-end-user-focused-official-linux-distributions-not-entirely-without-risks/">for a while now</a>. KDE Linux will serve as a &#8220;reference implementation&#8221; of KDE Plasma and official KDE applications, for use by developers and regular users alike.</p><p>KDE Linux will have a quick update cycle, to ensure its users always have the latest releases of KDE Plasma and various other KDE applications and related technologies. It may, however, not be as optimised as other KDE distributions, and the intent of KDE Linux is not to compete with or replace other distributions. The goal is to show other distributions how KDE itself intends for its software to be presented.</p><p>So, what is KDE Linux based on?</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>KDE Linux is an &#8220;immutable base OS&#8221; Linux distro with a core created using Arch Linux packages &#8212; but it should not be considered part of the Arch family of distributions. Some very fundamental Arch technologies (like the <code>pacman</code> package manager!) have been removed. KDE software is then built on top of this core using KDE&#8217;s homegrown development tools and Flatpak.</p><p>KDE Linux leans on Systemd for a great deal of functionality. Updates are atomic and image-based, with the last 5 OS images cached on disk for safety. Only the Wayland session is supported. Apps primarily come from Flatpak and Snap.</p>
+<a href="https://kde.org/linux/">&#8619; KDE Linux&#8217; website</a></blockquote><p>The <a href="https://community.kde.org/KDE_Linux#Architecture">overview of the KDE Linux&#8217; architecture</a> provides some more details. I like that it eschews GRUB in favour of <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd-boot.html">systemd-boot</a> (GRUB should be retired in this, the year of our lord 2025) and relies on <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd-sysupdate.html">systemd-sysupdate</a> for operating system updates. Of note is that the mention of Snap is merely for convenience&#8217;s sake as an option; Snap is not a requirement, nor are any Snap packages installed by default.</p><p>Since this is the first alpha release, expect bugs and issues, and don&#8217;t use it on any production machines until they&#8217;re a few more releases in.</p></div>
