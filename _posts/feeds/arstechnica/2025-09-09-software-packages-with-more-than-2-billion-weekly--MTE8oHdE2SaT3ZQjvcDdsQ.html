@@ -1,0 +1,49 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/09/software-packages-with-more-than-2-billion-weekly-downloads-hit-in-supply-chain-attack/
+date: '2025-09-09T00:37:04'
+excerpt: Incident hitting npm users is likely the biggest supply-chain attack ever.
+image: assets/media/MTE8oHdE2SaT3ZQjvcDdsQ-Cut0DNw9Pu5N4AE4rdRA1w.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- npm
+- open source
+- supply chain
+- supply chain attacks
+title: Software packages with more than 2 billion weekly downloads hit in supply-chain
+  attack
+---
+<div>
+                      
+                      
+          <p>Hackers planted malicious code in open source software packages with more than 2 billion weekly updates in what is likely to be the world&#8217;s biggest supply-chain attack ever.</p>
+<p>The attack, which compromised nearly two dozen packages hosted on the npm repository, came to public notice on Monday in <a href="https://infosec.exchange/@derekheld/115169311485030806">social</a> <a href="https://infosec.exchange/@GossiTheDog@cyberplace.social/115169391665497997">media</a> posts. Around the same time, Josh Junon, a maintainer or co-maintainer of the affected packages, <a href="https://bsky.app/profile/bad-at-computer.bsky.social/post/3lydioq5swk2y">said</a> he had been &#8220;pwned&#8221; after falling for an email that claimed his account on the platform would be closed unless he logged into a site and updated his two-factor authentication credentials.</p>
+<h2>Defeating 2FA the easy way</h2>
+<p>&#8220;Sorry everyone, I should have paid more attention,&#8221; Junon, who uses the moniker Qix, wrote. &#8220;Not like me; have had a stressful week. Will work to get this cleaned up.&#8221;</p>
+<p>The unknown attackers behind the account compromise wasted no time capitalizing on it. Within an hour&#8217;s time, dozens of open source packages Junon oversees had received updates that added malicious code for transferring cryptocurrency payments to attacker-controlled wallets. With more than 280 lines of code, the addition worked by monitoring infected systems for cryptocurrency transactions and chaining the addresses of wallets receiving payments to those controlled by the attacker.</p>
+<p>The packages that were compromised, which at last count numbered 20, included some of the most foundational code driving the JavaScript ecosystem. They are used outright and also have thousands of dependents, meaning other npm packages that don&#8217;t work unless they are also installed. (npm is the official code repository for JavaScript files.)</p>
+<p>&#8220;The overlap with such high-profile projects significantly increases the blast radius of this incident,&#8221; researchers from security firm Socket <a href="https://socket.dev/blog/npm-author-qix-compromised-in-major-supply-chain-attack">said</a>. &#8220;By compromising Qix, the attackers gained the ability to push malicious versions of packages that are indirectly depended on by countless applications, libraries, and frameworks.&#8221;</p>
+<p>The researchers added: &#8220;Given the scope and the selection of packages impacted, this appears to be a targeted attack designed to maximize reach across the ecosystem.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The email message Junon fell for came from an email address at support.npmjs.help, a domain created three days ago to mimic the official npmjs.com used by npm. It said Junon&#8217;s account would be closed unless he updated information related to his 2FA&#8212;which requires users to present a physical security key or supply a one-time passcode provided by an authenticator app in addition to a password when logging in.</p>
+<p>According to an <a href="https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised">analysis</a> from security firm Akido, the malicious code injects itself into the web browser of infected systems and begins monitoring for transfers involving ethereum, bitcoin, solana, tron, litecoin, and bitcoin cash currencies. When such transactions are detected, the infected packages would then replace the destination wallets with attacker-controlled addresses. The malware worked by hooking JavaScript functions, including fetch, XMLHttpRequest, and wallet APIs. Hooking gives code control over functions so they can be stopped or altered at certain execution points.</p>
+<p>Word of the attack on the npm repositories came as two other supply-chain attacks took aim at other repositories that are influential in the open-source software ecosystem. One, <a href="https://blog.gitguardian.com/ghostaction-campaign-3-325-secrets-stolen/">disclosed Friday</a> by security firm GitGuardians, compromised 3,325 authentication secrets for accounts on PyPI, npm, DockerHUB, GitHub, Cloudflare, and Amazon Web Servcies. In all, 327 GitHub users across 817 repositories were affected.</p>
+<p>In the attack, compromised maintainer accounts pushed package updates that added malicious GitHub Actions workflows that extracted tokens and other sorts of authentication secrets. As of Friday, GitGuardian said, nine npm and 15 PyPI packages were at risk of compromise.</p>
+<p>A separate supply-chain attack also hit users of GitHub last month, security firm Wiz <a href="https://www.wiz.io/blog/s1ngularitys-aftermath">reported</a> last week. It targeted Nx, an open source build system and repository management tool used in enterprise settings. The initial compromise started after obtaining a valid authentication token to an npm account.</p>
+<p>The malicious code extracted GitHub and npm tokens stored on compromised systems. It also abuses AI command-line interfaces to identify additional files that may be useful for accessing repositories of interest. A second phase of the attack used the compromised GitHub tokens to expose private repositories by making them public on the victims&#8217; GitHub profiles. The pilfered credentials were uploaded to GitHub repositories that contained the name s1ngularity-repository, forming the basis for the name s1ngularity that Wiz has given to the incident.</p>
+
+
+          
+                  
+
+                  
+          </div>
