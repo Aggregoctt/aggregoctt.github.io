@@ -1,0 +1,64 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2025/09/anthropics-new-claude-feature-can-leak-data-users-told-to-monitor-chats-closely/
+date: '2025-09-09T20:55:34'
+excerpt: Expert calls security advice "unfairly outsourcing the problem to Anthropic's
+  users."
+image: assets/media/TfZa-w8psNW0MhfaYMgaMQ-QkSK2uTd_tEpKUdfJy_AbA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI assistants
+- AI development tools
+- AI prompt injections
+- AI safety
+- AI security
+- Anthropic
+- Claude
+- corporate security
+- cybersecurity
+- data security
+- enterprise software
+- machine learning
+- prompt injection
+- prompt injections
+- sandbox security
+title: Claude’s new AI file creation feature ships with deep security risks built
+  in
+---
+<div>
+                      
+                      
+          <p>On Tuesday, Anthropic <a href="https://www.anthropic.com/news/create-files">launched</a> a new file creation feature for its Claude AI assistant that enables users to generate Excel spreadsheets, PowerPoint presentations, and other documents directly within conversations on the web interface and in the Claude desktop app. While the feature may be handy for Claude users, the company's support documentation also <a href="https://support.anthropic.com/en/articles/12111783-create-and-edit-files-with-claude">warns</a> that it "may put your data at risk" and details how the AI assistant can be manipulated to transmit user data to external servers.</p>
+<p>The feature, awkwardly named "Upgraded file creation and analysis," is basically Anthropic's version of ChatGPT's <a href="https://arstechnica.com/information-technology/2023/03/chatgpt-gets-eyes-and-ears-with-plugins-that-can-interface-ai-with-the-world/">Code Interpreter</a> and an upgraded version of Anthropic's <a href="https://www.anthropic.com/news/analysis-tool">"analysis" tool</a>. It's currently available as a preview for Max, Team, and Enterprise plan users, with Pro users scheduled to receive access "in the coming weeks," according to the announcement.</p>
+<p>The security issue comes from the fact that the new feature gives Claude access to a sandbox computing environment, which enables it to download packages and run code to create files. "This feature gives Claude Internet access to create and analyze files, which may put your data at risk," Anthropic writes in its blog announcement. "Monitor chats closely when using this feature."</p>
+<p>According to Anthropic's documentation, "a bad actor" manipulating this feature could potentially "inconspicuously add instructions via external files or websites" that manipulate Claude into "reading sensitive data from a claude.ai connected knowledge source" and "using the sandbox environment to make an external network request to leak the data."</p>
+<p>This describes a <a href="https://arstechnica.com/information-technology/2025/04/researchers-claim-breakthrough-in-fight-against-ais-frustrating-security-hole/">prompt injection attack</a>, where hidden instructions embedded in seemingly innocent content can manipulate the AI model's behavior&#8212;a vulnerability that security researchers <a href="https://arstechnica.com/information-technology/2022/09/twitter-pranksters-derail-gpt-3-bot-with-newly-discovered-prompt-injection-hack/">first documented</a> in 2022. These attacks represent a pernicious, unsolved security flaw of AI language models, since both data and instructions in how to process it are fed through as part of the "context window" to the model in the same format, making it difficult for the AI to distinguish between legitimate instructions and malicious commands hidden in user-provided content.</p>
+ 
+<p>The company states in its security documentation that it discovered the vulnerabilities of the new feature through "red-teaming and security testing" before release. Anthropic's recommended mitigation for users is to "monitor Claude while using the feature and stop it if you see it using or accessing data unexpectedly," although this places the burden of security entirely on the user in what is marketed as an automated, hands-off system.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Independent AI researcher Simon Willison, reviewing the feature today on his blog, <a href="https://simonwillison.net/2025/Sep/9/claude-code-interpreter/">noted</a> that Anthropic's advice to "monitor Claude while using the feature" amounts to "unfairly outsourcing the problem to Anthropic's users."</p>
+<h2>Anthropic&#8217;s mitigations</h2>
+<p>Anthropic is not completely ignoring the problem, however. The company has implemented several security measures for the file creation feature. For Pro and Max users, Anthropic disabled public sharing of conversations that use the file creation feature. For Enterprise users, the company implemented sandbox isolation so that environments are never shared between users. The company also limited task duration and container runtime "to avoid loops of malicious activity."</p>
+<p>For Team and Enterprise administrators, Anthropic also provides an allowlist of domains Claude can access, including api.anthropic.com, github.com, registry.npmjs.org, and pypi.org. The documentation states that "Claude can only be tricked into leaking data it has access to in a conversation via an individual user's prompt, project or activated connections."</p>
+<p>Anthropic's documentation states the company has "a continuous process for ongoing security testing and red-teaming of this feature." The company encourages organizations to "evaluate these protections against their specific security requirements when deciding whether to enable this feature."</p>
+<h2>Prompt injections galore</h2>
+<p>Even with Anthropic's security measures, Willison says he'll be cautious. "I plan to be cautious using this feature with any data that I very much don&#8217;t want to be leaked to a third party, if there&#8217;s even the slightest chance that a malicious instruction might sneak its way in," he wrote on his blog.</p>
+<p>We <a href="https://arstechnica.com/information-technology/2025/08/new-ai-browser-agents-create-risks-if-sites-hijack-them-with-hidden-instructions/">covered</a> a similar potential prompt injection vulnerability with Anthropic's Claude for Chrome, which launched as a research preview last month. For enterprise customers considering Claude for sensitive business documents, Anthropic's decision to ship with documented vulnerabilities suggests competitive pressure may be overriding security considerations in the AI arms race.</p>
+<p>That kind of "ship first, secure it later" philosophy has caused frustrations among some AI experts like Willison, who has extensively documented prompt injection vulnerabilities (and <a href="https://arstechnica.com/information-technology/2022/09/twitter-pranksters-derail-gpt-3-bot-with-newly-discovered-prompt-injection-hack/">coined</a> the term). He <a href="https://simonwillison.net/2025/Aug/15/the-summer-of-johann/">recently described</a> the current state of AI security as "horrifying" on his blog, noting that these prompt injection vulnerabilities remain widespread "almost three years after we first started talking about them."</p>
+<p>In a prescient warning from September 2022, Willison wrote that "there may be systems that should not be built at all until we have a robust solution." His recent assessment in the present? "It looks like we built them anyway!"</p>
+
+
+          
+                  
+
+                  
+          </div>
