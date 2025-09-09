@@ -1,0 +1,46 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/09/as-hackers-exploit-one-high-severity-sap-flaw-company-warns-of-3-more/
+date: '2025-09-09T19:55:22'
+excerpt: Users of SAP's S/4HANA and NetWeaver products are at risk and should patch
+  soon.
+image: assets/media/jW2aDzkzBFh_k8If7BQecw-shE4cnJyaeZKOEzR25Cq5Q.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- patches
+- SAP
+- vulnerabilities
+title: SAP warns of high-severity vulnerabilities in multiple products
+---
+<div>
+                      
+                      
+          <p>As hackers exploit a high-severity vulnerability in SAP&#8217;s flagship Enterprise Resource Planning software product, the software maker is warning users of more than two dozen newly detected vulnerabilities in its other widely used products, including a security flaw with a maximum-severity rating of 10.</p>
+<p>SAP on Tuesday <a href="https://support.sap.com/en/my-support/knowledge-base/security-notes-news/september-2025.html">said</a> the highest-severity vulnerability&#8212;with a rating of 10 out of a possible 10&#8212;was found in NetWeaver, a platform that serves as the technical foundation for many of the company&#8217;s other enterprise applications. The vulnerability, tracked as CVE-2025-42944, makes it possible for unauthenticated attackers to execute commands by submitting malicious payloads to an open port.</p>
+<p>The maximum-severity threat stems from a deserialization vulnerability. Serialization is a coding process that translates data structures and object states into formats that can be stored or transmitted and then reconstructed later. Deserialization is the process in reverse.</p>
+<p>In Tuesday&#8217;s disclosure, SAP revealed three other high-severity NetWeaver vulnerabilities, with ratings of 9.9, 9.6, and 9.1.</p>
+<p>Word of the newly documented vulnerabilities comes five days after security firm SecurityBridge <a href="https://securitybridge.com/blog/critical-sap-s-4hana-code-injection-vulnerability-cve-2025-42957/">reported</a> that a separate high-severity vulnerability SAP patched last month was under active exploitation in the wild. That vulnerability, tracked as CVE-2025-42957 and carrying a severity rating of 9.9, resides in the SAP S/4HANA&#160;an ERP (Enterprise Resource Planning) software suite developed for managing large organizations&#8217; complex business processes, including those for finance, accounting, and HR.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>SecurityBridge warned that CVE-2025-42957 allowed hackers with minimal system rights to mount &#8220;a complete system compromise with minimal effort required, where successful exploitation can easily lead to fraud, data theft, espionage, or the installation of ransomware.&#8221;</p>
+<p>The security firm went on to write:</p>
+<blockquote><p>The attacker needs only low-level credentials on the SAP system (any valid user account with permissions to call the vulnerable RFC module and the specific S_DMIS authorization with activity 02), and no user interaction is required.</p>
+<p>The attack complexity is low and can be performed over the network, which is why the CVSS score is so high (9.9). In summary, a malicious insider or a threat actor who has gained basic user access (through phishing, for example) could leverage this flaw to escalate into full control of the SAP environment.</p></blockquote>
+<p>SAP, for its part, <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/protect-your-sap-s-4hana-from-critical-code-injection-vulnerability-cve/ba-p/14208866">warned</a>: &#8220;This flaw operates as a backdoor, allowing unauthorized access to SAP systems and jeopardizing confidentiality, integrity, and availability. Without immediate mitigation, your SAP S/4HANA system could be severely compromised.&#8221; The post makes no mention of active exploitation.</p>
+<p>Other vulnerabilities SAP reported Tuesday affected a range of products, including SAP Business One, SAP Landscape Transformation Replication Server, SAP Commerce Cloud, SAP Datahub, SAP Business Planning and Consolidation, SAP HCM, SAP BusinessObjects Business Intelligence Platform, SAP Supplier Relationship Management, and Fiori. Severity ratings of those vulnerabilities range from 3.1 to 8.8.</p>
+<p>All vulnerabilities mentioned in this post, particularly those with high severity ratings, should be patched as soon as possible. SAP has more information on its <a href="https://support.sap.com/en/my-support/knowledge-base/security-notes-news.html?anchorId=section_370125364">security page</a>.</p>
+
+
+          
+                  
+
+                  
+          </div>
