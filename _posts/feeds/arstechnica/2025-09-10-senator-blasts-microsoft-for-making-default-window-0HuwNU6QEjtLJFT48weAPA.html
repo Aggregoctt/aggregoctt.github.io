@@ -1,0 +1,64 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/09/senator-blasts-microsoft-for-making-default-windows-vulnerable-to-kerberoasting/
+date: '2025-09-10T19:38:13'
+excerpt: Wyden says default use of RC4 cipher led to last year's breach of health
+  giant Ascension.
+image: assets/media/0HuwNU6QEjtLJFT48weAPA-PMRpX2fiv-_PuyT3A1iEUg.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- Active Directory
+- microsoft
+- ransomware
+- rc4
+title: Senator blasts Microsoft for making default Windows vulnerable to “Kerberoasting”
+---
+<div>
+                      
+                      
+           
+<p>A prominent US Senator has called on the Federal Trade Commission to investigate Microsoft for &#8220;gross cybersecurity negligence,&#8221; citing the company&#8217;s continued use of an obsolete and vulnerable form of encryption that Windows uses by default.</p>
+<p>In a <a href="https://www.wyden.senate.gov/imo/media/doc/wyden_letter_to_ftc_on_microsoft_kerberoasting_ransomwarepdf.pdf">letter</a> to FTC Chairman Andrew Ferguson, Sen. Ron Wyden (D&#8211;Ore.) said an investigation his office conducted into the 2024 ransomware breach of the <a href="https://arstechnica.com/information-technology/2024/12/health-care-giant-ascension-says-5-6-million-patients-affected-in-cyberattack/">health care giant Ascension</a> found that default use of the RC4 encryption cipher was a direct cause. The breach led to the theft of medical records of 5.6 million patients.</p>
+<p>It's the <a href="https://arstechnica.com/security/2023/07/us-senator-blasts-microsoft-for-negligent-cybersecurity-practices/">second time</a> in as many years that Wyden has used the word &#8220;negligence&#8221; to describe Microsoft's security practices.</p>
+<h2>&#8220;Dangerous software engineering decisions&#8221;</h2>
+<p>&#8220;Because of dangerous software engineering decisions by Microsoft, which the company has largely hidden from its corporate and government customers, a single individual at a hospital or other organization clicking on the wrong link can quickly result in an organization-wide ransomware infection,&#8221; Wyden wrote in the letter, which was sent Wednesday. &#8220;Microsoft has utterly failed to stop or even slow down the scourge of ransomware enabled by its dangerous software.&#8221;</p>
+<p>RC4 is short for Rivest Cipher 4, a nod to mathematician and cryptographer Ron Rivest of RSA Security, who developed the stream cipher in 1987. It was a trade-secret-protected proprietary cipher until 1994, when an anonymous party posted a technical description of it to the <a href="https://web.archive.org/web/20010722163902/http://cypherpunks.venona.com/date/1994/09/msg00304.html">Cypherpunks mail list</a>. Within days the algorithm was broken, meaning its security could be compromised using cryptographic attacks. Despite the known susceptibility to such attacks, RC4 remained in wide use in encryption protocols including SSL and its successor TLS until about a decade ago.</p>
+<p>Microsoft, however, continues to support RC4 as the default means for securing Active Directory, a Windows component that administrators use to configure and provision user accounts inside large organizations. While Windows offers more robust encryption options, many users don&#8217;t enable them, causing Active Directory to fall back to the Kerberos authentication method using the vulnerable RC4 cipher.</p>
+<p>In a <a href="https://blog.cryptographyengineering.com/2025/09/10/kerberoasting/">blog post</a> published Wednesday, cryptography expert Matt Green of Johns Hopkins University said continued support of Kerberos and RC4&#8212;combined with a common misconfiguration that gives non-admin users access to privileged Active Directory functions&#8212;opens the networks to &#8220;kerberoasting,&#8221; a form of attack that uses offline password-cracking attacks against Kerberos-protected accounts that haven&#8217;t been configured to use stronger forms of encryption. Kerberoasting has been a known attack technique since 2014.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>As Microsoft itself <a href="https://www.microsoft.com/en-us/security/blog/2024/10/11/microsofts-guidance-to-help-mitigate-kerberoasting/">noted last year</a>, even when Active Directory accounts use strong passwords that would normally be infeasible to crack, choosing RC4 as the underlying cipher makes them &#8220;more susceptible to the cyberattack because [the cipher] uses no salt or iterated hash when converting a password to an encryption key, allowing the cyberthreat actor to guess more passwords quickly.&#8221; Microsoft went on to say that it would disable RC4 &#8220;by default&#8221; in non-specified future Windows updates.</p>
+<p>Wyden said his office&#8217;s investigation into the Ascension breach found that the ransomware attackers&#8217; initial entry into the health giant&#8217;s network was the infection of a contractor&#8217;s laptop after using Microsoft Edge to search Microsoft&#8217;s Bing site. The attackers were then able to expand their hold by attacking Ascension&#8217;s Active Directory and abusing its privileged access to push malware to thousands of other machines inside the network. The means for doing so, Wyden said: Kerberoasting.</p>
+ 
+<h2>&#8220;Microsoft has become like an arsonist&#8221;</h2>
+<p>&#8220;Microsoft&#8217;s continued support for the ancient, insecure RC4 encryption technology needlessly exposes its customers to ransomware and other cyber threats by enabling hackers that have gained access to any computer on a corporate network to crack the passwords of privileged accounts used by administrators,&#8221; Wyden wrote. &#8220;According to Microsoft, this threat can be mitigated by setting long passwords that are at least 14 characters long, but Microsoft&#8217;s software does not require such a password length for privileged accounts.&#8221;</p>
+<p>Additionally, Green noted, the continuing speed of GPUs means that even when passwords appear to be strong, they can still fall to off-line cracking attacks. That&#8217;s because the security cryptographic hashes created by default RC4/Kerberos use no cryptographic salt and a single iteration of the MD4 algorithm. The combination means an offline cracking attack can make billions of guesses per second, a 1,000-fold advantage over the same password hashed by non-Kerberos authentication methods.</p>
+<p>Referring to the Active Directory default, Green wrote:</p>
+<blockquote><p>It&#8217;s actually a terrible design that should have been done away with decades ago. We should not build systems where any random attacker who compromises a single employee laptop can ask for a message encrypted under a critical password! This basically invites offline cracking attacks, which do not need even to be executed on the compromised laptop&#8212;they can be exported out of the network to another location and performed using GPUs and other hardware.</p></blockquote>
+<p>More than 11 months after announcing its plans to <a href="https://www.microsoft.com/en-us/security/blog/2024/10/11/microsofts-guidance-to-help-mitigate-kerberoasting/">deprecate RC4/Kerberos</a>, the company has provided no timeline for doing so. What&#8217;s more, Wyden said, the announcement was made in a &#8220;highly technical blog post on an obscure area of the company&#8217;s website on a Friday afternoon.&#8221; Wyden also criticized Microsoft for declining to &#8220;explicitly warn its customers that they are vulnerable to the Kerberoasting hacking technique unless they change the default settings chosen by Microsoft.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>Wyden went on to criticize Microsoft for building a &#8220;multibillion dollar secondary business selling cybersecurity add-on services to those organizations that can afford it. At this point, Microsoft has become like an arsonist selling firefighting services to their victims.&#8221;</p>
+<p>In an emailed statement, Microsoft said it has already deprecated use of DES, another encryption scheme with known vulnerabilities. Microsoft wrote:</p>
+<blockquote><p>RC4 is an old standard, and we discourage its use both in how we engineer our software and in our documentation to customers &#8211; which is why it makes up less than .1% of our traffic. However, disabling its use completely would break many customer systems. For this reason, we&#8217;re on a path to gradually reduce the extent to which customers can use it, while providing strong warnings against it and advice for using it in the safest ways possible. We have it on our roadmap to ultimately disable its use. We&#8217;ve engaged with The Senator&#8217;s office on this issue and will continue to listen and answer questions from them or others in government.</p>
+<p>In Q1 of 2026 any new installations of Active Directory Domains using Windows Server 2025 will have RC4 disabled by default, meaning any new domain will inherently be protected against attacks relying on RC4 weaknesses. We plan to include additional mitigations for existing in-market deployments with considerations for compatibility and continuity of critical customer services.</p></blockquote>
+
+
+          
+                  
+
+                  
+          </div>
