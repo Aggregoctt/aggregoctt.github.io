@@ -1,0 +1,45 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143311/windows-386s-check-for-buggy-386-chips-survived-until-windows-8-1/
+date: '2025-09-10T22:27:36'
+excerpt: 'A version of Windows that&#8217;s often overlooked, and often probably entirely
+  unknown, is Windows/386. When Microsoft released 2.x, they did so in two very different
+  variants: Windows/286 and Windows/386. The former would run on anything from a 8088
+  and up, but wouldn&#8217;t make use of any of the new features of the 386, while
+  the latter, as its name implies, was optimised for the 386 and introduced a ton
+  of advanced features to the platform. Windows/386 laid the groundwork for the much
+  more successful Windows 3.x and 9x, but weirdly enough, it&#8217;s never really
+  been studied all that well to understand how it works and what it&#8217;s doing
+  under the hood. That has changed now, as Will &#8220;CaptainWillStarblazer&#8221;
+  Klees, whom we already know for his amazing work to allow RISC Win32 applications
+  to run on x86, has delved deep into Widnows/386 with a ton of reverse-engineering
+  to uncover many of its secrets. There&#8217;s so many amazing findings in here,
+  I honestly have no idea where to even start or what to highlight, so I&#8217;m picking
+  two things that I think are quite entertaining. First, Windows/386 does a number
+  of checks to determine if your PC can run it, and one of the checks it does concerns
+  &#8220;defending against early buggy 386 steppings&#8221;. It turns out that this
+  exact check for buggy steppings in early 386 processors survived in Windows all
+  the way up until Windows 8.1, which is wild to think about. A second fascinating
+  finding is that a crucial component of Windows/386 finds its origins in an unusual
+  place: Xenix, Microsoft&#8217;s UNIX implementation. Finally, it begins loading
+  the Virtual DOS Machine Manager (VDMM) into memory from the file WIN386.386. This
+  file is not an OS/2 Linear Executable like the 386 files from later versions of
+  Windows (that format did not yet exist), rather it is the 32-bit x.out executable
+  format from Xenix-386 (thank you, Michal Necasek!), which makes sense as it was
+  the only 32-bit executable format that Microsoft would have a linker for at the
+  time (and interoperated well with Microsoft’s OMF-based tools, such as MASM). ↫
+  Will &#8220;CaptainWillStarblazer&#8221; Klees at Virtually Fun There&#8217;s a
+  fun detail about the 386 version of Xenix: it was ported to the 386 by a company
+  we all came to hate deeply: SCO. The technology world is far smaller than we often
+  seem to think. Apparently Xenix for the 386 was the first fully 32bit operating
+  system for the x86 architecture, illustrating that once, a long, long time ago,
+  SCO was an actually capable, innovative company. The work by Klees and his extremely
+  detailed write-up are a joy to read, so head on over and have some fun.'
+image: null
+source: osnews
+tags:
+- Windows
+title: Windows/386’s check for buggy 386 chips survived until Windows 8.1
+---
+<div><p>A version of Windows that&#8217;s often overlooked, and often probably entirely unknown, is Windows/386. When Microsoft released 2.x, they did so in two very different variants: Windows/286 and Windows/386. The former would run on anything from a 8088 and up, but wouldn&#8217;t make use of any of the new features of the 386, while the latter, as its name implies, was optimised for the 386 and introduced a ton of advanced features to the platform. Windows/386 laid the groundwork for the much more successful Windows 3.x and 9x, but weirdly enough, it&#8217;s never really been studied all that well to understand how it works and what it&#8217;s doing under the hood.</p><p>That has changed now, as Will &#8220;CaptainWillStarblazer&#8221; Klees, whom we already know for his amazing work to <a href="https://www.osnews.com/story/138197/win32emu-diy-wow-run-risc-win32-binaries-on-x86-windows/">allow RISC Win32 applications to run on x86</a>, has delved deep into Widnows/386 with a ton of reverse-engineering to uncover many of its secrets. There&#8217;s so many amazing findings in here, I honestly have no idea where to even start or what to highlight, so I&#8217;m picking two things that I think are quite entertaining.</p><p>First, Windows/386 does a number of checks to determine if your PC can run it, and one of the checks it does concerns &#8220;defending against early buggy 386 steppings&#8221;. It turns out that this exact check for buggy steppings in early 386 processors survived in Windows all the way up until Windows 8.1, which is wild to think about.</p><p>A second fascinating finding is that a crucial component of Windows/386 finds its origins in an unusual place: Xenix, Microsoft&#8217;s UNIX implementation.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Finally, it begins loading the Virtual DOS Machine Manager (VDMM) into memory from the file WIN386.386. This file is not an OS/2 Linear Executable like the 386 files from later versions of Windows (that format did not yet exist), rather it is the 32-bit x.out executable format from Xenix-386 (thank you, Michal Necasek!), which makes sense as it was the only 32-bit executable format that Microsoft would have a linker for at the time (and interoperated well with Microsoft&#8217;s OMF-based tools, such as MASM).</p>
+<a href="https://virtuallyfun.com/2025/09/06/unauthorized-windows-386/">&#8619; Will &#8220;CaptainWillStarblazer&#8221; Klees at Virtually Fun</a></blockquote><p>There&#8217;s a fun detail about the 386 version of Xenix: it was ported to the 386 by a company we all came to hate deeply: SCO. The technology world is far smaller than we often seem to think. Apparently Xenix for the 386 was the first fully 32bit operating system for the x86 architecture, illustrating that once, a long, long time ago, SCO was an actually capable, innovative company.</p><p>The work by Klees and his extremely detailed write-up are a joy to read, so head on over and have some fun.</p></div>
