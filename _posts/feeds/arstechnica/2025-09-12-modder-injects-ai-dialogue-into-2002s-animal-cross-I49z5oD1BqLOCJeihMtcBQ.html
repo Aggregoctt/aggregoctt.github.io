@@ -1,0 +1,87 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/gaming/2025/09/animal-crossing-mod-uses-ai-to-orchestrate-anti-tom-nook-villager-revolt/
+date: '2025-09-12T21:36:48'
+excerpt: Unofficial mod lets classic Nintendo GameCube title use AI chatbots with
+  amusing results.
+image: assets/media/I49z5oD1BqLOCJeihMtcBQ-umj2QMjjX4ziXuWZG-sKZg.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Gaming
+- AI integration
+- Animal Crossing
+- ChatGPT
+- Dolphin emulator
+- emulation
+- game hacking
+- game modding
+- GameCube
+- gaming
+- generative ai
+- google
+- large language models
+- machine learning
+- Nintendo
+- openai
+- retrogaming
+- retrotech
+- Tom Nook
+title: Modder injects AI dialogue into 2002’s Animal Crossing using memory hack
+---
+<div>
+                      
+                      
+           
+<p>When software engineer Joshua Fonseca recently <a href="https://joshfonseca.com/blogs/animal-crossing-llm">connected</a> the GameCube simulation classic Animal Crossing to a modern AI language model like the kind that powers ChatGPT, he decided to shake things up. By programming the AI to roleplay as villagers growing aware of their debt situation, and giving them a shared memory to track conversations, Fonseca orchestrated a scenario where the residents began to organize against their raccoon landlord.</p>
+<p>In Animal Crossing, Tom Nook runs the town shop and provides home loans (paid out in bells, the in-game currency) that keep players perpetually in debt, which is a core mechanic of the game.</p>
+<p>"Predictably, it escalated into an anti-Tom Nook movement," Fonseca <a href="https://joshfonseca.com/blogs/animal-crossing-llm">wrote</a> in a detailed post documenting his hack that bridges a 2002 game to cloud-based AI without modifying any game code. While Fonseca frames the uprising as a type of emergent phenomenon in his post and a YouTube video, <a href="https://simonwillison.net/2025/Sep/10/animal-crossing-llm/">examination of the source code</a> by AI researcher Simon Willison shows that Fonseca specifically instructed the villagers to behave this way and even <a href="https://github.com/vuciv/animal-crossing-llm-mod/blob/cc9b6b571da1be062d979d50aa86e2ac1dce7a44/dialogue_prompt.py#L165-L184">escalate</a> the unrest over time.</p>
+<p>"You are a resident of a town run by Tom Nook. You are beginning to realize your mortgage is exploitative and the economy is unfair," <a href="https://github.com/vuciv/animal-crossing-llm-mod/blob/cc9b6b571da1be062d979d50aa86e2ac1dce7a44/dialogue_prompt.py#L143-L184">reads</a> the initial prompt. "Discuss this with the player and other villagers when appropriate."</p>
+<p>Even though Fonseca stacked the deck, so to speak, it's still an interesting technical hack.</p>
+ 
+<p>After connecting the simulated villagers to a real-world newsfeed to provide context, characters began relating headlines in casual conversation, which the developer found surreal. One villager named Mitzi suddenly announced, "About the news? European leaders are planning to meet with Trump and Zelenskyy!" Another delivered a humorous simulation of self-awareness: "Oh my gosh, Josh! I just had the weirdest dream, like, everything we do is a game! Arfer!"</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>As amusing as this type of mod is, it's worth remembering that large language models are always <a href="https://arstechnica.com/information-technology/2025/08/the-personhood-trap-how-ai-fakes-human-personality/">playing roles</a> prompted by humans, pulling statistically plausible outputs from training data that researchers fed into their neural networks when they created or later fine-tuned them.</p>
+<h2>Hacking a pre-Internet console</h2>
+<p>Making this amusing amalgam of past and present technology possible required some clever engineering. The technical feat Fonseca pulled off involves a Python script that monitors the game memory through the Dolphin emulator, sends dialogue context to AI models like GPT-5 or Gemini, and writes the responses back into the GameCube's RAM.</p>
+<p>The GameCube presented unique obstacles for this project. With its 485 MHz PowerPC processor, 24MB of RAM, and no Internet connectivity (unless you add the <a href="https://en.wikipedia.org/wiki/GameCube_online_functionality">Modem or Broadband Adapter</a>), the console was "fundamentally, physically, and philosophically designed to be an offline island," Fonseca notes.</p>
+<p>His timing proved fortunate. The Animal Crossing decompilation community had <a href="https://www.timeextension.com/news/2025/06/after-two-and-a-half-years-gamecube-animal-crossing-is-almost-fully-decompiled-let-the-modding-commence">just finished</a> reverse-engineering the game's source code, providing readable C instead of PowerPC assembly. This gave him access to the dialogue system's inner workings through a file called m_message.c. (He considered using the Broadband Adapter, but it would have added many layers of additional complexity to the project.)</p>
+ 
+ 
+
+<p>Rather than write an entire network stack for the GameCube from scratch, Fonseca implemented what he calls a "memory mailbox." This classic game modding technique uses specific RAM addresses as communication channels. His Python script writes directly to GameCube memory through Dolphin while the game reads from those same locations.</p>
+<p>Finding these addresses required what Fonseca describes as becoming a "memory archaeologist." He wrote a custom scanner and spent hours in a loop: talk to a villager, freeze the emulator when dialogue appeared, scan all 24 million bytes of RAM for the text string, then cross-reference with different villagers. He eventually located the speaker's name and dialogue buffer at specific addresses.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>But discovering the addresses was only half the problem. When you talk to a villager in Animal Crossing, the game normally displays dialogue instantly. Calling an AI model over the Internet takes several seconds. Willison examined the code and found Fonseca's solution: a watch_dialogue() function that polls memory 10 times per second. When it detects a conversation starting, it immediately writes placeholder text: three dots with hidden pause commands between them, followed by a "Press A to continue" prompt.</p>
+<p>"So the user gets a 'press A to continue' button and hopefully the LLM has finished by the time they press that button," Willison <a href="https://news.ycombinator.com/item?id=45195311">noted</a> in a Hacker News comment. While players watch dots appear and reach for the A button, the mod races to get a response from the AI model and translate it into the game's dialog format.</p>
+<h2>Learning the game&#8217;s secret language</h2>
+<p>Simply writing text to memory froze the game. Animal Crossing uses an encoded format with control codes that manage everything from text color to character emotions. A special prefix byte (0x7F) signals commands rather than characters. Without the proper end-of-conversation control code, the game waits forever.</p>
+<p>"Think of it like HTML," Fonseca explains. "Your browser doesn't just display words; it interprets tags ... to make text bold." The decompilation community had documented these codes, allowing Fonseca to build encoder and decoder tools that translate between a human-readable format and the GameCube's expected byte sequences.</p>
+ 
+
+<p>Initially, he tried using a single AI model to handle both creative writing and technical formatting. "The results were a mess," he notes. "The AI was trying to be a creative writer and a technical programmer simultaneously and was bad at both."</p>
+<p>The solution: split the work between two models. A Writer AI creates dialogue using character sheets scraped from the Animal Crossing fan wiki. A Director AI then adds technical elements, including pauses, color changes, character expressions, and sound effects.</p>
+<p>The <a href="https://github.com/vuciv/animal-crossing-llm-mod">code is available on GitHub</a>, though Fonseca warns it contains known bugs and has only been tested on macOS. The mod requires Python 3.8+, API keys for either Google Gemini or OpenAI, and Dolphin emulator. Have fun sticking it to the man&#8212;or the raccoon, as the case may be.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
