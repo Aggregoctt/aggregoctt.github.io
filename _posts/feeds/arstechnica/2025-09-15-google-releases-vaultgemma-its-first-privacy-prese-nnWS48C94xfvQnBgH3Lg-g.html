@@ -1,0 +1,46 @@
+---
+author: Ryan Whitwam
+canonical_url: https://arstechnica.com/ai/2025/09/google-releases-vaultgemma-its-first-privacy-preserving-llm/
+date: '2025-09-15T21:04:04'
+excerpt: Google Research shows that AI models can keep training data private.
+image: assets/media/nnWS48C94xfvQnBgH3Lg-g-n2hRlMPPZMwIP6tDYmqwXw.jpeg
+source: arstechnica
+tags:
+- AI
+- Google
+- Artificial Intelligence
+- google
+- LLMs
+- privacy
+title: Google releases VaultGemma, its first privacy-preserving LLM
+---
+<div>
+                      
+                      
+          <p>The companies seeking to build larger AI models have been increasingly stymied by a lack of high-quality training data. As tech firms scour the web for more data to feed their models, they could increasingly rely on potentially sensitive user data. A team at Google Research is exploring new techniques to make the resulting large language models (LLMs) less likely to "memorize" any of that content.</p>
+<p>LLMs have non-deterministic outputs, meaning you can't exactly predict what they'll say. While the output varies even for identical inputs, models do sometimes regurgitate something from their training data&#8212;if trained with personal data, the output could be a violation of user privacy. In the event copyrighted data makes it into training data (either accidentally or <a href="https://arstechnica.com/tech-policy/2025/06/judge-rejects-metas-claim-that-torrenting-is-irrelevant-in-ai-copyright-case/">on purpose</a>), its appearance in outputs can cause a different kind of headache for devs. Differential privacy can prevent such memorization by introducing calibrated noise during the training phase.</p>
+<p>Adding differential privacy to a model comes with drawbacks in terms of accuracy and compute requirements. No one has bothered to figure out the degree to which that alters the scaling laws of AI models until now. The team worked from the assumption that model performance would be primarily affected by the noise-batch ratio, which compares the volume of randomized noise to the size of the original training data.</p>
+<p>By running experiments with varying model sizes and noise-batch ratios, the team established a basic understanding of differential privacy scaling laws, which is a balance between the compute budget, privacy budget, and data budget. In short, more noise leads to lower-quality outputs unless offset with a higher compute budget (FLOPs) or data budget (tokens). <a href="https://arxiv.org/abs/2501.18914">The paper</a> details the scaling laws for private LLMs, which could help developers find an ideal noise-batch ratio to make a model more private.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Building VaultGemma</h2>
+<p>This work on differential privacy has led to a new open-weight Google model called VaultGemma. The model uses differential privacy to reduce the possibility of memorization, which could change how Google builds privacy into its future AI agents. For now, though, the company's first differential privacy model is an experiment.</p>
+<p>VaultGemma is based on the Gemma 2 foundational model, which is a generation behind <a href="https://arstechnica.com/gadgets/2025/03/googles-new-gemma-3-ai-model-is-optimized-to-run-on-a-single-gpu/">Google's latest open model family</a>. The team used the scaling laws derived from its initial testing to train VaultGemma with the optimal&#160;differential privacy. This model isn't particularly large in the grand scheme, clocking in at just 1 billion parameters. However, <a href="https://research.google/blog/vaultgemma-the-worlds-most-capable-differentially-private-llm/">Google Research says</a> VaultGemma performs similarly to non-private models of a similar size.</p>
+ 
+
+<p>The team hopes this work on differential privacy scaling laws will help others efficiently allocate resources to train private AI models. This probably won't change the way the largest and most capable AI models operate&#8212;performance is everything in supersized general models. And regardless, the research suggests that differential privacy works better with smaller LLMs, like the purpose-built models that power specific AI features.</p>
+<p>You can download VaultGemma now from <a href="https://huggingface.co/google/vaultgemma-1b">Hugging Face</a> and <a href="https://www.kaggle.com/models/google/vaultgemma">Kaggle</a>. Like other Gemma models, this one has open weights, but it's not quite open source. While Google will let you modify and distribute Gemma models, you must agree not to use them for nefarious purposes and to distribute a copy of the Gemma license with any and all modified versions.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
