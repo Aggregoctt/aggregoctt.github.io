@@ -1,0 +1,38 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143337/the-idea-of-usr-sbin-has-failed-in-practice/
+date: '2025-09-15T14:02:04'
+excerpt: It may be arcane knowledge to most users of UNIX-like systems today, but
+  there is supposed to be a difference between /usr/bin and /usr/sbin; the latter
+  is supposed to be for &#8220;system binaries&#8221;, not needed by most normal users.
+  The Filesystem Hierarchy Standard states that sbin directories are intended to contain
+  &#8220;utilities used for system administration (and other root-only commands)&#8221;,
+  which is quite vague when you think about it. This has led to UNIX-like systems
+  basically just winging it, making the distinction almost entirely arbitrary. For
+  a long time, there has been no strong organizing principle to /usr/sbin that would
+  draw a hard line and create a situation where people could safely leave it out of
+  their $PATH. We could have had a principle of, for example, &#8220;programs that
+  don&#8217;t work unless run by root&#8221;, but no such principle was ever followed
+  for very long (if at all). Instead programs were more or less shoved in /usr/sbin
+  if developers thought they were relatively unlikely to be used by normal people.
+  But &#8216;relatively unlikely&#8217; is not &#8216;never&#8217;, and shortly after
+  people got told to &#8216;run traceroute&#8217; and got &#8216;command not found&#8217;
+  when they tried, /usr/sbin (probably) started appearing in $PATH. ↫ Chris Siebenmann
+  As such, Fedora 42 unifies /usr/bin and /usr/sbin, which is kind of a follow-up
+  to the /usr merge, and serves as a further simplification and clean-up of the file
+  system layout by removing divisions and directories that used to make sense, but
+  no longer really do. Decisions like these have a tendency to upset a small but very
+  vocal group of people, people who often do not even use the distribution implementing
+  the decisions in question in the first place. My suggestions to those people would
+  be to stick to distributions that more closely resemble classic UNIX. Or use a real
+  UNIX. Anyway, these are good moves, and I&#8217;m glad most prominent Linux distributions
+  are not married to decisions made in the &#8217;70s, especially not when they can
+  be undone without users really noticing anything.
+image: null
+source: osnews
+tags:
+- Unix
+title: The idea of /usr/sbin has failed in practice
+---
+<div><p>It may be arcane knowledge to most users of UNIX-like systems today, but there is supposed to be a difference between /usr/bin and /usr/sbin; the latter is supposed to be for &#8220;system binaries&#8221;, not needed by most normal users. The Filesystem Hierarchy Standard <a href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s16.html">states</a> that sbin directories are intended to contain &#8220;utilities used for system administration (and other root-only commands)&#8221;, which is quite vague when you think about it. This has led to UNIX-like systems basically just winging it, making the distinction almost entirely arbitrary.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>For a long time, there has been no strong organizing principle to /usr/sbin that would draw a hard line and create a situation where people could safely leave it out of their $PATH. We could have had a principle of, for example, &#8220;programs that don&#8217;t work unless run by root&#8221;, but no such principle was ever followed for very long (if at all). Instead programs were more or less shoved in /usr/sbin if developers thought they were relatively unlikely to be used by normal people. But &#8216;relatively unlikely&#8217; is not &#8216;never&#8217;, and shortly after people got told to &#8216;run traceroute&#8217; and got &#8216;command not found&#8217; when they tried, /usr/sbin (probably) started appearing in $PATH.</p>
+<a href="https://utcc.utoronto.ca/~cks/space/blog/unix/UsrSbinFailedInPractice">&#8619; Chris Siebenmann</a></blockquote><p>As such, Fedora 42 unifies /usr/bin and /usr/sbin, which is kind of a follow-up to the <a href="https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/">/usr merge</a>, and serves as a further simplification and clean-up of the file system layout by removing divisions and directories that used to make sense, but no longer really do. Decisions like these have a tendency to upset a small but very vocal group of people, people who often do not even use the distribution implementing the decisions in question in the first place. My suggestions to those people would be to stick to distributions that more closely resemble classic UNIX.</p><p>Or use a real UNIX.</p><p>Anyway, these are good moves, and I&#8217;m glad most prominent Linux distributions are not married to decisions made in the &#8217;70s, especially not when they can be undone without users really noticing anything.</p></div>
