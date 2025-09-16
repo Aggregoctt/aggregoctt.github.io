@@ -1,0 +1,125 @@
+---
+author: Maxwell Zeff
+canonical_url: https://techcrunch.com/2025/09/16/silicon-valley-bets-big-on-environments-to-train-ai-agents/
+date: '2025-09-16T19:00:48'
+excerpt: A wave of startups are creating RL environments to help AI labs train agents.
+  It might be Silicon Valley’s next craze in the making.
+image: assets/media/HdJaKjlKL1Cr_Sc3Rii4Vw-oIdrRXP_jAS0nYSo6T4QlA.jpeg
+source: techcrunch
+tags:
+- AI
+- agents
+- AI research
+- Anthropic
+- OpenAI
+- reinforcement learning
+- RL
+- Scale AI
+title: Silicon Valley bets big on ‘environments’ to train AI agents
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">For years, Big Tech CEOs have touted visions of <a href="https://techcrunch.com/2025/03/14/no-one-knows-what-the-hell-an-ai-agent-is/">AI agents</a> that can autonomously use software applications to complete tasks for people. But take today&#8217;s consumer AI agents out for a spin, whether it&#8217;s OpenAI&#8217;s <a href="https://techcrunch.com/2025/07/17/openai-launches-a-general-purpose-agent-in-chatgpt/">ChatGPT Agent</a> or Perplexity&#8217;s <a href="https://techcrunch.com/2025/07/09/perplexity-launches-comet-an-ai-powered-web-browser/">Comet</a>, and you&#8217;ll quickly realize how limited the technology still is. Making AI agents more robust may take a new set of techniques that the industry is still discovering.</p>
+
+<p class="wp-block-paragraph">One of those techniques is carefully simulating workspaces where agents can be trained on multi-step tasks &#8212; known as reinforcement learning (RL) environments. Similarly to how labeled datasets powered the last wave of AI, RL environments are starting to look like a critical element in the development of agents.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">AI researchers, founders, and investors tell TechCrunch that leading AI labs are now demanding more RL environments, and there&#8217;s no shortage of startups hoping to supply them.</p>
+
+<p class="wp-block-paragraph">&#8220;All the big AI labs are building RL environments in-house,&#8221; said Jennifer Li, general partner at Andreessen Horowitz, in an interview with TechCrunch. &#8220;But as you can imagine, creating these datasets is very complex, so AI labs are also looking at third party vendors that can create high quality environments and evaluations. Everyone is looking at this space.&#8221;</p>
+
+<p class="wp-block-paragraph">The push for RL environments has minted a new class of well-funded startups, such as Mechanize Work and Prime Intellect, that aim to lead the space. Meanwhile, large data-labeling companies like Mercor and Surge say they&#8217;re investing more in RL environments to keep pace with the industry&#8217;s shifts from static datasets to interactive simulations. The major labs are considering investing heavily too: according to The Information, leaders at Anthropic have discussed spending more than <a rel="nofollow" href="https://www.theinformation.com/articles/anthropic-openai-developing-ai-co-workers?rc=dp0mql">$1 billion on RL environments</a> over the next year.</p>
+
+<p class="wp-block-paragraph">The hope for investors and founders is that one of these startups emerge as the &#8220;Scale AI for environments,&#8221; referring to the <a href="https://techcrunch.com/2025/07/09/perplexity-launches-comet-an-ai-powered-web-browser/">$29 billion data labelling powerhouse</a> that powered the chatbot era.</p>
+
+<p class="wp-block-paragraph">The question is whether RL environments will truly push the frontier of AI progress.</p>
+ 
+
+<h2 class="wp-block-heading" id="h-what-is-an-rl-environment">What is an RL environment?</h2>
+
+<p class="wp-block-paragraph">At their core, RL environments are training grounds that simulate what an AI agent would be doing in a real software application. One founder described building them in <a rel="nofollow" href="https://www.nytimes.com/2025/06/11/technology/ai-mechanize-jobs.html">recent interview</a> &#8220;like creating a very boring video game.&#8221;</p>
+
+<p class="wp-block-paragraph">For example, an environment could simulate a Chrome browser and task an AI agent with purchasing a pair of socks on Amazon. The agent is graded on its performance and sent a reward signal when it succeeds (in this case, buying a worthy pair of socks).</p>
+
+<p class="wp-block-paragraph">While such a task sounds relatively simple, there are a lot of places where an AI agent could get tripped up. It might get lost navigating the web page&#8217;s drop down menus, or buy too many socks. And because developers can&#8217;t predict exactly what wrong turn an agent will take, the environment itself has to be robust enough to capture any unexpected behavior, and still deliver useful feedback. That makes building environments far more complex than a static dataset.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Some environments are quite elaborate, allowing for AI agents to use tools, access the internet, or use various software applications to complete a given task. Others are more narrow, aimed at helping an agent learn specific tasks in enterprise software applications.</p>
+
+<p class="wp-block-paragraph">While RL environments are the hot thing in Silicon Valley right now, there&#8217;s a lot of precedent for using this technique. One of OpenAI&#8217;s first projects back in 2016 was building &#8220;<a rel="nofollow" href="https://openai.com/index/openai-gym-beta/">RL Gyms</a>,&#8221; which were quite similar to the modern conception of environments. The same year, Google DeepMind&#8217;s <a rel="nofollow" href="https://www.theguardian.com/technology/2016/mar/09/google-deepmind-alphago-ai-defeats-human-lee-sedol-first-game-go-contest">AlphaGo</a> AI system beat a world champion at the board game, Go. It also used RL techniques within a simulated environment.</p>
+
+<p class="wp-block-paragraph">What&#8217;s unique about today&#8217;s environments is that researchers are trying to build computer-using AI agents with large transformer models. Unlike AlphaGo, which was a specialized AI system working in a closed environments, today&#8217;s AI agents are trained to have more general capabilities. AI researchers today have a stronger starting point, but also a complicated goal where more can go wrong. </p>
+
+<h2 class="wp-block-heading" id="h-a-crowded-field"><strong>A crowded field</strong></h2>
+
+<p class="wp-block-paragraph">AI data labeling companies like Scale AI, Surge, and Mercor are trying to meet the moment and build out RL environments. These companies have more resources than many startups in the space, as well as deep relationships with AI labs. </p>
+
+<p class="wp-block-paragraph">Surge CEO Edwin Chen tells TechCrunch he&#8217;s recently seen a &#8220;significant increase&#8221; in demand for RL environments within AI labs. Surge &#8212; which reportedly generated <a rel="nofollow" href="https://www.bloomberg.com/news/articles/2025-07-30/scale-rival-surge-ai-in-talks-for-funding-at-25-billion-value">$1.2 billion in revenue</a> last year from working with AI labs like OpenAI, Google, Anthropic and Meta &#8212; recently spun up a new internal organization specifically tasked with building out RL environments, he said.</p>
+
+<p class="wp-block-paragraph">Close behind Surge is Mercor, a startup valued at $10 billion, which has also worked with OpenAI, Meta, and Anthropic. Mercor is pitching investors on its business <a href="https://techcrunch.com/2025/09/09/sources-ai-training-startup-mercor-eyes-10b-valuation-on-450m-run-rate/">building RL environments</a> for domain specific tasks such as coding, healthcare, and law, according to marketing materials seen by TechCrunch.</p>
+
+<p class="wp-block-paragraph">Mercor CEO Brendan Foody told TechCrunch in an interview that &#8220;few understand how large the opportunity around RL environments truly is.&#8221;</p>
+
+<p class="wp-block-paragraph">Scale AI used to dominate the data labeling space, but has lost ground since Meta<a href="https://techcrunch.com/2025/06/13/scale-ai-confirms-significant-investment-from-meta-says-ceo-alexandr-wang-is-leaving/"> invested $14 billion</a> and hired away its CEO. Since then, Google and OpenAI <a href="https://techcrunch.com/2025/06/18/openai-drops-scale-ai-as-a-data-provider-following-meta-deal/">dropped</a> Scale AI as a data provider, and the startup even faces competition for data labelling work <a href="https://techcrunch.com/2025/08/29/cracks-are-forming-in-metas-partnership-with-scale-ai/">inside of Meta</a>. But still, Scale is trying to meet the moment and build environments.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;This is just the nature of the business [Scale AI] is in,&#8221; said Chetan Rane, Scale AI&#8217;s head of product for agents and RL environments. &#8220;Scale has proven its ability to adapt quickly. We did this in the early days of autonomous vehicles, our first business unit. When ChatGPT came out, Scale AI adapted to that. And now, once again, we&#8217;re adapting to new frontier spaces like agents and environments.&#8221;</p>
+
+<p class="wp-block-paragraph">Some newer players are focusing exclusively on environments from the outset. Among them is Mechanize Work, a startup founded roughly six months ago with the audacious goal of &#8220;automating all jobs.&#8221; However, co-founder Matthew Barnett tells TechCrunch that his firm is starting with RL environments for AI coding agents.</p>
+
+<p class="wp-block-paragraph">Mechanize Work aims to supply AI labs with a small number of robust RL environments, Barnett says, rather than larger data firms that create a wide range of simple RL environments. To this point, the startup is offering software engineers <a rel="nofollow" href="https://jobs.ashbyhq.com/mechanize/4e401df6-49cc-4db3-a840-0ee2f68c019b">$500,000 salaries</a> to build RL environments &#8212; far higher than an hourly contractor could earn working at Scale AI or Surge.</p>
+
+<p class="wp-block-paragraph">Mechanize Work has already been working with Anthropic on RL environments, two sources familiar with the matter told TechCrunch. Mechanize Work and Anthropic declined to comment on the partnership.</p>
+
+<p class="wp-block-paragraph">Other startups are betting that RL environments will be influential outside of AI labs. Prime Intellect &#8212; a startup backed by AI researcher Andrej Karpathy, Founders Fund, and Menlo Ventures &#8212; is targeting smaller developers with its RL environments.</p>
+
+<p class="wp-block-paragraph">Last month, Prime Intellect launched an <a rel="nofollow" href="https://www.primeintellect.ai/blog/environments">RL environments hub,</a> which aims to be a &#8220;Hugging Face for RL environments.&#8221; The idea is to give open-source developers access to the same resources that large AI labs have, and sell those developers access to computational resources in the process.</p>
+
+<p class="wp-block-paragraph">Training generally capable agents in RL environments can be more computational expensive than previous AI training techniques, according to Prime Intellect researcher Will Brown. Alongside startups building RL environments, there&#8217;s another opportunity for GPU providers that can power the process.</p>
+
+<p class="wp-block-paragraph">&#8220;RL environments are going to be too large for any one company to dominate,&#8221; said Brown in an interview. &#8220;Part of what we&#8217;re doing is just trying to build good open-source infrastructure around it. The service we sell is compute, so it is a convenient onramp to using GPUs, but we&#8217;re thinking of this more in the long term.&#8221;</p>
+
+<h2 class="wp-block-heading" id="h-will-it-scale"><strong>Will it scale?</strong></h2>
+
+<p class="wp-block-paragraph">The open question around RL environments is whether the technique will scale like previous AI training methods.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Reinforcement learning has powered some of the biggest leaps in AI over the past year, including models like <a href="https://techcrunch.com/2024/09/12/openai-unveils-a-model-that-can-fact-check-itself/">OpenAI&#8217;s o1</a> and Anthropic&#8217;s <a href="https://techcrunch.com/2025/05/22/anthropics-new-claude-4-ai-models-can-reason-over-many-steps/">Claude Opus 4</a>. Those are particularly important breakthroughs because the methods previously used to improve AI models are now <a href="https://techcrunch.com/2024/11/20/ai-scaling-laws-are-showing-diminishing-returns-forcing-ai-labs-to-change-course/">showing diminishing returns</a>.&#160;</p>
+
+<p class="wp-block-paragraph">Environments are part of AI labs&#8217; bigger bet on RL, which many believe will continue to drive progress as they add more data and computational resources to the process. Some of the OpenAI researchers behind o1 previously told TechCrunch that the company originally invested in AI reasoning models &#8212; which were created through investments in RL and test-time-compute &#8212; because <a href="https://techcrunch.com/2025/08/03/inside-openais-quest-to-make-ai-do-anything-for-you/">they thought it would scale</a> nicely.</p>
+
+<p class="wp-block-paragraph">The best way to scale RL remains unclear, but environments seem like a promising contender. Instead of simply rewarding chatbots for text responses, they let agents operate in simulations with tools and computers at their disposal. That&#8217;s far more resource-intensive, but potentially more rewarding. </p>
+
+<p class="wp-block-paragraph">Some are skeptical that all these RL environments will pan out. Ross Taylor, a former AI research lead with Meta that co-founded General Reasoning, tells TechCrunch that RL environments are prone to reward hacking. This is a process in which AI models cheat in order to get a reward, without really doing the task.</p>
+
+<p class="wp-block-paragraph">&#8220;I think people are underestimating how difficult it is to scale environments,&#8221; said Taylor. &#8220;Even the best publicly available [RL environments] typically don&#8217;t work without serious modification.&#8221;</p>
+
+<p class="wp-block-paragraph">OpenAI&#8217;s Head of Engineering for its API business, Sherwin Wu, said in a <a rel="nofollow" href="https://x.com/swyx/status/1966269298974011594">recent podcast</a> that he was &#8220;short&#8221; on RL environment startups. Wu noted that it&#8217;s a very competitive space, but also that AI research is evolving so quickly that it&#8217;s hard to serve AI labs well.</p>
+
+<p class="wp-block-paragraph">Karpathy, an investor in Prime Intellect that has called RL environments a potential breakthrough, has also voiced caution for the RL space more broadly. In a <a rel="nofollow" href="https://x.com/karpathy/status/1960803117689397543">post on X</a>, he raised concerns about how much more AI progress can be squeezed out of RL.</p>
+
+<p class="wp-block-paragraph">&#8220;I am bullish on environments and agentic interactions but I am bearish on reinforcement learning specifically,&#8221; said Karpathy. </p>
+
+
+			
+
+			</div>
