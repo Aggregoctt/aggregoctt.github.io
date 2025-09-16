@@ -1,0 +1,20 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/09/16/gli-llm-sono-tarati-per-avere-allucinazioni/
+date: '2025-09-16T02:51:36'
+excerpt: Un paper di OpenAI sembra indicare proprio questo.
+image: assets/media/8cf2ZnoYdtclIXX2J9-ypQ-hlYiRtyyMOLblf0b2b-OiA.jpeg
+source: notiziolemau
+tags:
+- informatica e AI
+title: Gli LLM sono tarati per avere allucinazioni?
+---
+<div>
+			<p>Qualche giorno fa Alberto Romero <a href="https://www.thealgorithmicbridge.com/p/openai-researchers-have-discovered">ha scritto un post</a> che riprende un paper scritto da alcuni ricercatori di OpenAI, dal titolo <a href="https://cdn.openai.com/pdf/d04913be-3f6f-4d2b-b283-ff432ef4aaa5/why-language-models-hallucinate.pdf">&#8220;Why Language Models Hallucinate&#8221;</a>. La tesi degli autori &#232; che le allucinazioni degli LLM, cio&#232; le risposte completamente inventate, sono il risultato del modo in cui i modelli sono addestrati, vale a dire per cercare di dare il maggior numero di risposte possibili. Questo significa che se non c&#8217;&#232; una risposta chiaramente ricavabile dal materiale di addestramento &#8211; in altri termini, se i token che vengono man mano emessi arrivano da una distribuzione senza un picco chiaro, che corrisponde a una classificazione &#8220;forte&#8221; &#8211; il modello si comporta come lo studente tipico quando all&#8217;esame trova domande a risposta multipla su temi che non conosce: tira a indovinare. Se indovina, bene; altrimenti non perde nulla.</p>
+<p>Prima di parlare dell&#8217;articolo in s&#233;, Romero fa una meta-analisi di cosa pu&#242; significare la pubblicazione di quell&#8217;articolo. Sui primi due punti (bisogna lavorare per eliminare le allucinazioni, anche al costo di un modello che a volte risponde &#8220;non lo so&#8221;; fino ad adesso non &#232; stata data priorit&#224; al problema) mi trovo d&#8217;accordo, mentre non penso che la pubblicazione implichi che OpenAI sia vicinissima ad avere trovato una soluzione. Se fosse cos&#236;, mi sarei aspettato prima un modello &#8220;dubbioso ma non allucinato&#8221;, e subito dopo la pubblicazione dell&#8217;articolo, visto che sarebbero stati in parecchi ad accorgersi della filosofia dietro un modello di quel tipo. </p>
+<p>Entrando nel merito dell&#8217;articolo, i ricercatori affermano appunto che il problema delle allucinazioni non &#232; tanto dovuto al materiale di ingresso che &#232; &#8220;sporco&#8221;, cosa che pu&#242; peggiorare i risultati ma non &#232; fondamentale. Il problema &#232; che anche se i dati di addestramento fossero perfetti l&#8217;LLM non risponderebbe mai &#8220;non lo so&#8221; a una domanda, perch&#233; &#232; stato addestrato per predire la parola successiva anche se non ha al suo interno nessun pattern trovato nel testo e soprattutto perch&#233; in media l&#8217;accuratezza (misurata come percentuale di risposte esatte) comunque cresce, dato che non viene misurata &#8220;risposta corretta: +1; risposta errata: -1; nessuna risposta: 0&#8221; ma solo come risposte corrette sul totale. Ecco perch&#233; gli LLM bluffano sempre. Nella tabella qui sotto, <a href="https://openai.com/index/why-language-models-hallucinate/">presa dal loro blog</a>, gli autori dell&#8217;articolo mostrano il confronto con un modello basato su GPT-5 che dice &#8220;non lo so&#8221;. La percentuale di risposte corrette cala un po&#8217;, ma quella di risposte sbagliate crolla. </p>
+ 
+<p>Dal mio punto di vista, un chatbot meno sicuro di s&#233; sarebbe sicuramente un vantaggio, perch&#233; perderei meno tempo a verificare le risposte che mi d&#224;: ma ho il sospetto che il mio tipo di interazione sia molto minoritario. </p>
+<p>La parte pi&#249; divertente dell&#8217;articolo &#232; per&#242; quella sull&#8217;indovinello del chirurgo&#8230; Ma ne parlo tra qualche giorno.</p>
+ 
+  					</div>
