@@ -1,0 +1,22 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/09/17/come-generare-punti-casuali-dentro-un-triangolo/
+date: '2025-09-17T02:51:33'
+excerpt: pensare matematicamente aiuta a trovare soluzioni migliori
+image: assets/media/o80L3GYepKBw3ZUp1ZgkpA-4wOAKBZyGNODRzgipe_73g.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Come generare punti casuali dentro un triangolo
+---
+<div>
+			<p>John D. Cook <a href="https://www.johndcook.com/blog/2025/09/11/random-inside-triangle/">mostra</a> alcuni metodi per generare punti casuali all&#8217;interno di un triangolo ABC dato. Possiamo immaginare di lavorare in coordinate cartesiane, per semplicit&#224;, e quindi avere A, B e C come coppie ordinate di valori.</p>
+<p>Il metodo pi&#249; semplice &#232; quello di usare coordinate baricentriche: generate tre numeri casuali &#945;, &#946; e &#947; tra 0 e 1, normalizzateli per far s&#236; che la loro somma sia 1, e date come risposta &#945;A + &#946;B + &#947;C. Il metodo genera punti che stanno tutti all&#8217;interno del triangolo: ma non sono uniformi, come si vede dalla figura qui sotto presa dal blog di Cook. I punti centrali del triangolo sono pi&#249; probabili di quelli vicino ai vertici.</p>
+ 
+<p>Il secondo metodo &#232; quello del rejection sampling. Costruite il rettangolo circoscritto al triangolo, generate due numeri casuali per la coordinata x e quella y, e controllate se il punto corrispondente sta all&#8217;interno del triangolo: se s&#236;, bene, altrimenti lo buttate via. &#200; evidente che in questo modo i punti generati e accettati sono distribuiti in modo casuale, perch&#233; tutti quelli nel rettangolo lo sono: il costo computazionale &#232; di due insiemi di operazioni per numero scelto. </p>
+<p>C&#8217;&#232; poi un terzo metodo, quello del parallelogramma. Costruite un parallelogramma aggiungendo al triangolo una sua versione speculare, e generate punti a caso al suo interno, con la formula P = A + r&#8321;&#183;(B-A) + r&#8322;&#183;(C-A) dove r&#8321; e r&#8322; sono numeri casuali in [0,1]. Ora, se il punto generato si trova nel triangolo di partenza, e quindi  r&#8321; + r&#8322; &#8804; 1, bene; altrimenti prendete la sua immagine riflessa nel triangolo di partenza, usando (1-r&#8321;, 1-r&#8322;). Di nuovo, la casualit&#224; &#232; assicurata. Il tutto &#232; raccontato anche <a href="https://stackoverflow.com/questions/68493050/sample-uniformly-random-points-within-a-triangle">su Stack Overflow</a>. </p>
+<p>Quale conviene tra il secondo e il terzo metodo? Dipende. Se siete fanatici e sapete dove cercare &#8211; oppure siete molto intelligenti e l&#8217;avete trovato da soli &#8211; il parallelogramma &#232; la scelta migliore. Ma se avete fretta di implementare una soluzione e dovete generare poche centinaia di punti il rejection sampling va pi&#249; che bene: il costo &#232; il doppio dell&#8217;altro metodo, e quindi sopportabile.</p>
+<p>Due ultime note: nei commenti al post di Cook si fa notare come scegliere una distribuzione esponenziale anzich&#233; lineare dei numeri casuali fa funzionare anche il metodo delle coordinate baricentriche. Ma soprattutto ho provato a fare la domanda a Claude. Riporta i tre metodi (immagino perch&#233; addestrato su Stack Overflow) ma afferma che quello delle coordinate baricentiche &#232; <a href="https://claude.ai/chat/1d387ccd-445e-4450-a110-7fb5944b5634">il metodo pi&#249; elegante ed efficiente</a>. Mai fidarsi degli LLM!</p>
+ 
+  					</div>
