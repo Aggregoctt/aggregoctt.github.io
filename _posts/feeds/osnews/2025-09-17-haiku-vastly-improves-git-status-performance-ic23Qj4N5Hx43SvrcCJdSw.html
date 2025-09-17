@@ -1,0 +1,29 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143365/haiku-vastly-improves-git-status-performance/
+date: '2025-09-17T11:33:30'
+excerpt: 'Another month, another summary of changes in Haiku, the BeOS-inspired operating
+  system. The main focus this past month has been improving the performance of git
+  status, which has been measurably worse on Haiku than on Linux running on similar
+  hardware. This work has certainly paid off, as the numbers demonstrate. The results
+  are clearly more than worth the trouble, though: in one test setup with&#160;git
+  status&#160;in Haiku’s&#160;buildtools&#160;repository (which contains the entirety
+  of the&#160;gcc&#160;and&#160;binutils&#160;source code, among other things – over
+  160,000 files) went from around 33 seconds with a cold disk cache, to around 20
+  seconds; and with a hot disk cache, from around 15 seconds to around 2.5 seconds.
+  This is still a ways off from Linux (with a similar setup in the same repository,&#160;git
+  status&#160;there with a hot disk cache takes only 0.3 seconds). Performance on
+  Haiku will likely be measurably faster on builds without&#160;KDEBUG&#160;enabled,
+  but not by that much. Still, this is clearly a significant improvement over the
+  way things were before now. ↫ Haiku Activity &#38; Contract Report, August 2025
+  There&#8217;s more than this, of course, such as initial support for Intel&#8217;s
+  Apollo Lake GPU in the Intel modesetting driver, improvements to USB disk performance,
+  a reduction in power usage when in KDL, and much, much more.'
+image: null
+source: osnews
+tags:
+- Haiku
+title: Haiku vastly improves git status performance
+---
+<div><p>Another month, another summary of changes in Haiku, the BeOS-inspired operating system. The main focus this past month has been improving the performance of git status, which has been measurably worse on Haiku than on Linux running on similar hardware. This work has certainly paid off, as the numbers demonstrate.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>The results are clearly more than worth the trouble, though: in one test setup with&#160;<code>git status</code>&#160;in Haiku&#8217;s&#160;<code>buildtools</code>&#160;repository (which contains the entirety of the&#160;<code>gcc</code>&#160;and&#160;<code>binutils</code>&#160;source code, among other things &#8211; over 160,000 files) went from around 33 seconds with a cold disk cache, to around 20 seconds; and with a hot disk cache, from around 15 seconds to around 2.5 seconds.</p><p>This is still a ways off from Linux (with a similar setup in the same repository,&#160;<code>git status</code>&#160;there with a hot disk cache takes only 0.3 seconds). Performance on Haiku will likely be measurably faster on builds without&#160;<code>KDEBUG</code>&#160;enabled, but not by that much. Still, this is clearly a significant improvement over the way things were before now.</p>
+<a href="https://www.haiku-os.org/blog/waddlesplash/2025-09-15-haiku_activity_contract_report_august_2025/">&#8619; Haiku Activity &amp; Contract Report, August 2025</a></blockquote><p>There&#8217;s more than this, of course, such as initial support for Intel&#8217;s Apollo Lake GPU in the Intel modesetting driver, improvements to USB disk performance, a reduction in power usage when in KDL, and much, much more.</p></div>
