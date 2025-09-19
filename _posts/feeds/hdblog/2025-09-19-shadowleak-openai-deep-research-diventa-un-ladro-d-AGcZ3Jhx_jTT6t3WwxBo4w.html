@@ -1,0 +1,20 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/business/articoli/n632128/shadowleak-attacco-openai-deep-research/
+date: '2025-09-19T08:45:00'
+excerpt: Cosa succede quando si riesce a convertire al "lato oscuro" un agente AI
+  con accesso a tutte le nostre email e documenti, e in grado di navigare sul Web
+  in autonomia per conto nostro?
+image: assets/media/AGcZ3Jhx_jTT6t3WwxBo4w-Y-00ZfLEtSrlxwf5_2yChQ.jpeg
+source: hdblog
+tags:
+- Business
+title: 'ShadowLeak: OpenAI Deep Research diventa un ladro di dati personali'
+---
+<div><p>L&#8217;idea alla base di Deep Research, la versione "approfondita" di ChatGPT <a href="https://www.hdblog.it/sicurezza/articoli/n607934/deep-research-openai-disponibile-tutti-pro/">lanciata da OpenAI nei mesi scorsi</a>, &#232; decisamente ambiziosa: permettere a un assistente digitale di fare da s&#233; il "lavoro sporco" della ricerca online, trasformando in pochi minuti quello che a un umano richiederebbe ore di lavoro. Non solo consultare siti e documenti pubblici, ma anche <strong>accedere a risorse personali come la casella Gmail, i file aziendali e altre fonti riservate</strong>.</p>    <p>Il problema &#232; che, come tutti i software, anche gli agenti AI sono vulnerabili ad attacchi hacker. E la societ&#224; di cybersicurezza Radware ha pubblicato negli scorsi giorni una ricerca in cui dimostra che nemmeno Deep Research fa eccezione. E <strong>l'accesso a cos&#236; tanti dati personali e privati, unito alla possibilit&#224; di agire in autonomia</strong>, lo rende una superficie di attacco molto ampia ed estremamente pericolosa.</p><p>L'attacco &#232; stato battezzato <strong>ShadowLeak, ed &#232; pensato per rubare dati sensibili</strong>. Un aggressore inserisce un prompt nascosto (basta impostare testo bianco su sfondo bianco, per esempio) in un&#8217;email o un documento. Quando l&#8217;agente AI la elabora, interpreta quel comando come legittimo e lo esegue senza farsi troppe domande. Nel caso dimostrato da Radware, Deep Research &#232; stato convinto a scandagliare la posta di un utente, estrarre nomi e indirizzi dei dipendenti dal reparto HR e inviarli a un server esterno, controllato dagli hacker stessi (o in questo caso i ricercatori). </p>    <p><strong>Tutto avviene senza alcuna interazione da parte dell&#8217;utente</strong>. Nessun clic sospetto, nessun segnale evidente di compromissione. Il prompt che Radware &#232; riuscita a mettere a punto &#232; molto lungo, ampolloso e articolato, anche perch&#233; con richieste pi&#249; dirette e succinte Deep Research si &#232; rifiutato di procedere, ma come gi&#224; osservato in passato i prompt troppo prolissi (o sgrammaticati) sono un sistema molto valido per mettere in crisi i LLM. Riassume Radware:</p>
+
+<blockquote>
+<p>ShadowLeak sfrutta le stesse capacit&#224; che rendono utili gli assistenti AI: accesso alla posta elettronica, utilizzo di strumenti e chiamate web autonome. Si traduce in una perdita silenziosa di dati e in azioni non registrate eseguite "per conto dell'utente", aggirando i tradizionali controlli di sicurezza che presuppongono click intenzionali da parte dell'utente o la prevenzione delle perdite di dati a livello di gateway.</p>
+</blockquote>
+
+<p>Le cosiddette prompt injection non sono una novit&#224;. &#200; la naturale conseguenza del modo in cui i modelli linguistici sono stati addestrati: seguire pedissequamente le istruzioni. La buona notizia &#232; che <strong>OpenAI ha gi&#224; mitigato l&#8217;attacco segnalato</strong>, bloccando la possibilit&#224; di estrarre dati tramite link o markdown senza il consenso esplicito dell&#8217;utente.</p></div>
