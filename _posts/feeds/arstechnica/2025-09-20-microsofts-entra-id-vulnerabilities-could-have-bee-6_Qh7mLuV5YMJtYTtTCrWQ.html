@@ -1,0 +1,57 @@
+---
+author: Matt Burgess and Lily Hay Newman, wired.com
+canonical_url: https://arstechnica.com/security/2025/09/microsofts-entra-id-vulnerabilities-could-have-been-catastrophic/
+date: '2025-09-20T11:15:27'
+excerpt: They could've allowed attacker to gain access to virtually all Azure customer
+  accounts.
+image: assets/media/6_Qh7mLuV5YMJtYTtTCrWQ-vEeq01e7BRiWiflMLCEoew.jpeg
+source: arstechnica
+tags:
+- Security
+- cloud vulnerability
+- microsoft
+- security vulnerability
+- syndication
+title: Microsoft’s Entra ID vulnerabilities could have been catastrophic
+---
+<div>
+                      
+                      
+          <p>As businesses around the world have shifted their digital infrastructure over the last decade from self-hosted servers to the <a href="https://www.wired.com/story/secret-hunting-bill-demirkapi/">cloud</a>, they&#8217;ve benefitted from the standardized, built-in security features of major cloud providers like <a href="https://www.wired.com/story/microsoft-secure-future-initiative/">Microsoft</a>. But with so much riding on these systems, there can be potentially <a href="https://www.wired.com/story/microsoft-cloud-attack-china-hackers/">disastrous consequences</a> at a massive scale if something goes wrong. Case in point: Security researcher Dirk-jan Mollema recently stumbled upon a <a href="https://dirkjanm.io/obtaining-global-admin-in-every-entra-id-tenant-with-actor-tokens/">pair of vulnerabilities</a> in Microsoft Azure&#8217;s identity and access management platform that could have been exploited for a potentially cataclysmic takeover of all Azure customer accounts.</p>
+<p>Known as Entra ID, the system stores each Azure cloud customer&#8217;s user identities, sign-in access controls, applications, and subscription management tools. Mollema has studied Entra ID security in depth and published multiple studies about weaknesses in the system, which was formerly known as Azure Active Directory. But while preparing to <a href="https://i.blackhat.com/BH-USA-25/Presentations/US-25-Mollema-Advanced-AD-to-Entra-ID-lateral-movement-techniques-Wednesday.pdf">present</a> at the Black Hat security conference in Las Vegas in July, Mollema discovered two vulnerabilities that he realized could be used to gain global administrator privileges&#8212;essentially god mode&#8212;and compromise every Entra ID directory, or what is known as a &#8220;tenant.&#8221; Mollema says that this would have exposed nearly every Entra ID tenant in the world other than, perhaps, government cloud infrastructure.</p>
+<p>&#8220;I was just staring at my screen. I was like, &#8216;No, this shouldn&#8217;t really happen,&#8217;&#8221; says Mollema, who runs the Dutch cybersecurity company Outsider Security and specializes in cloud security. &#8220;It was quite bad. As bad as it gets, I would say.&#8221;</p>
+<p>&#8220;From my own tenants&#8212;my test tenant or even a trial tenant&#8212;you could request these tokens and you could impersonate basically anybody else in anybody else&#8217;s tenant,&#8221; Mollema adds. &#8220;That means you could modify other people's configuration, create new and admin users in that tenant, and do anything you would like.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Given the seriousness of the vulnerability, Mollema disclosed his findings to the Microsoft Security Response Center on July 14, the same day that he discovered the flaws. Microsoft started investigating the findings that day and issued a fix globally on July 17. The company confirmed to Mollema that the issue was fixed by July 23 and implemented extra measures in August. Microsoft <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-55241">issued a CVE</a> for the vulnerability on September 4.</p>
+<p>&#8220;We mitigated the newly identified issue quickly, and accelerated the remediation work underway to decommission this legacy protocol usage, as part of our Secure Future Initiative,&#8221; Tom Gallagher, Microsoft&#8217;s Security Response Center vice president of engineering, told WIRED in a statement. &#8220;We implemented a code change within the vulnerable validation logic, tested the fix, and applied it across our cloud ecosystem.&#8221;</p>
+<p>Gallagher says that Microsoft found &#8220;no evidence of abuse&#8221; of the vulnerability during its investigation.</p>
+<p>Both vulnerabilities relate to legacy systems still functioning within Entra ID. The first involves a type of Azure authentication token Mollema discovered known as Actor Tokens that are issued by an obscure Azure mechanism called the &#8220;Access Control Service.&#8221; Actor Tokens have some special system properties that Mollema realized could be useful to an attacker when combined with another vulnerability. The other bug was a major flaw in a historic Azure Active Directory application programming interface known as &#8220;Graph&#8221; that was used to facilitate access to data stored in Microsoft 365. Microsoft is in the process of retiring Azure Active Directory Graph and transitioning users to its successor, Microsoft Graph, which is designed for Entra ID. The flaw was related to a failure by Azure AD Graph to properly validate which Azure tenant was making an access request, which could be manipulated so the API would accept an Actor Token from a different tenant that should have been rejected.</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;Microsoft built security controls around identity like conditional access and logs, but this internal impression token mechanism bypasses them all,&#8221; says Michael Bargury, the CTO at security firm Zenity. &#8220;This is the most impactful vulnerability you can find in an identity provider, effectively allowing full compromise of any tenant of any customer.&#8221;</p>
+<p>If the vulnerability had been discovered by, or fallen into the hands of, malicious hackers, the fallout could have been devastating.</p>
+<p>&#8220;We don't need to guess what the impact may have been; we saw two years ago what happened when Storm-0558 compromised a signing key that allowed them to log in as any user on any tenant,&#8221; Bargury says.</p>
+<p>While the specific technical details are different, Microsoft revealed in July 2023 that the Chinese cyber espionage group known as Storm-0558 had stolen a cryptographic key that allowed them to generate authentication tokens and <a href="https://www.wired.com/story/microsoft-cloud-attack-china-hackers/">access cloud-based Outlook email systems</a>, including those belonging to US government departments.</p>
+<p>Conducted over the course of several months, a Microsoft postmortem on the Storm-0558 attack <a href="https://www.wired.com/story/china-backed-hackers-steal-microsofts-signing-key-post-mortem/">revealed several errors</a> that led to the Chinese group slipping past cloud defenses. The security incident was one of a string of Microsoft issues around that time. These motivated the company to <a href="https://www.wired.com/story/microsoft-secure-future-initiative/">launch its &#8220;Secure Future Initiative</a>,&#8221; which expanded protections for cloud security systems and set more aggressive goals for responding to vulnerability disclosures and issuing patches.</p>
+<p>Mollema says that Microsoft was extremely responsive about his findings and seemed to grasp their urgency. But he emphasizes that his findings could have allowed malicious hackers to go even farther than they did in the 2023 incident.</p>
+<p>&#8220;With the vulnerability, you could just add yourself as the highest privileged admin in the tenant, so then you have full access,&#8221; Mollema says. Any Microsoft service &#8220;that you use EntraID to sign into, whether that be Azure, whether that be SharePoint, whether that be Exchange&#8212;that could have been compromised with this.&#8221;</p>
+<p>This story originally appeared on <a href="https://www.wired.com/story/microsoft-entra-id-vulnerability-digital-catastrophe/">wired.com</a>.</p>
+
+
+          
+                  
+
+                  
+          </div>
