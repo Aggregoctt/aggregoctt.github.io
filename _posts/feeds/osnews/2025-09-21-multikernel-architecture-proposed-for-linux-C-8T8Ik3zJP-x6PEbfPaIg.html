@@ -1,0 +1,31 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143398/multikernel-architecture-proposed-for-linux/
+date: '2025-09-21T18:22:21'
+excerpt: A very exciting set of kernel patches have just been proposed for the Linux
+  kernel, adding multikernel support to Linux. This patch series introduces multikernel
+  architecture support, enabling multiple independent kernel instances to coexist
+  and communicate on a single physical machine. Each kernel instance can run on dedicated
+  CPU cores while sharing the underlying hardware resources. ↫ Cong Wang on the LKML
+  The idea is that you can run multiple instances of the Linux kernel on different
+  CPU cores using kexec, with a dedicated IPI framework taking care of communication
+  between these kernels. The benefits for fault isolation and security is obvious,
+  and it supposedly uses less resources than running virtual machines through kvm
+  and similar technologies. The main feature I&#8217;m interested in is that this
+  would potentially allow for &#8220;kernel handover&#8221;, in which the system goes
+  from using one kernel to the other. I wonder if this would make it possible to implement
+  a system similar to what Android currently uses for updates, where new versions
+  are installed alongside the one you&#8217;re running right now, with the system
+  switching over to the new version upon reboot. If you could do something similar
+  with this technology without even having to reboot, that would be quite amazing
+  and a massive improvement to the update experience. It&#8217;s obviously just a
+  proposal for now, and there will be much, much discussion to follow I&#8217;m sure,
+  but the possibilities are definitely exciting.
+image: null
+source: osnews
+tags:
+- Linux
+title: Multikernel architecture proposed for Linux
+---
+<div><p>A very exciting set of kernel patches have just been proposed for the Linux kernel, adding multikernel support to Linux.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>This patch series introduces multikernel architecture support, enabling multiple independent kernel instances to coexist and communicate on a single physical machine. Each kernel instance can run on dedicated CPU cores while sharing the underlying hardware resources.</p>
+<a href="https://lore.kernel.org/lkml/20250918222607.186488-1-xiyou.wangcong@gmail.com/">&#8619; Cong Wang on the LKML</a></blockquote><p>The idea is that you can run multiple instances of the Linux kernel on different CPU cores using kexec, with a dedicated IPI framework taking care of communication between these kernels. The benefits for fault isolation and security is obvious, and it supposedly uses less resources than running virtual machines through kvm and similar technologies.</p><p>The main feature I&#8217;m interested in is that this would potentially allow for &#8220;kernel handover&#8221;, in which the system goes from using one kernel to the other. I wonder if this would make it possible to implement a system similar to what Android currently uses for updates, where new versions are installed alongside the one you&#8217;re running right now, with the system switching over to the new version upon reboot. If you could do something similar with this technology without even having to reboot, that would be quite amazing and a massive improvement to the update experience.</p><p>It&#8217;s obviously just a proposal for now, and there will be much, much discussion to follow I&#8217;m sure, but the possibilities are definitely exciting.</p></div>
