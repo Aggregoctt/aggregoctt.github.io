@@ -1,0 +1,47 @@
+---
+author: Ryan Whitwam
+canonical_url: https://arstechnica.com/google/2025/09/deepmind-ai-safety-report-explores-the-perils-of-misaligned-ai/
+date: '2025-09-22T18:18:00'
+excerpt: DeepMind releases version 3.0 of its AI Frontier Safety Framework with new
+  tips to stop bad bots.
+image: assets/media/Y1H6KJAVC41IFAOb3oIQBQ-youUP92te7WOzzsoAMb2nw.jpeg
+source: arstechnica
+tags:
+- AI
+- Google
+- Tech
+- Artificial Intelligence
+- generative ai
+- google
+title: DeepMind AI safety report explores the perils of “misaligned” AI
+---
+<div>
+                      
+                      
+          <p>Generative AI models are far from perfect, but that hasn't stopped businesses and <a href="https://arstechnica.com/ai/2025/07/white-house-unveils-sweeping-plan-to-win-global-ai-race-through-deregulation/">even governments</a> from giving these robots important tasks. But what happens when AI goes bad? Researchers at Google DeepMind spend a lot of time thinking about how generative AI systems can become threats, detailing it all in the company's Frontier Safety Framework. DeepMind recently <a href="https://deepmind.google/discover/blog/strengthening-our-frontier-safety-framework/">released version 3.0</a>&#160;of the framework to explore more ways AI could go off the rails, including the possibility that models could ignore user attempts to shut them down.</p>
+<p>DeepMind's safety framework is based on so-called "critical capability levels" (CCLs). These are essentially risk assessment rubrics that aim to measure an AI model's capabilities and define the point at which its behavior becomes dangerous in areas like cybersecurity or biosciences. The document also details the ways developers can address the CCLs DeepMind identifies in their own models.</p>
+<p>Google and other firms that have delved deeply into generative AI employ a number of techniques to prevent AI from acting maliciously. Although calling an AI "malicious" lends it intentionality that fancy estimation architectures don't have. What we're talking about here is the possibility of misuse or malfunction that is baked into the nature of generative AI systems.</p>
+<p>The <a href="https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/strengthening-our-frontier-safety-framework/frontier-safety-framework_3.pdf">updated framework</a> (PDF) says that developers should take precautions to ensure model security. Specifically, it calls for proper safeguarding of model weights for more powerful AI systems. The researchers fear that exfiltration of model weights would give bad actors the chance to disable the guardrails that have been designed to prevent malicious behavior. This could lead to CCLs like a bot that creates more effective malware or assists in designing biological weapons.</p>
+<p>DeepMind also calls out the possibility that an AI could be tuned to be manipulative and systematically change people's beliefs&#8212;this CCL seems pretty plausible given how people grow attached to chatbots. However, the team doesn't have a great answer here, noting that this is a "low-velocity" threat, and our existing "social defenses" should be enough to do the job without new restrictions that could stymie innovation. This might assume too much of people, though.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>DeepMind also addresses something of a meta-concern about AI. The researchers say that a powerful AI in the wrong hands could be dangerous if it is used to accelerate machine learning research, resulting in the creation of more capable and unrestricted AI models. DeepMind says this could "have a significant effect on society&#8217;s ability to adapt to and govern powerful AI models." DeepMind ranks this as a more severe threat than most other CCLs.</p>
+<h2>The misaligned AI</h2>
+<p>Most AI security mitigations follow from the assumption that the model is at least trying to follow instructions. Despite years of hallucination, researchers have not managed to make these models completely trustworthy or accurate, but it's possible that a model's incentives could be warped, either accidentally or on purpose. If a misaligned AI begins to actively work against humans or ignore instructions, that's a new kind of problem that goes beyond simple hallucination.</p>
+<p>Version 3 of the Frontier Safety Framework introduces an "exploratory approach" to understanding the risks of a misaligned AI. There have already been documented instances of generative AI models <a href="https://arstechnica.com/ai/2025/04/researchers-concerned-to-find-ai-models-hiding-their-true-reasoning-processes/">engaging in deception</a> and defiant behavior, and DeepMind researchers express concern that it may be difficult to monitor for this kind of behavior in the future.</p>
+<p>A misaligned AI might ignore human instructions, produce fraudulent outputs, or refuse to stop operating when requested. For the time being, there's a fairly straightforward way to combat this outcome. Today's most advanced <a href="https://arstechnica.com/ai/2025/04/new-study-shows-why-simulated-reasoning-ai-models-dont-yet-live-up-to-their-billing/">simulated reasoning</a> models produce "scratchpad" outputs during the thinking process. Devs are advised to use an automated monitor to double-check the model's chain-of-thought output for evidence misalignment or deception.</p>
+<p>Google says this CCL could become more severe in the future. The team believes models in the coming years may evolve to have effective simulated reasoning without producing a verifiable chain of thought. So your overseer guardrail wouldn't be able to peer into the reasoning process of such a model. For this theoretical advanced AI, it may be impossible to completely rule out that the model is working against the interests of its human operator.</p>
+<p>The framework doesn't have a good solution to this problem just yet. DeepMind says it is researching possible mitigations for a misaligned AI, but it's hard to know when or if this problem will become a reality. These "thinking" models have only been common for about a year, and there's still a lot we don't know about how they arrive at a given output.</p>
+
+
+          
+                  
+
+                  
+          </div>
