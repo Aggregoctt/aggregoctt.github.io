@@ -1,0 +1,58 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/09/22/sistemazioni-contro-il-malore-in-htmly-per-scrivere-decente-nuova-funzione-per-editor-markdown-a-schermo-intero/
+date: '2025-09-21T22:37:20'
+excerpt: Ogni tanto, per risolvere problemi pratici merdosi, mi invento soluzioni
+  tecniche complesse e cursate&#8230; del tipo di reimplementare la API di WordPress
+  dentro HTMLy per poter gestire il blog basato su quello con la app di WordPress&#8230;
+  ma, questo è uno spoiler che non dovrei fare, almeno fintanto che non finisco di
+  lavorarci, cazzarolina. Tuttavia, [&#8230;]
+image: assets/media/wVpzU58lLsTFB0NxGaf9hQ-_SSWifZvTVFiMAbTKp8y_w.jpeg
+source: octospacc
+tags:
+- Senza categoria
+- CMS
+- OpenSource
+- webdev
+- blogging
+- Markdown
+- HTMLy
+- improvement
+title: sistemazioni contro il malore in HTMLy per scrivere decente (nuova funzione
+  per editor Markdown a schermo intero)
+---
+<div>
+
+		
+<p><strong>Ogni tanto, per risolvere problemi pratici merdosi, mi invento soluzioni tecniche complesse e cursate&#8230;</strong> del tipo di reimplementare la API di WordPress dentro HTMLy per poter gestire il blog basato su quello con la app di WordPress&#8230; ma, questo &#232; uno spoiler che non dovrei fare, almeno fintanto che non finisco di lavorarci, cazzarolina. <strong>Tuttavia, qualche altra volta, se il caso vuole, mi escono piuttosto soluzioni tecniche semplici ed eleganti&#8230;</strong> come, in questo caso, <strong>aggiustare l&#8217;editor di post gi&#224; presente in HTMLy, senza sostituirlo</strong>, per risolvere i problemi pratici merdosi in un modo banalissimo: <strong>aggiungere una modalit&#224; fullscreen</strong>. &#129327;</p>
+
+
+
+<p>L&#8217;editor Markdown base dentro quel coso, fatto di una semplice <code>&lt;textarea&gt;</code> con una barra degli strumenti bonus (e scorciatoie da tastiera) per la formattazione, con un&#8217;anteprima a parte (che, tra l&#8217;altro, non &#232; accurata rispetto a come il Markdown viene poi renderizzato dal frontend del sito, ma questa &#232; un&#8217;altra rogna), <strong>per qualche motivo infatti non mi ha mai completamente convinto</strong>, ma non mi sono mai messa a riflettere abbastanza da capire come mai ci&#242; fosse il caso&#8230; Almeno fino a prima di adesso (cio&#232;, di qualche giorno fa), quando ho capito che <strong>il problema &#232; il layout assoluto della pagina admin; non l&#8217;editor intrinsecamente, insomma, ma il contesto</strong> in cui questo &#232; inserito. &#128076;</p>
+
+
+
+<p>In breve, pensandoci, tutti gli editor di testo normali e i programmi di videoscrittura, e le interfacce di blogging di conseguenza, non hanno <strong>&#8216;sta cosa dove la pagina &#232; un form classico con tremila campi</strong>, che scrolla pure verticalmente perch&#233; ovviamente &#232; bella grande, <strong>e il contenuto sta in una delle tante scatoline&#8230;</strong> bens&#236; &#232; circa tutto il contrario, cio&#232; che il contenuto &#232; al primo posto e tutto il resto sta attorno. In qualcosa come il Blocco note di Windows, questo &#8220;attorno&#8221; &#232; solo barra dei menu + barra di stato, mentre in WordPress &#232; una serie di tasti importanti sopra e campi misti di lato (o in un menu a parte nella app Android), su Word &#232; la barra gigante in alto, e cos&#236; via&#8230; &#127888;</p>
+
+
+
+<p>Ma quindi, <strong>la soluzione a questo </strong><strong>apparentemente insignificante dettaglio di UI/UX</strong>, che per&#242; mi causa (e penso a molti causerebbe) dei mal di testa (o, almeno, uno stato di controvoglianza nell&#8217;uso), &#8212; come sempre, perch&#233; le interfacce fatte per bene sono invisibili, mentre quelle che non lo sono causano sempre dolore &#8212; potrebbe sintetizzarsi in, semplicemente, <strong>aggiungere una funzione per cui il campo di testo dell&#8217;editor possa andare a finestra</strong> intera, prendendo precisamente tutto lo spazio, e non di pi&#249; o di meno (pi&#249; la barra degli strumenti fissata). &#9879;&#65039;</p>
+
+
+
+ 
+
+
+
+<p>Ora, ovviamente l&#8217;ideale massimo sarebbe in ogni caso solo rifare da capo l&#8217;intera pagina per farle avere alla base una struttura decente, ma significherebbe appunto ricostruire tutto; e sicuramente con JavaScript potrei riuscirci senza dover rompere ogni cosa, ma per ora chiaramente non c&#8217;ho voglia. <strong>Gi&#224; questa piccola modifica tanto baster&#224; per alleviare tantissimo </strong><strong>il mal di capa</strong><strong> causato da quello che spesso &#232; un doppio scrolling</strong> (specialmente su mobile, dove la sofferenza viene credo triplicata), della pagina + l&#8217;area di testo (che non si ridimensiona mai automaticamente), o in alternativa il dover scrollare troppo la pagina per raggiungere altri campi se l&#8217;area fosse alta quanto il contenuto&#8230; e le controindicazioni sono assolutamente zero, quindi <a href="https://github.com/danpros/htmly/pull/967"><strong>ho fatto subito una pull request al capo del progetto, fiduciosa che verr&#224; accettata</strong></a> (quando si sveglia domani, che lui &#232; indonesiano, quindi ora star&#224; nel lettino). &#128295;</p>
+
+
+
+<p>Pure a livello di codice, ribadisco, non &#232; stato difficile; <strong>&#232; bastato un po&#8217; di puro CSS per dichiarare il layout, e del JavaScript integrato nell&#8217;editor gi&#224; esistente per attivare e disattivare </strong><strong>l&#8217;ambaradan</strong><strong> a necessit&#224;</strong>, col bottoncino o con la combinazione da tastiera che ho registrato (CTRL+P). Per mobile ho in realt&#224; aggiunto anche <a href="https://developer.chrome.com/blog/viewport-resize-behavior">una propriet&#224; del meta viewport </a><a href="https://developer.chrome.com/blog/viewport-resize-behavior">che ho scoperto letteralmente stasera</a><a href="https://developer.chrome.com/blog/viewport-resize-behavior">, cio&#232; </a><a href="https://developer.chrome.com/blog/viewport-resize-behavior"><code>interactive-widget=resizes-content</code></a>, per indicare al browser (almeno, per Chromium e Safari si, su Firefox chi lo sa) di ridurre il l&#8217;area della pagina quando la tastiera virtuale &#232; aperta, cos&#236; da evitare un altro doppio scrolling che altrimenti ci sarebbe&#8230; e ora si che &#232; comodo l&#236;, pare nativo! &#128068;</p>
+
+
+
+<p>Va detto comunque che <strong>l&#8217;idea di base non l&#8217;ho inventata io, anche se mi &#232; dovuta comunque arrivare come intuizione personale</strong> perch&#233; io potessi considerarla (poich&#233; non arriva mai nessuno da me a suggerirmi le cose in anticipo e semplificarmi cos&#236; le missioni, mannaggia alla polvere). Infatti, pensandoci lo fa anche un plugin di cui non ricordo il nome che ho sulla mia DokuWiki, che aggiunge un tasto al campo di editing anch&#8217;esso semplice vecchio stile da <code>&lt;textarea&gt;</code> buttata in una pagina alla bene e meglio, per mandare a schermo intero&#8230; ma quell&#8217;implementazione &#232; mezza rotta e meno elegante di cosa ho fatto io qui, che ho riutilizzato gli elementi gi&#224; presenti nel DOM, senza duplicare il campo di testo o fare strane scemenze. Detto questo, per&#242;, <strong>&#232; proprio strano che questa idea non solo non sia mai venuta al grande capo di HTMLy, ma nemmeno ad altri contributori&#8230;</strong> non esistono issue o pull request al riguardo, a parte qualcuno che vorrebbe sostituire l&#8217;intero editor Markdown con altri pi&#249; avanzati (che no, non risolverebbe direttamente questo specifico mal di cervello, e lo so perch&#233; sulla mia installazione ci ho provato; non &#232; la mancanza di WYSIWYG che mi uccide, &#232; il layout che scrolla e fa cose che bleh&#8230; ma ora grazie al cielo non pi&#249;). &#128588;</p>
+ 
+ 
+	 </div>
