@@ -1,0 +1,44 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143413/exploring-grapheneos-secure-allocator-hardened-malloc/
+date: '2025-09-23T21:27:09'
+excerpt: GrapheneOS is a security and privacy-focused mobile operating system based
+  on a modified version of Android (AOSP). To enhance its protection, it integrates
+  advanced security features, including its own memory allocator for libc: hardened
+  malloc. Designed to be as robust as the operating system itself, this allocator
+  specifically seeks to protect against memory corruption. This technical article
+  details the internal workings of hardened malloc and the protection mechanisms it
+  implements&#160;to prevent common memory corruption vulnerabilities. It is intended
+  for a technical audience, particularly security researchers or exploit developers,
+  who wish to gain an in-depth understanding of this&#160;allocator&#8217;s internals.
+  ↫ Nicolas Stefanski at Synacktiv GrapheneOS is quite possibly the best way to keep
+  your smartphone secure, and even law enforcement is not particularly amused that
+  people are using it. If the choice is between security and convenience, GrapheneOS
+  chooses security every time, and that&#8217;s the reason it&#8217;s favoured by
+  many people who deeply care about (smartphone) security. The project&#8217;s social
+  media accounts can be a bit&#8230; Much at times, but their dedication to security
+  is without question, and if you want a secure smartphone, there&#8217;s really nowhere
+  else to turn &#8211; unless you opt to trust the black box security approach from
+  Apple. Sadly, GrapheneOS is effectively under attack not from criminals, but from
+  Google itself. As Google tightens its grip on Android more and more, as we&#8217;ve
+  been reporting on for years now, it will become ever harder for GrapheneOS to deliver
+  the kind of security and fast update they&#8217;ve been able to deliver. I don&#8217;t
+  know just how consequential Google&#8217;s increasing pressure is for GrapheneOS,
+  but I doubt it&#8217;s making the lives of its developers any easier. It&#8217;s
+  self-defeating, too; GrapheneOS has a long history of basically serving as a test
+  best for highly advanced security features Google later implements for Android in
+  general. A great example is the Memory Tagging Extension, a feature implemented
+  by ARM in hardware, which GrapheneOS implements much more widely and extensively
+  than Google does. This way, GrapheneOS users have basically been serving as testers
+  to see if applications and other components experience any issues when using the
+  feature, paving the way for Google to eventually, hopefully, follow in GrapheneOS&#8217;
+  footsteps. Google benefits from GrapheneOS, and trying to restrict its ability to
+  properly support devices and its access to updates is shortsighted.
+image: null
+source: osnews
+tags:
+- Android
+title: 'Exploring GrapheneOS’ secure allocator: hardened malloc'
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>GrapheneOS is a security and privacy-focused mobile operating system based on a modified version of Android (AOSP). To enhance its protection, it integrates advanced security features, including its own memory allocator for libc:&#160;hardened malloc. Designed to be as robust as the operating system itself, this allocator specifically seeks to protect against memory corruption.</p><p>This technical article details the internal workings of hardened malloc and the protection mechanisms it implements&#160;to prevent common memory corruption vulnerabilities. It is intended for a technical audience, particularly security researchers or exploit developers, who wish to gain an in-depth understanding of this&#160;allocator&#8217;s internals.</p>
+<a href="https://www.synacktiv.com/en/publications/exploring-grapheneos-secure-allocator-hardened-malloc">&#8619; Nicolas Stefanski&#160;at Synacktiv</a></blockquote><p>GrapheneOS is quite possibly the best way to keep your smartphone secure, and even law enforcement is <a href="https://www.androidauthority.com/why-i-use-grapheneos-on-pixel-3575477/">not particularly amused</a> that people are using it. If the choice is between security and convenience, GrapheneOS chooses security every time, and that&#8217;s the reason it&#8217;s favoured by many people who deeply care about (smartphone) security. The project&#8217;s social media accounts can be a bit&#8230; Much at times, but their dedication to security is without question, and if you want a secure smartphone, there&#8217;s really nowhere else to turn &#8211; unless you opt to trust the black box security approach from Apple.</p><p>Sadly, GrapheneOS is effectively under attack not from criminals, but from Google itself. As Google tightens its grip on Android more and more, as we&#8217;ve been reporting on for years now, it will become ever harder for GrapheneOS to deliver the kind of security and fast update they&#8217;ve been able to deliver. I don&#8217;t know just how consequential Google&#8217;s increasing pressure is for GrapheneOS, but I doubt it&#8217;s making the lives of its developers any easier.</p><p>It&#8217;s self-defeating, too; GrapheneOS has a long history of basically serving as a test best for highly advanced security features Google later implements for Android in general. A great example is the Memory Tagging Extension, a feature implemented by ARM in hardware, which GrapheneOS implements much more widely and extensively than Google does. This way, GrapheneOS users have basically been serving as testers to see if applications and other components experience any issues when using the feature, paving the way for Google to eventually, hopefully, follow in GrapheneOS&#8217; footsteps.</p><p>Google benefits from GrapheneOS, and trying to restrict its ability to properly support devices and its access to updates is shortsighted.</p></div>
