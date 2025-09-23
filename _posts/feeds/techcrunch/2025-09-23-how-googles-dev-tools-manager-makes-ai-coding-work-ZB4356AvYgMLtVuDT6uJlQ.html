@@ -1,0 +1,79 @@
+---
+author: Russell Brandom
+canonical_url: https://techcrunch.com/2025/09/23/how-googles-dev-tools-manager-makes-ai-coding-work/
+date: '2025-09-23T18:28:54'
+excerpt: Google PM Ryan Salva is responsible for tools like Gemini CLI, giving him
+  a front-row seat to the ways AI tools are changing software development.
+image: assets/media/ZB4356AvYgMLtVuDT6uJlQ-kPAfka23PwuCDbyKpznV-A.jpeg
+source: techcrunch
+tags:
+- AI
+- ai coding
+- Gemini CLI
+- Google
+title: How Google’s dev tools manager makes AI coding work
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">As Google&#8217;s project manager for developer tools, Ryan Salva has a front-row seat to the ways AI tools are changing coding. Formerly of Github and Microsoft, he&#8217;s now responsible for tools like Gemini CLI and <a rel="nofollow" href="https://codeassist.google/">Gemini Code Assist</a>, nudging developers into the new world of agentic programming. </p>
+
+<p class="wp-block-paragraph">His team released <a rel="nofollow" href="https://blog.google/technology/developers/dora-report-2025/">new third-party research</a> on Tuesday showing how developers actually use AI tools &#8211; and how much progress is left to make. I sat down with Salva to talk about the report and his personal experience with AI coding tools.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">This interview was edited for length and clarity.</p>
+
+<p class="wp-block-paragraph"><strong>Every year, Google does a survey of developer trends &#8211; but this year&#8217;s report really focuses on AI tools, and specifically how agentic developers are willing to get in their approach to programming. Was there anything in the research that surprised you?</strong> </p>
+
+<p class="wp-block-paragraph">One of the really interesting findings was the median date when developers started using AI tools. They found it was April 2024, which corresponds fairly neatly to Claude 3 coming out and Gemini 2.5 coming out. This is really the dawn of the reasoning or thinking models, and around that same time, we got much better at tool-calling. </p>
+
+<p class="wp-block-paragraph">For coding tasks, you really need to be able to leverage external information in order to problem solve, so it may need to grep, it may need to compile the code. If the code compiles it may want to run that unit test, and that integration test. I think that tool-calling really is the important piece that gave models the ability to self-correct as they move along.</p>
+
+<p class="wp-block-paragraph"><strong>How are you using AI coding tools personally?</strong></p>
+ 
+
+<p class="wp-block-paragraph">Most of my coding these days is for hobby projects, and I spend most of my time using command line-based tools. So that includes Gemini CLI. Then there&#8217;s a little bit of Claude Code, little bit of Codex in there. And you don&#8217;t ever really use a terminal-based tool by itself, so I&#8217;m really heterogeneous around the IDEs that I use. I use Zed. I use VS code. I use Cursor. I use Windsurf, all of them, because I&#8217;m interested in just seeing how the world works and how the industry is evolving.</p>
+
+<p class="wp-block-paragraph">On the professional side, product managers tend to live in documents, so the first thing is using AI to help me write the specification and requirements docs.</p>
+
+<p class="wp-block-paragraph"><strong>I&#8217;m curious how that works. You&#8217;re using Gemini CLI to build Gemini CLI, but I would imagine it doesn&#8217;t just run itself.</strong></p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">A development task will usually start as an issue, maybe it&#8217;s a GitHub issue that someone&#8217;s dropped with a bug. Often, if I&#8217;m really being honest, it&#8217;s a fairly under-specified issue. So I&#8217;ll use Gemini CLI in order to create a more robust requirement doc in Markdown. That will usually create probably about 100 lines of fairly technical, but also outcome-driven specification. Then I will use Gemini CLI to write the code based on that specification and the general preferences in the team documents.</p>
+
+<p class="wp-block-paragraph">Across the engineering team, we have a couple of different layers of rules and Markdown docs that get consumed by the model, just laying out our way of working: Here&#8217;s how we do testing, here&#8217;s how we manage dependencies, and so on. So when it produces the code, it&#8217;s also working from those documents.</p>
+
+<p class="wp-block-paragraph">And as Gemini CLI is going through and doing the troubleshooting, I&#8217;ll have it update my requirements doc saying, &#8220;I fixed this step. Now I&#8217;m on to the next step,&#8221; and so on. Each one of those creates its own commit and pull request in the repository, so I can always rewind or undo.</p>
+
+<p class="wp-block-paragraph">I would say probably 70% to 80% of my work is me working in the terminal with natural language, trying to use Gemini CLI to craft the requirements, and then allowing Gemini CLI to write most of the code for me, which I will then go review and read with whatever IDE I happen to be using. But mostly I&#8217;m using the IDE as a place to read the code, rather than to write the code.</p>
+
+<p class="wp-block-paragraph"><strong>Do you think there&#8217;s a future for raw computer code? Or will we just move everything into terminal windows?</strong></p>
+
+<p class="wp-block-paragraph">For three decades, the IDE was where we went to do everything in software development. You had the IDE, you had the browser, and you had the terminal window.&#160; </p>
+
+<p class="wp-block-paragraph">I think that&#8217;s still largely the case, but I suspect that over time we&#8217;ll end up spending a lot more time working with the requirements, and the amount of time spent in the IDE will gradually shrink. And I think that change may actually happen over a pretty long time horizon.&#160;</p>
+
+<p class="wp-block-paragraph"><strong>There&#8217;s a lot of angst about what that means for software development as a progression. If 10 years from now, we&#8217;re no longer looking at code, what does that mean for developers? Will there still be a job for them?</strong></p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">I think that your job as a developer is going to look a lot more like an architect. It is going to be about taking big, complex problems and breaking them down into smaller, solvable tasks. You&#8217;ll need to be thinking about like the bigger picture about what you&#8217;re trying to produce, rather than the intermediate language in order to express that in machine code.</p>
+
+ 
+
+
+			
+
+			</div>
