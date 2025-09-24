@@ -1,0 +1,73 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/09/24/la-funzione-91-di-mccarthy/
+date: '2025-09-24T16:32:18'
+excerpt: Una funzione divertente da calcolare
+image: assets/media/tdGzB2JDVf4CAXvbTxSP_A-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: La Funzione 91 di McCarthy
+---
+<div>
+			<p>No, il maccartismo non c&#8217;entra. Questo McCarthy (John) &#232; l&#8217;informatico che ha realizzato il Lisp, oltre che essere un pioniere dell&#8217;intelligenza artificiale. La &#8220;<a href="https://it.wikipedia.org/wiki/Funzione_91_di_McCarthy">Funzione 91</a>&#8221; &#232; una funzione ricorsiva definita sugli interi in questo modo:</p>
+<p>$$ M(n) = \left\{\begin{matrix} n &#8211; 10, &amp; \mbox{se }n &gt; 100\mbox{ } \\ M(M(n+11)), &amp; \mbox{se }n \le 100\mbox{ } \end{matrix}\right. $$</p>
+<p>Notate come la ricorsione non sia semplice, come per esempio nel caso del fattoriale che possiamo definire come $n! = n \times (n-1)!$ (e naturalmente $0! = 1$, per avere un punto in cui termina la ricorsione). Qui invece dobbiamo applicare due volte la definizione della funzione. </p>
+<p>Chiaramente se $ n \gt 100 $ non ci sono problemi a calcolare $M(n)$: basta togliere 10. Anche per $n = 100$ facciamo in fretta: $ M(100) = M(M(100+11)) = M(M(111)) = M(101) = 91$. Il bello arriva quando proviamo a calcolare il suo valore per i numeri minori di 100. Proviamo per esempio con $ n = 42$: preparatevi a un ottovolante.</p>
+<pre>
+M(42) = M(M(42+11)) = M(M(53))
+      = M(M(M(64))) 
+      = M(M(M(M(75))))
+      = M(M(M(M(M(86)))))
+      = M(M(M(M(M(M(97))))))
+      = M(M(M(M(M(M(M(108)))))))
+      = M(M(M(M(M(M(98))))))
+      = M(M(M(M(M(M(M(109)))))))
+      = M(M(M(M(M(M(99))))))
+      = M(M(M(M(M(M(M(110)))))))
+      = M(M(M(M(M(M(100))))))
+      = M(M(M(M(M(91)))))) (l'abbiamo visto sopra...)
+      = M(M(M(M(M(M(102))))))
+      = M(M(M(M(M(92))))))
+      = M(M(M(M(M(M(103))))))
+      = M(M(M(M(M(93))))))
+      = M(M(M(M(M(M(104))))))
+      = M(M(M(M(M(94))))))
+      = M(M(M(M(M(M(105))))))
+      = M(M(M(M(M(95))))))
+      = M(M(M(M(M(M(106))))))
+      = M(M(M(M(M(96))))))
+      = M(M(M(M(M(M(107))))))
+      = M(M(M(M(M(97))))))
+      = M(M(M(M(M(M(108))))))
+</pre>
+<p>Toh. Avevamo gi&#224; trovato $M(M(M(M(M(M(M(108)))))))$ con un livello di parentesi in pi&#249;. Saltando un po&#8217; di passaggi continuiamo con </p>
+<pre>
+M(42) =
+      ...
+      = M(M(M(M(M(M(M(108))))))) 
+      ...
+      = M(M(M(M(M(M(108))))))
+      ...
+      = M(M(M(M(M(108)))))
+      ...
+      = M(M(M(M(108))))
+      ...
+      = M(M(M(108)))
+      ...
+      = M(M(108))
+      ...
+      = M(108)
+      = M(M(98))
+      = M(109)
+      = M(M(99))
+      = M(110)
+      = M(M(100))
+      = 91
+</pre>
+<p>&#200; facile dimostrare per induzione (partendo dalla undicina $90 &#8804; n \le 101$ e scendendo man mano di 11 in 11) che applicare $M$ a un qualunque numero intero minore di 100 porta a 91 (capito il perch&#233; del suo nome?). In pratica, la nostra funzione se ne sta piatta da meno infinito a 101, e poi diventa lineare. Strana, no?</p>
+<p>Aggiungo solo che la funzione &#232; usata come test per verificare i programmi automatici di verifica del software, proprio per la sua struttura cos&#236; strana.</p>
+<p class="post-modified-info">Ultimo aggiornamento: 2025-09-24 18:32</p>
+ 
+  					</div>
