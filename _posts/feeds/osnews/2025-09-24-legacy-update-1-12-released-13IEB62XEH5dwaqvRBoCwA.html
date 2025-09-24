@@ -1,0 +1,29 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143420/legacy-update-1-12-released/
+date: '2025-09-24T18:25:59'
+excerpt: If you&#8217;re still running old versions of Windows from Windows 2000 and
+  up, either for restrocomputing purposes or because you need to keep an old piece
+  of software running, you&#8217;ve most likely heard of Legacy Update. This tool
+  allows you to keep Windows Update running on Windows versions no longer supported
+  by the service, and has basically become a must-have for anyone still playing around
+  with older Windows versions. The project released a fairly major update today. Legacy
+  Update 1.12 features a significant rewrite of our ActiveX control, and a handful
+  of other bug fixes. The rewrite allows us to more easily work on the project, and
+  ensures we can continue providing stable releases for the foreseeable future, despite
+  Microsoft recently breaking the Windows XP-compatible compiler included with Visual
+  Studio 2022. ↫ Legacy Update 1.12 release notes The project switched sway from compiling
+  with Visual C++ 2008 (and 2010, and 2017, and 2022…), which Microsoft recently broke,
+  and now uses an open-source MinGW/GCC toolchain. This has cut the size of the binary
+  in half, which is impressive considering it was already smaller than 1MB. This new
+  version also adds a three-minute timer before performing any required restarts,
+  and speeds up the installation of the slowest type of updates (.NET Frameworks)
+  considerably.
+image: null
+source: osnews
+tags:
+- Windows
+title: Legacy Update 1.12 released
+---
+<div><p>If you&#8217;re still running old versions of Windows from Windows 2000 and up, either for restrocomputing purposes or because you need to keep an old piece of software running, you&#8217;ve most likely heard of <a href="https://legacyupdate.net">Legacy Update</a>. This tool allows you to keep Windows Update running on Windows versions no longer supported by the service, and has basically become a must-have for anyone still playing around with older Windows versions.</p><p>The project released a fairly major update today.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Legacy Update 1.12 features a significant rewrite of our ActiveX control, and a handful of other bug fixes.</p><p>The rewrite allows us to more easily work on the project, and ensures we can continue providing stable releases for the foreseeable future, despite Microsoft recently breaking the Windows XP-compatible compiler included with Visual Studio 2022.</p>
+<a href="https://github.com/LegacyUpdate/LegacyUpdate/releases/tag/v1.12.0.0">&#8619; Legacy Update 1.12 release notes</a></blockquote><p>The project switched sway from compiling with Visual C++ 2008 (and 2010, and 2017, and 2022&#8230;), which Microsoft recently broke, and now uses an open-source MinGW/GCC toolchain. This has cut the size of the binary in half, which is impressive considering it was already smaller than 1MB. This new version also adds a three-minute timer before performing any required restarts, and speeds up the installation of the slowest type of updates (.NET Frameworks) considerably.</p></div>
