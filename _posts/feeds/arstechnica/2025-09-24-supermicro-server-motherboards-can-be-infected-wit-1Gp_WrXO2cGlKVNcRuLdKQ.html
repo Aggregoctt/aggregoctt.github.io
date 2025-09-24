@@ -1,0 +1,58 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/09/supermicro-server-motherboards-can-be-infected-with-unremovable-malware/
+date: '2025-09-24T11:15:06'
+excerpt: Baseboard management controller vulnerabilities make remote attacks possible.
+image: assets/media/1Gp_WrXO2cGlKVNcRuLdKQ-7R7ReWMoC2rA3VDV35i4rA.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- baseboard management controllers
+- bms
+- exploits
+- supermicro
+title: Supermicro server motherboards can be infected with unremovable malware
+---
+<div>
+                      
+                      
+          <p>Servers running on motherboards sold by Supermicro contain high-severity vulnerabilities that can allow hackers to remotely install malicious firmware that runs even before the operating system, making infections impossible to detect or remove without unusual protections in place.</p>
+<p>One of the two vulnerabilities is the result of an incomplete patch Supermicro released <a href="https://web.archive.org/web/20250205111226/https://www.supermicro.com/en/support/security_BMC_IPMI_Jan_2025">in January</a>, said Alex Matrosov, founder and CEO of Binarly, the security firm that discovered it. He said that the insufficient fix was meant to patch CVE-2024-10237, a high-severity vulnerability that enabled attackers to reflash firmware that runs while a machine is booting. Binarly discovered a second critical vulnerability that allows the same sort of attack.</p>
+<h2>&#8220;Unprecedented persistence&#8221;</h2>
+<p>Such vulnerabilities can be exploited to install firmware similar to <a href="https://threats.amnpardaz.com/en/2021/12/28/implant-arm-ilobleed-a/">ILObleed</a>, an implant discovered in 2021 that infected HP Enterprise servers with wiper firmware that permanently destroyed data stored on hard drives. Even after administrators reinstalled the operating system, swapped out hard drives, or took other common disinfection steps, ILObleed would remain intact and reactivate the disk-wiping attack. The exploit the attackers used in that campaign had been patched by HP four years earlier but wasn&#8217;t installed in the compromised devices.</p>
+<p>&#8220;Both issues provide unprecedented persistence power across significant Supermicro device fleets including [in] AI data centers,&#8221; Matrasov wrote to Ars in an online interview, referring to the two latest vulnerabilities Binarly discovered. &#8220;After they patched [the earlier vulnerability], we looked at the rest of the attack surface and found even worse security problems.&#8221;</p>
+<p>The two new vulnerabilities&#8212;tracked as CVE-2025-7937 and CVE-2025-6198&#8212;reside inside silicon soldered onto Supermicro motherboards that run servers inside data centers. Baseboard management controllers (BMCs) allow administrators to remotely perform tasks such as installing updates, monitoring hardware temperatures, and setting fan speeds accordingly. BMCs also enable some of the most sensitive operations, such as reflashing the firmware for the UEFI (Unified Extensible Firmware Interface) that&#8217;s responsible for loading the server OS when booting. BMCs provide these capabilities and more, even when the servers they&#8217;re connected to are turned off.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Given their extraordinary power, BMCs ship with protections that are designed to check the digital signatures of installed firmware to ensure it&#8217;s authorized by the manufacturer and safe to run. The vulnerabilities Binarly discovered allow hackers to replace safe firmware images with malicious ones without tripping mechanisms for detecting and blocking such attacks.</p>
+<p>In such exploits, the attacker would first need to take control of the BMC. Posts Binarly published last year <a href="https://www.binarly.io/blog/cve-2024-36435-deep-dive-the-years-most-critical-bmc-security-flaw">here</a> and <a href="https://www.binarly.io/blog/binarly-research-uncovers-major-vulnerabilities-in-supermicro-bmcs">here</a> describe vulnerabilities that Matrasov said can be exploited to do just that.</p>
+<p>He wrote:</p>
+<blockquote><p>If a potential attacker already has administrative access to the BMC control interface (it is possible by exploitation of other vulnerabilities, which we described in blogs 1, 2), then the exploitation is trivial&#8212;we just need to perform an update with a malicious image. In this case, an attacker benefits from exploitation of CVE-2025-7937/CVE-2025-6198 because the compromise becomes persistent.</p>
+<p>Alternatively, it is possible that malicious updates could be distributed as part of the supply chain attack. For example, if the servers used to host firmware updates are compromised, attackers can replace the original images with malicious ones. In that case, victims would think that the downloaded firmware updates were trustworthy, and no verification on the BMC side would prevent the malicious updates.</p></blockquote>
+<p>CVE-2025-7937 stems from an incomplete fix for CVE-2024-10237, the vulnerability discovered by Nvidia last year. That vulnerability, in turn, was the result of a flaw in the logic for validating a firmware image after it has been uploaded through the Supermicro BMC. The image gets loaded into a separate chip soldered onto the motherboard (specifically, its <a href="https://en.wikipedia.org/wiki/Serial_Peripheral_Interface">Serial Peripheral Interface</a>) that stores UEFI firmware.</p>
+
+          
+                  
+
+              
+          
+          
+<p>After analyzing the patch Supermicro issued in January in response to the Nvidia discovery, Matrasov said, he discovered additional ways the vulnerability could be exploited with even more powerful effects. In a nutshell, exploiting CVE-2024-10237 involved adding custom entries to the fwmap table, which stores memory locations, signatures, and other data crucial for firmware validation. The January fix added two new functions that blocked new entries from being added at specific memory offsets used in the Nvidia PoC. Binarly discovered that the same vulnerability could still be exploited at a different offset.</p>
+<p>&#8220;This single element will contain all the signed regions of the image, one after the other,&#8221; Binarly explained in a <a href="https://www.binarly.io/blog/broken-trust-fixed-supermicro-bmc-bug-gains-a-new-life-in-two-new-vulnerabilities">post on Tuesday</a>. &#8220;To make our exploit useful, we can now replace the area reserved for the original bootloader code with custom content.&#8221;</p>
+ 
+<p>Supermicro said it has updated the BMC firmware to mitigate the vulnerabilities. The company is currently testing and validating affected products. The company went on to advise customers to &#8220;check release notes for the resolution.&#8221; So far, the status of the update is unknown.</p>
+<p>&#8220;We can't find the patched firmware updates on their website,&#8221; Matrasov said. &#8220;The bug is hard to fix. I assume it will take more time from them.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
