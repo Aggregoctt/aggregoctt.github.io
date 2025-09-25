@@ -1,0 +1,74 @@
+---
+author: Jacek Krywko
+canonical_url: https://arstechnica.com/science/2025/09/deepminds-robotic-ballet-an-ai-for-coordinating-manufacturing-robots/
+date: '2025-09-25T11:15:40'
+excerpt: An AI figures out how robots can get jobs done without getting in each other's
+  way.
+image: assets/media/SlPvCO271mzZmorjKm3xsg-IzYAUT98e1voYiRNOe3PqA.jpeg
+source: arstechnica
+tags:
+- AI
+- Google
+- Science
+- Computer science
+- deepmind
+- manufacturing
+- Robotics
+title: 'DeepMind’s robotic ballet: An AI for coordinating manufacturing robots'
+---
+<div>
+                      
+                      
+           
+<p>A lot of the stuff we use today is largely made by robots&#8212;arms with multiple degrees of freedom positioned along conveyor belts that move in a spectacle of precisely synchronized motions. All this motion is usually programmed by hand, which can take hundreds to thousands of hours. Google&#8217;s DeepMind team has developed an AI system called RoboBallet that lets manufacturing robots figure out what to do on their own.</p>
+<h2>Traveling salesmen</h2>
+<p>Planning what manufacturing robots should do to get their jobs done efficiently is really hard to automate. You need to solve both task allocation and scheduling&#8212;deciding which task should be done by which robot in what order. It&#8217;s like the famous <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">traveling salesman problem</a> on steroids. On top of that, there is the question of motion planning; you need to make sure all these robotic arms won&#8217;t collide with each other or with all the gear standing around them.</p>
+<p>At the end, you&#8217;re facing myriad possible combinations where you&#8217;ve got to solve not one but three computationally hard problems at the same time. &#8220;There are some tools that let you automate motion planning, but task allocation and scheduling are usually done manually,&#8221; says Matthew Lai, a research engineer at Google DeepMind. &#8220;Solving all three of these problems combined is what we tackled in our work.&#8221;</p>
+<p>Lai&#8217;s team started by generating simulated samples of what are called work cells, areas where teams of robots perform their tasks on a product being manufactured. The work cells contained something called a workpiece, a product on which the robots do work, in this case something to be constructed of aluminum struts placed on a table. Around the table, there were up to eight randomly placed <a href="https://franka.de/">Franka Panda robotic arms</a>, each with 7 degrees of freedom, that were supposed to complete up to 40 tasks on a workpiece. Every task required a robotic arm&#8217;s end effector to get within 2.5 centimeters of the right spot on the right strut, approached from the correct angle, then stay there, frozen, for a moment. The pause simulates doing some work.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>To make things harder, the team peppered every work cell with random obstacles the robots had to avoid. &#8220;We chose to work with up to eight robots, as this is around the sensible maximum for packing robots closely together without them blocking each other all the time,&#8221; Lai explains. Forcing the robots to perform 40 tasks on a workpiece was also something the team considered representative of what&#8217;s required at real factories.</p>
+<p>A setup like this would be a nightmare to tackle using even the most powerful reinforcement-learning algorithms. Lai and his colleagues found a way around it by turning it all into graphs.</p>
+<h2>Complex relationships</h2>
+<p>Graphs in Lai&#8217;s model comprised nodes and edges. Things like robots, tasks, and obstacles were treated as nodes. Relationships between them were encoded as either one- or bi-directional edges. One-directional edges connected robots with tasks and obstacles because the robots needed information about where the obstacles were and whether the tasks were completed or not. Bidirectional edges connected the robots to each other, because each robot had to know what other robots were doing at each time step to avoid collisions or duplicating tasks.</p>
+<p>To read and make sense of the graphs, the team used graph neural networks, a type of artificial intelligence designed to extract relationships between the nodes by passing messages along the edges of the connections among them. This decluttered the data, allowing the researchers to design a system that focused exclusively on what mattered most: finding the most efficient ways to complete tasks while navigating obstacles. After a few days of training on randomly generated work cells using a single Nvidia A100 GPU, the new industrial planning AI, called RoboBallet, could lay out seemingly viable trajectories through complex, previously unseen environments in a matter of seconds.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Most importantly, though, it scaled really well.</p>
+ 
+<h2>Economy of scale</h2>
+<p>The problem with applying traditional computational methods to complex problems like managing robots at a factory is that the challenge of computation grows exponentially with the number of items you have in your system. Computing the most optimal trajectories for one robot is relatively simple. Doing the same for two is considerably harder; when the number grows to eight, the problem becomes practically intractable.</p>
+<p>With RoboBallet, the complexity of computation also grew with the complexity of the system, but at a far slower rate. (The computations grew linearly with the growing number of tasks and obstacles, and quadratically with the number of robots.) According to the team, these computations should make the system feasible for industrial-scale use.</p>
+<p>The team wanted to test, however, whether the plans their AI was producing were any good. To check that, Lai and his colleagues computed the most optimal task allocations, schedules, and motions in a few simplified work cells and compared those with results delivered by RoboBallet. In terms of execution time, arguably the most important metric in manufacturing, the AI came very close to what human engineers could do. It wasn&#8217;t better than they were&#8212;it just provided an answer more quickly.</p>
+<p>The team also tested RoboBallet plans on a real-world physical setup of four Panda robots working on an aluminum workpiece, and they worked just as well as in simulations. But Lai says it can do more than just speed up the process of programming robots.</p>
+<h2>Limping along</h2>
+<p>RoboBallet, according to DeepMind&#8217;s team, also enables us to design better work cells. &#8220;Because it works so fast, it would be possible for a designer to try different layouts and different placement or selections of robots in almost real time,&#8221; Lai says. This way, engineers at factories would be able to see exactly how much time they would save by adding another robot to a cell or choosing a robot of a different type. Another thing RoboBallet can do is reprogram the work cell on the fly, allowing other robots to fill in when one of them breaks down.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Still, there are a few things that still need ironing out before RoboBallet can come to factories. &#8220;There are several simplifications we made,&#8221; Lai admits. The first was that the obstacles were decomposed into cuboids. Even the workpiece itself was cubical. While this was somewhat representative of the obstacles and equipment in real factories, there are lots of possible workpieces with more organic shapes. &#8220;It would be better to represent those in a more flexible way, like mesh graphs or point clouds,&#8221; Lai says. This, however, would likely mean a drop in RoboBallet&#8217;s blistering speed.</p>
+<p>Another thing is that the robots in Lai&#8217;s experiments were identical, while in a real-world work cell, robotic teams are quite often heterogeneous. &#8220;That&#8217;s why real-world applications would require additional research and engineering specific to the type of application,&#8221; Lai says. He adds, though, that the current RoboBallet is already designed with such adaptations in mind&#8212;it can be easily extended to support them. And once that&#8217;s done, his hope is that it will make factories faster and way more flexible.</p>
+<p>&#8220;The system would have to be given work cell models, the workpiece models, as well as the list of tasks that need to be done&#8212;based on that, RoboBallet would be able to generate a complete plan,&#8221; Lai says.</p>
+<p>Science Robotics, 2025. DOI: <a href="https://doi.org/10.1126/scirobotics.ads1204">10.1126/scirobotics.ads1204</a></p>
+
+
+          
+                  
+
+                  
+          </div>
