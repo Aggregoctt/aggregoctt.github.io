@@ -1,0 +1,96 @@
+---
+author: Zack Whittaker, Sarah Perez
+canonical_url: https://techcrunch.com/2025/09/25/viral-call-recording-app-neon-goes-dark-after-exposing-users-phone-numbers-call-recordings-and-transcripts/
+date: '2025-09-25T21:10:00'
+excerpt: Call recording app Neon was one of the top-ranked iPhone apps, but was pulled
+  offline after a security bug allowed any logged-in user to access the call recordings
+  and transcripts of any other user.
+image: assets/media/Wl9rxQDnUZh8KYQ4IQ4xRw-zOhRDPAdPtbOIgvfrC2vnA.jpeg
+source: techcrunch
+tags:
+- Apps
+- Privacy
+- Security
+- TC
+- apple app store security
+- call recording
+- cybersecurity
+- Exclusive
+- neon
+- Neon Mobile
+title: Viral call-recording app Neon goes dark after exposing users’ phone numbers,
+  call recordings, and transcripts
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">A viral app called Neon, which <a href="https://techcrunch.com/2025/09/24/neon-the-no-2-social-app-on-the-apple-app-store-pays-users-to-record-their-phone-calls-and-sells-data-to-ai-firms/">offers to record your phone calls and pay you for the audio</a> so it can sell that data to AI companies, has rapidly risen to the ranks of the top-five free iPhone apps since its launch last week.</p>
+
+<p class="wp-block-paragraph">The app already has thousands of users and was downloaded 75,000 times yesterday alone, according to app intelligence provider Appfigures. Neon pitches itself as a way for users to make by providing call recordings that help train, improve, and test AI models.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">But now Neon has gone offline, at least for now, after a security flaw allowed anyone to access the phone numbers, call recordings, and transcripts of any other user, TechCrunch can now report.</p>
+
+<p class="wp-block-paragraph">TechCrunch discovered the security flaw during a short test of the app on Thursday. We alerted the app&#8217;s founder, Alex Kiam (who previously <a href="https://techcrunch.com/2025/09/24/neon-the-no-2-social-app-on-the-apple-app-store-pays-users-to-record-their-phone-calls-and-sells-data-to-ai-firms/">did not respond to a request for comment about the app</a>), to the flaw soon after our discovery.&#160;</p>
+
+<p class="wp-block-paragraph">Kiam told TechCrunch later Thursday that he took down the app&#8217;s servers and began notifying users about pausing the app, but fell short of informing his users about the security lapse.</p>
+
+<p class="wp-block-paragraph">&#160;The Neon app stopped functioning soon after we contacted Kiam.</p>
+
+<h2 class="wp-block-heading" id="h-call-recordings-and-transcripts-exposed">Call recordings and transcripts exposed</h2>
+
+<p class="wp-block-paragraph">At fault was the fact that the Neon app&#8217;s servers were not preventing any logged-in user from accessing someone else&#8217;s data.</p>
+
+<p class="wp-block-paragraph">TechCrunch created a new user account on a dedicated iPhone and verified a phone number as part of the sign-up process. We used a network traffic analysis tool called Burp Suite to inspect the network data flowing in and out of the Neon app, allowing us to understand how the app works at a technical level, such as how the app communicates with its back-end servers.</p>
+
+<p class="wp-block-paragraph">After making some test phone calls, the app showed us a list of our most recent calls and how much money each call earned. But our network analysis tool revealed details that were not visible to regular users in the Neon app. These details included the text-based transcript of the call and a web address to the audio files, which anyone could publicly access as long as they had the link.</p>
+
+<p class="wp-block-paragraph">For example, here you can see the transcript from our test call between two TechCrunch reporters confirming that the recording worked properly.</p>
+
+ 
+
+<p class="wp-block-paragraph">But the backend servers were also capable of spitting out reams of other people&#8217;s call recordings and their transcripts.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">In one case, TechCrunch found that the Neon servers could produce data about the most recent calls made by the app&#8217;s users, as well as providing public web links to their raw audio files and the transcript text of what was said on the call. (The audio files contain recordings of just those who installed Neon, not those they contacted.)</p>
+
+<p class="wp-block-paragraph">Similarly, the Neon servers could be manipulated to reveal the most recent call records (also known as <a href="https://techcrunch.com/2025/04/25/techcrunch-reference-guide-to-security-terminology/#metadata">metadata</a>) from any its users. This metadata contained the user&#8217;s phone number and the phone number of the person they&#8217;re calling, when the call was made, its duration, and how much money each call earned.</p>
+
+<p class="wp-block-paragraph">A review of a handful of transcripts and audio files suggests some users may be using the app to make lengthy calls that covertly record real-world conversations with other people in order to generate money through the app.</p>
+
+<h2 class="wp-block-heading" id="h-app-shuts-down-for-now">App shuts down, for now</h2>
+
+<p class="wp-block-paragraph">Soon after we alerted Neon to the flaw on Thursday, the company&#8217;s founder, Kiam, sent out an email to customers alerting them to the app&#8217;s shutdown.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;Your data privacy is our number one priority, and we want to make sure it is fully secure even during this period of rapid growth. Because of this, we are temporarily taking the app down to add extra layers of security,&#8221; the email, shared with TechCrunch, reads.</p>
+
+<p class="wp-block-paragraph">Notably, the email makes no mention of a security lapse or that it exposed users&#8217; phone numbers, call recordings, and call transcripts to any other user who knew where to look.</p>
+
+<p class="wp-block-paragraph">It&#8217;s unclear when Neon will come back online or whether this security lapse will gain the attention of the app stores.&#160;</p>
+
+<p class="wp-block-paragraph">Apple and Google have not yet responded to TechCrunch&#8217;s requests for comment about whether or not Neon was compliant with their respective developer guidelines.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">However, this would not be the first time that an app with serious security issues has made it onto these app marketplaces. Recently, a popular mobile dating companion app, <a href="https://techcrunch.com/2025/07/26/dating-safety-app-tea-breached-exposing-72000-user-images/">Tea, experienced a data breach</a>, which exposed its users&#8217; personal information and government-issued identity documents. Popular apps like <a href="https://techcrunch.com/2024/07/31/bumble-and-hinge-allowed-stalkers-to-pinpoint-users-locations-down-to-2-meters-researchers-say/">Bumble and Hinge were caught in 2024 exposing</a> their users&#8217; locations. Both stores also have to <a href="https://techcrunch.com/2025/02/10/apple-and-google-take-down-malicious-apps-from-their-app-stores/">regularly purge malicious apps</a> that slip past their app review processes.&#160;</p>
+
+<p class="wp-block-paragraph">When asked, Kiam did not immediately say if the app had undergone any security review ahead of its launch, and if so, who performed the review. Kiam also did not say, when asked, if the company has the technical means, such as logs, to determine if anyone else found the flaw before us or if any user data was stolen.</p>
+
+ 
+
+
+			
+
+			</div>

@@ -1,0 +1,34 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143423/yt-dlp-will-soon-require-a-full-js-runtime-to-overcome-youtubes-js-challenges/
+date: '2025-09-25T20:27:45'
+excerpt: If you download YouTube videos, there&#8217;s a real chance you&#8217;re
+  using yt-dlp, the long-running and widely-used command-line program for downloading
+  YouTube videos. Even if you&#8217;re not using it directly, many other tools for
+  downloading YouTube videos are built on top of yt-dlp, and even some media players
+  which offer YouTube playback use it in the background. Now, yt-dlp has always had
+  a built-in basic JavaScript &#8220;interpreter&#8221;, but due to changes at YouTube,
+  yt-dlp will soon require a proper JavaScript runtime in order to function. Up until
+  now, yt-dlp has been able to use its&#160;built-in JavaScript &#8220;interpreter&#8221;&#160;to
+  solve the JavaScript challenges that are required for YouTube downloads. But due
+  to&#160;recent changes on YouTube&#8217;s end, the built-in JS interpreter will
+  soon be insufficient for this purpose. The changes are so drastic that&#160;yt-dlp
+  will need to leverage a proper JavaScript runtime in order to solve the JS challenges.
+  ↫ Yt-dlp&#8217;s announcement on GitHub The yt-dlp team suggests using Deno, but
+  compatibility with some alternatives has been added as well. The issue is that the
+  &#8220;interpreter&#8221; yt-dlp already includes consists of a massive set of very
+  complex regex patterns to solve JS challenges, and those are difficult to maintain
+  and no longer sufficient, so a real runtime is necessary for YouTube downloads.
+  Deno is advised because it&#8217;s entirely self-contained and sandboxed, and has
+  no network or filesystem access of any kind. Deno also happens to be a single, portable
+  executable. As time progresses, it seems yt-dlp is slowly growing into a web browser
+  just to be able to download YouTube videos. I wonder what kind of barriers YouTube
+  will throw up next, and what possible solutions from yt-dlp might look like.
+image: null
+source: osnews
+tags:
+- Multimedia, AV
+title: yt-dlp will soon require a full JS runtime to overcome YouTube’s JS challenges
+---
+<div><p>If you download YouTube videos, there&#8217;s a real chance you&#8217;re using <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>, the long-running and widely-used command-line program for downloading YouTube videos. Even if you&#8217;re not using it directly, many other tools for downloading YouTube videos are built on top of yt-dlp, and even some media players which offer YouTube playback use it in the background. Now, yt-dlp has always had a <a href="https://github.com/yt-dlp/yt-dlp/blob/2025.09.23/yt_dlp/jsinterp.py">built-in basic JavaScript &#8220;interpreter&#8221;</a>, but due to changes at YouTube, yt-dlp will soon require a proper JavaScript runtime in order to function.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Up until now, yt-dlp has been able to use its&#160;<a href="https://github.com/yt-dlp/yt-dlp/blob/2025.09.23/yt_dlp/jsinterp.py">built-in JavaScript &#8220;interpreter&#8221;</a>&#160;to solve the JavaScript challenges that are required for YouTube downloads. But due to&#160;<a href="https://github.com/yt-dlp/yt-dlp/issues/14400">recent changes on YouTube&#8217;s end</a>, the built-in JS interpreter will soon be insufficient for this purpose. The changes are so drastic that&#160;<a href="https://github.com/yt-dlp/yt-dlp/pull/14157">yt-dlp will need to leverage a proper JavaScript runtime in order to solve the JS challenges</a>.</p>
+<a href="https://github.com/yt-dlp/yt-dlp/issues/14404#issuecomment-3330980464">&#8619; Yt-dlp&#8217;s announcement on GitHub</a></blockquote><p>The yt-dlp team suggests using <a href="https://deno.com">Deno</a>, but compatibility with some alternatives has been added as well. The issue is that the &#8220;interpreter&#8221; yt-dlp already includes consists of a massive set of very complex regex patterns to solve JS challenges, and those are difficult to maintain and no longer sufficient, so a real runtime is necessary for YouTube downloads. Deno is advised because it&#8217;s entirely self-contained and sandboxed, and has no network or filesystem access of any kind. Deno also happens to be a single, portable executable.</p><p>As time progresses, it seems yt-dlp is slowly growing into a web browser just to be able to download YouTube videos. I wonder what kind of barriers YouTube will throw up next, and what possible solutions from yt-dlp might look like.</p></div>
