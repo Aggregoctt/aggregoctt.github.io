@@ -1,0 +1,63 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/09/can-ai-detect-hedgehogs-from-space-maybe-if-you-find-brambles-first/
+date: '2025-09-26T22:22:13'
+excerpt: Cambridge researchers use satellite-based bramble detection as a proxy for
+  mapping hedgehog habitats.
+image: assets/media/c9W4szx0t5NebTlO2u_RpA-zRYQVsUu14edUp7dqJzctg.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- cambridge
+- computer vision
+- Ecology
+- environmental monitoring
+- field validation
+- habitat mapping
+- iNaturalist
+- machine learning
+- remote sensing
+- satellite imagery
+- Sentinel satellites
+- TESSERA
+- wildlife conservation
+title: Can AI detect hedgehogs from space? Maybe if you find brambles first.
+---
+<div>
+                      
+                      
+          <p>You can't spot a hedgehog from space, but you might be able to find where they live by looking for brambles. That's the premise behind <a href="https://toao.com/blog/can-we-really-see-brambles-from-space">ongoing research</a> at the University of Cambridge, where scientists are using satellite imagery and AI models to map potential hedgehog habitats across the UK by first identifying their favorite hiding spots: bramble patches.</p>
+<p>European hedgehog populations have <a href="https://www.nhm.ac.uk/discover/news/2022/february/britains-rural-hedgehogs-see-dramatic-population-decline.html">declined</a> by roughly 30 to 50 percent over the past decade, so tracking these nocturnal creatures across large areas remains difficult and expensive. Rather than searching for the hedgehogs directly, researcher Gabriel Mahler developed an AI model that identifies brambles, which are thorny shrubs that hedgehogs use for shelter and foraging, from satellite data.</p>
+<p>These small mammals rely on this type of dense vegetation for daytime shelter, nesting sites, and protection from predators. Brambles also attract insects and provide berries, supporting the invertebrate populations that hedgehogs eat.</p>
+<p>Traditional hedgehog surveys require extensive nighttime fieldwork, specialized equipment, or citizen scientists reporting sightings. Those are methods that don't scale well for national conservation planning. By contrast, satellite imagery covers vast areas continuously, and if AI models could reliably identify key habitat features like brambles, conservationists might gain a powerful tool for large-scale habitat assessment.</p>
+<h2>From satellites to shrubs</h2>
+<p>While AI is a popular buzzword these days, it's worth noting that the Cambridge team's detector is not based on a large language model like ChatGPT. Instead, the model uses relatively simple machine learning techniques: a combination of <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">logistic regression</a> and <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">k-nearest neighbors</a> classification.</p>
+<p>Mahler's bramble detector also combines <a href="https://github.com/ucam-eo/tessera">TESSERA</a> earth representation embeddings, which process imagery from the European Space Agency's Sentinel satellites, with ground-truth observations from <a href="https://www.inaturalist.org/">iNaturalist</a>, a citizen science platform.</p>
+<p>But does it actually work? To find out, Mahler and colleagues Sadiq Jaffer, Anil Madhavapeddy, and Shane Weisz spent a day walking around Cambridge with smartphones and GPS devices, checking whether the model's predictions matched reality.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>"It took us about 20 seconds to find the first one in an area indicated by the model," <a href="https://toao.com/blog/can-we-really-see-brambles-from-space">wrote</a> Jaffer in a blog post documenting the field test. Starting at Milton Community Centre, where the model showed high confidence of brambles near the car park, the team systematically visited locations with varying prediction levels.</p>
+ 
+
+<p>At Milton Country Park, every high-confidence area they checked contained substantial bramble growth. When they investigated a residential hotspot, they found an empty plot overrun with brambles. Most amusingly, a major prediction in North Cambridge led them to <a href="https://www.cambridge.gov.uk/bramblefields-local-nature-reserve">Bramblefields Local Nature Reserve</a>. True to its name, the area contained extensive bramble coverage.</p>
+<p>The model reportedly performed best when detecting large, uncovered bramble patches visible from above. Smaller brambles under tree cover showed lower confidence scores&#8212;a logical limitation given the satellite's overhead perspective. "Since TESSERA is learned representation from remote sensing data, it would make sense that bramble partially obscured from above might be harder to spot," Jaffer explained.</p>
+<h2>An early experiment</h2>
+<p>While the researchers expressed enthusiasm over the early results, the bramble detection work represents a proof-of-concept that is still under active research. The model has not yet been published in a peer-reviewed journal, and the field validation described here was an informal test rather than a scientific study. The Cambridge team acknowledges these limitations and plans more systematic validation.</p>
+<p>However, it's still a relatively positive research application of neural network techniques that reminds us that the field of artificial intelligence is much larger than just generative AI models, such as ChatGPT, or video synthesis models.</p>
+<p>Should the team's research pan out, the simplicity of the bramble detector offers some practical advantages. Unlike more resource-intensive deep learning models, the system could potentially run on mobile devices, enabling real-time field validation. The team considered developing a phone-based active learning system that would enable field researchers to improve the model while verifying its predictions.</p>
+<p>In the future, similar AI-based approaches combining satellite remote sensing with citizen science data could potentially map invasive species, track agricultural pests, or monitor changes in various ecosystems. For threatened species like hedgehogs, rapidly mapping critical habitat features becomes increasingly valuable during a time when climate change and urbanization are actively reshaping the places that hedgehogs like to call home.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
