@@ -1,0 +1,51 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/09/28/aggregocttica-moria-senza-soluzioni-piu-spumose-laggregoctt-e-morto-e-a-fatica-trovo-alternative/
+date: '2025-09-28T15:28:12'
+excerpt: Settimane fa, o qualcosa del genere, mi era passato di mente il dover segnalare
+  che l&#8217;Aggregoctt è fallito. Nel senso, funziona ancora — abbastanza a magia
+  tra l&#8217;altro, devo dire, perché è assurdo che non si sia ancora rotto&#8230;
+  cioè, in realtà è successo già tipo 2 volte, ma ogni volta ho potuto aggiustarlo
+  senza [&#8230;]
+image: assets/media/ME9c3KXLIza4g3qIfGjMtQ-zK4VK84QvJAMeoRgPQsotQ.jpeg
+source: octospacc
+tags:
+- Senza categoria
+- Aggregoctt
+- aggregator
+- feed
+- RSS
+title: aggregocttica moria senza soluzioni più spumose (l’Aggregoctt è morto e a fatica
+  trovo alternative)
+---
+<div>
+
+		
+<p>Settimane fa, o qualcosa del genere, mi era passato di mente il dover segnalare che <strong>l&#8217;Aggregoctt &#232; fallito</strong>. <strong>Nel senso, funziona ancora</strong> &#8212; abbastanza a magia tra l&#8217;altro, devo dire, perch&#233; &#232; assurdo che non si sia ancora rotto&#8230; cio&#232;, in realt&#224; &#232; successo gi&#224; tipo 2 volte, ma ogni volta ho potuto aggiustarlo senza fare cambiamenti radicali, il che &#232; sorprendente &#8212; <strong>ma il problema &#232; che</strong>, per come l&#8217;ho fatto, con questa roba del sito statico che deve compilarsi a partire da infiniti file HTML (ormai credo diverse centinaia di migliaia, al punto che GitHub si rifiuta di indicizzare la repo), <strong>prima o poi raggiunger&#224; per forza un tetto pratico&#8230;</strong> e a quel punto fallir&#224; davvero. &#129396;</p>
+
+
+
+<p>Certo, potrei implementare la purga periodica di post vecchi, ma io che sono un&#8217;accumulatrice seriale mi sentirei proprio male&#8230; e poi, questa non &#232; l&#8217;unica rogna. Infatti, per giunta, <strong>per quanto sia figo che funzioni interamente senza un server di hosting dinamico</strong>, aggiornandosi in automatico solo grazie alla CI gratuita di GitHub, un bel problemino che ho visto &#232; che <strong>certi feed non si aggiornano l&#236; sopra</strong>, perch&#233; il sito sfigato di turno sar&#224; stato settato a minchia, con una protezione bot che blocca gli IP non-domestici pure per le richieste del feed&#8230; quindi, quella manciata di siti particolari non si aggiorna mai. &#128148;</p>
+
+
+
+<p>Temo allora che <strong>la mia paura iniziale</strong>, cio&#232; che <a href="https://octospacc.altervista.org/2025/05/14/aggregoctt-aggregocttanza-il-sitino-della-notizianza-nuovo-aggregatore-news-rss-personale/">l&#8217;Aggregoctt fatto con Jekyll e uno script Python vibe-codato</a> rischiasse di essere solo un ripiego, <strong>si &#232; confermata</strong>. In realt&#224;, per chi &#232; a posto con queste limitazioni, il template costruito fino ad ora rimane alquanto valido, e ancora consiglierei di forkarlo a chiunque vorrebbe farsi il proprio sito aggregatore (inserendo i propri URL nel file della lista) senza un server e senza grossi smanettamenti (anche se forse, per evitare che qualcuno si trovi in sorprendenti difficolt&#224;, farei bene ad implementare quella maledetta purga, oltre a maggiori ottimizzazioni per il caricamento dei dati)&#8230; <strong>per&#242; io, avendo il serverino, potrei permettermi di pi&#249;.</strong> &#128580;</p>
+
+
+
+<p><strong>Problema: non c&#8217;&#232; niente di ideale gi&#224; fatto</strong> (altrimenti non avrei certamente speso tempo a creare l&#8217;Aggregoctt, avrei direttamente preso quel qualcosa e tanti saluti)&#8230; quindi dovr&#242; vedere di fare io qualcosa e bla bla bla, mannaggia al mio tempo che scompare. Per&#242;, giusto per non cadere nella pi&#249; totale disperazione (e in parte anche per assimilare passivamente idee di design simili alle mie ma lievemente diverse, per questo specifico tipo di applicazione), <strong>da qualche giorno sto provando un aggregatore trovato cercando nelle liste pi&#249; improbabili di top aggregatori di feed selfhostabili: <a href="https://memos.octt.eu.org/m/FgWQhD5XLBqis2P3UYuLDs">RSS</a>.</strong> Si, il creatore &#8212; che stranamente non &#232; uno scappato di casa, bens&#236; &#232; lo stesso che ha creato BookStack &#8212; lo ha veramente chiamato solo &#8220;RSS&#8221;, con la scusa che &#232; un progetto a bassa manutenzione e creato principalmente per uso personale&#8230; vergognoso, ma lasciamo stare. &#128533;</p>
+
+
+
+ 
+
+
+
+<p>Oh, <strong>sembrava bellino</strong>, e dopo averlo provato devo confermare che effettivamente lo &#232;&#8230; ma allo stesso tempo ho percepito una puzza, quindi per ora l&#8217;ho messo sul mio classico dominio usa-e-ricicla di <a href="https://test.octt.eu.org"><strong>https://test.octt.eu.org</strong></a>; non si merita (per ora?) un dominio permanente. <strong>&#200; simpatico</strong>, perch&#233; non ha login o permessi, e quindi replica bene la filosofia del primo Aggregoctt per cui <strong>il lettore personale funge anche da blogroll</strong> (cio&#232;, una cosa del decennio scorso attraverso cui chi segue me pu&#242; scoprire altre persone da seguire, potendo banalmente vedere una lista di chi seguo io&#8230; o, in certi casi non &#8220;seguo&#8220;, bens&#236; &#8220;tengo d&#8217;occhio&#8220;, lieve differenza), e <strong>l&#8217;interfaccia &#232; pulita e funzionale</strong>. Purtroppo &#232; anche antipatico, visto che per funzionare richiede JavaScript moderno (zio pera, &#232; una maledizione con tutti &#8216;sti cosi web), e quindi non si pu&#242; usare sul Kindle (o anche, in generale dispositivi utili da riciclare per leggere, che per&#242; hanno browser web antichi); ma non ha neanche la modalit&#224; di lettura integrata, quindi comunque su Kindle e compagnia sarebbe un incubo da usare. (Ah e, edit: ho dimenticato di dirlo, <strong>la gestione di errori in questo coso &#232; inesistente, e alcuni feed misteriosamente non caricano.</strong>) &#128564;</p>
+
+
+
+<p>Vabb&#232;, alla fine il bilancio netto &#232; comunque positivo, perch&#233; <strong>ora nel mondo esistono tecnicamente ben 2 Aggregoctti</strong>, e se non riesco a fare pace con tutto ci&#242; prima o poi ne dovr&#224; uscir&#224; pure un terzo (e speriamo non di pi&#249;, perch&#233; senn&#242; veramente sarebbe la fine&#8230; cio&#232;, la tragedia della mancanza di una fine, l&#8217;eterno ritorno dell&#8217;Aggregoctt)&#8230; Il fatto &#232; che, a parte funzionalit&#224; improbabili che ora nemmeno vorrei ri-descrivere ma che sarebbe figo implementare, <strong>di piccole cose da poter fare per avere un&#8217;esperienza davvero epica ce ne sono a bizzeffe&#8230;</strong> come un&#8217;ottimizzazione per i feed dei social in modo che i post si vedano meglio rispetto agli articoli di blog classici, o un&#8217;ottimizzazione per i feed di YouTube per cui viene mostrato automaticamente l&#8217;embed per i video&#8230; ed &#232; tutta roba semplice, ma, avendo il primo Aggregoctt le difficolt&#224; che ho detto, pi&#249; che spendere tempo a metterle l&#236; farei bene a creare questa v3. (Aiutatemi!!!) &#128573;</p>
+ 
+ 
+	 </div>
