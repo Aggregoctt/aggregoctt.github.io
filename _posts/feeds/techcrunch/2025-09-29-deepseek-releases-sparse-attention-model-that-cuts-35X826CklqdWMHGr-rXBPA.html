@@ -1,0 +1,40 @@
+---
+author: Russell Brandom
+canonical_url: https://techcrunch.com/2025/09/29/deepseek-releases-sparse-attention-model-that-cuts-api-costs-in-half/
+date: '2025-09-29T20:25:08'
+excerpt: Researchers at DeepSeek released a new experimental model designed to have
+  dramatically lower inference costs when used in long-context operations.
+image: assets/media/35X826CklqdWMHGr-rXBPA-wtmq2hOU3wMsKysy0Uuezg.jpeg
+source: techcrunch
+tags:
+- AI
+- China
+- deepseek
+- inference
+title: DeepSeek releases ‘sparse attention’ model that cuts API costs in half
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">Researchers at <a href="https://techcrunch.com/2025/05/28/deepseek-everything-you-need-to-know-about-the-ai-chatbot-app/">DeepSeek</a> on Monday released a new experimental model called V3.2-exp, designed to have dramatically lower inference costs when used in long-context operations. DeepSeek announced the model with <a href="https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp" target="_blank" rel="noreferrer noopener nofollow">a post on Hugging Face</a>, also posting <a href="https://github.com/deepseek-ai/DeepSeek-V3.2-Exp/blob/main/DeepSeek_V3_2.pdf" target="_blank" rel="noreferrer noopener nofollow">a linked academic paper</a> on GitHub.</p>
+
+<p class="wp-block-paragraph">The most important feature of the new model is called DeepSeek Sparse Attention, an intricate system described in detail in the diagram below. In essence, the system uses a module called a &#8220;lightning indexer&#8221; to prioritize specific excerpts from the context window. After that, a separate system called a &#8220;fine-grained token selection system&#8221; chooses specific tokens from within those excerpts to load into the module&#8217;s limited attention window. Taken together, they allow the Sparse Attention models to operate over long portions of context with comparatively small server loads.</p>
+
+ 
+
+<p class="wp-block-paragraph">For long-context operations, the benefits of the system are significant. Preliminary testing by DeepSeek found that the price of a simple API call could be reduced by as much as half in long-context situations. Further testing will be required to build a more robust assessment, but because the model is open-weight and freely available on Hugging Face, it won&#8217;t be long before third-party tests can assess the claims made in the paper.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">DeepSeek&#8217;s new model is one of a string of recent breakthroughs tackling the problem of inference costs &#8212; essentially, the server costs of operating a pre-trained AI model, as distinct from the cost of training it. In DeepSeek&#8217;s case, the researchers were looking for ways to make the fundamental transformer architecture operate more efficiently &#8212; and finding that there are significant improvements to be made.</p>
+
+<p class="wp-block-paragraph">Based in China, DeepSeek has been an unusual figure in the AI boom, particularly for those who view AI research as a nationalist struggle between the U.S. and China. The company made waves <a href="https://techcrunch.com/2025/01/30/how-deepseek-changed-silicon-valleys-ai-landscape/">at the beginning of the year</a> with its R1 model, trained using primarily reinforcement learning at a far lower cost than its American competitors. But the model has not sparked a wholesale revolution in AI training, as some predicted, and the company has receded from the spotlight in the months since.</p>
+
+<p class="wp-block-paragraph">The new &#8220;sparse attention&#8221; approach is unlikely to produce the same uproar as R1 &#8212; but it could still teach U.S. providers some much needed tricks to help keep inference costs low.</p>
+
+
+			
+
+			</div>

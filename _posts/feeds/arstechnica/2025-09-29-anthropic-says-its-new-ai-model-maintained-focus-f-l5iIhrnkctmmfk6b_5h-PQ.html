@@ -1,0 +1,79 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/09/anthropic-says-its-new-ai-model-maintained-focus-for-30-hours-on-multistep-tasks/
+date: '2025-09-29T22:10:27'
+excerpt: Latest Claude model beats OpenAI and Google on coding tests.
+image: assets/media/l5iIhrnkctmmfk6b_5h-PQ-6QkILklSXsMmb3B1fdoLGw.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI agents
+- AI assistants
+- AI benchmarks
+- AI coding
+- AI computer use
+- AI development tools
+- Anthropic
+- code agents
+- computer use model
+- Computer-Using Agent
+- generative ai
+- large language models
+- machine learning
+- open source
+- Programming
+- Simon Willison
+title: Anthropic says its new AI model “maintained focus” for 30 hours on multistep
+  tasks
+---
+<div>
+                      
+                      
+           
+<p>On Monday, Anthropic <a href="https://www.anthropic.com/news/claude-sonnet-4-5">released</a> Claude Sonnet 4.5, a new AI language model the company calls its "most capable model to date," with improved coding and computer use capabilities. The company also revealed <a href="https://www.npmjs.com/package/@anthropic-ai/claude-code">Claude Code 2.0</a>, a command-line AI agent for developers, and the <a href="https://docs.claude.com/en/api/agent-sdk/overview">Claude Agent SDK</a>, which is a tool developers can use to build their own AI coding agents.</p>
+<p>Anthropic says it has witnessed Sonnet 4.5 working continuously on the same project "for more than 30 hours on complex, multi-step tasks," though the company did not provide specific details about the tasks. In the past, agentic models have been known to typically lose coherence over long periods of time as errors accumulate and context windows (a type of short-term&#160;memory for the model) fill up. In the past, Anthropic <a href="https://arstechnica.com/ai/2025/05/anthropic-calls-new-claude-4-worlds-best-ai-coding-model/">has mentioned</a> that previous Claude 4.0 models have <a href="https://arstechnica.com/ai/2025/03/why-anthropics-claude-still-hasnt-beaten-pokemon/">played Pok&#233;mon</a> for over 24 hours or refactored code for seven hours.</p>
+<p>To understand why Sonnet exists, you need to know a bit about how AI language models work. Traditionally, Anthropic has produced three differently sized AI models in the Claude family: Haiku (the smallest), Sonnet (mid-range), and Opus (the largest). Anthropic last updated <a href="https://arstechnica.com/ai/2024/11/anthropic-raises-eyebrows-with-haiku-price-hike-citing-increased-intelligence/">Haiku</a> in November 2024 (to 3.5), Sonnet this past <a href="https://arstechnica.com/ai/2025/05/anthropic-calls-new-claude-4-worlds-best-ai-coding-model/">May</a> (to 4.0), and <a href="https://www.anthropic.com/news/claude-opus-4-1">Opus</a> in August (to 4.1). Model size in parameters, which are values stored in its neural network, is roughly proportional to overall contextual depth (the number of multidimensional connections between concepts, which you might call "knowledge") and better problem-solving capability, but larger models are also slower and more expensive to run. So AI companies always seek a sweet spot in the middle with reasonable performance-cost trade-offs. Claude Sonnet has filled that role for Anthropic quite well for several years now.</p>
+ 
+<p>Claude is <a href="https://arstechnica.com/ai/2025/09/developers-joke-about-coding-like-cavemen-as-ai-service-suffers-major-outage/">popular</a> with some software developers thanks to Claude Code, and Anthropic is confident about the latest version of Sonnet's coding capability: "Claude Sonnet 4.5 is the best coding model in the world," the company boasts on its website. "It's the strongest model for building complex agents. It&#8217;s the best model at using computers. And it shows substantial gains in reasoning and math."</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Anthropic backs up those claims with strong benchmark performance. Sonnet 4.5 model achieved a reported 77.2 percent score on <a href="https://www.swebench.com/index.html">SWE-bench Verified</a>, a benchmark that attempts to measure real-world software coding abilities, and it currently leads the <a href="https://os-world.github.io/">OSWorld benchmark</a> at 61.4 percent, which tests AI models on real-world computer tasks. That beats OpenAI's GPT-5 Codex (which scored 74.5 percent) and Google's Gemini 2.5 Pro (67.2 percent).</p>
+<p>In other testing, Claude Sonnet 4.5 showed gains across multiple other evaluations such as <a href="https://artofproblemsolving.com/wiki/index.php/2024_AIME_I_Problems?srsltid=AfmBOooS2z3wFZTOqBPDenGGRMDrmIlZhhVVj9IdciorqaoMbez1AwR2">AIME 2024</a>, a mathematics competition benchmark, and <a href="https://en.wikipedia.org/wiki/MMLU">MMMLU</a>, which tests subject knowledge across 14 non-English languages. On finance-specific tasks measured by <a href="https://www.vals.ai/benchmarks/finance_agent-09-08-2025">Vals AI's Finance Agent benchmark</a>, which is a relatively new benchmark that "tests the ability of agents to perform tasks expected of an entry-level financial analyst," Sonnet 4.5 scored 92 percent.</p>
+ 
+
+<p>Sonnet 4.5 also reportedly demonstrated improved <a href="https://arstechnica.com/ai/2024/10/anthropic-publicly-releases-ai-tool-that-can-take-over-the-users-mouse-cursor/">computer use</a> capabilities compared to its predecessor in testing. Four months ago, Claude Sonnet 4 scored 42.2 percent on OSWorld. The new version increases that score to 61.4 percent. Anthropic uses these capabilities in its <a href="https://arstechnica.com/information-technology/2025/08/new-ai-browser-agents-create-risks-if-sites-hijack-them-with-hidden-instructions/">Claude for Chrome extension</a>. Similar to OpenAI's <a href="https://arstechnica.com/information-technology/2025/07/chatgpts-new-ai-agent-can-browse-the-web-and-create-powerpoint-slideshows/">ChatGPT Agent</a>. Claude's extension can navigate websites, fill spreadsheets, and complete other browser-based tasks with various degrees of success.</p>
+<p>As always, it's worth noting that AI benchmarks can be gamed easily, poorly designed, or suffer from dataset contamination (a scenario where the model is inadvertently trained on answers in the benchmark). So always take any benchmarks with a grain of salt until they are independently verified. Even with a skeptical eye on the self-reported numbers, it seems that Sonnet 4.5 represents a solid step up from 4.0, and given Anthropic's history of delivering more capable models over time, we have no particular reason to doubt that.</p>
+<p>Simon Willison, a veteran software developer and frequent source of independent expert perspective on AI models for Ars Technica, <a href="https://simonwillison.net/2025/Sep/29/claude-sonnet-4-5/">wrote about</a> Sonnet 4.5 on his blog today. He seems generally impressed: "Anthropic gave me access to a preview version of a 'new model' over the weekend which turned out to be Sonnet 4.5," he wrote. "My initial impressions were that it felt like a better model for code than GPT-5-Codex, which has been my preferred coding model since it launched a few weeks ago. This space moves so fast&#8212;Gemini 3 is rumored to land soon so who knows how long Sonnet 4.5 will continue to hold the 'best coding model' crown."</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>Claude 4.5 is available everywhere today. Through the API, the model maintains the same pricing as Claude Sonnet 4, at $3 per million input tokens and $15 per million output tokens. Developers can access it through the Claude API using "claude-sonnet-4-5" as the model identifier.</p>
+ 
+<h2>Other new features</h2>
+<p>Some ancillary features of the Claude family got some upgrades today, too. For example, Anthropic added code execution and file creation directly within conversations for users of Claude's web interface and dedicated apps. Along those lines, users can now generate spreadsheets, slides, and documents without leaving the chat interface.</p>
+<p>The company also released a five-day research preview called "<a href="https://claude.ai/imagine/">Imagine with Claude</a>" for Max subscribers, which demonstrates the model generating software in real time. Anthropic describes it as "a fun demonstration showing what Claude Sonnet 4.5 can do" when combined with appropriate infrastructure.</p>
+ 
+
+<p>As mentioned above, the command-line development tool Claude Code also received several updates today, alongside the new model. The company added checkpoints that save progress and allow users to roll back to previous states, refreshed the terminal interface, and shipped a native VS Code extension. The Claude API also gains a new context editing feature and memory tool for handling longer-running agent tasks.</p>
+<p>Right now, AI companies are particularly clinging to software development benchmarks as proof of AI assistant capability because progress in other fields is difficult to objectively measure, and it's a domain where LLMs have arguably shown high utility compared to other fields that might suffer from confabulations. But people still use AI chatbots like Claude as general assistants. And given the recent news about troubles with some users <a href="https://arstechnica.com/information-technology/2025/08/with-ai-chatbots-big-tech-is-moving-fast-and-breaking-people/">going down fantasy rabbit holes</a> with AI chatbots, it's perhaps more notable than usual that Anthropic claims that Claude Sonnet 4.5 shows reduced "sycophancy, deception, power-seeking, and the tendency to encourage delusional thinking" compared to previous models. <a href="https://arstechnica.com/information-technology/2025/04/annoyed-chatgpt-users-complain-about-bots-relentlessly-positive-tone/">Sycophancy</a>, in particular, is the tendency for an AI model to praise the user's ideas, even if they are wrong or potentially dangerous.</p>
+<p>We could quibble with how Anthropic frames some of those AI output behaviors through a decidedly anthropomorphic lens, as <a href="https://arstechnica.com/information-technology/2025/08/is-ai-really-trying-to-escape-human-control-and-blackmail-people/">we have in the past</a>, but overall, attempts to reduce sycophancy are welcome news in a world that has been increasingly turning to chatbots for far more than just coding assistance.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
