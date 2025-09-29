@@ -1,0 +1,37 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143445/unite-a-decades-old-qnx-inspired-hobby-operating-system/
+date: '2025-09-29T14:36:58'
+excerpt: Unite is an operating system in which&#160;everything&#160;is a process,
+  including the things that you normally would expect to be part of the kernel. The
+  hard disk driver is a user process, so is the file system running on top of it.
+  The namespace manager is a user process. The whole thing (in theory, see below)
+  supports network transparency from the ground up, you can use resources of other
+  nodes in the network just as easily as you can use local resources, just prefix
+  them with the node ID. In the late 80’s, early 90’s I had a lot of time on my hands.
+  While living in the Netherlands I’d run into the QNX operating system that was sold
+  locally through a distributor. The distributors brother had need of a 386 version
+  of that OS but Quantum Software, the producers of QNX didn’t want to release a 386
+  version. So I decided to write my own. ↫ Jacques Mattheij What a great story. Mattheij
+  hasn&#8217;t done anthing or even looked at the code for this operating system he
+  created in decades, but recently got the urge to fix it up and publish it online
+  for all of us to see. Of course, resurrecting something this old and long untouched
+  required some magic, and there&#8217;s still a few things which he simply just can&#8217;t
+  get to work properly. I like how the included copy of vi is broken and adds random
+  bits of garbage to files, and things like the mouse driver don&#8217;t work because
+  it requires a COM port and the COM ports don&#8217;t seem to work in an emulated
+  environment. Unite is modeled after QNX, so it uses a microkernel. It uses a stripped-down
+  variant of the MINIX file system, only has one user but that user can run multiple
+  sessions, and there&#8217;s a basic graphics mode with some goodies. Sadly, the
+  graphics mode is problematic an requires some work to get going, and because you&#8217;ll
+  need the COM ports to work to use it properly it&#8217;s a bit useless anyway at
+  the moment. Regardless, it&#8217;s cool to see people going back to their old work
+  and fixing it up to publish the code online.
+image: null
+source: osnews
+tags:
+- OS News
+title: 'Unite: a decades-old QNX-inspired hobby operating system'
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Unite is an operating system in which&#160;everything&#160;is a process, including the things that you normally would expect to be part of the kernel. The hard disk driver is a user process, so is the file system running on top of it. The namespace manager is a user process. The whole thing (in theory, see below) supports network transparency from the ground up, you can use resources of other nodes in the network just as easily as you can use local resources, just prefix them with the node ID. In the late 80&#8217;s, early 90&#8217;s I had a lot of time on my hands. While living in the Netherlands I&#8217;d run into the QNX operating system that was sold locally through a distributor. The distributors brother had need of a 386 version of that OS but Quantum Software, the producers of QNX didn&#8217;t want to release a 386 version. So I decided to write my own.</p>
+<a href="https://jacquesmattheij.com/unite-operating-system/">&#8619; Jacques Mattheij</a></blockquote><p>What a great story.</p><p>Mattheij hasn&#8217;t done anthing or even looked at the code for this operating system he created in decades, but recently got the urge to fix it up and publish it online for all of us to see. Of course, resurrecting something this old and long untouched required some magic, and there&#8217;s still a few things which he simply just can&#8217;t get to work properly. I like how the included copy of vi is broken and adds random bits of garbage to files, and things like the mouse driver don&#8217;t work because it requires a COM port and the COM ports don&#8217;t seem to work in an emulated environment.</p><p>Unite is modeled after QNX, so it uses a microkernel. It uses a stripped-down variant of the MINIX file system, only has one user but that user can run multiple sessions, and there&#8217;s a basic graphics mode with some goodies. Sadly, the graphics mode is problematic an requires some work to get going, and because you&#8217;ll need the COM ports to work to use it properly it&#8217;s a bit useless anyway at the moment.</p><p>Regardless, it&#8217;s cool to see people going back to their old work and fixing it up to publish the code online.</p></div>
