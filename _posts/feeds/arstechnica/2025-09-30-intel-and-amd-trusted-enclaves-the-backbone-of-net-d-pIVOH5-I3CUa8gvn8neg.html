@@ -1,0 +1,121 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/09/intel-and-amd-trusted-enclaves-the-backbone-of-network-security-fall-to-physical-attacks/
+date: '2025-09-30T20:25:08'
+excerpt: The chipmakers say physical attacks aren't in the threat model. Many users
+  didn't get the memo.
+image: assets/media/d-pIVOH5-I3CUa8gvn8neg-hQ6oJwFb-05i0lasdRbEKw.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- AMD
+- CPUs
+- Intel
+- sev-snp
+- sgx
+title: Intel and AMD trusted enclaves, the backbone of network security, fall to physical
+  attacks
+---
+<div>
+                      
+                      
+           
+<p>In the age of cloud computing, protections baked into chips from Intel, AMD, and others are essential for ensuring confidential data and sensitive operations can&#8217;t be viewed or manipulated by attackers who manage to compromise servers running inside a data center. In many cases, these protections&#8212;which work by storing certain data and processes inside encrypted enclaves known as TEEs (<a href="https://duckduckgo.com/?q=what+is+tee+sgx&amp;t=vivaldi&amp;atb=v481-1&amp;ia=web">Trusted Execution Enclaves</a>)&#8212;are essential for safeguarding secrets stored in the cloud by the likes of <a href="https://signal.org/blog/private-contact-discovery/">Signal Messenger</a> and <a href="https://ai.meta.com/static-resource/private-processing-technical-whitepaper">WhatsApp</a>. All major cloud providers recommend that customers use it. Intel calls its protection <a href="https://en.wikipedia.org/wiki/Software_Guard_Extensions">SGX</a>, and AMD has named it <a href="https://www.amd.com/en/developer/sev.html">SEV-SNP</a>.</p>
+<p>Over the years, researchers have repeatedly broken the security and privacy promises that Intel and AMD have made about their respective protections. On Tuesday, researchers independently published two papers laying out separate attacks that further demonstrate the limitations of SGX and SEV-SNP. One attack, dubbed Battering RAM, defeats both protections and allows attackers to not only view encrypted data but also to actively manipulate it to introduce software backdoors or to corrupt data. A separate attack known as Wiretap is able to passively decrypt sensitive data protected by SGX and remain invisible at all times.</p>
+<h2>Attacking deterministic encryption</h2>
+<p>Both attacks use a small piece of hardware, known as an interposer, that sits between CPU silicon and the memory module. Its position allows the interposer to observe data as it passes from one to the other. They exploit both Intel&#8217;s and AMD&#8217;s use of <a href="https://en.wikipedia.org/wiki/Deterministic_encryption">deterministic encryption</a>, which produces the same ciphertext each time the same plaintext is encrypted with a given key. In SGX and SEV-SNP, that means the same plaintext written to the same memory address always produces the same ciphertext.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Deterministic encryption is well-suited for certain uses, such as full disk encryption, where the data being protected never changes once the thing being protected (in this case, the drive) falls into an attacker&#8217;s hands. The same encryption is suboptimal for protecting data flowing between a CPU and a memory chip because adversaries can observe the ciphertext each time the plaintext changes, opening the system to <a href="https://en.wikipedia.org/wiki/Replay_attack">replay attacks</a> and other well-known exploit techniques. Probabilistic encryption, by contrast, resists such attacks because the same plaintext can encrypt to a wide range of ciphertexts that are randomly chosen during the encryption process.</p>
+<p>&#8220;Fundamentally, [the use of deterministic encryption] is a design trade-off,&#8221; Jesse De Meulemeester, lead author of the Battering RAM paper, wrote in an online interview. &#8220;Intel and AMD opted for deterministic encryption without integrity or freshness to keep encryption scalable (i.e., protect the entire memory range) and reduce overhead. That choice enables low-cost physical attacks like ours. The only way to fix this likely requires hardware changes, e.g., by providing freshness and integrity in the memory encryption.&#8221;</p>
+<p>Daniel Genkin, one of the researchers behind Wiretap, agreed. &#8220;It&#8217;s a design choice made by Intel when SGX moved from client machines to server,&#8221; he said. &#8220;It offers better performance at the expense of security.&#8221; Genkin was referring to Intel&#8217;s move about five years ago to discontinue SGX for client processors&#8212;where encryption was limited to no more than 256 MB of RAM&#8212;to server processors that could encrypt terabytes of RAM. The transition required Intel to revamp the encryption to make it scale for such vast amounts of data.</p>
+<p>&#8220;The papers are two sides of the same coin,&#8221; he added.</p>
+
+          
+                  
+
+              
+          
+          
+<p>While both of Tuesday&#8217;s attacks exploit weaknesses related to deterministic encryption, their approaches and findings are distinct, and each comes with its own advantages and disadvantages. Both research teams said they learned of the other&#8217;s work only after privately submitting their findings to the chipmakers. The teams then synchronized the publish date for Tuesday. It&#8217;s not the first time such a coincidence has occurred. In 2018, multiple research teams independently developed attacks with names including <a href="https://arstechnica.com/gadgets/2018/01/meltdown-and-spectre-every-modern-processor-has-unfixable-security-flaws/">Spectre and Meltdown</a>. Both plucked secrets out of Intel and AMD processors by exploiting their use of performance enhancement known as speculative execution.</p>
+ 
+<p>AMD declined to comment on the record, and Intel didn&#8217;t respond to questions sent by email. In the past, both chipmakers have said that their respective TEEs are designed to protect against compromises of a piece of software or the operating system itself. The guarantees, the companies have said, don&#8217;t extend to physical attacks such as Battering RAM and Wiretap, which rely on physical interposers that sit between the processor and the memory chips. Despite this limitation, many cloud services continue to trust assurances from the TEEs even when they have been compromised through physical attacks.</p>
+<h2>Battering RAM</h2>
+<p><a href="https://batteringram.eu">Battering RAM</a> uses a custom-built analog switch to act as an interposer that reads encrypted data as it passes between protected memory regions in DDR4 memory chips and an Intel or AMD processor. By design, both SGX and SEV-SNP make this ciphertext inaccessible to an adversary. To bypass that protection, the interposer creates memory aliases in which two different memory addresses point to the same location in the memory module.</p>
+ 
+
+<p>&#8220;This lets the attacker capture a victim's ciphertext and later replay it from an alias,&#8221; De Meulemeester explained. &#8220;Because Intel's and AMD's memory encryption is deterministic, the replayed ciphertext always decrypts into valid plaintext when the victim reads it.&#8221; The PhD researcher at KU Leuven in Belgium continued:</p>
+
+          
+                   
+            
+
+              
+          
+          
+<blockquote><p>When the CPU writes data to memory, the memory controller encrypts it deterministically, using the plaintext and the address as inputs. The same plaintext written to the same address always produces the same ciphertext. Through the alias, the attacker can't read the victim's secrets directly, but they can capture the victim's ciphertext. Later, by replaying this ciphertext at the same physical location, the victim will decrypt it to a valid, but stale, plaintext.</p>
+<p>This replay capability is the primitive on which both our SGX and SEV attacks are built.</p></blockquote>
+<p>In both cases, the adversary installs the interposer, either through a supply-chain attack or physical compromise, and then runs either a virtual machine or application at a chosen memory location. At the same time, the adversary also uses the aliasing to capture the ciphertext. Later, the adversary replays the captured ciphertext, which, because it's running in the region the attacker has access to, is then replayed as plaintext.</p>
+<p>Because SGX uses a single memory-encryption key for the entire protected range of RAM, Battering RAM can gain the ability to write or read plaintext into these regions. This allows the adversary to extract the processor&#8217;s provisioning key and, in the process, break the attestation SGX is supposed to provide to certify its integrity and authenticity to remote parties that connect to it.</p>
+<p>AMD processors protected by SEV use a single encryption key to produce all ciphertext on a given virtual machine. This prevents the ciphertext replaying technique used to defeat SGX. Instead, Battering RAM captures and replays the cryptographic elements that are supposed to prove the virtual machine hasn&#8217;t been tampered with. By replaying an old attestation report, Battering RAM can load a backdoored Virtual machine that still carries the SEV-SNP certification that the VM hasn&#8217;t been tampered with.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The key benefit of Battering RAM is that it requires equipment that costs less than $50 to pull off. It also allows active decryption, meaning encrypted data can be both read and tampered with. In addition, it works against both SGX and SEV-SNP, as long as they work with DDR4 memory modules.</p>
+ 
+<h2>Wiretap</h2>
+<p><a href="https://wiretap.fail/">Wiretap</a>, meanwhile, is limited to breaking only SGX working with DDR4, although the researchers say it would likely work against the AMD protections with a modest amount of additional work. Wiretap, however, allows only for passive decryption, which means protected data can be read, but data can&#8217;t be written to protected regions of memory. The cost of the interposer and the equipment for analyzing the captured data also costs considerably more than Battering RAM, at about $500 to $1,000.</p>
+ 
+
+ 
+
+<p>Like Battering RAM, Wiretap exploits deterministic encryption, except the latter attack maps ciphertext to a list of known plaintext words that the ciphertext is derived from. Eventually, the attack can recover enough ciphertext to reconstruct the attestation key.</p>
+<p>Genkin explained:</p>
+<blockquote><p>Let&#8217;s say you have an encrypted list of words that will be later used to form sentences. You know the list in advance, and you get an encrypted list in the same order (hence you know the mapping between each word and its corresponding encryption). Then, when you encounter an encrypted sentence, you just take the encryption of each word and match it against your list. By going word by word, you can decrypt the entire sentence. In fact, as long as most of the words are in your list, you can probably decrypt the entire conversation eventually. In our case, we build a dictionary between common values occurring within the ECDSA algorithm and their corresponding encryption, and then use this dictionary to recover these values as they appear, allowing us to extract the key.</p></blockquote>
+<p>The Wiretap researchers went on to show the types of attacks that are possible when an adversary successfully compromises SGX security. As Intel <a href="https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/attestation-services.html">explains</a>, a key benefit of SGX is remote attestation, a process that first verifies the authenticity and integrity of VMs or other software running inside the enclave and hasn&#8217;t been tampered with. Once the software passes inspection, the enclave sends the remote party a digitally signed certificate providing the identity of the tested software and a clean bill of health certifying the software is safe.</p>
+
+          
+                   
+             
+            
+
+              
+          
+          
+<p>The enclave then opens an encrypted connection with the remote party to ensure credentials and private data can&#8217;t be read or modified during transit. Remote attestation works with the industry standard Elliptic Curve Digital Signature Algorithm, making it easy for all parties to use and trust.</p>
+ 
+ 
+<h2>Blockchain services didn&#8217;t get the memo</h2>
+<p>Many cloud-based services rely on TEEs as a foundation for privacy and security within their networks. One such service is Phala, a blockchain provider that allows the drafting and execution of smart contracts. <a href="https://files.phala.network/phala-paper.pdf">According to</a> the company, computer &#8220;state&#8221;&#8212;meaning system variables, configurations, and other dynamic data an application depends on&#8212;are stored and updated only in the enclaves available through SGX, SEV-SNP, and a third trusted enclave available in Arm chips known as <a href="https://www.arm.com/technologies/trustzone-for-cortex-a">TrustZone</a>. This design allows these smart contract elements to update in real time through clusters of &#8220;worker nodes&#8221;&#8212;meaning the computers that host and process smart contracts&#8212;with no possibility of any node tampering with or viewing the information during execution.</p>
+<p>&#8220;The attestation quote signed by Intel serves as the proof of a successful execution,&#8221; Phala explained. &#8220;It proves that specific code has been run inside an SGX enclave and produces certain output, which implies the confidentiality and the correctness of the execution. The proof can be published and validated by anyone with generic hardware.&#8221; Enclaves provided by AMD and Arm work in a similar manner.</p>
+<p>The Wiretap researchers created a &#8220;testnet,&#8221; a local machine for running worker modes. With possession of the SGX attestation key, the researchers were able to obtain a cluster key that prevents individual nodes from reading or modifying contract state. With that, Wiretap was able to fully bypass the protection. In a paper, the researchers wrote:</p>
+
+          
+                  
+
+              
+          
+          
+<blockquote><p>We first enter our attacker enclave into a cluster and note it is given access to the cluster key. Although the cluster key is not directly distributed to our worker upon joining a cluster, we initiate a transfer of the key from any other node in the cluster. This transfer is completed without on-chain interaction, given our worker is part of the cluster. This cluster key can then be used to decrypt all contract interactions within the cluster. Finally, when our testnet accepted our node&#8217;s enclave as a gatekeeper, we directly receive a copy of the master key, which is used to derive all cluster keys and therefore all contract keys, allowing us to decrypt the entire testnet.</p></blockquote>
+<p>The researchers performed similar bypasses against a variety of other blockchain services, including Secret, Crust, and IntegriTEE. After the researchers privately shared the results with these companies, they took steps to mitigate the attacks.</p>
+<p>Both Battering RAM and Wiretap work only against DDR4 forms of memory chips because the newer DDR5 runs at much higher bus speeds with a multi-cycle transmission protocol. For that reason, neither attack works against a similar Intel protection known as TDX because it works only with DDR5.</p>
+<p>As noted earlier, Intel and AMD both exclude physical attacks like Battering RAM and Wiretap from the threat model their TEEs are designed to withstand. The Wiretap researchers showed that despite these warnings, many cloud-based services still rely on the enclaves to preserve the security and privacy of their networks.</p>
+<p>For now, the only feasible solution is for chipmakers to replace deterministic encryption with a stronger form of protection. Given the challenges of making such encryption schemes scale to vast amounts of RAM, it&#8217;s not clear when that may happen.</p>
+
+
+          
+                  
+
+                  
+          </div>
