@@ -1,0 +1,61 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/ai/2025/10/can-todays-ai-video-models-accurately-model-how-the-real-world-works/
+date: '2025-10-01T16:43:24'
+excerpt: New research shows highly inconsistent performance on a variety of physical
+  reasoning tasks.
+image: assets/media/g9Gg9y7rbsgi1DQ2hRxkuw-rWC0ctgFl3hXletqGuJdbg.jpeg
+source: arstechnica
+tags:
+- AI
+- google
+- Veo 3
+- video
+title: Can today’s AI video models accurately model how the real world works?
+---
+<div>
+                      
+                      
+          <p>Over the last few months, many AI boosters have been <a href="https://arstechnica.com/ai/2025/09/new-ai-model-turns-photos-into-explorable-3d-worlds-with-caveats/">increasingly interested</a> in <a href="https://arstechnica.com/gaming/2025/02/microsofts-new-interactive-ai-world-model-still-has-a-long-way-to-go/">generative video models</a> and their <a href="https://arstechnica.com/information-technology/2024/08/new-ai-model-can-hallucinate-a-game-of-1993s-doom-in-real-time/">seeming ability</a> to show at least <a href="https://arstechnica.com/ai/2024/12/googles-genie-2-world-model-reveal-leaves-more-questions-than-answers/">limited emergent knowledge</a>&#160;of <a href="https://arstechnica.com/information-technology/2024/12/new-physics-sim-trains-robots-430000-times-faster-than-reality/">the physical properties of the real world</a>. That kind of learning could underpin a robust version of a so-called "world model" that would represent a major breakthrough in generative AI's actual operant real-world capabilities.</p>
+<p>Recently, Google's DeepMind Research tried to add some scientific rigor to how well video models can actually learn about the real world from their training data. In the bluntly titled paper <a href="https://video-zero-shot.github.io/">"Video Models are Zero-shot Learners and Reasoners,"</a> the researchers used <a href="https://arstechnica.com/ai/2025/05/ai-video-just-took-a-startling-leap-in-realism-are-we-doomed/">Google's Veo 3 model</a> to generate thousands of videos designed to test its abilities across dozens of tasks related to perceiving, modeling, manipulating, and reasoning about the real world.</p>
+ 
+
+<p>In the paper, the researchers boldly claim that Veo 3 "can solve a broad variety of tasks it wasn&#8217;t explicitly trained for" (that's the "zero-shot" part of the title) and that video models "are on a path to becoming unified, generalist vision foundation models." But digging into the actual results of those experiments, the researchers seem to be grading today's video models on a bit of a curve and assuming future progress will smooth out many of today's highly inconsistent results.</p>
+<h2>Passing with an 8 percent grade</h2>
+<p>To be sure, Veo 3 achieves impressive and consistent results on some of the dozens of tasks the researchers tested. The model was able to generate plausible video of actions like robotic hands opening a jar or throwing and catching a ball reliably across 12 trial runs, for instance. Veo 3 showed similarly perfect or near-perfect results across tasks like deblurring or denoising images, filling in empty spaces in complex images, and detecting the edges of objects in an image.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+
+<p>But on other tasks, the model showed much more variable results. When asked to generate a video highlighting a specific written character on a grid, for instance, the model failed in nine out of 12 trials. When asked to model a Bunsen burner turning on and burning a piece of paper, it similarly failed nine out of 12 times. When asked to solve a simple maze, it failed in 10 of 12 trials. When asked to sort numbers by popping labeled bubbles in order, it failed 11 out of 12 times.</p>
+<p>For the researchers, though, all of the above examples aren't evidence of failure but instead a sign of the model's capabilities. To be listed under the paper's "failure cases," Veo 3 had to fail a tested task across all 12 trials, which happened in 16 of the 62 tasks tested. For the rest, the researchers write that "a success rate greater than 0 suggests that the model possesses the ability to solve the task."</p>
+<p>Thus, failing 11 out of 12 trails of a certain task is considered evidence for the model's capabilities in the paper. That evidence of the model "possess[ing] the ability to solve the task" includes 18 tasks where the model failed in more than half of its 12 trial runs and another 14 where it failed in 25 to 50 percent of trials.</p>
+<h2>Past results, future performance</h2>
+<p>Yes, in all of these cases, the model technically demonstrates the capability being tested at some point. But the model's inability to perform that task reliably means that, in practice, it won't be performant enough for most use cases. Any future model that could become a "unified, generalist vision foundation models" will have to be able to succeed much more consistently on these kinds of tests.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+
+<p>While the researchers acknowledge that Veo 3's performance is "not yet perfect," they point to "consistent improvement from Veo 2 to Veo 3" in suggesting that future video models "will become general-purpose foundation models for vision, just as LLMs have for language." And the researchers do have some data on their side for this argument.</p>
+<p>For instance, in quantitative tests across thousands of video generations, Veo 3 was able to reflect a randomized pattern horizontally 72 percent of the time, compared to zero percent for Veo 2. Veo 3 showed smaller but still impressive improvements in consistency over Veo 2 on tasks like edge detection, object extraction, and maze solving.</p>
+<p>But past performance is not indicative of future results, as they say. From our current vantage point, it's hard to know if video models like Veo 3 are poised to see exponential improvements in consistency or are instead approaching a point of diminishing returns.</p>
+<p>Experience with <a href="https://arstechnica.com/ai/2024/06/researchers-describe-how-to-tell-if-chatgpt-is-confabulating/">confabulating LLMs</a> has also shown there's often a large gap between a model generating a correct result some of the time and an upgraded model generating a correct result all of the time. Figuring out when, why, and how video models fail or succeed when given the same basic prompt is not a trivial problem, and it's not one that future models are fated to solve anytime soon.</p>
+<p>As impressive as today's generative video models are, the inconsistent results shown in this kind of testing prove there's a long way to go before they can be said to reason about the world at large.</p>
+
+
+          
+                  
+
+                  
+          </div>
