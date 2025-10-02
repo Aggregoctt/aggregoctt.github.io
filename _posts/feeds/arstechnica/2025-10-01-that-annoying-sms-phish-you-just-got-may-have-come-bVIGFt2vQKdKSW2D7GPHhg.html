@@ -1,0 +1,48 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/10/that-annoying-sms-phish-you-just-got-may-have-come-from-a-box-like-this/
+date: '2025-10-01T22:16:07'
+excerpt: Smishers looking for new infrastructure are getting creative.
+image: assets/media/bVIGFt2vQKdKSW2D7GPHhg-0JR_7X7ruQXX37Zx1tcQHw.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- hacking
+- modems
+- phishing
+- smishing
+- SMS
+title: That annoying SMS phish you just got may have come from a box like this
+---
+<div>
+                      
+                      
+          <p>Scammers have been abusing unsecured cellular routers used in industrial settings to blast SMS-based phishing messages in campaigns that have been ongoing since 2023, researchers said.</p>
+<p>The routers, manufactured by China-based Milesight IoT Co., Ltd., are rugged Internet of Things devices that use cellular networks to connect traffic lights, electric power meters, and other sorts of remote industrial devices to central hubs. They come equipped with SIM cards that work with 3G/4G/5G cellular networks and can be controlled by text message, Python scripts, and web interfaces.</p>
+<h2>An unsophisticated, yet effective, delivery vector</h2>
+<p>Security company Sekoia on Tuesday <a href="https://blog.sekoia.io/silent-smishing-the-hidden-abuse-of-cellular-router-apis/">said</a> that an analysis of &#8220;suspicious network traces&#8221; detected in its honeypots led to the discovery of a cellular router being abused to send SMS messages with phishing URLs. As company researchers investigated further, they identified more than 18,000 such routers accessible on the Internet, with at least 572 of them allowing free access to programming interfaces to anyone who took the time to look for them. The vast majority of the routers were running firmware versions that were more than three years out of date and had known vulnerabilities.</p>
+<p>The researchers sent requests to the unauthenticated APIs that returned the contents of the routers&#8217; SMS inboxes and outboxes. The contents revealed a series of campaigns dating back to October 2023 for &#8220;smishing&#8221;&#8212;a common term for SMS-based phishing. The fraudulent text messages were directed at phone numbers located in an array of countries, primarily Sweden, Belgium, and Italy. The messages instructed recipients to log into various accounts, often related to government services, to verify the person&#8217;s identity. Links in the messages sent recipients to fraudulent websites that collected their credentials.</p>
+<p>&#8220;In the case under analysis, the smishing campaigns appear to have been conducted through the exploitation of vulnerable cellular routers&#8212;a relatively unsophisticated, yet effective, delivery vector,&#8221; Sekoia researchers Jeremy Scion and Marc N. wrote. &#8220;These devices are particularly appealing to threat actors as they enable decentralized SMS distribution across multiple countries, complicating both detection and takedown efforts.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The researchers added: &#8220;This campaign is notable in that it demonstrates how impactful smishing operations can be executed using simple, accessible infrastructure. Given the strategic utility of such equipment, it is highly likely that similar devices are already being exploited in ongoing or future smishing campaigns.&#8221;</p>
+<p>Sekoia said it&#8217;s unclear how the devices are being compromised. One possibility is through CVE-2023-43261, a vulnerability in the routers that was fixed in 2023 with the release of version 35.3.0.7 of the device firmware. The vast majority of 572 identified as unsecured ran versions 32 or earlier.</p>
+<p>CVE-2023-43261 stemmed from a misconfiguration that made files in a router&#8217;s storage publicly available through a web interface, according to a <a href="https://medium.com/@win3zz/inside-the-router-how-i-accessed-industrial-routers-and-reported-the-flaws-29c34213dfdf">post</a> published by Bipin Jitiya, the researcher who discovered the vulnerability. Among other things, some of the files contained cryptographically protected passwords for accounts, including the device administrator. While the password was encrypted, the file also included the secret encryption key used and an IV (initialization vector), allowing an attacker to obtain the plaintext password and then gain full administrative access.</p>
+<p>The researchers said that this theory was contradicted by some of the facts uncovered in their investigation. For one, an authentication cookie found on one of the hacked routers used in the campaign &#8220;could not be decrypted using the key and IV described in the article,&#8221; the researchers wrote, without elaborating further. Further, some of the routers abused in the campaigns ran firmware versions that weren&#8217;t susceptible to CVE-2023-43261.</p>
+<p>Milesight didn't respond to a message seeking comment.</p>
+<p>The phishing websites ran JavaScript that prevented pages from delivering malicious content unless it was accessed from a mobile device. One site also ran JavaScript to disable right-click actions and browser debugging tools. Both moves were likely made in an attempt to hinder analysis and reverse engineering. Sekoia also found that some of the sites logged visitor interactions through a Telegram bot known as GroozaBot. The bot is known to be operated by an actor named "Gro_oza," who appears to speak both Arabic and French.</p>
+<p>Given the prevalence and massive volume of smishing messages, people often wonder how scammers manage to send billions of messages per month without getting caught or shut down. Sekoia&#8217;s investigation suggests that in many cases, the resources come from small, often-overlooked boxes tucked away in janitorial closets in industrial settings.</p>
+
+
+          
+                  
+
+                  
+          </div>
