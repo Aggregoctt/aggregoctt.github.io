@@ -1,0 +1,86 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/10/why-irobots-founder-wont-go-within-10-feet-of-todays-walking-robots/
+date: '2025-10-02T21:10:23'
+excerpt: Rodney Brooks says humanoid robots pose hidden safety challenges and won't
+  learn dexterity from video alone.
+image: assets/media/0B8WcpX4JsS90sjXb3ZLoQ-tloxLwM_1tSKZ0zYywFHYA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Tech
+- Agility Robotics
+- AI development tools
+- AI research
+- boston dynamics
+- dexterity
+- Elon Musk
+- Figure
+- humanoid robots
+- iRobot
+- machine learning
+- manipulation
+- MIT
+- openai
+- optimus
+- Rethink Robotics
+- robot AI
+- Robotics
+- robots
+- rodney brooks
+- safety
+- Tesla
+- walking robots
+title: Why iRobot’s founder won’t go within 10 feet of today’s walking robots
+---
+<div>
+                      
+                      
+           
+<p>When a robotics pioneer who has spent decades building humanoid machines recommends that you stand at least nine feet away from any full-sized walking robot, you should probably listen.</p>
+<p>"My advice to people is to not come closer than 3 meters to a full-size walking robot," Rodney Brooks <a href="https://rodneybrooks.com/why-todays-humanoids-wont-learn-dexterity/">writes</a> in a technical essay titled "Why Today&#8217;s Humanoids Won&#8217;t Learn Dexterity" published on his blog last week. "Until someone comes up with a better version of a two-legged&#160;walking robot that is much safer to be near, and even in contact with, we will not see humanoid robots get certified to be deployed in zones that also have people in them."</p>
+<p>Brooks, the <a href="https://en.wikipedia.org/wiki/Rodney_Brooks">MIT professor emeritus</a> who co-founded <a href="https://en.wikipedia.org/wiki/IRobot">iRobot</a> (of Roomba fame) and Rethink Robotics, believes companies pouring billions into humanoid development are chasing an expensive fantasy. Among other problems yet to be addressed, he warns that today's bipedal humanoids are fundamentally unsafe for humans to be near when they walk due to the massive kinetic energy they generate while maintaining balance. That stored-up energy can cause severe injury if the robot falls or its limbs strike someone.</p>
+ 
+
+<p>More on the dangers of robots in a minute. Beyond concerns about malfunction, Brooks contests the prevailing belief that humanoid robots will soon replace human workers by learning dexterity through watching videos of people performing tasks. It's a common robotics AI training technique <a href="https://arstechnica.com/ai/2025/03/googles-origami-folding-ai-brain-may-power-new-wave-of-humanoid-robots/">we have covered</a> in the past. He does not think such robots are impossible, but that they may be further off than most people think.</p>
+<p>In some corners of the tech world, robot hype has reached a <a href="https://arstechnica.com/information-technology/2024/03/nvidia-announces-moonshot-to-create-embodied-human-level-ai-in-robot-form/">fever pitch</a> due to the rapid gains in AI. Tesla CEO Elon Musk has claimed that the company's <a href="https://arstechnica.com/ai/2024/10/reports-teslas-prototype-optimus-robots-were-controlled-by-humans/">Optimus robots</a> could generate $30 trillion in revenue, while Figure's CEO Brett Adcock <a href="https://www.figure.ai/master-plan">envisions</a> humanoids serving millions of tasks in the labor force.</p>
+<p>However, hardware is much harder than software. Unlike software that runs in a virtual world, the laws of physics are unforgiving and immutable, and interacting with the physical world safely requires a great deal of sensory input. Brooks, who has been working on robot manipulation <a href="https://rodneybrooks.com/blog/">since the 1970s</a>, argues these companies are missing the fundamental ingredient for dexterous manipulation: the sense of touch.</p>
+
+          
+                       
+                   
+                  
+
+              
+          
+          
+<p>The crux of Brooks' argument centers on how companies like Tesla and Figure are training their robots. Both have publicly stated they are using a vision-only approach, having workers wear camera rigs to record tasks like folding shirts or picking up objects. The data is then fed into AI models, which can imitate permutations of the motions in novel contexts. Tesla <a href="https://www.businessinsider.com/tesla-musk-optimus-humanoid-robot-training-motion-capture-cameras-2025-8">recently shifted away</a> from motion capture suits and teleoperation for data collection to a video-based method, with workers wearing helmets and backpacks equipped with five cameras. Figure's "<a href="https://www.figure.ai/news/project-go-big">Project Go-Big</a>" initiative similarly relies on transferring knowledge directly from what they call "everyday human video."</p>
+<p>(In addition to video capture from real humans performing tasks, some robotics AI models <a href="https://arstechnica.com/information-technology/2024/12/new-physics-sim-trains-robots-430000-times-faster-than-reality/">use</a> simulations of physical space for training, which have similar limitations.)</p>
+<p>These approaches, Brooks argues, ignore decades of research showing that human dexterity depends on an extraordinarily complex touch-sensing system. He cites work from Roland Johansson's lab at Ume&#229; University <a href="http://www.youtube.com/watch?v=zGIDptsNZMo">showing</a> that when a person's fingertips are anesthetized, a seven-second task of picking up and lighting a match stretches to nearly 30 seconds of fumbling. The human hand contains about 17,000 mechanoreceptors, with 1,000 concentrated in each fingertip alone. Recent research from David Ginty's lab at Harvard <a href="https://www.quantamagazine.org/touch-our-most-complex-sense-is-a-landscape-of-cellular-sensors-20250416/">has identified</a> 15 families of neurons involved in touch sensing, detecting everything from gentle indentation to vibrations to skin stretching. That's a lot of sensory information that current robot systems cannot yet capture or simulate.</p>
+ 
+<h2>The physics of falling robots</h2>
+<p>Beyond the dexterity problem lies an even more immediate safety concern. Current humanoid robots use powerful electric motors and a decades-old algorithm called <a href="https://en.wikipedia.org/wiki/Zero_moment_point">zero moment point</a> to maintain balance by pumping large amounts of energy into their systems when instability is detected. This approach works well enough to keep them upright most of the time, but it creates what Brooks describes as a fundamental incompatibility with human proximity.</p>
+<p>The scaling laws of physics make full-sized humanoids exponentially more dangerous than their smaller counterparts. When you double the size of a robot, Brooks says, its mass increases by a factor of eight. That means a falling full-sized humanoid has eight times the kinetic energy of a half-sized version. If that rapidly accelerating metal leg encounters anything in its path during a fall, the impact can cause severe injury.</p>
+
+          
+                  
+
+              
+          
+          
+<p>In his post, Brooks recounts being "way too close" to an <a href="https://arstechnica.com/gadgets/2024/03/huge-funding-round-makes-figure-big-techs-favorite-humanoid-robot-company/">Agility Robotics Digit</a> humanoid when it fell several years ago. He has not dared approach one while walking since. Even in promotional videos from humanoid companies, Brooks notes, humans are never shown close to moving humanoid robots unless separated by furniture, and even then, the robots only shuffle minimally.</p>
+<p>This safety problem extends beyond accidental falls. For humanoids to fulfill their promised role in health care and factory settings, they need certification to operate in zones shared with humans. Current walking mechanisms make such certification virtually impossible under existing safety standards in most parts of the world.</p>
+ 
+
+<p>Brooks predicts that within 15 years, there will indeed be many robots called "humanoids" performing various tasks. But ironically, they will look nothing like today's bipedal machines. They will have wheels instead of feet, varying numbers of arms, and specialized sensors that bear no resemblance to human eyes. Some will have cameras in their hands or looking down from their midsections. The definition of "humanoid" will shift, just as "flying cars" now means electric helicopters rather than road-capable aircraft, and "self-driving cars" means vehicles with remote human monitors rather than truly autonomous systems.</p>
+<p>The billions currently being invested in forcing today's rigid, vision-only humanoids to learn dexterity will largely disappear, Brooks argues. Academic researchers are making more progress with systems that incorporate touch feedback, like <a href="https://dex-op.github.io/">MIT's approach</a> using a glove that transmits sensations between human operators and robot hands. But even these advances remain far from the comprehensive touch sensing that enables human dexterity.</p>
+<p>Today, few people spend their days near humanoid robots, but Brooks's three-meter rule stands as a practical warning of challenges ahead from someone who has spent decades building these machines. The gap between promotional videos and deployable reality remains large, measured not just in years but in fundamental unsolved problems of physics, sensing, and safety.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
