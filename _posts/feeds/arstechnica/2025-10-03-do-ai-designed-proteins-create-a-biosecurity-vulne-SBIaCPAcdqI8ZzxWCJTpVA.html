@@ -1,0 +1,83 @@
+---
+author: John Timmer
+canonical_url: https://arstechnica.com/science/2025/10/do-ai-designed-proteins-create-a-biosecurity-vulnerability/
+date: '2025-10-03T20:12:52'
+excerpt: Ordering DNA for AI-designed toxins doesn't always raise red flags.
+image: assets/media/SBIaCPAcdqI8ZzxWCJTpVA-o8K-Q697WIsn-JAlSfAP5g.jpeg
+source: arstechnica
+tags:
+- AI
+- Science
+- biohazards
+- bioterrorism
+- protein design
+- risk assessment
+- security
+title: Do AI-designed proteins create a biosecurity vulnerability?
+---
+<div>
+                      
+                      
+           
+<p>On Thursday, a team of researchers led by Microsoft announced that they had discovered, and possibly patched, what they're terming a biological zero-day&#8212;an unrecognized security hole in a system that protects us from biological threats. The system at risk screens purchases of DNA sequences to determine when someone's ordering DNA that encodes a toxin or dangerous virus. But, the researchers argue, it has become increasingly vulnerable to missing a new threat: AI-designed toxins.</p>
+<p>How big of a threat is this? To understand, you have to know a bit more about both existing biosurveillance programs and the capabilities of AI-designed proteins.</p>
+<h2>Catching the bad ones</h2>
+<p>Biological threats come in a variety of forms. Some are pathogens, such as viruses and bacteria. Others are protein-based toxins, like the ricin that was <a href="https://en.wikipedia.org/wiki/2003_ricin_letters">sent to the White House</a> in 2003. Still others are chemical toxins that are produced through enzymatic reactions, like the molecules <a href="https://en.wikipedia.org/wiki/Phycotoxin">associated with red tide</a>. All of them get their start through the same fundamental biological process: DNA is transcribed into RNA, which is then used to make proteins.</p>
+<p>For several decades now, starting the process has been as easy as ordering the needed DNA sequence online from any of a number of companies, which will synthesize a requested sequence and ship it out. Recognizing the potential threat here, governments and industry have worked together to add a screening step to every order: the DNA sequence is scanned for its ability to encode parts of proteins or viruses considered threats. Any positives are then flagged for human intervention to evaluate whether they or the people ordering them truly represent a danger.</p>
+<p>Both the list of proteins and the sophistication of the scanning have been continually updated in response to research progress over the years. For example, initial screening was done based on similarity to target DNA sequences. But there are many DNA sequences that can encode the same protein, so the screening algorithms have been adjusted accordingly, recognizing all the DNA variants that pose an identical threat.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The new work can be thought of as an extension of that threat. Not only can multiple DNA sequences encode the same protein; multiple proteins can perform the same function. To form a toxin, for example, typically requires the protein to adopt the correct three-dimensional structure, which brings a handful of critical amino acids within the protein into close proximity. Outside of those critical amino acids, however, things can often be quite flexible. Some amino acids may not matter at all; other locations in the protein could work with any positively charged amino acid, or any hydrophobic one.</p>
+<p>In the past, it could be extremely difficult (meaning time consuming and expensive) to do the experiments that would tell you what sorts of changes a string of amino acids could tolerate while remaining functional. But the team behind the new analysis recognized that AI protein design tools have now gotten quite sophisticated and can predict when distantly related sequences can fold up into the same shape and catalyze the same reactions. The process is still error prone, and you often have to test a dozen or more proposed proteins to get a working one, but it has <a href="https://arstechnica.com/science/2025/02/using-ai-to-design-proteins-is-now-easy-making-enzymes-remains-hard/">produced some impressive successes</a>.</p>
+<p>So, the team developed a hypothesis to test: AI can take an existing toxin and design a protein with the same function that's distantly related enough that the screening programs do not detect orders for the DNA that encodes it.</p>
+<h2>The zero-day treatment</h2>
+<p>The team started with a basic test: use AI tools to design variants of the toxin ricin, then test them against the software that is used to screen DNA orders. The results of the test suggested there was a risk of dangerous protein variants slipping past existing screening software, so the situation was treated like the equivalent of a zero-day vulnerability.</p>
+
+          
+                  
+
+              
+          
+          
+<p>"Taking inspiration from established cybersecurity processes for addressing such situations, we contacted the relevant bodies regarding the potential vulnerability, including the International Gene Synthesis Consortium and trusted colleagues in the protein design community as well as leads in biosecurity at the US Office of Science and Technology Policy, US National Institute of Standards and Technologies, US Department of Homeland Security, and US Office of Pandemic Preparedness and Response," the authors report. "Outside of those bodies, details were kept confidential until a more comprehensive study could be performed in pursuit of potential mitigations and for 'patches'... to be developed and deployed."</p>
+<p>Details of that original test are <a href="https://www.science.org/doi/suppl/10.1126/science.adu8578/suppl_file/science.adu8578_appendix_s1.zip">being made available today</a> as part of a much larger analysis that extends the approach to a large range of toxic proteins. Starting with 72 toxins, the researchers used three open source AI packages to generate a total of about 75,000 potential protein variants.</p>
+<p>And this is where things get a little complicated. Many of the AI-designed protein variants are going to end up being non-functional, either subtly or catastrophically failing to fold up into the correct configuration to create an active toxin. The only way to know which ones work is to make the proteins and test them biologically; most AI protein design efforts will make actual proteins from dozens to hundreds of the most promising-looking potential designs to find a handful that are active. But doing that for 75,000 designs is completely unrealistic.</p>
+<p>Instead, the researchers used two software-based tools to evaluate each of the 75,000 designs. One of these focuses on the similarity between the overall predicted physical structure of the proteins, and another looks at the predicted differences between the positions of individual amino acids. Either way, they're a rough approximation of just how similar the proteins formed by two strings of amino acids should be. But they're definitely not a clear indicator of whether those two proteins would be equally functional.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<p>In any case, DNA sequences encoding all 75,000 designs were fed into the software that screens DNA orders for potential threats. One thing that was very clear is that there were huge variations in the ability of the four screening programs to flag these variant designs as threatening. Two of them seemed to do a pretty good job, one was mixed, and another let most of them through. Three of the software packages were updated in response to this performance, which significantly improved their ability to pick out variants.</p>
+<p>There was also a clear trend in all four of the screening packages: the closer the variant was to the original structurally, the more likely the package (both before and after the patches) was to be able to flag it as a threat. In all cases, there was also a cluster of variant designs that were unlikely to fold up into a similar structure, and these generally weren't flagged as threats.</p>
+<h2>What&#8217;s this mean?</h2>
+<p>Again, it's important to emphasize that this evaluation is based on predicted structures; "unlikely" to fold into a similar structure to the original toxin doesn't mean these proteins will be inactive as toxins. Functional proteins are probably going to be very rare among this group, but there may be a handful in there. That handful is also probably rare enough that you'd have to order up and test far too many designs to find one that works, making this an impractical threat vector.</p>
+<p>At the same time, there are also a handful of proteins that are very similar to the toxin structurally and not flagged by the software. For the three patched versions of the software, the ones that slip through the screening represent about 1 to 3 percent of the total in the "very similar" category. That's not great, but it's probably good enough that any group that tries to order up a toxin by this method would attract attention because they'd have to order over 50 just to have a good chance of finding one that slipped through, which would raise all sorts of red flags.</p>
+
+          
+                  
+
+              
+          
+          
+<p>One other notable result is that the designs that weren't flagged were mostly variants of just a handful of toxin proteins. So this is less of a general problem with the screening software and might be more of a small set of focused problems. Of note, one of the proteins that produced a lot of unflagged variants isn't toxic itself; instead, it's a co-factor necessary for the actual toxin to do its thing. As such, some of the screening software packages didn't even flag the original protein as dangerous, much less any of its variants. (For these reasons, the company that makes one of the better-performing software packages decided the threat here wasn't significant enough to merit a security patch.)</p>
+<p>So, on its own, this work doesn't seem to have identified something that's a major threat at the moment. But it's probably useful, in that it's a good thing to get the people who engineer the screening software to start thinking about emerging threats.</p>
+<p>That's because, as the people behind this work note, AI protein design is still in its early stages, and we're likely to see considerable improvements. And there's likely to be a limit to the sorts of things we can screen for. We're already at the point where AI protein design tools can be used to create proteins that have entirely novel functions and do so without starting with variants of existing proteins. In other words, we can design proteins that are impossible to screen for based on similarity to known threats, because they don't look at all like anything we know is dangerous.</p>
+<p>Protein-based toxins would be very difficult to design, because they have to both cross the cell membrane and then do something dangerous once inside. While AI tools are probably unable to design something that sophisticated at the moment, I would be very hesitant to rule out the prospects of them eventually reaching that sort of sophistication.</p>
+<p>Science, 2025. DOI: <a href="http://dx.doi.org/10.1126/science.adu8578">10.1126/science.adu8578</a> &#160;(<a href="http://arstechnica.com/science/news/2010/03/dois-and-their-discontents-1/">About DOIs</a>).</p>
+
+
+          
+                  
+
+                  
+          </div>

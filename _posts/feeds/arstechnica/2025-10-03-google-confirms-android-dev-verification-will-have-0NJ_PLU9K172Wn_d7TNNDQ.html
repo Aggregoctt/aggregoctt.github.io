@@ -1,0 +1,62 @@
+---
+author: Ryan Whitwam
+canonical_url: https://arstechnica.com/gadgets/2025/10/google-confirms-android-dev-verification-will-have-free-and-paid-tiers-no-public-list-of-devs/
+date: '2025-10-03T18:31:23'
+excerpt: Google promises verification will make Android safer, but at what cost?
+image: assets/media/0NJ_PLU9K172Wn_d7TNNDQ-vxoX0mMYKDY3GGFTmOgHEA.jpeg
+source: arstechnica
+tags:
+- Google
+- Tech
+- apps
+- google
+- play store
+- privacy
+- security
+title: Google confirms Android dev verification will have free and paid tiers, no
+  public list of devs
+---
+<div>
+                      
+                      
+           
+<p>As we careen toward a future in which Google <a href="https://arstechnica.com/gadgets/2025/08/google-will-block-sideloading-of-unverified-android-apps-starting-next-year/">has final say over what apps you can run</a>, the company has sought to assuage the community's fears with a blog post and a casual "backstage" video. Google has said again and again since announcing the change that sideloading isn't going anywhere, but it's definitely not going to be as easy. The <a href="https://android-developers.googleblog.com/2025/09/lets-talk-security-answering-your-top.html">new information</a> confirms app installs will be more reliant on the cloud, and devs can expect new fees, but there will be an escape hatch for hobbyists.</p>
+<p>Confirming app verification status will be the job of a new system component called the Android Developer Verifier, which will be rolled out to devices in the next major release of Android 16. Google explains that phones must ensure each app has a package name and signing keys that have been registered with Google at the time of installation. This process may <a href="https://arstechnica.com/gadgets/2025/09/f-droid-calls-for-regulators-to-stop-googles-crackdown-on-sideloading/">break the popular FOSS storefront F-Droid</a>.</p>
+<p>It would be impossible for your phone to carry a database of all verified apps, so this process may require Internet access. Google plans to have a local cache of the most common sideloaded apps on devices, but for anything else, an Internet connection is required. Google suggests alternative app stores will be able to use a pre-auth token to bypass network calls, but it's still deciding how that will work.</p>
+<p>The financial arrangement has been murky since the initial announcement, but it's getting clearer. Even though Google's largely automated verification process has been described as simple, it's still going to cost developers money. The verification process will mirror the current Google Play registration fee of $25, which Google claims will go to cover administrative costs.</p>
+<p>So anyone wishing to distribute an app on Android outside of Google's ecosystem has to pay Google to do so. What if you don't need to distribute apps widely? This is the one piece of good news as developer verification takes shape. Google will let hobbyists and students sign up with only an email for a lesser tier of verification. This won't cost anything, but there will be an unclear limit on how many times these apps can be installed. The team in the video strongly encourages everyone to go through the full verification process (and pay Google for the privilege). We've asked Google for more specifics here.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>A high degree of harm</h2>
+<p>When it announced developer verification, it said the process would not evaluate the content of an app. However, Google now clarifies that it will be on the lookout for malware in sideloaded apps. Google says it won't enforce any of the other Play Store rules&#8212;it's only interested in apps that could pose "a high degree of harm." It's unclear if Google will be checking for malware at all during the verification process; it may simply rely on the anti-malware features built into Android to report bad actors.</p>
+ 
+<p>Even without verification, Android already has many safeguards in place. Play Protect scans all apps on your device, not just those from the Play Store. Android also has the ability to deactivate and remove known malware, and it will warn you about lesser types of potentially dangerous apps. Google's system can even reset permissions in apps if they are behaving maliciously. Once Google has rolled out verification, sideloaded apps caught in this net will lead to all of that developer's apps being deactivated.</p>
+<p>One of the top concerns among Android users is that verification will be used to kill apps that Google doesn't like; ad-blockers, for example. The Play Store's <a href="https://developers.google.com/android/play-protect/phacategories">harmful app policy</a> is well-established, though. It details all the types of nefarious apps that Google considers malware, with some carveouts for things like non-malicious rooting apps.</p>
+<p>Based on Google's statements and publicly available policy information, it doesn't look like developer verification would directly ban things like YouTube ReVanced and other ad-blockers. However, it's easy to imagine Google changing or reinterpreting the rules at some point to do just that. Google does have a history of lumping its least favorite software in with malware. Recent changes to make Chrome extensions safer also <a href="https://arstechnica.com/gadgets/2024/08/chromes-manifest-v3-and-its-changes-for-ad-blocking-are-coming-real-soon/">happened to kill some of the most popular and effective ad-blockers</a>. Funny how that works.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<h2>A lack of trust</h2>
+<p>Google has an answer for the most problematic elements of its verification plan, but anywhere there's a gap, it's easy to see a conspiracy. Why? Well, let's look at the situation in which Google finds itself.</p>
+<p>The courts have ruled that Google <a href="https://arstechnica.com/gaming/2023/12/googles-android-app-store-monopoly-violates-antitrust-law-jury-finds/">acted illegally</a> to maintain a monopoly in the Play Store&#8212;it worked against the interests of developers and users for years to make Google Play the only viable source of Android apps, and for what? The Play Store is an almost unusable mess of sponsored search results and suggested apps, most of which are little more than in-app purchase factories that deliver Google billions of dollars every year.</p>
+<p>Google has every reason to protect the status quo (it may take the case all the way to the Supreme Court), and now it has suddenly decided the security risk of sideloaded apps must be addressed. The way it's being addressed puts Google in the driver's seat at a time when alternative app stores <a href="https://arstechnica.com/tech-policy/2024/10/judge-orders-google-to-distribute-third-party-app-stores-on-google-play/">may finally have a chance to thrive</a>. It's all very convenient for Google.</p>
+<p>Developers across the Internet are expressing wariness about giving Google their personal information. Google, however, has decided anonymity is too risky. We now know a little more about how Google will manage the information it collects on developers, though. While Play Store developer information is listed publicly, the video confirms there will be no public list of sideload developers. However, Google will have the information, and that means it could be demanded by law enforcement or governments.</p>
+<p>The current US administration has had harsh words for apps like ICEBlock, which it <a href="https://arstechnica.com/tech-policy/2025/10/apple-bends-to-trump-admin-demand-to-remove-ice-tracking-apps-like-iceblock/">successfully pulled from the Apple App Store</a>. Google's new centralized control of app distribution would allow similar censorship on Android, and the real identities of those who developed such an app would also be sitting in a Google database, ready to be subpoenaed. A few years ago, developers might have trusted Google with this data, but now? The goodwill is gone.</p>
+
+
+          
+                  
+
+                  
+          </div>
