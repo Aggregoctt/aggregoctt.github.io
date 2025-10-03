@@ -1,0 +1,51 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/business/articoli/n633658/cloudflare-aggiorna-robotstxt-nuove-regole/
+date: '2025-10-03T12:50:00'
+excerpt: La società introduce la Content Signals Policy, un’estensione dello storico
+  standard del web che mira a dare più controllo agli editori
+image: assets/media/VdJKgiEQb-iKlFk5rIgRHA-wA44Ascko1qebx32d2a1HQ.jpeg
+source: hdblog
+tags:
+- Business
+title: 'Cloudflare aggiorna robots.txt: più controllo sull''uso dei contenuti da parte
+  delle AI'
+---
+<div>
+	
+				<p><strong>Il file robots.txt &#232; da decenni uno degli strumenti basilari di internet.</strong> Inserito in ogni sito, indica ai motori di ricerca e ai bot <strong>quali pagine possono essere indicizzate e quali no</strong>, agendo come <strong>una sorta di cartello digitale &#8220;vietato l&#8217;ingresso&#8221;</strong>. Per molto tempo l&#8217;equilibrio ha funzionato: Google, Bing e gli altri grandi motori hanno rispettato queste regole e i proprietari dei siti ne hanno tratto beneficio. <strong>Con l&#8217;avvento dell&#8217;AI, per&#242;, lo scenario &#232; radicalmente cambiato.</strong><br>
+<br>
+Oggi i bot non si limitano pi&#249; a catalogare i contenuti, ma li <strong>copiano per addestrare chatbot o generare risposte dirette</strong>. Molte aziende di AI ignorano completamente robots.txt, arrivando persino a mascherare i propri crawler per aggirare i divieti.<br>
+<br>
+&#200; in questo contesto che Cloudflare, societ&#224; che protegge circa il 20% del traffico mondiale online, <strong>ha introdotto la Content Signals Policy,</strong> un&#8217;estensione del tradizionale robots.txt pensata per <strong>consentire agli editori di specificare se e come i loro contenuti possano essere utilizzati dai sistemi di <a href="https://www.hdblog.it/ia/">intelligenza artificiale.</a></strong></p>LE NUOVE REGOLE<p>La nuova policy non si limita pi&#249; a stabilire quali pagine siano accessibili ai bot, ma <strong>aggiunge istruzioni su come i contenuti possano essere usati una volta raggiunti.</strong> Gli editori hanno a disposizione tre &#8220;segnali&#8221;:</p>
+
+<ul>
+	<li><strong>search</strong>: consente l&#8217;uso dei contenuti per l&#8217;indicizzazione e la comparsa nei risultati di ricerca con link o snippet.</li>
+	<li><strong>ai-input:</strong> riguarda l&#8217;impiego diretto nelle risposte generate da chatbot e assistenti.</li>
+	<li><strong>ai-train: </strong>determina se i contenuti possano essere utilizzati per addestrare o perfezionare modelli di intelligenza artificiale.</li>
+</ul>
+
+<p><strong>I segnali funzionano con valori binari, s&#236; o no.</strong> Un sito, ad esempio, pu&#242; decidere di apparire nei risultati di ricerca ma di vietare l&#8217;utilizzo dei propri materiali per l&#8217;addestramento AI. <strong>Cloudflare ha gi&#224; reso disponibile questa funzione su oltre 3,8 milioni di domini.</strong> Le impostazioni predefinite prevedono search su &#8220;yes&#8221;, ai-train su &#8220;no&#8221; e ai-input neutrale, in attesa di una scelta esplicita da parte del gestore del sito.</p>CRESCITA DEL TRAFFICO BOT E FREE-RIDER PROBLEM<p>Nel presentare la policy, <strong>Cloudflare ha evidenziato il contesto che ha portato alla sua introduzione.</strong> L&#8217;azienda stima che <strong>il traffico generato dai bot superer&#224; quello umano entro il 2029</strong> e che <strong>nel 2031 i soli bot produrranno pi&#249; traffico dell&#8217;intero internet attuale</strong>. Una prospettiva che mette sotto pressione i creatori di contenuti, gi&#224; oggi costretti a sostenere costi elevati per servire data scrapers, ossia i programmi automatizzati che visitano siti web e copiano in modo sistematico i contenuti presenti, che <strong>non garantiscono alcuna forma di ritorno.</strong><br>
+<br>
+<strong>Si tratta del cosiddetto &#8220;free-rider problem&#8221;,</strong> in cui gli operatori dei siti sostengono gli oneri senza ricevere compensazioni n&#233; benefici significativi in termini di visibilit&#224; o referral traffic. In passato, anche senza guadagni diretti,<strong> il sistema dei link e delle citazioni assicurava almeno attribuzione e scoperta di nuovi contenuti.</strong> Oggi, invece, parte del materiale raccolto viene riutilizzato per <strong>alimentare piattaforme di AI </strong>che competono economicamente con gli stessi creatori.</p>ENFORCEMENT, ASPETTI LEGALI E GOOGLE<p><strong>Un altro punto cruciale &#232; quello dell'enforcement. </strong>Molti bot <strong>continueranno a ignorare i nuovi segnali,</strong> rendendo necessario un rafforzamento delle misure di difesa.<strong> Cloudflare stessa consiglia di affiancare ai content signals strumenti come firewall applicativi web</strong>, capaci di filtrare e monitorare il traffico, e sistemi di gestione dei bot basati su machine learning, in grado di distinguere gli utenti reali dal traffico automatizzato malevolo.<br>
+<br>
+<strong>La policy ha per&#242; anche una valenza giuridica</strong>. Cloudflare specifica che i content signals costituiscono un'espressa riserva di diritti ai sensi dell'articolo 4 della Direttiva UE 2019/790 sul copyright nel mercato digitale. Un dettaglio che potrebbe rafforzare la posizione legale dei publisher in eventuali contenziosi contro le aziende di AI.<br>
+<br>
+<strong>Resta aperta la questione di Google</strong>. L'azienda utilizza lo stesso Googlebot sia per l'indicizzazione della ricerca sia per le <a href="https://www.hdblog.it/google/articoli/n626382/google-ai-overviews-riduzione-clic-siti-studio/">funzionalit&#224; AI Overviews</a>, costringendo i publisher a una scelta difficile: permettere a Google di usare i contenuti anche per l'AI oppure rinunciare alla visibilit&#224; nei risultati di ricerca. <strong>Una condizione che penalizza soprattutto i piccoli editori,</strong> dipendenti dal traffico di Google per raggiungere i lettori.</p>VERSO UN NUOVO STANDARD DEL WEB<p>Cloudflare sottolinea che <strong>i content signals non sono una misura tecnica anti-scraping</strong>, ma un modo per esprimere in modo standardizzato le proprie preferenze. Per incoraggiarne l'adozione globale,<strong> la policy &#232; stata rilasciata sotto licenza CC0</strong>, quindi <strong>chiunque pu&#242; implementarla liberamente</strong>, anche senza essere cliente Cloudflare.<br>
+<br>
+Oltre a questa iniziativa, <strong>la societ&#224; sta sperimentando un sistema di &#8220;pay-per-crawl&#8221;, </strong>che consentirebbe ai proprietari di domini di <strong>far pagare ai bot di AI l'accesso ai contenuti. </strong>In assenza di pagamento, i crawler riceverebbero <strong>un codice di errore "402 Payment Required".<br>
+<br>
+Il successo della Content Signals Policy dipender&#224; per&#242; da un fattore decisivo: </strong>la volont&#224; dei grandi player del web di <strong>rispettarla</strong>. Se accolta, potrebbe nascere un nuovo standard capace di riequilibrare il rapporto tra creatori e intelligenza artificiale. In caso contrario, il futuro potrebbe vedere <strong>un aumento di blocchi drastici e <a href="https://www.hdblog.it/tecnologia/articoli/n611969/google-openai-copyright-ai-sviluppo/">un'ondata di azioni legali</a></strong>, mentre la tensione sul ruolo dei contenuti nell'era dell'AI continuer&#224; a crescere.</p>
+
+	
+				
+
+
+ 
+
+
+	
+				 
+			
+	
+			</div>
