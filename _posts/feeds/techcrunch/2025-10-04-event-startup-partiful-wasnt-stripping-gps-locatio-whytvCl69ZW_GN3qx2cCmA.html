@@ -1,0 +1,75 @@
+---
+author: Zack Whittaker, Amanda Silberling
+canonical_url: https://techcrunch.com/2025/10/04/event-startup-partiful-wasnt-stripping-gps-locations-from-user-uploaded-photos/
+date: '2025-10-04T15:50:07'
+excerpt: The event planning startup, which has raised over $27M from a16z and others,
+  fixed the bug after TechCrunch found that Partiful was not removing granular location
+  data from users' profile photos.
+image: assets/media/whytvCl69ZW_GN3qx2cCmA-Nz-35nVgrcEFT5o_mHQ_Bg.jpeg
+source: techcrunch
+tags:
+- Apps
+- Security
+- Social
+- cybersecurity
+- data exposure
+- Data leak
+- Exclusive
+- partiful
+title: Event startup Partiful wasn’t stripping GPS locations from user-uploaded photos
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">Social event planning app Partiful, which calls itself &#8220;Facebook events for hot people,&#8221; has firmly replaced Facebook as the go-to platform for sending party invitations. But what Partiful also has in common with Facebook is that it&#8217;s collecting a tsunami of user data, and Partiful could have done better at keeping that data secure.</p>
+
+<p class="wp-block-paragraph">On Partiful, hosts can create online invitations with a retro, maximalist vibe, allowing guests to RSVP to events with the ease of ordering a salad on a touch-screen. Partiful aims to be user-friendly and trendy, propelling the app to #9 on the iOS App Store&#8217;s Lifestyle charts. Google called Partiful the &#8220;<a href="https://techcrunch.com/2024/11/18/partiful-is-googles-best-app-of-2024/">best app</a>&#8221; of 2024.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Now, Partiful has evolved into a powerful Facebook-like social graph, easily mapping who your friends are and who your friends&#8217; friends are, what you do, where you go, and all of your phone numbers.</p>
+
+<p class="wp-block-paragraph">As Partiful grew more popular, some users became skeptical of the company&#8217;s origins. One New York City promoter announced that it was <a rel="nofollow" href="https://www.thecut.com/article/wait-partifuls-founders-worked-at-palantir.html">boycotting Partiful</a> because its founders and some staff are <a rel="nofollow" href="https://www.businessinsider.com/palantir-mafia-former-employees-startups-anduril-2025-3">former employees of Palantir</a>, Peter Thiel&#8217;s data mining company, which produces the software that powers ICE&#8217;s <a rel="nofollow" href="https://www.404media.co/this-is-palantirs-justification-for-building-ices-master-database/">master database</a> for the Trump administration&#8217;s <a href="https://techcrunch.com/2025/09/18/heres-the-tech-powering-ices-deportation-crackdown/">deportation crackdown</a>.</p>
+
+<p class="wp-block-paragraph">Given some of the speculation around the app, TechCrunch set up a new account and tested Partiful. We soon found that the app was not stripping the location data of user-uploaded images, including public profile photos.</p>
+
+<p class="wp-block-paragraph">TechCrunch found it was possible for anyone, using only the developer tools in a web browser, to access raw user profile photos stored in Partiful&#8217;s backend database hosted on Google Firebase. If the user&#8217;s photo contained the precise real-world location of where it was taken, anyone else could have also viewed the precise coordinates of where that photo was taken.</p>
+
+<p class="wp-block-paragraph">Almost all digital files, like the pictures you take on a smartphone, contain <a href="https://techcrunch.com/2025/04/25/techcrunch-reference-guide-to-security-terminology/#metadata">metadata</a>, which includes information like the file size, when it was created, and by whom. In the case of photos and videos, metadata can include information about the kind of camera used and its settings, as well as the precise latitude and longitude coordinates of where the image was captured.</p>
+
+<p class="wp-block-paragraph">The security flaw is problematic because anyone using Partiful could have revealed the location of where a person&#8217;s profile photo was snapped. Some Partiful user profile photos contained highly granular location data that could be used to identify the person&#8217;s home or work, particularly in rural areas where individual homes are easier to distinguish on a map.</p>
+
+<p class="wp-block-paragraph">It&#8217;s common practice for companies that host user images and videos to automatically remove metadata upon upload to prevent privacy lapses like this.&#160;</p>
+
+<p class="wp-block-paragraph">TechCrunch verified the bug ourselves by uploading a new Partiful profile photo that we had previously captured from outside of the Moscone West Convention Center in San Francisco, which contained the photo&#8217;s precise location. When we checked the metadata of the photo stored on Partiful&#8217;s server, it still contained the exact coordinates of where the image was taken down to a few feet.</p>
+
+ 
+
+
+ 
+
+
+ 
+
+<p class="wp-block-paragraph">After discovering the security flaw, TechCrunch alerted Partiful co-founders Shreya Murthy and Joy Tao by email, as Partiful does not have a public means for reporting security flaws. TechCrunch shared a link to a Partiful user&#8217;s raw profile photo containing that user&#8217;s real-world location at the time the photo was taken, a residential address in Manhattan.</p>
+
+<p class="wp-block-paragraph">Tao told TechCrunch on Friday that the vulnerability was &#8220;already on our team&#8217;s radar, and was recently prioritized as an upcoming fix.&#8221;&#160;</p>
+
+<p class="wp-block-paragraph">Partiful initially provided a timeline to fix the flaw by &#8220;next week,&#8221; but given the sensitivity of the data involved, Partiful fixed the bug by Saturday at TechCrunch&#8217;s request.</p>
+
+<p class="wp-block-paragraph">TechCrunch confirmed Saturday that metadata was removed from existing user-uploaded photos. The profile photo that we uploaded with our real-world location also had the metadata removed.&#160;</p>
+
+<p class="wp-block-paragraph">Partiful disclosed the security lapse in <a rel="nofollow" href="https://x.com/partiful/status/1974485503702376494">a tweet</a> shortly before the publishing of this story.</p>
+
+<p class="wp-block-paragraph">When asked by TechCrunch if Partiful has the technical means, such as logs, to determine if there was any direct or bulk access to user profile photos stored in its database, Partiful spokesperson Jess Eames said this was &#8220;still under investigation but we have found no evidence of this yet.&#8221;</p>
+
+<p class="wp-block-paragraph">Eames said the company &#8220;regularly perform security reviews with experts in the field, not just as a one-time action but as part of our ongoing processes.&#8221; Partiful did not provide TechCrunch with the name of the experts when asked.</p>
+
+<p class="wp-block-paragraph">Partiful has raised over $27 million from investors since its founding in 2022, including a $20 million Series A funding round led by Andreessen Horowitz. TechCrunch asked Partiful&#8217;s co-founders if they had commissioned a security review of their product before launch, but would not say.</p>
+
+
+			
+
+			</div>
