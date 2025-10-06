@@ -1,0 +1,63 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/10/06/nuova-aggreganza-con-la-goduria-integrata-rilascio-aggregatore-di-feed-aggregodo-aggregoctt-v3-ma-per-bene/
+date: '2025-10-06T18:30:29'
+excerpt: Oggi, considerato lo stato inevitabile dell&#8217;assoluto, sono abbastanza
+  sicura che godo&#8230; ma, in realtà, un po&#8217; sarà anche da stamattina che
+  godo&#8230; per non dire in verità ieri sera tardissimo&#8230; Situazione assurda,
+  lo so, ma tutto ciò è per via del fatto che, il nuovissimo software benedettissimo
+  che ho finito or ora (&#8230;o ieri sera, [&#8230;]
+image: assets/media/VqVjG7FWVStepXsIuTxl8A-wS2qGGsyJ82UJPtaFrmSRQ.jpeg
+source: octospacc
+tags:
+- Senza categoria
+- feed
+- Aggregodo
+- feeds
+- Aggregoctt
+- aggregator
+- aggregatore
+- Atom
+- webdev
+- webapp
+- libre
+- OpenSource
+- RSS
+title: 'nuova aggreganza con la goduria integrata: rilascio aggregatore di feed Aggregodo
+  (Aggregoctt v3 ma per bene)'
+---
+<div>
+
+		
+<p><strong>Oggi, considerato lo stato inevitabile dell&#8217;assoluto, sono abbastanza sicura che godo&#8230;</strong> ma, in realt&#224;, un po&#8217; sar&#224; anche da stamattina che godo&#8230; per non dire in verit&#224; ieri sera tardissimo&#8230; <strong>Situazione assurda</strong>, lo so, ma tutto ci&#242; &#232; per via del fatto che, <strong>il nuovissimo software benedettissimo che ho finito or ora</strong> (&#8230;o ieri sera, appunto, ma sono uscite rognine che ho dovuto sistemare al volo oggi), non si chiama Aggregoctt ennesimo, bens&#236; <strong>AGGREGODO!!!</strong> E con una premessa cos&#236;, cazzarola se c&#8217;&#232; da goderne pesantemente&#8230; &#128293;&#127878;&#127879;&#129512;</p>
+
+
+
+<p>Alla fine, si: il mio incubo peggiore, ma allo stesso tempo il mio nuovo momento pi&#249; ricco, <strong>si &#232; avverato; ed assurdamente &#232; da una settimana intera che ci sto lavorando&#8230;</strong> no, non c&#8217;&#232; motivo di temere che io abbia acquisito la pericolosa skill della pazienza dal nulla, &#232; solo che ho potuto lavorarci giusto ogni tot a pezzetti, per via delle varie palle personali, ma <strong>via avanti cos&#236; ed alla fine &#232; gi&#224; uscito fuori circa quello che volevo</strong>, che gi&#224; andr&#224; a sostituire <a href="https://octospacc.altervista.org/2025/09/28/aggregocttica-moria-senza-soluzioni-piu-spumose-laggregoctt-e-morto-e-a-fatica-trovo-alternative/">quel ripiego bizzarro che a questo punto &#232; durato due settimane nemmeno</a>&#8230; ma la goduria &#232; appena cominciata. &#128520;</p>
+
+
+
+<p>Chi sempre vuole giusto spiare i miei feed, quindi, adesso pu&#242; farlo con <a href="https://aggregodo.octt.eu.org/"><strong>https://aggregodo.octt.eu.org/</strong></a>, sperando possano essere gradevoli ed evidenti i dettagli bboni&#8230; <strong>I feed hanno le icone</strong> (automatiche, ovviamente), <strong>c&#8217;&#232; una modalit&#224; di lettura integrata</strong> (spenta di default per evitare rogne che non sto a spiegare, anche perch&#233; &#232; ancora sperimentale e da finire di acconciare; si attiva dal menu), e <strong>l&#8217;interfaccia &#232; fatta col gradevole bellissimissimo Material Design v1</strong>, che fa bella figura su desktop e mobile (&#8230;anche se manca la modalit&#224; scura, che devo quindi implementare io a breve, mannaggia). Ma queste sono solo le scemenze, tipo&#8230; &#128591;</p>
+
+
+
+ 
+
+
+
+<p>Con non poca magia, <strong>sono riuscita pure ad implementare un sistema di scraping HTML per generare feed da siti stronzi che non li offrono</strong>, maa&#8230; non con l&#8217;XPath meloso che usano altri aggregatori (non tutti eh, la maggior parte a dire il vero non offrono proprio una mazza), bens&#236; con una sintassi decente e per certi versi pi&#249; potente&#8230; <strong>al punto da avermi permesso di creare feed da Facebook e Threads con poche righe di configurazione, e sulla mia istanza infatti gi&#224; ne seguo qualcuno</strong> (e aumenteranno solamente!!!). E, ovviamente, l&#8217;aggregatore genera dei suoi feed (Atom) per l&#8217;uso con altri lettori, dell&#8217;intera libreria o di specifici feed, inclusi questi umma umma&#8230; (&#8230;Peccato che, al momento, proprio i feed per cui questa cosa pi&#249; serve appaiono mezzi rotti, perch&#233; ho dimenticato delle robe, ma abbiate pazienza e aggiuster&#242;.) &#129327;</p>
+
+
+
+<p>Non vado troppo nei dettagli tecnici, perch&#233; altrimenti lo so che ogni essere umano fa zzzzzzz, ma tanto per tutti i computeristi (e i selfhostisti, semmai ce ne siano) <strong>il codice &#232; libero <a href="https://gitlab.com/octospacc/Aggregodo">su GitLab</a> e <a href="https://github.com/octospacc/Aggregodo">su GitHub&#8230;</a></strong> e non &#232; nemmeno spaghettoso! (Inaspettato, visto che ne ho scritto grandi porzioni a stomaco non troppo pieno, quindi mi sarei aspettata che la brama dello gnam potesse prendere pi&#249; il sopravvento&#8230; ma forse in parte &#232; anche grazie al fatto che <strong>stavolta ho scelto di usare TypeScript e NodeJS</strong>, che giuro, Python di questo passo mi far&#224; venire dei tumori, con tutte le paturnie che mi sta facendo invece subire per Pignio&#8230;) &#127959;&#65039;</p>
+
+
+
+<p><strong>Come cose da fare per forza, ce ne sono ancora varie&#8230;</strong> come ottimizzare la lettura dal database, che al momento su alcune pagine &#232; un troiaio come lentezza&#8230; oppure aggiustare la ricerca globale, che ho accidentalmente rotto nel provare a migliorare le prestazioni della pagina principale (e che colmo sarebbe senn&#242;) &#8212; ovviamente accorgendomene solo in produzione, e non poco prima durante lo sviluppo (e te pareva che non va sempre cos&#236; con me!!!) &#8212; ma anche implementare tag e/o categorie per i feed (altrimenti, quando ne metter&#242; centinaia saranno dolori), che per&#242; attualmente non riesco a decidere come fare&#8230; Una cosa &#232; certa, per&#242;, almeno: <strong>tutte le rogne sono risolvibili, e per ora si deve dunque pensare solo a godere del potere dell&#8217;aggregazione acquisito per mezzo dell&#8217;Aggregodo&#8230;</strong> (Ah, e serve pure un logo, mannaggia.) &#128123;</p>
+
+
+
+<p>(Tra l&#8217;altro&#8230; come si vede, <strong>ho implementato 3 viste per gli indici</strong>: una griglia di carte, simile al primo Aggregoctt ma pi&#249; densa, una lista con miniature, che ho copiato spudoratamente dall&#8217;RSS-ripiego di cui sopra, ma che ho fatto in modo per me pi&#249; gradevole, e una che chiamo &#8220;a flusso&#8221;, che &#232; utile principalmente per i post dei social, che sono corti e da vedere anche senza cliccare&#8230; E stavo a proposito di quest&#8217;ultima quasi per dire che l&#8217;ho copiata accidentalmente dall&#8217;RSS-bizzarro, ma a guardare meglio la mia mostra le immagini bene, e invece l&#8217;altro le taglia a 16:9, oltre al fatto che la grafica ombreggiata del mio secondo me fa risaltare meglio all&#8217;occhio i post&#8230; quindi, se non dispiace, <strong>con oggi godo veramente infinito.</strong>)</p>
+ 
+ 
+	 </div>
