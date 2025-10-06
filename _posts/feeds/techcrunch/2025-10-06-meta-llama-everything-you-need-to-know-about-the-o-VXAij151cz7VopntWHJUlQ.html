@@ -1,0 +1,157 @@
+---
+author: Kyle Wiggers, Rebecca Bellan
+canonical_url: https://techcrunch.com/2025/10/06/meta-llama-everything-you-need-to-know-about-the-open-generative-ai-model/
+date: '2025-10-06T17:11:50'
+excerpt: Here's everything you need to know about Meta’s Llama, from its capabilities
+  and editions to where you can use it. We'll keep this post updated as Meta releases
+  upgrades and introduces new dev tools to support the model's use.
+image: assets/media/VXAij151cz7VopntWHJUlQ-1AiRhmVEWyqpyx4FjSjEmQ.jpeg
+source: techcrunch
+tags:
+- AI
+- Apps
+- Enterprise
+- Social
+- evergreens
+- Explainer
+- Generative AI
+- Llama
+- Meta
+- meta ai
+- model
+title: 'Meta Llama: Everything you need to know about the open generative AI model'
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">Like every Big Tech company these days, Meta has its own flagship generative AI model, called Llama. Llama is&#160;somewhat unique&#160;among major models in that&#160;it&#8217;s&#160;&#8220;open,&#8221; meaning developers can download and use it however they please (with certain limitations).&#160;That&#8217;s&#160;in contrast to models like&#160;Anthropic&#8217;s&#160;Claude,&#160;Google&#8217;s Gemini,&#160;xAI&#8217;s&#160;Grok, and most of OpenAI&#8217;s ChatGPT models,&#160;which can only be accessed via APIs.&#160;</p>
+
+<p class="wp-block-paragraph">In the interest of giving developers choice, however, Meta has also partnered with vendors, including AWS, Google Cloud,&#160;and Microsoft Azure, to make cloud-hosted versions of Llama available. In addition, the company&#160;publishes tools, libraries, and recipes in its Llama cookbook to help developers fine-tune, evaluate, and adapt the models to their domain. With newer generations like Llama 3&#160;and Llama 4, these capabilities have expanded to include native multimodal support and broader cloud rollouts.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Here&#8217;s&#160;everything you need to know about&#160;Meta&#8217;s&#160;Llama, from its capabilities and editions to where you can use it.&#160;We&#8217;ll&#160;keep this post updated as Meta releases upgrades and introduces new dev tools to support the model&#8217;s use.</p>
+
+<h2 class="wp-block-heading" id="h-what-is-llama">What is Llama? </h2>
+
+<p class="wp-block-paragraph">Llama is a family of models &#8212; not just one. The latest version is&#160;<a href="https://techcrunch.com/2025/04/05/meta-releases-llama-4-a-new-crop-of-flagship-ai-models/" target="_blank" rel="noreferrer noopener">Llama 4;</a>&#160;it was&#160;released in April 2025&#160;and&#160;includes three models:&#160;&#160;</p>
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Scout:</strong>&#160;17 billion active parameters, 109 billion total parameters, and a context window of 10 million tokens.&#160;</li>
+</ul>
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Maverick:&#160;</strong>17 billion active parameters, 400 billion total parameters, and a context window of 1 million tokens.&#160;</li>
+</ul>
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Behemoth</strong>:&#160;Not yet released&#160;but&#160;will&#160;have 288 billion active&#160;parameters&#160;and 2 trillion total parameters.&#160;&#160;</li>
+</ul>
+
+<p class="wp-block-paragraph">(In data science, tokens are subdivided bits of raw data, like the syllables &#8220;fan,&#8221; &#8220;tas&#8221; and &#8220;tic&#8221; in the word &#8220;fantastic.&#8221;)&#160;&#160;</p>
+
+<p class="wp-block-paragraph">A model&#8217;s context, or context window, refers to input data (e.g., text) that the model considers before generating output (e.g.,&#160;additional&#160;text). Long context can prevent models from &#8220;forgetting&#8221; the content of recent docs and data, and from veering off topic and extrapolating wrongly. However, longer context windows can also&#160;<a href="https://techcrunch.com/2025/08/25/ai-sycophancy-isnt-just-a-quirk-experts-consider-it-a-dark-pattern-to-turn-users-into-profit/" target="_blank" rel="noreferrer noopener">result in the model &#8220;forgetting&#8221; certain safety guardrails</a>&#160;and being more prone to produce content that is in line with the conversation, which has led&#160;some users toward&#160;<a href="https://www.reuters.com/investigates/special-report/meta-ai-chatbot-death/" target="_blank" rel="noreferrer noopener nofollow">delusional thinking</a>.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">For reference,&#160;the&#160;10 million context window&#160;that Llama 4 Scout promises&#160;roughly equals&#160;the text of about 80 average novels.&#160;<a href="https://techcrunch.com/2025/04/11/metas-vanilla-maverick-ai-model-ranks-below-rivals-on-a-popular-chat-benchmark/" target="_blank" rel="noreferrer noopener">Llama 4&#160;Maverick&#8217;</a>s&#160;1 million context window equals about eight novels.&#160;&#160;</p>
+ 
+
+<p class="wp-block-paragraph">All&#160;of&#160;the Llama 4 models&#160;were trained on &#8220;large amounts of unlabeled text, image, and video data&#8221; to give them &#8220;broad visual understanding,&#8221;&#160;as well as on 200 languages,&#160;according to Meta. &#160;</p>
+
+<p class="wp-block-paragraph">Llama 4 Scout and Maverick are Meta&#8217;s first open-weight natively multimodal models.&#160;They&#8217;re&#160;built using a &#8220;mixture-of-experts&#8221; (MoE) architecture, which reduces computational load&#160;and improves efficiency in training and inference. Scout, for example, has 16 experts, and Maverick has 128 experts.&#160;&#160;&#160;</p>
+
+<p class="wp-block-paragraph">Llama 4 Behemoth includes 16 experts, and Meta is referring to it as a teacher for the smaller models.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Llama 4 builds on the Llama 3 series, which included 3.1 and 3.2 models widely used for instruction-tuned applications and cloud deployment.&#160;</p>
+
+<h2 class="wp-block-heading" id="h-what-can-llama-do">What can Llama do? </h2>
+
+<p class="wp-block-paragraph">Like other generative AI models, Llama can perform a range of different assistive tasks, like coding and answering basic math questions, as well as summarizing documents in&#160;at least 12&#160;languages (Arabic,&#160;English, German, French,&#160;Hindi, Indonesian,&#160;Italian, Portuguese, Hindi,&#160;Spanish, Tagalog, Thai, and Vietnamese). Most text-based workloads &#8212; think analyzing&#160;large&#160;files like PDFs and spreadsheets &#8212; are within its purview, and all Llama 4&#160;models&#160;support text, image, and video input.&#160;</p>
+
+<p class="wp-block-paragraph">Llama 4 Scout is designed for longer workflows and massive data analysis. Maverick is a generalist model that is better at balancing reasoning power and response speed, and is suitable for coding, chatbots, and technical assistants. And Behemoth is designed for advanced research, model distillation, and STEM tasks.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">Llama models, including Llama 3.1, can be configured to&#160;leverage&#160;third-party applications, tools, and APIs to perform tasks. They are trained to use Brave Search for answering questions about recent events;&#160;the Wolfram Alpha API for math- and science-related queries;&#160;and a Python interpreter for validating code. However, these tools require&#160;proper configuration and are not automatically enabled out of the box.&#160;</p>
+
+<h2 class="wp-block-heading" id="h-where-can-i-use-llama">Where can I use Llama?</h2>
+
+<p class="wp-block-paragraph">If&#160;you&#8217;re&#160;looking to simply chat with Llama,&#160;it&#8217;s&#160;<a href="https://techcrunch.com/2024/04/18/meta-adds-its-ai-chatbot-powered-by-llama-3-to-the-search-bar-across-its-apps/" target="_blank" rel="noreferrer noopener">powering the Meta AI chatbot experience</a>&#160;on Facebook Messenger, WhatsApp, Instagram, Oculus,&#160;and Meta.ai&#160;in 40 countries. Fine-tuned versions of Llama are used in Meta AI experiences in over 200 countries and territories.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">Llama 4 models Scout and Maverick are available on Llama.com and Meta&#8217;s partners, including the AI developer platform Hugging Face. Behemoth is still in training.&#160;Developers&#160;building with&#160;Llama can download,&#160;use,&#160;or fine-tune the model across most of the popular cloud platforms.&#160;Meta claims it has&#160;more than&#160;25 partners hosting Llama, including Nvidia, Databricks,&#160;Groq, Dell,&#160;and Snowflake.&#160;And while &#8220;selling access&#8221; to Meta&#8217;s openly available models&#160;isn&#8217;t&#160;Meta&#8217;s business model, the company makes some money&#160;through&#160;<a href="https://techcrunch.com/2025/03/21/meta-has-revenue-sharing-agreements-with-llama-ai-model-hosts-filing-reveals/" target="_blank" rel="noreferrer noopener">revenue-sharing agreements</a>&#160;with model hosts.&#160;</p>
+
+<p class="wp-block-paragraph">Some of these partners have built&#160;additional&#160;tools and services on top of Llama, including tools that let the models reference proprietary data and enable them to run at lower latencies.&#160;</p>
+
+<p class="wp-block-paragraph">Importantly, the Llama license&#160;<a href="https://ai.meta.com/llama/license/" target="_blank" rel="noreferrer noopener nofollow">constrains how developers can deploy the model</a>: App developers with more than 700 million monthly users must request a special license from Meta that the company will grant on its discretion.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">In May 2025, Meta launched a&#160;<a href="https://techcrunch.com/2025/05/21/meta-launches-program-to-encourage-startups-to-use-its-llama-ai-models/" target="_blank" rel="noreferrer noopener">new program</a>&#160;to incentivize startups to adopt its Llama models. Llama for Startups gives companies support from Meta&#8217;s Llama team and access to potential funding.&#160;&#160;</p>
+
+ 
+
+<p class="wp-block-paragraph">Alongside Llama, Meta provides tools intended to make the model &#8220;safer&#8221; to use:&#160;&#160;</p>
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Llama Guard</strong>, a moderation framework.&#160;</li>
+</ul>
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Prompt Guard</strong>, a tool to protect against&#160;<a href="https://techcrunch.com/2023/02/24/can-language-models-really-be-protected-from-text-based-attacks/" target="_blank" rel="noreferrer noopener">prompt injection attacks.</a>&#160;</li>
+</ul>
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>CyberSecEval</strong>, a cybersecurity risk assessment suite.&#160;</li>
+</ul>
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Llama Firewall</strong>, a security guardrail designed to enable building secure AI systems.&#160;</li>
+</ul>
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Code Shield</strong>, which provides support for inference-time filtering of insecure code produced by LLMs.&#160;&#160;</li>
+</ul>
+
+<p class="wp-block-paragraph">Llama&#160;Guard tries to detect potentially problematic content either fed into &#8212; or generated &#8212; by a Llama model, including content relating to criminal activity, child exploitation, copyright violations, hate, self-harm and sexual abuse.&#160;That said,&#160;it&#8217;s&#160;clearly not a silver bullet since&#160;<a href="https://techcrunch.com/2025/08/14/leaked-meta-ai-rules-show-chatbots-were-allowed-to-have-romantic-chats-with-kids/" target="_blank" rel="noreferrer noopener">Meta&#8217;s own previous guidelines</a>&#160;allowed the chatbot to engage in sensual and romantic chats with minors, and some reports show those&#160;turned&#160;into&#160;<a href="https://www.wsj.com/tech/ai/meta-ai-chatbots-sex-a25311bf?st=4JSwJh&amp;reflink=desktopwebshare_permalink" target="_blank" rel="noreferrer noopener nofollow">sexual conversations</a>.&#160;Developers can&#160;<a href="https://llama.meta.com/docs/model-cards-and-prompt-formats/llama-guard-3/" target="_blank" rel="noreferrer noopener nofollow">customize</a>&#160;the categories of blocked content and apply the blocks to all the languages Llama supports.&#160;</p>
+
+<p class="wp-block-paragraph">Like Llama Guard, Prompt Guard can block text intended for Llama, but only text meant to &#8220;attack&#8221; the model and get it to behave in undesirable ways. Meta claims that&#160;Llama&#160;Guard can defend against explicitly malicious prompts (i.e., jailbreaks that&#160;attempt&#160;to get around Llama&#8217;s built-in safety filters) in addition to prompts that&#160;contain&#160;&#8220;<a href="https://www.ibm.com/topics/prompt-injection" target="_blank" rel="noreferrer noopener nofollow">injected inputs</a>.&#8221;&#160;The Llama Firewall works to detect and prevent risks like prompt injection, insecure code, and risky tool interactions. And Code Shield helps mitigate insecure code suggestions and offers secure command execution for seven programming languages.&#160;</p>
+
+<p class="wp-block-paragraph">As for&#160;CyberSecEval,&#160;it&#8217;s&#160;less a tool than a collection of benchmarks to measure model security.&#160;CyberSecEval&#160;can assess the risk a Llama model poses (at least according to Meta&#8217;s criteria) to app developers and end users in areas like &#8220;automated social engineering&#8221; and &#8220;scaling offensive cyber operations.&#8221;&#160;</p>
+
+<h2 class="wp-block-heading" id="h-llama-s-limitations">Llama&#8217;s limitations</h2>
+
+ 
+
+<p class="wp-block-paragraph">Llama comes with certain risks and limitations, like all generative AI models.&#160;For example, while its most recent model has multimodal features, those are&#160;mainly limited&#160;to&#160;the English&#160;language&#160;for now.&#160;</p>
+
+<p class="wp-block-paragraph">Zooming out,&#160;<a href="https://techcrunch.com/2025/01/09/mark-zuckerberg-gave-metas-llama-team-the-ok-to-train-on-copyrighted-works-filing-claims/" target="_blank" rel="noreferrer noopener">Meta used a dataset of pirated e-books</a>&#160;and articles to train its Llama models. A federal judge recently sided with Meta in a copyright lawsuit brought against the company by 13 book authors, ruling that&#160;the use of copyrighted works for training fell under &#8220;fair use.&#8221; However, if Llama&#160;<a href="https://techcrunch.com/2022/12/13/image-generating-ai-can-copy-and-paste-from-training-data-raising-ip-concerns/" target="_blank" rel="noreferrer noopener">regurgitates</a>&#160;a copyrighted snippet&#160;and someone uses it in a product, they could potentially be infringing on copyright and be liable.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">Meta also&#160;controversially trains its AI on Instagram and Facebook posts,&#160;photos&#160;and captions, and&#160;<a href="https://mashable.com/article/meta-using-posts-train-ai-opt-out#:~:text=On%20a%20separate%20page%2C%20Meta's,private%20messages%20for%20training%20data." target="_blank" rel="noreferrer noopener nofollow">makes it difficult for users to opt out</a>.&#160;&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Programming is another area where&#160;it&#8217;s&#160;wise to tread lightly when using Llama.&#160;That&#8217;s&#160;because Llama might &#8212;&#160;perhaps&#160;more&#160;so than&#160;its generative AI counterparts &#8212;&#160;<a href="https://www.axios.com/2024/06/13/genai-code-mistakes-copilot-gemini-chatgpt" target="_blank" rel="noreferrer noopener nofollow">produce buggy or insecure code</a>.&#160;On&#160;<a href="https://artificialanalysis.ai/?intelligence-tab=coding" target="_blank" rel="noreferrer noopener nofollow">LiveCodeBench</a>, a&#160;<a href="https://techcrunch.com/2025/04/07/meta-exec-denies-the-company-artificially-boosted-llama-4s-benchmark-scores/" target="_blank" rel="noreferrer noopener">benchmark</a>&#160;that tests AI models on competitive coding problems, Meta&#8217;s Llama 4 Maverick model achieved a score of 40%.&#160;That&#8217;s&#160;compared to&#160;85% for OpenAI&#8217;s GPT-5 high&#160;and&#160;83% for&#160;xAI&#8217;s&#160;Grok 4 Fast.&#160;</p>
+
+<p class="wp-block-paragraph">As always,&#160;it&#8217;s&#160;best to have a human expert review any AI-generated code before incorporating it into a service or software.&#160;</p>
+
+<p class="wp-block-paragraph">Finally, as with other AI models, Llama models are still guilty of generating&#160;plausible-sounding&#160;but false or misleading information, whether&#160;that&#8217;s&#160;in coding, legal guidance, or&#160;<a href="https://techcrunch.com/2025/08/25/ai-sycophancy-isnt-just-a-quirk-experts-consider-it-a-dark-pattern-to-turn-users-into-profit/" target="_blank" rel="noreferrer noopener">emotional conversations with AI personas.</a>&#160;&#160;</p>
+
+<p class="wp-block-paragraph">This was originally published on September 8, 2024 and is updated regularly with new information.</p>
+
+
+			
+
+			</div>
