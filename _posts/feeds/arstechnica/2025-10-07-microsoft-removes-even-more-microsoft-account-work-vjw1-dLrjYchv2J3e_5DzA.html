@@ -1,0 +1,43 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2025/10/microsoft-removes-even-more-microsoft-account-workarounds-from-windows-11-build/
+date: '2025-10-07T19:47:19'
+excerpt: Microsoft has locked down well-documented workarounds in recent test builds.
+image: assets/media/vjw1-dLrjYchv2J3e_5DzA-d2fijhQ9p0x8PxzZN45KiQ.jpeg
+source: arstechnica
+tags:
+- Tech
+- windows 11
+- windows 11 25h2
+title: Microsoft removes even more Microsoft account workarounds from Windows 11 build
+---
+<div>
+                      
+                      
+          <p>Of the many minor to medium-size annoyances that come with a modern Windows 11 installation, the requirement that you sign in with a Microsoft account is one of the most irritating. Sure, all operating systems (including Apple's and Google's) encourage account sign-in as part of their setup process and prevent you from using multiple operating system features until and unless you sign in.</p>
+<p>Various <a href="https://arstechnica.com/gadgets/2025/02/what-i-do-to-clean-up-a-clean-install-of-windows-11-23h2-and-edge/#toc-h0">sanctioned and unsanctioned tools and workarounds</a> existed to allow users to set their PCs up with old-fashioned local accounts, and those workarounds haven't changed much in the last three years. But Microsoft is working on tightening the screws in preview builds of Windows, foreshadowing some future version of Windows where getting around the account requirement is even harder than it already is.</p>
+<p>In a new update released to the Dev channel of the Windows Insider Preview program yesterday (build number 26220.6772), Microsoft announced it was "removing known mechanisms for creating a local account in the Windows Setup experience (OOBE)." Microsoft says that these workarounds "inadvertently skip critical setup screens, potentially causing users to exit OOBE with a device that is not fully configured for use."</p>
+<p>The removed commands include the "OOBE\BYPASSNRO" workaround that Microsoft announced it was removing earlier this year, plus a "start ms-cxh:localonly" workaround that had been documented more recently. In current Windows releases, users can open a command prompt window during setup with Shift+F10 and input either of those commands to remove both the Microsoft account requirement and Internet connection requirement.</p>
+<p>Windows 11 Pro currently includes another workaround, where you can indicate that you plan to join your computer to a corporate domain and use that to create a local account. We don't know whether this mechanism has also been removed from the new Windows build.</p>
+<p>It's unclear what "critical setup screens" Microsoft is referring to; when using the workarounds to create a local account, the Windows setup assistant still shows you all the screens you need for creating an account and a password, plus toggling a few basic privacy settings. Signing in with a Microsoft account does add multiple screens to this process though&#8212;these screens will attempt to sell you Microsoft 365 and Xbox Game Pass subscriptions, and to opt you into features like <a href="https://arstechnica.com/gadgets/2025/04/in-depth-with-windows-11-recall-and-what-microsoft-has-and-hasnt-fixed/">the data-scraping Windows Recall</a> on PCs that support it. I would not describe any of these as "critical" from a user's perspective, but my priorities are not Microsoft's priorities.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Timing TBD</h2>
+<p>The Windows setup process has generally required an Internet connection and Microsoft account sign-in since the Windows 11 22H2 update. Before this, Windows 11 21H2 and some of the later Windows 10 releases had required sign-in for the Home edition of Windows, but not the Pro edition.</p>
+<p>The Windows builds released to the Windows Insider channels are all early previews, and it's rarely possible to predict when (or even if) any given feature will be rolled out to the public version of Windows. The "bypassnro" change first appeared in a Windows Insider build <a href="https://arstechnica.com/gadgets/2025/03/new-windows-11-build-makes-mandatory-microsoft-account-sign-in-even-more-mandatory/">in March 2025</a>, for example, but the bypass still works just fine for me in the current Release Preview builds of the Windows 11 25H2 update. Some of these changes could be included in the final public release of the 25H2 update or be added to 25H2 later on via a regular monthly Windows patch. Others could wait for a Windows 11 26H2 release or beyond.</p>
+<p>In any case, it seems clear that Microsoft will not reverse course on the Microsoft account requirement due to negative user feedback. Microsoft seems to think that if you're an individual running Windows on your PC, that PC should be signed into a Microsoft account, regardless of whether you're also a subscriber to Microsoft 365, OneDrive, Game Pass, or any other service.</p>
+<p>The company is even pushing Windows 10 users to sign in with an account. People who want their Windows 10 security updates to extend to October 2026 instead of October 2025 will need to sign in to a Microsoft account to enroll their PCs in <a href="https://arstechnica.com/gadgets/2025/07/how-to-get-another-free-year-of-updates-for-your-windows-10-pc/">the Extended Security Updates (ESU) program</a>. In <a href="https://www.windowscentral.com/microsoft/windows-10/windows-10-free-esu-eea-requirements-revealed-microsoft-account-60-days">some countries</a>, Microsoft will even pull those Windows 10 updates if you don't stay signed in with a Microsoft account.</p>
+<p>Microsoft has added one minor functional improvement to this Windows 11 build that might soften the blow for a small handful of people: a "SetDefaultUserFolder" command, also accessible via the Command Prompt, that will let users choose a name for their user folder. Before this, the only way to get a short, predictable name for your local user folder was to create a local account when you first created the account; using your Microsoft account at setup would generate a longer folder name based on your account's email address.</p>
+
+
+          
+                  
+
+                  
+          </div>
