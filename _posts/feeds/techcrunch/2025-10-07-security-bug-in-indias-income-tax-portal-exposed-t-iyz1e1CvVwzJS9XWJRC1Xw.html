@@ -1,0 +1,83 @@
+---
+author: Jagmeet Singh
+canonical_url: https://techcrunch.com/2025/10/07/security-bug-in-indias-income-tax-portal-exposed-taxpayers-sensitive-data/
+date: '2025-10-07T14:30:02'
+excerpt: TechCrunch verified that the security bug in the Indian Income Tax Department's
+  e-Filing portal exposed taxpayers' data to other users. The security researchers
+  who found the flaw say the data leak is now fixed.
+image: assets/media/iyz1e1CvVwzJS9XWJRC1Xw-GUYNwFhlJ5I2M7iMydXTZQ.jpeg
+source: techcrunch
+tags:
+- Government & Policy
+- Security
+- cybersecurity
+- data exposure
+- Exclusive
+- income tax
+title: Security bug in India’s income tax portal exposed taxpayers’ sensitive data
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">The Indian government&#8217;s tax authority has fixed a security flaw in its income tax filing portal that was exposing sensitive taxpayers&#8217; data, TechCrunch has exclusively learned and confirmed with authorities.</p>
+
+<p class="wp-block-paragraph">The flaw, discovered in September by a pair of security researchers Akshay CS and &#8220;Viral,&#8221; allowed anyone who was logged into the <a href="https://www.incometax.gov.in/" target="_blank" rel="noreferrer noopener nofollow">income tax department&#8217;s e-Filing portal</a> to access up-to-date personal and financial data of other people.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The exposed data included full names, home addresses, email addresses, dates of birth, phone numbers, and bank account details of people who pay taxes on their income in India. The data also exposed citizens&#8217; Aadhaar number, a unique government-issued identifier used as proof of identity and for accessing government services.</p>
+
+<p class="wp-block-paragraph">TechCrunch verified the data to the best of its ability by granting permission to the researchers to look up this reporter&#8217;s records on the portal.</p>
+
+<p class="wp-block-paragraph">The security researchers confirmed to TechCrunch on October 2 that the vulnerability was fixed. Given the risk to the public, TechCrunch withheld publishing this story until the security researchers confirmed that the vulnerability can no longer be exploited.</p>
+
+<p class="wp-block-paragraph">Representatives for the Indian Income Tax Department acknowledged our email requesting comment, but did not answer our questions by press time. The Income Tax Department did not present any objections to our publishing this story.</p>
+
+<h2 class="wp-block-heading" id="h-extremely-low-hanging-bug-granted-access-to-sensitive-data">&#8216;Extremely low-hanging&#8217; bug granted access to sensitive data</h2>
+
+<p class="wp-block-paragraph">The security researchers Akshay CS and &#8220;Viral&#8221; told TechCrunch that they discovered the vulnerability while filing their recent income tax return on the government website.</p>
+
+<p class="wp-block-paragraph">Residents of India are required to file their annual earnings to calculate the taxes they owe to the Indian government.</p>
+
+<p class="wp-block-paragraph">The researchers found that when they signed into the portal using their Permanent Account Number (PAN), an official document issued by the Indian income tax department, they could view anyone else&#8217;s sensitive financial data by swapping out their PAN for another PAN in the network request as the web page loads.</p>
+
+<p class="wp-block-paragraph">This could be done using publicly available tools like Postman or <a href="https://techcrunch.com/2025/09/25/viral-call-recording-app-neon-goes-dark-after-exposing-users-phone-numbers-call-recordings-and-transcripts/" target="_blank" rel="noreferrer noopener">Burp Suite</a> (or using the web browser&#8217;s in-built developer tools) and with knowledge of someone else&#8217;s PAN, the researchers told TechCrunch.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The bug was exploitable by anyone who was logged-in to the tax portal because the Indian income tax department&#8217;s back-end servers were not properly checking who was allowed to access a person&#8217;s sensitive data. This class of vulnerability is known as an insecure direct object reference, or IDOR, a common and simple flaw that <a href="https://techcrunch.com/2023/07/27/cisa-nsa-australia-idor-flaws/" target="_blank" rel="noreferrer noopener">governments have warned is easy to exploit</a> and can result in large-scale data breaches.</p>
+
+<p class="wp-block-paragraph">&#8220;This is an extremely low-hanging thing, but one that has a very severe consequence,&#8221; the researchers told TechCrunch.</p>
+
+<p class="wp-block-paragraph">In addition to the data of individuals, the researchers said that the bug also exposed data associated with companies who were registered with the e-Filing portal.</p>
+
+<p class="wp-block-paragraph">TechCrunch also verified that the bug exposed data on individuals who have yet to file their income tax returns this year. We confirmed this by asking a person who had not yet filed their tax returns for their permission to have the researchers look up their information using the portal bug.</p>
+
+<h2 class="wp-block-heading" id="h-cert-in-acknowledges-security-flaw">CERT-In acknowledges security flaw</h2>
+
+<p class="wp-block-paragraph">The security researchers alerted India&#8217;s computer emergency readiness team, or CERT-In, to the security flaw soon after their discovery, but were not provided with a timeline for the fix.</p>
+
+<p class="wp-block-paragraph">When contacted by TechCrunch on September 30, a CERT-In representative said the Income Tax Department was already working to fix the vulnerability.</p>
+
+<p class="wp-block-paragraph">The Indian Ministry of Finance did not return TechCrunch&#8217;s request for comment. After reaching out to the Income Tax Department regarding the vulnerability, the director general of Systems acknowledged receipt of TechCrunch&#8217;s email on October 1, but did not comment further.</p>
+
+<p class="wp-block-paragraph">It remains unclear how long the vulnerability has existed or whether any malicious actors have accessed the exposed data. CERT-In did not respond to these questions when asked by TechCrunch.</p>
+
+ 
+
+
+ 
+
+
+ 
+
+
+			
+
+			</div>
