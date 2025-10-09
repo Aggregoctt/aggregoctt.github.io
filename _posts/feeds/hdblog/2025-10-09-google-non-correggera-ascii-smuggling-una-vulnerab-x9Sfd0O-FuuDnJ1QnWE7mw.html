@@ -1,0 +1,34 @@
+---
+author: HDblog.it
+canonical_url: https://www.hdblog.it/google/articoli/n634306/google-vulnerabilita-nota-gemini/
+date: '2025-10-09T09:35:00'
+excerpt: Google riconosce il problema ma lo considera “ingegneria sociale” e sceglie
+  di non intervenire.
+image: assets/media/x9Sfd0O-FuuDnJ1QnWE7mw-s-3PJ7uld33kJ0JYYIwBfw.jpeg
+source: hdblog
+tags:
+- Sicurezza
+- Google
+title: Google non correggerà "ASCII smuggling", una vulnerabilità nota nel modello
+  Gemini
+---
+<div>
+	
+				<p>Google ha deciso che <strong>non corregger&#224; una vulnerabilit&#224; accertata nel suo modello <a href="https://www.hdblog.it/gemini-ai/">Gemini</a>,</strong> nonostante la segnalazione di <strong>un ricercatore di sicurezza che ne ha dimostrato la pericolosit&#224;</strong>. "ASCII smuggling", questo il nome dell'exploit, consente di <strong>inserire caratteri del tutto invisibili ma leggibili dall'AI,</strong> capaci di <strong>alterarne il comportamento durante l'elaborazione del testo.</strong><br>
+<br>
+Google, in risposta alla segnalazione di FireTail, ha <strong>classificato il problema come un caso di "ingegneria sociale" </strong>e <strong>non come una vera e propria vulnerabilit&#224; tecnica</strong>. In sostanza, la societ&#224; ritiene che la responsabilit&#224; ricada sull'utente che fornisce input malevoli, e non sul design del modello.<br>
+<br>
+La posizione di Google ha suscitato perplessit&#224; soprattutto perch&#233; Gemini &#232; integrato con servizi sensibili come Gmail, Calendar e Documenti. In questi contesti, la possibilit&#224; di introdurre comandi nascosti attraverso messaggi o email <strong>potrebbe favorire la manipolazione di dati o la diffusione di contenuti ingannevoli</strong>, senza che l'utente se ne accorga.</p>L'ATTACCO E IL COMPORTAMENTO DI GEMINI<p>La vulnerabilit&#224; &#232; stata scoperta dal ricercatore Viktor Markopoulos, di FireTail, che ha mostrato dettagliatamente il modo in cui l'attacco sfrutti simboli di controllo o caratteri Unicode non visibili sullo schermo ma <strong>interpretati dal modello come istruzioni operative.</strong></p><p>Durante i test, Markopoulos ha dimostrato che un testo apparentemente innocuo &#8212; ad esempio un invito a una riunione o un'email di lavoro &#8212; pu&#242; contenere caratteri nascosti in grado di indurre Gemini a riscrivere informazioni, modificare dettagli di un evento o generare risposte distorte. <strong>L'attacco risulta difficile da individuare </strong>proprio perch&#233; ci&#242; che l'utente vede &#232; diverso da ci&#242; che l'AI interpreta.</p><p>Il ricercatore ha inoltre confrontato il comportamento di Gemini con altri modelli, come <a href="https://www.hdblog.it/chatgpt/">ChatGPT</a> di OpenAI, Claude di Anthropic e Copilot di Microsoft. In questi casi, i sistemi hanno bloccato o sanitizzato gli input sospetti, mentre Gemini, insieme a Grok di Elon Musk e al modello cinese DeepSeek, non ha impedito l'esecuzione delle istruzioni invisibili.</p>LE ALTRE CORREZIONI DI GOOGLE E LE IMPLICAZIONI FUTURE<p>Nel corso dell'anno <strong>Google ha corretto altre vulnerabilit&#224; note del suo sistema</strong>, riunite sotto la <strong>denominazione &#8220;Gemini Trifecta&#8221;,</strong> che riguardavano i log, i riassunti di ricerca e le cronologie di navigazione. Tuttavia, nel caso dell'&#8220;ASCII smuggling&#8221;, l'azienda ha scelto di non intervenire, sostenendo che la minaccia non derivi da un errore interno ma dal modo in cui gli utenti interagiscono con il modello.</p>    <p>La vicenda riporta in primo piano una questione cruciale per la sicurezza dell'AI: la capacit&#224; dei modelli di distinguere tra testo e codice nascosto. Una distinzione che, se ignorata o sottovalutata, rischia di trasformarsi in un serio problema di affidabilit&#224; e di tutela dei dati.</p> 
+
+	
+				
+
+
+ 
+
+
+	
+				 
+			
+	
+			</div>
