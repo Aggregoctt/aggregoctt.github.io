@@ -1,0 +1,42 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143508/microsoft-closes-another-loophole-to-enable-local-accounts-in-windows-11/
+date: '2025-10-08T22:32:12'
+excerpt: It seems like Microsoft is continuing its quest to force Windows users to
+  use Microsoft accounts instead of local accounts, despite the fact Microsoft accounts
+  on Windows are half-baked and potentially incredibly dangerous. In the most recent
+  Windows 11 Insider Preview Build (26220.6772), the company has closed a few more
+  loopholes people were using to trick the Windows installer into allowing local user
+  accounts. We are removing known mechanisms for creating a local account in the Windows
+  Setup experience (OOBE). While these mechanisms were often used to bypass Microsoft
+  account setup, they also inadvertently skip critical setup screens, potentially
+  causing users to exit OOBE with a device that is not fully configured for use. Users
+  will need to complete OOBE with internet and a Microsoft account, to ensure device
+  is setup correctly. ↫ Amanda Langowski at the Windows Blogs It seems that the specific
+  workaround removed with this change is executing the command &#8220;start ms-cxh:localonly&#8221;
+  in the command prompt during the installation process (you can access cmd.exe by
+  pressing shift+F10 during installation). Several other workarounds have also been
+  removed in recent years, making it ever harder for people forced to use Windows
+  11 to use a local account, like the gods intended. The only reason Microsoft is
+  pushing online accounts this hard is that it makes it much, much easier for them
+  to collect your data and wrestle control over your installation away from you. A
+  regular, proper local account with additional online accounts for various services
+  would work just as well for users, allowing them to mix and match exactly what kind
+  of cloud services they want integrated into their operating system. However, leaving
+  this choice to the user invariably means people aren&#8217;t going to be using whatever
+  trash services Microsoft offers. And so, Microsoft will make that choice for you,
+  whether you like it or not. There are a million reasons to stay away from the Windows
+  version that must be making Dave Cutler cry, and the insistence on online accounts
+  is but one of them. It&#8217;s a perfect example of how Microsoft developers Windows
+  not to make it better for its users, but to make it better for its bottom line.
+  I wonder how much more Microsoft can squeeze its users before we see some sort of
+  actual revolt. Windows used to just lack taste. These days, it&#8217;s also actively
+  hostile.
+image: null
+source: osnews
+tags:
+- Windows
+title: Microsoft closes another loophole to enable local accounts in Windows 11
+---
+<div><p>It seems like Microsoft is continuing its quest to force Windows users to use Microsoft accounts instead of local accounts, despite the fact Microsoft accounts on Windows are <a href="https://www.osnews.com/story/143376/dark-patterns-killed-my-wifes-windows-11-installation/">half-baked and potentially incredibly dangerous</a>. In the most recent Windows 11 Insider Preview Build (26220.6772), the company has closed a few more loopholes people were using to trick the Windows installer into allowing local user accounts.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>We are removing known mechanisms for creating a local account in the Windows Setup experience (OOBE). While these mechanisms were often used to bypass Microsoft account setup, they also inadvertently skip critical setup screens, potentially causing users to exit OOBE with a device that is not fully configured for use. Users will need to complete OOBE with internet and a Microsoft account, to ensure device is setup correctly.</p>
+<a href="https://blogs.windows.com/windows-insider/2025/10/06/announcing-windows-11-insider-preview-build-26220-6772-dev-channel/">&#8619; Amanda Langowski at the Windows Blogs</a></blockquote><p>It seems that the specific workaround removed with this change is executing the command &#8220;<code>start ms-cxh:localonly</code>&#8221; in the command prompt during the installation process (you can access <code>cmd.exe</code> by pressing shift+F10 during installation). Several other workarounds have also been removed in recent years, making it ever harder for people forced to use Windows 11 to use a local account, like the gods intended.</p><p>The only reason Microsoft is pushing online accounts this hard is that it makes it much, much easier for them to collect your data and wrestle control over your installation away from you. A regular, proper local account with additional online accounts for various services would work just as well for users, allowing them to mix and match exactly what kind of cloud services they want integrated into their operating system. However, leaving this choice to the user invariably means people aren&#8217;t going to be using whatever trash services Microsoft offers. And so, Microsoft will make that choice for you, whether you like it or not.</p><p>There are a million reasons to stay away from the Windows version that must be making Dave Cutler cry, and the insistence on online accounts is but one of them. It&#8217;s a perfect example of how Microsoft developers Windows not to make it better for its users, but to make it better for its bottom line. I wonder how much more Microsoft can squeeze its users before we see some sort of actual revolt.</p><p>Windows used to just lack taste. These days, it&#8217;s also actively hostile.</p></div>
