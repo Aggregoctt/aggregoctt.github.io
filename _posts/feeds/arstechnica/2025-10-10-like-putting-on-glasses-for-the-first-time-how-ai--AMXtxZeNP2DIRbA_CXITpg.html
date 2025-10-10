@@ -1,0 +1,185 @@
+---
+author: Kai Williams
+canonical_url: https://arstechnica.com/science/2025/10/like-putting-on-glasses-for-the-first-time-how-ai-improves-earthquake-detection/
+date: '2025-10-10T11:00:24'
+excerpt: AI is “comically good” at detecting small earthquakes—here’s why that matters.
+image: assets/media/AMXtxZeNP2DIRbA_CXITpg-DnqzNlaOtFuvDsDAe6FzbQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Features
+- Science
+- earthquakes
+- seismology
+title: “Like putting on glasses for the first time”—how AI improves earthquake detection
+---
+<div>
+                      
+                      
+           
+<p>On January 1, 2008, at 1:59 AM in Calipatria, California, an earthquake happened. You haven&#8217;t heard of this earthquake; even if you had been living in Calipatria, you wouldn&#8217;t have felt anything. It was magnitude -0.53, about the same amount of shaking as a truck passing by. Still, this earthquake is notable, not because it was large but because it was small&#8212;and yet we know about it.</p>
+<p>Over the past seven years, AI tools based on computer imaging have almost completely automated one of the fundamental tasks of seismology: detecting earthquakes. What used to be the task of human analysts&#8212;and later, simpler computer programs&#8212;can now be done automatically and quickly by machine learning tools.</p>
+<p>These machine learning tools can detect smaller earthquakes than human analysts, especially in noisy environments like cities. Earthquakes give valuable information about the composition of the Earth and what hazards might occur in the future.</p>
+<p>&#8220;In the best-case scenario, when you adopt these new techniques, even on the same old data, it&#8217;s kind of like putting on glasses for the first time, and you can see the leaves on the trees,&#8221; said Kyle Bradley, co-author of the&#160;<a href="https://earthquakeinsights.substack.com/" rel="">Earthquake Insights</a> newsletter.</p>
+<p>I talked with several earthquake scientists, and they all agreed that machine learning methods have replaced humans for the better in these specific tasks.</p>
+<p>&#8220;It&#8217;s really remarkable,&#8221; Judith Hubbard, a Cornell University professor and Bradley&#8217;s co-author, told me.</p>
+<p>Less certain is what comes next. Earthquake detection is a fundamental part of seismology, but there are many other data processing tasks that have yet to be disrupted. The biggest potential impacts, all the way to earthquake forecasting, haven&#8217;t materialized yet.</p>
+<p>&#8220;It really was a revolution,&#8221; said Joe Byrnes, a professor at the University of Texas at Dallas. &#8220;But the revolution is ongoing.&#8221;</p>
+<h2 class="header-anchor-post">What do seismologists do?</h2>
+<p>When an earthquake happens in one place, the shaking passes through the ground, similar to how sound waves pass through the air. In both cases, it&#8217;s possible to draw inferences about the materials the waves pass through.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Imagine tapping a wall to figure out if it&#8217;s hollow. Because a solid wall vibrates differently than a hollow wall, you can figure out the structure by sound.</p>
+<p>With earthquakes, this same principle holds. Seismic waves pass through different materials (rock, oil, magma, etc.) differently, and scientists use these vibrations to image the Earth&#8217;s interior.</p>
+<p>The main tool that scientists traditionally use is a&#160;seismometer. These record the movement of the Earth in three directions: up&#8211;down, north&#8211;south, and east&#8211;west. If an earthquake happens, seismometers can measure the shaking in that particular location.</p>
+ 
+
+<p>Scientists then process raw seismometer information to identify earthquakes.</p>
+<p>Earthquakes produce multiple types of shaking, which travel at different speeds. Two types, Primary (P) waves and Secondary (S) waves are particularly important, and scientists like to identify the start of each of these phases.</p>
+ 
+<h2 class="header-anchor-post">Finding quakes before machine learning</h2>
+<p>Before good algorithms, earthquake cataloging had to happen by hand. Byrnes said that &#8220;traditionally, something like the lab at the United States Geological Survey would have an army of mostly undergraduate students or interns looking at seismograms.&#8221;</p>
+<p>However, there are only so many earthquakes you can find and classify manually. Creating algorithms to effectively find and process earthquakes has long been a priority in the field&#8212;especially since the arrival of computers in the early 1950s.</p>
+<p>&#8220;The field of seismology historically has always advanced as computing has advanced,&#8221; Bradley told me.</p>
+<p>There&#8217;s a big challenge with traditional algorithms, though: They can&#8217;t easily find smaller quakes, especially in noisy environments.</p>
+ 
+
+<p>As we see in the seismogram above, many different events can cause seismic signals. If a method is too sensitive, it risks falsely detecting events as earthquakes. The problem is especially bad in cities, where the constant hum of traffic and buildings can drown out small earthquakes.</p>
+<p>However, earthquakes have a characteristic &#8220;shape.&#8221; The magnitude 7.7 earthquake above looks quite different from the helicopter landing, for instance.</p>
+
+          
+                   
+                   
+                  
+
+              
+          
+          
+<p>So one idea scientists had was to make templates from human-labeled datasets. If a new waveform correlates closely with an existing template, it&#8217;s almost certainly an earthquake.</p>
+<p>Template matching works very well if you have enough human-labeled examples. In 2019, Zach Ross&#8217;s lab at Caltech used template matching to&#160;<a href="https://www.science.org/doi/10.1126/science.aaw6888" rel="">find</a> 10 times as many earthquakes in Southern California as had previously been known, including the earthquake at the start of this story. Almost all of the new 1.6 million quakes they found were very small, magnitude 1 and below.</p>
+<p>If you don&#8217;t have an extensive pre-existing dataset of templates, however, you can&#8217;t easily apply template matching. That isn&#8217;t a problem in Southern California&#8212;which already had a basically complete record of earthquakes down to magnitude 1.7&#8212;but it&#8217;s a challenge elsewhere.</p>
+<p>Also, template matching is computationally expensive. Creating a Southern California quake dataset using template matching took 200 Nvidia P100 GPUs running for days on end.</p>
+<p>There had to be a better way.</p>
+<h2 class="header-anchor-post">Breaking down the Earthquake Transformer</h2>
+<p>AI detection models solve all of these problems:</p>
+<ul>
+<li>
+<p class="sc-1o72qur-1 hDESMK">They are faster than template matching.</p>
+</li>
+<li>
+<p class="sc-1o72qur-1 hDESMK">Because AI detection models are very small (around 350,000 parameters compared to billions in LLMs like GPT4.0), they can be run on consumer CPUs.</p>
+</li>
+<li>
+<p class="sc-1o72qur-1 hDESMK">AI models generalize well to regions not represented in the original dataset.</p>
+</li>
+</ul>
+<p>As an added bonus, AI models can give better information about when the different types of earthquake shaking arrive. Timing the arrivals of the two most important waves&#8212;P and S waves&#8212;is called phase picking.&#160;It allows scientists to draw inferences about the structure of the quake. AI models can do this alongside earthquake detection.</p>
+<p>The basic task of earthquake detection (and phase picking) looks like this:</p>
+ 
+
+<p class="sc-1o72qur-1 hDESMK">The first three rows represent different directions of vibration (east&#8211;west, north&#8211;south, and up&#8211;down respectively). Given these three dimensions of vibration, can we determine if an earthquake occurred, and if so, when it started?</p>
+
+          
+                   
+                  
+
+              
+          
+          
+ 
+
+<p class="sc-1o72qur-1 hDESMK">We want to detect the initial P wave, which arrives directly from the site of the earthquake. But this can be tricky because echoes of the P wave may get reflected off other rock layers and arrive later, making the waveform more complicated.</p>
+<p class="sc-1o72qur-1 hDESMK">Ideally, then, our model outputs three things at every time step in the sample:</p>
+<ol class="sc-n2r23q-11 fHhWJP">
+<li>
+<p class="sc-1o72qur-1 hDESMK">The probability that an earthquake is occurring at that moment.</p>
+</li>
+<li>
+<p class="sc-1o72qur-1 hDESMK">The probability that the first P wave arrives at that moment.</p>
+</li>
+<li>
+<p class="sc-1o72qur-1 hDESMK">The probability that the first S wave arrives at that moment.</p>
+</li>
+</ol>
+<p class="sc-1o72qur-1 hDESMK">We see all three outputs in the fourth row: the detection in green, the P wave arrival in blue, and the S wave arrival in red. (There are two earthquakes in this sample.)</p>
+<p class="sc-1o72qur-1 hDESMK">To train an AI model, scientists take large amounts of labeled data, like what&#8217;s above, and do supervised training. I&#8217;ll describe one of the most used models: <a class="sc-1qqd3zj-1 ieqKnb sc-n2r23q-16 jtyiEn" href="https://www.nature.com/articles/s41467-020-17591-w" target="_blank" rel="noopener noreferrer">Earthquake Transformer</a>, which was developed around 2020 by a Stanford University team led by S. Mostafa Mousavi, who later became a Harvard professor.</p>
+<p>Like many earthquake detection models, Earthquake Transformer adapts ideas from image classification. Readers may be familiar with AlexNet, a famous image-recognition model that <a href="https://arstechnica.com/science/2018/12/how-computers-got-shockingly-good-at-recognizing-images/" rel="">kicked off the deep learning boom</a>&#160;in 2012.</p>
+<p>AlexNet used convolutions, a neural network architecture that&#8217;s based on the idea that pixels that are physically close together are more likely to be related. The first convolutional layer of AlexNet broke an image down into small chunks&#8212;11 pixels on a side&#8212;and classified each chunk based on the presence of simple features like edges or gradients.</p>
+<p>The next layer took the first layer&#8217;s classifications as input and checked for higher-level concepts such as textures or simple shapes.</p>
+<p>Each convolutional layer analyzed a larger portion of the image and operated at a higher level of abstraction. By the final layers, the network was looking at the entire image and identifying objects like &#8220;mushroom&#8221; and &#8220;container ship.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>Images are two-dimensional, so AlexNet is based on two-dimensional convolutions. In contrast, seismograph data is one-dimensional, so Earthquake Transformer uses one-dimensional convolutions over the time dimension. The first layer analyzes vibration data in 0.1-second chunks, while later layers identify patterns over progressively longer time periods.</p>
+<p>It&#8217;s difficult to say what exact patterns the earthquake model is picking out, but we can analogize this to a hypothetical audio transcription model using one-dimensional convolutions. That model might first identify consonants, then syllables, then words, then sentences over increasing time scales.</p>
+<p>Earthquake Transformer converts raw waveform data into a collection of high-level representations that indicate the likelihood of earthquakes and other seismologically significant events. This is followed by a series of deconvolution layers that pinpoint exactly when an earthquake&#8212;and its all-important P and S waves&#8212;occurred.</p>
+<p>The model also uses an attention layer in the middle of the model to mix information between different parts of the time series. The attention mechanism is most famous in&#160;<a href="https://www.understandingai.org/p/large-language-models-explained-with" rel="">large language models</a>, where it helps pass information between words. It plays a similar role in seismographic detection. Earthquake seismograms have a general structure: P waves followed by S waves followed by other types of shaking. So if a segment looks like the start of a P wave, the attention mechanism helps it check that it fits into a broader earthquake pattern.</p>
+<h2 class="header-anchor-post">Scaling earthquake data</h2>
+<p>All of the Earthquake Transformer&#8217;s components are standard designs from the neural network literature. Other successful detection models, like&#160;<a href="https://academic.oup.com/gji/article/216/1/261/5129142" rel="">PhaseNet</a>, are even simpler. PhaseNet uses only one-dimensional convolutions to pick the arrival times of earthquake waves. There are no attention layers.</p>
+<p>Generally, there hasn&#8217;t been &#8220;much need to invent new architectures for seismology,&#8221; according to Byrnes. The techniques derived from image processing have been sufficient.</p>
+<p>What made these generic architectures work so well then? Data. Lots of it.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<p>Ars has previously <a href="https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/" rel="">reported</a>&#160;on how the introduction of&#160;<a href="https://image-net.org/about.php" rel="">ImageNet</a>, an image recognition benchmark, helped spark the deep learning boom. Large, publicly available earthquake datasets have played a similar role in seismology.</p>
+<p>Earthquake Transformer was trained using the&#160;<a href="https://ieeexplore.ieee.org/abstract/document/8871127" rel="">Stanford Earthquake Dataset (STEAD)</a>, which contains 1.2 million human-labeled segments of seismogram data from around the world. (The paper for STEAD explicitly&#160;<a href="https://ieeexplore.ieee.org/abstract/document/8871127#:~:text=Without%20a%20standard%20benchmark%20%28e%2Eg%2E%20ImageNet%20%5B9%5D%29%2C%20it%20is%20difficult%20to%20compare%20the%20performance%20of%20different%20approaches%20and%20to%20identify%2C%20adopt%2C%20and%20improve%20on%20best%20practices" rel="">mentions ImageNet</a> as an inspiration). Other models, like PhaseNet, were also trained on hundreds of thousands or millions of labeled segments.</p>
+ 
+
+<p>The combination of the data and the architecture just works. The current models are &#8220;comically good&#8221; at identifying and classifying earthquakes, according to Byrnes. Typically, machine learning methods find ten or more times the quakes that were previously identified in an area. You can see this directly in an Italian earthquake catalog:</p>
+ 
+
+<p>AI tools won&#8217;t necessarily detect more earthquakes than template matching. But AI-based techniques are much less compute- and labor-intensive, making them more accessible to the average research project and easier to apply in regions around the world.</p>
+<p>All in all, these machine learning models are so good that they&#8217;ve almost completely supplanted traditional methods for detecting and phase-picking earthquakes, especially for smaller magnitudes.</p>
+<h2 class="header-anchor-post">What does all this AI stuff do?</h2>
+<p>The holy grail of earthquake science is earthquake prediction. For instance, scientists&#160;<a href="https://www.newyorker.com/magazine/2015/07/20/the-really-big-one" rel="">know</a> that a large quake will happen near Seattle but have little ability to know whether it will happen tomorrow or in a hundred years. It would be helpful if we could predict earthquakes precisely enough to allow people in affected areas to evacuate.</p>
+<p>You might think AI tools would help predict earthquakes, but that doesn&#8217;t seem to have happened yet.</p>
+<p>The applications are more technical and less flashy, said Cornell&#8217;s Judith Hubbard.</p>
+<p>Better AI models have given seismologists much more comprehensive earthquake catalogs, which have unlocked &#8220;a lot of different techniques,&#8221; Bradley said.</p>
+
+          
+                   
+                   
+                  
+
+              
+          
+          
+<p>One of the coolest applications is in understanding and imaging volcanoes. Volcanic activity produces a large number of small earthquakes, whose locations help scientists understand the structure of the magma system. In a 2022&#160;<a href="https://www.science.org/doi/10.1126/science.ade5755" rel="">paper</a>, John Wilding and co-authors used a large AI-generated earthquake catalog to create this incredible image of the structure of the Hawaiian volcanic system.</p>
+ 
+
+<p>They provided direct evidence of a previously hypothesized magma connection between the deep P&#257;hala sill complex and Mauna Loa&#8217;s shallow volcanic structure. You can see this in the image with the arrow labeled as P&#257;hala-Mauna Loa seismicity band. The authors were also able to clarify the structure of the P&#257;hala sill complex into discrete sheets of magma. This level of detail could potentially facilitate better real-time monitoring of earthquakes and more accurate eruption forecasting.</p>
+ 
+<p>Another promising area is lowering the cost of dealing with huge datasets.&#160;<a href="https://www.earthscope.org/what-is/das/" rel="">Distributed Acoustic Sensing</a> (DAS) is a powerful technique that uses fiber-optic cables to measure seismic activity across the entire length of the cable. A single DAS array can produce &#8220;hundreds of gigabytes of data&#8221; a day, according to Jiaxuan Li, a professor at the University of Houston. That much data can produce extremely high-resolution datasets&#8212;enough to pick out individual footsteps.</p>
+<p>AI tools make it possible to very accurately time earthquakes in DAS data. Before the introduction of AI techniques for phase picking in DAS data, Li and some of his collaborators attempted to use traditional techniques. While these &#8220;work roughly,&#8221; they weren&#8217;t accurate enough for their downstream analysis. Without AI, much of his work would have been &#8220;much harder,&#8221; he told me.</p>
+<p>Li is also optimistic that AI tools will be able to help him isolate &#8220;new types of signals&#8221; in the rich DAS data in the future.</p>
+<h2>Not all AI techniques have paid off</h2>
+<p>As in many other scientific fields, seismologists face some pressure to adopt AI methods, whether or not they are relevant to their research.</p>
+<p>&#8220;The schools want you to put the word AI in front of everything,&#8221; Byrnes said. &#8220;It&#8217;s a little out of control.&#8221;</p>
+<p>This can lead to papers that are technically sound but practically useless. Hubbard and Bradley told me that they&#8217;ve seen a lot of papers based on AI techniques that &#8220;reveal a fundamental misunderstanding of how earthquakes work.&#8221;</p>
+<p>They pointed out that graduate students can feel pressure to specialize in AI methods at the cost of learning less about the fundamentals of the scientific field. They fear that if this type of AI-driven research becomes entrenched, older methods will get &#8220;out-competed by a kind of meaninglessness.&#8221;</p>
+<p>While these are real issues, and ones Understanding AI has&#160;<a href="https://www.understandingai.org/p/i-got-fooled-by-ai-for-science-hypeheres" rel="">reported on before</a>, I don&#8217;t think they detract from the success of AI earthquake detection. In the last five years, an AI-based workflow has almost completely replaced one of the fundamental tasks in seismology for the better.</p>
+<p>That&#8217;s pretty cool.</p>
+<p><a href="https://substack.com/@chiwilliams">Kai Williams</a> is a reporter for <a href="https://www.understandingai.org/">Understanding AI</a>, a Substack newsletter founded by Ars Technica alum Timothy B. Lee. His work is supported by a <a href="https://www.tarbellcenter.org/programme">Tarbell Fellowship</a>. <a href="https://www.understandingai.org/">Subscribe to Understanding AI</a> to get more from Tim and Kai.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
