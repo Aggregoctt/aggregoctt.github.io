@@ -1,0 +1,48 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/gaming/2025/10/amd-and-sony-tease-new-chip-architecture-ahead-of-playstation-6/
+date: '2025-10-10T16:45:49'
+excerpt: Project Amethyst focuses on efficient machine learning, new compression techniques.
+image: assets/media/e80z8nJ1yPIkg9wzxjOl6g-wGuorTfUHy-9snQMnDxsOQ.jpeg
+source: arstechnica
+tags:
+- Gaming
+- AMD
+- chipset
+- GPU
+- pipeline
+- raytracing
+- Sony
+title: AMD and Sony’s PS6 chipset aims to rethink the current graphics pipeline
+---
+<div>
+                      
+                      
+          <p>It feels like it was just yesterday that Sony hardware architect Mark Cerny was <a href="https://arstechnica.com/gaming/2019/04/sonys-ps4-successor-sports-3d-audio-tech-faster-ssd-storage/">first teasing Sony's "PS4 successor"</a> and its "enhanced ray-tracing capabilities" powered by new AMD chips. Now that we're <a href="https://arstechnica.com/gaming/2020/11/playstation-5-review-more-of-a-generational-hop-than-a-leap/">nearly five full years into the PS5 era</a>, it's time for Sony and AMD to start teasing the new chips that will power what Cerny calls "a future console in a few years' time."</p>
+<p>In <a href="https://www.youtube.com/watch?v=1LCMzw-_dMw">a quick nine-minute video posted Thursday</a>, Cerny sat down with Jack Huynh, the senior VP and general manager of AMD's Computing and Graphics Group, to talk about "Project Amethyst," a co-engineering effort between both companies that was <a href="https://x.com/JackMHuynh/status/1940049247920943136">also teased back in July</a>. And while that Project Amethyst hardware currently only exists in the form of a simulation, Cerny said that the "results are quite promising" for a project that's still in the "early days."</p>
+<h2>Mo&#8217; ML, fewer problems?</h2>
+<p>Project Amethyst is focused on going beyond traditional rasterization techniques that don't scale well when you try to "brute force that with raw power alone," Huynh said in the video. Instead, the new architecture is focused on more efficient running of the kinds of machine-learning-based neural networks behind <a href="https://arstechnica.com/gadgets/2025/02/amds-fsr-4-upscaling-is-exclusive-to-90-series-radeon-gpus-wont-work-on-other-cards/">AMD's FSR upscaling technology</a> and <a href="https://arstechnica.com/gaming/2024/09/sony-announces-ps5-pro-a-700-graphics-workhorse-available-nov-7/">Sony's similar PSSR system</a>.</p>
+ 
+<p>While that kind of upscaling currently helps let GPUs pump out 4K graphics in real time, Cerny said that the "nature of the GPU fights us here," requiring calculations to be broken up into subproblems to be handled in a somewhat inefficient parallel process by the GPU's individual compute units.</p>
+<p>To get around this issue, Project Amethyst uses "neural arrays" that let compute units share data and process problems like a "single focused AI engine," Cerny said. While the entire GPU won't be connected in this manner, connecting small sets of compute units like this allows for more scalable shader engines that can "process a large chunk of the screen in one go," Cerny said. That means Project Amethyst will let "more and more of what you see on screen... be touched or enhanced by ML," Huynh added.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Let&#8217;s get efficient</h2>
+<p>Current GPU pipelines also have some inefficiencies when it comes to ray-tracing, Cerny said. The current approach of asking shaders to calculate both ray paths and more traditional texture shading "has reached its limit," he said.</p>
+<p>To make things more efficient, Project Amethyst builds off <a href="https://arstechnica.com/gaming/2022/02/how-sonys-new-patent-filing-could-speed-up-playstation-ray-tracing/">a system Sony patented in 2022</a> with a separate set of "radiance cores." This separate hardware block is designed for and dedicated to the computationally intense process of ray traversal&#8212;figuring out which light rays hit which polygons in a scene. That frees up the CPU and GPU for the more traditional shader calculations based on textures and material data, Cerny said.</p>
+ 
+<p>But the most significant bottleneck that Sony and AMD say they're trying to fix with the new chip has to do with memory bandwidth limitations on the GPU. For a while now, AMD chips have used <a href="https://gpuopen.com/learn/dcc-overview/">Delta Color Compression</a> to reduce the size of certain texture data before it goes through the limited pipe. In Project Amethyst, that process is being generalized for a "universal compression" that does the same for everything sent to the GPU. The result will hopefully be an "effective bandwidth [that] exceeds its paper spec," Cerny said.</p>
+<p>Without even a concept demo of the output to look at, it's way too early to tell just how much extra horsepower this new architecture will be able to squeeze out of silicon that is <a href="https://arstechnica.com/gadgets/2025/05/chips-arent-improving-like-they-used-to-and-its-killing-game-console-price-cuts/">generally improving more slowly than it used to</a>. But it's still interesting to get a glimpse into what the chipmakers behind PlayStation consider important in the eternal struggle for more detailed and realistic real-time graphics.</p>
+
+
+          
+                  
+
+                  
+          </div>

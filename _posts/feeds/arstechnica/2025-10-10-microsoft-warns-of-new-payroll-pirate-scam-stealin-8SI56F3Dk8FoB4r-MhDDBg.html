@@ -1,0 +1,44 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/10/payroll-pirate-phishing-scam-that-takes-over-workday-accounts-steals-paychecks/
+date: '2025-10-10T18:07:04'
+excerpt: Among other things, the scammers bypass multi-factor authentication.
+image: assets/media/8SI56F3Dk8FoB4r-MhDDBg-JaAshubMJPAtQL6uGLAt4Q.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- mfa
+- multi factor authentication
+- phishing
+title: Microsoft warns of new “Payroll Pirate” scam stealing employees’ direct deposits
+---
+<div>
+                      
+                      
+          <p>Microsoft is warning of an active scam that diverts employees' paycheck payments to attacker-controlled accounts after first taking over their profiles on Workday or other cloud-based HR services.</p>
+<p>Payroll Pirate, as Microsoft says the campaign has been dubbed, gains access to victims&#8217; HR portals by sending them phishing emails that trick the recipients into providing their credentials for logging in to the cloud account. The scammers are able to recover multi-factor authentication codes by using <a href="https://arstechnica.com/security/2025/05/phishing-attacks-that-defeat-mfa-are-easier-than-ever-so-what-are-we-to-do/">adversary-in-the-middle</a> tactics, which work by sitting between the victims and the site they think they&#8217;re logging in to, which is, in fact, a fake site operated by the attackers.</p>
+<h2>Not all MFA is created equal</h2>
+<p>The attackers then enter the intercepted credentials, including the MFA code, into the real site. This tactic, which has grown increasingly common in recent years, underscores the importance of adopting FIDO-compliant forms of MFA, which are immune to such attacks.</p>
+<p>Once inside the employees&#8217; accounts, the scammers make changes to payroll configurations within Workday. The changes cause direct-deposit payments to be diverted from accounts originally chosen by the employee and instead flow to an account controlled by the attackers. To block messages Workday automatically sends to users when such account details have been changed, the attackers create email rules that keep the messages from appearing in the inbox.</p>
+<p>&#8220;The threat actor used realistic phishing emails, targeting accounts at multiple universities, to harvest credentials,&#8221; Microsoft <a href="https://www.microsoft.com/en-us/security/blog/2025/10/09/investigating-targeted-payroll-pirate-attacks-affecting-us-universities/">said</a> in a Thursday post. &#8220;Since March 2025, we&#8217;ve observed 11 successfully compromised accounts at three universities that were used to send phishing emails to nearly 6,000 email accounts across 25 universities.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+<p>The phishing lures use a variety of themes to trick recipients. In one case, the email claimed employees may have been exposed to a recently discovered communicable disease on campus. It then provides a link to a page that will disclose if the individual is among those exposed. A second theme is that there has been a recent change in employee benefits along with a link for the recipient to learn more. The links lead to an attacker-controlled page that&#8217;s disguised as a login page for the employees' work account.</p>
+<p>In some cases, the attackers successfully added a phone number they controlled as a backup form of account recovery. The move allows the attackers to gain persistent access to the breached account.</p>
+<p>Microsoft&#8217;s warning is a good reminder why forms of MFA that rely on one-time codes, emails, text messages, and push notifications should be avoided whenever possible. Much more secure alternatives are passkeys, physical security keys, and other forms of FIDO-compliant authentication. To date, there have been no known instances of FIDO MFA falling to such scams. Of course, when end-user or cloud-based systems are <a href="https://arstechnica.com/security/2025/08/new-research-claiming-passkeys-can-be-stolen-is-pure-nonsense/">already compromised</a> or online services allow <a href="https://arstechnica.com/security/2025/07/no-phishers-are-not-bypassing-fido-mfa-at-least-not-yet-heres-why/">non-FIDO fallbacks</a>, all bets are off.</p>
+<p>It&#8217;s also a good idea to periodically check email filtering rules in search of any that may be blocking security-related emails from Workday or other services.</p>
+
+
+          
+                  
+
+                  
+          </div>
