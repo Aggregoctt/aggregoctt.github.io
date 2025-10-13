@@ -1,0 +1,59 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/10/no-fix-yet-for-attack-that-lets-hackers-pluck-2fa-codes-from-android-phones/
+date: '2025-10-13T21:36:35'
+excerpt: Malicious app required to make "Pixnapping" attack work requires no permissions.
+image: assets/media/3P4yOyouvHfbG5JhzPldxw-Va-AChOZIDqlN7K4NOQX8A.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Google
+- Security
+- android
+- pixnapping
+- privacy
+- side channel
+title: Hackers can steal 2FA codes and private messages from Android phones
+---
+<div>
+                      
+                      
+           
+<p>Android devices are vulnerable to a new attack that can covertly steal 2FA codes, location timelines, and other private data in less than 30 seconds.</p>
+<p>The new attack, named Pixnapping by the team of academic researchers who devised it, requires a victim to first install a malicious app on an Android phone or tablet. The app, which requires no system permissions, can then effectively read data that any other installed app displays on the screen. Pixnapping has been demonstrated on Google Pixel phones and the Samsung Galaxy S25 phone and likely could be modified to work on other models with additional work. Google released mitigations last month, but the researchers said a modified version of the attack works even when the update is installed.</p>
+<h2>Like taking a screenshot</h2>
+<p>Pixnapping attacks begin with the malicious app invoking Android programming interfaces that cause the authenticator or other targeted apps to send sensitive information to the device screen. The malicious app then runs graphical operations on individual pixels of interest to the attacker. Pixnapping then exploits a <a href="https://en.wikipedia.org/wiki/Side-channel_attack">side channel</a> that allows the malicious app to map the pixels at those coordinates to letters, numbers, or shapes.</p>
+<p>&#8220;Anything that is visible when the target app is opened can be stolen by the malicious app using Pixnapping,&#8221; the researchers wrote on an <a href="https://www.pixnapping.com">informational website</a>. &#8220;Chat messages, 2FA codes, email messages, etc. are all vulnerable since they are visible. If an app has secret information that is not visible (e.g., it has a secret key that is stored but never shown on the screen), that information cannot be stolen by Pixnapping.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The new attack class is reminiscent of <a href="https://arstechnica.com/security/2023/09/gpus-from-all-major-suppliers-are-vulnerable-to-new-pixel-stealing-attack/">GPU.zip</a>, a 2023 attack that allowed malicious websites to read the usernames, passwords, and other sensitive visual data displayed by other websites. It worked by exploiting side channels found in GPUs from all major suppliers. The vulnerabilities that GPU.zip exploited have never been fixed. Instead, the attack was blocked in browsers by limiting their ability to open iframes, an HTML element that allows one website (in the case of GPU.zip, a malicious one) to embed the contents of a site from a different domain.</p>
+<p>Pixnapping targets the same side channel as GPU.zip, specifically the precise amount of time it takes for a given frame to be rendered on the screen. To make the measurements, the malicious app uses native Android code that controls memory management and accesses fine-grained timers. The measurements occur as the app analyzes whether a pixel displayed on the screen is white or non-white.</p>
+<p>&#8220;This allows a malicious app to steal sensitive information displayed by other apps or arbitrary websites, pixel-by-pixel,&#8221; Alan Linghao Wang, lead author of the research paper &#8220;<a href="https://www.pixnapping.com/pixnapping.pdf">Pixnapping: Bringing Pixel Stealing out of the Stone Age</a>,&#8221; explained in an interview. &#8220;Conceptually, it is as if the malicious app was taking a screenshot of screen contents it should not have access to. Our end-to-end attacks simply measure the rendering time per frame of the graphical operations&#8230; to determine whether the pixel was white or non-white.&#8221;</p>
+ 
+<h2>Pixnapping in three steps</h2>
+<p>The attack occurs in three main steps. In the first, the malicious app invokes Android APIs that make calls to the app the attacker wants to snoop on. These calls can also be used to effectively scan an infected device for installed apps of interest. The calls can further cause the targeted app to display specific data it has access to, such as a message thread in a messaging app or a 2FA code for a specific site. This call causes the information to be sent to the Android rendering pipeline, the system that takes each app's pixels so they can be rendered on the screen. The Android-specific calls made include <a href="https://developer.android.com/guide/components/activities/intro-activities">activities</a>, <a href="https://developer.android.com/guide/components/intents-filters">intents</a>, and <a href="https://developer.android.com/guide/components/activities/tasks-and-back-stack">tasks</a>.</p>
+
+          
+                  
+
+              
+          
+          
+<p>In the second step, Pixnapping performs graphical operations on individual pixels that the targeted app sent to the rendering pipeline. These operations choose the coordinates of target pixels the app wants to steal and begin to check if the color of those coordinates is white or non-white.</p>
+<p>&#8220;Suppose, for example, [the attacker] wants to steal a pixel that is part of the screen region where a 2FA character is known to be rendered by Google Authenticator,&#8221; Wang said. &#8220;This pixel is either white (if nothing was rendered there) or non-white (if part of a 2FA digit was rendered there). Then, conceptually, the attacker wants to cause some graphical operations whose rendering time is long if the target victim pixel is non-white and short if it is white. The malicious app does this by opening some malicious activities (i.e., windows) in front of the victim app that was opened in Step 1.&#8221;</p>
+<p>The third step measures the amount of time required at each coordinate. By combining the times for each one, the attack can rebuild the images sent to the rendering pipeline one pixel at a time.</p>
+<p>The amount of time required to perform the attack depends on several variables, including how many coordinates need to be measured. In some cases, there&#8217;s no hard deadline for obtaining the information the attacker wants to steal. In other cases&#8212;such as stealing a 2FA code&#8212;every second counts, since each one is valid for only 30 seconds. In the paper, the researchers explained:</p>
+<blockquote><p>To meet the strict 30-second deadline for the attack, we also reduce the number of samples per target pixel to 16 (compared to the 34 or 64 used in earlier attacks) and decrease the idle time between pixel leaks from 1.5 seconds to 70 milliseconds. To ensure that the attacker has the full 30 seconds to leak the 2FA code, our implementation waits for the beginning of a new 30-second global time interval, determined using the system clock.</p>
+<p>... We use our end-to-end attack to leak 100 different 2FA codes from Google Authenticator on each of our Google Pixel phones. Our attack correctly recovers the full 6-digit 2FA code in 73%, 53%, 29%, and 53% of the trials on the Pixel 6, 7, 8, and 9, respectively. The average time to recover each 2FA code is 14.3, 25.8, 24.9, and 25.3 seconds for the Pixel 6, Pixel 7, Pixel 8, and Pixel 9, respectively. We are unable to leak 2FA codes within 30 seconds using our implementation on the Samsung Galaxy S25 device due to significant noise. We leave further investigation of how to tune our attack to work on this device to future work.</p></blockquote>
+<p>In an email, a Google representative wrote, &#8220;We issued a patch for CVE-2025-48561 in the September Android security bulletin, which partially mitigates this behavior. We are issuing an additional patch for this vulnerability in the December Android security bulletin. We have not seen any evidence of in-the-wild exploitation.&#8221;</p>
+
+          
+                  
+
+              </div>
