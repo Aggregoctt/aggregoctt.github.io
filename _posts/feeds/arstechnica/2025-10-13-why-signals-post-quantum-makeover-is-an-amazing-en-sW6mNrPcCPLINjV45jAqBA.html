@@ -1,0 +1,129 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/10/why-signals-post-quantum-makeover-is-an-amazing-engineering-achievement/
+date: '2025-10-13T16:15:53'
+excerpt: New design sets a high standard for post-quantum readiness.
+image: assets/media/sW6mNrPcCPLINjV45jAqBA-ibcwjcdLO0vheuuuJIR_mQ.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Features
+- Security
+- diffie-hellman elliptic curve
+- ML-KEM
+- Module-Lattice-Based Key-Encapsulation Mechanism
+- post-quantum encryption
+- signal messenger
+title: Why Signal’s post-quantum makeover is an amazing engineering achievement
+---
+<div>
+                      
+                      
+           
+<p>The encryption protecting communications against criminal and nation-state snooping is under threat. As private industry and governments get closer to building useful quantum computers, the algorithms protecting Bitcoin wallets, encrypted Web visits, and other sensitive secrets will be useless. No one doubts the day will come, but as the now-common joke in cryptography circles observes, experts have been forecasting this cryptocalypse will arrive in the next 15 to 30 years for the past 30 years.</p>
+<p>The uncertainty has created something of an existential dilemma: Should network architects spend the billions of dollars required to wean themselves off quantum-vulnerable algorithms now, or should they prioritize their limited security budgets fighting more immediate threats such as ransomware and espionage attacks? Given the expense and no clear deadline, it&#8217;s little wonder that <a href="https://radar.cloudflare.com/adoption-and-usage" target="_blank" rel="noopener">less than half</a> of all TLS connections made inside the Cloudflare network and only <a href="https://trustfour.com" target="_blank" rel="noopener">18 percent</a> of Fortune 500 networks support quantum-resistant TLS connections. It's all but certain that many fewer organizations still are supporting quantum-ready encryption in less prominent protocols.</p>
+<h2>Triumph of the cypherpunks</h2>
+<p>One exception to the industry-wide lethargy is the engineering team that designs the Signal Protocol, the open-source engine that powers the world&#8217;s most robust and resilient form of end-to-end encryption for multiple private chat apps, most notably the <a href="https://signal.org/download/">Signal Messenger</a>. Eleven days ago, the nonprofit entity that develops the protocol, Signal Messenger LLC, published a 5,900-word write-up describing its latest updates that make Signal fully quantum-resistant.</p>
+<p>The complexity and problem-solving required for making the Signal Protocol quantum safe are as daunting as just about any in modern-day engineering. The original Signal Protocol already resembled the inside of a fine Swiss timepiece, with countless gears, wheels, springs, hands, and other parts all interoperating in an intricate way. In less adept hands, mucking about with an instrument as complex as the Signal protocol could have led to shortcuts or unintended consequences that hurt performance, undoing what would otherwise be a perfectly running watch. Yet this latest post-quantum upgrade (the first one <a href="https://arstechnica.com/security/2023/09/signal-preps-its-encryption-engine-for-the-quantum-doomsday-inevitability/">came in 2003</a>) is nothing short of a triumph.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>&#8220;This appears to be a solid, thoughtful improvement to the existing Signal Protocol,&#8221; said Brian LaMacchia, a cryptography engineer who oversaw Microsoft's post-quantum transition from 2015 to 2022 and now works at Farcaster Consulting Group. &#8220;As part of this work, Signal has done some interesting optimization under the hood so as to minimize the network performance impact of adding the post-quantum feature.&#8221;</p>
+<p>Of the multiple hurdles to clear, the most challenging was accounting for the much larger key sizes that quantum-resistant algorithms require. The overhaul here adds protections based on ML-KEM-768, an implementation of the CRYSTALS-Kyber algorithm that was <a href="https://arstechnica.com/information-technology/2022/07/nist-selects-quantum-proof-algorithms-to-head-off-the-coming-cryptopocalypse/">selected in 2022</a> and <a href="https://csrc.nist.gov/pubs/fips/203/ipd">formalized</a> last year by the National Institute of Standards and Technology. ML-KEM is short for Module-Lattice-Based Key-Encapsulation Mechanism, but most of the time, cryptographers refer to it simply as KEM.</p>
+<h2>Ratchets, ping-pong, and asynchrony</h2>
+<p>Like the Elliptic curve Diffie-Hellman (ECDH) protocol that Signal has used since its start, KEM is a key encapsulation mechanism. Also known as a key agreement mechanism, it provides the means for two parties who have never met to securely agree on one or more shared secrets in the presence of an adversary who is monitoring the parties&#8217; connection. RSA, ECDH, and other encapsulation algorithms have long been used to negotiate symmetric keys (almost always AES keys) in protocols including TLS, SSH, and IKE. Unlike ECDH and RSA, however, the much newer KEM is quantum-safe.</p>
+ 
+<p>Key agreement in a protocol like TLS is relatively straightforward. That&#8217;s because devices connecting over TLS negotiate a key over a single handshake that occurs at the beginning of a session. The agreed-upon AES key is then used throughout the session. The Signal Protocol is different. Unlike TLS sessions, Signal sessions are protected by <a href="https://en.wikipedia.org/wiki/Forward_secrecy">forward secrecy</a>, a cryptographic property that ensures the compromise of a key used to encrypt a recent set of messages can&#8217;t be used to decrypt an earlier set of messages. The protocol also offers Post-Compromise Security, which protects future messages from past key compromises. While a TLS&#160; uses the same key throughout a session, keys within a Signal session constantly evolve.</p>
+
+          
+                  
+
+              
+          
+          
+<p>To provide these confidentiality guarantees, the Signal Protocol updates secret key material each time a message party hits the send button or receives a message, and at other points, such as in graphical indicators that a party is currently typing and in the sending of read receipts. The mechanism that has made this constant key evolution possible over the past decade is what protocol developers call a &#8220;<a href="https://signal.org/docs/specifications/doubleratchet/">double ratchet</a>.&#8221; Just as a traditional ratchet allows a gear to rotate in one direction but not in the other, the Signal ratchets allow messaging parties to create new keys based on a combination of preceding and newly agreed-upon secrets. The ratchets work in a single direction, the sending and receiving of future messages. Even if an adversary compromises a newly created secret, messages encrypted using older secrets can&#8217;t be decrypted.</p>
+<p>The starting point is a handshake that performs three or four ECDH agreements that mix long- and short-term secrets to establish a shared secret. The creation of this "root key" allows the Double Ratchet to begin. Until 2023, the key agreement used X3DH. The handshake now uses PQXDH to make the handshake quantum-resistant.</p>
+ 
+<p>The first layer of the Double Ratchet, the Symmetric Ratchet, derives an AES key from the root key and advances it for every message sent. This allows every message to be encrypted with a new secret key. Consequently, if attackers compromise one party&#8217;s device, they won&#8217;t be able to learn anything about the keys that came earlier. Even then, though, the attackers would still be able to compute the keys used in future messages. That&#8217;s where the second, &#8220;Diffie-Hellman ratchet&#8221; comes in.</p>
+<p>The Diffie-Hellman ratchet incorporates a new ECDH public key into each message sent. Using Alice and Bob, the fictional characters often referred to when explaining asymmetric encryption, when Alice sends Bob a message, she creates a new ratchet keypair and computes the ECDH agreement between this key and the last ratchet public key Bob sent. This gives her a new secret, and she knows that once Bob gets her new public key, he will know this secret, too (because, as mentioned earlier, Bob previously sent that other key). With that, Alice can mix the new secret with her old root key to get a new root key and start fresh. The result: Attackers who learn her old secrets won&#8217;t be able to tell the difference between her new ratchet keys and random noise. The result is what Signal developers describe as &#8220;ping-pong&#8221; behavior, as the parties to a discussion take turns replacing ratchet key pairs one at a time. The effect: An eavesdropper who compromises one of the parties might recover a current ratchet private key, but soon enough, that private key will be replaced with a new, uncompromised one, and in a way that keeps it free from the prying eyes of the attacker.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The objective of the newly generated keys is to limit the number of messages that can be decrypted if an adversary recovers key material at some point in an ongoing chat. Messages sent prior to and after the compromise will remain off limits.</p>
+<p>A major challenge designers of the Signal Protocol face is the need to make the ratchets work in an asynchronous environment. Asynchronous messages occur when parties send or receive them at different times&#8212;such as while one is offline and the other is active, or vice versa&#8212;without either needing to be present or respond immediately. The entire Signal Protocol must work within this asynchronous environment. What's more, it must work reliably over unstable networks and networks controlled by adversaries, such as a government that forces a telecom or cloud service to spy on the traffic. </p>
+ 
+ 
+<h2>Shor&#8217;s algorithm lurking</h2>
+<p>By all accounts, Signal&#8217;s double ratchet design is state-of-the-art. That said, it&#8217;s wide open to an inevitable if not immediate threat: quantum computing. That&#8217;s because an adversary capable of monitoring traffic passing from two or more messenger users can capture that data and feed it into a quantum computer&#8212;once one of sufficient power is viable&#8212;and calculate the ephemeral keys generated in the second ratchet.</p>
+<p>In classical computing, it&#8217;s infeasible, if not impossible, for such an adversary to calculate the key. Like all asymmetric encryption algorithms, ECDH is based on a mathematical, one-way function. Also known as trapdoor functions, these problems are trivial to compute in one direction and substantially harder to compute in reverse. In elliptic curve cryptography, this one-way function is based on the Discrete Logarithm problem in mathematics. The key parameters are based on specific points in an elliptic curve over the field of integers modulo some prime P.</p>
+
+          
+                  
+
+              
+          
+          
+<p>On average, an adversary equipped with only a classical computer would spend billions of years guessing integers before arriving at the right ones. A quantum computer, by contrast, would be able to calculate the correct integers in a matter of hours or days. A formula known as Shor&#8217;s algorithm&#8212;which runs only on a quantum computer&#8212;reverts this one-way discrete logarithm equation to a two-way one. Schor&#8217;s Algorithm can similarly make quick work of solving the one-way function that&#8217;s the basis for the RSA algorithm.</p>
+<p>As noted earlier, the Signal Protocol received its first <a href="https://arstechnica.com/security/2023/09/signal-preps-its-encryption-engine-for-the-quantum-doomsday-inevitability/">post-quantum makeover</a> in 2023. This update added <a href="https://signal.org/blog/pqxdh/">PQXDH</a>&#8212;a Signal-specific implementation that combined the key agreements from elliptic curves used in X3DH (specifically <a href="https://www.rfc-editor.org/rfc/rfc7748">X25519</a>) and the quantum-safe KEM&#8212;in the initial protocol handshake. (X3DH was then put out to pasture as a standalone implementation.)</p>
+<p>The move foreclosed the possibility of a quantum attack being able to recover the symmetric key used to start the ratchets, but the ephemeral keys established in the ping-ponging second ratchet remained vulnerable to a quantum attack. Signal&#8217;s latest update adds quantum resistance to these keys, ensuring that forward secrecy and post-compromise security are safe from Shor&#8217;s algorithm as well.</p>
+<p>Even though the ping-ponging keys are vulnerable to future quantum attacks, they are broadly believed to be secure against today's attacks from classical computers. The Signal Protocol developers didn&#8217;t want to remove them or the battle-tested code that produces them. That led to their decision to add quantum resistance by adding a third ratchet. This one uses a quantum-safe KEM to produce new secrets much like the Diffie-Hellman ratchet did before, ensuring quantum-safe, post-compromise security.</p>
+<p>The technical challenges were anything but easy. Elliptic curve keys generated in the X25519 implementation are about 32 bytes long, small enough to be added to each message without creating a burden on already constrained bandwidths or computing resources. A ML-KEM 768 key, by contrast, is 1,000 bytes. Additionally, Signal&#8217;s design requires sending both an encryption key and a ciphertext, making the total size 2272 bytes.</p>
+
+          
+                  
+
+              
+          
+          
+<h2>And then there were three</h2>
+<p>To handle the 71x increase, Signal developers considered a variety of options. One was to send the 2272-byte KEM key less often&#8212;say every 50th message or once every week&#8212;rather than every message. That idea was nixed because it doesn&#8217;t work well in asynchronous or adversarial messaging environments. Signal Protocol developers Grame Connell and Rolfe Schmidt explained:</p>
+<blockquote><p>Consider the case of &#8220;send a key if you haven&#8217;t sent one in a week&#8221;. If Bob has been offline for 2 weeks, what does Alice do when she wants to send a message? What happens if we can lose messages, and we lose the one in fifty that contains a new key? Or, what happens if there&#8217;s an attacker in the middle that wants to stop us from generating new secrets, and can look for messages that are [many] bytes larger than the others and drop them, only allowing keyless messages through?</p></blockquote>
+ 
+<p>Another option Signal engineers considered was breaking the 2272-byte key into smaller chunks, say 71 of them that are 32 bytes each. Breaking up the KEM key into smaller chunks and putting one in each message sounds like a viable approach at first, but once again, the asynchronous environment of messaging made it unworkable. What happens, for example, when data loss causes one of the chunks to be dropped? The protocol could deal with this scenario by just repeat-sending chunks again after sending all 71 previously. But then an adversary monitoring the traffic could simply cause packet 3 to be dropped each time, preventing Alice and Bob from completing the key exchange.</p>
+<p>Signal developers ultimately went with a solution that used this multiple-chunks approach.</p>
+<h2>Sneaking an elephant through the cat door</h2>
+<p>To manage the asynchrony challenges, the developers turned to "erasure codes," a method of breaking up larger data into smaller pieces such that the original can be reconstructed using any sufficiently sized subset of chunks.</p>
+<p>Charlie Jacomme, a researcher at INRIA Nancy on the Pesto team who focuses on formal verification and secure messaging, said this design accounts for packet loss by building redundancy into the chunked material. Instead of all x number of chunks having to be successfully received to reconstruct the key, the model requires only x-y chunks to be received, where y is the acceptable number of packets lost. As long as that threshold is met, the new key can be established even when packet loss occurs.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The other part of the design was to split the KEM computations into smaller steps. These KEM computations are distinct from the KEM key material.</p>
+<p>As Jacomme explained it:</p>
+<blockquote><p>Essentially, a small part of the public key is enough to start computing and sending a bigger part of the ciphertext, so you can quickly send in parallel the rest of the public key and the beginning of the ciphertext. Essentially, the final computations are equal to the standard, but some stuff was parallelized.</p>
+<p>All this in fact plays a role in the end security guarantees, because by optimizing the fact that KEM computations are done faster, you introduce in your key derivation fresh secrets more frequently.</p></blockquote>
+<p>Signal's post 10 days ago included several images that illustrate this design:</p>
+ 
+ 
+<p>While the design solved the asynchronous messaging problem, it created a new complication of its own: This new quantum-safe ratchet advanced so quickly that it couldn&#8217;t be kept synchronized with the Diffie-Hellman ratchet. Ultimately, the architects settled on a creative solution. Rather than bolt KEM onto the existing double ratchet, they allowed it to remain more or less the same as it had been. Then they used the new quantum-safe ratchet to implement a parallel secure messaging system.</p>
+<p>Now, when the protocol encrypts a message, it sources encryption keys from both the classic Double Ratchet and the new ratchet. It then mixes the two keys together (using a cryptographic key derivation function) to get a new encryption key that has all of the security of the classical Double Ratchet but now has quantum security, too.</p>
+<p>The Signal engineers have given this third ratchet the formal name: Sparse Post Quantum Ratchet, or SPQR for short. A <a href="https://csrc.nist.gov/Presentations/2025/post-quantum-ratcheting-for-signal">NIST </a><a href="https://csrc.nist.gov/Presentations/2025/post-quantum-ratcheting-for-signal">PQC Standardization Conference talk</a>&#160;and a <a href="https://youtu.be/WhTLjKzkK9c">talk at the Cryptographic Applications Workshop</a>&#160;explain the details of chunking, the design challenges, and how the protocol had to be adapted to use the standardized ML-KEM.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The third ratchet was designed in collaboration with <a href="https://pqshield.com">PQShield</a>, <a href="https://www.aist.go.jp/index_en.html">AIST</a>, and New York University. The developers <a href="https://eprint.iacr.org/2025/078">presented</a> the erasure-code-based chunking and the high-level Triple Ratchet design at the Eurocrypt 2025 conference. At the Usenix 25 conference, they <a href="https://www.usenix.org/system/files/usenixsecurity25-auerbach.pdf">discussed</a> the six options they considered for adding quantum-safe forward secrecy and post-compromise security and why SPQR and one other stood out. Presentations at the <a href="https://csrc.nist.gov/Presentations/2025/post-quantum-ratcheting-for-signal">NIST PQC Standardization Conference</a> and the <a href="https://youtu.be/WhTLjKzkK9c">Cryptographic Applications Workshop</a>&#160;explain the details of chunking, the design challenges, and how the protocol had to be adapted to use the standardized ML-KEM.</p>
+<p>Jacomme further observed:</p>
+<blockquote><p>The final thing interesting for the triple ratchet is that it nicely combines the best of both worlds. Between two users, you have a classical DH-based ratchet going on one side, and fully independently, a KEM-based ratchet is going on. Then, whenever you need to encrypt something, you get a key from both, and mix it up to get the actual encryption key. So, even if one ratchet is fully broken, be it because there is now a quantum computer, or because somebody manages to break either elliptic curves or ML-KEM, or because the implementation of one is flawed, or..., the Signal message will still be protected by the second ratchet. In a sense, this update can be seen, of course simplifying, as doubling the security of the ratchet part of Signal, and is a cool thing even for people that don't care about quantum computers.</p></blockquote>
+<p>As both Signal and Jacomme noted, users of Signal and other messengers relying on the Signal Protocol need not concern themselves with any of these new designs. To paraphrase a certain device maker, it just works.</p>
+<p>In the coming weeks or months, various messaging apps and app versions will be updated to add the triple ratchet. Until then, apps will simply rely on the double ratchet as they always did. Once apps receive the update, they&#8217;ll behave exactly as they did before upgrading.</p>
+
+          
+                  
+
+              </div>
