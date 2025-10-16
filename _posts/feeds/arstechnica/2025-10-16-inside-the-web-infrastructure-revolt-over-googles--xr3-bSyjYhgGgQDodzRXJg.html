@@ -1,0 +1,114 @@
+---
+author: Samuel Axon
+canonical_url: https://arstechnica.com/ai/2025/10/inside-the-web-infrastructure-revolt-over-googles-ai-overviews/
+date: '2025-10-16T11:00:03'
+excerpt: Cloudflare CEO Matthew Prince is making sweeping changes to force Google's
+  hand.
+image: assets/media/xr3-bSyjYhgGgQDodzRXJg-kIBoJ684-gBISUnMSVqAew.jpeg
+source: arstechnica
+tags:
+- AI
+- Features
+- Google
+- Tech
+- cloudflare
+- google
+- Matthew Prince
+- media
+- RAG
+- retrieval augmented generation
+- robots.txt
+- search engines
+- web crawlers
+title: Inside the web infrastructure revolt over Google’s AI Overviews
+---
+<div>
+                      
+                      
+           
+<p>It could be a consequential act of quiet regulation. Cloudflare, a web infrastructure company, has updated millions of websites' robots.txt files in an effort to force Google to change how it crawls them to fuel its AI products and initiatives.</p>
+<p>We spoke with Cloudflare CEO Matthew Prince about what exactly is going on here, why it matters, and what the web might soon look like. But to get into that, we need to cover a little background first.</p>
+<p>The new change, which Cloudflare calls its <a href="https://blog.cloudflare.com/content-signals-policy/">Content Signals Policy</a>, happened after publishers and other companies that depend on web traffic have cried foul over Google's AI Overviews and similar AI answer engines, saying they are sharply cutting those companies' path to revenue because they don't send traffic back to the source of the information.</p>
+<p>There have been lawsuits, efforts to kick-start new marketplaces to ensure compensation, and more&#8212;but few companies have the kind of leverage Cloudflare does. Its products and services back something close to 20 percent of the web, and thus a significant slice of the websites that show up on search results pages or that fuel large language models.</p>
+<p>"Almost every reasonable AI company that's out there is saying, listen, if it's a fair playing field, then we're happy to pay for content," Prince said. "The problem is that all of them are terrified of Google because if Google gets content for free but they all have to pay for it, they are always going to be at an inherent disadvantage."</p>
+<p>This is happening because Google is using its dominant position in search to ensure that web publishers allow their content to be used in ways that they might not otherwise want it to.</p>
+<h2>The changing norms of the web</h2>
+<p>Since 2023, Google has offered a way for website administrators to <a href="https://winbuzzer.com/2025/05/06/google-admits-it-sidesteps-publisher-opt-out-controls-for-ai-training-xcxwbn/">opt their content out</a> of use for training Google's large language models, such as Gemini.</p>
+<p>However, allowing pages to be indexed by Google's search crawlers and shown in results requires accepting that they'll also be used to generate AI Overviews at the top of results pages through a process called retrieval-augmented generation (RAG).</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>That's not so for many other crawlers, making Google an outlier among major players.</p>
+<p>This is a sore point for a wide range of website administrators, from news websites that publish journalism to investment banks that produce research reports.</p>
+<p>A July study from the Pew Research Center analyzed data from 900 adults in the US and found that AI Overviews <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">cut referrals nearly in half</a>. Specifically, users clicked a link on a page with AI Overviews at the top just 8 percent of the time, compared to 15 percent for search engine results pages without those summaries.</p>
+<p>And a report in The Wall Street Journal cited a wide range of sources&#8212;including internal traffic metrics from numerous major publications like The New York Times and Business Insider&#8212;to <a href="https://www.wsj.com/tech/ai/google-ai-news-publishers-7e687141?mod=article_inline">describe industry-wide plummets</a> in website traffic that those publishers said were tied to AI summaries, leading to layoffs and strategic shifts.</p>
+<p>In August, Google's head of search, Liz Reid, disputed the validity and applicability of studies and publisher reports of reduced link clicks in search. "Overall, total organic click volume from Google Search to websites has been relatively stable year-over-year," she <a href="https://blog.google/products/search/ai-search-driving-more-queries-higher-quality-clicks/">wrote</a>, going on to say that reports of big declines were "often based on flawed methodologies, isolated examples, or traffic changes that occurred prior to the rollout of AI features in Search."</p>
+<p>Publishers aren't convinced. Penske Media Corporation, which owns brands like The Hollywood Reporter and Rolling Stone, <a href="https://www.theverge.com/ai-artificial-intelligence/777788/rolling-stone-penske-media-sue-google-ai-overviews">sued Google over AI Overviews</a> in September. The suit claims that affiliate link revenue has dropped by more than a third in the past year, due in large part to Google's overviews&#8212;a threatening shortfall in a business that already has difficult margins.</p>
+ 
+<p>Penske's suit specifically noted that because Google bundles traditional search engine indexing and RAG use together, the company has no choice but to allow Google to keep summarizing its articles, as cutting off Google search referrals entirely would be financially fatal.</p>
+<p>Since the earliest days of digital publishing, referrals have in one way or another acted as the backbone of the web's economy. Content could be made available freely to both human readers and crawlers, and norms were applied across the web to allow information to be tracked back to its source and give that source an opportunity to monetize its content to sustain itself.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Today, there's a panic that the old system isn't working anymore as content summaries via RAG have become more common, and along with other players, Cloudflare is trying to update those norms to reflect the current reality.</p>
+<h2>A mass-scale update to robots.txt</h2>
+<p>Announced on September 24, Cloudflare's Content Signals Policy is an effort to use the company's influential market position to change how content is used by web crawlers. It involves updating millions of websites' robots.txt files.</p>
+<p>Starting in 1994, websites began placing a file called "robots.txt" at the domain root to indicate to automated web crawlers which parts of the domain should be crawled and indexed and which should be ignored. The standard became near-universal over the years; honoring it has been a key part of how Google's web crawlers operate.</p>
+<p>Historically, robots.txt simply includes a list of paths on the domain that were flagged as either "allow" or "disallow." It was technically not enforceable, but it became an effective honor system because there are advantages to it for the owners of both the website and the crawler: Website owners could dictate access for various business reasons, and it helped crawlers avoid working through data that wouldn't be relevant.</p>
+<p>But robots.txt only tells crawlers whether they can access something at all; it doesn't tell them what they can use it for. For example, Google supports disallowing the agent "Google-Extended" as a path to blocking crawlers that are looking for content with which to train future versions of its Gemini large language model&#8212;though introducing that rule doesn't do anything about the training Google did before it rolled out Google-Extended in 2023, and it doesn't stop crawling for RAG and AI Overviews.</p>
+<p>The Content Signals Policy initiative is a newly proposed format for robots.txt that intends to do that. It allows website operators to opt in or out of consenting to the following use cases, as worded in the policy:</p>
+
+          
+                  
+
+              
+          
+          
+<blockquote>
+<ul>
+<li>search: Building a search index and providing search results (e.g., returning hyperlinks and short excerpts from your website's contents). Search does not include providing AI-generated search summaries.</li>
+<li>ai-input: Inputting content into one or more AI models (e.g., retrieval augmented generation, grounding, or other real-time taking of content for generative AI search answers).</li>
+<li>ai-train: Training or fine-tuning AI models.</li>
+</ul>
+</blockquote>
+<p>Cloudflare has given all of its customers quick paths for setting those values on a case-by-case basis. Further, it has automatically updated robots.txt on the 3.8 million domains that already use Cloudflare's managed robots.txt feature, with search defaulting to yes, ai-train to no, and ai-input blank, indicating a neutral position.</p>
+<h2>The threat of potential litigation</h2>
+<p>In making this look a bit like a terms of service agreement, Cloudflare's goal is explicitly to put legal pressure on Google to change its policy of bundling traditional search crawlers and AI Overviews.</p>
+<p>"Make no mistake, the legal team at Google is looking at this saying, 'Huh, that's now something that we have to actively choose to ignore across a significant portion of the web,'" Prince told me.</p>
+ 
+ 
+
+<p>He further characterized this as an effort to get a company that he says has historically been "largely a good actor" and a "patron of the web" to go back to doing the right thing.</p>
+<p>"Inside of Google, there is a fight where there are people who are saying we should change how we're doing this," he explained. "And there are other people saying, no, that gives up our inherent advantage, we have a God-given right to all the content on the Internet."</p>
+<p>Amid that debate, lawyers have sway at Google, so Cloudflare tried to design tools "that made it very clear that if they were going to follow any of these sites, there was a clear license which was in place for them. And that will create risk for them if they don't follow it," Prince said.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<h2>The next web paradigm</h2>
+<p>It takes a company with Cloudflare's scale to do something like this with any hope that it will have an impact. If just a few websites made this change, Google would have an easier time ignoring it, or worse yet, it could simply stop crawling them to avoid the problem. Since Cloudflare is entangled with millions of websites, Google couldn't do that without materially impacting the quality of the search experience.</p>
+<p>Cloudflare has a vested interest in the general health of the web, but there are other strategic considerations at play, too. The company has been working on tools to assist with RAG on customers' websites in <a href="https://www.techradar.com/pro/microsoft-guns-for-google-with-new-search-cloudflare-partnership-that-aims-to-make-websites-more-ai-agent-friendly">partnership</a> with Microsoft-owned Google competitor Bing and has <a href="https://arstechnica.com/tech-policy/2025/07/pay-up-or-stop-scraping-cloudflare-program-charges-bots-for-each-crawl/">experimented with a marketplace</a> that provides a way for websites to charge crawlers for scraping the sites for AI, though what final form that might take is still unclear.</p>
+<p>I asked Prince directly if this comes from a place of conviction. "There are very few times that opportunities come along where you get to help think through what a future better business model of an organization or institution as large as the Internet and as important as the Internet is," he said. "As we do that, I think that we should all be thinking about what have we learned that was good about the Internet in the past and what have we learned that was bad about the Internet in the past."</p>
+<p>It's important to acknowledge that we don't yet know what the future business model of the web will look like. Cloudflare itself has ideas. Others have proposed new standards, marketplaces, and strategies, too. There will be winners and losers, and those won't always be the same winners and losers we saw in the previous paradigm.</p>
+<p>What most people seem to agree on, whatever their individual incentives, is that Google shouldn't get to come out on top in a future answer-engine-driven web paradigm just because it previously established dominance in the search-engine-driven one.</p>
+<p>For this new standard for robots.txt, success looks like Google allowing content to be available in search but not in AI Overviews. Whatever the long-term vision, and whether it happens because of Cloudflare's pressure with the Content Signals Policy or some other driving force, most agree that it would be a good start.</p>
+
+
+          
+                  
+
+                  
+          </div>
