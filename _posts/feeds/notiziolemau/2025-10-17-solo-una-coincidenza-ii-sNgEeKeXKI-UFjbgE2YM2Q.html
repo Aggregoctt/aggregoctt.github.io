@@ -1,0 +1,33 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/10/17/solo-una-coincidenza-ii/
+date: '2025-10-17T02:51:12'
+excerpt: La (mia) risposta alla curiosità di mercoledì scorso
+image: assets/media/sNgEeKeXKI-UFjbgE2YM2Q-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Solo una coincidenza? (II)
+---
+<div>
+			<p>Non so se avete avuto voglia di provare a dare una spiegazione per la notevole coincidenza <a href="https://xmau.com/wp/notiziole/2025/10/15/solo-una-coincidenza-i/">che ho presentato mercoled&#236; scorso</a>. Qui ci sono le mie pensate, che mi hanno portato lentamente a trovare una soluzione. </p>
+<p>La prima cosa che mi &#232; venuta in mente &#232; stata la legge di Benford, che si vede bene nei valori delle potenze di 10. Quella &#232; per&#242; una falsa pista: beh, a dire il vero nemmeno troppo falsa, ma solo nel senso che il procedimento che porta alla legge di Benford &#232; simile a quello che ci interessa. La seconda cosa che mi &#232; venuta in mente &#232; che $2^{10} \approx 10^3$, e che questo poteva forse spiegare la somiglianza dei valori. Per&#242; anche $2^{20} \approx 10^6$; d&#8217;accordo, l&#8217;errore &#232; circa il doppio, ma la successione delle potenze &#8220;scalate tra 1 e 10&#8221; non assomiglia affatto a quella delle potenze frazionarie di 10. Per&#242; &#232; anche vero che in certi casi la concordanza &#232; ottima: abbiamo che $6^9 = 10077696$, e costruendo la tabella con le prime nove potenze (e quelle di 10 da $10^{1/9}$ in su) otteniamo (sempre approssimando)</p>
+<p>$$<br>
+\begin{matrix}<br>
+n &amp; \textrm{potenza} &amp; \textrm{seietto} &amp; \textrm{differenza} \\<br>
+0 &amp; 1 &amp; 1 &amp; 0.00\% \\<br>
+1 &amp; 1.2915 &amp; 1.296 &amp; 0.34\% \\<br>
+2 &amp; 1.6681 &amp; 1.6796 &amp; 0.69\% \\<br>
+3 &amp; 2.1544 &amp; 2.16 &amp; 0.26\% \\<br>
+4 &amp; 2.7826 &amp; 2.7993 &amp; 0.60\% \\<br>
+5 &amp; 3.5938 &amp; 3.6 &amp; 0.17\% \\<br>
+6 &amp; 4.6416 &amp; 4.6656 &amp; 0.52\%  \\<br>
+7 &amp; 5.9948 &amp; 6 &amp; 0.09\% \\<br>
+8 &amp; 7.7426 &amp; 7.776 &amp; 0.43\% \\<br>
+\end{matrix}<br>
+$$</p>
+<p>Insomma, a volte l&#8217;essere arrivati molto vicino a una potenza di 10 funziona e a volte no. A questo punto sono tornato sui miei passi, e ho ripreso l&#8217;idea della legge di Benford, o meglio mi sono ricordato di come Simon Newcomb avesse notato la legge qualche decennio prima di Benford: le prime pagine delle tavole dei logaritmi erano pi&#249; sporche delle ultime, il che significava che quelle pagine venivano usate di pi&#249;. Prendiamo dunque i logaritmi in base 10 delle potenze di 10 usate nella tabella: per costruzione saranno tutti equidistanti tra 0 e 1 (pi&#249; precisamente saranno 0/10, 1/10, &#8230;, 9/10, visto che ci siamo fermati prima di $10^1$). Cosa abbiamo invece nelle prime dieci potenze di 2? Sappiamo che $2^{10} \approx 10^3$, e quindi i loro logaritmi saranno equidistanti, con un passo di circa 3/10 (e infatti $\log_{10} 2 \approx 0.30103$). Trasformare le potenze di due mettendo il punto decimale dopo la prima cifra corrisponde a considerare solo la parte decimale (la mantissa) dei logaritmi; quindi abbiamo (quasi) la parte decimale dei multipli di 0.3; la cifra decimale di questi multipli varia da 0 a 9. Ora &#232; chiaro perch&#233; considerare le prime venti potenze di 2 non funziona: abbiamo i valori della prima cifra decimale a coppie. Nel caso dei seietti, le parti decimali sono nove e quindi i logaritmi saranno distanziati circa di 1/9 uno dall&#8217;altro, mentre quelli delle potenze di 10 sono distanziati esattamente di 1/9.</p>
+<p>A questo punto possiamo anche capire il motivo per cui gli errori variano: nei logaritmi abbiamo un residuo (0.00103 nel caso delle potenze di 2) che man mano si accumula. Gli errori maggiori si hanno pertanto in corrispondenza delle potenze pi&#249; grandi di 2. In definitiva: no, non era una coincidenza, ma accorgersi del motivo non &#232; immediato. </p>
+ 
+  					</div>
