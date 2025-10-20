@@ -1,0 +1,42 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143586/i-remember-taking-a-screen-shot-of-a-video-and-when-i-opened-it-in-paint-the-video-was-playing-in-it/
+date: '2025-10-20T20:37:38'
+excerpt: 'In older versions of Windows, if you had a video playing, took a screenshot,
+  and pasted that screenshot into Paint, you could sometimes see the video continue
+  to play inside Paint. What kind of sorcery enabled this to happen? A few of you
+  will realise instantly why this used to happen: render surfaces. Back in at least
+  the Windows 9x days, playing video involved drawing solid green where you wanted
+  the video to go (the video player window), rendering the video pixels to a surface
+  shared with the graphics card, and then have the graphics card replace said green
+  pixels with the video pixels from the shared surface. This approach has a whole
+  array of benefits, not least of which is that it allowed you to render the video
+  on a thread separate from the main user interface, so that if the main interface
+  was sluggish or locked up, the video would keep rendering properly. You could also
+  create two shared surfaces to render multiple frames at once, thereby eliminating
+  tearing. Knowing this, it should be obvious what&#8217;s going on with the screenshot
+  and Pain story. Now, when you load the image into Paint or any other image viewer,
+  Windows sends those green pixels to the video card, but if the media player is still
+  running, then its overlay is still active, and if you put Paint in the same place
+  that the media player window is, then the green pixels in Paint get changed into
+  the pixels of the active video. The video card doesn’t know that the pixels came
+  from Paint. Its job is to look for green pixels in a certain region of the screen
+  and change them into the pixels from the shared surface. If you move the Paint window
+  to another position where it doesn’t overlap the media player, or if the media player
+  isn’t playing a video, you will see the bitmap’s true nature: It’s just a bunch
+  of green pixels. ↫ Raymond Chen at The Old New Thing I&#8217;ve never had this particular
+  oddity happen, but I do have vague memories of video player windows rendering tons
+  of green artifacts whenever something went wrong with the video player, the file
+  it was trying to play, or whatever else, and I guess the cause of those green artifacts
+  is the same. In modern operating systems, graphics rendering of the UI is done entirely
+  on the GPU, with only the final composition being sent to your display. As such,
+  the green screen effect no longer occurs.'
+image: null
+source: osnews
+tags:
+- Windows
+title: “I remember taking a screen shot of a video, and when I opened it in Paint,
+  the video was playing in it!”
+---
+<div><p>In older versions of Windows, if you had a video playing, took a screenshot, and pasted that screenshot into Paint, you could sometimes see the video continue to play inside Paint. What kind of sorcery enabled this to happen? A few of you will realise instantly why this used to happen: render surfaces. Back in at least the Windows 9x days, playing video involved drawing solid green where you wanted the video to go (the video player window), rendering the video pixels to a surface shared with the graphics card, and then have the graphics card replace said green pixels with the video pixels from the shared surface.</p><p>This approach has a whole array of benefits, not least of which is that it allowed you to render the video on a thread separate from the main user interface, so that if the main interface was sluggish or locked up, the video would keep rendering properly. You could also create two shared surfaces to render multiple frames at once, thereby eliminating tearing. Knowing this, it should be obvious what&#8217;s going on with the screenshot and Pain story.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Now, when you load the image into Paint or any other image viewer, Windows sends those green pixels to the video card, but if the media player is still running, then its overlay is still active, and if you put Paint in the same place that the media player window is, then the green pixels in Paint get changed into the pixels of the active video. The video card doesn&#8217;t know that the pixels came from Paint. Its job is to look for green pixels in a certain region of the screen and change them into the pixels from the shared surface.</p><p>If you move the Paint window to another position where it doesn&#8217;t overlap the media player, or if the media player isn&#8217;t playing a video, you will see the bitmap&#8217;s true nature: It&#8217;s just a bunch of green pixels.</p>
+<a href="https://devblogs.microsoft.com/oldnewthing/20251014-00/?p=111681">&#8619; Raymond Chen at The Old New Thing</a></blockquote><p>I&#8217;ve never had this particular oddity happen, but I do have vague memories of video player windows rendering tons of green artifacts whenever something went wrong with the video player, the file it was trying to play, or whatever else, and I guess the cause of those green artifacts is the same. In modern operating systems, graphics rendering of the UI is done entirely on the GPU, with only the final composition being sent to your display.</p><p>As such, the green screen effect no longer occurs.</p></div>

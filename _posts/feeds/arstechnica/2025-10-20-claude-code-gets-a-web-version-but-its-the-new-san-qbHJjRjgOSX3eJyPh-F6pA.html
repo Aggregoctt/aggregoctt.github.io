@@ -1,0 +1,52 @@
+---
+author: Samuel Axon
+canonical_url: https://arstechnica.com/ai/2025/10/claude-code-gets-a-web-version-but-its-the-new-sandboxing-that-really-matters/
+date: '2025-10-20T20:45:26'
+excerpt: Sandboxing lessens hassle, but fire-and-forget agentic tools still pose risks.
+image: assets/media/qbHJjRjgOSX3eJyPh-F6pA-QoaakmMPM21_cTseLTC-jw.jpeg
+source: arstechnica
+tags:
+- AI
+- agentic AI
+- AI Agent
+- Anthropic
+- Claude
+- Claude Code
+- coding
+- developer
+- GitHub
+- LLM
+- Programming
+title: Claude Code gets a web version—but it’s the new sandboxing that really matters
+---
+<div>
+                      
+                      
+          <p>Anthropic has <a href="https://www.anthropic.com/news/claude-code-on-the-web">added web and mobile interfaces</a> for Claude Code, its immensely popular command-line interface (CLI) agentic AI coding tool.</p>
+<p>The web interface appears to be well-baked at launch, but the mobile version is limited to iOS and is in an earlier stage of development.</p>
+<p>The web version of Claude Code can be given access to a GitHub repository. Once that&#8217;s done, developers can give it general marching orders like &#8220;add real-time inventory tracking to the dashboard.&#8221; As with the CLI version, it gets to work, with updates along the way approximating where it&#8217;s at and what it&#8217;s doing. The web interface supports the recently implemented Claude Code capability to take suggestions or requested changes while it&#8217;s in the middle of working on a task. (Previously, if you saw it doing something wrong or missing something, you often had to cancel and start over.)</p>
+<p>Developers can run multiple sessions at once and switch between them as needed; they&#8217;re listed in a left-side panel in the interface.</p>
+<p>Alongside this web and mobile rollout, Anthropic has also introduced a <a href="https://docs.claude.com/en/docs/claude-code/sandboxing">new sandboxing runtime</a> to Claude Code that, along with other things, aims to make the experience both more secure and lower friction.</p>
+<p>In the past, Claude Code worked by asking permission before making most changes and steps along the way.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Now, it can instead be given permissions for specific file system folders and network servers. That means fewer approval steps, but it&#8217;s also more secure overall against prompt injection and other risks.</p>
+ 
+<p>According to <a href="https://www.anthropic.com/engineering/claude-code-sandboxing">Anthropic&#8217;s engineering blog</a>, the new network isolation approach only allows Internet access &#8220;through a unix domain socket connected to a proxy server running outside the sandbox. &#8230; This proxy server enforces restrictions on the domains that a process can connect to, and handles user confirmation for newly requested domains.&#8221; Additionally, users can customize the proxy to set their own rules for outgoing traffic.</p>
+<p>This way, the coding agent can do things like fetch npm packages from approved sources, but without carte blanche for communicating with the outside world, and without badgering the user with constant approvals.</p>
+<p>For many developers, these additions are more significant than the availability of web or mobile interfaces. They allow Claude Code agents to operate more independently without as many detailed, line-by-line approvals.</p>
+<p>That&#8217;s more convenient, but it&#8217;s a double-edged sword, as it will also make code review even more important. One of the strengths of the too-many-approvals approach was that it made sure developers were still looking closely at every little change. Now it might be a little bit easier to miss Claude Code making a bad call.</p>
+<p>The new features are available in beta now as a research preview, and they are available to Claude users with Pro or Max subscriptions.</p>
+
+
+          
+                  
+
+                  
+          </div>
