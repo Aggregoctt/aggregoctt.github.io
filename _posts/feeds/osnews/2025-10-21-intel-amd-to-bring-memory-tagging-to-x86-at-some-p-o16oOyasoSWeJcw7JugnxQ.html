@@ -1,0 +1,38 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143601/intel-amd-to-bring-memory-tagging-to-x86-at-some-point/
+date: '2025-10-21T15:21:35'
+excerpt: Now that ARM&#8217;s memory tagging, used extensively by Android ROMs such
+  as GrapheneOS and now also by Apple, is becoming the new norm to aid in improving
+  memory safety, the x86 world can&#8217;t sit idly by. As such, Intel and AMD have
+  announced a ChkTag, x86&#8217;s version of memory tagging. ChkTag is a set of new
+  and enhanced x86 instructions to detect memory safety violations, such as buffer
+  overflows and misuses of freed memory (use-after-free). ChkTag is designed to be
+  suitable for hardening applications, operating system kernels, hypervisors for virtualization,
+  and UEFI firmware. ChkTag places control in the software developers’ hands to balance
+  their security needs with operational elements that often become prominent when
+  deploying code. For example, ChkTag provides instruction-granular control over which
+  memory accesses are checked. Compilers can offer optimizations and new language
+  features or intrinsics. ChkTag prepares x86 for a future with increasing amounts
+  of code written in memory-safe languages running alongside code in other languages.
+  Furthermore, ChkTag loads tags from linear/virtual memory that can often be committed
+  on demand. ↫ Intel and AMD&#8217;s announcement It&#8217;s important to note that
+  ChkTag &#8211; why not just call it CheckTag &#8211; isn&#8217;t ready yet, nor
+  is there any indication when it will be included in any processors from Intel and
+  AMD. The goal is to catch certain memory safety problems in hardware. According
+  to Intel and AMD&#8217;s shared announcement, developers will have fine-grained
+  control over the feature, allowing them to tap into the functionality in whatever
+  way they deem necessary or valuable for their software in specific circumstances.
+  My fear is that Intel and AMD will use this feature as a product differentiator,
+  restricting it to either more expensive processors or to Xeon/Threadripper processors,
+  thereby fracturing the market. This would inevitably lead to spotty support for
+  the feature across the x86 landscape, meaning most ordinary consumer won&#8217;t
+  benefit from it at all.
+image: null
+source: osnews
+tags:
+- Intel
+title: Intel, AMD to bring memory tagging to x86, at some point
+---
+<div><p>Now that ARM&#8217;s memory tagging, used extensively by Android ROMs such as GrapheneOS and now also by Apple, is becoming the new norm to aid in improving memory safety, the x86 world can&#8217;t sit idly by. As such, Intel and AMD have announced a ChkTag, x86&#8217;s version of memory tagging.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>ChkTag is a set of new and enhanced x86 instructions to detect memory safety violations, such as buffer overflows and misuses of freed memory (use-after-free). ChkTag is designed to be suitable for hardening applications, operating system kernels, hypervisors for virtualization, and UEFI firmware. ChkTag places control in the software developers&#8217; hands to balance their security needs with operational elements that often become prominent when deploying code. For example, ChkTag provides instruction-granular control over which memory accesses are checked. Compilers can offer optimizations and new language features or intrinsics. ChkTag prepares x86 for a future with increasing amounts of code written in memory-safe languages running alongside code in other languages. Furthermore, ChkTag loads tags from linear/virtual memory that can often be committed on demand.</p>
+<a href="https://community.intel.com/t5/Blogs/Tech-Innovation/open-intel/ChkTag-x86-Memory-Safety/post/1721490">&#8619; Intel and AMD&#8217;s announcement</a></blockquote><p>It&#8217;s important to note that ChkTag &#8211; why not just call it CheckTag &#8211; isn&#8217;t ready yet, nor is there any indication when it will be included in any processors from Intel and AMD. The goal is to catch certain memory safety problems in hardware.  According to Intel and AMD&#8217;s shared announcement, developers will have fine-grained control over the feature, allowing them to tap into the functionality in whatever way they deem necessary or valuable for their software in specific circumstances.</p><p>My fear is that Intel and AMD will use this feature as a product differentiator, restricting it to either more expensive processors or to Xeon/Threadripper processors, thereby fracturing the market. This would inevitably lead to spotty support for the feature across the x86 landscape, meaning most ordinary consumer won&#8217;t benefit from it at all.</p></div>
