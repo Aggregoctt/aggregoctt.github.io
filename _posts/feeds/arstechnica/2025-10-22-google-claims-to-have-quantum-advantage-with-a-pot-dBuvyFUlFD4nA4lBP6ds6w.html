@@ -1,0 +1,95 @@
+---
+author: John Timmer
+canonical_url: https://arstechnica.com/science/2025/10/google-claims-to-have-quantum-advantage-with-a-potentially-useful-algorithm/
+date: '2025-10-22T17:00:00'
+excerpt: An approach it calls "quantum echoes" takes 13,000 times longer on a supercomputer.
+image: assets/media/dBuvyFUlFD4nA4lBP6ds6w-JmGO1ZtA_BeNj4P_13O5zg.jpeg
+source: arstechnica
+tags:
+- Science
+- Computer science
+- NMR
+- Physics
+- quantum computing
+- quantum mechanics
+title: Google claims to have quantum advantage with a potentially useful algorithm
+---
+<div>
+                      
+                      
+           
+<p>A few years back, Google made waves when it claimed that some of its hardware had <a href="https://arstechnica.com/science/2019/09/paper-leaks-showing-a-quantum-computer-doing-something-a-supercomputer-cant/">achieved quantum supremacy</a>, performing operations that would be effectively impossible to simulate on a classical computer. That claim didn&#8217;t hold up especially well, as mathematicians later developed methods to help <a href="https://arstechnica.com/science/2021/11/math-may-have-caught-up-with-googles-quantum-supremacy-claims/">classical computers catch up</a>, leading the company to <a href="https://arstechnica.com/science/2024/10/google-identifies-low-noise-phase-transition-in-its-quantum-processor/">repeat the work</a> on an improved processor.</p>
+<p>While this back-and-forth was unfolding, the field became less focused on quantum supremacy and more on two additional measures of success. The first is quantum utility, in which a quantum computer performs computations that are useful in some practical way. The second is quantum advantage, in which a quantum system completes calculations in a fraction of the time it would take a typical computer. (IBM and a startup called Pasqual have published a <a href="https://arxiv.org/abs/2506.20658">useful discussion</a> about what would be required to verifiably demonstrate a quantum advantage.)</p>
+<p>Today, Google and a large collection of academic collaborators are publishing a paper describing a computational approach that demonstrates a quantum advantage compared to current algorithms&#8212;and may actually help us achieve something useful.</p>
+<h2>Out of time</h2>
+<p>Google&#8217;s latest effort centers on something it&#8217;s calling &#8220;quantum echoes.&#8221; The approach could be described as a series of operations on the hardware qubits that make up its machine. These qubits hold a single bit of quantum information in a superposition between two values, with probabilities of finding the qubit in one value or the other when it&#8217;s measured. Each qubit is entangled with its neighbors, allowing its probability to influence those of all the qubits around it. The operations that allow computation, called gates, are ways of manipulating these probabilities. Most current hardware, including Google&#8217;s, perform manipulations on one or two qubits at a time (termed one- and two-qubit gates, respectively.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>For quantum echoes, the operations involved performing a set of two-qubit gates, altering the state of the system, and later performing the reverse set of gates. On its own, this would return the system to its original state. But for quantum echoes, Google inserts single-qubit gates performed with a randomized parameter. This alters the state of the system before the reverse operations take place, ensuring that the system won&#8217;t return to exactly where it started. That explains the &#8220;echoes&#8221; portion of the name: You&#8217;re sending an imperfect copy back toward where things began, much like an echo involves the imperfect reversal of sound waves.</p>
+<p>That&#8217;s what the process looks like in terms of operations performed on the quantum hardware. But it&#8217;s probably more informative to think of it in terms of a quantum system&#8217;s behavior. As Google&#8217;s Tim O&#8217;Brien explained, &#8220;You evolve the system forward in time, then you apply a small butterfly perturbation, and then you evolve the system backward in time.&#8221; The forward evolution is the first set of two qubit gates, the small perturbation is the randomized one qubit gate, and the second set of two qubit gates is the equivalent of sending the system backward in time.</p>
+<p>Because this is a quantum system, however, strange things happen. &#8220;On a quantum computer, these forward and backward evolutions, they interfere with each other,&#8221; O&#8217;Brien said. One way to think about that interference is in terms of probabilities. The system has multiple paths between its start point and the point of reflecteing&#8212;where it goes from evolving forward in time to evolving backward&#8212;and from that reflection point back to a final state. Each of those paths has a probability associated with it. And since we&#8217;re talking about quantum mechanics, those paths can interfere with each other, increasing some probabilities at the expense of others. That interference ultimately determines where the system ends up.</p>
+
+          
+                  
+
+              
+          
+          
+<p>(Technically, these are termed &#8220;out of time order correlations,&#8221; or OTOCs. If you read the Nature paper describing this work, prepare to see that term a lot.)</p>
+ 
+<h2>Demonstrating advantage</h2>
+<p>So how do you turn quantum echoes into an algorithm? On its own, a single &#8220;echo&#8221; can&#8217;t tell you much about the system&#8212;the probabilities ensure that any two runs might show different behaviors. But if you repeat the operations multiple times, you can begin to understand the details of this quantum interference. And performing the operations on a quantum computer ensures that it&#8217;s easy to simply rerun the operations with different random one-qubit gates and get many instances of the initial and final states&#8212;and thus a sense of the probability distributions involved.</p>
+<p>This is also where Google&#8217;s quantum advantage comes from. Everyone involved agrees that the precise behavior of a quantum echo of moderate complexity can be modeled using any leading supercomputer. But doing so is very time-consuming, so repeating those simulations a few times becomes unrealistic. The paper estimates that a measurement that took its quantum computer 2.1 hours to perform would take the Frontier supercomputer approximately 3.2 years. Unless someone devises a far better classical algorithm than what we have today, this represents a pretty solid quantum advantage.</p>
+<p>But is it a useful algorithm? The repeated sampling can act a bit like the Monte Carlo sampling done to explore the behavior of a wide variety of physical systems. Typically, however, we don&#8217;t view algorithms as modeling the behavior of the underlying hardware they&#8217;re being run on; instead, they&#8217;re meant to model some other physical system we&#8217;re interested in. That&#8217;s where Google&#8217;s announcement stands apart from its earlier work&#8212;the company believes it has identified an interesting real-world physical system with behaviors that the quantum echoes can help us understand.</p>
+
+          
+                  
+
+              
+          
+          
+<p>That system is a small molecule in an Nuclear Magnetic Resonance (NMR) machine. In a second draft paper being published on the arXiv later today, Google has collaborated with a large collection of NMR experts to explore that use.</p>
+<h2>From computers to molecules</h2>
+<p>NMR is based on the fact that the nucleus of every atom has a quantum property called spin. When nuclei are held near to each other, such as when they&#8217;re in the same molecule, these spins can influence one another. NMR uses magnetic fields and photons to manipulate these spins and can be used to infer structural details, like how far apart two given atoms are. But as molecules get larger, these spin networks can extend for greater distances and become increasingly complicated to model. So NMR has been limited to focusing on the interactions of relatively nearby spins.</p>
+<p>For this work, though, the researchers figured out how to use an NMR machine to create the physical equivalent of a quantum echo in a molecule. The work involved synthesizing the molecule with a specific isotope of carbon (carbon-13) in a known location in the molecule. That isotope could be used as the source of a signal that propagates through the network of spins formed by the molecule&#8217;s atoms.</p>
+<p>&#8220;The OTOC experiment is based on a many-body echo, in which polarization initially localized on a target spin migrates through the spin network, before a Hamiltonian-engineered time-reversal refocuses to the initial state,&#8221; the team wrote. &#8220;This refocusing is sensitive to perturbations on distant butterfly spins, which allows one to measure the extent of polarization propagation through the spin network.&#8221;</p>
+<p>Naturally, something this complicated needed a catchy nickname. The team came up with TARDIS, or Time-Accurate Reversal of Dipolar InteractionS. While that name captures the &#8220;out of time order&#8221; aspect of OTOC, it&#8217;s simply a set of control pulses sent to the NMR sample that starts a perturbation of the molecule&#8217;s network of nuclear spins. A second set of pulses then reflects an echo back to the source.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The reflections that return are imperfect, with noise coming from two sources. The first is simply imperfections in the control sequence, a limitation of the NMR hardware. But the second is the influence of fluctuations happening in distant atoms along the spin network. These happen at a certain frequency at random, or the researchers could insert a fluctuation by targeting a specific part of the molecule with randomized control signals.</p>
+<p>The influence of what&#8217;s going on in these distant spins could allow us to use quantum echoes to tease out structural information at greater distances than we currently do with NMR. But to do so, we need an accurate model of how the echoes will propagate through the molecule. And again, that&#8217;s difficult to do with classical computations. But it&#8217;s very much within the capabilities of quantum computing, which the paper demonstrates.</p>
+ 
+<h2>Where things stand</h2>
+<p>For now, the team stuck to demonstrations on very simple molecules, making this work mostly a proof of concept. But the researchers are optimistic that there are many ways the system could be used to extract structural information from molecules at distances that are currently unobtainable using NMR. They list a lot of potential upsides that should be explored in the discussion of the paper, and there are plenty of smart people who would love to find new ways of using their NMR machines, so the field is likely to figure out pretty quickly which of these approaches turns out to be practically useful.</p>
+<p>The fact that the demonstrations were done with small molecules, however, means that the modeling run on the quantum computer could also have been done on classical hardware (it only required 15 hardware qubits). So Google is claiming both quantum advantage and quantum utility, but not at the same time. The sorts of complex, long-distance interactions that would be out of range of classical simulation are still a bit beyond the reach of the current quantum hardware. O&#8217;Brien estimated that the hardware&#8217;s fidelity would have to improve by a factor of three or four to model molecules that are beyond classical simulation.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The quantum advantage issue should also be seen as a work in progress. Google has collaborated with enough researchers at enough institutions that there&#8217;s unlikely to be a major improvement in algorithms that could allow classical computers to catch up. Until the community as a whole has some time to digest the announcement, though, we shouldn&#8217;t take that as a given.</p>
+<p>The other issue is verifiability. Some quantum algorithms will produce results that can be easily verified on classical hardware&#8212;situations where it&#8217;s hard to calculate the right result but easy to confirm a correct answer. Quantum echoes isn&#8217;t one of those, so we&#8217;ll need another quantum computer to verify the behavior Google has described.</p>
+<p>But Google told Ars nothing is up to the task yet. &#8220;No other quantum processor currently matches both the error rates and number of qubits of our system, so our quantum computer is the only one capable of doing this at present,&#8221; the company said. (For context, Google says that the algorithm was run on up to 65 qubits, but the chip has 105 qubits total.)</p>
+<p>There&#8217;s a good chance that other companies would disagree with that contention, but it hasn&#8217;t been possible to ask them ahead of the paper&#8217;s release.</p>
+<p>In any case, even if this claim proves controversial, Google&#8217;s Michel Devoret, a <a href="https://arstechnica.com/science/2025/10/2025-nobel-prize-in-physics-awarded-for-macroscale-quantum-tunneling/">recent Nobel winner</a>, hinted that we shouldn&#8217;t have long to wait for additional ones. &#8220;We have other algorithms in the pipeline, so we will hopefully see other interesting quantum algorithms,&#8221; Devoret said.</p>
+<p>Nature, 2025. DOI: <a href="http://dx.doi.org/10.1038/s41586-025-09526-6">10.1038/s41586-025-09526-6</a> &#160;(<a href="http://arstechnica.com/science/news/2010/03/dois-and-their-discontents-1/">About DOIs</a>).</p>
+
+
+          
+                  
+
+                  
+          </div>
