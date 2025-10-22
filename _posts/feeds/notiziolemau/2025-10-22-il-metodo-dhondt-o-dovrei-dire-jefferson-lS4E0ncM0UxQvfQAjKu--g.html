@@ -1,0 +1,39 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/10/22/il-metodo-dhondt-o-dovrei-dire-jefferson/
+date: '2025-10-22T02:51:15'
+excerpt: Un sistema piuttosto comune di calcolo dei seggi è più antico di quanto pensassi
+image: assets/media/lS4E0ncM0UxQvfQAjKu--g-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Il metodo d’Hondt… o dovrei dire Jefferson?
+---
+<div>
+			<p>Vi siete mai chiesti come si suddividono i seggi in un sistema proporzionale? Un metodo abbastanza comune &#232; quello dei resti. Se hanno votato 10000 persone e ci sono 15 seggi, si comincia a fare la divisione, ottenendo un quoziente di 666 e 2/3. Si dividono ora i voti presi dai partiti per quel quoziente, e si comincia ad attribuire un seggio per ogni quoziente. Tipicamente a ciascun partito avanzeranno dei voti, i &#8220;resti&#8221;; e parallelamente ci saranno dei seggi non assegnati: questi seggi verranno distribuiti ai partiti che hanno i resti pi&#249; alti. Il metodo &#232; a prima vista equo, ma non &#232; proprio cos&#236;: potrebbe darsi che assegnando un seggio in pi&#249; in totale ci sia un partito che ne prenda uno <b>in meno</b>. Questo &#232; il cosiddetto paradosso dell&#8217;Alabama: ne avevo parlato tanti anni fa sul Post, e <a href="https://xmau.com/wp/ilpost/2010/07/20/dal-paradosso-dellalabama-ai-deputati-frazionari/">qui</a> trovate una copia di quel post. Vi svelo subito che non c&#8217;&#232; un metodo perfetto per suddividere i seggi, ed &#232; per questo che sono stati proposti vari sistemi.</p>
+<p>Uno di questi, che ha avuto molta fortuna in Europa &#8211; in Italia lo si usava per le elezioni al Senato fino al 1992, e ancora adesso i seggi di minoranza nei consigli comunali si assegnano in quel modo &#8211; &#232; il <a href="https://it.wikipedia.org/wiki/Metodo_D%27Hondt">metodo d&#8217;Hondt</a>, che prende il nome dallo studioso belga che l&#8217;ha formalizzato. In questo caso si prendono i voti ottenuti dai vari partiti e li si divide per 1, 2, 3, 4, &#8230; fino al numero <i>n</i> di seggi da assegnare (in genere non serve andare cos&#236; avanti). Si prendono quindi gli <i>n</i> valori pi&#249; alti, a cui sar&#224; assegnato un seggio. Facciamo un esempio pratico. Abbiamo quattro partiti (A, B, C, D) che si contendono otto seggi. I voti totali sono stati 23000, e i singoli partiti hanno ricevuto rispettivamente 10000, 8000, 3000 e 2000 voti. La tabella che si costruisce &#232; la seguente, dove per semplicit&#224; ho saltato le ultime colonne inutili:</p>
+<p>$$<br>
+\begin{matrix}<br>
+\textrm{partito} &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; \textrm{seggi} \\<br>
+A &amp; \bf{10000} &amp; \bf{5000}&amp; \bf{3333.3} &amp; \bf{2500} &amp; 2000 &amp; 4 \\<br>
+B &amp; \bf{8000} &amp; \bf{4000} &amp; \bf{2666.6} &amp; 2000 &amp; 1600 &amp; 3 \\<br>
+C &amp; \bf{3000} &amp; 1500 &amp; 1000 &amp; 750 &amp; 600 &amp; 1 \\<br>
+D &amp; 2000 &amp; 1000 &amp; 666.6 &amp; 500 &amp; 400 &amp; 0 \\<br>
+\end{matrix}<br>
+$$</p>
+<p>Il metodo d&#8217;Hondt non soffre del problema del paradosso dell&#8217;Alabama, ma in compenso indebolisce i partiti minori. Con i resti, infatti, il quoziente sarebbe stato 23000/8 = 2875 e avremmo avuto il seguente risultato: un seggio &#232; stato spostato dal partito A al D.</p>
+<p>$$<br>
+\begin{matrix}<br>
+\textrm{partito} &amp; \textrm{voti} &amp; \textrm{quoziente} &amp; \textrm{resto} &amp; \textrm{seggi} \\<br>
+A &amp; 10000 &amp; 3 &amp; 1375 &amp;  \bf{3} \\<br>
+B &amp; 8000 &amp; 2 &amp; \bf{2250}  &amp; \bf{3} \\<br>
+C &amp; 3000 &amp; 1 &amp; 125 &amp; \bf{1} \\<br>
+D &amp; 2000 &amp; 0 &amp; \bf{2000} &amp; \bf{1} \\<br>
+\end{matrix}<br>
+$$</p>
+<p>Quello che non sapevo, e ho scoperto da <a href="https://www.yingtongli.me/blog/2018/08/17/dhondt-quota.html">questo articolo</a> &#8211; ma Wikipedia lo diceva gi&#224;&#8230; &#8211; &#232; che un sistema equivalente era stato ideato da Thomas Jefferson e proposto a George Washington quando il presidente degli Stati Uniti d&#8217;America era quest&#8217;ultimo e non il primo. Jefferson divideva i voti ottenuti dai vari partiti per un numero, che chiamava &#8220;quota&#8221;, e prendeva i quozienti. Come nella fiaba di Riccioli d&#8217;oro, c&#8217;erano le quote troppo grandi, che non permettevano di assegnare tutti i seggi: nel nostro esempio, una quota di 3000 d&#224; come risultato (3, 2, 1, 0) per un totale di 6 seggi assegnati. C&#8217;erano poi le quote troppo piccole: una quota di 2000 d&#224; come risultato (5, 4, 1, 1) per un totale di 11 seggi. E infine c&#8217;erano le quote proprio giuste, come 2500 che d&#224; come risultato (4, 3, 1, 0). Ecco dunque la ripartizione dei seggi: si prende la pi&#249; grande quota che dia una suddivisione esatta dei seggi a disposizione. </p>
+<p>Ma perch&#233; i due metodi sono esattamente gli stessi? Ci ho dovuto pensare un attimo, ma la cosa &#232; davvero banale: se facciamo scendere man mano la quota, il valore finale di Jefferson &#232; per definizione il primo per cui viene allocato l&#8217;ultimo seggio a disposizione. (nel nostro esempio al partito A, ma potrebbe essere uno qualunque). Ma dire con Jefferson che 10000/2500 = 4 &#232; la stessa cosa che dire come d&#8217;Hondt che 10000/4 = 2500, no? E a questo punto tutti gli altri valori si ottengono automaticamente, perch&#233; aumentare o diminuire il numero di seggi agli altri partiti cambierebbe automaticamente il valore della quota. </p>
+<p>Dobbiamo insomma cambiare nome al metodo d&#8217;Hondt? Secondo me no. Esso &#232; sicuramente molto pi&#249; facile da implementare di quello di Jefferson, e soprattutto quando i conti si dovevano fare a mano era fattibile. Insomma, teniamocelo cos&#236;!</p>
+ 
+  					</div>
