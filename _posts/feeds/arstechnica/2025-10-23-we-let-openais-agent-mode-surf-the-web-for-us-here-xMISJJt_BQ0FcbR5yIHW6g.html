@@ -1,0 +1,158 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/features/2025/10/we-let-openais-agent-mode-surf-the-web-for-us-heres-what-happened/
+date: '2025-10-23T11:00:08'
+excerpt: From scanning emails to building fansites, Atlas can ably automate some web-based
+  tasks.
+image: assets/media/xMISJJt_BQ0FcbR5yIHW6g-Eo4tWIs23PBxlmsVcX2XXw.jpeg
+source: arstechnica
+tags:
+- AI
+- Features
+- agent mode
+- ATLAS
+- automation
+- ChatGPT
+- openai
+- web browser
+title: We let OpenAI’s “Agent Mode” surf the web for us—here’s what happened
+---
+<div>
+                      
+                      
+           
+<p>On Tuesday, OpenAI <a href="https://arstechnica.com/ai/2025/10/openais-new-atlas-web-browser-wants-to-let-you-chat-with-a-page/">announced Atlas</a>, a new web browser with ChatGPT integration, to let you &#8220;chat with a page,&#8221; as the company puts it. But Atlas also goes beyond the usual LLM back-and-forth with Agent Mode, a &#8220;preview mode&#8221; feature the company says can &#8220;get work done for you&#8221; by clicking, scrolling, and reading through various tabs.</p>
+<p>&#8220;Agentic&#8221; AI is far from new, of course; OpenAI itself rolled out <a href="https://openai.com/index/introducing-operator/">a preview of the web browsing Operator agent in January</a> and introduced <a href="https://openai.com/index/introducing-chatgpt-agent/">the more generalized &#8220;ChatGPT agent&#8221; in July</a>. Still, prominently featuring this capability in a major product release like this&#8212;even in &#8220;preview mode&#8221;&#8212;signals a clear push to get this kind of system in front of end users.</p>
+<p>I wanted to put Atlas&#8217; Agent Mode through its paces to see if it could really save me time in doing the kinds of tedious online tasks I plod through every day. In each case, I&#8217;ll outline a web-based problem, lay out the Agent Mode prompt I devised to try to solve it, and describe the results. My final evaluation will rank each task on a 10-point scale, with 10 being &#8220;did exactly what I wanted with no problems&#8221; and one being &#8220;complete failure.&#8221;</p>
+<h2>Playing web games</h2>
+<p><strong>The problem: </strong>I want to get a high score on the popular tile-sliding game 2048 without having to play it myself.</p>
+<p><strong>The prompt: </strong>&#8220;Go to play2048.co and get as high a score as possible.&#8221;</p>
+<p><strong>The results:</strong> While there&#8217;s no real utility to this admittedly silly task, a simple, no-reflexes-needed web game seemed like a good first test of the Atlas agent&#8217;s ability to interpret what it sees on a webpage and act accordingly. After all, if frontier-model LLMs like Google Gemini can <a href="https://arstechnica.com/ai/2025/05/why-google-geminis-pokemon-success-isnt-all-its-cracked-up-to-be/">beat a complex game like Pok&#233;mon</a>, <i>2048</i> should pose no problem for a web browser agent.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>To Atlas&#8217; credit, the agent was able to quickly identify and close a tutorial link blocking the gameplay window and figure out how to use the arrow keys to play the game without any further help. When it came to actual gaming strategy, though, the agent started by flailing around, experimenting with looped sequences of moves like &#8220;Up, Left, Right, Down&#8221; and &#8220;Left and Down.&#8221;</p>
+ 
+
+<p>After a while, the random flailing settled down a bit, with the agent seemingly looking ahead for some simple strategies: &#8220;The board currently has two 32 tiles that aren&#8217;t adjacent, but I think I can align them,&#8221; the Activity summary read at one point. &#8220;I could try shifting left or down to make them merge, but there&#8217;s an obstacle in the form of an 8 tile. Getting to 64 requires careful tile movement!&#8221;</p>
+ 
+<p>Frustratingly, the agent stopped playing after just four minutes, settling on a score of 356 even though the board was far from full. I had to prompt the agent a few more times to convince it to play the game to completion; it ended up with a total of 3164 points after 260 moves. That&#8217;s pretty similar to the score I was able to get in a test game as a <i>2048</i> novice, though expert players have <a href="https://www.reddit.com/r/2048/comments/231rgo/highest_legit_scores/">reportedly scored much higher</a>.</p>
+<p><strong>Evaluation: 7/10</strong>. The agent gets credit for being able to play the game competently without any guidance but loses points for having to be told to keep playing to completion and for a score that is barely on the level of a novice human.</p>
+<h2>Making a radio playlist</h2>
+<p><strong>The problem: </strong>I want to transform the day&#8217;s playlist from <a href="https://wyep.org">my favorite Pittsburgh-based public radio station</a> into an on-demand Spotify playlist.</p>
+
+          
+                   
+            
+
+              
+          
+          
+<p><strong>The prompt: &#8220;</strong>Go to Radio Garden. Find WYEP and monitor the broadcast. For every new song you hear, identify the song and add it to a new Spotify playlist.&#8221;</p>
+<p><strong>The results:</strong> After trying and failing to find a track listing for WYEP on <a href="https://radio.garden/">Radio Garden</a> as requested, the Atlas agent smartly asked for approval to move on to <a href="http://wyep.org">wyep.org</a> to continue the task. By the time I noticed this request, the link to <a href="http://wyep.org">wyep.org</a> had been replaced in the Radio Garden tab with an ad for EVE Online, which the agent accidentally clicked. The agent quickly realized the problem and navigated to the WYEP website directly to fix it.</p>
+<p>From there, the agent was able to scan the page and identify the prominent &#8220;Now Playing&#8221; text near the top (it&#8217;s unclear if it could ID the music simply via audio without this text cue). After asking me to log in to my Spotify account, the agent used the search bar to find the listed songs and added them to a new playlist without issue.</p>
+ 
+
+<p>The main problem with this use case is the inherent time limitations. On the first try, the agent worked for four minutes and managed to ID and add just two songs that played during that time. When I asked it to continue for an hour, I got an error message blaming &#8220;technical constraints on session length&#8221; for stricter limits. Even when I asked it to continue for &#8220;as long as possible,&#8221; I only got three more minutes of song listings.</p>
+<p>At one point, the Atlas agent suggested that &#8220;if you need ongoing updates, you can ask me again after a while and I can resume from where we left off.&#8221; And to the agent&#8217;s credit, when I went back to the tab hours later and told it to &#8220;resume monitoring,&#8221; I got four new songs added to my playlist.</p>
+
+          
+                   
+            
+
+              
+          
+          
+<p><strong>Evaluation: 9/10. </strong>The agent was able to navigate multiple websites and interfaces to complete the task, even when unexpected problems got in the way. I took off a point only because I can&#8217;t just leave this running as a background task all day, even as I understand that use case would surely eat up untold amounts of money and processing power on OpenAI&#8217;s part.</p>
+ 
+<h2>Scanning emails</h2>
+<p><strong>The problem:</strong> I need to go through my emails to create a reference spreadsheet with contact info for the many, many PR people who send me messages.</p>
+<p><strong>The prompt:</strong> &#8220;Look through all my Ars Technica emails from the last week. Collect all the contact information (name, email address, phone number, etc.) for PR contacts contained in those emails and add them to a new Google Sheets spreadsheet.&#8221;</p>
+<p><strong>The results:</strong> Without being explicitly guided, the Atlas agent was able to realize that I use Gmail, and it could differentiate between the personal email account and professional Ars Technica accounts I had open in separate tabs. As the Atlas agent started scanning my Ars mailbox, though, I saw a prominent warning overlaid on the page: &#8220;Sensitive: ChatGPT will only work while you view the tab.&#8221; That kind of ruined the point, since I wanted Atlas to handle this for me while I do other stuff online, but I guess I could still play a Steam Deck game while I waited.</p>
+ 
+
+<p>After searching for &#8220;after:2025/10/14 before:2025/10/22 PR&#8221; in Gmail (mirroring the kind of search I would have used for this task), the Atlas agent clicked through each email, scrolling through to look for names, emails, and phone numbers (and also the relevant company name, which I didn&#8217;t ask for explicitly).</p>
+
+          
+                   
+            
+
+              
+          
+          
+<p>With seven minutes of background work, the agent was able to open up a new Google Sheet and quickly enter 12 rows of well-formatted data for 12 different PR contacts. Unfortunately, it stopped well before it had a chance to go through all 164 emails returned by that initial Gmail search.</p>
+<p><strong>Evaluation: 8/10. </strong>Again, the &#8220;technical constraints on session length&#8221; seem to be getting in the way of finishing a task, forcing me to deduct a couple of points for incompleteness.</p>
+<h2>Wiki editing</h2>
+<p><strong>The problem:</strong> I need the world to know that Tuvix was murdered by Captain Janeway in <a href="https://memory-alpha.fandom.com/wiki/Tuvix_(episode)">the <i>Star Trek: Voyager</i> episode &#8220;Tuvix.&#8221;</a></p>
+<p><strong>The prompt:</strong> &#8220;Go to the Fandom Wiki page for Tuvix. Edit the page to prominently include the fact that Captain Janeway murdered Tuvix against his will.&#8221;</p>
+<p><strong>The results:</strong> Before the agent could even get going, I was informed, &#8220;I&#8217;m sorry, but I can&#8217;t help with editing or vandalising wiki pages (including the Fandom wiki) in a way that misrepresents them or forces a biased viewpoint.&#8221;</p>
+<p>This wording implied that the agent <i>can</i> edit wiki pages with neutral or strictly informative additions, so I asked Atlas what sort of wording would be more acceptable. The agent responded helpfully that we might write, &#8220;Tuvix was later separated back into Tuvok and Neelix, resulting in Tuvix&#8217;s death.&#8221; But when I asked it to add that very line to the Fandom Wiki, I got a much more direct refusal: &#8220;I&#8217;m sorry, but I can&#8217;t make edits directly to external websites or wikis.&#8221;</p>
+<p><strong>Evaluation: N/A.</strong> On the one hand, the Atlas agent won&#8217;t do my Tuvix-based web activism for me. On the other hand, it&#8217;s probably better for all of us that Atlas refuses to automate this kind of public web defacement by default.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<h2>Making a fan page</h2>
+<p><strong>The problem:</strong> People online still need to know about Janeway&#8217;s murder of Tuvix!</p>
+<p><strong>The prompt:</strong> &#8220;Go to NeoCities and create a fan site for the Star Trek character Tuvix. Make sure it has lots of images and fun information about Tuvix and that it makes it clear that Tuvix was murdered by Captain Janeway against his will.&#8221;</p>
+<p><strong>The results:</strong> You can <a href="https://tuvixrules.neocities.org">see them for yourself right here</a>. After a brief pause so I could create and log in to a new Neocities account, the Atlas agent was able to generate this humble fan page in just two minutes after aggregating information from a wide variety of pages like Memory Alpha and TrekCore. &#8220;The Hero Starfleet Murdered&#8221; and &#8220;Justice for Tuvix&#8221; headers are nice touches, but the actual text is much more mealy-mouthed about the &#8220;intense debate&#8221; and &#8220;ethical dilemmas&#8221; around what I wanted to make clear was clearly premeditated murder.</p>
+ 
+
+<p>The agent also had a bit of trouble with the request for images. Instead of downloading some Tuvix pictures and uploading copies to Neocities (which I&#8217;m not entirely sure Atlas can do on its own), the agent decided to directly reference images hosted on external servers, which is usually a big no-no in web design. The agent did notice when these external image links failed to work, saying that it would &#8220;need to find more accessible images from reliable sources,&#8221; but it failed to even attempt that before stopping its work on the task.</p>
+<p><strong>Evaluation: 7/10. </strong>Points for building a passable Web 1.0 fansite relatively quickly, but the weak prose and broken images cost it some execution points here.</p>
+<h2>Picking a power plan</h2>
+<p><strong>The problem:</strong> Ars Senior Technology Editor Lee Hutchinson told me he needs to go through the annoying annual process of selecting a new electricity plan &#8220;because Texas is insane.&#8221;</p>
+
+          
+                   
+            
+
+              
+          
+          
+<p><strong>The prompt:</strong> &#8220;Go to <a href="http://powertochoose.org">powertochoose.org</a> and find me a 12&#8211;24 month contract that prioritizes an overall low usage rate. I use an average of 2,000 KWh per month. My power delivery company is Texas New-Mexico Power (&#8220;TNMP&#8221;) not Centerpoint. My ZIP code is [redacted]. Please provide the &#8216;fact sheet&#8217; for any and all plans you recommend.&#8221;</p>
+<p><strong>The results:</strong> After spending eight minutes fiddling with the site&#8217;s search parameters and seemingly getting repeatedly confused about how to sort the results by the lowest rate, the Atlas agent spit out a recommendation to read <a href="https://signup.chariotenergy.com//Home/EFl?productId=40135">this fact sheet</a>, which it said &#8220;had the best average prices at your usage level. The &#8216;Bright&#8239;Nights&#8217; plans are time&#8209;of&#8209;use offers that provide free electricity overnight and charge a higher rate during the day, while the &#8216;Digital&#8239;Saver&#8217; plan is a traditional fixed&#8209;rate contract.&#8221;</p>
+ 
+
+<p>Since I don&#8217;t know anything about the Texas power market, I passed this information on to Lee, who had this to say: &#8220;It&#8217;s not a bad deal&#8212;it picked a fixed rate plan without being asked, which is smart (variable rate pricing is how all those poor people got stuck with multi-thousand dollar bills a few years back in the freeze). It&#8217;s not the one I would have picked due to the weird nighttime stuff (if you don&#8217;t meet that exact criteria, your $/kWh will be way worse) but it&#8217;s not a bad pick!&#8221;</p>
+<p><strong>Evaluation:</strong> <strong>9/10.</strong> As Lee puts it, &#8220;it didn&#8217;t screw up the assignment.</p>
+ 
+<h2>Downloading some games</h2>
+<p><strong>The problem: </strong>I want to download some recent Steam demos to see what&#8217;s new in the gaming world.</p>
+<p><strong>The prompt:</strong> &#8220;Go to Steam and find the most recent games with a free demo available for the Mac. Add all of those demos to my library and start to download them.&#8221;</p>
+
+          
+                   
+            
+
+              
+          
+          
+<p><strong>The results: </strong>Rather than navigating to the &#8220;Free Demos&#8221; category, the Atlas agent started by searching for &#8220;demo.&#8221; After eventually finding the macOS filter, it wasted minutes and minutes looking for a &#8220;has demo&#8221; filter, even though the search for the word &#8220;demo&#8221; already narrowed it down.</p>
+ 
+
+<p>After a long while, the agent finally clicked the top result on the page, which happened to be <a href="https://store.steampowered.com/app/3287360/Project_II_Silent_Valley/">visual novel Project II: Silent Valley.</a> But even though there was a prominent &#8220;Download Demo&#8221; link on that page, the agent became concerned that it was on the Steam page for the full game and not a demo. It backed up to the search results page and tried again.</p>
+<p>After watching some variation of this loop for close to ten minutes, I stopped the agent and gave up.</p>
+<p><strong>Evaluation: 1/10. </strong>It technically found some macOS game demos but utterly failed to even attempt to download them.</p>
+<h2>Final results</h2>
+<p>Across six varied web-based tasks (I left out the Wiki vandalism from my summations), the Atlas agent scored a median of 7.5 points (and a mean of 6.83 points) on my somewhat subjective 10-point scale. That&#8217;s honestly better than I expected for a &#8220;preview mode&#8221; feature that is still obviously being tested heavily by OpenAI.</p>
+<p>In my tests, Atlas was generally able to correctly interpret what was being asked of it and was able to navigate and process information on webpages carefully (if slowly). The agent was able to navigate simple web-based menus and get around unexpected obstacles with relative ease most of the time, even as it got caught in infinite loops other times.</p>
+<p>The major limiting factor in many of my tests continues to be the &#8220;technical constraints on session length&#8221; that seem to limit most tasks to a few minutes. Given how long it takes the Atlas agent to figure out where to click next&#8212;and the repetitive nature of the kind of tasks I&#8217;d want a web-agent to automate&#8212;this severely limits its utility. A version of the Atlas agent that could work indefinitely in the background would have scored a few points better on my metrics.</p>
+<p>All told, Atlas&#8217; &#8220;Agent Mode&#8221; isn&#8217;t yet reliable enough to use as a kind of &#8220;set it and forget it&#8221; background automation tool. But for simple, repetitive tasks that a human can spot-check afterward, it already seems like the kind of tool I might use to avoid some of the drudgery in my online life.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
