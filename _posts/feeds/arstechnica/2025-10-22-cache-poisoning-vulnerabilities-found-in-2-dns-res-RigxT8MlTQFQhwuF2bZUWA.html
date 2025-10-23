@@ -1,0 +1,53 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/10/bind-warns-of-bugs-that-could-bring-dns-cache-attack-back-from-the-dead/
+date: '2025-10-22T22:35:41'
+excerpt: At least one CVE could weaken defenses put in place following 2008 disclosure.
+image: assets/media/RigxT8MlTQFQhwuF2bZUWA-DL6tFiKsu981L-DpKlrHKg.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+title: Cache poisoning vulnerabilities found in 2 DNS resolving apps
+---
+<div>
+                      
+                      
+          <p>The makers of BIND, the Internet&#8217;s most widely used software for resolving domain names, are warning of two vulnerabilities that allow attackers to poison entire caches of results and send users to malicious destinations that are indistinguishable from the real ones.</p>
+<p>The vulnerabilities, tracked as <a href="https://kb.isc.org/docs/cve-2025-40778">CVE-2025-40778</a> and <a href="https://kb.isc.org/docs/cve-2025-40780">CVE-2025-40780</a>, stem from a logic error and a weakness in generating pseudo-random numbers, respectively. They each carry a severity rating of 8.6. Separately, makers of the Domain Name System resolver software Unbound <a href="https://www.nlnetlabs.nl/downloads/unbound/CVE-2025-11411.txt">warned</a> of similar vulnerabilities that were reported by the same researchers. The unbound vulnerability severity score is 5.6</p>
+<h2>Revisiting Kaminsky&#8217;s cache poisoning attack</h2>
+<p>The vulnerabilities can be exploited to cause DNS resolvers located inside thousands of organizations to replace valid results for domain lookups with corrupted ones. The corrupted results would replace the IP addresses controlled by the domain name operator (for instance, 3.15.119.63 for arstechnica.com) with malicious ones controlled by the attacker. Patches for all three vulnerabilities became available on Wednesday.</p>
+<p>In 2008, researcher Dan Kaminsky <a href="https://www.theregister.com/2008/08/06/kaminsky_black_hat/">revealed</a> one of the more severe Internet-wide security threats ever. Known as DNS cache poisoning, it made it possible for attackers to send users en masse to imposter sites instead of the real ones belonging to Google, Bank of America, or anyone else. With industry-wide coordination, thousands of DNS providers around the world&#8212;in coordination with makers of browsers and other client applications&#8212;implemented a fix that averted this doomsday scenario.</p>
+<p>The vulnerability was the result of DNS&#8217;s use of <a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP packets</a>. Because they&#8217;re sent in only one direction, there was no way for DNS resolvers to use passwords or other forms of credentials when communicating with &#8220;authoritative servers,&#8221; meaning those that have been officially designated to provide IP lookups for a given top-level domain such as .com. What&#8217;s more, UDP traffic is generally trivial to spoof, meaning it&#8217;s easy to send UDP packets that appear to come from a source other than their true origin.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>To ensure resolvers accepted results only from authoritative servers and to block any poisoned results that might be sent by unauthorized servers, resolvers attached a 16-bit number to each request. Results from the server were rejected unless they included the same ID.</p>
+<p>What Kaminsky realized was that there were only 65,536 possible transaction IDs. An attacker could exploit this limitation by flooding a DNS resolver with lookup results for a specific domain. Each result would use a slight variation in the domain name, such as 1.arstechnica.com, 2.arstechnica.com, 3.arstechnica.com, and so on. Each result would also include a different transaction ID. Eventually, an attacker would reproduce the correct number of an outstanding request, and the malicious IP would get fed to all users who relied on the resolver that made the request. The attack was called DNS cache poisoning because it tainted the resolver&#8217;s store of lookups.</p>
+<p>The DNS ecosystem ultimately fixed the problem by exponentially increasing the amount of entropy required for a response to be accepted. Whereas before, lookups and responses traveled only over port 53, the new system randomly selected any one of thousands of potential ports. For a DNS resolver to accept a response, it had to travel through that same port number. Combined with a transaction number, the entropy was measured in the billions, making it mathematically infeasible for attackers to land on the correct combination.</p>
+<p>At least one of the BIND vulnerabilities, CVE-2025-40780, effectively weakens those defenses.</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;In specific circumstances, due to a weakness in the Pseudo Random Number Generator (PRNG) that is used, it is possible for an attacker to predict the source port and query ID that BIND will use,&#8221; BIND developers wrote in Wednesday&#8217;s disclosure. &#8220;BIND can be tricked into caching attacker responses, if the spoofing is successful.&#8221;</p>
+<p>CVE-2025-40778 also raises the possibility of reviving cache poisoning attacks.</p>
+<p>&#8220;Under certain circumstances, BIND is too lenient when accepting records from answers, allowing an attacker to inject forged data into the cache,&#8221; the developers explained. &#8220;Forged records can be injected into cache during a query, which can potentially affect resolution of future queries.&#8221;</p>
+<p>Even in such cases, the resulting fallout would be significantly more limited than the scenario envisioned by Kaminsky. One reason for that is that authoritative servers themselves aren&#8217;t vulnerable. Further, as noted <a href="https://access.redhat.com/security/cve/cve-2025-40778">here</a> and <a href="https://access.redhat.com/security/cve/cve-2025-40780">here</a> by Red Hat, various other cache poisoning countermeasures remain intact. They include DNSSEC, a protection that requires DNS records to be digitally signed. Additional measures come in the form of rate limiting and server firewalling, which are considered best practices.</p>
+<p>&#8220;Because exploitation is non-trivial, requires network-level spoofing and precise timing, and only affects cache integrity without server compromise, the vulnerability is considered Important rather than Critical,&#8221; Red Hat wrote in its disclosure of CVE-2025-40780.</p>
+<p>The vulnerabilities nonetheless have the potential to cause harm in some organizations. Patches for all three should be installed as soon as practicable.</p>
+
+
+          
+                  
+
+                  
+          </div>
