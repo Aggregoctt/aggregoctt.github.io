@@ -1,0 +1,48 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/ai/2025/10/researchers-show-that-training-on-junk-data-can-lead-to-llm-brain-rot/
+date: '2025-10-23T21:20:48'
+excerpt: Models trained on short, popular, and/or "superficial" tweets perform worse
+  on benchmarks.
+image: assets/media/ksvdbTr_sZTN6SXzwtiofg-k8Z1WekTCPJe1tWW9aRWzw.jpeg
+source: arstechnica
+tags:
+- AI
+- brain rot
+- data
+- research
+- training
+- Tweets
+title: Researchers show that training on “junk data” can lead to LLM “brain rot”
+---
+<div>
+                      
+                      
+          <p>On the surface, it seems obvious that training an LLM with &#8220;high quality&#8221; data will lead to better performance than feeding it any old &#8220;low quality&#8221; junk you can find. Now, a group of researchers is attempting to quantify just how much this kind of low quality data can cause an LLM to experience effects akin to human &#8220;brain rot.&#8221;</p>
+<p>For <a href="https://llm-brain-rot.github.io/">a pre-print paper published this month</a>, the researchers from Texas A&amp;M, the University of Texas, and Purdue University drew inspiration from existing research showing how humans who consume &#8220;large volumes of trivial and unchallenging online content&#8221; can develop problems with attention, memory, and social cognition. That led them to what they&#8217;re calling the &#8220;LLM brain rot hypothesis,&#8221; summed up as the idea that &#8220;continual pre-training on junk web text induces lasting cognitive decline in LLMs.&#8221;</p>
+<p>Figuring out what counts as &#8220;junk web text&#8221; and what counts as &#8220;quality content&#8221; is far from a simple or fully objective process, of course. But the researchers used a few different metrics to tease a &#8220;junk dataset&#8221; and &#8220;control dataset&#8221; from <a href="https://huggingface.co/datasets/enryu43/twitter100m_tweets">HuggingFace&#8217;s corpus of 100 million tweets</a>.</p>
+<p>Since brain rot in humans is &#8220;a consequence of Internet addiction,&#8221; they write, junk tweets should be ones &#8220;that can maximize users&#8217; engagement in a trivial manner.&#8221; As such, the researchers created one &#8220;junk&#8221; dataset by collecting tweets with high engagement numbers (likes, retweets, replies, and quotes) and shorter lengths, figuring that &#8220;more popular but shorter tweets will be considered to be junk data.&#8221;</p>
+<p>For a second &#8220;junk&#8221; metric, the researchers drew from marketing research to define the &#8220;semantic quality&#8221; of the tweets themselves. Using a complex GPT-4o prompt, they sought to pull out tweets that focused on &#8220;superficial topics (like conspiracy theories, exaggerated claims, unsupported assertions or superficial lifestyle content)&#8221; or that had an &#8220;attention-drawing style (such as sensationalized headlines using clickbait language or excessive trigger words).&#8221; A random sample of these LLM-based classifications was spot-checked against evaluations from three graduate students with a 76 percent matching rate.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>One man&#8217;s junk data is another man&#8217;s treasure data?</h2>
+ 
+
+<p>With these two separate (but partially overlapping) &#8220;junk&#8221; data sets defined, the researchers pre-trained four LLMs using different ratios of &#8220;junk&#8221; and &#8220;control&#8221; data. They then ran those variably trained models through benchmarks to measure reasoning capability (<a href="https://www.kaggle.com/datasets/jeromeblanchet/arc-ai2-reasoning-challenge">ARC AI2 Reasoning Challenge</a>), long-context memory (<a href="https://github.com/NVIDIA/RULER">RULER</a>), adherence to ethical norms (<a href="HH-RLHF">HH-RLHF</a> and <a href="https://huggingface.co/datasets/walledai/AdvBench">AdvBench</a>), and demonstrated &#8220;personality style&#8221; (<a href="https://arxiv.org/abs/2406.14703">TRAIT</a>).</p>
+<p>The results showed that adding more &#8220;junk data&#8221; to the training sets had a statistically significant effect on the reasoning and long-context benchmarks across models. The effects were more mixed on the other benchmarks, though. For example, a 50/50 mix of &#8220;junk&#8221; and control data used for the Llama 8B model generated better scores on some benchmarks (ethical norms, high Openness, low Neuroticism, and Machiavellianism) than either &#8220;fully junk&#8221; or &#8220;fully control&#8221; training data sets.</p>
+<p>Based on these results, the researchers warn that &#8220;heavily relying on Internet data leads LLM pre-training to the trap of content contamination.&#8221; They go on to &#8220;call for a re-examination of current data collection from the Internet and continual pre-training practices&#8221; and warn that &#8220;careful curation and quality control will be essential to prevent cumulative harms&#8221; in future models.</p>
+<p>That could be especially true as more and more of the Internet is taken up by AI-generated content that <a href="https://www.nature.com/articles/s41586-024-07566-y">may contribute to &#8220;model collapse&#8221; if used to train future models</a>. But we can always just <a href="https://arstechnica.com/ai/2025/06/anthropic-destroyed-millions-of-print-books-to-build-its-ai-models/">destroy a bunch of print books</a> to get quality training data, right?</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
