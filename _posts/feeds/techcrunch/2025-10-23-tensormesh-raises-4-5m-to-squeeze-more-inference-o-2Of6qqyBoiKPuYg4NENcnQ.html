@@ -1,0 +1,44 @@
+---
+author: Russell Brandom
+canonical_url: https://techcrunch.com/2025/10/23/tensormesh-raises-4-5m-to-squeeze-more-inference-out-of-ai-server-loads/
+date: '2025-10-23T16:00:00'
+excerpt: Tensormesh uses an expanded form of KV Caching to make inference loads as
+  much as ten times more efficient.
+image: assets/media/2Of6qqyBoiKPuYg4NENcnQ-O4fPCgIS8nCjXqmAB_XrWg.jpeg
+source: techcrunch
+tags:
+- AI
+- inference
+- artificial intelligence
+- laude ventures
+title: Tensormesh raises $4.5M to squeeze more inference out of AI server loads
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">With the AI infrastructure push reaching staggering proportions, there&#8217;s more pressure than ever to squeeze as much inference as possible out of the GPUs they have. And for researchers with expertise in a particular technique, it&#8217;s a great time to raise funding.</p>
+
+<p class="wp-block-paragraph">That&#8217;s part of the driving force behind <a rel="nofollow" href="https://www.tensormesh.ai/">Tensormesh</a>, launching out of stealth this week with $4.5 million in seed funding. The investment was led by Laude Ventures, with additional angel funding from <a rel="nofollow" href="https://cs.uchicago.edu/people/michael-franklin/">database pioneer Michael Franklin</a>.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Tensormesh is using the money to build a commercial version of the open-source <a rel="nofollow" href="https://lmcache.ai/">LMCache</a> utility, launched and maintained by Tensormesh co-founder Yihua Cheng. Used well, LMCache can reduce inference costs by as much as ten times &#8212; a power that&#8217;s made it a staple in open-source deployments and drawn in integrations from heavy-hitters like <a rel="nofollow" href="https://blog.lmcache.ai/2025-10-07-LMCache-on-GKE/">Google</a> and <a rel="nofollow" href="https://blog.lmcache.ai/2025-09-18-dynamo-lmcache/">Nvidia</a>. Now, Tensormesh is planning to parlay that academic reputation into a viable business.</p>
+
+<p class="wp-block-paragraph">The heart of the key-value cache (or KV cache), a memory system used to process complex inputs more efficiently by condensing them down to their key values. In <a rel="nofollow" href="https://huggingface.co/blog/not-lain/kv-caching">traditional architectures</a>, the KV cache is discarded at the end of each query &#8212; but TensorMesh CEO Juchen Jiang argues that this is an enormous source of inefficiency.</p>
+
+<p class="wp-block-paragraph">&#8220;It&#8217;s like having a very smart analyst reading all the data, but they forget what they have learned after each question,&#8221; says Tensormesh co-founder Junchen Jiang.</p>
+
+<p class="wp-block-paragraph">Instead of discarding that cache, Tensormesh&#8217;s systems hold onto it, allowing it to be redeployed when the model executes a similar process in a separate query. Because GPU memory is so precious, this can mean spreading data across several different storage layers, but the reward is significantly more inference power for the same server load.</p>
+
+<p class="wp-block-paragraph">The change is particularly powerful for chat interfaces, since models need to continually refer back to the growing chat log as the conversation progresses. Agentic systems have a similar issue, with a growing log of actions and goals.</p>
+
+<p class="wp-block-paragraph">In theory, these are changes AI companies can execute on their own &#8212; but the technical complexity makes it a daunting task. Given the Tensormesh team&#8217;s work researching the process and the intricacy of the detail itself, the company is betting there will be lots of demand for an out-of-the-box product.</p>
+
+<p class="wp-block-paragraph">&#8220;Keeping the KV cache in a secondary storage system and reused efficiently without slowing the whole system down is a very challenging problem,&#8221; says Jiang. &#8220;We&#8217;ve seen people hire 20 engineers and spend three or four months to build such a system. Or they can use our product and do it very efficiently.&#8221;</p>
+
+
+			
+
+			</div>
