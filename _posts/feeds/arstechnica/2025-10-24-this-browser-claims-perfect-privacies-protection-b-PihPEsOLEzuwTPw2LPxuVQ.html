@@ -1,0 +1,92 @@
+---
+author: Matt Burgess, wired.com
+canonical_url: https://arstechnica.com/security/2025/10/this-browser-claims-perfect-privacies-protection-but-it-acts-like-malware/
+date: '2025-10-24T14:37:03'
+excerpt: Researchers note links to Asia’s booming cybercrime and illegal gambling
+  networks.
+image: assets/media/PihPEsOLEzuwTPw2LPxuVQ-sKh6w7BiK57Vv4WKUx5jDA.jpeg
+source: arstechnica
+tags:
+- Security
+- malware
+- syndicated
+- Universe Browser
+- web browsers
+title: This browser claims “perfect privacies protection,” but it acts like malware
+---
+<div>
+                      
+                      
+           
+<p>The Universe Browser makes some big promises to its potential users. Its online advertisements claim it&#8217;s the &#8220;fastest browser,&#8221; that people using it will &#8220;avoid privacy leaks&#8221; and that the software will help &#8220;keep you away from danger.&#8221; However, everything likely isn&#8217;t as it seems.</p>
+<p>The browser, which is linked to Chinese online gambling websites and is thought to have been downloaded millions of times, actually routes all Internet traffic through servers in China and &#8220;covertly installs several programs that run silently in the background,&#8221; according to <a href="https://blogs.infoblox.com/threat-intelligence/vault-viper-high-stakes-hidden-threats">new findings</a> from network security company Infoblox. The researchers say the &#8220;hidden&#8221; elements include features similar to malware&#8212;including &#8220;key logging, surreptitious connections,&#8221; and changing a device&#8217;s network connections.</p>
+<p>Perhaps most significantly, the Infoblox researchers who collaborated with the United Nations Office on Drugs and Crime (UNODC) on the work, found links between the browser&#8217;s operation and Southeast Asia&#8217;s sprawling, <a href="https://www.unodc.org/roseap/uploads/documents/Publications/2025/Inflection_Point_2025.pdf">multibillion-dollar cybercrime ecosystem</a>, which has connections to money-laundering, illegal online gambling, human trafficking, and <a href="https://www.wired.com/story/pig-butchering-scam-invasion/">scam operations that use forced labor</a>. The browser itself, the researchers says, is directly linked to a network around major online gambling company BBIN, which the researchers have labeled a threat group they call Vault Viper.</p>
+<p>The researchers say the discovery of the browser&#8212;plus its suspicious and risky behavior&#8212;indicates that criminals in the region are becoming increasingly sophisticated. &#8220;These criminal groups, particularly Chinese organized crimes syndicates, are increasingly diversifying and evolving into cyber enabled fraud, pig butchering, impersonation, scams, that whole ecosystem,&#8221; says John Wojcik, a senior threat researcher at Infoblox, who also worked on the project when he was a staff member at the UNODC.</p>
+<p>&#8220;They&#8217;re going to continue to double down, reinvest profits, develop new capabilities,&#8221; Wojcik says. &#8220;The threat is ultimately becoming more serious and concerning, and this is one example of where we see that.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Under the hood</h2>
+<p>The Universe Browser was first spotted&#8212;and <a href="https://www.unodc.org/roseap/uploads/documents/Publications/2025/Inflection_Point_2025.pdf">mentioned by name</a>&#8212;by Infoblox and UNODC at the start of this year when they began unpacking the digital systems around an online casino operation <a href="https://cambojanews.com/dead-chinese-man-linked-to-alleged-scam-operation-sihanoukville-compound/">based</a> in Cambodia, which was <a href="https://vodenglish.news/sihanoukville-crime-5-arrested-for-dealing-guns-21-thais-removed-from-scams/">previously</a> <a href="https://web.archive.org/web/20230506054757/https://cyberscammonitor.net/profile/bolai-casino-brilliancy-casino/">raided by law enforcement</a> officials. Infoblox, which specializes in domain name system (DNS) management and security, detected a unique DNS fingerprint from those systems that they linked to Vault Viper, making it possible for the researchers to trace and map websites and infrastructure linked to the group.</p>
+<p>Tens of thousands of web domains, plus various command-and-control infrastructure and registered companies, are linked to Vault Viper activity, Infoblox researchers say in a report shared with WIRED. They also say they examined hundreds of pages of corporate documents, legal records, and court filings with links to BBIN or other subsidiaries. Time and time again, they came across the Universe Browser online.</p>
+<p>&#8220;We haven&#8217;t seen the Universe Browser advertised outside of the domains Vault Viper controls,&#8221; says Ma&#235;l Le Touz, a threat researcher at Infoblox. The Infoblox report says the browser was &#8220;specifically&#8221; designed to help people in Asia&#8212;where online gambling is largely illegal&#8212;bypass restrictions. &#8220;Each of the casino websites they operate seem to contain a link and advertisement to it,&#8221; Le Touz says.</p>
+<p>The Universe Browser itself is mostly offered for direct download from these casino websites&#8212;often being linked at the bottom of the websites, next to the logo of BBIN. There are desktop versions available for Windows, as well as an app version in Apple&#8217;s App Store. And while it is not in Google&#8217;s Play Store, there are Android APK files that allow the app to be directly installed on Android phones. The researchers say multiple parts of the Universe Browser and the code for its apps reference BBIN, and other technical details also reference the company.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The researchers reverse-engineered the Windows version of the browser. They say that while they have been unable to &#8220;verify malicious intent,&#8221; elements of the browser that they uncovered include many features that are similar to those found malware and tries to evade detection by antivirus tools. When the browser is launched, it &#8220;immediately&#8221; checks for the user&#8217;s location, language, and whether it is running in a virtual machine. The app also installs two browser extensions: one of which can allow screenshots to be uploaded to domains linked to the browser.</p>
+<p>While online gambling in China is largely <a href="https://www.nature.com/articles/s41599-024-04166-z">illegal</a>, the country also runs some of the world&#8217;s <a href="https://www.wired.com/story/geedge-networks-mass-censorship-leak/">strictest online censorship operations</a> and has taken action against <a href="https://www.ggrasia.com/china-destroyed-in-2024-more-than-4500-illegal-online-gambling-platforms-ministry-of-security">illegal gambling rings</a>. While the browser may most often be being used by those trying to take part in illegal gambling, it also puts their data at risk, the researchers say. &#8220;In the hands of a malicious actor&#8212;a Triad for example&#8212;this browser would serve as the perfect tool to identify wealthy players and obtain access to their machine,&#8221; the Infoblox report says.</p>
+<p>Beyond connecting to China, running key logging, and other programs that run in the background, Infoblox&#8217;s report also says multiple functions have been disabled. &#8220;The right click, settings access and developer tools, for instance, have all been removed, while the browser itself is run with several flags disabling major security features including sandboxing, and the removal of legacy SSL protocols, greatly increasing risk when compared with typical mainstream browsers,&#8221; the company&#8217;s report says. (SSL, also known as Secure Sockets Layer, is a <a href="https://www.cloudflare.com/en-gb/learning/ssl/what-is-ssl/">historic type</a> of web encryption that protected some data transfers.)</p>
+<p>It is unclear whether these same suspicious behaviors are present in the iOS and Android versions of the app. A Google spokesperson says the company is looking into the app and confirmed it was not available through its Google Play store. Apple did not respond to requests for comment about the app.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<h2>Connect the dots</h2>
+<p>The web infrastructure around the Universe Browser led the researchers back to BBIN, a company that has existed since 1999. While it was originally founded in Taiwan, the company now has a large base in the Philippines.</p>
+<p><a href="https://www.bb-in.com/">BBIN</a>, which also goes by the name Baoying Group and has multiple subsidies, describes itself as a &#8220;leading&#8221; supplier of <a href="https://crustlab.com/blog/what-is-igaming-unmasking-the-thrills-trends-and-titans-of-the-industry/">iGaming</a> software in Asia. A <a href="https://www.unodc.org/roseap/uploads/documents/Publications/2025/Inflection_Point_2025.pdf">UNODC report</a> from April, which links BBIN to the Universe Browser but does not formally name the company as Vault Viper, says the firm runs several hotels and casinos in Southeast Asia as well as providing &#8220;one of the largest and most successful&#8221; iGaming platforms in the region. Over the last decade, BBIN has sponsored or partnered with multiple major European soccer teams, such as Spain&#8217;s <a href="https://en.atleticodemadrid.com/noticias/bbin-becomes-new-atletico-de-madrid-sponsor">Atl&#233;tico de Madrid</a>, Germany&#8217;s <a href="https://www.gamblinginsider.com/press/5389/bbin-and-borussia-dortmund-announce-official-partnership">Borussia Dortmund</a>, and Dutch team <a href="https://www.sportspro.com/news/ajax-news-bbin-sponsorship-deal/">AFC Ajax</a>.</p>
+<p>In recent years, multiple football clubs in England&#8217;s Premier League have <a href="https://www.bbc.co.uk/news/world-asia-china-64314043">faced scrutiny over sponsorship</a> by Asian gambling companies&#8212;including by <a href="https://www.theguardian.com/football/2025/jun/06/demise-of-tgp-europe-sports-betting-leaves-premier-league-clubs-with-income-gap-to-fill">TGP Europe</a> which was owned by Alvin Chau, the chairman and founder of SunCity Group who was sentenced in January 2023 to <a href="https://www.bbc.co.uk/news/world-asia-china-64314043">18 years in prison</a> after being found guilty of running illegal gambling operations. TGP Europe left the UK earlier this year after being <a href="https://www.gamblingcommission.gov.uk/news/article/tgp-europe-leaves-gb-market-following-commission-investigation">fined by the country&#8217;s gambling regulator</a>. Atl&#233;tico Madrid, Borussia Dortmund, and AFC Ajax did not respond to WIRED requests for comment.</p>
+<p>The iGaming industry develops online gambling software, such as virtual poker or other online casino games, that can easily be played on the web or on phones. &#8220;BBIN Baoying is officially an online casino game developer or &#8216;white label&#8217; online casino platform, meaning it outsources its online gambling technology to other sites,&#8221; says Lindsey Kennedy, research director at <a href="https://theeyewitnessproject.org/">The EyeWitness Project</a>, which investigates corruption and organized crime. &#8220;The only languages it offers are Korean, Japanese and Chinese, which isn&#8217;t a great sign as online gambling is either banned or heavily restricted in all three countries.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;Baoying and BBIN are what I would call a multi-billion dollar gray-area international conglomerate with deep criminal connections, backstopping and providing services to online gambling businesses, scams and cybercrime actors,&#8221; alleges Jeremy Douglas, chief of staff at the UNODC and its former regional representative for Southeast Asia. &#8220;Aside from what has been estimated at a two-thirds ownership by Alvin Chau of SunCity&#8212;arguably the biggest money launderer in the history of Asia&#8212;law enforcement partners have documented direct connections with Triad groups including the Bamboo Union, Four Seas, Tian Dao,&#8221; Douglas says of BBIN. (When Chau was sentenced in January 2023, court documents pointed to him allegedly owning a <a href="https://www.court.gov.mo/sentence/zh/35893">66.67 percent share of Baoying</a>).</p>
+<p>BBIN did not respond to multiple requests for comment from WIRED. The firm&#8217;s primary contact email address it lists on its website bounced back, while questions sent to another email address and online contact forms, plus attempts to contact two alleged staff members on LinkedIn were not answered by the time of publication. A company Telegram account pointed WIRED to one of the contact forms that did not provide any answers.</p>
+<p>The Presidential Anti-Organized Crime Commission (PAOCC) in the Philippines, which tackles organized and international crimes, did not respond to a request for comment from WIRED about BBIN.</p>
+<p>Over the last decade, online crime in Southeast Asia has massively surged, driven partially by <a href="https://www.unodc.org/roseap/uploads/documents/Publications/2025/UNODC_Alert_Strategic_infiltration_of_vulnerable_jurisdictions_through_criminal_foreign_direct_investments.pdf">illegal online gambling and also a series</a> of <a href="https://www.wired.com/story/starlink-scam-compounds/">scam compounds</a>that have been set up across Myanmar, Laos, and Cambodia. Hundreds of thousands of people from more than 60 countries have been tricked into working in these compounds, where they operate scams day and night, stealing <a href="https://www.wired.com/story/child-sextorition-scam-compounds-southeast-asia/">billions of dollars from people around the world</a>.</p>
+<p>&#8220;Scam parks and compounds across the region generally host both online gambling and online scam operations, and the methodology used to lure individuals into opening online gambling accounts parallels that associated with <a href="https://www.wired.com/story/what-is-pig-butchering-scam/">pig-butchering scams</a>,&#8221; says Jason Tower, a senior expert at the Global Initiative Against Transnational Organized Crime.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Last week, US law enforcement <a href="https://www.wired.com/story/feds-seize-record-breaking-15-billion-in-bitcoin-from-alleged-scam-empire/">seized $15 billion in Bitcoin from one giant Cambodian organization</a>, which publicly dealt in real estate but allegedly ran scam facilities in &#8220;secret.&#8221; One of the sanctioned entities, the <a href="https://home.treasury.gov/news/press-releases/sb0278">Jin Bei Group in Cambodia</a>, which US authorities accused of operating a series of scam compounds, also shows links to BBIN&#8217;s technology, Tower says. &#8220;There are multiple Telegram groups and casino websites indicating that BBIN partners with multiple entities inside the Jinbei casino,&#8221; Tower says, adding that one group on Telegram &#8220;posts daily advertisements indicating an official partnership between Jinbei and BBIN.&#8221;</p>
+<p>Over recent years, <a href="https://news.sina.cn/sh/2017-11-13/detail-ifynrsrf4293366.d.htm">multiple</a> <a href="https://www.gszfw.gov.cn/Show/331474">government</a> <a href="https://www.jsjc.gov.cn/yaowen/201709/t20170914_170863.shtml">press releases</a> <a href="https://news.qq.com/rain/a/20231111A05LCZ00">and</a> <a href="https://www.ghi888.com/cs/2021/03/Taiwan-police-cut-gang-smashed-a-hundred-pieces-of-gold-flow-of-illegal-gam/">news</a> <a href="https://news.sina.cn/sa/2005-03-02/detail-ikkntiam2787478.d.html">reports</a> <a href="https://www.163.com/dy/article/IJB2IR01055652MX.html">from</a><a href="https://tw.news.yahoo.com/%E5%81%87%E7%9B%B4%E6%92%AD%E7%9C%9F%E8%B3%AD%E5%8D%9A-%E8%AD%A6%E6%94%BF%E7%BD%B2%E6%8E%83%E8%95%A9%E5%85%A8%E5%9C%8B%E9%BB%91%E5%B9%AB%E9%80%AE%E5%8D%83%E4%BA%BA-%E7%AB%B9%E8%81%AF%E5%9B%9B%E6%B5%B7%E5%A4%A9%E9%81%93%E7%B5%B1%E7%B5%B1%E6%9C%89%E7%8B%A0%E6%96%B7%E7%99%BE%E5%84%84%E9%87%91%E6%B5%81-092135928.html">countries</a> including China and Taiwan, have alleged how BBIN&#8217;s technology has been used within illegal gambling operations and linked to cybercrime. &#8220;There are hundreds of Telegram posts aggressively advertising various illegal Chinese facing gambling sites that say they either are, or are built on, BBIN/Baoying technology, many of them by individuals claiming to operate out of scam and illegal gambling compounds, or as part of the highly illegal, trafficking-driven industry in Cambodia and Northern Myanmar,&#8221; says Kennedy from The EyeWitness Project.</p>
+<p>While the Universe Browser has most likely been downloaded by those accessing Chinese-language gambling websites, researchers say that its development indicates how pivotal and lucrative illegal online gambling operations are and exposing their links to scamming efforts that operate across the world. &#8220;As these operations continue to scale and diversify, they are marked by growing technical expertise, professionalization, operational resilience, and the ability to function under the radar with very limited scrutiny and oversight,&#8221; Infoblox&#8217;s report concludes.</p>
+<p>This story originally appeared on <a href="https://www.wired.com/story/universe-browser-malware-gambling-networks/">wired.com</a>.</p>
+
+
+          
+                  
+
+                  
+          </div>
