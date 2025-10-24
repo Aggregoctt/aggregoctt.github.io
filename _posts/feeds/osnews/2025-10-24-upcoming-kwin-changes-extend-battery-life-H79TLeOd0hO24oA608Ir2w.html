@@ -1,0 +1,27 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143629/upcoming-kwin-changes-extend-battery-life/
+date: '2025-10-24T21:20:53'
+excerpt: I think most of us are aware that compositors use multiple planes to render
+  our user interfaces, and in the case of KDE&#8217;s Kwin specifically, they use
+  two planes &#8211; one for the user interface, and one specifically for the mouse
+  cursor. Kwin developer Xaver Hugl has been working on changing Kwin to use more
+  than just two planes, and it turns out this delivers some considerable power use
+  reductions and thus battery life improvements. So, when can you use these changes
+  and test them? Due to various driver issues when trying to use overlays, like slow
+  atomic tests on AMD as well as display freezes on some AMD and NVidia GPUs, this
+  feature is still off by default. However, if you want to experiment anyways or attempt
+  to fix the drivers, starting from Plasma 6.5, you can set the KWIN_USE_OVERLAYS environment
+  variable to enable the feature anyways. If you test it, please report your findings!
+  If there’s problems in the drivers, we’d like to know and have bug reports for the
+  GPU vendors of course, but also if things work well that would be nice to hear.
+  ↫ Xaver Hugl Leave it to Linux graphics-related developers to uncover driver bugs
+  in graphics drivers.
+image: null
+source: osnews
+tags:
+- KDE
+title: Upcoming Kwin changes extend battery life
+---
+<div><p>I think most of us are aware that compositors use multiple planes to render our user interfaces, and in the case of KDE&#8217;s Kwin specifically, they use two planes &#8211; one for the user interface, and one specifically for the mouse cursor. Kwin developer Xaver Hugl has been working on changing Kwin to use more than just two planes, and it turns out this delivers some considerable power use reductions and thus battery life improvements.</p><p>So, when can you use these changes and test them?</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Due to various driver issues when trying to use overlays, like slow atomic tests on AMD as well as display freezes on some AMD and NVidia GPUs, this feature is still off by default.</p><p>However, if you want to experiment anyways or attempt to fix the drivers, starting from Plasma 6.5, you can set the&#160;<a href="https://invent.kde.org/plasma/kwin/-/wikis/Environment-Variables#kwin_use_overlays">KWIN_USE_OVERLAYS</a>&#160;environment variable to enable the feature anyways. If you test it, please report your findings! If there&#8217;s problems in the drivers, we&#8217;d like to know and have bug reports for the GPU vendors of course, but also if things work well that would be nice to hear.</p>
+<a href="https://zamundaaa.github.io/wayland/2025/10/23/more-kms-offloading.html">&#8619; Xaver Hugl</a></blockquote><p>Leave it to Linux graphics-related developers to uncover driver bugs in graphics drivers.</p></div>
