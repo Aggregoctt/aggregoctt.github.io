@@ -1,0 +1,63 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/ai/2025/10/are-you-the-asshole-of-course-not-quantifying-llms-sycophancy-problem/
+date: '2025-10-24T22:26:30'
+excerpt: In new research, AI models show a troubling tendency to agree with whatever
+  the user says.
+image: assets/media/Xe2NVBZgNVKkWFYAG6CUAw-KtQls9bVcwIVtgGWNp8GFQ.jpeg
+source: arstechnica
+tags:
+- AI
+- AI sycophancy
+- facts
+- hallucination
+- made up
+- sycophancy
+title: Are you the asshole? Of course not!—quantifying LLMs’ sycophancy problem
+---
+<div>
+                      
+                      
+          <p>Researchers and users of LLMs have long been aware that AI models have <a href="https://arstechnica.com/ai/2025/06/ai-chatbots-tell-users-what-they-want-to-hear-and-thats-problematic/">a troubling tendency to tell people what they want to hear</a>, even if that means being less accurate. But many reports of this phenomenon amount to mere anecdotes that don&#8217;t provide much visibility into how common this sycophantic behavior is across frontier LLMs.</p>
+<p>Two recent research papers have come at this problem a bit more rigorously, though, taking different tacks in attempting to quantify exactly how likely an LLM is to listen when a user provides factually incorrect or socially inappropriate information in a prompt.</p>
+<h2>Solve this flawed theorem for me</h2>
+<p>In <a href="https://arxiv.org/pdf/2510.04721">one pre-print study</a> published this month, researchers from Sofia University and ETH Zurich looked at how LLMs respond when false statements are presented as the basis for difficult mathematical proofs and problems. The <a href="https://www.sycophanticmath.ai/">BrokenMath benchmark</a> that the researchers constructed starts with &#8220;a diverse set of challenging theorems from advanced mathematics competitions held in 2025.&#8221; Those problems are then &#8220;perturbed&#8221; into versions that are &#8220;demonstrably false but plausible&#8221; by an LLM that&#8217;s checked with expert review.</p>
+<p>The researchers presented these &#8220;perturbed&#8221; theorems to a variety of LLMs to see how often they sycophantically try to hallucinate a proof for the false theorem. Responses that disproved the altered theorem were deemed non-sycophantic, as were those that merely reconstructed the original theorem without solving it or identified the original statement as false.</p>
+<p>While the researchers found that &#8220;sycophancy is widespread&#8221; across 10 evaluated models, the exact extent of the problem varied heavily depending on the model tested. At the top end, GPT-5 generated a sycophantic response just 29 percent of the time, compared to a 70.2 percent sycophancy rate for DeepSeek. But a simple prompt modification that explicitly instructs each model to validate the correctness of a problem before attempting a solution reduced the gap significantly; DeepSeek&#8217;s sycophancy rate dropped to just 36.1 percent after this small change, while tested GPT models improved much less.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+
+<p>GPT-5 also showed the best &#8220;utility&#8221; across the tested models, solving 58 percent of the original problems despite the errors introduced in the modified theorems. Overall, though, LLMs also showed more sycophancy when the original problem proved more difficult to solve, the researchers found.</p>
+<p>While hallucinating proofs for false theorems is obviously a big problem, the researchers also warn against using LLMs to generate novel theorems for AI solving. In testing, they found this kind of use case leads to a kind of &#8220;self-sycophancy&#8221; where models are even more likely to generate false proofs for invalid theorems they invented.</p>
+<h2>No, of course you&#8217;re not the asshole</h2>
+<p>While benchmarks like BrokenMath try to measure LLM sycophancy when facts are misrepresented, a separate study looks at the related problem of so-called &#8220;social sycophancy.&#8221; In <a href="https://arxiv.org/pdf/2510.01395">a pre-print paper</a> published this month, researchers from Stanford and Carnegie Mellon University define this as situations &#8220;in which the model affirms the user themselves&#8212;their actions, perspectives, and self-image.&#8221;</p>
+<p>That kind of subjective user affirmation may be justified in some situations, of course. So the researchers developed three separate sets of prompts designed to measure different dimensions of social sycophancy.</p>
+<p>For one, more than 3,000 open-ended &#8220;advice-seeking questions&#8221; were gathered from across Reddit and advice columns. Across this data set, a &#8220;control&#8221; group of over 800 humans approved of the advice-seeker&#8217;s actions just 39 percent of the time. Across 11 tested LLMs, though, the advice-seeker&#8217;s actions were endorsed a whopping 86 percent of the time, highlighting an eagerness to please on the machines&#8217; part. Even the most critical tested model (Mistral-7B) clocked in at a 77 percent endorsement rate, nearly doubling that of the human baseline.</p>
+
+          
+                   
+            
+
+              
+          
+          
+ 
+
+<p>For another data set, the researchers looked to &#8220;interpersonal dilemmas&#8221; posted to <a href="https://www.reddit.com/r/AmItheAsshole/">Reddit&#8217;s popular &#8220;Am I the Asshole?&#8221; community</a>. Specifically, they looked at 2,000 posts where the most upvoted comment stated that &#8220;You are the asshole,&#8221; representing what the researchers called &#8220;a clear human consensus on user wrongdoing.&#8221; Despite this human consensus on inappropriate behavior, though, tested LLMs determined the original poster was not at fault in 51 percent of the tested posts. Gemini performed best here, with an 18 percent endorsement rate, while Qwen endorsed the actions of posters that Reddit called &#8220;assholes&#8221;&#160;79 percent of the time.</p>
+<p>In the final dataset, the researchers gathered more than 6,000 &#8220;problematic action statements&#8221; that describe situations that could potentially be harmful to the prompter or others. On average, tested models endorsed these &#8220;problematic&#8221; statements 47 percent of the time across issues like &#8220;relational harm, self-harm, irresponsibility, and deception.&#8221; The Qwen model performed best here, endorsing only 20 percent of the group, while DeepSeek endorsed about 70 percent of the prompts in the PAS dataset.</p>
+<p>The problem with trying to fix the sycophancy problem, of course, is that users tend to enjoy having their positions validated or confirmed by an LLM. In follow-up studies in which humans conversed with either a sycophantic or a non-sycophantic LLM, researchers found that &#8220;participants rated sycophantic responses as higher quality, trusted the sycophantic AI model more, and were more willing to use it again.&#8221; As long as that&#8217;s the case, the most sycophantic models seem likely to win out in the marketplace over those more willing to challenge users.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
