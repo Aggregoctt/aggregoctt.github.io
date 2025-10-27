@@ -1,0 +1,60 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/10/27/la-sorpresa-malwarica-della-domenica-lattacco-alla-supply-chain-di-openvsx-mi-fa-passare-brutti-minuti/
+date: '2025-10-26T23:55:09'
+excerpt: 'Dopo i vari complotti ai miei danni&#8230; e prima gli scherzi degli spiriti,
+  e poi i malware autunnali che colpiscono il mio corpo, e pure tutte le cose pericolosamente
+  problematiche per essere anche solo scritte&#8230; Oggi pomeriggio mi è arrivata
+  un&#8217;altra sorpresa: i fottuti virus sul PC. (E no, non è perché sto continuando
+  ad [&#8230;]'
+image: assets/media/l7vSVjAbUdDv7a5NdtHJ8g-J4lQrdpDe0qIs8twJk34iw.jpeg
+source: octospacc
+tags:
+- Senza categoria
+- GlassWorm
+- virus
+- OpenVSX
+- VSCode
+- malware
+title: la sorpresa malwarica della domenica (l’attacco alla supply chain di OpenVSX
+  mi fa passare brutti minuti)
+---
+<div>
+
+		
+<p>Dopo i vari complotti ai miei danni&#8230; e prima gli scherzi degli spiriti, e poi i malware autunnali che colpiscono il mio corpo, e pure tutte le cose pericolosamente problematiche per essere anche solo scritte&#8230; <strong>Oggi pomeriggio mi &#232; arrivata un&#8217;altra sorpresa: <a href="https://t.me/c/1519410362/507940">i fottuti virus sul PC</a>.</strong> (E no, non &#232; perch&#233; sto continuando ad usare Windows 10 una decina di giorni dopo la data di fine vita&#8230; non c&#8217;&#232; nessuna falla nel sistema operativo di mezzo, bens&#236;, anche stavolta, solo i potery forty.) &#128560;</p>
+
+
+
+ 
+
+
+
+<p><strong>Ho semplicemente aperto VSCodium per fare la mia programmazione</strong>, perch&#233; senn&#242; il fine settimana non sono contenta, lo sappiamo gi&#224;&#8230; <strong>ed &#232; arrivato un popup di Windows Defender</strong>, che si lamentava di un file JavaScript nella cartella di un&#8217;estensione installata dell&#8217;IDE. Purtroppo, cercandolo online, scopro che il merdone ha probabilmente ragione: il file &#232; probabilmente infetto (non lo so con certezza, perch&#233; non volevo sbloccarlo col rischio che venisse eseguito, quindi l&#8217;ho fatto sparire)&#8230; perch&#233;, a quanto sembra, c&#8217;&#232; stato di recente <strong>un attacco alla filiera</strong> (o &#8220;supply chain&#8220;, come piace dirlo agli altri) <strong>che ha colpito alcune estensioni VSCode&#8230;</strong> e zio cane. &#128528;</p>
+
+
+
+<p>I link interessanti sono su <a href="https://memos.octt.eu.org/m/GdeyW5UqDV7dQVuD5hFG44">https://memos.octt.eu.org/m/GdeyW5UqDV7dQVuD5hFG44</a>, e stavolta sono forse interessanti davvero, perch&#233; il malware, &#8220;<strong>GlassWorm</strong>&#8220;, &#232; una cosa assurda, a livello tecnico&#8230; Usa la blockchain di Solana per salvare i riferimenti allo stage 2, probabilmente per essere indistruttibile, perch&#233; se qualcuno gli leva di mezzo il server di comando e controllo questi possono sempre aggiornare il payload sulla blockchain e avere tutto ancora funzionante, una roba da pazzi&#8230; e poi, il codice malevolo nascosto nei file JavaScript &#232; codificato con caratteri Unicode che appaiono vuoti, ma ovviamente vengono decodificati in quello che serve, e bleah. Ma non &#232; questo il punto&#8230; &#129317;</p>
+
+
+
+<p>In pratica, quello che &#232; successo &#8212; e non capisco perch&#233; lo scopro solo ora, e non mi sia invece arrivata indirettamente la notizia pochi giorni fa &#8212; &#232; che <strong>questo malware prende di mira le estensioni per VSCode</strong> &#8212; principalmente quelle ospitate su OpenVSX, ma si sa gi&#224; di almeno una infetta anche sullo store di Microsoft &#8212; <strong>per replicarsi e diffondersi sui PC degli sviluppatori di software</strong>, e da l&#236; fare cose brutte&#8230; Innanzitutto rubare i dati di varie estensioni browser di criptovalute (e vabb&#232; che se tieni le criptovalute sul PC anzich&#233; sul telefono stai proprio chiedendo che ti vengano rubate), perch&#233; evidentemente questi stronzi non hanno fantasia&#8230; poi credenziali Git, NPM, OpenVSX, questa roba qui, appunto per spargere codice malevolo&#8230; e, si dice, installare varie schifezze persistenti. &#128557;</p>
+
+
+
+<p>Non so se sia pi&#249; ironico il fatto che <strong>non ho praticamente mai beccato malware sui PC in anni e anni di pirateria e cose particolari, eppure mi deve succedere oggi in un modo che non potevo ragionevolmente prevenire</strong> &#8212; anche perch&#233; io non installo estensioni troppo ad minchiam, nel possibile faccio attenzione, ma a volte tocca installare il pacchetto sfigato gestito da qualcuno a caso non malevolo, ma che suo malgrado si &#232; fatto bucare &#8212; per il solo peccato di scrivere codice ed usare VSCodium per farlo&#8230; Oppure, se la cosa che veramente mi deve far incazzare &#232; che <strong>le estensioni bucate sono per ora ancora una quindicina, eppure proprio una (1) &#232; capitato che l&#8217;avessi, quindi che combinazione&#8230;</strong> Ma &#232; tutto cos&#236; fottutamente assurdo. &#128165;</p>
+
+
+
+<p><strong>Per fortuna</strong>, (anche se non so quanto devo davvero fidarmi di un simile risultato, e mi chiedo se forse non dovrei prendere provvedimenti pi&#249; forti; ma se devo cambiare le password impazzisco, e idem se devo reinstallare il sistema, quindi spero di no&#8230;) <strong>da diverse scansioni complete</strong>, una con Defender ed una con Kaspersky, esclusi i file dell&#8217;estensione infetta che poi ho giustamente anche disinstallato da VSCodium, <strong>il PC risulta pulito</strong>; e, anche controllando a manina i servizi di Windows, le operazioni programmate all&#8217;avvio, e le chiavi di registro riportate negli articoli sopra, non ho trovato nulla di strano, cos&#236; come non vedo richieste agli indirizzi IP noti di questo merdone attraverso WireShark. &#128580;</p>
+
+
+
+<p>Quindi&#8230; <strong>&#232; possibile che Defender abbia bloccato il codice malevolo</strong> in un momento in cui si, l&#8217;IDE ha letto il file che lo conteneva, ma non effettivamente eseguito, perch&#233; questa estensione (<code>sissel.shopify-liquid@4.0.1</code>) magari non era una di quelle che gira a vuoto, e io in cosa stavo lavorando oggi (e ieri) non avevo niente che causasse l&#8217;effettivo caricamento dell&#8217;estensione? Mi verrebbe da chiedermi perch&#233; minchia la rilevazione sia avvenuta solo oggi, <a href="https://github.com/panoply/vscode-liquid/issues/202">visto che l&#8217;estensione &#232; bucata da apparentemente una bella settimana</a>, e quindi dovevo avere in teoria gi&#224; minimo da ieri la versione schifosa, visto che VSCode maledetto aggiorna in automatico le estensioni senza dire niente&#8230; ma evidentemente Microsoft ha il culo comodo nell&#8217;aggiornare le definizioni. &#128548;</p>
+
+
+
+<p>Allora, in sostanza, <strong>spero vivamente che questo coglione marcio non sia riuscito ad installarmi sul computer RAT, HVNC, o proxy per i propri usi schifosi, altrimenti sono rogne&#8230;</strong> Se avete consigli, a parte l&#8217;idea di smettere di programmare software, vi ringrazio in anticipo; per ora ho disattivato l&#8217;aggiornamento automatico di tutte le estensioni, cos&#236;, semmai qualcun&#8217;altra viene fottuta, io non lo sar&#242;. Per&#242;, a parte gli scherzi, viviamo veramente in un mondo di merda se i malware non sono pi&#249; &#8220;vinci la partita a carte se non vuoi che ti cancello il disco&#8220;, e invece sono &#8220;mi nascondo per fotterti&#8221;&#8230; e se per prenderli non serve fare nulla di incauto, ma basta appena esistere ed usare software scritto da altri!!! &#128553;</p>
+ 
+ 
+	 </div>
