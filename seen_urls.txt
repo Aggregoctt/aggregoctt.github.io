@@ -69074,3 +69074,5 @@ https://theonion.com/?p=1851692319
 https://arstechnica.com/science/2025/10/westinghouse-is-claiming-a-nuclear-deal-would-see-80b-of-new-reactors/
 https://kyivindependent.com/ukraine-reportedly-strikes-oil-refinery-chemical-plant-in-western-russia/
 69014e24fc83b2006b26f081
+https://techcrunch.com/2025/10/28/tata-motors-confirms-it-fixed-security-flaws-that-exposed-company-and-customer-data/
+https://techcrunch.com/?p=3063174

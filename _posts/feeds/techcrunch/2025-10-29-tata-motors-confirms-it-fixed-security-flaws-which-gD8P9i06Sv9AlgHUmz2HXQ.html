@@ -1,0 +1,60 @@
+---
+author: Jagmeet Singh
+canonical_url: https://techcrunch.com/2025/10/28/tata-motors-confirms-it-fixed-security-flaws-that-exposed-company-and-customer-data/
+date: '2025-10-29T01:30:00'
+excerpt: A security researcher found the Indian automotive giant exposing personal
+  information of its customers, internal company reports, and dealers’ data. Tata
+  confirmed it fixed the issues.
+image: assets/media/gD8P9i06Sv9AlgHUmz2HXQ--uzgqOnI3GJsO70wKeLNgA.jpeg
+source: techcrunch
+tags:
+- Security
+- Exclusive
+- tata motors
+title: Tata Motors confirms it fixed security flaws, which exposed company and customer
+  data
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">Indian automotive giant Tata Motors has fixed a series of security flaws that exposed sensitive internal data, including personal information of customers, company reports, and data related to its dealers.</p>
+
+<p class="wp-block-paragraph">Security researcher Eaton Zveare told TechCrunch that he discovered the flaws in Tata Motors&#8217; <a href="https://edukaan.cv.tatamotors/" target="_blank" rel="noreferrer noopener nofollow">E-Dukaan</a> unit, an e-commerce portal for buying spare parts for Tata-made commercial vehicles. Headquartered in Mumbai, Tata Motors produces passenger cars, as well as commercial and defense vehicles. The company has a <a href="https://www.tatamotors.com/organisation/about-us/" target="_blank" rel="noreferrer noopener nofollow">presence in 125 countries worldwide</a> and seven assembly facilities, per its website.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Zveare said he found that the portal&#8217;s web source code included the private keys to access and modify data within Tata Motors&#8217; account on Amazon Web Services, the researcher said in a <a href="https://eaton-works.com/2025/10/28/tata-motors-hack/" target="_blank" rel="noreferrer noopener nofollow">blog post</a>.</p>
+
+<p class="wp-block-paragraph">The exposed data, Zveare told TechCrunch, included hundreds of thousands of invoices containing customer information, such as their names, mailing addresses, and permanent account number, or PAN, a ten-character unique identifier issued by the Indian government.</p>
+
+<p class="wp-block-paragraph">&#8220;Out of respect for not causing some type of alarm bell or massive egress bill at Tata Motors, there were no attempts to exfiltrate large amounts of data or download excessively large files,&#8221; the researcher told TechCrunch.</p>
+
+<p class="wp-block-paragraph">There were also MySQL database backups and Apache Parquet files that included various bits of private customer information and communication, the researcher noted.</p>
+
+<p class="wp-block-paragraph">The AWS keys also enabled access to over 70 terabytes of data related to Tata Motors&#8217; <a href="https://fleetedge.home.tatamotors/" target="_blank" rel="noreferrer noopener nofollow">FleetEdge</a> fleet-tracking software. Zveare also found backdoor admin access to a Tableau account, which included data of over 8,000 users.</p>
+ 
+
+<p class="wp-block-paragraph">&#8220;As server admin, you had access to all of it. This primarily includes things like internal financial reports, performance reports, dealer scorecards, and various dashboards,&#8221; the researcher said.</p>
+
+<p class="wp-block-paragraph">The exposed data also included API access to Tata Motors&#8217; fleet management platform, Azuga, which powers the company&#8217;s test drive website.</p>
+
+<p class="wp-block-paragraph">Shortly after discovering the issues, Zveare reported them to Tata Motors through the Indian computer emergency response team, known as CERT-In, in August 2023. Later in October 2023, Tata Motors told Zveare that it was working on fixing the AWS issues after securing the initial loopholes. However, the company did not say when the issues were fixed.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Tata Motors confirmed to TechCrunch that all the reported flaws were fixed in 2023, but would not say if it notified affected customers that their information was exposed.</p>
+
+<p class="wp-block-paragraph">&#8220;We can confirm that the reported flaws and vulnerabilities were thoroughly reviewed following their identification in 2023 and were promptly and fully addressed,&#8221; said Tata Motors communications head Sudeep Bhalla, when contacted by TechCrunch.</p>
+
+<p class="wp-block-paragraph">&#8220;Our infrastructure is regularly audited by leading cybersecurity firms, and we maintain comprehensive access logs to monitor for unauthorized activity. We also actively collaborate with industry experts and security researchers to strengthen our security posture and ensure timely mitigation of potential risks,&#8221; said Bhalla.</p>
+
+
+			
+
+			</div>
