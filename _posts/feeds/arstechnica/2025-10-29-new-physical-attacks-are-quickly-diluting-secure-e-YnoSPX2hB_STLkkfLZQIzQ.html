@@ -1,0 +1,130 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/10/new-physical-attacks-are-quickly-diluting-secure-enclave-defenses-from-nvidia-amd-and-intel/
+date: '2025-10-29T13:40:15'
+excerpt: On-chip TEEs withstand rooted OSes but fall instantly to cheap physical attacks.
+image: assets/media/YnoSPX2hB_STLkkfLZQIzQ-QYatOMkfBj4zrmdazAm_dg.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Features
+- Security
+- AMD
+- battering ram
+- Intel
+- NVIDIA
+- secure enclaves
+- tee.fail
+- trusted execution environments
+- wiretap
+title: New physical attacks are quickly diluting secure enclave defenses from Nvidia,
+  AMD, and Intel
+---
+<div>
+                      
+                      
+           
+<p>Trusted execution environments, or TEEs, are everywhere&#8212;in blockchain architectures, virtually every cloud service, and computing involving AI, finance, and defense contractors. It&#8217;s hard to overstate the reliance that entire industries have on three TEEs in particular: Confidential Compute from Nvidia, SEV-SNP from AMD, and SGX and TDX from Intel. All three come with assurances that confidential data and sensitive computing can&#8217;t be viewed or altered, even if a server has suffered a complete compromise of the operating kernel.</p>
+<p>A trio of novel physical attacks raises new questions about the true security offered by these TEES and the exaggerated promises and misconceptions coming from the big and small players using them.</p>
+<p>The most recent attack, released Tuesday, is known as TEE.fail. It defeats the latest TEE protections from all three chipmakers. The low-cost, low-complexity attack works by placing a small piece of hardware between a single physical memory chip and the motherboard slot it plugs into. It also requires the attacker to compromise the operating system kernel. Once this three-minute attack is completed, Confidential Compute, SEV-SNP, and TDX/SDX can no longer be trusted. Unlike the Battering RAM and Wiretap attacks from <a href="https://arstechnica.com/security/2025/09/intel-and-amd-trusted-enclaves-the-backbone-of-network-security-fall-to-physical-attacks/">last month</a>&#8212;which worked only against CPUs using DDR4 memory&#8212;TEE.fail works against DDR5, allowing them to work against the latest TEEs.</p>
+<h2>Some terms apply</h2>
+<p>All three chipmakers exclude physical attacks from threat models for their TEEs, also known as secure enclaves. Instead, assurances are limited to protecting data and execution from viewing or tampering, even when the kernel OS running the processor has been compromised. None of the chipmakers make these carveouts prominent, and they sometimes provide confusing statements about the TEE protections offered.</p>
+<p>Many users of these TEEs make public assertions about the protections that are flat-out wrong, misleading, or unclear. All three chipmakers and many TEE users focus on the suitability of the enclaves for protecting servers on a network edge, which are often located in remote locations, where physical access is a top threat.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+<p>I counted more than a dozen other organizations providing assurances that were similarly confusing, misleading, or false. Even Moore&#8212;a security veteran with more than three decades of experience&#8212;told me: &#8220;The surprising part to me is that Intel/AMD would blanket-state that physical access is somehow out of scope when it&#8217;s the entire point.&#8221;</p>
+<p>In fairness, some TEE users build additional protections on top of the TEEs provided out of the box. Meta, for example, said in an email that the WhatsApp implementation of SEV-SNP uses protections that would block TEE.fail attackers from impersonating its servers. The company didn&#8217;t dispute that TEE.fail could nonetheless pull secrets from the AMD TEE.</p>
+<p>The Cloudflare theft protection, meanwhile, relies on SME&#8212;the engine driving SEV-SNP encryption. The researchers didn&#8217;t directly test SME against TEE.fail. They did note that SME uses deterministic encryption, the cryptographic property that causes all three TEEs to fail. (More about the role of deterministic encryption later.)</p>
+<p>Others who misstate the TEEs&#8217; protections provide more accurate descriptions elsewhere. Given all the conflicting information, it&#8217;s no wonder there&#8217;s confusion.</p>
+<h2>How do you know where the server is? You don&#8217;t.</h2>
+<p>Many TEE users run their infrastructure inside cloud providers such as AWS, Azure, or Google, where protections against supply-chain and physical attacks are extremely robust. That raises the bar for a TEE.fail-style attack significantly. (Whether the services could be compelled by governments with valid subpoenas to attack their own TEE is not clear.)</p>
+<p>All these caveats notwithstanding, there&#8217;s often (1) little discussion of the growing viability of cheap, physical attacks, (2) no evidence (yet) that implementations not vulnerable to the three attacks won&#8217;t fall to follow-on research, or (3) no way for parties relying on TEEs to know where the servers are running and whether they&#8217;re free from physical compromise.</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;We don&#8217;t know where the hardware is,&#8221; Daniel Genkin, one of the researchers behind both TEE.fail and Wiretap, said in an interview. &#8220;From a user perspective, I don&#8217;t even have a way to verify where the server is. Therefore, I have no way to verify if it&#8217;s in a reputable facility or an attacker&#8217;s basement.&#8221;</p>
+<p>In other words, parties relying on attestations from servers in the cloud are once again reduced to simply trusting other people&#8217;s computers. As Moore observed, solving that problem is precisely the reason TEEs exist.</p>
+<p>In at least two cases, involving the blockchain services Secret Network and Crust, the loss of TEE protections made it possible for any untrusted user to present cryptographic attestations. Both platforms used the attestations to verify that a blockchain node operated by one user couldn&#8217;t tamper with the execution or data passing belonging to another user&#8217;s nodes. The Wiretap hack on SGX made it possible for users to run the sensitive data and executions outside of the TEE altogether while still providing attestations to the contrary. In the AMD attack, the attacker could decrypt the traffic passing through the TEE.</p>
+ 
+<p>Both Secret Network and Crust added mitigations after learning of the possible physical attacks with Wiretap and Battering RAM. Given the lack of clear messaging, other TEE users are likely making similar mistakes.</p>
+<h2>A predetermined weakness</h2>
+<p>The root cause of all three physical attacks is the choice of <a href="https://en.wikipedia.org/wiki/Deterministic_encryption">deterministic encryption</a>. This form of encryption produces the same ciphertext each time the same plaintext is encrypted with the same key. A TEE.fail attacker can copy ciphertext strings and use them in replay attacks. (Probabilistic encryption, by contrast, resists such attacks because the same plaintext can encrypt to a wide range of ciphertexts that are randomly chosen during the encryption process.)</p>
+
+          
+                  
+
+              
+          
+          
+<p>TEE.fail works not only against SGX but also a more advanced Intel TEE known as TDX. The attack also defeats the protections provided by the latest Nvidia Confidential Compute and AMD SEV-SNP TEEs. Attacks against TDX and SGX can extract the Attestation Key, an <a href="https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm">ECDSA</a> secret that certifies to a remote party that it&#8217;s running up-to-date software and can&#8217;t expose data or execution running inside the enclave. This Attestation Key is in turn signed by an Intel X.509 digital certificate providing cryptographic assurances that the ECDSA key can be trusted. TEE.fail works against all Intel CPUs currently supporting TDX and SDX.</p>
+<p>With possession of the key, the attacker can use the compromised server to peer into data or tamper with the code flowing through the enclave and send the relying party an assurance that the device is secure. With this key, even CPUs built by other chipmakers can send an attestation that the hardware is protected by the Intel TEEs.</p>
+<p>GPUs equipped with Nvidia Confidential Compute don&#8217;t bind attestation reports to the specific virtual machine protected by a specific GPU. TEE.fail exploits this weakness by &#8220;borrowing&#8221; a valid attestation report from a GPU run by the attacker and using it to impersonate the GPU running Confidential Compute. The protection is available on Nvidia&#8217;s H100/200 and B100/200 server GPUs.</p>
+<p>&#8220;This means that we can convince users that their applications (think private chats with LLMs or Large Language Models) are being protected inside the GPU&#8217;s TEE while in fact it is running in the clear,&#8221; the researchers wrote on a <a href="https://tee.fail">website</a> detailing the attack. &#8220;As the attestation report is &#8216;borrowed,&#8217; we don&#8217;t even own a GPU to begin with.&#8221;</p>
+<p>SEV-SNP (Secure Encrypted Virtualization-Secure Nested Paging) uses ciphertext hiding in AMD&#8217;s EPYC CPUs based on the Zen 5 architecture. AMD added it to prevent a previous attack known as <a href="https://cipherleaks.com/">Cipherleaks</a>, which allowed malicious hypervisors to extract cryptographic keys stored in the enclaves of a virtual machine. Ciphertext, however, doesn&#8217;t stop physical attacks. With the ability to reopen the <a href="https://en.wikipedia.org/wiki/Side-channel_attack">side channel</a> that Cipherleaks relies on, TEE.fail can steal OpenSSL credentials and other key material based on <a href="https://research.redhat.com/blog/article/the-need-for-constant-time-cryptography/">constant-time</a> encryption.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<h2>Cheap, quick, and the size of a briefcase</h2>
+<p>&#8220;Now that we have interpositioned DDR5 traffic, our work shows that even the most modern of TEEs across all vendors with available hardware is vulnerable to cheap physical attacks,&#8221; Genkin said.</p>
+<p>The equipment required by TEE.fail runs off-the-shelf gear that costs less than $1,000. One of the devices the researchers built fits into a 17-inch briefcase, so it can be smuggled into a facility housing a TEE-protected server. Once the physical attack is performed, the device does not need to be connected again. Attackers breaking TEEs on servers they operate have no need for stealth, allowing them to use a larger device, which the researchers also built.</p>
+ 
+
+<p>The researchers demonstrated attacks against an array of services that rely on the chipmakers&#8217; TEE protections. (For ethical reasons, the attacks were carried out against infrastructure that was identical to but separate from the targets&#8217; networks.) Some of the attacks included BuilderNet, dstack, and Secret Network.</p>
+<p><b>BuilderNet&#160;</b>is a network of Ethereum block builders that uses TDX to prevent parties from snooping on others&#8217; data and to ensure fairness and that proof currency is redistributed honestly. The network builds blocks valued at millions of dollars each month.</p>
+<p>&#8220;We demonstrated that a malicious operator with an attestation key could join BuilderNet and obtain configuration secrets, including the ability to decrypt confidential orderflow and access the Ethereum wallet for paying validators,&#8221; the TEE.fail website explained. &#8220;Additionally, a malicious operator could build arbitrary blocks or frontrun (i.e., construct a new transaction with higher fees to ensure theirs is executed first) the confidential transactions for profit while still providing deniability.&#8221;</p>
+<p>To date, the researchers said, BuilderNet hasn&#8217;t provided mitigations. Attempts to reach BuilderNet officials were unsuccessful.</p>
+<p><b>dstack</b> is a tool for building confidential applications that run on top of virtual machines protected by Nvidia Confidential Compute. The researchers used TEE.fail to forge attestations certifying that a workload was performed by the TDX using the Nvidia protection. It also used the &#8220;borrowed&#8221; attestations to fake ownership of GPUs that a relying party trusts.</p>
+
+          
+                  
+
+              
+          
+          
+<p><b><a href="https://scrt.network/">Secret Network</a></b>, a platform billing itself as the &#8220;first mainnet blockchain with privacy-preserving smart contracts,&#8221; in part by encrypting on-chain data and execution with SGX. The researchers showed that TEE.fail could extract the &#8220;Concensus Seed,&#8221; the primary network-side private key encrypting confidential transactions on the Secret Network. As noted, after learning of Wiretap, the Secret Network eliminated this possibility by establishing a <a href="https://scrt.network/blog/secret-network-security-update-intel-sgx-vulnerability-response">&#8220;curated&#8221; allowlist</a> of known, trusted nodes allowed on the network and suspended the acceptance of new nodes. Academic or not, the ability to replicate the attack using TEE.fail shows that Wiretap wasn&#8217;t a one-off success.</p>
+<h2>A tough nut to crack</h2>
+<p>As explained earlier, the root cause of all the TEE.fail attacks is deterministic encryption, which forms the basis for protections in all three chipmakers&#8217; TEEs. This weaker form of encryption wasn&#8217;t always used in TEEs. When Intel initially rolled out SGX, the feature was put in client CPUs, not server ones, to prevent users from building devices that could extract copyrighted content such as high-definition video.</p>
+<p>Those early versions encrypted no more than 256MB of RAM, a small enough space to use the much stronger probabilistic form of encryption. The TEEs built into server chips, by contrast, must often encrypt terabytes of RAM. Probabilistic encryption doesn&#8217;t scale to that size without serious performance penalties. Finding a solution that accommodates this overhead won&#8217;t be easy.</p>
+<p>One mitigation over the short term is to ensure that each 128-bit block of ciphertext has sufficient entropy. Adding random plaintext to the blocks prevents ciphertext repetition. The researchers say the entropy can be added by building a custom memory layout that inserts a 64-bit counter with a random initial value to each 64-bit block before encrypting it.</p>
+ 
+<p>The last countermeasure the researchers proposed is adding location verification to the attestation mechanism. While insider and supply chain attacks remain a possibility inside even the most reputable cloud services, strict policies make them much less feasible. Even those mitigations, however, don&#8217;t foreclose the threat of a government agency with a valid subpoena ordering an organization to run such an attack inside their network.</p>
+
+          
+                  
+
+              
+          
+          
+<p>In a statement, Nvidia said:</p>
+<blockquote><p>NVIDIA is aware of this research. Physical controls in addition to trust controls such as those provided by Intel TDX reduce the risk to GPUs for this style of attack, based on our discussions with the researchers. We will provide further details once the research is published.</p></blockquote>
+<p>Intel spokesman Jerry Bryant said:</p>
+<blockquote><p>Fully addressing physical attacks on memory by adding more comprehensive confidentiality, integrity and anti-replay protection results in significant trade-offs to Total Cost of Ownership. Intel continues to innovate in this area to find acceptable solutions that offer better balance between protections and TCO trade-offs.</p></blockquote>
+<p>The company has published responses <a href="https://intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2025-10-28-001.html">here</a> and <a href="https://www.intel.com/content/www/us/en/developer/articles/news/more-information-encrypted-memory-frameworks.html">here</a> reiterating that physical attacks are out of scope for both TDX and SGX</p>
+<p>AMD didn&#8217;t respond to a request for comment.</p>
+<h2>Stuck on bandaids</h2>
+<p>For now, TEE.fail, Wiretap, and Battering RAM remain a persistent threat that isn&#8217;t solved with the use of default implementations of the chipmakers&#8217; secure enclaves. The most effective mitigation for the time being is for TEE users to understand the limitations and curb uses that the chipmakers say aren&#8217;t a part of the TEE threat model. Secret Network tightening requirements for operators joining the network is an example of such a mitigation.</p>
+<p>Moore, the founder and CEO of RunZero, said that companies with big budgets can rely on custom solutions built by larger cloud services. AWS, for example, makes use of the <a href="https://aws.amazon.com/blogs/security/confidential-computing-an-aws-perspective/">Nitro</a> <a href="https://reinvent.awsevents.com/content/dam/reinvent/2024/slides/net/NET402_EC2-Nitro-networking-under-the-hood.pdf">Card</a>, which is built using ASIC chips that accelerate processing using TEEs. Google&#8217;s proprietary answer is <a href="https://cloud.google.com/titanium?hl=en">Titanium</a>.</p>
+<p>&#8220;It&#8217;s a really hard problem,&#8221; Moore said. &#8220;I&#8217;m not sure what the current state of the art is, but if you can&#8217;t afford custom hardware, the best you can do is rely on the CPU provider&#8217;s TEE, and this research shows how weak this is from the perspective of an attacker with physical access. The enclave is really a band-aid or hardening mechanism over a really difficult problem, and it&#8217;s both imperfect and dangerous if compromised, for all sorts of reasons.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>

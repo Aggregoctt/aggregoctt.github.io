@@ -1,0 +1,92 @@
+---
+author: Vittoria Elliott, wired.com
+canonical_url: https://arstechnica.com/tech-policy/2025/10/republican-plan-would-make-deanonymization-of-census-data-trivial/
+date: '2025-10-29T13:00:18'
+excerpt: '"Differential privacy" algorithm prevents statistical data from being tied
+  to individuals.'
+image: assets/media/AkPnMD0uJ4xH4HqNGSCRWQ-2uUDHMPE6_ieGf8jLWaLyQ.jpeg
+source: arstechnica
+tags:
+- Policy
+- algorithms
+- privacy
+- syndication
+title: Republican plan would make deanonymization of census data trivial
+---
+<div>
+                      
+                      
+           
+<p>President Donald Trump and the Republican Party have spent the better part of the president&#8217;s second term <a href="https://www.wired.com/story/elon-musk-digital-coup-doge-data-ai/">radically reshaping</a> the federal government. But in recent weeks, the GOP has set its sights on taking another run at an old target: the US census.</p>
+<p>Since the first Trump administration, the right has sought to <a href="https://www.npr.org/2025/03/25/nx-s1-5338905/census-citizenship-question-trump">add a question</a> to the census that captures a respondent&#8217;s immigration status and to <a href="https://www.npr.org/2025/07/15/nx-s1-5467533/counted-in-the-census-congressional-redistricting-electoral-college">exclude noncitizens</a> from the tallies that determine how seats in Congress are distributed. In 2019, the Supreme Court <a href="https://www.supremecourt.gov/opinions/18pdf/18-966_bq7c.pdf">struck down</a> an attempt by the first Trump administration to add a citizenship question to the census.</p>
+<p>But now, a little-known algorithmic process called &#8220;<a href="https://www.wired.com/story/apple-differential-privacy-shortcomings/">differential privacy</a>,&#8221; created to keep census data from being used to identify individual respondents, has become the right&#8217;s latest focus. WIRED spoke to six experts about the GOP&#8217;s ongoing effort to falsely allege that a system created to protect people&#8217;s privacy has made the data from the 2020 census inaccurate.</p>
+<p>If successful, the campaign to get rid of differential privacy could not only radically change the kind of data made available, but could put the data of every person living in the US at risk. The campaign could also discourage immigrants from participating in the census entirely.</p>
+<p>The Census Bureau regularly publishes anonymized data so that policymakers and researchers can use it. That data is also sensitive: Conducted every 10 years, the census counts every person living in the United States, citizen and noncitizen alike. The data includes detailed information like the race, sex, and age, as well the languages they speak, their home address, economic status, and the number of people living in a house. This <a href="https://www.usa.gov/census-data#:~:text=How%20population%20data%20affects%20your,changed%20representation%20in%20the%20House.">data is used</a> for allocating the federal funds that support public services like schools and hospitals, as well as for how a state&#8217;s population is divided up and represented in Congress. The more people in a state, the more congressional representation&#8212;and more votes in the Electoral College.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>As computers got increasingly sophisticated and data more abundant and accessible, census employees and researchers realized the data published by the Census Bureau could be reverse engineered to identify individual people. According to <a href="https://www.law.cornell.edu/uscode/text/13">Title XIII of the US Code</a>, it is illegal for census workers to publish any data that would identify individual people, their homes, or businesses. A government employee revealing this kind of information <a href="https://www.law.cornell.edu/uscode/text/13/214">could be punished</a> with thousands of dollars in fines or even a possible prison sentence.</p>
+<p>For individuals, this could mean, for instance, someone could use census data without differential privacy to identify transgender youth, according to <a href="https://journalprivacyconfidentiality.org/index.php/jpc/article/view/891">research from the University of Washington</a>.</p>
+<p>For immigrants, the prospect of being reidentified through census data could &#8220;create panic among noncitizens as well as their families and friends,&#8221; says Danah Boyd, a census expert and the founder of Data &amp; Society, a nonprofit research group focused on the downstream effects of technology. LGBTQ+ people might not &#8220;feel safe sharing that they are in a same-sex marriage. There are plenty of people in certain geographies who do not want data like this to be public,&#8221; she says. This could also mean that information that might be available only through something like a search warrant would suddenly be obtainable. &#8220;Unmasking published records is not illegal. Then you can match it to large law enforcement databases without actually breaching the law.&#8221;</p>
+<h2>A need for noise</h2>
+<p>Differential privacy keeps that data private. It&#8217;s a mathematical framework whereby a statistical output can&#8217;t be used to determine any individual&#8217;s data in a dataset, and the bureau&#8217;s algorithm for differential privacy is called TopDown. It injects &#8220;noise&#8221; into the data starting at the highest level (national), moving progressively downward. There are certain constraints placed around the kind of noise that can be introduced&#8212;for instance, the total number of people in a state or census block has to remain the same. But other demographic characteristics, like race or gender, are randomly reassigned to individual records within a set tranche of data. This way, the overall number of people with a certain characteristic remains constant, while the characteristics associated with any one record don&#8217;t describe an individual person. In other words, you&#8217;ll know how many women or Hispanic people are in a census block, just not exactly <i>where</i>.</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;Differential privacy solves a particular problem, which is if you release a lot of information, a lot of statistics, based on the same set of confidential data, eventually somebody can piece together what that confidential data had to be,&#8221; says Simson Garfinkel, former senior computer scientist for confidentiality and data access at the Census Bureau.</p>
+<p>Differential privacy was first used on data from the 2020 census. Even though one couldn&#8217;t identify a specific individual from the data, &#8220;you can still get an accurate count on things that are important for funding and voting rights,&#8221; says Moon Duchin, a mathematics professor at Tufts University who worked with census data to inform electoral maps in Alabama. The first use of differential privacy for the census happened under the Trump presidency, though the reports themselves were published after he left office. Civil servants, not political appointees, are the ones responsible for determining how census data is collected and analyzed. Emails <a href="https://www.brennancenter.org/sites/default/files/2022-01/BC-DOC-CEN-2020-1602-1445-1447.pdf">obtained by the Brennan Center</a> later claimed that the officials at the Census Bureau, overseen by then-Commerce Secretary Wilbur Ross, expressed an &#8220;unusually high degree&#8221; of interest in the &#8220;technical matters&#8221; of the process, which deputy director and COO of the bureau Ron Jarmin called &#8220;unprecedented.&#8221;</p>
+<p>It&#8217;s this data from the 2020 census that Republicans have taken issue with. On August 21, the Center for Renewing America, a right-wing think tank founded by Russ Vought, currently the director of the US Office of Management and Budget, <a href="https://americarenewing.com/issues/differential-privacy-in-the-2020-census-explained/">published a blog post</a> alleging that differential privacy &#8220;may have played a significant role in tilting the political scales favorably toward Democrats for apportionment and redistricting purposes.&#8221; The post goes on to acknowledge that, even if a citizenship question was added to the census&#8212;which Trump <a href="https://constitutioncenter.org/blog/its-final-no-citizenship-question-on-2020-census">attempted</a> during his first administration&#8212;differential privacy &#8220;algorithm will be able to mask characteristic data, including citizenship status.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>Duchin and other experts who spoke to WIRED say that differential privacy does not change apportionment, or how seats in Congress are distributed&#8212;<a href="https://www.census.gov/library/visualizations/2021/dec/2020-apportionment-map.html">several red states</a>, including Texas and Florida, gained representation after the 2020 census, while blue states like California lost representatives.</p>
+ 
+<h2>COUNTing the cost</h2>
+<p>On August 28, Republican Representative August Pfluger introduced the <a href="https://mcusercontent.com/d4254037a343b683d142111e0/files/aae8dae1-a65f-58d1-a37e-2293fd46880f/PFLUGE_104_xml.pdf">COUNT Act</a>. If passed, it would add a citizenship question to the census and force the Census Bureau to &#8220;cease utilization of the differential privacy process.&#8221; Pfluger&#8217;s office did not immediately respond to a request for comment.</p>
+<p>&#8220;Differential privacy is a punching bag that&#8217;s meant here as an excuse to redo the census,&#8221; says Duchin. &#8220;That is what&#8217;s going on, if you ask me.&#8221;</p>
+<p>On October 6, Senator Jim Banks, a Republican from Indiana, <a href="https://x.com/SenatorBanks/status/1975242153942020548/photo/1">sent a letter</a> to Secretary of Commerce Howard Lutnick, urging him to &#8220;investigate and correct errors from the 2020 Census that handed disproportionate political power to Democrats and illegal aliens.&#8221; The letter goes on to allege that the use of differential privacy &#8220;alters the total population of individual voting districts.&#8221; Similar to the COUNT Act and the Renewing America post, the letter also states that the 2030 Census &#8220;must request citizenship status.&#8221;</p>
+<p>Peter Bernegger, a Wisconsin-based &#8220;election integrity&#8221; activist who is facing a criminal <a href="https://wcca.wicourts.gov/caseDetail.html?caseNo=2024CF000328&amp;countyNo=13&amp;index=0&amp;mode=details">charge</a> of simulating the legal process for allegedly falsifying a subpoena, <a href="https://x.com/PeterBernegger/status/1975497613630636127">amplified Banks&#8217; letter on X</a>, alleging that the use of differential privacy was part of &#8220;election rigging by the Obama/Biden administrations.&#8221; Bernegger&#8217;s post was viewed more than 236,000 times.</p>
+<p>Banks&#8217; office and Bernegger did not immediately respond to a request for comment.</p>
+<p>&#8220;No differential privacy was ever applied to the data used to apportion the House of Representatives, so the claim that seats in the House were affected is simply false,&#8221; says John Abowd, former associate director for research and methodology and chief scientist at the United States Census Bureau. Abowd oversaw the implementation of differential privacy while at the Census Bureau. He says that the data from the 2020 census has been successfully used by red and blue states, as well as redistricting commissions, and that the only difference from previous census data was that no one would be able to &#8220;reconstruct accurate, identifiable individual data to enhance the other databases that they use (voter rolls, drivers licenses, etc.).&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>With a possible addition of the citizenship question, proposed by both Banks and the COUNT Act, Boyd says that census data would be even more sensitive, because that kind of information is not readily available in commercial data. &#8220;Plenty of data brokers would love to get their hands on that data.&#8221;</p>
+<p>Shortly after Senator Banks published his letter, Abowd found himself in the spotlight. On October 9, the X account @amuse posted a <a href="https://x.com/amuse/status/1976322825775436238?s=46">blog-length post </a>alleging that Abowd was the bureaucrat who &#8220;stole the House.&#8221; The post also alleged, without evidence, that the census results meant that &#8220;Republican states are projected to lose almost $90 billion in federal funds across the decade as a result of the miscounts. Democratic states are projected to gain $57 billion.&#8221; The account has more than 666,000 followers, including billionaire <a href="https://www.wired.com/story/elon-musk-attention-on-uk-tommy-robinson/">Elon Musk</a>, venture capitalist <a href="https://www.wired.com/story/uncanny-valley-podcast-11-marc-andreessen/">Marc Andreessen</a>, and US pardon attorney Ed Martin. (Abowd told WIRED he was &#8220;keeping an eye&#8221; on the post, which was viewed more than 360,000 times.) That same week, America First Legal, the conservative nonprofit founded by now deputy chief of staff for policy Stephen Miller, <a href="https://x.com/America1stLegal/status/1975990303375913219">posted</a> about a <a href="https://aflegal.org/press-release/america-first-legal-spearheads-landmark-legal-challenge-to-unconstitutional-2020-census/">complaint the group had recently filed in Florida</a>, challenging the 2020 census results, alleging they were based upon flawed statistical methods, one of which was differential privacy.</p>
+<p>The results of all this, experts tell WIRED, are that fewer people will feel safe participating in the census and that the government will likely need to spend even more resources to try to get an accurate count. Undercounting could lead to skewed numbers that could impact everything from congressional representation to the amount of funding a municipality might receive from the government.</p>
+<p>Neither the proposed COUNT Act nor Senator Banks&#8217; letter outlines an alternative to differential privacy. This means that the Census Bureau would likely be left with two options: Publish data that could put people at risk (which could lead to legal consequences for its staff), or publish less data. &#8220;At present, I do not know of any alternative to differential privacy that can safeguard the personal data that the US Census Bureau uses in their work on the decennial census,&#8221; says Abraham Flaxman, an associate professor of health metrics sciences at the University of Washington, whose team conducted the study on transgender youth.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Getting rid of differential privacy is not a &#8220;light thing,&#8221; says a Census employee familiar with the bureau&#8217;s privacy methods and who requested anonymity because they were not authorized to speak to the press. &#8220;It may be for the layperson. But the entire apparatus of disclosure avoidance at the bureau has been geared for the last almost 10 years on differential privacy.&#8221; According to the employee, there is no immediately clear method to replace differential privacy.</p>
+<p>Boyd says that the safest bet would simply be &#8220;what is known as suppression, otherwise known as &#8216;do not publish.&#8217;&#8221; (This, according to Garfinkel, was the backup plan if differential privacy had not been implemented for the 2020 census.)</p>
+<p>Another would be for the Census Bureau to only publish population counts, meaning that demographic information like the race or age of respondents would be left out. &#8220;This is a problem, because we use census data to combat discrimination,&#8221; says Boyd. &#8220;The consequences of losing this data is not being able to pursue equity.&#8221;</p>
+<p><i>This story originally appeared on </i><a href="http://wired.com"><i>wired.com.</i></a></p>
+
+
+          
+                  
+
+                  
+          </div>
