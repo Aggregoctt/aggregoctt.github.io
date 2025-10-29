@@ -1,0 +1,24 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/10/29/rsa-non-e-piu-quello-di-una-volta-i/
+date: '2025-10-29T03:51:52'
+excerpt: da un bel po' di tempo, ma non cambia in realtà molto.
+image: assets/media/ImtzCXNll9YHdhzEvADXjw-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: RSA non è più quello di una volta (I)
+---
+<div>
+			<p>Come probabilmente sapete, l&#8217;algoritmo RSA &#232; uno dei pi&#249; famosi algoritmi di crittografia a chiave pubblica: questo significa che chiunque pu&#242; mandarci un messaggio cifrato, usando appunto la chiave pubblica, ma solo noi possiamo decodificarlo. L&#8217;algoritmo &#232; tendenzialmente questo:</p>
+<p>(a) Scegliamo due numeri primi molto grandi <i>p</i> e <i>q</i>.<br>
+(b) Calcoliamo <i>n = pq</i> e &#966;(<i>n</i>) = (<i>p</i>&#8722;1)(<i>q</i>&#8722;1).<br>
+(c) Scegliamo una chiave di crittazione <i>e</i> che sia un numero relativamente primo rispetto a  &#966;(<i>n</i>). (La lettera &#8220;e&#8221; sta per &#8220;encryption&#8221;, se ve lo foste chiesti.)<br>
+(d) Calcoliamo la chiave di decrittazione <i>d</i> tale che <i>ed</i> = 1 (mod &#966;(<i>n</i>)).<br>
+(e) Pubblichiamo <i>e</i> e <i>n</i>, mantenendo segreti <i>d</i>, <i>p</i> e <i>q</i>.</p>
+<p>La logica della crittografia RSA &#232; che se conosciamo <i>p</i> e <i>q</i> possiamo calcolare &#8220;facilmente&#8221; <i>n</i>, &#966;(<i>n</i>) e <i>d</i>, ma non &#232; possibile trovare <i>d</i> senza fattorizzare <i>n</i>, e almeno per il momento la fattorizzazione non &#232; facile da fare, checch&#233; si dica delle meraviglie dei computer quantistici. </p>
+<p>La cosa buffa &#232; che di solito (pare nel 99,5% dei casi in un sondaggio compiuto da due ricercatori) i punti (b) e (c) si invertono: si sceglie prima <i>e</i> e poi si prendono i due primi, verificando che &#966;(<i>n</i>) sia primo rispetto a <i>e</i>. E soprattutto non si sceglie <i>e</i> a caso, ma si usa 65537. Come mai? John D. Cook lo <a href="https://www.johndcook.com/blog/2018/12/12/rsa-exponent/">spiega esaurientemente</a>: &#232; abbastanza grande perch&#233; &#966;(<i>n</i>) sia relativamente primo (se non lo &#232;, bisogna trovare altri <i>p</i> e <i>q</i>) ed essendo uno pi&#249; una potenza di 2 si risparmia sui calcoli. C&#8217;&#232; addirittura chi ha usato <i>e</i> = 3, ma li si esagera. In realt&#224;, continua Cook, usare un <i>e</i> troppo piccolo pu&#242; far correre il rischio che qualcuno che ha accesso al computer dove sono stati fatti i conti riesce a trovare alcuni dei bit del numero, e in questo caso ci sono algoritmi pi&#249; rapidi per decrittare a forza bruta. E scegliere un altro primo? Il punto &#232; che <i>e</i> non &#232; semplicemente una potenza di due pi&#249; uno, ma un <a href="https://it.wikipedia.org/wiki/Numero_di_Fermat">numero primo di Fermat</a>: ne conosciamo solo 5 (3, 7, 17, 257, 65537), e anche se ce ne fosse un altro sarebbe cos&#236; grande da risultare impraticabile&#8230;</p>
+<p>Insomma, all&#8217;atto pratico abbiamo una semplificazione dell&#8217;algoritmo, visto che non scegliamo pi&#249; <i>e</i>; ma la prossima volta vedremo che ce n&#8217;&#232; un&#8217;altra.</p>
+ 
+  					</div>
