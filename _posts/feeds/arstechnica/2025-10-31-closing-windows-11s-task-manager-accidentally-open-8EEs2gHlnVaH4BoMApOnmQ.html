@@ -1,0 +1,42 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2025/10/windows-11-task-manager-bug-makes-the-apps-close-button-do-the-exact-opposite/
+date: '2025-10-31T16:06:33'
+excerpt: Bug affects Windows 11 24H2 and 25H2 users using the October update preview.
+image: assets/media/8EEs2gHlnVaH4BoMApOnmQ-Q-SMMxZyKbyDbGlVMDf7LA.jpeg
+source: arstechnica
+tags:
+- Tech
+- windows 11
+- windows 11 24h2
+- windows 11 25h2
+title: Closing Windows 11’s Task Manager accidentally opens up more copies of Task
+  Manager
+---
+<div>
+                      
+                      
+          <p>One reason to use the Task Manager in Windows is to see if any of the apps running on your computer are misbehaving or using a disproportionate amount of resources. But what do you do when the misbehaving app is the Task Manager itself?</p>
+<p>After a recent Windows update, some users (including <a href="https://www.windowslatest.com/2025/10/30/windows-11-kb5067036-issue-task-manager-wont-close-and-duplicates-may-hurt-performance/">Windows Latest</a>) noticed that closing the Task Manager window was actually failing to close the app, leaving the executable running in memory. More worryingly, each time you open the Task Manager, it spawns a new process on top of the old one, which you can repeat essentially infinitely (or until your PC buckles under the pressure).</p>
+<p>Each instance of Task Manager takes up around 20MB of system RAM and hovers between 0 and 2 percent CPU usage&#8212;if you have just a handful of instances open, it&#8217;s unlikely that you&#8217;d notice much of a performance impact. But if you use Task Manager frequently or just go a long time between reboots, opening up two or three dozen copies of the process that are all intermittently using a fraction of your CPU can add up, leading to a potentially significant impact on performance and battery life.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+
+<p>This update won&#8217;t be present on all Windows 11 systems&#8212;just those that have installed the optional October update for Windows 11 24H2 and 25H2 (<a href="https://support.microsoft.com/en-us/topic/october-28-2025-kb5067036-os-builds-26200-7019-and-26100-7019-preview-ec3da7dc-63ba-4b1d-ac41-cf2494d2123a">KB5067036</a>). These preview updates don&#8217;t install themselves unless users initiate them manually or toggle a &#8220;get the latest updates as soon as they&#8217;re available&#8221; switch in the Windows Update settings.</p>
+<p>The Task Manager bug hasn&#8217;t landed on Microsoft&#8217;s <a href="https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2">list of known Windows 11 issues</a> yet, but multiple users and outlets have recreated the bug at this point, so it&#8217;s likely just a matter of time. We&#8217;ve reached out to Microsoft for comment and will update this piece if we get a response.</p>
+<p>In the meantime, those looking to&#160;actually close the Task Manager can do so via the command line (<code>taskkill /im taskmgr.exe /f</code>, which will close every open instance at once), or by highlighting each individual Task Manager instance in the Task Manager itself and clicking the &#8220;End task&#8221; button to close them.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
