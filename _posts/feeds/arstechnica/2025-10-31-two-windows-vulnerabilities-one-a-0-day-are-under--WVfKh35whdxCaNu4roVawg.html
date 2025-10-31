@@ -1,0 +1,45 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/10/two-windows-vulnerabilities-one-a-0-day-are-under-active-exploitation/
+date: '2025-10-31T21:03:56'
+excerpt: Both vulnerabilities are being exploited in wide-scale operations.
+image: assets/media/WVfKh35whdxCaNu4roVawg--ipw03QmpbTz_WCicu5p2A.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- microsoft windows vulnerabilities
+- zero-day
+- zero-day vulnerability
+title: Two Windows vulnerabilities, one a 0-day, are under active exploitation
+---
+<div>
+                      
+                      
+          <p>Two Windows vulnerabilities&#8212;one a zero-day that has been known to attackers since 2017 and the other a critical flaw that Microsoft initially tried and failed to patch recently&#8212;are under active exploitation in widespread attacks targeting a swath of the Internet, researchers say.</p>
+<p>The zero-day&#160;went undiscovered until <a href="https://www.trendmicro.com/en_us/research/25/c/windows-shortcut-zero-day-exploit.html">March</a>, when security firm Trend Micro said it had been under active exploitation since 2017, by as many as 11 separate advanced persistent threats (APTs). These APT groups, often with ties to nation-states, relentlessly attack specific individuals or groups of interest. Trend Micro went on to say that the groups were exploiting the vulnerability, then tracked as ZDI-CAN-25373, to install various known post-exploitation payloads on infrastructure located in nearly 60 countries, with the US, Canada, Russia, and Korea being the most common.</p>
+<h2>A large-scale, coordinated operation</h2>
+<p>Seven months later, Microsoft still hasn&#8217;t patched the vulnerability, which stems from a bug in the <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-shllink/16cb4ca1-9339-4d0c-a68d-bf1d6cc0f943">Windows Shortcut</a> binary format. The Windows component makes opening apps or accessing files easier and faster by allowing a single binary file to invoke them without having to navigate to their locations. In recent months, the ZDI-CAN-25373 tracking designation has been changed to CVE-2025-9491.</p>
+<p>On Thursday, security firm Arctic Wolf reported that it observed a China-aligned threat group, tracked as UNC-6384, exploiting CVE-2025-9491 in attacks against various European nations. The final payload is a widely used remote access trojan known as PlugX. To better conceal the malware, the exploit keeps the binary file encrypted in the RC4 format until the final step in the attack.</p>
+<p>&#8220;The breadth of targeting across multiple European nations within a condensed timeframe suggests either a large-scale coordinated intelligence collection operation or deployment of multiple parallel operational teams with shared tooling but independent targeting,&#8221; Arctic Wolf said. &#8220;The consistency in tradecraft across disparate targets indicates centralized tool development and operational security standards even if execution is distributed across multiple teams.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>With no patch available, Windows users are left with a limited number of options for fending off attacks. The most effective countermeasure is locking down .lnk functions by blocking or restricting the usage of .lnk files from untrusted origins. This can be done by setting the Windows Explorer to disable the automatic resolution of such files. The severity rating for CVE-2025-9491 is 7 out of 10.</p>
+<p>The other Windows vulnerability was patched last week, when Microsoft <a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-59287">issued</a> an unscheduled update. CVE-2025-59287 carries a severity rating of 9.8. It resides in the Windows Server Update Services, which administrators use to install, patch, or delete apps on vast fleets of servers. Microsoft previously attempted to patch the potentially wormable remote code execution vulnerability, caused by a serialization flaw, a week earlier in its October Patch Tuesday release. Publicly released proof-of-concept code quickly proved that the attempted fix was incomplete</p>
+<p>Around the same time that Microsoft released its second fix, security firm <a href="https://www.huntress.com/blog/exploitation-of-windows-server-update-services-remote-code-execution-vulnerability">Huntress</a> said it had observed the WSUS flaw being exploited starting on October 23. Security firm <a href="link">Eye</a> reported the same finding shortly after.</p>
+<p>Security firm Sophos <a href="https://news.sophos.com/en-us/2025/10/29/windows-server-update-services-wsus-vulnerability-abused-to-harvest-sensitive-data/">said</a> Wednesday that it has also observed CVE-2025-59287 being&#160;exploited &#8220;in multiple customer environments&#8221; since October 24.</p>
+<p>&#8220;The wave of activity, which spanned several hours and targeted internet-facing WSUS servers, impacted customers across a range of industries and did not appear to be targeted attacks,&#8221; Sophos said. &#8220;It is unclear if the threat actors behind this activity leveraged the public PoC or developed their own exploit.&#8221;</p>
+<p>Administrators should investigate immediately if their devices are vulnerable to either of the ongoing attacks. There&#8217;s no indication when Microsoft will release a patch for CVE-2025-9491.</p>
+
+
+          
+                  
+
+                  
+          </div>
