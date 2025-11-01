@@ -1,0 +1,65 @@
+---
+author: John Timmer
+canonical_url: https://arstechnica.com/science/2025/10/polyurethane-is-the-latest-polymer-broken-down-by-designer-enzymes/
+date: '2025-10-31T22:35:50'
+excerpt: Given a dozen hours, the enzyme can turn a foam pad into reusable chemicals.
+image: assets/media/02KmrnW8SgDVZjsFX0oVbw-XT97BjRa0ktMHPyKOrxztw.jpeg
+source: arstechnica
+tags:
+- AI
+- Science
+- biochemistry
+- Biology
+- chemistry
+- enzymes
+- neural networks
+- polymers
+- polyurethane
+- protein design
+- proteins
+title: Neural network finds an enzyme that can break down polyurethane
+---
+<div>
+                      
+                      
+          <p>You&#8217;ll often hear plastic pollution referred to as a problem. But the reality is that it&#8217;s multiple problems. Depending on the properties we need, we form plastics out of different polymers, each of which is held together by a distinct type of chemical bond. So the method we use to break down one type of polymer may be incompatible with the chemistry of another.</p>
+<p>That problem is why, even though we&#8217;ve had success finding enzymes that break down common plastics like <a href="https://arstechnica.com/science/2025/02/using-ai-to-design-proteins-is-now-easy-making-enzymes-remains-hard/">polyesters</a> and <a href="https://arstechnica.com/science/2020/04/researchers-engineer-enzyme-to-break-down-plastic-bottles/">PET</a>, they&#8217;re only partial solutions to plastic waste. However, researchers aren&#8217;t sitting back and basking in the triumph of partial solutions, and they&#8217;ve now got very sophisticated protein design tools to help them out.</p>
+<p>That&#8217;s the story behind a completely new enzyme that researchers developed to break down polyurethane, the polymer commonly used to make foam cushioning, among other things. The new enzyme is compatible with an industrial-style recycling process that breaks the polymer down into its basic building blocks, which can be used to form fresh polyurethane.</p>
+<h2>Breaking down polyurethane</h2>
+ 
+
+<p>The new paper that describes the development of this enzyme lays out the scale of the problem: In 2024, we made 22 million metric tons of polyurethane. The urethane bond that defines these involves a nitrogen bonded to a carbon that in turn is bonded to two oxygens, one of which links into the rest of the polymer. The rest of the polymer, linked by these bonds, can be fairly complex and often contains ringed structures related to benzene.</p>
+<p>Digesting polyurethanes is challenging. Individual polymer chains are often extensively cross-linked, and the bulky structures can make it difficult for enzymes to get at the bonds they can digest. A chemical called diethylene glycol can partially break these molecules down, but only at elevated temperatures. And it leaves behind a complicated mess of chemicals that can&#8217;t be fed back into any useful reactions. Instead, it&#8217;s typically incinerated as hazardous waste.</p>
+
+          
+                       
+                   
+                  
+
+              
+          
+          
+<p>To find something that could work better, the research team focused on finding an enzyme that could be integrated into the process with diethylene glycol. To begin, they tested all the enzymes reported in the literature as capable of breaking down polyurethanes. After testing all 15 of them, only three had decent activity against the polymer they were testing with, and they largely failed to break the polymer down to its constituent starting materials.</p>
+<p>So, the researchers focused on the enzyme that had the highest activity, searching for related proteins in public databases, and using the AlphaFold database of predicted structures to identify more distantly related proteins that folded up into a similar structure. On their own, none of these worked especially well either. But they turned out to be useful because they could be used to train an AI to look for sequences that could fold up into a similar structure.</p>
+<h2>A new enzyme</h2>
+<p>The tool the team started working with is called <a href="https://github.com/Wublab/Pythia">Pythia-Pocket</a>, which is a neural network that specializes in determining whether any given amino acid in a protein is likely to contact whatever chemicals that structure can bind, along with any other functional features. That was combined with plain old Pythia (also a neural network), which predicts whether any given protein is likely to form a stable structure.</p>
+<p>The researchers reasoned that a good candidate for breaking down polyurethane would have a number of features. It would look, structurally, like the enzyme they had already been working with. It would also face a trade-off between having a structure that was ordered enough to form a similar binding pocket that would have enzymatic activity, but not so rigid that it couldn&#8217;t flexibly fit around different types of polyurethanes. To strike this balance, the team used a message-passing interface that updated amino acid positions with each pass and balanced optimizing the structure and binding pocket. They called the resulting software GRASE, for graph neural network-based recommendation of active and stable enzymes.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The results were pretty spectacular. Of the 24 most highly rated proteins the software evaluated, 21 of them showed some catalytic activity, and eight did better than the best enzyme we had known about previously. The best of these designs had 30 times the activity of that enzyme.</p>
+<p>Things got even better when the researchers mixed in the diethylene glycol and heated the mixture up to 50&#176; C. Under those conditions, the newly designed enzyme was over 450 times as active as the best-performing natural enzyme. It took 12 hours, but it could break down 98 percent of the polyurethane in the reaction mixture. And the enzyme was stable enough that it could be given a fresh mixture of polyurethane two additional times before its enzymatic activity started to wear out.</p>
+<p>Shifting from lab tests to kilogram-scale digestion showed the same thing: 95 percent or more of the material was broken down into the starting materials the polyurethane was made from.</p>
+<p>The researchers highlight the fact that their tools go beyond simply focusing on the structure formed by the protein, but incorporate information about its function, such as its stability and the amino acids that are likely to interact with the material it&#8217;s digesting. And they suggest that these approaches may tell us more about how to get functional proteins by focusing on forming a similar 3D structure.</p>
+<p>Science, 2025. DOI: <a href="http://dx.doi.org/10.1126/science.adw4487">10.1126/science.adw4487</a> (<a href="http://arstechnica.com/science/news/2010/03/dois-and-their-discontents-1/">About DOIs</a>).</p>
+
+
+          
+                  
+
+                  
+          </div>
