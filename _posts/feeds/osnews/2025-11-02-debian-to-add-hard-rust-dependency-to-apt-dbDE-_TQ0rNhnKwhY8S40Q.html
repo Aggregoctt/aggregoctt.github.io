@@ -1,0 +1,38 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143696/debian-to-add-hard-rust-dependency-to-apt/
+date: '2025-11-02T22:52:20'
+excerpt: 'It seems like a number of Debian ports are going to face difficult times
+  over the coming months. Debian developer Julian Andres Klode has sent a message
+  to the Debian mailing lists that APT will very soon start requiring Rust. I plan
+  to introduce hard Rust dependencies and Rust code into APT, no earlier than May
+  2026. This extends at first to the Rust compiler and standard library, and the Sequoia
+  ecosystem. In particular, our code to parse .deb, .ar, .tar, and the HTTP signature
+  verification code would strongly benefit from memory safe languages and a stronger
+  approach to unit testing. ↫ Julian Andres Klode The problem for a lot of architectures
+  that Debian supports, in one way or another, is that Rust and its toolchain simply
+  aren&#8217;t available for them. As such, Julian Andres Klode states, rather directly,
+  that these architectures have about six months to get themselves a full Rust toolchain,
+  or sunset their Debian ports. The Debian PA-RISC (hppa) and Alpha ports, for instance,
+  do not have a Rust toolchain port, and most likely won&#8217;t be getting one either,
+  especially not within six months. The reasoning for moving towards a hard Rust dependency
+  for APT is the same as it is in every other similar case: Debian&#8217;s and APT&#8217;s
+  developers want to be able to make use of modern tools and technologies, even if
+  that means dead architectures get left behind. As much as I am a massive fan of
+  retro-architectures like PA-RISC, I really don&#8217;t want otherwise modern Linux
+  distributions to eschew modern tools and technologies just because they&#8217;re
+  not available for an architecture that died in 2005. I own and use the last and
+  most powerful PA-RISC workstation running HP-UX as a retro platform, so I definitely
+  care &#8211; but I really don&#8217;t expect Debian or Fedora or whatever to waste
+  any resources on supporting them if that means holding the distributions back for
+  everyone else using it on actually modern platforms. If there&#8217;s a large enough
+  community of people around such architectures, they&#8217;ll keep the Linux train
+  running. If not, well, that&#8217;s life.'
+image: null
+source: osnews
+tags:
+- Debian
+title: Debian to add hard Rust dependency to APT
+---
+<div><p>It seems like a number of Debian ports are going to face difficult times over the coming months. Debian developer Julian Andres Klode has sent a message to the Debian mailing lists that APT will very soon start requiring Rust.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>I plan to introduce hard Rust dependencies and Rust code into APT, no earlier than May 2026. This extends at first to the Rust compiler and standard library, and the Sequoia ecosystem.</p><p>In particular, our code to parse .deb, .ar, .tar, and the HTTP signature verification code would strongly benefit from memory safe languages and a stronger approach to unit testing.</p>
+<a href="https://lists.debian.org/debian-devel/2025/10/msg00285.html">&#8619; Julian Andres Klode</a></blockquote><p>The problem for a lot of architectures that Debian supports, in one way or another, is that Rust and its toolchain simply aren&#8217;t available for them. As such, Julian Andres Klode states, rather directly, that these architectures have about six months to get themselves a full Rust toolchain, or sunset their Debian ports. The Debian PA-RISC (hppa) and Alpha ports, for instance, do not have a Rust toolchain port, and most likely won&#8217;t be getting one either, especially not within six months.</p><p>The reasoning for moving towards a hard Rust dependency for APT is the same as it is in every other similar case: Debian&#8217;s and APT&#8217;s developers want to be able to make use of modern tools and technologies, even if that means dead architectures get left behind. As much as I am a massive fan of retro-architectures like PA-RISC, I really don&#8217;t want otherwise modern Linux distributions to eschew modern tools and technologies just because they&#8217;re not available for an architecture that <a href="https://en.wikipedia.org/wiki/PA-8000#PA-8900">died in 2005</a>. I own and use the last and most powerful PA-RISC workstation running HP-UX as a retro platform, so I definitely care &#8211; but I really don&#8217;t expect Debian or Fedora or whatever to waste any resources on supporting them if that means holding the distributions back for everyone else using it on actually modern platforms.</p><p>If there&#8217;s a large enough community of people around such architectures, they&#8217;ll keep the Linux train running. If not, well, that&#8217;s life.</p></div>
