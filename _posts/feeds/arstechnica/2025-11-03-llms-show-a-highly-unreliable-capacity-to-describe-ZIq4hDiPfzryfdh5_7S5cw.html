@@ -1,0 +1,54 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/ai/2025/11/llms-show-a-highly-unreliable-capacity-to-describe-their-own-internal-processes/
+date: '2025-11-03T20:08:40'
+excerpt: Anthropic finds some LLM "self-awareness," but "failures of introspection
+  remain the norm."
+image: assets/media/ZIq4hDiPfzryfdh5_7S5cw-s-9mnwXsqB-LtOaSHUTUeQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Antrhopic
+- clause
+- introspection
+- LLM
+- self-awareness
+title: LLMs show a “highly unreliable” capacity to describe their own internal processes
+---
+<div>
+                      
+                      
+          <p>If you ask an LLM to explain its own reasoning process, it may well simply <a href="https://arstechnica.com/ai/2025/04/researchers-concerned-to-find-ai-models-hiding-their-true-reasoning-processes/">confabulate a plausible-sounding explanation</a> for its actions based on text found in its training data. To get around this problem, Anthropic is expanding on <a href="https://arstechnica.com/ai/2024/05/heres-whats-really-going-on-inside-an-llms-neural-network/">its previous research</a> into <a href="https://arstechnica.com/ai/2025/03/researchers-astonished-by-tools-apparent-success-at-revealing-ais-hidden-motives/">AI interpretability</a> with <a href="https://www.anthropic.com/research/introspection">a new study that aims to measure LLMs&#8217; actual so-called &#8220;introspective awareness&#8221; of their own inference processes.</a></p>
+<p>The <a href="https://transformer-circuits.pub/2025/introspection/index.html">full paper on &#8220;Emergent Introspective Awareness in Large Language Models&#8221;</a> uses some interesting methods to separate out the metaphorical &#8220;thought process&#8221; represented by an LLM&#8217;s artificial neurons from simple text output that purports to represent that process. In the end, though, the research finds that current AI models are &#8220;highly unreliable&#8221; at describing their own inner workings and that &#8220;failures of introspection remain the norm.&#8221;</p>
+<h2>Inception, but for AI</h2>
+<p>Anthropic&#8217;s new research is centered on a process it calls &#8220;concept injection.&#8221; The method starts by comparing the model&#8217;s internal activation states following both a control prompt and an experimental prompt (e.g. an &#8220;ALL CAPS&#8221; prompt versus the same prompt in lower case). Calculating the differences between those activations across billions of internal neurons creates what Anthropic calls a &#8220;vector&#8221; that in some sense represents how that concept is modeled in the LLM&#8217;s internal state.</p>
+<p>For this research, Anthropic then &#8220;injects&#8221; those concept vectors into the model, forcing those particular neuronal activations to a higher weight as a way of &#8220;steering&#8221; the model toward that concept. From there, they conduct a few different experiments to tease out whether the model displays any awareness that its internal state has been modified from the norm.</p>
+<p>When asked directly whether it detects any such &#8220;injected thought,&#8221; the tested Anthropic models did show at least some ability to occasionally detect the desired &#8220;thought.&#8221; When the &#8220;all caps&#8221; vector is injected, for instance, the model might respond with something along the lines of &#8220;I notice what appears to be an injected thought related to the word &#8216;LOUD&#8217; or &#8216;SHOUTING,'&#8221; without any direct text prompting pointing it toward those concepts.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+
+<p>Unfortunately for AI self-awareness boosters, this demonstrated ability was extremely inconsistent and brittle across repeated tests. The best-performing models in Anthropic&#8217;s tests&#8212;Opus 4 and 4.1&#8212;topped out at correctly identifying the injected concept just 20 percent of the time.</p>
+<p>In a similar test where the model was asked &#8220;Are you experiencing anything unusual?&#8221; Opus 4.1 improved to a 42 percent success rate that nonetheless still fell below even a bare majority of trials. The size of the &#8220;introspection&#8221; effect was also highly sensitive to which internal model layer the insertion was performed on&#8212;if the concept was introduced too early or too late in the multi-step inference process, the &#8220;self-awareness&#8221; effect disappeared completely.</p>
+<h2>Show us the mechanism</h2>
+<p>Anthropic also took a few other tacks to try to get an LLM&#8217;s understanding of its internal state. When asked to &#8220;tell me what word you&#8217;re thinking about&#8221; while reading an unrelated line, for instance, the models would sometimes mention a concept that had been injected into its activations. And when asked to defend a forced response matching an injected concept, the LLM would sometimes apologize and &#8220;confabulate an explanation for why the injected concept came to mind.&#8221; In every case, though, the result was highly inconsistent across multiple trials.</p>
+ 
+
+<p>In the paper, the researchers put some positive spin on the apparent fact that &#8220;current language models possess some functional introspective awareness of their own internal states&#8221; [emphasis added]. At the same time, they acknowledge multiple times that this demonstrated ability is much too brittle and context-dependent to be considered dependable. Still, Anthropic hopes that such features &#8220;may continue to develop with further improvements to model capabilities.&#8221;</p>
+<p>One thing that might stop such advancement, though, is an overall lack of understanding of the precise mechanism leading to these demonstrated &#8220;self-awareness&#8221; effects. The researchers theorize about &#8220;anomaly detection mechanisms&#8221; and &#8220;consistency-checking circuits&#8221; that might develop organically during the training process to &#8220;effectively compute a function of its internal representations&#8221; but don&#8217;t settle on any concrete explanation.</p>
+<p>In the end, it will take further research to understand how, exactly, an LLM even begins to show any understanding about how it operates. For now, the researchers acknowledge, &#8220;the mechanisms underlying our results could still be rather shallow and narrowly specialized.&#8221; And even then, they hasten to add that these LLM capabilities &#8220;may not have the same philosophical significance they do in humans, particularly given our uncertainty about their mechanistic basis.&#8221;</p>
+
+
+          
+                   
+             
+            
+
+                  
+          </div>
