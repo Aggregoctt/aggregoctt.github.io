@@ -1,0 +1,18 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/11/05/rsa-non-e-piu-quello-di-una-volta-ii/
+date: '2025-11-05T03:51:30'
+excerpt: La phi di Eulero non è davvero necessaria, anche se cambia in realtà poco.
+image: assets/media/0B1d8Uy93iMM7G835HhfJA-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: RSA non è più quello di una volta (II)
+---
+<div>
+			<p>La scorsa settimana <a href="https://xmau.com/wp/notiziole/2025/10/29/rsa-non-e-piu-quello-di-una-volta-i/">ho scritto</a> che anche se la struttura logica dell&#8217;algoritmo RSA ha cinque parametri, ma la chiave di cifratura <i>e</i> &#232; quasi sempre settata a 65537, per ragioni di efficienza computazionale e perch&#233; non dovrebbe dare problemi di sicurezza (almeno nei casi normali). Ma c&#8217;&#232; anche un&#8217;altra modifica che &#232; stata fatta negli anni, sempre per ridurre il costo computazionale (che nel caso della crittografia a chiave pubblica &#232; molto pi&#249; alto che nei sistemi di crittografia simmetrici).</p>
+<p>Ricordo che nell&#8217;algoritmo RSA viene calcolato &#966;(<i>n</i>) = (<i>p</i>&#8722;1)(<i>q</i>&#8722;1), dove <i>p</i> e q sono i numeri primi di partenza, il cui prodotto &#232; <i>n</i>, e &#966;(<i>n</i>) &#232; la funzione &#966; di Eulero, cio&#232; quanti sono i numeri minori di <i>n</i> e che non hanno fattori primi in comune con <i>n</i>. Nel nostro caso &#232; facile calcolare il &#8220;toziente&#8221; (altro nome con cui &#232; nota la funzione &#966; di Eulero), proprio perch&#233; <i>p</i> e <i>q</i> sono primi. </p>
+<p>Non &#232; per&#242; necessario usare &#966;(<i>n</i>) per scegliere un <i>d</i> tale che <i>ed</i> = 1 (mod &#966;(<i>n</i>)). &#200; infatti sufficiente usare la funzione di Carmichael &#955;(<i>n</i>), definita come il pi&#249; piccolo intero positivo <i>m</i> tale che <i>am</i> &#8801; 1 (mod <i>n</i>) per ogni <i>a</i> coprimo con <i>n</i>. Si pu&#242; dimostrare che &#955;(<i>n</i>) &#232; un divisore di &#966;(<i>n</i>), e quindi &#232; un numero pi&#249; piccolo e pertanto le operazioni di computazione sono pi&#249; brevi. Ma di quanto lo sono? Di un fattore MCD(<i>p</i>&#8722;1, <i>q</i>&#8722;1). Chiaramente entrambi i numeri sono pari e quindi c&#8217;&#232; un fattore 2, ma si potrebbe sperare che ci sia qualcosa in pi&#249;. John Cook <a href="https://www.johndcook.com/blog/2025/10/06/a-quiet-change-to-rsa/">ha fatto qualche prova</a>, e ha trovato che su 100 coppie di numeri generati casualmente, la mediana del MCM &#232; 2 (quindi in almeno met&#224; dei casi il fattore &#232; effettivamente 2); c&#8217;&#232; stato un caso in cui si &#232; arrivati a 2370, mentre il valore medio (poco utile in questo caso, perch&#233; a noi serve una sola coppia) &#232; stato 35,44. In pratica, insomma, abbiamo quasi sempre 2 o 4 come fattore comune, In altri termini, se dobbiamo usare spesso una chiave pu&#242; valer la pena di cercare una coppia di primi per cui &#955;(<i>n</i>) &#232; effettivamente molto minore di &#966;(<i>n</i>), altrimenti possiamo far finta di niente.</p>
+ 
+  					</div>
