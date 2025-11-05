@@ -1,0 +1,582 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2025/11/what-i-do-to-clean-up-a-clean-install-of-windows-11-23h2-and-edge/
+date: '2025-11-05T15:42:57'
+excerpt: A new major Windows 11 release means a new guide for cleaning up the OS.
+image: assets/media/Ay6LNPX0R2TvWVfkUyaXHQ-OYoQv7oyz7l0I3Xd8kG-NA.jpeg
+source: arstechnica
+tags:
+- Features
+- Tech
+- evergreen
+- install
+- windows 11
+title: How to declutter, quiet down, and take the AI out of Windows 11 25H2
+---
+<div>
+            
+  
+  
+  
+  
+    
+      
+   
+  <span class="upper-deck__text">
+    cleanup on aisle 11
+  </span>
+
+    
+
+    <h1 class="dusk:text-gray-100 mb-3 font-serif text-4xl font-bold text-gray-700 dark:text-gray-100 md:text-6xl md:leading-[1.05]">
+      How to declutter, quiet down, and take the AI out of Windows 11 25H2
+    </h1>
+
+    <p class="text-gray-550 dark:text-gray-250 dusk:text-gray-250 my-3 text-2xl leading-[1.1] md:leading-[1.2]">
+      A new major Windows 11 release means a new guide for cleaning up the OS.
+    </p>
+
+    
+      <a class="text-orange-400 hover:text-orange-500" href="https://arstechnica.com/author/andrew_cunningham/">
+    Andrew Cunningham
+  </a>
+  &#8211;
+  <span class="whitespace-nowrap">
+    
+      Nov 5, 2025 10:42 am
+    
+    <span class="text-gray-550">|</span>  
+  </span>
+    
+
+     
+
+     
+  
+
+
+
+  
+
+     
+    
+
+     
+    
+      
+      
+        
+          
+             
+            <span class="font-impact text-gray-350 text-base font-semibold uppercase">Story text</span>
+          
+           
+        
+
+        
+          Size
+ 
+
+
+Width
+      <span class="text-gray-400">*</span>
+  
+ 
+
+
+Links
+ 
+
+
+  
+    <span class="mb-0 italic">* Subscribers only</span><br>
+    &#160;&#160;<a href="/store/product/subscriptions/" class="text-green-400">Learn more</a>
+  
+
+          
+          
+        
+      
+    
+    
+  
+
+
+  
+
+  
+      
+    
+    
+      
+
+        
+        
+                      
+                      
+           
+<p>It&#8217;s that time of year again&#8212;temperatures are dropping, leaves are changing color, and Microsoft is gradually rolling out another major yearly update to Windows 11.</p>
+<p>The Windows 11 25H2 update is relatively minor compared to last year&#8217;s 24H2 update&#160;(the &#8220;25&#8221; here is a reference to the year the update was released, while the &#8220;H2&#8221; denotes that it was released in the second half of the year, a vestigial suffix from when Microsoft would release two major Windows updates per year). The 24H2 update came with some major under-the-hood overhauls of core Windows components and significant performance improvements for the Arm version; 25H2 is largely 24H2, but with a rolled-over version number to keep it in line with <a href="https://learn.microsoft.com/en-us/lifecycle/products/windows-11-home-and-pro">Microsoft&#8217;s timeline for security updates and tech support</a>.</p>
+<p>But Microsoft&#8217;s continuous update cadence for Windows 11 means that even the 24H2 version as it currently exists isn&#8217;t the same one Microsoft released a year ago.</p>
+<p>To keep things current, we&#8217;ve combed through our Windows cleanup guide, updating it for the current build of Windows 11 25H2 (26200.7019) to help anyone who needs a fresh Windows install or who is finally updating from Windows 10 now that Microsoft is <a href="https://arstechnica.com/gadgets/2025/10/windows-10-support-ends-today-but-its-just-the-first-of-many-deaths/">winding down support for it</a>. We&#8217;ll outline dozens of individual steps you can take to clean up a &#8220;clean install&#8221; of Windows 11, which has taken an especially user-hostile attitude toward advertising and forcing the use of other Microsoft products.</p>
+<p>As before, this is not a guide about creating an extremely stripped-down, telemetry-free version of Windows; we stick to the things that Microsoft officially supports turning off and removing. There are plenty of experimental hacks and scripts that take it a few steps farther, and/or automate some of the steps we outline here&#8212;NTDev&#8217;s <a href="https://github.com/ntdevlabs/tiny11builder">Tiny11 project</a> is one&#8212;but removing built-in Windows components can cause unexpected compatibility and security problems, and Tiny11 has historically had issues with basic table-stakes stuff like &#8220;installing security updates.&#8221;</p>
+
+          
+                       
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>These guides capture moments in time, and regular monthly Windows patches, app updates downloaded through the Microsoft Store, and other factors all can and will cause small variations from our directions. You may also see apps or drivers specific to your PC&#8217;s manufacturer. This guide also doesn&#8217;t cover the additional bloatware that may come out of the box with a new PC, starting instead with a freshly installed copy of Windows from a USB drive.</p>
+
+  <span class="toc-title font-impact block text-base font-semibold uppercase text-green-400">Table of Contents</span>
+
+   
+
+
+ 
+<h2>Starting with Setup: Avoiding Microsoft account sign-in</h2>
+<p>The most contentious part of Windows 11&#8217;s setup process relative to earlier Windows versions is that it mandates a Microsoft account sign-in, with none of the readily apparent &#8220;limited account&#8221; fallbacks that existed in Windows 10. As of Windows 11 22H2, that&#8217;s true of both the Home and Pro editions.</p>
+<p>There are two reasons I can think of not to sign in with a Microsoft account. The first is that you want nothing to do with a Microsoft account, thank you very much. Signing in makes Windows bombard you with more Microsoft 365, OneDrive, and Game Pass subscription upsells since all you need to do is add them to an account that already exists, and Windows setup will offer subscriptions to each if you sign in first.</p>
+<p>The second&#8212;which describes my situation&#8212;is that you do use a Microsoft account because it offers some handy benefits like automated encryption of your local drive (having those encryption keys tied to my account has saved me a couple of times) or syncing of browser info and some preferences. But you don&#8217;t want to sign in at setup, either because you don&#8217;t want to be bothered with the extra upsells or you prefer your user folder to be located at &#8220;C:\Users\Andrew&#8221; rather than &#8220;C:\Users\.&#8221;</p>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>Regardless of your reasoning, if you don&#8217;t want to bother with sign-in at setup, you have a few different options:</p>
+<h3>Use the command line</h3>
+<p>During Windows 11 Setup, after selecting a language and keyboard layout but before connecting to a network, hit Shift+F10 to open the command prompt (depending on your keyboard, you may also need to hit the Fn key before pressing F10). Type <code>OOBE\BYPASSNRO</code>, hit Enter, and wait for the PC to reboot.</p>
+<p>When it comes back, click &#8220;I don&#8217;t have Internet&#8221; on the network setup screen, and you&#8217;ll have recovered the option to use &#8220;limited setup&#8221; (aka a local account) again, like older versions of Windows 10 and 11 offered.</p>
+<p>This option <a href="https://arstechnica.com/gadgets/2025/03/new-windows-11-build-makes-mandatory-microsoft-account-sign-in-even-more-mandatory/">has been removed from some Windows 11 testing builds</a>, but it still works as of this writing in 25H2. We may see this option removed in a future update to Windows.</p>
+<h3>For Windows 11 Pro</h3>
+<p>For Windows 11 Pro users, there&#8217;s a command-line-free workaround you can take advantage of.</p>
+<p>Proceed through the Windows 11 setup as you normally would, including connecting to a network and allowing the system to check for updates. Eventually, you&#8217;ll be asked whether you&#8217;re setting your PC up for personal use or for &#8220;work or school.&#8221;</p>
+<p>Select the &#8220;work or school&#8221; option, then &#8220;sign-in options,&#8221; at which point you&#8217;ll finally be given a button that says &#8220;domain join instead.&#8221; Click this to indicate you&#8217;re planning to join the PC to a corporate domain (even though you aren&#8217;t), and you&#8217;ll see the normal workflow for creating a &#8220;limited&#8221; local account.</p>
+<p>The downside is that you&#8217;re starting your relationship with your new Windows install by lying to it. But hey, if you&#8217;re using the AI features, your computer is probably going to lie to you, too. It all balances out.</p>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+ 
+<h3>Using the Rufus tool</h3>
+ 
+<p>The Rufus tool can streamline a few of the more popular tweaks and workarounds for Windows 11 install media. Rufus is a venerable open source app for creating bootable USB media for both Windows and Linux. If you find yourself doing a lot of Windows 11 installs and don&#8217;t want to deal with Microsoft accounts, Rufus lets you tweak the install media itself so that the &#8220;limited setup&#8221; options always appear, no matter which edition of Windows you&#8217;re using.</p>
+<p>To start, grab <a href="https://rufus.ie/en/">Rufus</a> and then a fresh <a href="https://www.microsoft.com/software-download/windows11">Windows 11 ISO file</a> from Microsoft. You&#8217;ll also want an 8GB or larger USB drive; I&#8217;d recommend a 16GB or larger drive that supports USB 3.0 speeds, both to make things go a little faster and to leave yourself extra room for drivers, app installers, and anything else you might want to set a new PC up for the first time. (I also like <a href="http://www.amazon.com/dp/B0CKJYS8JS">this SanDisk drive</a> that has a USB-C connector on one end and a USB-A connector on the other to ensure compatibility with all kinds of PCs.)</p>
+<p>Fire up Rufus, select your USB drive and the Windows ISO, and hit Start to copy over all of the Windows files. After you hit Start, you&#8217;ll be asked if you want to disable some system requirements checks, remove the Microsoft account requirement, or turn off all the data collection settings that Windows asks you about the first time you set it up. What you do here is up to you; I usually turn off the sign-in requirement, but disabling the Secure Boot and TPM checks doesn&#8217;t stop those features from working once Windows is installed and running.</p>
+<h3>The rest of Windows 11 setup</h3>
+<p>The main thing I do here, other than declining any and all Microsoft 365 or Game Pass offers, is turn all the toggles on the privacy settings screen to &#8220;no.&#8221; This covers location services, the Find My Device feature, and four toggles that collectively send a small pile of usage and browsing data to Microsoft that it uses &#8220;to enhance your Microsoft experiences.&#8221; Pro tip: Use the Tab key and spacebar to quickly toggle these without clicking or scrolling.</p>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>Of these, I can imagine enabling Find My Device if you&#8217;re worried about theft or location services if you want Windows and apps to be able to access your location. But I tend not to send any extra telemetry or browsing data other than the basics (the only exception being on machines I enroll in the Windows Insider Preview program for testing, since Microsoft requires you to send more detailed usage data from those machines to help it test its beta software). If you want to change any of these settings after setup, they&#8217;re all in the Settings app under Privacy &amp; Security.</p>
+<p>If you have signed in with a Microsoft account during setup, you can expect to see several additional setup screens that aren&#8217;t offered when you&#8217;re signing in with a local account, including attempts to sell Microsoft 365, OneDrive, and Xbox Game Pass subscriptions. Accept or decline these offers as desired.</p>
+<h2>Cleaning up Windows 11</h2>
+ 
+
+<p>Reboot once this is done, and you&#8217;ll be at the Windows desktop. Start by installing any drivers you need, plus Windows updates.</p>
+<p>When you first connect to the Internet, Windows may or may not decide to automatically pull down a few extraneous third-party apps and app shortcuts, things like Spotify or Grammarly&#8212;this has happened to me consistently in most Windows 11 installs I&#8217;ve done over the years, though it hasn&#8217;t generally happened on the 24H2 and 25H2 PCs I&#8217;ve set up.</p>
+ 
+<p>Open the Start menu and right-click each of the apps you don&#8217;t want to remove the icons for and/or uninstall. Some of these third-party apps are just stubs that won&#8217;t actually be installed to your computer until you try to run them, so removing them directly from the Start menu will get rid of them entirely.</p>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+ 
+
+<p>The other apps and services included in a fresh Windows install generally at least have the excuse of being first-party software, though their usefulness will be highly user-specific: Xbox, the new Outlook app, Clipchamp, and LinkedIn are the ones that stand out, plus the ad-driven free-to-play version of the Solitaire suite that replaced the simple built-in version during the Windows 8 era.</p>
+<p>Rather than tell you what I remove, I&#8217;ll tell you everything that&#160;can be removed from the Installed Apps section of the Settings app (also quickly accessible by right-clicking the Start button in the taskbar). You can make your own decisions here; I generally leave the in-box versions of classic Windows apps like Sound Recorder and Calculator while removing things I don&#8217;t use, like To Do or Clipchamp.</p>
+<p>This list should be current for a fresh, fully updated install of Windows 11 25H2, at least in the US, but it doesn&#8217;t include any apps that might be specific to your hardware, like audio or GPU settings apps. Some individual apps may or may not appear as part of your Windows install.</p>
+<ul>
+<li>Calculator</li>
+<li>Camera</li>
+<li>Clock (may also appear as Windows Clock)</li>
+<li>Copilot</li>
+<li>Family</li>
+<li>Feedback Hub</li>
+<li>Game Assist</li>
+<li>Media Player</li>
+<li>Microsoft 365 Copilot</li>
+<li>Microsoft Clipchamp</li>
+<li>Microsoft OneDrive: Removing this, if you don&#8217;t use it, should also get rid of notifications about OneDrive and turning on Windows Backup.</li>
+<li>Microsoft Teams</li>
+<li>Microsoft To Do</li>
+<li>News</li>
+<li>Notepad</li>
+<li>Outlook for Windows</li>
+<li>Paint</li>
+<li>Photos</li>
+<li>Power Automate</li>
+<li>Quick Assist</li>
+<li>Remote Desktop Connection</li>
+<li>Snipping Tool</li>
+<li>Solitaire &amp; Casual Games</li>
+<li>Sound Recorder</li>
+<li>Sticky Notes</li>
+<li>Terminal</li>
+<li>Weather</li>
+<li>Web Media Extensions</li>
+<li>Xbox</li>
+<li>Xbox Live</li>
+</ul>
+<p>In Windows 11 23H2, Microsoft moved almost all of Windows&#8217; non-removable apps to a System Components section, where they can be configured but not removed; this is where things like Phone Link, the Microsoft Store, Dev Home, and the Game Bar have ended up. The exception is Edge and its associated updater and WebView components; these are not removable, but they aren&#8217;t listed as &#8220;system components&#8221; for some reason, either.</p>
+
+          
+                   
+              
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<h3>Start, Search, Taskbar, and lock screen decluttering</h3>
+<p>Microsoft has been on a yearslong crusade against unused space in the Start menu and taskbar, which means there&#8217;s plenty here to turn off.</p>
+<ul>
+<li><strong>Right-click an empty space on the desktop, click Personalize</strong>, and click any of the other built-in Windows themes to turn off the Windows Spotlight dynamic wallpapers and the &#8220;Learn about this picture&#8221; icon.</li>
+<li><strong>Right-click the Taskbar and click Taskbar settings</strong>. I usually disable the <strong>Widgets</strong> board; you can leave this if you want to keep the little local weather icon in the lower-left corner of your screen, but this space is also sometimes used to present junky news articles from the Microsoft Start service.
+<ul>
+<li>If you want to keep Widgets enabled but clean it up a bit, open the Widgets menu, click the Settings gear in the top-right corner, scroll to &#8220;Show or hide feeds,&#8221; and turn the feed off. This will keep the weather, local sports scores, stocks, and a few other widgets, but it will get rid of the spammy news articles.</li>
+</ul>
+</li>
+<li><strong>Also in the Taskbar settings</strong>, I usually change the <strong>Search</strong> field to &#8220;search icon only&#8221; to get rid of the picture in the search field and reduce the amount of space it takes up. Toggle the different settings until you find one you like.</li>
+</ul>
+ 
+
+ 
+<ul>
+<li>Open <strong>Settings &gt; Privacy &amp; Security &gt; Recommendations &amp; offers</strong> and disable &#8220;Personalized offers,&#8221; &#8220;Improve Start and search results,&#8221; &#8220;Show notifications in Settings,&#8221; &#8220;Recommendations and offers in Settings,&#8221; and &#8220;Advertising ID&#8221; (some of these may already be turned off). These settings mostly either send data to Microsoft or clutter up the Settings app with various recommendations and ads.</li>
+<li>Open <strong>Settings &gt; Privacy &amp; Security &gt; Diagnostics &amp; feedback</strong>, scroll down to &#8220;Feedback frequency,&#8221; and select &#8220;Never&#8221; to turn off all notifications requesting feedback about various Windows features.</li>
+<li>Open <strong>Settings &gt; Privacy &amp; Security</strong>, click <strong>Search</strong> and disable &#8220;Show search highlights.&#8221; This cleans up the Search menu quite a bit, focusing it on searches you&#8217;ve done yourself and locally installed apps.</li>
+</ul>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+ 
+ 
+
+<ul>
+<li>Open <strong>Settings &gt; Personalization &gt; Lock screen</strong>. Under &#8220;Personalize your lock screen,&#8221; switch from &#8220;Windows spotlight&#8221; to either Picture or Slideshow to use local images for your lock screen, and then uncheck the &#8220;get fun facts, tips, tricks, and more&#8221; box that appears. This will hide the other text boxes and clickable elements that Windows automatically adds to the lock screen in Spotlight mode. Under &#8220;Lock screen status,&#8221; select &#8220;none&#8221; to hide the weather widget and other stocks and news widgets from your lock screen.</li>
+<li><strong>If you own a newer Windows PC with a dedicated Copilot key</strong>, you can&#160;navigate to <strong>Settings &gt; Personalization &gt; Text input</strong> and scroll down to remap the key. Unfortunately, its usefulness is still limited&#8212;you can reassign it to the Search function or to the built-in Microsoft 365 app, but by default, Windows doesn&#8217;t give you the option to reassign it to open any old app.</li>
+</ul>
+ 
+<p>By default, the Start menu will occasionally make &#8220;helpful&#8221; suggestions about third-party Microsoft Store apps to grab. These can and should be turned off.</p>
+<ul>
+<li><strong>Open Settings &gt; Personalization &gt; Start</strong>. Turn off &#8220;Show recommendations for tips, shortcuts, new apps, and more.&#8221; This will disable a feature where Microsoft Store apps you haven&#8217;t installed can show up in Recommendations along with your other files. You can also decide whether you want to be able to see more pinned apps or more recent/recommended apps and files on the Start menu, depending on what you find more useful.</li>
+<li>On the same page, disable &#8220;show account-related notifications&#8221; to reduce the number of reminders and upsell notifications you see related to your Microsoft account.</li>
+</ul>
+ 
+<ul>
+<li>Open <strong>Settings &gt; System &gt; Notifications</strong>, scroll down, and expand the <strong>additional settings</strong> section. Uncheck all three boxes here, which should get rid of all the &#8220;finish setting up your PC&#8221; prompts, among other things.</li>
+<li>Also feel free to disable notifications from any specific apps you don&#8217;t want to hear from.</li>
+</ul>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<h2>In-app AI features</h2>
+<p>Microsoft has steadily been adding image and text generation capabilities to some of the <a href="https://arstechnica.com/gadgets/2023/08/windows-utilities-like-paint-and-snipping-tool-could-get-an-ai-infusion-soon/">bedrock in-box Windows apps</a>, from Paint and Photos to <a href="https://arstechnica.com/gadgets/2025/05/in-3-5-years-notepad-exe-has-gone-from-barely-maintained-to-it-writes-for-you/">Notepad</a>.</p>
+<p>Exactly which AI features you&#8217;re offered will depend on whether you&#8217;ve signed in with a Microsoft account or not or whether you&#8217;re using a Copilot+ PC with access to more AI features that are executed locally on your PC rather than in the cloud (more on those in a minute).</p>
+ 
+<p>But the short version is that it&#8217;s&#160;usually not possible to turn off or remove these AI features without uninstalling the entire app. Apps like Notepad and Edge do have toggles for shutting off Copilot and other related features, but no such toggles exist in Paint, for example.</p>
+<p>Even if you can find some Registry key or another backdoor way to shut these things off, there&#8217;s no guarantee the settings will stick as these apps are updated; it&#8217;s probably easier to just try to ignore any AI features within these apps that you don&#8217;t plan to use.</p>
+<h2>Removing Recall, and other extra steps for Copilot+ PCs</h2>
+<p>So far, everything we&#8217;ve covered has been applicable to any PC that can run Windows 11. But new PCs with the Copilot+ branding&#8212;anything with a Qualcomm Snapdragon X chip in it or things with certain Intel Core Ultra or AMD Ryzen AI CPUs&#8212;get extra features that other Windows 11 PCs don&#8217;t have. Given that these are their own unique subclass of PCs, it&#8217;s worth exploring what&#8217;s included and what can be turned off.</p>
+ 
+
+<p>One Copilot+ feature that&#160;can be fully removed, in part because of <a href="https://arstechnica.com/gadgets/2024/06/microsoft-makes-recall-feature-off-by-default-after-security-and-privacy-backlash/">the backlash it initially caused</a>, is the <a href="https://arstechnica.com/gadgets/2024/09/microsoft-details-security-privacy-overhaul-for-windows-recall-ahead-of-relaunch/">data-scraping Recall feature</a>. Recall won&#8217;t be enabled on your Copilot+ system unless you&#8217;re signed in with a Microsoft account and you explicitly opt in. But if fully removing the feature gives you extra peace of mind, then by all means, remove it.</p>
+
+          
+                   
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<ul>
+<li>If you just want to make sure Recall isn&#8217;t active, navigate to <strong>Settings &gt; Privacy &amp; security &gt; Recall &amp; snapshots</strong>. This is where you adjust Recall&#8217;s settings and verify whether it&#8217;s turned on or off.</li>
+<li><strong>To fully remove Recall</strong>, open <strong>Settings &gt; System &gt; Optional Features</strong>, scroll down to the bottom of this screen, and click More Windows features. This will open the old &#8220;Turn Windows features on or off&#8221; Control Panel applet used to turn on or remove some legacy or power-user-centric components, like old versions of the .NET Framework or Hyper-V. It&#8217;s arranged alphabetically.</li>
+<li>In <strong>Settings &gt; Privacy &amp; security &gt; Click to Do</strong>, you&#8217;ll also find a toggle to disable Click to Do, a Copilot+ feature that takes a screenshot of your desktop and tries to make recommendations or suggest actions you might perform (copying and pasting text or an image, for example).</li>
+</ul>
+<p>Apps like Paint or Photos may also prompt you to install an extension for AI-powered image generation from the Microsoft Store. This extension&#8212;which weighs in at well over a gigabyte as of this writing&#8212;is not installed by default. If you have installed it, you can remove it by opening <strong>Settings &gt; Apps &gt; Installed apps</strong> and removing &#8220;ImageCreationHostApp.&#8221;</p>
+<h2>Bonus: Cleaning up Microsoft Edge</h2>
+ 
+
+<p>I use Edge out of pragmatism rather than love&#8212;&#8221;the speed, compatibility, and extensions ecosystem of Chrome, backed by the resources of a large company that isn&#8217;t Google&#8221; is still a decent pitch. But Edge has become steadily less appealing as Microsoft has begun pushing its own services more aggressively and stuffing the browser with AI features. In a vacuum, Firefox aligns better with what I want from a browser, but it just doesn&#8217;t respond well to my normal tab-monster habits despite several earnest attempts to switch&#8212;things bog down and RAM runs out. I&#8217;ve also had mixed experience with the less-prominent Chromium clones, like Opera, Vivaldi, and Brave. So Edge it is, at least for now.</p>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>The main problem with Edge on a new install of Windows is that even more than Windows, it exists in a universe where no one would ever want to switch search engines or shut off any of Microsoft&#8217;s &#8220;value-added features&#8221; except by accident. Case in point: Signing in with a Microsoft account will happily sync your bookmarks, extensions, and many kinds of personal data. But many settings for search engine changes or for opting out of Microsoft services do not sync between systems and require a fresh setup each time.</p>
+<p>Below are the Edge settings I change to maximize the browser&#8217;s usefulness (and usable screen space) while minimizing annoying distractions; it involves turning off most of the stuff Microsoft has added to the Chromium version of Edge since it <a href="https://arstechnica.com/gadgets/2019/04/hands-on-first-public-previews-of-chromium-based-edge-are-now-out/">entered public preview many years ago</a>. Here&#8217;s a list of things to tweak, whether you sign in with a Microsoft account or not.</p>
+<ul>
+<li>On the Start page when you first open the browser, hit the Settings gear in the upper-right corner. Turn off &#8220;Quick links&#8221; (or if you leave them on, turn off &#8220;Show sponsored links&#8221;) and then turn off &#8220;show content.&#8221; Whether you leave the custom background or the weather widget is up to you.</li>
+<li>Click the &#8220;your privacy choices&#8221; link at the bottom of the menu and turn off the &#8220;share my data with third parties for personalized ads&#8221; toggle.</li>
+</ul>
+ 
+ 
+
+<ul>
+<li>In the Edge UI, click the ellipsis icon near the upper-right corner of the screen and click <strong>Settings</strong>.</li>
+<li>Click <strong>Profiles</strong> in the left Settings sidebar. Click Microsoft Rewards, and then turn it off.</li>
+<li>Click <strong>Privacy, Search, &amp; Services </strong>in the Settings sidebar.
+<ul>
+<li>In <strong>Tracking prevention</strong>, I set tracking prevention to &#8220;strict,&#8221; though if you use some other kind of content blocker, this may be redundant; it can also occasionally prompt &#8220;it looks like you&#8217;re using an ad-blocker&#8221; pop-up from sites even if you aren&#8217;t.</li>
+<li>In <strong>Privacy</strong>, if they&#8217;re enabled, disable the toggles under &#8220;<strong>Optional diagnostic data</strong>,&#8221; &#8220;<strong>Help improve Microsoft products</strong>,&#8221; and &#8220;<strong>Allow Microsoft to save your browsing activity</strong>.&#8221;</li>
+<li>In&#160;<strong>Search and connected experiences,</strong> disable the &#8220;<strong>Suggest similar sites when a website can&#8217;t be found</strong>,&#8221; &#8220;<strong>Save time and money with Shopping in Microsoft Edge</strong>,&#8221; and &#8220;<strong>Organize your tabs</strong>&#8221; toggles.
+<ul>
+<li><strong>If you want to switch from Bing</strong>, click &#8220;<strong>Address bar and search</strong>&#8221; and switch to your preferred engine, whether that&#8217;s Google, DuckDuckGo, or something else. Then click &#8220;Search suggestions and filters&#8221; and disable &#8220;Show me search and site suggestions using my typed characters.&#8221;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+ 
+
+<ul>
+<li>Click&#160;<strong>Appearance</strong> in the left-hand Settings sidebar, and scroll down to&#160;<strong>Copilot and sidebar</strong>
+<ul>
+<li>Turn the sidebar&#160;<strong>off</strong>, and turn off the &#8220;<strong>Personalize my top sites in customize sidebar</strong>&#8221; and &#8220;<strong>Allow sidebar apps to show notifications</strong>&#8221; toggles.</li>
+<li>Click<strong> Copilot&#160;</strong>under&#160;<strong>App specific settings</strong>. Turn off &#8220;<strong>Show Copilot button on the toolbar</strong>.&#8221; Then, back in the&#160;<strong>Copilot and sidebar</strong> settings, turn off the <strong>&#8220;Show sidebar button&#8221; </strong>toggle that has just appeared.</li>
+</ul>
+</li>
+<li>Click <strong>Languages</strong> in the left-hand navigation. Disable <strong>&#8220;Use Copilot for writing on the web.&#8221;</strong> Turn off &#8220;<strong>use text prediction</strong>&#8221; if you want to prevent things you type from being sent to Microsoft, and switch the spellchecker from Microsoft Editor to Basic. (I don&#8217;t actually mind Microsoft Editor, but it&#8217;s worth remembering if you&#8217;re trying to minimize the amount of data Edge sends back to the company.)</li>
+</ul>
+<h2>Windows-as-a-nuisance</h2>
+<p>The most time-consuming part of installing a fresh, direct-from-Microsoft copy of Windows XP or Windows 7 was usually reinstalling all the apps you wanted to run on your PC, from your preferred browser to Office, Adobe Reader, Photoshop, and the VLC player. You still need to do all of that in a new Windows 11 installation. But now more than ever, most people will want to go through the OS and turn off a bunch of stuff to make the day-to-day experience of using the operating system less annoying.</p>
+<p>That&#8217;s more relevant now that Microsoft has formally ended support for Windows 10. Yes, Windows 10 users can get an extra year of security updates relatively easily, but many who have been putting off the Windows 11 upgrade will be taking the plunge this year.</p>
+<p>The settings changes we&#8217;ve recommended here may not fix everything, but they can at least give you some peace, shoving Microsoft into the background and allowing you to do what you want with your PC without as much hassle. Ideally, Microsoft would insist on respectful, user-friendly defaults itself. But until that happens, these changes are the best you can do.</p>
+
+
+          
+                   
+                  
+
+                  
+           
+
+
+
+
+
+
+  
+    
+  
+           
+        
+      <a href="https://arstechnica.com/author/andrew_cunningham/">
+                  Andrew Cunningham
+              </a>
+
+      <span class="block font-sans text-sm font-normal italic sm:inline-block">Senior Technology Reporter</span>
+    
+  
+
+  
+    
+      <a href="https://arstechnica.com/author/andrew_cunningham/">
+                  Andrew Cunningham
+              </a>
+      <span class="block font-sans text-sm font-normal italic sm:ml-2 sm:inline-block">Senior Technology Reporter</span>
+    
+
+    
+      Andrew is a Senior Technology Reporter at Ars Technica, with a focus on consumer tech including computer hardware and in-depth reviews of operating systems like Windows and macOS. Andrew lives in Philadelphia and co-hosts a weekly book podcast called <a href="https://overduepodcast.com/">Overdue</a>.
+    
+  
+
+  
+
+
+   
+              
+
+      
+       
+    
+  
+
+
+   
+
+
+   
+
+
+   
+  
+
+
+</div>
