@@ -1,0 +1,44 @@
+---
+author: Russell Brandom
+canonical_url: https://techcrunch.com/2025/11/06/inception-raises-50-million-to-build-diffusion-models-for-code-and-text/
+date: '2025-11-06T13:00:00'
+excerpt: Diffusion models already power AI image generators, but Inception thinks
+  they can be even more powerful applied in software development.
+image: assets/media/0Ii9hiKJdTTrBKx92LzFDA-xTBhJDvTMkOD8ACtBTcqTg.jpeg
+source: techcrunch
+tags:
+- AI
+- diffusion
+- menlo ventures
+title: Inception raises $50 million to build diffusion models for code and text
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">With so much money flooding into AI startups, it&#8217;s a good time to be an AI researcher with an idea to test out. And if the idea is novel enough, it might be easier to get the resources you need as an independent company instead of inside one of the big labs.</p>
+
+<p class="wp-block-paragraph">That&#8217;s the story of Inception, a startup developing diffusion-based AI models that just raised $50 million in seed funding led by Menlo Ventures, with participation from Mayfield, Innovation Endeavors, Nvidia&#8217;s NVentures, Microsoft&#8217;s M12 fund, Snowflake Ventures, and Databricks Investment. Andrew Ng and Andrej Karpathy provided additional angel funding.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The leader of the project is Stanford professor Stefano Ermon, whose research focuses on diffusion models &#8212; which generate outputs through iterative refinement rather than word-by-word. These models power image-based AI systems like Stable Diffusion, Midjourney and Sora. Having worked on those systems since before the AI boom made them exciting, Ermon is using Inception to apply the same models to a broader range of tasks.</p>
+
+<p class="wp-block-paragraph">Together with the funding, the company released a new version of its Mercury model, designed for software development. Mercury has already been integrated into a number of development tools, including ProxyAI, Buildglare, and Kilo Code. Most importantly, Ermon says the diffusion approach will help Inception&#8217;s models conserve on two of the most important metrics: latency (response time) and compute cost.</p>
+
+<p class="wp-block-paragraph">&#8220;These diffusion-based LLMs are much faster and much more efficient than what everybody else is building today,&#8221; Ermon says. &#8220;It&#8217;s just a completely different approach where there is a lot of innovation that can still be brought to the table.&#8221;</p>
+
+<p class="wp-block-paragraph">Understanding the technical difference requires a bit of background. Diffusion models are structurally different from auto-regression models, which dominate text-based AI services. Auto-regression models like GPT-5 and Gemini work sequentially, predicting each next word or word fragment based on the previously processed material. Diffusion models, trained for image generation, take a more holistic approach, modifying the overall structure of a response incrementally until it matches the desired result.</p>
+
+<p class="wp-block-paragraph">The conventional wisdom is to use auto-regression models for text applications, and that approach has been hugely successful for recent generations of AI models. But a growing body of research suggests diffusion models may perform better when a model is <a rel="nofollow" href="https://arxiv.org/abs/2505.15045">processing large quantities of text</a> or <a rel="nofollow" href="https://blog.ml.cmu.edu/2025/09/22/diffusion-beats-autoregressive-in-data-constrained-settings/">managing data constraints</a>. As Ermon tells it, those qualities become a real advantage when performing operations over large codebases.</p>
+ 
+
+<p class="wp-block-paragraph">Diffusion models also have more flexibility in how they utilize hardware, a particularly important advantage as the infrastructure demands of AI become clear. Where auto-regression models have to execute operations one after another, diffusion models can process many operations simultaneously, allowing for significantly lower latency in complex tasks.</p>
+
+<p class="wp-block-paragraph">&#8220;We&#8217;ve been benchmarked at over 1,000 tokens per second, which is way higher than anything that&#8217;s possible using the existing autoregressive technologies,&#8221; Ermon says, &#8220;because our thing is built to be parallel. It&#8217;s built to be really, really fast.&#8221;</p>
+
+
+			
+
+			</div>
