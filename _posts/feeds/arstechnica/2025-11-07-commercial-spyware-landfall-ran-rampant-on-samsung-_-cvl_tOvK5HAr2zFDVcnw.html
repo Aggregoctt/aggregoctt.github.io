@@ -1,0 +1,49 @@
+---
+author: Ryan Whitwam
+canonical_url: https://arstechnica.com/gadgets/2025/11/commercial-spyware-landfall-ran-rampant-on-samsung-phones-for-almost-a-year/
+date: '2025-11-07T19:33:20'
+excerpt: Targeted attack could steal all of a phone's data and activate camera or
+  mic.
+image: assets/media/_-cvl_tOvK5HAr2zFDVcnw-f-JNOXspHeanQmoQOPVS6A.jpeg
+source: arstechnica
+tags:
+- Security
+- Tech
+- android
+- malware
+- Samsung
+- smartphones
+- spyware
+title: Commercial spyware “Landfall” ran rampant on Samsung phones for almost a year
+---
+<div>
+                      
+                      
+          <p>Another day, another malware attack on smartphones. Researchers at Unit 42, the threat intelligence arm of Palo Alto Networks, have revealed a sophisticated spyware known as &#8220;Landfall&#8221; targeting Samsung Galaxy phones. The researchers say this campaign leveraged a zero-day exploit in Samsung Android software to steal a raft of personal data, and it was active for almost a year. Thankfully, the underlying vulnerability has now been patched, and the attacks were most likely targeted at specific groups.</p>
+<p><a href="https://unit42.paloaltonetworks.com/landfall-is-new-commercial-grade-android-spyware/">Unit 42 says</a> that Landfall first appeared in July 2024, relying on a software flaw now catalogued as CVE-2025-21042. Samsung issued a patch for its phones in April 2025, but details of the attack have only been revealed now.</p>
+<p>Even if you were out there poking around the darker corners of the Internet in 2024 and early 2025 with a Samsung Galaxy device, it&#8217;s unlikely you&#8217;d be infected. The team believes Landfall was used in the Middle East to target individuals for surveillance. It is currently unclear who was behind the attacks.</p>
+<p>Landfall is particularly devious because it&#8217;s what&#8217;s known as a zero-click attack, which can compromise a system without the user&#8217;s direct involvement. Unit 42 only spotted Landfall because of two similar bugs that were <a href="https://arstechnica.com/gadgets/2023/09/apple-patches-clickless-0-day-image-processing-vulnerability-in-ios-macos/">patched in Apple iOS</a> and WhatsApp. When combined, these two exploits would enable remote code execution, so the team went looking for exploits that might do that. They found several malicious image files uploaded to VirusTotal that revealed the Landfall attack.</p>
+<h2>Images that aren&#8217;t just images</h2>
+<p>A traditional image file is non-executable, but certain image files can be malformed in a way that carries malicious code. In the case of Landfall, the attackers used modified DNG files, a type of raw file based on the TIFF format. Within these DNG files, the unknown threat actors had embedded ZIP archives with malicious payloads.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Before the April 2025 patch, Samsung phones had a vulnerability in their image processing library. This is a zero-click attack because the user doesn&#8217;t need to launch anything. When the system processes the malicious image for display, it extracts shared object library files from the ZIP to run the Landfall spyware. The payload also modifies the device&#8217;s SELinux policy to give Landfall expanded permissions and access to data.</p>
+ 
+
+<p>The infected files appear to have been delivered to targets via messaging apps like WhatsApp. Unit 42 notes that Landfall&#8217;s code references several specific Samsung phones, including the Galaxy S22, Galaxy S23, Galaxy S24, Galaxy Z Flip 4, and Galaxy Z Fold 4. Once active, Landfall reaches out to a remote server with basic device information. The operators can then extract a wealth of data, like user and hardware IDs, installed apps, contacts, any files stored on the device, and browsing history. It can also activate the camera and microphone to spy on the user.</p>
+<p>Removing the spyware is no easy feat, either. Because of its ability to manipulate SELinux policies, it can burrow deeply into the system software. It also includes several tools that help evade detection. Based on the VirusTotal submissions, Unit 42 believes Landfall was active in 2024 and early 2025 in Iraq, Iran, Turkey, and Morocco. The vulnerability may have been present in Samsung&#8217;s software from Android 13 through Android 15, the company suggests.</p>
+<p>Unit 42 says that several naming schemes and server responses share similarities with industrial spyware developed by big cyber-intelligence firms like NSO Group and Variston. However, they cannot directly tie Landfall to any particular group. While this attack was highly targeted, the details are now in the open, and other threat actors could now employ similar methods to access unpatched devices. Anyone with a supported Samsung phone should make certain they are on the April 2025 patch or later.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>

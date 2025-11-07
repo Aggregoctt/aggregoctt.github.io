@@ -1,0 +1,72 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2025/11/being-too-nice-online-is-a-dead-giveaway-for-ai-bots-study-suggests/
+date: '2025-11-07T20:15:33'
+excerpt: New "computational Turing test" reportedly catches AI pretending to be human
+  with 80% accuracy.
+image: assets/media/2utBX7824_cKEwVvT9Yhig-cK8qDmvpgX-mu2a6e6mwcw.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI alignment
+- AI behavior
+- AI detection
+- AI research
+- AI sycophancy
+- Apertus
+- chatbots
+- computational Turing test
+- deepseek
+- Duke University
+- emotional AI
+- gemma
+- generative ai
+- large language models
+- LLaMA
+- machine learning
+- Mistral
+- NYU
+- Qwen
+- social media
+- University of Amsterdam
+- University of Zurich
+title: Being too nice online is a dead giveaway for AI bots, study suggests
+---
+<div>
+                      
+                      
+          <p>The next time you encounter an unusually polite reply on social media, you might want to check twice. It could be an AI model trying (and failing) to blend in with the crowd.</p>
+<p>On Wednesday, researchers from the University of Zurich, University of Amsterdam, Duke University, and NYU <a href="https://arxiv.org/abs/2511.04195">released</a> a study revealing that AI models remain easily distinguishable from humans in social media conversations, with overly friendly emotional tone serving as the most persistent giveaway. The research, which tested nine open-weight models across Twitter/X, Bluesky, and Reddit, found that classifiers developed by the researchers detected AI-generated replies with 70 to 80 percent accuracy.</p>
+<p>The study introduces what the authors call a &#8220;computational Turing test&#8221; to assess how closely AI models approximate human language. Instead of relying on subjective human judgment about whether text sounds authentic, the framework uses automated classifiers and linguistic analysis to identify specific features that distinguish machine-generated from human-authored content.</p>
+<p>&#8220;Even after calibration, LLM outputs remain clearly distinguishable from human text, particularly in affective tone and emotional expression,&#8221; the researchers wrote. The team, led by Nicol&#242; Pagan at the University of Zurich, tested various optimization strategies, from simple prompting to fine-tuning, but found that deeper emotional cues persist as reliable tells that a particular text interaction online was authored by an AI chatbot rather than a human.</p>
+<h2>The toxicity tell</h2>
+<p>In the study, researchers tested nine large language models: Llama 3.1 8B, Llama 3.1 8B Instruct, Llama 3.1 70B, Mistral 7B v0.1, Mistral 7B Instruct v0.2, Qwen 2.5 7B Instruct, Gemma 3 4B Instruct, DeepSeek-R1-Distill-Llama-8B, and Apertus-8B-2509.</p>
+<p>When prompted to generate replies to real social media posts from actual users, the AI models struggled to match the level of casual negativity and spontaneous emotional expression common in human social media posts, with toxicity scores consistently lower than authentic human replies across all three platforms.</p>
+<p>To counter this deficiency, the researchers attempted optimization strategies (including providing writing examples and context retrieval) that reduced structural differences like sentence length or word count, but variations in emotional tone persisted. &#8220;Our comprehensive calibration tests challenge the assumption that more sophisticated optimization necessarily yields more human-like output,&#8221; the researchers concluded.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The study also revealed an unexpected finding: instruction-tuned models, which undergo additional training to follow user instructions and behave helpfully, actually perform worse at mimicking humans than their base counterparts. Models like Llama 3.1 8B and Mistral 7B v0.1 achieved better human mimicry without instruction tuning, producing classification accuracies between 75 and 85 percent.</p>
+<p>Even more surprising, scaling up model size offered no advantage. The 70 billion-parameter Llama 3.1 performed on par with or below smaller 8 billion-parameter models, challenging assumptions that larger models might produce more authentic-sounding communication.</p>
+ 
+
+<p>The researchers discovered a fundamental tension: when AI models were tuned to avoid detection by matching human writing style, they strayed further from what humans actually said in response to the same posts (their semantic similarity scores to actual human responses dropped from median scores of around 0.18-0.34 down to 0.16-0.28 across platforms). Conversely, when optimized to match the content of human responses, the AI text became easier to identify as artificial.</p>
+<p>In the study, simple optimization techniques for reducing detectability outperformed complex ones. Providing actual examples of a user&#8217;s past posts or retrieving relevant context consistently made AI text harder to distinguish from human writing, while sophisticated approaches like giving the AI a description of the user&#8217;s personality and fine-tuning the model produced negligible or adverse effects on realism.</p>
+ 
+<p>Platform differences also emerged in how well AI could mimic users. The researchers&#8217; classifiers detected AI-generated Twitter/X replies with the lowest accuracy rates (meaning better mimicry), followed by Bluesky, while Reddit proved easiest to distinguish from human text. The researchers suggest this pattern reflects both the distinct conversational styles of each platform and how heavily each platform&#8217;s data featured in the models&#8217; original training.</p>
+<p>The findings, which have not been peer-reviewed, may have implications for both AI development and social media authenticity. Despite various optimization strategies, the study demonstrates that current models face persistent limitations in capturing spontaneous emotional expression, with detection rates remaining well above chance levels. The authors conclude that stylistic human likeness and semantic accuracy represent &#8220;competing rather than aligned objectives&#8221; in current architectures, suggesting that AI-generated text remains distinctly artificial despite efforts to humanize it.</p>
+<p>While researchers keep trying to make AI models sound more human, actual humans on social media keep proving that authenticity often means being messy, contradictory, and occasionally unpleasant. This doesn&#8217;t mean that an AI model can&#8217;t potentially simulate that output, only that it&#8217;s much more difficult than researchers expected.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
