@@ -1,0 +1,86 @@
+---
+author: Ashley Belanger
+canonical_url: https://arstechnica.com/tech-policy/2025/11/oddest-chatgpt-leaks-yet-cringey-chat-logs-found-in-google-analytics-tool/
+date: '2025-11-07T16:49:53'
+excerpt: ChatGPT leaks seem to confirm OpenAI scrapes Google, expert says.
+image: assets/media/rK3Df0cJnMSB06ItPOKzMw-pRPQZogIwjJGSj9hYzXv3Q.jpeg
+source: arstechnica
+tags:
+- AI
+- Google
+- Policy
+- chatbot
+- chatbot leaks
+- ChatGPT
+- google
+- google search
+- google search console. privacy
+- openai
+- SEO
+title: 'Oddest ChatGPT leaks yet: Cringey chat logs found in Google analytics tool'
+---
+<div>
+                      
+                      
+           
+<p>For months, extremely personal and sensitive ChatGPT conversations have been leaking into an unexpected destination: Google Search Console (GSC), a tool that developers typically use to monitor search traffic, not lurk private chats.</p>
+<p>Normally, when site managers access GSC performance reports, they see queries based on keywords or short phrases that Internet users type into Google to find relevant content. But starting this September, odd queries, sometimes more than 300 characters long, could also be found in GSC. Showing only user inputs, the chats appeared to be from unwitting people prompting a chatbot to help solve relationship or business problems, who likely expected those conversations would remain private.</p>
+<p>Jason Packer, owner of an analytics consulting firm called Quantable, was among the first to flag the issue in a detailed <a href="https://www.quantable.com/ai/the-old-rules-are-dead/">blog</a> last month.</p>
+<p>Determined to figure out what exactly was causing the leaks, he teamed up with &#8220;Internet sleuth&#8221; and web optimization consultant Slobodan Mani&#263;. Together, they conducted testing that they believe may have surfaced &#8220;the first definitive proof that OpenAI directly scrapes Google Search with actual user prompts.&#8221; Their investigation seemed to confirm the AI giant was compromising user privacy, in some cases in order to maintain engagement by seizing search data that Google otherwise wouldn&#8217;t share.</p>
+<p>OpenAI declined Ars&#8217; request to confirm if Packer and Mani&#263;&#8217;s theory posed in their blog was correct or answer any of their remaining questions that could help users determine the scope of the problem.</p>
+<p>However, an OpenAI spokesperson confirmed that the company was &#8220;aware&#8221; of the issue and has since &#8220;resolved&#8221; a glitch &#8220;that temporarily affected how a small number of search queries were routed.&#8221;</p>
+<p>Packer told Ars that he&#8217;s &#8220;very pleased that OpenAI was able to resolve the issue quickly.&#8221; But he suggested that OpenAI&#8217;s response failed to confirm whether or not OpenAI was scraping Google, and that leaves room for doubt that the issue was completely resolved.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Google declined to comment.</p>
+<h2>&#8220;Weirder&#8221; than prior ChatGPT leaks</h2>
+<p>The first odd ChatGPT query to appear in GSC that Packer reviewed was a wacky stream-of-consciousness from a likely female user asking ChatGPT to assess certain behaviors to help her figure out if a boy who teases her had feelings for her. Another odd query seemed to come from an office manager sharing business information while plotting a return-to-office announcement.</p>
+<p>These were just two of 200 odd queries&#8212;including &#8220;some pretty crazy ones,&#8221; Packer told Ars&#8212;that he reviewed on one site alone. In his blog, Packer concluded that the queries should serve as &#8220;a reminder that prompts aren&#8217;t as private as you think they are!&#8221;</p>
+<p>Packer suspected that these queries were connected to <a href="https://www.theinformation.com/articles/openai-challenging-google-using-search-data">reporting from The Information</a> in August that cited sources claiming OpenAI was scraping Google search results to power ChatGPT responses. Sources claimed that OpenAI was leaning on Google to answer prompts to ChatGPT seeking information about current events, like news or sports.</p>
+<p>OpenAI has not confirmed that it&#8217;s scraping Google search engine results pages (SERPs). However, Packer thinks his testing of ChatGPT leaks may be evidence that OpenAI not only scrapes &#8220;SERPs in general to acquire data,&#8221; but also sends user prompts to Google Search.</p>
+<p>Mani&#263; helped Packer solve a big part of the riddle. He found that the odd queries were turning up in one site&#8217;s GSC because it ranked highly in Google Search for &#8220;https://openai.com/index/chatgpt/&#8221;&#8212;a ChatGPT URL that was appended at the start of every strange query turning up in GSC.</p>
+<p>It seemed that Google had tokenized the URL, breaking it up into a search for keywords &#8220;openai + index + chatgpt.&#8221; Sites using GSC that ranked highly for those keywords were therefore likely to encounter ChatGPT leaks, Parker and Mani&#263; proposed, including sites that covered prior ChatGPT leaks where <a href="https://arstechnica.com/tech-policy/2025/08/chatgpt-users-shocked-to-learn-their-chats-were-in-google-search-results/">chats were being indexed in Google search results</a>. Using their recommendations to seek out queries in GSC, Ars was able to verify similar strings.</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;Don&#8217;t get confused though, this is a new and completely different ChatGPT screw-up than having Google index stuff we don&#8217;t want them to,&#8221; Packer wrote. &#8220;Weirder, if not as serious.&#8221;</p>
+ 
+<p>It&#8217;s unclear what exactly OpenAI fixed, but Packer and Mani&#263; have a theory about one possible path for leaking chats. Visiting the URL that starts every strange query found in GSC, ChatGPT users encounter a prompt box that seemed buggy, causing &#8220;the URL of that page to be added to the prompt.&#8221; The issue, they explained, seemed to be that:</p>
+<blockquote><p>Normally ChatGPT 5 will choose to do a web search whenever it thinks it needs to, and is more likely to do that with an esoteric or recency-requiring search. But this bugged prompt box also contains the query parameter &#8216;hints=search&#8217; to cause it to basically always do a search: https://chatgpt.com/?hints=search&amp;openaicom_referred=true&amp;model=gpt-5</p></blockquote>
+<p>Clearly some of those searches relied on Google, Packer&#8217;s blog said, mistakenly sending to GSC &#8220;whatever&#8221; the user says in the prompt box, with &#8220;https://openai.com/index/chatgpt/&#8221; text added to the front of it.&#8221; As Packer explained, &#8220;we know it must have scraped those rather than using an API or some kind of private connection&#8212;because those other options don&#8217;t show inside GSC.&#8221;</p>
+<p>This means &#8220;that OpenAI is sharing any prompt that requires a Google Search with both Google and whoever is doing their scraping,&#8221; Packer alleged. &#8220;And then also with whoever&#8217;s site shows up in the search results! Yikes.&#8221;</p>
+<p>To Packer, it appeared that &#8220;ALL ChatGPT prompts&#8221; that used Google Search risked being leaked during the past two months.</p>
+<p>OpenAI claimed only a small number of queries were leaked but declined to provide a more precise estimate. So, it remains unclear how many of the 700 million people who use ChatGPT each week had prompts routed to GSC.</p>
+
+          
+                  
+
+              
+          
+          
+<h2>OpenAI&#8217;s response leaves users with &#8220;lingering questions&#8221;</h2>
+<p>After ChatGPT prompts were found surfacing in Google&#8217;s search index in August, OpenAI clarified that users had clicked a box making those prompts public, which OpenAI defended as &#8220;sufficiently clear.&#8221; The AI firm later scrambled to remove the chats from Google&#8217;s SERPs after it became obvious that users felt misled into sharing private chats publicly.</p>
+<p>Packer told Ars that a major difference between those leaks and the GSC leaks is that users harmed by the prior scandal, at least on some level, &#8220;had to actively share&#8221; their leaked chats. In the more recent case, &#8220;nobody clicked share&#8221; or had a reasonable way to prevent their chats from being exposed.</p>
+<p>&#8220;Did OpenAI go so fast that they didn&#8217;t consider the privacy implications of this, or did they just not care?&#8221; Packer posited in his blog.</p>
+<p>Perhaps most troubling to some users&#8212;whose identities are not linked in chats unless their prompts perhaps share identifying information&#8212;there does not seem to be any way to remove the leaked chats from GSC, unlike the prior scandal.</p>
+<p>Packer and Mani&#263; are left with &#8220;lingering questions&#8221; about how far OpenAI&#8217;s fix will go to stop the issue.</p>
+<p>Mani&#263; was hoping OpenAI might confirm if prompts entered on <a href="https://chatgpt.com/">https://chatgpt.com</a> that trigger Google Search were also affected. But OpenAI did not follow up on that question, or a broader question about how big the leak was. To Mani&#263;, a major concern was that OpenAI&#8217;s scraping may be &#8220;contributing to &#8216;crocodile mouth&#8217; in Google Search Console,&#8221; a troubling trend SEO researchers have flagged that causes impressions to spike but clicks to dip.</p>
+<p>OpenAI also declined to clarify Packer&#8217;s biggest question. He&#8217;s left wondering if the company&#8217;s &#8220;fix&#8221; simply ended OpenAI&#8217;s &#8220;routing of search queries, such that raw prompts are no longer being sent to Google Search, or are they no longer scraping Google Search at all for data?</p>
+<p>&#8220;We still don&#8217;t know if it&#8217;s that one particular page that has this bug or whether this is really widespread,&#8221; Packer told Ars. &#8220;In either case, it&#8217;s serious and just sort of shows how little regard OpenAI has for moving carefully when it comes to privacy.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
