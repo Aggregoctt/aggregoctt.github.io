@@ -1,0 +1,45 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/gaming/2025/11/new-project-brings-strong-linux-compatibility-to-more-classic-windows-games/
+date: '2025-11-10T18:09:28'
+excerpt: But author warns that Direct3D 7 "is a land of highly cursed API inter-operability."
+image: assets/media/suFL-7b0tFbY0gG1BkYFrQ-5NnS1YlfYx-WFifG21C2OA.jpeg
+source: arstechnica
+tags:
+- Gaming
+- compatibility layer
+- gaming
+- Linux
+- open source
+- steamos
+- Valve
+- Windows
+title: New project brings strong Linux compatibility to more classic Windows games
+---
+<div>
+                      
+                      
+          <p><a href="https://arstechnica.com/gaming/2018/08/valves-steam-play-uses-vulkan-to-bring-more-windows-games-to-linux/">For years now</a>, Valve has been slowly <a href="https://arstechnica.com/gaming/2023/04/proton-update-gets-18-more-windows-games-running-on-linux-including-chex-quest-hd/">improving the capabilities</a> of the Proton compatibility layer that <a href="https://arstechnica.com/gaming/2021/10/valves-deck-verified-badge-will-show-which-games-run-well-on-steam-deck/">lets thousands of Windows games work seamlessly on the Linux-based SteamOS</a>. But Valve&#8217;s Windows-to-Linux compatibility layer generally only extends back to games written for Direct3D 8, the proprietary Windows graphics API Microsoft released in late 2000.</p>
+<p>Now, a new open source project is seeking to extend Linux interoperability further back into PC gaming history. The <a href="https://github.com/WinterSnowfall/d7vk">d7vk project</a> describes itself as &#8220;a Vulkan-based translation layer for Direct3D 7 [D3D7], which allows running 3D applications on Linux using Wine.&#8221;</p>
+<h2>More options are always welcome</h2>
+<p>The new project <a href="https://emulation.gametechwiki.com/index.php/Wrappers">isn&#8217;t the first attempt</a> to get Direct3D 7 games running on Linux. <a href="https://www.winehq.org/">Wine</a>&#8216;s own built-in WineD3D compatibility layer has supported D3D7 in some form or another <a href="https://list.winehq.org/mailman3/hyperkitty/list/wine-devel@winehq.org/thread/ZZF36RVFBXKZJRX5RW4ZYWRUPR4LB5PS/?sort=date">for at least two decades now</a>. But the new d7vk project instead branches off <a href="https://github.com/doitsujin/dxvk">the existing dxvk compatibility layer</a>, which is <a href="https://github.com/ValveSoftware/dxvk">already used by Valve&#8217;s Proton</a> for SteamOS and which <a href="https://www.reddit.com/r/linux_gaming/comments/1dcctnd/on_technical_level_why_dxvk_has_better/">reportedly offers better performance than WineD3D</a> on many games.</p>
+<p>D7vk project author WinterSnowfall writes that while they don&#8217;t expect this new project to be upstreamed into the main dxvk in the future, the new version should have &#8220;the same level of per application/targeted configuration profiles and fixes that you&#8217;re used to seeing in dxvk proper.&#8221; And though d7vk might not perform universally better than the existing alternatives, WinterSnowfall writes that &#8220;having more options on the table is a good thing in my book at least.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Those additional options should be welcome news for fans looking for new ways to play PC games of a certain era. The PC Gaming Wiki <a href="https://www.pcgamingwiki.com/wiki/List_of_Direct3D_2-7_games">lists over 400 titles</a> written with the D3D7 APIs, and while most of those games were released between 2000 and 2004, a handful of new D3D7 games have continued to be released through 2022.</p>
+<p>The D3D7 games list predictably includes a lot of licensed shovelware, but there are also well-remembered games like Escape from Monkey Island, Arx Fatalis, and the original Hitman: Codename 47. WinterSnowfall writes that the project was inspired by a desire to play games like Sacrifice and Disciples II on top of the existing dxvk framework.</p>
+<p>Despite some <a href="https://github.com/WinterSnowfall/d7vk/issues">known issues with certain D3D7 titles</a>, WinterSnowfall writes that recent tuning means &#8220;things are now anywhere between decent to stellar in most of the supported games.&#8221; Still, the project author warns that the project will likely never reach full compatibility since &#8220;D3D7 is a land of highly cursed API interoperability.&#8221;</p>
+<p>Don&#8217;t expect this project to expand to include support for even older DirectX APIs, either, WinterSnowfall warns. &#8220;D3D7 is enough of a challenge and a mess as it is,&#8221; the author writes. &#8220;The further we stray from D3D9, the further we stray from the divine.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
