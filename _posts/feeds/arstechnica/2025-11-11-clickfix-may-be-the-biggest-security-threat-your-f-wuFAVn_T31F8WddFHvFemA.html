@@ -1,0 +1,45 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/11/clickfix-may-be-the-biggest-security-threat-your-family-has-never-heard-of/
+date: '2025-11-11T12:30:51'
+excerpt: Relatively new technique can bypass many endpoint protections.
+image: assets/media/wuFAVn_T31F8WddFHvFemA-6ehEjYn6D4xxSX26miFfIQ.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- clickfix
+- malware
+- scams
+title: ClickFix may be the biggest security threat your family has never heard of
+---
+<div>
+                      
+                      
+          <p>Over the past year, scammers have ramped up a new way to infect the computers of unsuspecting people. The increasingly common method, which many potential targets have yet to learn of, is quick, bypasses most endpoint protections, and works against both macOS and Windows users.</p>
+<p>ClickFix often starts with an email sent from a hotel that the target has a pending registration with and references the correct registration information. In other cases, ClickFix attacks begin with a WhatsApp message. In still other cases, the user receives the URL at the top of Google results for a search query. Once the mark accesses the malicious site referenced, it presents a CAPTCHA challenge or other pretext requiring user confirmation. The user receives an instruction to copy a string of text, open a terminal window, paste it in, and press Enter.</p>
+<h2>One line is all it takes</h2>
+<p>Once entered, the string of text causes the PC or Mac to surreptitiously visit a scammer-controlled server and download malware. Then, the machine automatically installs it&#8212;all with no indication to the target. With that, users are infected, usually with credential-stealing malware. Security firms say ClickFix campaigns have run rampant. The lack of awareness of the technique, combined with the links also coming from known addresses or in search results, and the ability to bypass some endpoint protections are all factors driving the growth.</p>
+<p>&#8220;This campaign highlights that leveraging malvertising and the one-line installation-command technique to distribute macOS information stealers remains popular among eCrime actors,&#8221; researchers from CrowdStrike wrote in a <a href="https://www.crowdstrike.com/en-us/blog/falcon-prevents-cookie-spider-shamos-delivery-macos/">report</a> documenting a particularly polished campaign designed to infect Macs with a Mach-O executable, a common binary that runs on macOS. &#8220;Promoting false malicious websites encourages more site traffic, which will lead to more potential victims. The one-line installation command enables eCrime actors to directly install the Mach-O executable onto the victim&#8217;s machine while bypassing Gatekeeper checks.&#8221;</p>
+<p>The primary piece of malware installed in that campaign is a credential-stealer tracked as Shamos. Other payloads included a malicious cryptocurrency wallet, software for making the Mac part of a botnet, and macOS configuration changes to allow the malware to run each time the machine reboots.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Another campaign, <a href="https://blog.sekoia.io/phishing-campaigns-i-paid-twice-targeting-booking-com-hotels-and-customers/">documented</a> by Sekoia, targeted Windows users. The attackers behind it first compromise a hotel&#8217;s account for Booking.com or another online travel service. Using the information stored in the compromised accounts, the attackers contact people with pending reservations, an ability that builds immediate trust with many targets, who are eager to comply with instructions, lest their stay be canceled.</p>
+<p>The site eventually presents a fake CAPTCHA notification that bears an almost identical look and feel to those required by content delivery network Cloudflare. The proof the notification requires for confirmation that there&#8217;s a human behind the keyboard is to copy a string of text and paste it into the Windows terminal. With that, the machine is infected with malware tracked as PureRAT.</p>
+<p>Push Security, meanwhile, <a href="https://pushsecurity.com/blog/the-most-advanced-clickfix-yet/">reported</a> a ClickFix campaign with a page &#8220;adapting to the device that you&#8217;re visiting from.&#8221; Depending on the OS, the page will deliver payloads for <a href="https://mhaggis.github.io/ClickGrab/techniques.html">Windows or macOS</a>. Many of these payloads, Microsoft <a href="https://www.microsoft.com/en-us/security/blog/2025/08/21/think-before-you-clickfix-analyzing-the-clickfix-social-engineering-technique/">said</a>, are LOLbins, the name for binaries that use a technique known as living off the land. These scripts rely solely on native capabilities built into the operating system. With no malicious files being written to disk, endpoint protection is further hamstrung.</p>
+<p>The commands, which are often base-64 encoded to make them unreadable to humans, are often copied inside the browser sandbox, a part of most browsers that accesses the Internet in an isolated environment designed to protect devices from malware or harmful scripts. Many security tools are unable to observe and flag these actions as potentially malicious.</p>
+<p>The attacks can also be effective given the lack of awareness. Many people have learned over the years to be suspicious of links in emails or messengers. In many users&#8217; minds, the precaution doesn&#8217;t extend to sites that instruct them to copy a piece of text and paste it into an unfamiliar window. When the instructions come in emails from a known hotel or at the top of Google results, targets can be further caught off guard.</p>
+<p>With many families gathering in the coming weeks for various holiday dinners, ClickFix scams are worth mentioning to those family members who ask for security advice. Microsoft Defender and other endpoint protection programs offer some defenses against these attacks, but they can, in some cases, be bypassed. That means that, for now, awareness is the best countermeasure.</p>
+
+
+          
+                  
+
+                  
+          </div>
