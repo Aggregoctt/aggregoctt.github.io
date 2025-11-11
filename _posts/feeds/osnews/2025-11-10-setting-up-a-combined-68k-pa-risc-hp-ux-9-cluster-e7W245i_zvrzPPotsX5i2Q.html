@@ -1,0 +1,35 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143760/setting-up-a-combined-68k-pa-risc-hp-ux-9-cluster/
+date: '2025-11-10T22:47:09'
+excerpt: Jonathan Pallant got lucky and managed to score a massive haul of &#8217;90s
+  UNIX workstations, one of which was an HP 9000 Model 340, a HP-UX workstation built
+  around a Motorola 68030 processor at 16.7 MHz. It doesn&#8217;t come with a hard
+  drive or even a floppy controller, though, so he decided to borrow a PA-RISC-based
+  HP 9000 Model 705 to set up an HP-UX 9 cluster. But wait, how does that work, when
+  we&#8217;re dealing with two entirely different architectures? What&#8217;s more
+  fun though, is putting it into a cluster with the Model 705 and network booting
+  it. Yes, that a 68030 machine network booting from a PA-RISC machine &#8230; and&#160;sharing
+  the same root filesystem. But aren&#8217;t PA-RISC binaries and 68K binaries quite
+  different? Oh yes, they really are. So, how does that work? ↫ Jonathan Pallant HP-UX
+  is far more interesting and fascinating than a lot of people give it credit for,
+  and while my interest lies with HP-UX 11i, I find what Pallant is doing here with
+  HP-UX 9 just as fascinating. You first need to install HP-UX 9 for PA-RISC on the
+  700 series machine, convert it to a cluster server, and then install HP-UX 9 for
+  68k on top of that PA-RISC installation. After this is done, you effectively end
+  up with a single root file system that contains both PA-RISC and 68k binaries, and
+  you can network boot the 68k-based Model 340 right from it &#8211; using the same
+  root filesystem on both machines. Absolutely wild. No, these are not universal binaries
+  or some other trick you might know of from more modern system. In fact, installing
+  the 68k version of HP-UX 9 &#8220;into&#8221; the PA-RISC HP-UX 9 cluster server,
+  you end up with something called a Context Dependent Filesystem. To get a better
+  idea of what this means and how this works, you should really head on over to Pallant&#8217;s
+  excellent article for all the details.
+image: null
+source: osnews
+tags:
+- Unix
+title: Setting up a combined 68k/PA-RISC HP-UX 9 cluster
+---
+<div><p>Jonathan Pallant got lucky and managed to score a massive haul of &#8217;90s UNIX workstations, one of which was an HP 9000 Model 340, a HP-UX workstation built around a Motorola 68030 processor at 16.7 MHz. It doesn&#8217;t come with a hard drive or even a floppy controller, though, so he decided to borrow a PA-RISC-based HP 9000 Model 705 to set up an HP-UX 9 cluster. But wait, how does that work, when we&#8217;re dealing with two entirely different architectures?</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>What&#8217;s more fun though, is putting it into a cluster with the Model 705 and network booting it.</p><p>Yes, that a 68030 machine network booting from a PA-RISC machine &#8230; and&#160;sharing the same root filesystem. But aren&#8217;t PA-RISC binaries and 68K binaries quite different? Oh yes, they really are. So, how does that work?</p>
+<a href="https://thejpster.org.uk/blog/blog-2025-11-08/">&#8619; Jonathan Pallant</a></blockquote><p>HP-UX is far more interesting and fascinating than a lot of people give it credit for, and while my interest lies with HP-UX 11i, I find what Pallant is doing here with HP-UX 9 just as fascinating. You first need to install HP-UX 9 for PA-RISC on the 700 series machine, convert it to a cluster server, and then install HP-UX 9 for 68k on top of that PA-RISC installation. After this is done, you effectively end up with a single root file system that contains both PA-RISC and 68k binaries, and you can network boot the 68k-based Model 340 right from it &#8211; using the same root filesystem on both machines.</p><p>Absolutely wild.</p></div>

@@ -1,0 +1,99 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/11/study-finds-ai-models-store-memories-and-logic-in-different-neural-regions/
+date: '2025-11-10T23:06:42'
+excerpt: Basic arithmetic ability lives in the memorization pathways, not logic circuits.
+image: assets/media/Azc9SQEdK-GvF-JQaW8Amg-O7bz9esfAF7vrWKrEuYDZA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI alignment
+- AI architecture
+- AI behavior
+- AI memorization
+- AI research
+- AI safety
+- Allen Institute for AI
+- computational neuroscience
+- copyright
+- generalization
+- Goodfire
+- gradient descent
+- K-FAC
+- loss curvature
+- machine learning
+- mechanistic interpretability
+- model editing
+- neural networks
+- OLMo
+- overfitting
+- transformer models
+- weight matrices
+title: Researchers isolate memorization from reasoning in AI neural networks
+---
+<div>
+                      
+                      
+           
+<p>When engineers build AI language models like GPT-5 from training data, at least two major processing features emerge: memorization (reciting exact text they&#8217;ve seen before, like famous quotes or passages from books) and reasoning (solving new problems using general principles). New research from AI startup <a href="https://www.goodfire.ai/">Goodfire.ai</a> provides the first potentially clear evidence that these different functions actually work through completely separate neural pathways in the model&#8217;s architecture.</p>
+<p>The researchers discovered that this separation proves remarkably clean. In a preprint paper <a href="https://arxiv.org/abs/2510.24256">released</a> in late October, they described that when they removed the memorization pathways, models lost 97 percent of their ability to recite training data verbatim but kept nearly all their &#8220;logical reasoning&#8221; ability intact.</p>
+<p>For example, at layer 22 in Allen Institute for AI&#8217;s <a href="https://allenai.org/olmo">OLMo-7B</a> language model, the bottom 50 percent of weight components showed 23 percent higher activation on memorized data, while the top 10 percent showed 26 percent higher activation on general, non-memorized text. This mechanistic split enabled the researchers to surgically remove memorization while preserving other capabilities.</p>
+<p>Perhaps most surprisingly, the researchers found that arithmetic operations seem to share the same neural pathways as memorization rather than logical reasoning. When they removed memorization circuits, mathematical performance plummeted to 66 percent while logical tasks remained nearly untouched. This discovery may explain why AI language models <a href="https://www.arsturn.com/blog/why-your-llm-is-bad-at-math-and-how-to-fix-it-with-a-clip-on-symbolic-brain">notoriously struggle with math</a> without the use of external tools. They&#8217;re attempting to recall arithmetic from a limited memorization table rather than computing it, like a student who memorized times tables but never learned how multiplication works. The finding suggests that at current scales, language models treat &#8220;2+2=4&#8221; more like a memorized fact than a logical operation.</p>
+<p>It&#8217;s worth noting that &#8220;reasoning&#8221; in AI research covers a spectrum of abilities that don&#8217;t necessarily match what we might call reasoning in humans. The logical reasoning that survived memory removal in this latest research includes tasks like evaluating true/false statements and following if-then rules, which are essentially applying learned patterns to new inputs. This also differs from the deeper &#8220;mathematical reasoning&#8221; required for proofs or novel problem-solving, which current AI models <a href="https://arstechnica.com/ai/2025/04/new-study-shows-why-simulated-reasoning-ai-models-dont-yet-live-up-to-their-billing/">struggle with</a> even when their pattern-matching abilities remain intact.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Looking ahead, if the information removal techniques receive further development in the future, AI companies could potentially one day remove, say, copyrighted content, private information, or harmful memorized text from a neural network without destroying the model&#8217;s ability to perform transformative tasks. However, since neural networks store information in distributed ways that are still not completely understood, for the time being, the researchers say their method &#8220;cannot guarantee complete elimination of sensitive information.&#8221; These are early steps in a new research direction for AI.</p>
+<h2>Traveling the neural landscape</h2>
+<p>To understand how researchers from Goodfire distinguished memorization from reasoning in these neural networks, it helps to know about a concept in AI called the &#8220;loss landscape.&#8221; The &#8220;loss landscape&#8221; is a way of visualizing how wrong or right an AI model&#8217;s predictions are as you adjust its internal settings (which are called &#8220;weights&#8221;).</p>
+<p>Imagine you&#8217;re tuning a complex machine with millions of dials. The &#8220;loss&#8221; measures the number of mistakes the machine makes. High loss means many errors, low loss means few errors. The &#8220;landscape&#8221; is what you&#8217;d see if you could map out the error rate for every possible combination of dial settings.</p>
+<p>During training, AI models essentially &#8220;roll downhill&#8221; in this landscape (<a href="https://en.wikipedia.org/wiki/Gradient_descent">gradient descent</a>), adjusting their weights to find the valleys where they make the fewest mistakes. This process provides AI model outputs, like answers to questions.</p>
+ 
+
+<p>The researchers analyzed the &#8220;curvature&#8221; of the loss landscapes of particular AI language models, measuring how sensitive the model&#8217;s performance is to small changes in different neural network weights. Sharp peaks and valleys represent high curvature (where tiny changes cause big effects), while flat plains represent low curvature (where changes have minimal impact).</p>
+<p>Using a technique called <a href="https://arxiv.org/abs/1503.05671">K-FAC</a> (Kronecker-Factored Approximate Curvature), they found that individual memorized facts create sharp spikes in this landscape, but because each memorized item spikes in a different direction, when averaged together they create a flat profile. Meanwhile, reasoning abilities that many different inputs rely on maintain consistent moderate curves across the landscape, like rolling hills that remain roughly the same shape regardless of the direction from which you approach them.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>&#8220;Directions that implement shared mechanisms used by many inputs add coherently and remain high-curvature on average,&#8221; the researchers write, describing reasoning pathways. In contrast, memorization uses &#8220;idiosyncratic sharp directions associated with specific examples&#8221; that appear flat when averaged across data.</p>
+ 
+<h2>Different tasks reveal a spectrum of mechanisms</h2>
+<p>The researchers tested their technique on multiple AI systems to verify the findings held across different architectures. They primarily used Allen Institute&#8217;s OLMo-2 family of open language models, specifically the 7-billion and 1-billion parameter versions, chosen because their training data is openly accessible. For vision models, they trained custom 86-million parameter Vision Transformers (<a href="https://huggingface.co/google/vit-base-patch16-224">ViT-Base models</a>) on ImageNet with intentionally mislabeled data to create controlled memorization. They also validated their findings against existing memorization removal methods like <a href="https://mansisak.com/memorization/">BalancedSubnet</a> to establish performance benchmarks.</p>
+<p>The team tested their discovery by selectively removing low-curvature weight components from these trained models. Memorized content dropped to 3.4 percent recall from nearly 100 percent. Meanwhile, logical reasoning tasks maintained 95 to 106 percent of baseline performance.</p>
+<p>These logical tasks included Boolean expression evaluation, logical deduction puzzles where solvers must track relationships like &#8220;if A is taller than B,&#8221; object tracking through multiple swaps, and benchmarks like <a href="https://arxiv.org/abs/1905.10044">BoolQ</a> for yes/no reasoning, <a href="https://github.com/allenai/winogrande">Winogrande</a> for common sense inference, and <a href="https://github.com/allenai/OpenBookQA">OpenBookQA</a> for science questions requiring reasoning from provided facts. Some tasks fell between these extremes, revealing a spectrum of mechanisms.</p>
+<p>Mathematical operations and closed-book fact retrieval shared pathways with memorization, dropping to 66 to 86 percent performance after editing. The researchers found arithmetic particularly brittle. Even when models generated identical reasoning chains, they failed at the calculation step after low-curvature components were removed.</p>
+ 
+
+<p>&#8220;Arithmetic problems themselves are memorized at the 7B scale, or because they require narrowly used directions to do precise calculations,&#8221; the team explains. Open-book question answering, which relies on provided context rather than internal knowledge, proved most robust to the editing procedure, maintaining nearly full performance.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>Curiously, the mechanism separation varied by information type. Common facts like country capitals barely changed after editing, while rare facts like company CEOs dropped 78 percent. This suggests models allocate distinct neural resources based on how frequently information appears in training.</p>
+<p>The K-FAC technique outperformed existing memorization removal methods without needing training examples of memorized content. On unseen historical quotes, K-FAC achieved 16.1 percent memorization versus 60 percent for the previous best method, BalancedSubnet.</p>
+<p>Vision transformers showed similar patterns. When trained with intentionally mislabeled images, the models developed distinct pathways for memorizing wrong labels versus learning correct patterns. Removing memorization pathways restored 66.5 percent accuracy on previously mislabeled images.</p>
+<h2>Limits of memory removal</h2>
+<p>However, the researchers acknowledged that their technique isn&#8217;t perfect. Once-removed memories might return if the model receives more training, as <a href="https://arxiv.org/pdf/2506.06278">other research</a> has shown that current unlearning methods only suppress information rather than completely erasing it from the neural network&#8217;s weights. That means the &#8220;forgotten&#8221; content can be reactivated with just a few training steps targeting those suppressed areas.</p>
+<p>The researchers also can&#8217;t fully explain why some abilities, like math, break so easily when memorization is removed. It&#8217;s unclear whether the model actually memorized all its arithmetic or whether math just happens to use similar neural circuits as memorization. Additionally, some sophisticated capabilities might look like memorization to their detection method, even when they&#8217;re actually complex reasoning patterns. Finally, the mathematical tools they use to measure the model&#8217;s &#8220;landscape&#8221; can become unreliable at the extremes, though this doesn&#8217;t affect the actual editing process.</p>
+
+
+          
+                  
+
+                  
+          </div>
