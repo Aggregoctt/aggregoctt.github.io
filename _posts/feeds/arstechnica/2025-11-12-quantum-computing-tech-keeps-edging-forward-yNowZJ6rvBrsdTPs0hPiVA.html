@@ -1,0 +1,83 @@
+---
+author: John Timmer
+canonical_url: https://arstechnica.com/science/2025/11/quantum-roundup-lots-of-companies-announcing-new-tech/
+date: '2025-11-12T18:59:38'
+excerpt: IBM follows through on its June promises, plus more trapped ion news.
+image: assets/media/yNowZJ6rvBrsdTPs0hPiVA-aom7arPOeU3fXpnu0OWsXg.jpeg
+source: arstechnica
+tags:
+- Science
+- Computer science
+- ibm
+- IonQ
+- Physics
+- Quantum Art
+- quantum computing
+- quantum mechanics
+- trapped ion
+title: Quantum computing tech keeps edging forward
+---
+<div>
+                      
+                      
+           
+<p>The end of the year is usually a busy time in the quantum computing arena, as companies often try to announce that they&#8217;ve reached major milestones before the year wraps up. This year has been no exception. And while not all of these announcements involve <a href="https://arstechnica.com/science/2025/11/new-quantum-computing-hardware-sorts-ions-for-computation/">interesting new architectures</a> like the one we looked at recently, they&#8217;re a good way to mark progress in the field, and they often involve the sort of smaller, incremental steps needed to push the field forward.</p>
+<p>What follows is a quick look at a handful of announcements from the past few weeks that struck us as potentially interesting.</p>
+<h2>IBM follows through</h2>
+<p>IBM is one of the companies announcing a brand-new architecture this year. That&#8217;s not at all a surprise, given that the company <a href="https://arstechnica.com/science/2025/06/ibm-is-now-detailing-what-its-first-quantum-compute-system-will-look-like/">promised to do so back in June</a>; this week sees the company confirming that it has built the two processors it said it would earlier in the year. These include one called Loon, which is focused on the architecture that IBM will use to host error-corrected logical qubits. Loon represents two major changes for the company: a shift to nearest-neighbor connections and the addition of long-distance connections.</p>
+<p>IBM had previously used what it termed the &#8220;heavy hex&#8221; architecture, in which alternating qubits were connected to either two or three of their neighbors, forming a set of overlapping hexagonal structures. In Loon, the company is using a square grid, with each qubit having connections to its four closest neighbors. This higher density of connections can enable more efficient use of the qubits during computations. But qubits in Loon have additional long-distance connections to other parts of the chip, which will be needed for the specific type of error correction that IBM has committed to. It&#8217;s there to allow users to test out a critical future feature.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The second processor, Nighthawk, is focused on the now. It also has the nearest-neighbor connections and a square grid structure, but it lacks the long-distance connections. Instead, the focus with Nighthawk is to get error rates down so that researchers can start testing algorithms for quantum advantage&#8212;computations where quantum computers have a clear edge over classical algorithms.</p>
+<p>In addition, the company is launching <a href="https://quantum-advantage-tracker.github.io/trackers/observable-estimations">a&#160;</a><a href="https://quantum-advantage-tracker.github.io/trackers/observable-estimations" target="_blank" rel="noopener">GitHub repository</a> that will allow the community to deposit code and performance data for both classical and quantum algorithms, enabling&#160;rigorous evaluations of relative performance. Right now, those are broken down into three categories of algorithms that IBM expects are most likely to demonstrate a verifiable quantum advantage.</p>
+<p>This isn&#8217;t the only follow-up to IBM&#8217;s June announcement, which also saw the company describe the algorithm it would use to identify errors in its logical qubits and the corrections needed to fix them. In late October, the company said it <a href="https://www.reuters.com/business/ibm-says-key-quantum-computing-algorithm-can-run-conventional-amd-chips-2025-10-24/">had confirmed that the algorithm could work in real time</a> when run on an FPGA made in collaboration with AMD.</p>
+<h2>Record lows</h2>
+<p>A few years back, we reported on a company called Oxford Ionics, which had just announced that it achieved a record-low error rate in some qubit operations using trapped ions. Most trapped-ion quantum computers move qubits by manipulating electromagnetic fields, but they perform computational operations using lasers. Oxford Ionics figured out how to perform operations using electromagnetic fields, meaning more of their processing benefited from our ability to precisely manufacture circuitry (lasers were still needed for tasks like producing a readout of the qubits). And as we noted, it could perform these computational operations extremely effectively.</p>
+
+          
+                  
+
+              
+          
+          
+<p>But Oxford Ionics never made a major announcement that would give us a good excuse to describe its technology in more detail. The company was ultimately acquired by IonQ, a competitor in the trapped-ion space.</p>
+ 
+<p>Now, IonQ is&#160;building on what it gained from Oxford Ionics, announcing a new,&#160;<a href="https://ionq.com/blog/accelerating-towards-fault-tolerance-unlocking-99-99-two-qubit-gate" target="_blank" rel="noopener">record-low error rate</a> for two-qubit gates: greater than 99.99 percent fidelity. That could be critical for the company, as a low error rate for hardware qubits means fewer are needed to get good performance from error-corrected qubits.</p>
+<p>But <a href="https://arxiv.org/abs/2510.17286">the details</a> of the two-qubit gates are perhaps more interesting than the error rate. Two-qubit gates involve bringing both qubits involved into close proximity, which often requires moving them. That motion pumps a bit of energy into the system, raising the ions&#8217; temperature and leaving them slightly more prone to errors. As a result, any movement of the ions is generally followed by cooling, in which lasers are used to bleed energy back out of the qubits.</p>
+<p>This process, which involves two distinct cooling steps, is slow. So slow that as much as two-thirds of the time spent in operations involves the hardware waiting around while recently moved ions are cooled back down. The new IonQ announcement includes a description of a method for performing two-qubit gates that doesn&#8217;t require the ions to be fully cooled. This allows one of the two cooling steps to be skipped entirely. In fact, coupled with earlier work involving one-qubit gates, it raises the possibility that the entire machine could operate with its ions at a still very cold but slightly elevated temperature, avoiding all need for one of the two cooling steps.</p>
+
+          
+                  
+
+              
+          
+          
+<p>That would shorten operation times and let researchers do more before the limit of a quantum system&#8217;s coherence is reached.</p>
+<h2>State of the art?</h2>
+<p>The <a href="https://www.newmediawire.com/news/quantum-art-achieves-10x-circuit-depth-compression-and-30-error-reduction-using-multi-qubit-gates-and-nvidia-cuda-q-platform-7083706">last announcement</a> comes from another trapped-ion company, Quantum Art. A couple of weeks back, it announced a collaboration with Nvidia that resulted in a more efficient compiler for operations on its hardware. On its own, this isn&#8217;t especially interesting. But it&#8217;s emblematic of a trend that&#8217;s worth noting, and it gives us an excuse to look at Quantum Art&#8217;s technology, which takes a distinct approach to boosting the efficiency of trapped-ion computation.</p>
+<p>First, the trend: Nvidia&#8217;s interest in quantum computing. The company isn&#8217;t interested in the quantum aspects (at least not publicly); instead, it sees an opportunity to get further entrenched in high-performance computing. There are three areas where the computational capacity of GPUs can play a role here. One is small-scale modeling of quantum processors so that users can perform an initial testing of algorithms without committing to paying for access to the real thing. Another is what Quantum Art is announcing: using GPUs as part of a compiler chain to do all the computations needed to find more efficient ways of executing an algorithm on specific quantum hardware.</p>
+<p>Finally, there&#8217;s a potential role in error correction. Error correction involves some indirect measurements of a handful of hardware qubits to determine the most likely state that a larger collection (called a logical qubit) is in. This requires modeling a quantum system in real time, which is quite difficult&#8212;hence the computational demands that Nvidia hopes to meet. Regardless of the precise role, there has been a steady flow of announcements much like Quantum Art&#8217;s: a partnership with Nvidia that will keep the company&#8217;s hardware involved if the quantum technology takes off.</p>
+
+          
+                  
+
+              
+          
+          
+<p>In Quantum Art&#8217;s case, that technology is a bit unusual. The trapped-ion companies we&#8217;ve covered so far are all taking different routes to the same place: moving one or two ions into a location where operations can be performed and then executing one- or two-qubit gates. Quantum Art&#8217;s approach is to perform gates with much larger collections of ions. At the compiler level, it would be akin to figuring out which qubits need a specific operation performed, clustering them together, and doing it all at once. Obviously, there are potential efficiency gains here.</p>
+<p>The challenge would normally be moving so many qubits around to create these clusters. But Quantum Art uses lasers to &#8220;pin&#8221; ions in a row so they act to isolate the ones to their right from the ones to their left. Each cluster can then be operated on separately. In between operations, the pins can be moved to new locations, creating different clusters for the next set of operations. (Quantum Art is calling each cluster of ions a &#8220;core&#8221; and presenting this as <a href="https://www.quantum-art.tech/technology">multicore quantum computing</a>.)</p>
+<p>At the moment, Quantum Art is behind some of its competitors in terms of qubit count and performing interesting demonstrations, and it&#8217;s not pledging to scale quite as fast. But the company&#8217;s founders are convinced that the complexity of doing so many individual operations and moving so many ions around will catch up with those competitors, while the added efficiency of multiple qubit gates will allow it to scale better.</p>
+<p>This is just a small sampling of all the announcements from this fall, but it should give you a sense of how rapidly the field is progressing&#8212;from technology demonstrations to identifying cases where quantum hardware has a real edge and exploring ways to sustain progress beyond those first successes.</p>
+
+
+          
+                  
+
+                  
+          </div>
