@@ -1,0 +1,64 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/11/researchers-question-anthropic-claim-that-ai-assisted-attack-was-90-autonomous/
+date: '2025-11-14T12:20:48'
+excerpt: The results of AI-assisted hacking aren't as impressive as many might have
+  us believe.
+image: assets/media/BwMF0WPD60qPzBm0rGPCQg-rEwpJiujsOnJw-NivUMu6g.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Security
+- Anthropic
+- Claude
+- Cyberattacks
+- espionage
+title: Researchers question Anthropic claim that AI-assisted attack was 90% autonomous
+---
+<div>
+                      
+                      
+          <p>Researchers from Anthropic said they recently observed the &#8220;first reported AI-orchestrated cyber espionage campaign&#8221; after detecting China-state hackers using the company&#8217;s Claude AI tool in a campaign targeting dozens of targets. Outside researchers are much more measured in describing the significance of the discovery.</p>
+<p>Anthropic published the reports on Thursday <a href="https://assets.anthropic.com/m/ec212e6566a0d47/original/Disrupting-the-first-reported-AI-orchestrated-cyber-espionage-campaign.pdf">here</a> and <a href="https://www.anthropic.com/news/disrupting-AI-espionage">here</a>. In September, the reports said, Anthropic discovered a &#8220;highly sophisticated espionage campaign,&#8221; carried out by a Chinese state-sponsored group, that used <a href="https://www.claude.com/product/claude-code">Claude Code</a> to automate up to 90 percent of the work. Human intervention was required &#8220;only sporadically (perhaps 4-6 critical decision points per hacking campaign).&#8221; Anthropic said the hackers had employed AI agentic capabilities to an &#8220;unprecedented&#8221; extent.</p>
+<p>&#8220;This campaign has substantial implications for cybersecurity in the age of AI &#8216;agents&#8217;&#8212;systems that can be run autonomously for long periods of time and that complete complex tasks largely independent of human intervention,&#8221; Anthropic said. &#8220;Agents are valuable for everyday work and productivity&#8212;but in the wrong hands, they can substantially increase the viability of large-scale cyberattacks.&#8221;</p>
+<h2>&#8220;Ass-kissing, stonewalling, and acid trips&#8221;</h2>
+<p>Outside researchers weren&#8217;t convinced the discovery was the watershed moment the Anthropic posts made it out to be. They questioned why these sorts of advances are often attributed to malicious hackers when white-hat hackers and developers of legitimate software keep reporting only incremental gains from their use of AI.</p>
+<p>&#8220;I continue to refuse to believe that attackers are somehow able to get these models to jump through hoops that nobody else can,&#8221; Dan Tentler, executive founder of Phobos Group and a researcher with expertise in complex security breaches, <a href="https://infosec.exchange/@Viss@mastodon.social/115543756320234645">told Ars</a>. &#8220;Why do the models give these attackers what they want 90% of the time but the rest of us have to deal with ass-kissing, stonewalling, and acid trips?&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Researchers don&#8217;t deny that AI tools can improve workflow and shorten the time required for certain tasks, <a href="https://infosec.exchange/@hrbrmstr@mastodon.social/115543963138147323">such as</a> triage, log analysis, and reverse engineering. But the ability for AI to automate a complex chain of tasks with such minimal human interaction remains elusive. Many researchers compare advances from AI in cyberattacks to those provided by hacking tools such as Metasploit or SEToolkit, which have been in use for decades. There&#8217;s no doubt that these tools are useful, but their advent didn&#8217;t meaningfully increase hackers&#8217; capabilities or the severity of the attacks they produced.</p>
+<p>Another reason the results aren&#8217;t as impressive as made out to be: The threat actors&#8212;which Anthropic tracks as GTG-1002&#8212;targeted at least 30 organizations, including major technology corporations and government agencies. Of those, only a &#8220;small number&#8221; of the attacks succeeded. That, in turn, raises questions. Even assuming so much human interaction was eliminated from the process, what good is that when the success rate is so low? Would the number of successes have increased if the attackers had used more traditional, human-involved methods?</p>
+<p>According to Anthropic&#8217;s account, the hackers used Claude to orchestrate attacks using readily available open source software and frameworks. These tools have existed for years and are already easy for defenders to detect. Anthropic didn&#8217;t detail the specific techniques, tooling, or exploitation that occurred in the attacks, but so far, there&#8217;s no indication that the use of AI made them more potent or stealthy than more traditional techniques.</p>
+<p>&#8220;The threat actors aren&#8217;t inventing something new here,&#8221; independent researcher Kevin Beaumont <a href="https://infosec.exchange/@GossiTheDog@cyberplace.social/115543986691147283">said</a>.</p>
+<p>Even Anthropic noted &#8220;an important limitation&#8221; in its findings:</p>
+
+          
+                  
+
+              
+          
+          
+<blockquote><p>Claude frequently overstated findings and occasionally fabricated data during autonomous operations, claiming to have obtained credentials that didn&#8217;t work or identifying critical discoveries that proved to be publicly available information. This AI hallucination in offensive security contexts presented challenges for the actor&#8217;s operational effectiveness, requiring careful validation of all claimed results. This remains an obstacle to fully autonomous cyberattacks.</p></blockquote>
+<h2>How (Anthropic says) the attack unfolded</h2>
+<p>Anthropic said GTG-1002 developed an autonomous attack framework that used Claude as an orchestration mechanism that largely eliminated the need for human involvement. This orchestration system broke complex multi-stage attacks into smaller technical tasks such as vulnerability scanning, credential validation, data extraction, and lateral movement.</p>
+<p>&#8220;The architecture incorporated Claude&#8217;s technical capabilities as an execution engine within a larger automated system, where the AI performed specific technical actions based on the human operators&#8217; instructions while the orchestration logic maintained attack state, managed phase transitions, and aggregated results across multiple sessions,&#8221; Anthropic said. &#8220;This approach allowed the threat actor to achieve operational scale typically associated with nation-state campaigns while maintaining minimal direct involvement, as the framework autonomously progressed through reconnaissance, initial access, persistence, and data exfiltration phases by sequencing Claude&#8217;s responses and adapting subsequent requests based on discovered information.&#8221;</p>
+<p>The attacks followed a five-phase structure that increased AI autonomy through each one.</p>
+ 
+
+<p>The attackers were able to bypass Claude guardrails in part by breaking tasks into small steps that, in isolation, the AI tool didn&#8217;t interpret as malicious. In other cases, the attackers couched their inquiries in the context of security professionals trying to use Claude to improve defenses.</p>
+<p>As <a href="https://arstechnica.com/security/2025/11/ai-generated-malware-poses-little-real-world-threat-contrary-to-hype/">noted last week</a>, AI-developed malware has a long way to go before it poses a real-world threat. There&#8217;s no reason to doubt that AI-assisted cyberattacks may one day produce more potent attacks. But the data so far indicates that threat actors&#8212;like most others using AI&#8212;are seeing mixed results that aren&#8217;t nearly as impressive as those in the AI industry claim.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
