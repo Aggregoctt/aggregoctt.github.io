@@ -1,0 +1,29 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143797/haiku-gets-new-guarded-heap-for-the-kernel/
+date: '2025-11-14T23:40:48'
+excerpt: 'Another month, another Haiku activity report, and this time we&#8217;ve
+  got a major change under the hood: a brand new guarded heap. The old guarded heap
+  was suboptimal and had started to lag behind, so the new one attempts to rectify
+  some of these shortcomings. So, to rectify these limitations, I rewrote the kernel
+  guarded heap more or less from scratch, taking the old code into account where it
+  made sense but otherwise creating entirely new bookkeeping structures, interacting
+  directly with the page table and virtual memory systems, and more. This new guarded
+  heap implementation frees physical pages when not in use, meaning that the “virtual
+  memory reuse disabled” mode now runs for quite long periods of time (indeed, I could
+  successfully boot to the desktop and run compile jobs.) It also prints more diagnostics
+  when kernel panics due to memory faults inside the heap happen, which the old kernel
+  guarded heap didn’t (but the userland one has always done). ↫ Haiku&#8217;s activity
+  report for October The new guarded heap is optional for now, but Haiku is planning
+  on releasing some pre-built test builds so users can start testing it out. Of course,
+  this isn&#8217;t the only change or improvement from this past month &#8211; the
+  list of changes is long, but there&#8217;s no real tentpole features here. Haiku&#8217;s
+  development pace is still very much on track.'
+image: null
+source: osnews
+tags:
+- Haiku
+title: Haiku gets new guarded heap for the kernel
+---
+<div><p>Another month, another Haiku activity report, and this time we&#8217;ve got a major change under the hood: a brand new guarded heap. The old guarded heap was suboptimal and had started to lag behind, so the new one attempts to rectify some of these shortcomings.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>So, to rectify these limitations, I rewrote the kernel guarded heap more or less from scratch, taking the old code into account where it made sense but otherwise creating entirely new bookkeeping structures, interacting directly with the page table and virtual memory systems, and more. This new guarded heap implementation frees physical pages when not in use, meaning that the &#8220;virtual memory reuse disabled&#8221; mode now runs for quite long periods of time (indeed, I could successfully boot to the desktop and run compile jobs.) It also prints more diagnostics when kernel panics due to memory faults inside the heap happen, which the old kernel guarded heap didn&#8217;t (but the userland one has always done).</p>
+<a href="https://www.haiku-os.org/blog/waddlesplash/2025-11-11-haiku_activity_contract_report_october_2025/">&#8619; Haiku&#8217;s activity report for October</a></blockquote><p>The new guarded heap is optional for now, but Haiku is planning on releasing some pre-built test builds so users can start testing it out. Of course, this isn&#8217;t the only change or improvement from this past month &#8211; the list of changes is long, but there&#8217;s no real tentpole features here. Haiku&#8217;s development pace is still very much on track.</p></div>
