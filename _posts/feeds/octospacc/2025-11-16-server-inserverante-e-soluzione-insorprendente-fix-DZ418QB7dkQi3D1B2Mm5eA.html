@@ -1,0 +1,52 @@
+---
+author: minioctt
+canonical_url: https://octospacc.altervista.org/2025/11/16/server-inserverante-e-soluzione-insorprendente-fix-php-su-nginx-lento-che-va-in-timeout-senza-motivo/
+date: '2025-11-16T12:19:42'
+excerpt: A quanto pare, gli spiriti stanno preparando per me (cioè, contro di me)
+  nuove sgradite sorprese sul campo digitale, e adesso hanno iniziato ad interferire
+  lievemente col mio meraviglioso e amatissimo server, senza il quale le mie giornate
+  sarebbero inevitabilmente più difficili, creando problemi inspiegabili davvero originali&#8230;
+  O almeno, ieri sera mi si è dal [&#8230;]
+image: assets/media/DZ418QB7dkQi3D1B2Mm5eA-Eyo9OoCvvLQTusvGgApRUw.jpeg
+source: octospacc
+tags:
+- Senza categoria
+- PHP-FPM
+- nginx
+- sysadmin
+- PHP
+- server
+title: server inserverante e soluzione insorprendente (fix PHP su nginx lento che
+  va in timeout senza motivo)
+---
+<div>
+
+		
+<p>A quanto pare, gli spiriti stanno preparando per me (cio&#232;, contro di me) nuove sgradite sorprese sul campo digitale, e adesso <strong>hanno iniziato ad interferire lievemente col mio meraviglioso e amatissimo server</strong>, senza il quale le mie giornate sarebbero inevitabilmente pi&#249; difficili, <strong>creando problemi inspiegabili davvero originali&#8230;</strong> O almeno, <strong>ieri sera mi si &#232; dal nulla presentato esattamente 1 problema strano, e per fortuna credo di averlo risolto&#8230;</strong> ma, spero davvero che dietro l&#8217;angolo di questa piccola cosa non ci sia in realt&#224; la nascita di una nuova saga di bestemmie, perch&#233; francamente non ne ho proprio voglia; le cose devono fottutamente funzionare, per me ma anche per i miei ammiratori (altrimenti detti &#8220;utenti&#8221; da sysadmin meno magici)! &#128548;</p>
+
+
+
+<p>Ci&#242; che &#232; accaduto &#232; che <strong>ieri pomeriggio, via via, un po&#8217; alla volta, ho iniziato a vedere alcune delle mie cose hostate che risultavano di continuo andare gi&#249; e tornare su, <a href="https://stats.uptimerobot.com/3VWPjHXoBZ">dal mio monitor di uptime&#8230;</a></strong> precisamente, tutte cose PHP ospitate sul mio coso principale; invece, tutte le altre app non-PHP, o anche quelle PHP dentro container Docker dedicati, non davano alcun segno di rogna. Pi&#249; tardi, poi, la cosa &#232; (ovviamente, figuriamoci) a dir poco peggiorata, perch&#233; <strong>le maledette cose in questione o ci mettevano intere decine di secondi a rispondere, o andando down poi non tornavano su</strong>; o, almeno, rimanevano gi&#249; per un bel po&#8217;, al punto che personalmente me ne sono accorta nel provare ad usarle (e, in tal caso, precisamente, provando a caricarle si otteneva un errore 504 Gateway Time-out di nginx). &#128553;</p>
+
+
+
+<p><strong>Il perch&#233; di tutto ci&#242; era ormai un fottuto mistero.</strong> Il fatto che facesse avanti e indietro tra la morte assoluta e la vita incerta mi faceva pensare ad un&#8217;indisponibilit&#224; di risorse sul sistema, ma non c&#8217;era nulla di prettamente saturo; e comunque, per l&#8217;appunto, qualsiasi altra cosa girava normalmente. L&#8217;unica cosa che cambiata dal prima al dopo di questo problema &#232; che avevo aggiornato dei pacchetti rimasti vecchi sul sistema base (non nel container LXC dove mi girano nginx e PHP, eh), avevo liberato un po&#8217; di spazio su disco, avevo riavviato il sistema&#8230; e si era riaccesa la mia VM Windows, che a volte si spegne; non so precisamente se perch&#233; QEMU si incula quando il disco &#232; troppo pieno, o se perch&#233; c&#8217;&#232; un memory leak da qualche parte in ci&#242; che hosto, e magari la quantit&#224; di RAM libera che ho a server appena riacceso non &#232; mai quella che ho dopo qualche giorno. &#129320;</p>
+
+
+
+<p>La cosa &#232; a questo punto strana oltre ogni comprensione anche aliena, perch&#233; ho notato che, <strong>spegnendo la VM, i problemi del PHP sparivano&#8230; e, riaccendendola, in un attimo ricomparivano&#8230;</strong> mentre non cambiava niente semplicemente riavviando ancora il server o il servizio di php-fpm. Quindi, di base, la mia intuizione di una mancanza di risorse, forse, non era sbagliata, ma ancora non ho capito perch&#233; cazzo tutte le altre cose giravano perfettamente&#8230; e, se &#232; per questo, perch&#233; questo problema &#232; apparso solo adesso e non, che so, l&#8217;altro giorno, in cui pure la VM era accesa. Ad ogni modo, magrissima consolazione, perch&#233; io pretendo, e sul server devo avere TUTTO, pur sapendo di avere un margine di manovra bassino&#8230; nel senso, dovrei sicuramente comprare RAM extra per questo affare, perch&#233; 8 GB sono davvero pochi e mi costringono a tenerne altrettanti di swap, e forse dovrei anche comprare un SSD pi&#249; grande, ma le cose costano e io sono tirchia&#8230; &#128565;</p>
+
+
+
+<p>Comunque, <strong>era sotto sotto chiaro che il problema in questione era solo un capriccio di PHP</strong>, perch&#233; altrimenti il tutto non si spiega&#8230; Quindi, con la giusta dose di disperazione, ho iniziato a cercare&#8230; e, <strong>incredibilmente, ho trovato una soluzione</strong>, anche se chi l&#8217;ha chiesta aveva un problema diverso dal mio: <a href="https://serverfault.com/questions/1079155/php-scripts-suddenly-load-very-slow-on-apache"><strong>php fpm &#8211; PHP scripts suddenly load very slow on Apache &#8211; Server Fault</strong></a>. Non ho capito neanche io che cavolo vuol dire, ma nella pratica, dopo aver constatato di avere anche io almeno 1 riga di warning nei miei log come quella presa in esame (anche se, a me si tratta di una ogni tot, per&#242;, non di uno spam continuo), ho modificato la propriet&#224; <code>max_children</code> nel file <code>/etc/php/7.0/fpm/pool.d/www.conf</code>, portandola dal misero default di <code>5</code> ad un numero pi&#249; grosso di <code>25</code>. &#128566;</p>
+
+
+
+<p><strong>Con questa magia, riavviato php-fpm, i problemi sono apparentemente spariti</strong>, e anche stamattina la VM &#232; ancora accesa, ma ora il PHP si comporta a modino. Anche se, cos&#236;, il mistero non fa altro che infittirsi ancora; e, decisamente, seppur il problema sia risolto, il dubbio non &#232; svelato, e temo non lo sar&#224; mai. Su StackExchange c&#8217;&#232; chi dice che il default di <code>5</code> &#232; bassissimo, e va alzato per praticamente qualsiasi sito&#8230; ma, allo stesso tempo, qualcuno dice invece che i problemi apparsi sono un sintomo di qualcosa che usa troppe risorse, e che col tempo peggiorer&#224; ancora di pi&#249; (per esempio, una query database lenta)&#8230; BAH! Ma ehi&#8230; da sysadmin, considerato anche che non mi pagano abbastanza e che lavoro solo io qui, mi concentrer&#242; sul risolvere solo le rogne, mentre i misteri oscuri li lascer&#242; a chi ha pi&#249; esperienza con l&#8217;occulto non-informatico&#8230; <a href="https://pignio.octt.eu.org/item/115796175147241472">basta che ora Proxatore e compagnia funzionano</a>!!! &#128536;</p>
+
+
+
+ 
+ 
+ 
+	 </div>
