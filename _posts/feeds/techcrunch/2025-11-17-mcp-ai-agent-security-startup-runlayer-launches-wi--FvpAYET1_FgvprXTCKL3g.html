@@ -1,0 +1,71 @@
+---
+author: Julie Bort
+canonical_url: https://techcrunch.com/2025/11/17/mcp-ai-agent-security-startup-runlayer-launches-with-8-unicorns-11m-from-khoslas-keith-rabois-and-felicis/
+date: '2025-11-17T14:00:00'
+excerpt: Three-time founder Andrew Berman is back with a startup that helps IT ensure
+  business users' AI agents operate securely.
+image: assets/media/-FvpAYET1_FgvprXTCKL3g-n2CmXnizLLFidpKRbBdqEA.jpeg
+source: techcrunch
+tags:
+- TC
+- Startups
+- Security
+- AI
+- Keith Rabois
+- mcp
+- felicis
+- AI agents
+- ai security
+title: MCP AI agent security startup Runlayer launches with 8 unicorns, $11M from
+  Khosla’s Keith Rabois and Felicis
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">On Monday, a new Model Context Protocol security startup called <a rel="nofollow" href="https://www.runlayer.com/">Runlayer</a> launched out of stealth with $11 million in seed funding from Khosla Ventures&#8217; Keith Rabois and Felicis.&#160;</p>
+
+<p class="wp-block-paragraph">It was created by third-time founder Andrew Berman (previous companies: baby-monitor maker Nanit and an AI video conferencing tool, Vowel, that sold to <a rel="nofollow" href="https://www.prnewswire.com/news-releases/zapier-leads-the-evolution-of-ai-automation-with-acquisition-of-vowel-and-launch-of-zapier-central-302081740.html">Zapier in 2024</a>).</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">In the four months since Runlayer launched its product in stealth, it has signed dozens of customers, including eight unicorns or public companies like Gusto, Rippling, dbt Labs, Instacart, Opendoor, and Ramp, it says.&#160;It also nabbed David Soria Parra, the lead creator of MCP, as an angel and advisor, Berman tells TechCrunch.&#160;(Parra did not respond to our request for comment.)&#160;</p>
+
+<p class="wp-block-paragraph">Parra&#8217;s team at <a href="https://techcrunch.com/2024/11/25/anthropic-proposes-a-way-to-connect-data-to-ai-chatbots/">Anthropic launched the protocol </a>in November 2024 as an open source project. MCP has since become the de facto standard for allowing AI agents to connect with the data and systems they need to work independently. It allows agents to access data, move it, alter it, and execute business processes without human oversight.&#160;</p>
+
+<p class="wp-block-paragraph">The protocol is now supported by every major model maker <a href="https://techcrunch.com/2025/03/26/openai-adopts-rival-anthropics-standard-for-connecting-ai-models-to-data/">including OpenAI</a>, Microsoft, AWS, Google as well as <a rel="nofollow" href="https://modelcontextprotocol.io/docs/getting-started/intro">thousands of tech and enterprise companies</a>; just to name a few: Atlassian, Asana, Stripe, Block, others ranging from banks to consumer goods manufacturers.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;Everyone talks about AI,&#8221; Berman, Runlayer&#8217;s CEO, told TechCrunch. &#8220;but AI is really only as useful as the tools and the resources it has access to.&#8221;</p>
+
+<p class="wp-block-paragraph">The problem is, the MCP protocol itself <a rel="nofollow" href="https://mlconference.ai/blog/model-context-protocol-servers-and-security-what-you-need-to-know/">doesn&#8217;t include much security out of the box</a>, so many MCP implementations have already been found to be vulnerable in a variety of ways.</p>
+ 
+
+<p class="wp-block-paragraph">The poster children are probably GitHub and Asana. In May, researchers <a rel="nofollow" href="https://invariantlabs.ai/blog/mcp-github-vulnerability">at Invariant Labs</a> discovered a prompt injection vulnerability in MCP servers that allowed them to grab data from private GitHub repositories (ones that shouldn&#8217;t have been accessible to the public).&#160;Asana discovered and <a rel="nofollow" href="https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/">fixed a vulnerability in its MCP server in June</a> that could have exposed customer data. There&#8217; have since been many more <a rel="nofollow" href="https://www.docker.com/blog/mcp-security-issues-threatening-ai-infrastructure/">types of attacks</a> found to work on common MCP server setups.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">As you might expect, such security issues have given rise to numerous MCP security products, including products from big-name companies like CloudFlare, Docker and Wiz &#8212; as well as a host of <a rel="nofollow" href="https://a16z.com/a-deep-dive-into-mcp-and-the-future-of-ai-tooling/">startups</a> tackling more specific products.&#160;</p>
+
+<p class="wp-block-paragraph">The most common type of MCP security product these days is a gateway, essentially a security layer for identifying the agents and controlling their access to apps.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Runlayer plans to stand out in this crowded market by being an all-in-one security tool that combines a gateway with features like threat detection that analyzes every MCP request; observability that watched all agentic activity across all MCP servers that IT has permitted; enterprise development where IT can build custom AI automations for enterprise users; and detailed permissions that work with existing identify providers like Okta and Entra.&#160;</p>
+
+<p class="wp-block-paragraph">Like other competitors, such as <a rel="nofollow" href="https://obot.ai/obot-ai-secures-35m-seed-to-build-enterprise-mcp-gateway/">open source Obot</a>, Runlayer business users are presented with an Okta-like catalog of the pre-vetted MCP servers that their IT will allow agents to access.&#160;Runlayer matches the agents&#8217; app permissions to the human users&#8217; permissions. For instance, some people might have read-only access to financial systems, some write access (the ability to change the data). Others have no access at all.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">Berman believes Runlayer stands out from the crowd, not just with the breadth of the product, but because of the team&#8217;s experience. He founded the startup because, after selling Vowel to Zapier, he became the director of Zapier&#8217;s AI, and built one of the first MCP servers, working closely at the time with OpenAI and Anthropic, he said.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;What are the problems that we saw with the protocol? One, it was the security risk because it was adopted so quickly,&#8221; he said. There were &#8220;blind spots&#8221; in areas like observability and audits, that make it risky for enterprises to roll out to users.</p>
+
+<p class="wp-block-paragraph">So in August, &#8220;we left our jobs. We signed up David Soria Parra, the creator of the spec, and in four months, we&#8217;ve signed up eight unicorns,&#8221; he said of himself and his co-founders from Zapier Tal Peretz and Vitor Balocco.</p>
+
+<p class="wp-block-paragraph">Other advisors and investors in the company, Berman says, include head of security at Cursor Travis McPeak, and founder of Neon Nikita Shamgunov.&#160;</p>
+
+
+			
+
+			</div>
