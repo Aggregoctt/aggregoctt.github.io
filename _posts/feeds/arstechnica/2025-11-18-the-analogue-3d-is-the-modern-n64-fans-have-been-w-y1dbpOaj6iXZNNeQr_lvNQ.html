@@ -1,0 +1,86 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/gaming/2025/11/the-analogue-3d-is-the-modern-n64-fans-have-been-waiting-for/
+date: '2025-11-18T18:38:09'
+excerpt: Excellent design and display filters, but the lack of OpenFPGA support rankles.
+image: assets/media/y1dbpOaj6iXZNNeQr_lvNQ-0AunKKxWBksx01wntQ7SRw.jpeg
+source: arstechnica
+tags:
+- Gaming
+- analogue
+- emulation
+- fpga
+- HDTV
+- n64
+- Nintendo
+- openFPGA
+- upgrade
+title: The Analogue 3D is the modern N64 fans have been waiting for
+---
+<div>
+                      
+                      
+           
+<p>If you&#8217;ve ever tried to hook an old Nintendo 64 up to a modern HDTV, you know the results can be less than ideal. Assuming your original hardware still works and your flatscreen even has the requisite R/F and/or composite inputs to allow for the connection, the N64&#8217;s output will probably look like a blurry mess on a flatscreen that wasn&#8217;t designed with those old video signals as a priority.</p>
+<p>The Analogue 3D solves this very specific problem very well, with a powerful FPGA core that accurately replicates a Nintendo 64 and well-made display filters that do a good job of approximating that cathode-ray tube glow you remember from decades ago. But the lack of easy expandability limits the appeal of this $250 device to all but the most die-hard fans of original N64 hardware.</p>
+<h2>A beauty to behold</h2>
+<p>As a piece of physical design, the Analogue 3D is a work of art. The gentle curves of its sleek black shell evoke the original N64 design without copying it, coming in at a slightly smaller footprint and height. Plus, there&#8217;s no ugly power brick.</p>
+ 
+
+<p>This is a solidly built device, with a nice grippy underside and springy, elegant power and reset buttons. The shell has a lot of small, thoughtful touches, too, like a front power indicator that doubles as a Bluetooth sync button and lights on each controller port to indicate when a wireless controller is connected to that slot (the Hall Effect joysticks on <a href="https://www.amazon.com/Bluetooth-Controller-Analogue-Windows-Gaming-Console/dp/B0DK6VCGBC">8bitdo&#8217;s wireless &#8220;64&#8221; controller</a> are a joy compared to the crunchy mechanical sticks on your old N64 controller).</p>
+<p>The one downside to this design is that the hardware can get slightly hot after running for a while, and it emits some noticeable fan noise when stressed. The welcome screen when you first boot the system recommends you give the vents adequate space to breathe, so be careful if you plan to place it directly on the carpet or something.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>I saw the TV glow</h2>
+<p>The Analogue 3D&#8217;s custom 3DOS software automatically detects the game cartridge you&#8217;ve placed into its top-loading slot and displays basic info like player count, developer/publisher, and release date on-screen (you can also load your own custom cartridge images onto an included SD card). The system maintains this info in a scrollable list of every cartridge you&#8217;ve ever inserted, allowing for a quick way to browse through your library without the need to dig out your actual cartridges. You do have to plug in the cartridges to actually play the games, though, which limits the usefulness of the on-screen library more than a little bit.</p>
+ 
+
+ 
+<p>Before you launch a game, you can also configure the Display Mode between five preset options (these can also be swapped during gameplay using controller hotkeys for an on-screen menu). Of these, you&#8217;ll generally want to stay away from the &#8220;Clean&#8221; option, which upscales the N64&#8217;s 320&#215;240 image by simply blowing up each individual pixel to fit the display. The result is an incredibly blocky image with lots of jagged edges and blobs of color that refuse to blend well with nearby elements. It&#8217;s a look that&#8217;s especially unsuited to the low-resolution textures on most N64 games, which exploited the gentle blur of a CRT to create some vivid effects.</p>
+<p>Switching over to the &#8220;Scanlines&#8221; display option helps a bit in rounding out those jagged N64 polygons, but things really start to look better if you activate one of the system&#8217;s three different CRT emulation modes. With these, 3DOS does its best to recreate the look of an electron beam actually scanning across the phosphors on an old tube TV. These filters do an admirable job of softening the hard edges of polygons and sprites while subtly and accurately blending the colors on those low-res textures.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+
+<p>The Analogue 3D has three tube TV emulation modes, each representing consumer CRTs and the kind of Pro/Broadcast Video Monitors you&#8217;d usually only find in TV station control rooms. You can go into the menus for each mode and tinker with settings like &#8220;beam convergence&#8221; and &#8220;edge hardness,&#8221; and you can toggle N64 hardware effects like anti-aliasing and de-blurring (you can also stretch the 4:3 image to fill a 16:9 display if you&#8217;re a specific kind of monster).</p>
+<p>In general, though, I didn&#8217;t see much upside in this kind of settings tinkering. Using the system&#8217;s default &#8220;CRT&#8221; settings created a visual experience that was surprisingly authentic to the actual CRT sitting in my home office. The only thing really missing is an option to simulate the curve of a classic CRT; the hard square edges of the Analogue 3D output are a bit lacking on that score. But that&#8217;s a minor complaint for a filter that does such a good job mimicking an old TV on new display technology.</p>
+ 
+
+ 
+<h2>Open and shut</h2>
+<p>Like previous Analogue hardware, the Analogue 3D uses <a href="https://www.reddit.com/r/FPGA/comments/100dw5h/for_dummies_what_is_fpga_what_is_it_used_for/">FPGA</a> to accurately recreate the inner workings of an N64 at the level of individual logic gates. This time, the Analogue 3D&#8217;s Altera Cyclone FPGA sports a whopping 220,000 logic elements. That&#8217;s a big step up from the two FPGAs on <a href="https://arstechnica.com/gaming/2021/12/analogue-pocket-review-the-greatest-game-boy-ever-made/">2021&#8217;s Analogue Pocket</a>, which have just 49,000 and 15,000, respectively.</p>
+ 
+
+<p>That powerful FPGA allows for perfectly accurate and lag-free N64 emulation in all of our tests with original cartridges (Analogue&#8217;s Christopher Taber warns us that &#8220;flash carts and unofficial 3rd party products can be a bit of a wild card&#8221;). But players hoping to emulate other gaming systems with that powerful hardware may run into some problems. That&#8217;s because the Analogue 3D doesn&#8217;t support the OpenFPGA standard that Analogue itself <a href="https://www.analogue.co/developer">rolled out in 2022</a> as &#8220;the future of video game preservation.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>That standard has allowed a vibrant community of OpenFPGA developers to create <a href="https://openfpga-library.github.io/analogue-pocket/">dozens of free &#8220;cores&#8221;</a> that can recreate everything from classic arcade games to 16-bit consoles with amazing fidelity. Currently, though, those cores will <a href="https://arstechnica.com/gaming/2024/01/flurry-of-firmware-updates-makes-analogue-pocket-an-even-better-retro-handheld/">only work on the Analogue Pocket</a>&#160;and not subsequent hardware like the Analogue 3D or <a href="https://www.analogue.co/duo">2023&#8217;s Analogue Duo</a>.</p>
+<p>That&#8217;s a shame because the OpenFPGA community would certainly be happy to get their hands on the new, larger FPGA in the Analogue 3D to build out core support for even more classic gaming consoles. And we&#8217;re sure Analogue 3D owners would be happy to use their purchase to play existing OpenFPGA cores on the big screen, complete with 3DOS&#8217; great display options.</p>
+ 
+
+<p>&#8220;If we wanted to offer Analogue 3D with OpenFPGA (which is not the purpose or focus of the product), it would require not only a second FPGA, but an even more powerful base FPGA, therefore increasing the price to a price that doesn&#8217;t suit our goals,&#8221; Analogue founder Christopher Taber <a href="https://arstechnica.com/gaming/2023/10/analogues-hardware-emulated-nintendo-64-fpga-console-will-arrive-in-2024/">told Ars</a> when the system was first announced back in 2023.</p>
+<p>It seems likely that hackers and tinkerers will be able to expand the Analogue 3D&#8217;s emulation capabilities in the future. As it stands, though, it&#8217;s hard to recommend the hardware when options like <a href="https://arstechnica.com/gadgets/2025/07/youtuber-faces-jail-time-for-showing-off-android-based-gaming-handhelds/">Android-based, emulation-focused handhelds</a>, <a href="https://arstechnica.com/gaming/2022/02/building-a-retro-gaming-super-console-with-100-and-a-raspberry-pi-2022-edition/">Raspberry Pi-based emulation consoles</a>, and even (more expensive) <a href="https://retrorgb.com/mister.html">MiSTer FPGA boxes</a> offer able support for much more than just N64 games.</p>
+<p>If you&#8217;re looking for a simple, plug-and-play way to use your original N64 cartridges and accessories on a modern display, the Analogue 3D offers pretty much everything you could hope for. If you want a single device that can handle more, though, you should look elsewhere.</p>
+
+
+          
+                  
+
+                  
+          </div>
