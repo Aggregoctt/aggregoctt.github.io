@@ -1,0 +1,87 @@
+---
+author: Jacek Krywko
+canonical_url: https://arstechnica.com/ai/2025/11/deepminds-latest-an-ai-for-handling-mathematical-proofs/
+date: '2025-11-19T15:57:30'
+excerpt: AlphaProof can handle math challenges but needs a bit of help right now.
+image: assets/media/34DfvqzruEtYgkvLsQPCiw-g8HWH3XL0dCQnIr2rkt_5Q.jpeg
+source: arstechnica
+tags:
+- AI
+- Science
+- Computer science
+- International Mathematical Olympiad
+- math
+- proofs
+title: 'DeepMind’s latest: An AI for handling mathematical proofs'
+---
+<div>
+                      
+                      
+           
+<p>Computers are extremely good with numbers, but they haven&#8217;t gotten many human mathematicians fired. Until recently, they could barely hold their own in high school-level math competitions.</p>
+<p>But now Google&#8217;s DeepMind team has built AlphaProof, an AI system that matched silver medalists&#8217; performance at the 2024 International Mathematical Olympiad, scoring just one point short of gold at the most prestigious undergrad math competition in the world. And that&#8217;s kind of a big deal.</p>
+<h2>True understanding</h2>
+<p>The reason computers fared poorly in math competitions is that, while they far surpass humanity&#8217;s ability to perform calculations, they are not really that good at the logic and reasoning that is needed for advanced math. Put differently, they are good at performing calculations really quickly, but they usually suck at understanding why they&#8217;re doing them. While something like addition seems simple, humans can do semi-formal proofs based on definitions of addition or go for fully formal <a href="https://en.wikipedia.org/wiki/Peano_axioms">Peano arithmetic</a> that defines the properties of natural numbers and operations like addition through axioms.</p>
+<p>To perform a proof, humans have to understand the very structure of mathematics. The way mathematicians build proofs, how many steps they need to arrive at the conclusion, and how cleverly they design those steps are a testament to their brilliance, ingenuity, and mathematical elegance. &#8220;You know, Bertrand Russel published a 500-page <a href="https://en.wikipedia.org/wiki/Principia_Mathematica">book</a> to prove that one plus one equals two,&#8221; says Thomas Hubert, a DeepMind researcher and lead author of the AlphaProof study.</p>
+<p>DeepMind&#8217;s team wanted to develop an AI that understood math at this level. The work started with solving the usual AI problem: the lack of training data.</p>
+<h2>Math problems translator</h2>
+<p>Large language models that power AI systems like Chat GPT learn from billions upon billions of pages of text. Because there are texts on mathematics in their training databases&#8212;all the handbooks and works of famous mathematicians&#8212;they show some level of success in proving mathematical statements. But they are limited by how they operate: They rely on using huge neural nets to predict the next word or token in sequences generated in response to user prompts. Their reasoning is statistical by design, which means they simply return answers that &#8220;sound&#8221; right.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>DeepMind didn&#8217;t need the AI to &#8220;sound&#8221; right&#8212;that wasn&#8217;t going to cut it in high-level mathematics. They needed their AI to &#8220;be&#8221; right, to guarantee absolute certainty. That called for an entirely new, more formalized training environment. To provide that, the team used a software package called Lean.</p>
+<p>Lean is a computer program that helps mathematicians write precise definitions and proofs. It relies on a precise, formal programming language that&#8217;s also called Lean, which mathematical statements can be translated into. Once the translated or formalized statement is uploaded to the program, it can check if it is correct and get back with responses like &#8220;this is correct,&#8221; &#8220;something is missing,&#8221; or &#8220;you used a fact that is not proved yet.&#8221;</p>
+<p>The problem was, most mathematical statements and proofs that can be found online are written in natural language like &#8220;let X be the set of natural numbers that&#8230;&#8221;&#8212;the number of statements written in Lean was rather limited. &#8220;The major difficulty of working with formal languages is that there&#8217;s very little data,&#8221; Hubert says. To go around it, the researchers trained a Gemini large language model to translate mathematical statements from natural language to Lean. The model worked like an automatic formalizer&#160;and produced about 80 million formalized mathematical statements.</p>
+<p>It wasn&#8217;t perfect, but the team managed to use that to their advantage. &#8220;There are many ways you can capitalize on approximate translations,&#8221; Hubert claims.</p>
+ 
+<h2>Learning to think</h2>
+<p>The idea DeepMind had for the AlphaProof was to use the architecture the team used in their chess-, Go-, and shogi-playing AlphaZero AI system. Building proofs in Lean and Mathematics in general was supposed to be just another game to master. &#8220;We were trying to learn this game through trial and error,&#8221; Hubert says. Imperfectly formalized problems offered great opportunity for making errors. In its learning phase, AlphaProof was simply proving and disproving the problems it had in its database. If something was translated poorly, figuring out that something wasn&#8217;t right was a useful form of exercise.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Just like AlphaZero, AlphaProof in most cases used two main components. The first was a huge neural net with a few billion parameters that learned to work in the Lean environment through trial and error. It was rewarded for each proven or disproven statement and penalized for each reasoning step it took, which was a way of incentivizing short, elegant proofs.</p>
+<p>It was also trained to use a second component, which was a tree search algorithm. This explored all possible actions that could be taken to push the proof forward at each step. Because the number of possible actions in mathematics can be near infinite, the job of the neural net was to look at the available branches in the search tree and commit computational budget only to the most promising ones.</p>
+<p>After a few weeks of training, the system could score well on most math competition benchmarks based on problems sourced from past high school-level competitions, but it still struggled with the most difficult of them. To tackle these, the team added a third component that hadn&#8217;t been in AlphaZero. Or anywhere else.</p>
+<h2>Spark of humanity</h2>
+<p>The third component was called Test-Time Reinforcement Learning (TTRL) and roughly emulated the way mathematicians approach the most difficult problems. The learning part relied on the same combination of neural nets with search tree algorithms. The difference came in what it learned from. Instead of relying on a broad database of auto-formalized problems, AlphaProof working in the TTRL mode started its work by generating an entirely new training dataset based on the problem it was dealing with.</p>
+<p>The process involved creating countless variations of the original statement, some simplified a little bit more, some more general and, some only loosely connected to it. The system then attempted to prove or disprove them. It was roughly what most humans do when they&#8217;re facing a particularly hard puzzle, the AI equivalent of saying &#8220;I don&#8217;t get it so let&#8217;s try an easier version of this first to get some practice.&#8221; This allowed AlphaProof to learn on the fly, and it worked amazingly well.</p>
+
+          
+                  
+
+              
+          
+          
+<p>At the 2024 International Mathematics Olympiad, there were 42 points to score for solving six different problems worth seven points each. To win gold, participants had to get 29 points or higher, and 58 out of 609 of them did that. Silver medals were awarded to people who earned between 22 and 28 points (there were 123 silver medalists). The problems varied in difficulty, with the sixth one, acting as a &#8220;final boss,&#8221; being the most difficult of them all. Only six participants managed to solve it. AlphaProof was the seventh.</p>
+<p>But AlphaProof wasn&#8217;t an end all, be all mathematical genius. Its silver had its price&#8212;quite literally.</p>
+ 
+<h2>Optimizing ingenuity</h2>
+<p>The first problem with AlphaProof&#8217;s performance was that it didn&#8217;t work alone. To begin with, humans had to make the problems compatible with Lean before the software even got to work. And, among the six Olympic problems, the fourth one was about geometry, and the AI was not optimized for that. To deal with it, AlphaProof had to call a friend called AlphaGeometry 2, a geometry-specialized AI that ripped through the task in a few minutes without breaking a sweat. On its own then, AlphaProof scored 21 points not 28, so technically it would win bronze not silver. Except it wouldn&#8217;t.</p>
+<p>Human participants of the Olympiad had to solve their six problems in two sessions four-and-a-half hours long. AlphaProof, on the other hand, wrestled with them for several days using multiple tensor processing units at full throttle. The most time- and energy-consuming component was TTRL, which battled with the three problems it managed to solve for three days each. If AlphaProof was held up to the same standard as human participants, it would basically run out of time. And if it wasn&#8217;t born at a tech giant worth hundreds of billions of dollars, it would run out of money, too.</p>
+
+          
+                  
+
+              
+          
+          
+<p>In the paper, the team admits the computational requirements to run AlphaProof are most likely cost-prohibitive for most research groups and aspiring mathematicians. Computing power in AI applications is often measured in TPU-days, meaning a tensor processing unit working flat-out for a full day. AlphaProof needed hundreds of TPU-days per problem.</p>
+<p>On top of that, the International Mathematics Olympiad is a high-school level competition, and the problems, while admittedly difficult, were based on things mathematicians already know. Research-level math requires inventing entirely new concepts instead of just working with existing ones.</p>
+<p>But DeepMind thinks it can overcome these hurdles and optimize AlphaProof to be less resource-hungry. &#8220;We don&#8217;t want to stop at math competitions. We want to build an AI system that could really contribute to research-level mathematics,&#8221; Hubert says. His goal is to make AlphaProof available to the broader research community. &#8220;We&#8217;re also releasing a kind of an AlphaProof tool,&#8221; he added. &#8220;It would be a small trusted testers program to see if this would be useful to mathematicians.&#8221;</p>
+<p>Nature, 2025. &#160;DOI: <a href="https://doi.org/10.1038/s41586-025-09833-y">10.1038/s41586-025-09833-y</a></p>
+
+
+          
+                  
+
+                  
+          </div>
