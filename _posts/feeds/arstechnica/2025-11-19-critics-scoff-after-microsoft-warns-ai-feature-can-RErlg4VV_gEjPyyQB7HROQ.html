@@ -1,0 +1,88 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/11/critics-scoff-after-microsoft-warns-ai-feature-can-infect-machines-and-pilfer-data/
+date: '2025-11-19T20:25:46'
+excerpt: Integration of Copilot Actions into Windows is off by default, but for how
+  long?
+image: assets/media/RErlg4VV_gEjPyyQB7HROQ-rzT_ltMrJbXL9ccnAgFZ4g.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Security
+- copilot
+- Data breaches
+- large language models
+- malware
+- microsoft
+- vulnerabilities
+- Windows
+title: Critics scoff after Microsoft warns AI feature can infect machines and pilfer
+  data
+---
+<div>
+                      
+                      
+           
+<p>Microsoft&#8217;s warning on Tuesday that an experimental AI agent integrated into Windows can infect devices and pilfer sensitive user data has set off a familiar response from security-minded critics: Why is Big Tech so intent on pushing new features before their dangerous behaviors can be fully understood and contained?</p>
+<p>As <a href="https://arstechnica.com/gadgets/2025/11/new-windows-11-ai-agents-can-work-in-the-background-but-create-new-security-risks/">reported Tuesday</a>, Microsoft introduced Copilot Actions, a new set of &#8220;experimental agentic features&#8221; that, when enabled, perform &#8220;everyday tasks like organizing files, scheduling meetings, or sending emails,&#8221; and provide &#8220;an active digital collaborator that can carry out complex tasks for you to enhance efficiency and productivity.&#8221;</p>
+<h2>Hallucinations and prompt injections apply</h2>
+<p>The fanfare, however, came with a <a href="https://support.microsoft.com/en-us/windows/experimental-agentic-features-a25ede8a-e4c2-4841-85a8-44839191dfb3">significant caveat</a>. Microsoft recommended users enable Copilot Actions only &#8220;if you understand the security implications outlined.&#8221;</p>
+<p>The admonition is based on known defects inherent in most large language models, including Copilot, as <a href="https://arstechnica.com/security/2024/03/hackers-can-read-private-ai-assistant-chats-even-though-theyre-encrypted/">researchers</a> <a href="https://arstechnica.com/security/2025/02/new-hack-uses-prompt-injection-to-corrupt-geminis-long-term-memory/">have</a> <a href="https://arstechnica.com/information-technology/2025/02/copilot-exposes-private-github-pages-some-removed-by-microsoft/">repeatedly</a> <a href="https://arstechnica.com/security/2024/10/ai-chatbots-can-read-and-write-invisible-text-creating-an-ideal-covert-channel/">demonstrated</a>.</p>
+<p>One common defect of LLMs causes them to provide factually erroneous and illogical answers, sometimes even to the most basic questions. This propensity for hallucinations, as the behavior has come to be called, means users can&#8217;t trust the output of Copilot, Gemini, Claude, or any other AI assistant and instead must independently confirm it.</p>
+<p>Another common LLM landmine is the <a href="https://arstechnica.com/security/2025/05/ai-agents-that-autonomously-trade-cryptocurrency-arent-ready-for-prime-time/">prompt injection</a>, a class of bug that allows hackers to plant malicious instructions in websites, resumes, and emails. LLMs are programmed to follow directions so eagerly that they are unable to discern those in valid user prompts from those contained in untrusted, third-party content created by attackers. As a result, the LLMs give the attackers the same deference as users.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Both flaws can be exploited in attacks that exfiltrate sensitive data, run malicious code, and steal cryptocurrency. So far, these vulnerabilities have proved impossible for developers to prevent and, in many cases, can only be fixed using bug-specific workarounds developed once a vulnerability has been discovered.</p>
+<p>That, in turn, led to this whopper of a disclosure in Microsoft&#8217;s post from Tuesday:</p>
+<p>&#8220;As these capabilities are introduced, AI models still face functional limitations in terms of how they behave and occasionally may hallucinate and produce unexpected outputs,&#8221; Microsoft said. &#8220;Additionally, agentic AI applications introduce novel security risks, such as cross-prompt injection (XPIA), where malicious content embedded in UI elements or documents can override agent instructions, leading to unintended actions like data exfiltration or malware installation.&#8221;</p>
+<p>Microsoft indicated that only experienced users should enable Copilot Actions, which is currently available only in beta versions of Windows. The company, however, didn&#8217;t describe what type of training or experience such users should have or what actions they should take to prevent their devices from being compromised. I asked Microsoft to provide these details, and the company declined.</p>
+<h2>Like &#8220;macros on Marvel superhero crack&#8221;</h2>
+<p>Some security experts questioned the value of the warnings in Tuesday&#8217;s post, comparing them to warnings Microsoft has provided for decades about the danger of using macros in Office apps. Despite the long-standing advice, macros have remained among the <a href="https://arstechnica.com/information-technology/2023/03/security-researchers-are-again-in-the-crosshairs-of-north-korean-hackers/">lowest-hanging</a> <a href="https://arstechnica.com/information-technology/2023/03/botnet-that-knows-your-name-and-quotes-your-email-is-back-with-new-tricks/">fruit</a> for hackers out to surreptitiously install malware on Windows machines. One reason for this is that Microsoft has made macros so central to productivity that many users can&#8217;t do without them.</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;Microsoft saying &#8216;don&#8217;t enable macros, they&#8217;re dangerous&#8217;&#8230; has never worked well,&#8221; independent researcher Kevin Beaumont said. &#8220;This is macros on Marvel superhero crack.&#8221;</p>
+<p>Beaumont, who is regularly hired to respond to major Windows network compromises inside enterprises, also questioned whether Microsoft will provide a means for admins to adequately restrict Copilot Actions on end-user machines or to identify machines in a network that have the feature turned on.</p>
+<p>A Microsoft spokesperson said IT admins will be able to enable or disable an agent workspace at both account and device levels, using <a href="https://www.microsoft.com/en-us/security/business/microsoft-intune">Intune</a> or other MDM (Mobile Device Management) apps.</p>
+<p>Critics voiced other concerns, including the difficulty for even experienced users to detect exploitation attacks targeting the AI agents they&#8217;re using.</p>
+<p>&#8220;I don&#8217;t see how users are going to prevent anything of the sort they are referring to, beyond not surfing the web I guess,&#8221; researcher Guillaume Rossolini <a href="https://infosec.exchange/@GuillaumeRossolini/115572355182920728">said</a>.</p>
+<p>Microsoft has stressed that Copilot Actions is an experimental feature that&#8217;s turned off by default. That design was likely chosen to limit its access to users with the experience required to understand its risks. Critics, however, noted that previous experimental features&#8212;Copilot, for instance&#8212;regularly become default capabilities for all users over time. Once that&#8217;s done, users who don&#8217;t trust the feature are often required to invest time developing unsupported ways to <a href="https://arstechnica.com/gadgets/2025/11/what-i-do-to-clean-up-a-clean-install-of-windows-11-23h2-and-edge/">remove the features</a>.</p>
+ 
+<h2>Sound but lofty goals</h2>
+<p>Most of Tuesday&#8217;s post focused on Microsoft&#8217;s overall strategy for securing agentic features in Windows. Goals for such features include:</p>
+<ul>
+<li>Non-repudiation, meaning all actions and behaviors must be &#8220;observable and distinguishable from those taken by a user&#8221;</li>
+<li>Agents must preserve confidentiality when they collect, aggregate, or otherwise utilize user data</li>
+<li>Agents must receive user approval when accessing user data or taking actions</li>
+</ul>
+
+          
+                  
+
+              
+          
+          
+<p>The goals are sound, but ultimately they depend on users reading the dialog windows that warn of the risks and require careful approval before proceeding. That, in turn, diminishes the value of the protection for many users.</p>
+<p>&#8220;The usual caveat applies to such mechanisms that rely on users clicking through a permission prompt,&#8221; Earlence Fernandes, a University of California, San Diego professor specializing in AI security, told Ars. &#8220;Sometimes those users don&#8217;t fully understand what is going on, or they might just get habituated and click &#8216;yes&#8217; all the time. At which point, the security boundary is not really a boundary.&#8221;</p>
+<p>As demonstrated by the <a href="https://arstechnica.com/security/2025/11/clickfix-may-be-the-biggest-security-threat-your-family-has-never-heard-of/">rash of &#8220;ClickFix&#8221; attacks</a>, many users can be tricked into following extremely dangerous instructions. While more experienced users (including a fair number of Ars commenters) blame the victims falling for such scams, these incidents are inevitable for a host of reasons. In some cases, even careful users are fatigued or under emotional distress and slip up as a result. Other users simply lack the knowledge to make informed decisions.</p>
+<p>Microsoft&#8217;s warning, one critic said, amounts to little more than a CYA (short for cover your ass), a legal maneuver that attempts to shield a party from liability.</p>
+<p>&#8220;Microsoft (like the rest of the industry) has no idea how to stop prompt injection or hallucinations, which makes it fundamentally unfit for almost anything serious,&#8221; critic Reed Mideke <a href="https://infosec.exchange/@reedmideke@mastodon.social/115573662949058645">said</a>. &#8220;The solution? Shift liability to the user. Just like every LLM chatbot has a &#8216;oh by the way, if you use this for anything important be sure to verify the answers&#8221; disclaimer, never mind that you wouldn&#8217;t need the chatbot in the first place if you knew the answer.&#8221;</p>
+<p>As Mideke indicated, most of the criticisms extend to AI offerings other companies&#8212;including Apple, Google, and Meta&#8212;are integrating into their products. Frequently, these integrations begin as optional features and eventually become default capabilities whether users want them or not.</p>
+
+
+          
+                  
+
+                  
+          </div>

@@ -1,0 +1,66 @@
+---
+author: Jon Brodkin
+canonical_url: https://arstechnica.com/tech-policy/2025/11/cloudflare-broke-much-of-the-internet-with-a-corrupted-bot-management-file/
+date: '2025-11-19T21:25:24'
+excerpt: '"I worry this is the big botnet flexing," CEO said. But outage was self-inflicted.'
+image: assets/media/-aipYbt4_3mSXGJNd3j7bQ-vcc3mJvqXal7e86yiA9CJA.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Policy
+- cloudflare
+- Matthew Prince
+- outage
+title: Massive Cloudflare outage was triggered by file that suddenly doubled in size
+---
+<div>
+                      
+                      
+           
+<p>When a Cloudflare outage <a href="https://arstechnica.com/tech-policy/2025/11/widespread-cloudflare-outage-blamed-on-mysterious-traffic-spike/">disrupted large numbers</a> of websites and online services yesterday, the company initially thought it was hit by a &#8220;hyper-scale&#8221; DDoS (distributed denial-of-service) attack.</p>
+<p>&#8220;I worry this is the big botnet flexing,&#8221; Cloudflare co-founder and CEO Matthew Prince wrote in an internal chat room yesterday, while he and others discussed whether Cloudflare was being hit by attacks from the prolific <a href="https://techcommunity.microsoft.com/blog/azureinfrastructureblog/defending-the-cloud-azure-neutralized-a-record-breaking-15-tbps-ddos-attack/4470422">Aisuru botnet</a>. But upon further investigation, Cloudflare staff realized the problem had an internal cause: an important file had unexpectedly doubled in size and propagated across the network.</p>
+<p>This caused trouble for software that needs to read the file to maintain the Cloudflare <a href="https://www.cloudflare.com/application-services/products/bot-management/">bot management system</a> that uses a machine learning model to protect against security threats. Cloudflare&#8217;s core CDN, security services, and several other services were affected.</p>
+<p>&#8220;After we initially wrongly suspected the symptoms we were seeing were caused by a hyper-scale DDoS attack, we correctly identified the core issue and were able to stop the propagation of the larger-than-expected feature file and replace it with an earlier version of the file,&#8221; Prince wrote in a <a href="https://blog.cloudflare.com/18-november-2025-outage/">post-mortem</a> of the outage.</p>
+<p>Prince explained that the problem &#8220;was triggered by a change to one of our database systems&#8217; permissions which caused the database to output multiple entries into a &#8216;feature file&#8217; used by our Bot Management system. That feature file, in turn, doubled in size. The larger-than-expected feature file was then propagated to all the machines that make up our network.&#8221;</p>
+<p>These machines run software that routes traffic across the Cloudflare network. The software &#8220;reads this feature file to keep our Bot Management system up to date with ever changing threats,&#8221; Prince wrote. &#8220;The software had a limit on the size of the feature file that was below its doubled size. That caused the software to fail.&#8221;</p>
+<h2>Sorry for the pain, Internet</h2>
+<p>After replacing the bloated feature file with an earlier version, the flow of core traffic &#8220;largely&#8221; returned to normal, Prince wrote. But it took another two-and-a-half hours &#8220;to mitigate increased load on various parts of our network as traffic rushed back online.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p><a href="https://arstechnica.com/gadgets/2025/10/a-single-point-of-failure-triggered-the-amazon-outage-affecting-millions/">Like Amazon Web Services</a>, Cloudflare is relied upon by many online services and can take down much of the web when it has a technical problem. &#8220;On behalf of the entire team at Cloudflare, I would like to apologize for the pain we caused the Internet today,&#8221; Prince wrote, saying that any outage is unacceptable because of &#8220;Cloudflare&#8217;s importance in the Internet ecosystem.&#8221;</p>
+<p>Cloudflare&#8217;s bot management system classifies bots as good or bad with &#8220;a machine learning model that we use to generate bot scores for every request traversing our network,&#8221; Prince wrote. &#8220;Our customers use bot scores to control which bots are allowed to access their sites&#8212;or not.&#8221;</p>
+<p>Prince explained that the configuration file this system relies upon describes &#8220;features,&#8221; or individual traits &#8220;used by the machine learning model to make a prediction about whether the request was automated or not.&#8221; This file is updated every five minutes &#8220;and published to our entire network and allows us to react to variations in traffic flows across the Internet. It allows us to react to new types of bots and new bot attacks. So it&#8217;s critical that it is rolled out frequently and rapidly as bad actors change their tactics quickly.&#8221;</p>
+ 
+<h2>Unexpected query response</h2>
+<p>Each new version of the file is generated by a query running on a ClickHouse database cluster, Prince wrote. When Cloudflare made a change granting additional permissions to database users, the query response suddenly contained more metadata than it previously had.</p>
+<p>Cloudflare staff assumed &#8220;that the list of columns returned by a query like this would only include the &#8216;default&#8217; database.&#8221; But the query didn&#8217;t include a filter for the database name, causing it to return duplicates of columns, Prince wrote.</p>
+<p>This is the type of query that Cloudflare&#8217;s bot management system uses &#8220;to construct each input &#8216;feature&#8217; for the file,&#8221; he wrote. The extra metadata more than doubled the rows in the response, &#8220;ultimately affecting the number of rows (i.e. features) in the final file output,&#8221; Prince wrote.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Cloudflare&#8217;s proxy service has limits to prevent excessive memory consumption, with the bot management system having &#8220;a limit on the number of machine learning features that can be used at runtime.&#8221; This limit is 200, well above the actual number of features used.</p>
+<p>&#8220;When the bad file with more than 200 features was propagated to our servers, this limit was hit&#8212;resulting in the system panicking&#8221; and outputting errors, Prince wrote.</p>
+<h2>Worst Cloudflare outage since 2019</h2>
+<p>The number of 5xx error HTTP status codes served by the Cloudflare network is normally &#8220;very low&#8221; but soared after the bad file spread across the network. &#8220;The spike, and subsequent fluctuations, show our system failing due to loading the incorrect feature file,&#8221; Prince wrote. &#8220;What&#8217;s notable is that our system would then recover for a period. This was very unusual behavior for an internal error.&#8221;</p>
+<p>This unusual behavior was explained by the fact &#8220;that the file was being generated every five minutes by a query running on a ClickHouse database cluster, which was being gradually updated to improve permissions management,&#8221; Prince wrote. &#8220;Bad data was only generated if the query ran on a part of the cluster which had been updated. As a result, every five minutes there was a chance of either a good or a bad set of configuration files being generated and rapidly propagated across the network.&#8221;</p>
+<p>This fluctuation initially &#8220;led us to believe this might be caused by an attack. Eventually, every ClickHouse node was generating the bad configuration file and the fluctuation stabilized in the failing state,&#8221; he wrote.</p>
+<p>Prince said that Cloudflare &#8220;solved the problem by stopping the generation and propagation of the bad feature file and manually inserting a known good file into the feature file distribution queue,&#8221; and then &#8220;forcing a restart of our core proxy.&#8221; The team then worked on &#8220;restarting remaining services that had entered a bad state&#8221; until the 5xx error code volume returned to normal later in the day.</p>
+<p>Prince said the outage was Cloudflare&#8217;s worst <a href="https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/">since 2019</a>&#160;and that the firm is taking steps to protect against similar failures in the future. Cloudflare will work on &#8220;hardening ingestion of Cloudflare-generated configuration files in the same way we would for user-generated input; enabling more global kill switches for features; eliminating the ability for core dumps or other error reports to overwhelm system resources; [and] reviewing failure modes for error conditions across all core proxy modules,&#8221; according to Prince.</p>
+<p>While Prince can&#8217;t promise that Cloudflare will never have another outage of the same scale, he said that previous outages have &#8220;always led to us building new, more resilient systems.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
