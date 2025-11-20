@@ -1,0 +1,67 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2025/11/the-eu-made-apple-adopt-new-wi-fi-standards-and-now-android-can-support-airdrop/
+date: '2025-11-20T20:11:01'
+excerpt: Recent EU regulations pushed Apple to support better interoperability in
+  iOS 26.
+image: assets/media/7h2UWxFPQZ20Fh_H8PJeWQ-Qo3rVyGjYyl9jUy7vQKIww.jpeg
+source: arstechnica
+tags:
+- Apple
+- Tech
+- android
+- Google Pixel
+- iOS
+- ios 26
+- iphone
+- pixel
+- pixel 10
+title: The EU made Apple adopt new Wi-Fi standards, and now Android can support AirDrop
+---
+<div>
+                      
+                      
+           
+<p>Last year, Apple <a href="https://arstechnica.com/gadgets/2024/09/ios-18-brings-rcs-to-major-carrier-iphones-but-prepaid-plans-are-still-waiting/">finally added support</a> for Rich Communications Services (RCS) texting to its platforms, improving consistency, reliability, and <a href="https://arstechnica.com/gadgets/2025/03/rcs-texting-updates-will-bring-end-to-end-encryption-to-green-bubble-chats/">security</a> when exchanging green-bubble texts between the competing iPhone and Android ecosystems. Today, Google is announcing another small step forward in interoperability, pointing to a slightly less annoying future for friend groups or households where not everyone owns an iPhone.</p>
+<p>Google <a href="https://blog.google/products/android/quick-share-airdrop/">has updated</a> Android&#8217;s Quick Share feature to support Apple&#8217;s AirDrop, which allows users of Apple devices to share files directly using a local peer-to-peer Wi-Fi connection. Apple devices with AirDrop enabled and set to &#8220;everyone for 10 minutes&#8221; mode will show up in the Quick Share device list just like another Android phone would, and Android devices that support this new Quick Share version will also show up in the AirDrop menu.</p>
+<p>Google will only support this feature on the Pixel 10 series, at least to start. The company is &#8220;looking forward to improving the experience and expanding it to more Android devices,&#8221; but it didn&#8217;t announce anything about a timeline or any hardware or software requirements. Quick Share also won&#8217;t work with AirDrop devices working in the default &#8220;contacts only&#8221; mode, though Google &#8220;[welcomes] the opportunity to work with Apple to enable &#8216;Contacts Only&#8217; mode in the future.&#8221; (Reading between the lines: Google and Apple are not currently working together to enable this, and <a href="https://www.theverge.com/news/825228/iphone-airdrop-android-quick-share-pixel-10">Google confirmed to The Verge</a> that Apple hadn&#8217;t been involved in this at all.)</p>
+<p>Like AirDrop, Google notes that files shared via Quick Share are transferred directly between devices, without being sent to either company&#8217;s servers first.</p>
+<p>Google shared a little more information in <a href="https://security.googleblog.com/2025/11/android-quick-share-support-for-airdrop-security.html">a separate post about Quick Share&#8217;s security</a>, crediting Android&#8217;s use of the memory-safe Rust programming language with making secure file sharing between platforms possible.</p>
+<p>&#8220;Its compiler enforces strict ownership and borrowing rules at compile time, which guarantees memory safety,&#8221; writes Google VP of Platforms Security and Privacy Dave Kleidermacher. &#8220;Rust removes entire classes of memory-related bugs. This means our implementation is inherently resilient against attackers attempting to use maliciously crafted data packets to exploit memory errors.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>Why is this happening now?</h2>
+<p>Google doesn&#8217;t mention it in either Quick Share post, but if you&#8217;re wondering why it&#8217;s suddenly possible for Quick Share to work with AirDrop, it can almost certainly be credited to European Union regulations imposed under the Digital Markets Act (DMA).</p>
+<p>Let&#8217;s start with how AirDrop works. Like many of Apple&#8217;s &#8220;<a href="https://support.apple.com/en-us/108046">Continuity</a>&#8221; features that rely on wireless communication between devices, AirDrop uses Bluetooth to allow devices to find each other, and a fast peer-to-peer Wi-Fi connection to actually transfer files and other data. This isn&#8217;t exotic hardware; all smartphones, tablets, and computers sold today include some flavor of Bluetooth and Wi-Fi.</p>
+<p>But to make those Continuity features work, Apple also developed a proprietary protocol called Apple Wireless Direct Link (AWDL) to facilitate the actual connection between devices and the data transfer. Because this wasn&#8217;t a standard anyone could use, other companies couldn&#8217;t try to make their own wireless sharing features compatible with AirDrop.</p>
+<p>But <a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_25_816">earlier this year</a>, the EU <a href="https://digital-markets-act.ec.europa.eu/questions-and-answers/interoperability_en">adopted new specification decisions</a> that required Apple to adopt new interoperable wireless standards, starting in this year&#8217;s iOS 26 release. If you don&#8217;t want to wade through the regulatory documents, <a href="https://www.ditto.com/blog/cross-platform-p2p-wi-fi-how-the-eu-killed-awdl">this post</a> from cloud services company Ditto is a useful timeline of events written in plainer language.</p>
+ 
+ 
+
+<p>The rulings required Apple to add support for the Wi-Fi Alliance&#8217;s <a href="https://www.wi-fi.org/alternative-topologies">Wi-Fi Aware standard</a> instead of AWDL&#8212;and in fact required Apple to deprecate AWDL and to help add its features to Wi-Fi Aware so that any device could benefit from them. This wasn&#8217;t quite the imposition it sounded like; Wi-Fi Aware <a href="https://owlink.org/wiki/">was developed with Apple&#8217;s help</a>, based on the work Apple had already done on AWDL. But it meant that Apple could no longer keep other companies out of AirDrop by using a functionally similar but private communication protocol instead of the standardized version.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>In some ways, Apple&#8217;s journey to Wi-Fi Aware recalls the iPhone&#8217;s journey to USB-C: first, Apple developed a proprietary port that achieved some of the same goals as USB-C; Apple then contributed work to what would become the standardized USB-C connector; but then the company hesitated to actually adopt the standardized port in its phones until its hand was <a href="https://arstechnica.com/gadgets/2022/12/the-clock-is-rapidly-ticking-on-apples-lightning-charger/">forced by regulators</a>.</p>
+<p>In any case, Wi-Fi Aware was added to iOS 26 and iPadOS 26, and <a href="https://developer.apple.com/documentation/WiFiAware">Apple&#8217;s developer documentation</a> lists the specific hardware that supports it (the iPhone 12 and later, and most iPads released within the last three or four years). For Android users, that likely means that Quick Share will only work with AirDrop on those devices, if they&#8217;ve been updated to iOS/iPadOS 26 or later. Google <a href="https://developer.android.com/develop/connectivity/wifi/wifi-aware">has supported Wi-Fi Aware</a> in Android since version 8.0, so it should at least theoretically be possible for most modern Android phones to add support for the feature in software updates somewhere down the line.</p>
+<p>Apple&#8217;s hardware support list also suggests that Android phones won&#8217;t work with AirDrop on the Mac, since macOS 26 isn&#8217;t listed as a supported operating system on Apple&#8217;s Wi-Fi Aware (it&#8217;s likely not a coincidence that macOS is not considered to be a &#8220;gatekeeper&#8221; operating system under the DMA, as both iOS and iPadOS are).</p>
+<p>If I had to guess why neither of Google&#8217;s Quick Share posts mention Wi-Fi interoperability standards or the DMA, it may be because Google has been <a href="https://arstechnica.com/tech-policy/2024/03/on-dma-eve-google-whines-apple-sounds-alarms-and-tiktok-wants-out/">complaining</a> about <a href="https://arstechnica.com/google/2025/10/uk-antitrust-regulator-takes-aim-at-googles-search-dominance/">various aspects of the law</a> and its enforcement since <a href="https://arstechnica.com/tech-policy/2022/03/eu-to-regulate-gatekeepers-in-crackdown-on-google-apple-amazon-facebook/">before it was even passed</a> (as have many US tech companies designated as gatekeepers by the law). Google has occasionally tried to take advantage of the DMA, as it did <a href="https://arstechnica.com/gadgets/2023/11/google-argues-imessage-should-be-regulated-by-the-eus-digital-markets-act/">when it argued</a> that Apple&#8217;s iMessage service should be opened up. But it may be that Google doesn&#8217;t want to explicitly credit or praise the DMA in its press releases when the company is <a href="https://arstechnica.com/apple/2025/03/eu-accuses-google-and-apple-of-stifling-competition-under-digital-markets-act/">facing the possibility of huge fines</a> under the same law.</p>
+<p>The New York Times <a href="https://www.nytimes.com/2025/11/17/technology/europe-big-tech.html">reported earlier this week</a> that EU regulators are considering changes to some of its tech regulations, citing concerns about &#8220;overregulation&#8221; and &#8220;competitiveness,&#8221; but that the EU was not currently considering changes to the DMA. For its part, Apple recently <a href="https://arstechnica.com/tech-policy/2025/09/apple-demands-eu-repeal-the-digital-markets-act/">called for the DMA to be repealed entirely</a>.</p>
+
+
+          
+                  
+
+                  
+          </div>
