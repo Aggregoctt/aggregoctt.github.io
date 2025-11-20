@@ -1,0 +1,54 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143871/fixing-the-broken-solaris-management-console-oracle-wont-fix/
+date: '2025-11-20T21:43:25'
+excerpt: 'In my detailed article about the Sun Microsystems ecosystem of the late
+  2000s, I mentioned an issue I ran into with the latest (leaked) patchset for Solaris
+  10, the one from 2020, available on Archive.org. Sun does not make Solaris 10 patches
+  and patchsets from 2014 and later freely available online, restricting them to big
+  enterprise customers with expensive support contracts. The same restrictions apply
+  to mere support documents for Solaris 10, so that issues documented by Oracle, including
+  causes and possible solutions, are only accessible to those with support contracts.
+  The specific issue I ran into is that after installing the 2020 patchset, the Solaris
+  Management Console, a GUI application written in Java with which you can manage
+  certain aspects of your system, would no longer work. It would start up, but any
+  settings panel you tried to load would throw up an RMI_ERR: error unmarshalling
+  return, rendering the SMC effectively non-functional. This problem is documented
+  in Oracle Doc ID 1559490.1, but of course, the Cause and Solution sections are hidden.
+  I like weird commercial UNIX configuration GUIs, so even though you can do all of
+  the SMC&#8217;s tasks with command-line tools, I still want it to work. Judging
+  by the error and the countless references to Java updates, it&#8217;s easy to figure
+  out that the root cause is an updated version of Java installed by the patchset
+  that the SMC doesn&#8217;t like. You&#8217;d think uninstalling any relevant patches
+  would solve the problem, but I tried that and it didn&#8217;t make a difference,
+  so I was hoping Oracle perhaps had a later patch to fix the issue, or perhaps a
+  proper workaround to get the SMC working again. Well, a screenshot of the remainder
+  of that Oracle Doc ID mysteriously materialised on my Ultra 45 this morning, and
+  it turns out that Oracle just&#8230; Doesn&#8217;t care. Honestly, I can&#8217;t
+  blame them. Solaris 10 is old, outdated, pure legacy, and the very small number
+  of organisations still using it are probably using it in Solaris Zones on servers
+  anyway, and definitely not as a workstation/desktop operating system. There is zero
+  incentive for Oracle to waste any time trying to fix this issue that, let&#8217;s
+  be honest, really only affects one person in the entire world: me. Still, I wanted
+  it fixed, and so I brute-forced a solution. It&#8217;s pretty straightforward: just
+  change your default Java version back to one that the Solaris Management Console
+  can work with. While I have Java 1.6.0 and 1.8.0 installed on the Ultra 45, with
+  1.6.0 being the default, the SMC will only work when 1.5.0 is set as your default
+  Java version. There&#8217;s a wide variety of ways to do this, ranging from hatchets
+  to scalpels, but considering nothing else on Solaris 10/SPARC on the Ultra 45 relies
+  on 1.6.0 or later (as far as I can tell, at least), I took a hatchet approach and
+  just changed the /usr/java symlink so that it pointed to 1.5.0 again. It&#8217;s
+  that simple. Like I said, there are far more elegant ways of doing this, down to
+  various scripts and other things to force only the SMC to use this specific Java
+  version, but it&#8217;s not worth the effort to figure that out, and this works
+  just as well. So, just in case there&#8217;s ever going to be a second person looking
+  to fix this problem, here you are. You weird, weird person.'
+image: assets/media/2X8vzxBZ3gCtJyA4oF5Qzg-5V0w0H_NEiGAHioe7biRcg.jpeg
+source: osnews
+tags:
+- Solaris
+title: “Fixing” the broken Solaris Management Console Oracle won’t fix
+---
+<div><p>In my <a href="https://www.osnews.com/story/143570/living-my-best-sun-microsystems-ecosystem-life-in-2025/">detailed article about the Sun Microsystems ecosystem of the late 2000s</a>, I mentioned an issue I ran into with the latest (leaked) patchset for Solaris 10, the one from 2020, <a href="https://archive.org/details/10-recommended-cpu-2020-01">available on Archive.org</a>. Sun does not make Solaris 10 patches and patchsets from 2014 and later freely available online, restricting them to big enterprise customers with expensive support contracts. The same restrictions apply to mere support documents for Solaris 10, so that issues documented by Oracle, including causes and possible solutions, are only accessible to those with support contracts.</p><p>The specific issue I ran into is that after installing the 2020 patchset, the <a href="https://docs.oracle.com/cd/E26505_01/html/E29492/smcover-3.html">Solaris Management Console</a>, a GUI application written in Java with which you can manage certain aspects of your system, would no longer work. It would start up, but any settings panel you tried to load would throw up an <code>RMI_ERR: error unmarshalling return</code>, rendering the SMC effectively non-functional. This problem is documented in <a href="https://support.oracle.com/knowledge/Sun%20Microsystems/1559490_1.html">Oracle Doc ID 1559490.1</a>, but of course, the Cause and Solution sections are hidden. I like weird commercial UNIX configuration GUIs, so even though you can do all of the SMC&#8217;s tasks with command-line tools, I still want it to work.</p><p>Judging by the error and the countless references to Java updates, it&#8217;s easy to figure out that the root cause is an updated version of Java installed by the patchset that the SMC doesn&#8217;t like. You&#8217;d think uninstalling any relevant patches would solve the problem, but I tried that and it didn&#8217;t make a difference, so I was hoping Oracle perhaps had a later patch to fix the issue, or perhaps a proper workaround to get the SMC working again. Well, a screenshot of the remainder of that Oracle Doc ID mysteriously materialised on my Ultra 45 this morning, and it turns out that Oracle just&#8230; Doesn&#8217;t care.</p><p>Honestly, I can&#8217;t blame them. Solaris 10 is old, outdated, pure legacy, and the very small number of organisations still using it are probably using it in <a href="https://docs.oracle.com/cd/E53394_01/html/E54760/zonesoverview.html">Solaris Zones</a> on servers anyway, and definitely not as a workstation/desktop operating system. There is zero incentive for Oracle to waste any time trying to fix this issue that, let&#8217;s be honest, really only affects one person in the entire world: <a href="https://static.wikia.nocookie.net/scrubs/images/d/de/5x22-Bob_Kelso.jpg">me</a>. Still, I wanted it fixed, and so I brute-forced a solution.</p><p>It&#8217;s pretty straightforward: just change your default Java version back to one that the Solaris Management Console can work with. While I have Java 1.6.0 and 1.8.0 installed on the Ultra 45, with 1.6.0 being the default, the SMC will only work when 1.5.0 is set as your default Java version. There&#8217;s a wide variety of ways to do this, ranging from hatchets to scalpels, but considering nothing else on Solaris 10/SPARC on the Ultra 45 relies on 1.6.0 or later (as far as I can tell, at least), I took a hatchet approach and just changed the <code>/usr/java</code> symlink so that it pointed to 1.5.0 again.</p><pre class="wp-block-code"><code>cd /usr
+rm java
+ln -s jdk/instances/jdk1.5.0 java</code></pre><p>It&#8217;s that simple. Like I said, there are far more elegant ways of doing this, down to various scripts and other things to force only the SMC to use this specific Java version, but it&#8217;s not worth the effort to figure that out, and this works just as well. So, just in case there&#8217;s ever going to be a second person looking to fix this problem, here you are.</p><p>You weird, weird person.</p></div>
