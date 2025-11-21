@@ -1,0 +1,75 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/11/thousands-of-hacked-asus-routers-are-under-control-of-suspected-china-state-hackers/
+date: '2025-11-21T22:05:20'
+excerpt: So far, the hackers are laying low, likely for later use.
+image: assets/media/jeKkDX5SaIm8Zl5CApfkyw-9xw1UdcCGZcSpYuK7CFu-w.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- ASUS
+- consumer routers
+- hacking
+- state sponsored hacking
+title: How to know if your Asus router is one of thousands hacked by China-state hackers
+---
+<div>
+                      
+                      
+          <p>Thousands of Asus routers have been hacked and are under the control of a suspected China-state group that has yet to reveal its intentions for the mass compromise, researchers said.</p>
+<p>The hacking spree is either primarily or exclusively targeting seven models of Asus routers, all of which are no longer supported by the manufacturer, meaning they no longer receive security patches, researchers from SecurityScorecard <a href="https://securityscorecard.com/wp-content/uploads/2025/11/STRIKE_Asus_WrtHug-Report_V6.pdf">said</a>. So far, it&#8217;s unclear what the attackers do after gaining control of the devices. SecurityScorecard has named the operation WrtHug.</p>
+<h2>Staying off the radar</h2>
+<p>SecurityScorecard said it suspects the compromised devices are being used similarly to those found in ORB (operational relay box) networks, which hackers primarily use to conduct espionage to conceal their identity.</p>
+<p>&#8220;Having this level of access may enable the threat actor to use any compromised router as they see fit,&#8221; SecurityScorecard said. &#8220;Our experience with ORB networks suggests compromised devices will commonly be used for covert operations and espionage, unlike DDoS attacks and other types of overt malicious activity typically observed from botnets.&#8221;</p>
+<p>Compromised routers are concentrated in Taiwan, with smaller clusters in South Korea, Japan, Hong Kong, Russia, central Europe, and the United States.</p>
+ 
+
+<p>The Chinese government has been caught building massive ORB networks for years. In <a href="https://arstechnica.com/gadgets/2021/07/home-and-office-routers-come-under-attack-by-china-state-hackers-france-warns/">2021</a>, the French government warned national businesses and organizations that the APT31&#8212;one of China&#8217;s most active threat groups&#8212;was behind a massive attack campaign that used hacked routers to conduct reconnaissance. <a href="https://arstechnica.com/security/2024/01/chinese-malware-removed-from-soho-routers-after-fbi-issues-covert-commands/">Last year</a>, at least <a href="https://arstechnica.com/security/2024/09/massive-china-state-iot-botnet-went-undetected-for-four-years-until-now/">three</a> similar <a href="https://arstechnica.com/security/2024/02/kremlin-backed-hackers-are-infecting-ubiquity-edgerouters-fbi-warns/">China-operated campaigns</a> came to light.</p>
+<p>Russian-state hackers have been caught doing the same thing, although not as frequently. In <a href="https://arstechnica.com/information-technology/2018/05/hackers-infect-500000-consumer-routers-all-over-the-world-with-malware/">2018</a>, Kremlin actors infected more than 500,000 small office and home routers with <a href="https://arstechnica.com/information-technology/2018/05/hackers-infect-500000-consumer-routers-all-over-the-world-with-malware/">sophisticated malware</a> tracked as VPNFilter. A Russian government group was also independently involved in an operation reported in one of the 2024 router hacks linked above.</p>
+
+          
+                       
+                   
+            
+
+              
+          
+          
+<p>Consumer routers make an ideal hideout for hackers. The inexpensive gear often runs versions of Linux that, in turn, can run malware that operates behind the scenes. The hackers then log into the routers to conduct malicious activities. Rather than originating from infrastructure and IP addresses defenders know to be hostile, the connections come from benign-appearing devices hosted by addresses with trustworthy reputations, allowing them to receive a green light from security defenses.</p>
+<p>During the WrtHug infection process, devices open a dialog box on connected devices that instructs users to install a self-signed TLS certificate. Asus routers, like those for many other manufacturers, by default require users to accept such certificates in order to encrypt connections between a user and the device when using the web-based administrative interface. Because users are in the habit of approving such requests, they rarely suspect anything is amiss. Self-signed certificates don&#8217;t comply with TLS specifications because their users can&#8217;t be vetted, and there&#8217;s no means to revoke certificates once they are detected as malicious.</p>
+<p>The WrtHug campaign uses functionality provided by AICloud, a proprietary Asus service that allows users to access files stored on local machines from the Internet.</p>
+<p>So far, the SecurityScorecard researchers haven&#8217;t seen any post-exploit behavior coming from the infected routers. Marty Kareem, signals collection engineer at SecurityScorecard, wrote in an interview:</p>
+<blockquote><p>We have yet to observe any malicious payload dropped by the threat actor to compromise these devices, though our access to observe it is limited, as it requires obtaining a compromised device and studying it directly. There are reported instances where volatile binaries were dropped to perform kernel level changes, and then they erased themselves upon a reboot, leaving only the required changed configuration in place. It is also possible that the actor used no payload at all and leveraged the vulnerabilities to cause direct OS changes (these are feasible with the vulnerabilities we have observed in this campaign). All-in-All, it is early to determine the exact chain of infection that leads to the end result, or post-exploitation results, which we observed &#8211; a high-level access that enables certificate swapping and other admin-level privileges. If I may add one more thing, gaining administrative access to the device at the same level of the device owner is A-Lot and should not be taken lightly, as that is what most threat actors attempt to achieve in most intrusion campaigns.</p></blockquote>
+<h2>Am I infected?</h2>
+<p>The Asus router models that SecurityScorecard knows to be targeted are:</p>
+
+          
+                  
+
+              
+          
+          
+<ul>
+<li><span>Asus Wireless Router 4G-AC55U</span></li>
+<li><span>Asus Wireless Router 4G-AC860U</span></li>
+<li><span>Asus Wireless Router DSL-AC68U</span></li>
+<li><span>Asus Wireless Router GT-AC5300</span></li>
+<li><span>Asus Wireless Router GT-AX11000</span></li>
+<li><span>Asus Wireless Router RT-AC1200HP</span></li>
+<li><span>Asus Wireless Router RT-AC1300GPLUS</span></li>
+<li><span>Asus Wireless Router RT-AC1300UHP</span></li>
+</ul>
+<p>The easiest way to determine whether a router has been compromised is to inspect the self-signed certificate, which can be done by following the instructions <a href="https://www.asus.com/me-en/support/faq/1045854/#:~:text=The%20Export%20button%20for%20Download%20certificate%20is%20not%20displayed%20in,click%20%5BApply%5D%20to%20save.">here</a>. The certificate used by the attackers has an expiration year of 2122, a lengthy time span that valid certificates would never have. Both the issuer and subject in the certificate list CN=a,OU=a,O=a,L=a,ST=a,C=aa.</p>
+ 
+
+<p>SecurityScorecard&#8217;s report lists other indicators users can examine for other signs of compromise.</p>
+<p>People using end-of-life routers and other Internet of Things devices should strongly consider replacing them with ones that receive regular security updates. Disabling AICloud, remote administrator capabilities, SSH, UPnP, port forwarding, and other unnecessary services is also a good precaution, even for users of other router models.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
