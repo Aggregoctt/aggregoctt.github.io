@@ -1,0 +1,51 @@
+---
+author: Samuel Axon
+canonical_url: https://arstechnica.com/ai/2025/11/anthropic-introduces-opus-4-5-cuts-api-pricing-and-enables-much-longer-claude-chats/
+date: '2025-11-24T23:15:10'
+excerpt: Longer chats address a long-standing criticism of Claude.
+image: assets/media/pm4jmaPpWFYFc6QItb1Piw-phYauVJ_m948zgzffZ4hsw.jpeg
+source: arstechnica
+tags:
+- AI
+- Anthropic
+- Claude
+- Claude API
+- Claude Code
+- large language model
+- LLM
+- Opus 4.5
+title: Anthropic introduces cheaper, more powerful, more efficient Opus 4.5 model
+---
+<div>
+                      
+                      
+          <p>Anthropic today released <a href="https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf">Opus 4.5</a>, its flagship frontier model, and it brings improvements in coding performance, as well as some user experience improvements that make it more generally competitive with OpenAI&#8217;s latest frontier models.</p>
+<p>Perhaps the most prominent change for most users is that in the consumer app experiences (web, mobile, and desktop), Claude will be less prone to abruptly hard-stopping conversations because they have run too long. The improvement to memory within a single conversation applies not just to Opus 4.5, but to any current Claude models in the apps.</p>
+<p>Users who experienced abrupt endings (despite having room left in their session and weekly usage budgets) were hitting a hard context window (200,000 tokens). Whereas some large language model implementations simply start trimming earlier messages from the context when a conversation runs past the maximum in the window, Claude simply ended the conversation rather than allow the user to experience an increasingly incoherent conversation where the model would&#160;start forgetting things based on how old they are.</p>
+<p>Now, Claude will instead go through a behind-the-scenes process of summarizing the key points from the earlier parts of the conversation, attempting to discard what it deems extraneous while keeping what&#8217;s important.</p>
+<p>Developers who call Anthropic&#8217;s API can leverage the same principles through context management and context compaction.</p>
+<h2>Opus 4.5 performance</h2>
+<p>Opus 4.5 is the first model to surpass an accuracy score of 80 percent&#8212;specifically, 80.9 percent in the SWE-Bench Verified benchmark, narrowly beating OpenAI&#8217;s recently released GPT-5.1-Codex-Max (77.9 percent) and Google&#8217;s Gemini 3 Pro (76.2 percent). The model performs particularly well in agentic coding and agentic tool use benchmarks, but still lags behind GPT-5.1 in visual reasoning (MMMU).</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Anthropic also claims that Opus 4.5 is far less susceptible to prompt injection attacks than prior Claude models, or than competing models like GPT-5.1 and Gemini 3 Pro. Still, none of these models has perfect performance on that front.</p>
+<p>While the improvements to performance in benchmarks are worth noting, the most meaningful improvement in Opus 4.5 is arguably that it is significantly more efficient with tokens. Anthropic&#8217;s <a href="https://www.anthropic.com/news/claude-opus-4-5">blog post</a> offers examples:</p>
+<blockquote><p>Set to a medium effort level, Opus 4.5 matches Sonnet 4.5&#8217;s best score on SWE-bench Verified, but uses 76% fewer output tokens. At its highest effort level, Opus 4.5 exceeds Sonnet 4.5 performance by 4.3 percentage points&#8212;while using 48% fewer tokens.</p></blockquote>
+<h2>Other updates</h2>
+<p>The Opus 4.5 launch is accompanied by other new features for developers and users.</p>
+<p>For example, the developer platform now includes a new &#8220;effort&#8221; parameter, allowing developers to more precisely tune the balance they want between efficacy and token usage.</p>
+<p>Also, Claude Code is now available in the desktop Claude apps. Previously, it was available via command line, IDE extensions, the web&#8212;a few places, just not the native desktop apps. The Claude desktop interface is now tabbed between the traditional chat experience and the Claude Code experience.</p>
+<p>And lastly (and for some, most importantly), there&#8217;s a big pricing change for the API for Opus 4.5. The cost is now $5 (input)/$25 (output) per million tokens, down from $15/$75.</p>
+
+
+          
+                  
+
+                  
+          </div>
