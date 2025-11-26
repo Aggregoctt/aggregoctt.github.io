@@ -1,0 +1,20 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/11/26/armonici-quasi-interi/
+date: '2025-11-26T03:51:41'
+excerpt: Come si può trovare l'approssimazione di un intero sommando la serie armonica?
+image: assets/media/ga6Q5oQNYalE_Gq0MDlRVA-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Armonici quasi interi
+---
+<div>
+			<p>Nel 1918 J&#243;zsef K&#252;rsch&#225;k dimostr&#242; che la somma di reciproci di due o pi&#249; numeri consecutivi non pu&#242; mai essere un intero. Come corollario, l&#8217;unico valore intero toccato calcolando la serie armonica $H_n = 1 + 1/2 + 1/3 + 1/4 + &#8230;$ &#232; 1. Ci si pu&#242; per&#242; oziosamente chiedere quanto vicino si pu&#242; arrivare a un intero. John Cook in una successione di post ha mostrato che se ci limitiamo ai numeri da 1 a 100000 <a href="https://www.johndcook.com/blog/2025/11/19/closest-consecutive-reciprocal-sum-to-an-integer/">abbiamo che</a> $$ \sum_{k=27134}^{73756} \frac{1}{k} \approx 1$$ con un errore dell&#8217;ordine di $10^{-11}$, e questa &#232; la migliore approssimazione possibile a 1. </p>
+<p>Limitandoci alle porzioni di serie armonica, si arriva rapidamente a un problema: i numeri in virgola mobile non sono abbastanza precisi per fare tutte le addizioni. Fortunatamente abbiamo a nostra disposizione un&#8217;approssimazione molto buona: $H_n \approx \log n + \gamma + \frac{1}{2n} &#8211; \frac{1}{12n^2}$, dove $\gamma$ &#232; la <a href="https://it.wikipedia.org/wiki/Costante_di_Eulero-Mascheroni">costante di Eulero-Mascheroni</a> pari a circa 0,57721. (Curiosit&#224;: non &#232; noto se sia o no un numero razionale, ma tutti credono di s&#236;, anche perch&#233; in caso contrario il suo denominatore dovrebbe avere almeno $10^{242080}$ cifre&#8230;). Notate come l&#8217;approssimazione usata da Cook sia molto pi&#249; accurata di quella usuale $H_n \approx \log n + \gamma$, per andare pi&#249; sul sicuro. Cook si &#232; divertito a <a href="https://www.johndcook.com/blog/2025/11/19/closest-harmonic-number-to-an-integer/">scrivere un programmino Python</a> per trovare il termine della serie armonica pi&#249; vicino a un numero (non necessariamente intero) dato, scoprendo per esempio che $H_12366 \approx 9,99996214846655$.</p>
+<p>Ma anche questo programma, pur essendo ben fatto, ha dei problemi di arrotondamento se il numero cercato &#232; molto grande. Per esempio dice che se vogliamo arrivare ad approssimare 100 dobbiamo sommare 15092688622113830917200248731913020965388288 termini, e l&#8217;errore relativo &#232; dell&#8217;ordine di $3 \times 10^{-15}$. Ma usando Mathematica e l&#8217;approssimazione $n \approx \rm{exp}(m &#8722; \gamma)$, dove $m$ &#232; il numero che vogliamo approssimare e $n$ il numero di termini richiesti, Cook <a href="https://www.johndcook.com/blog/2025/11/20/solving-h_n-100/">mostra</a> che la vera quantit&#224; di termini che dobbiamo sommare &#232; 15092688622113788323693563264538101449859497; insomma i due numeri divergono dalla quattordicesima cifra, il che ha senso visto che siamo ai limiti della precisione dei numeri a 64 bit. Per curiosit&#224;, per arrivare a 1000 occorrono un bel po&#8217; di termini, cio&#232; </p>
+<p>110611511026604935641074705584421138393028001852577373936470952377218354575172401275457597579044729873152469512963401398362087144972181770571895264066114088968182356842977823764462179821981744448731785408629116321919957856034605877855212667092287520105386027668843119590555646814038787297694678647529533718769401069269427475868793531944696435696745559289326610132208504257721469829210704462876574915362273129090049477919400226313586033</p>
+<p>(un numero di 435 cifre). Che possiamo dedurre da tutto questo? Due cose. La prima &#232; che la serie armonica cresce <b>molto</b> lentamente; la seconda &#232; che bisogna sempre sapere qual &#232; il modo migliore per fare un conto, tenendo conto delle limitazioni dei computer&#8230;</p>
+ 
+  					</div>
