@@ -1,0 +1,33 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143938/windows-drive-letters-are-not-limited-to-a-z/
+date: '2025-12-01T21:06:41'
+excerpt: 'On its own, the title of this post is just a true piece of trivia, verifiable
+  with&#160;the built-in&#160;subst&#160;tool&#160;(among other methods). Here&#8217;s
+  an example creating the drive +:\ as an alias for a directory at C:\foo:  The +:\ drive
+  then works as normal (at least in cmd.exe, this will be discussed more later):  However,
+  understanding why it&#8217;s true elucidates a lot about how Windows works under
+  the hood, and turns up a few curious behaviors. ↫ Ryan Liptak Fascinating doesn&#8217;t
+  even begin to describe this article, but at the same time, it also makes me wonder
+  at what point maintaining this drive letter charade becomes too burdensome, clunky,
+  and complex. Internally, Windows NT does not use drive letters at all, but for the
+  sake of backwards compatibility and to give the user what they expect, a whole set
+  of abstractions has been crafted to create the illusion that modern versions of
+  Windows still use the same basic drive letter conventions as DOS did 40 years ago.
+  I wonder if we&#8217;ll ever reach a point where Windows no longer uses drive letters,
+  or if it&#8217;s possible today to somehow remove or disable these abstractions
+  entirely, and run Windows NT without drive letters, as Cutler surely intended. Vast
+  swaths of Windows programs would surely curl up in fetal position and die, including
+  many core components of the operating system itself &#8211; as this article demonstrates,
+  very few parts of Windows can handle even something as mundane as a drive letter
+  outside of A-Z &#8211; but it&#8217;d make for a great experiment. Someone with
+  just the right set of Windows NT skills must&#8217;ve tried something like this
+  at some point, either publicly or inside of Microsoft.'
+image: null
+source: osnews
+tags:
+- Windows
+title: Windows drive letters are not limited to A-Z
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>On its own, the title of this post is just a true piece of trivia, verifiable with&#160;<a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/subst">the built-in&#160;<code>subst</code>&#160;tool</a>&#160;(among other methods).</p><p>Here&#8217;s an example creating the drive&#160;<code>+:\</code>&#160;as an alias for a directory at&#160;<code>C:\foo</code>:</p>[&#8230;]<p>The&#160;<code>+:\</code>&#160;drive then works as normal (at least in cmd.exe, this will be discussed more later):</p>[&#8230;]<p>However, understanding&#160;why&#160;it&#8217;s true elucidates a lot about how Windows works under the hood, and turns up a few curious behaviors.</p>
+<a href="https://www.ryanliptak.com/">&#8619; Ryan Liptak</a></blockquote><p>Fascinating doesn&#8217;t even begin to describe this article, but at the same time, it also makes me wonder at what point maintaining this drive letter charade becomes too burdensome, clunky, and complex. Internally, Windows NT does not use drive letters at all, but for the sake of backwards compatibility and to give the user what they expect, a whole set of abstractions has been crafted to create the illusion that modern versions of Windows still use the same basic drive letter conventions as DOS did 40 years ago.</p><p>I wonder if we&#8217;ll ever reach a point where Windows no longer uses drive letters, or if it&#8217;s possible today to somehow remove or disable these abstractions entirely, and run Windows NT without drive letters, as Cutler surely intended. Vast swaths of Windows programs would surely curl up in fetal position and die, including many core components of the operating system itself &#8211; as this article demonstrates, very few parts of Windows can handle even something as mundane as a drive letter outside of A-Z &#8211; but it&#8217;d make for a great experiment.</p><p>Someone with just the right set of Windows NT skills must&#8217;ve tried something like this at some point, either publicly or inside of Microsoft.</p></div>
