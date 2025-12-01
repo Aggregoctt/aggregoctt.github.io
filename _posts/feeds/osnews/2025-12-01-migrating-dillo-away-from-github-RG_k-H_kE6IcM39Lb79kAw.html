@@ -1,0 +1,32 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143936/migrating-dillo-away-from-github/
+date: '2025-12-01T20:04:18'
+excerpt: 'What do you do if you develop a lightweight browser that doesn&#8217;t support
+  JavaScript, but you once chose GitHub as the home for your code? You&#8217;re now
+  in the unenviable position that your own browser can no longer access your own online
+  source repository because it requires JavaScript, which is both annoying and, well,
+  a little awkward. The solution is, of course, obvious: you move somewhere else.
+  That&#8217;s exactly what the Dillo browser did. They set up a small VPS, opted
+  for cgit as the git frontend for its performance and small size, and for the bug
+  tracker, they created a brand new, very simple bug tracker. To avoid this problem,
+  I created my own bug tracker software, buggy, which is a very simple C tool that
+  parses plain Markdown files and creates a single HTML page for each bug. All bugs
+  are stored in a git repository and a git hook regenerates the bug pages and the
+  index on each new commit. As it is simply plain text, I can edit the bugs locally
+  and only push them to the remote when I have Internet back, so it works nice offline.
+  Also, as the output is just an static HTML site, I don&#8217;t need to worry about
+  having any vulnerabilities in my code, as it will only run at build time. ↫ Rodrigo
+  Arias Mallo There&#8217;s more considerations detailed in the article about Dillo&#8217;s
+  migration, and it can serve as inspiration for anyone else running a small open
+  source project who wishes to leave GitHub behind. With GitHub&#8217;s continuing
+  to add more and more complexity and &#8220;AI&#8221; to separate open source code
+  from its licensing terms, we may see more and more projects giving GitHub the finger.'
+image: null
+source: osnews
+tags:
+- Internet
+title: Migrating Dillo away from GitHub
+---
+<div><p>What do you do if you develop a lightweight browser that doesn&#8217;t support JavaScript, but you once chose GitHub as the home for your code? You&#8217;re now in the unenviable position that your own browser can no longer access your own online source repository because it requires JavaScript, which is both annoying and, well, a little awkward. The solution is, of course, obvious: you move somewhere else.</p><p>That&#8217;s exactly what the Dillo browser did. They set up a small VPS, opted for <a href="https://git.zx2c4.com/cgit/about/">cgit</a> as the git frontend for its performance and small size, and for the bug tracker, they created a brand new, very simple bug tracker.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>To avoid this problem, I created my own bug tracker software,&#160;<a href="https://git.dillo-browser.org/buggy/">buggy</a>, which is a very simple C tool that parses plain Markdown files and creates a single HTML page for each bug. All bugs are stored in a&#160;<a href="https://git.dillo-browser.org/bugtracker/">git repository</a>&#160;and a git hook regenerates the bug pages and the index on each new commit. As it is simply plain text, I can edit the bugs locally and only push them to the remote when I have Internet back, so it works nice offline. Also, as the output is just an static HTML site, I don&#8217;t need to worry about having any vulnerabilities in my code, as it will only run at build time.</p>
+<a href="https://dillo-browser.org/news/migration-from-github/">&#8619; Rodrigo Arias Mallo</a></blockquote><p>There&#8217;s more considerations detailed in the article about Dillo&#8217;s migration, and it can serve as inspiration for anyone else running a small open source project who wishes to leave GitHub behind. With GitHub&#8217;s continuing to add more and more complexity and &#8220;AI&#8221; to separate open source code from its licensing terms, we may see more and more projects giving GitHub the finger.</p></div>
