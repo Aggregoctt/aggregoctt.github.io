@@ -1,0 +1,113 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2025/12/steamos-has-problems-with-8gb-gpus-but-valve-is-working-on-it/
+date: '2025-12-02T19:26:26'
+excerpt: Valve has work to do on the software side—but some fixes are coming.
+image: assets/media/3LbDJUqWa5aP05Y0wSagSQ-5ijhNE7M94ReoAgXRTm4pQ.jpeg
+source: arstechnica
+tags:
+- Gaming
+- Tech
+- AMD
+- Intel
+- NVIDIA
+- steam deck
+- steam machine
+- steamos
+title: Testing shows why the Steam Machine’s 8GB of graphics RAM could be a problem
+---
+<div>
+                      
+                      
+           
+<p>By Valve&#8217;s admission, its upcoming Steam Machine desktop isn&#8217;t swinging for the fences with its graphical performance. The specs promise decent 1080p-to-1440p performance in most games, with 4K occasionally reachable with assistance from FSR upscaling&#8212;about what you&#8217;d expect from a box with a modern midrange graphics card in it.</p>
+<p>But there&#8217;s one spec that has caused some concern among Ars staffers and others with their eyes on the Steam Machine: The GPU comes with just 8GB of dedicated graphics RAM, an amount that is steadily becoming more of a bottleneck for midrange GPUs like AMD&#8217;s Radeon RX 7060 and 9060, or Nvidia&#8217;s GeForce RTX 4060 or 5060.</p>
+<p>In our reviews of these GPUs, we&#8217;ve already run into some games where the RAM ceiling limits performance in Windows, especially at 1440p. But we&#8217;ve been doing more extensive testing of various GPUs with SteamOS, and we can confirm that in current betas, 8GB GPUs struggle even more on SteamOS than they do running the same games at the same settings in Windows 11.</p>
+<p>The good news is that Valve is working on solutions, and having a stable platform like the Steam Machine to aim for should help improve things for other hardware with similar configurations. The bad news is there&#8217;s plenty of work left to do.</p>
+<h2>The numbers</h2>
+
+
+
+ 
+Windows vs. SteamOS testbed
+
+
+<b>CPU</b>
+<a href="http://www.amazon.com/dp/B0BBHHT8LY">AMD Ryzen 7 7700X</a>&#160;(provided by AMD)
+
+
+<b>Motherboard</b>
+<a href="https://www.asrock.com/mb/AMD/B650%20Pro%20RS/index.asp">ASRock B650 Pro RS</a> (provided by AMD)
+
+
+<b>RAM</b>
+<a href="http://www.amazon.com/dp/B0CJX8K4XT">32GB (2x16GB) G.Skill Trident Z5 Neo RGB series</a> (provided by AMD), running at DDR5-6000
+
+
+<b>SSD</b>
+1TB Western Digital SN850
+
+
+<b>Power supply</b>
+EVGA Supernova 850 P6 (provided by EVGA)
+
+
+<b>CPU cooler</b>
+<a href="https://www.corsair.com/us/en/p/cpu-coolers/cw-9060047-ww/icue-h115i-elite-capellix-liquid-cpu-cooler-cw-9060047-ww?srsltid=AfmBOoqU08mcCY-ulJIR_a02OyrHrqU0vlE7fNQ7a8rVuV0HTJOA9fwR">280mm Corsair iCue H115i Elite Cappelix AIO</a>
+
+
+<b>Case</b>
+<a href="https://lian-li.com/product/o11-air-mini/">Lian Li O11 Air Mini</a>
+
+
+<b>OS</b>
+Windows 11 25H2 with Core Isolation on, Memory Integrity off<br>
+SteamOS 3.9 (Main channel, build 20251124.1000)
+
+
+<b>Drivers</b>
+<b>Windows: </b>AMD Adrenalin 25.11.1<b><br>
+SteamOS: </b>Video Driver 4.6, Mesa 25.2.0
+
+
+
+<p>We&#8217;ve tested an array of dedicated and integrated Radeon GPUs under SteamOS and Windows, and we&#8217;ll share more extensive results in another article soon (along with broader SteamOS-vs-Windows observations). But for our purposes here, the two GPUs that highlight the issues most effectively are the 8GB Radeon RX 7600 and the 16GB Radeon RX 7600 XT.</p>
+<p>These dedicated GPUs have the benefit of being nearly identical to what Valve plans to ship in the Steam Machine&#8212;32 compute units (CUs) instead of Valve&#8217;s 28, but the same RDNA3 architecture. They&#8217;re also, most importantly for our purposes, pretty similar to each other&#8212;the same physical GPU die, just with slightly higher clock speeds and more RAM for the 7600 XT than for the regular 7600.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>This makes it especially easy to identify the performance issues caused by RAM limits&#8212;any time the 7600 XT is more than 5 or 10 percent faster than the regular 7600, it means that the game is probably hitting that 8GB ceiling.</p>
+ 
+
+ 
+
+ 
+<p>Some of the games in our suite, like&#160;Borderlands 3 and&#160;Cyberpunk 2077 with the ray-tracing effects turned off, perform similarly on both GPUs. But the gap widens for&#160;Cyberpunk at 1440p with ray-tracing on, and for other ray-traced games like Returnal and&#160;Forza Horizon 5, the problems even extend to 1080p. Even&#160;Assassin&#8217;s Creed Valhalla, hardly the newest entry in the franchise, shows signs of a larger gap between the 7600 and 7600 XT under SteamOS than exists in Windows 11.</p>
+<p>If you look at the game-by-game results, you&#8217;ll see that SteamOS often trails behind Windows 11 running on the same dedicated GPU hardware, something we&#8217;ve also observed on the other dedicated GPUs we&#8217;ve tested. This is basically the inverse of what we (and others) have found <a href="https://arstechnica.com/gaming/2025/06/games-run-faster-on-steamos-than-windows-11-ars-testing-finds/">when testing SteamOS and Windows on handhelds</a>. Add to that the additional problems that SteamOS has with GPUs that have 8GB of VRAM, and it&#8217;s clear that Valve has some work to do on the software side before the Steam Machine launches.</p>
+<h2>Valve is working on it</h2>
+<p>We spoke with Valve software developer Pierre-Loup Griffais, who leads much of the company&#8217;s work on SteamOS and the Proton translation layer, about our findings and what they meant for the Steam Machine.</p>
+<p>&#8220;VRAM management is a topic we have been focusing on, and some of that work is still being done, so the general idea around what you&#8217;re describing doesn&#8217;t surprise me too much,&#8221; Griffais told Ars. &#8220;There were some shortcomings there that we&#8217;re making progress on. The typical symptom that we&#8217;d expect is that once you run out of VRAM, subsequent allocations from the game will spill over to system memory, at which point a drastic performance drop would be observed since the game would partially be rendering to/from system memory across the PCIe bus.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>That description definitely squares with some of what we saw, particularly in&#160;Cyberpunk and&#160;Returnal under some settings&#8212;not just a subtle reduction in performance as in&#160;Forza or&#160;Assassin&#8217;s Creed, but flipbook-y performance that makes games that are playable in Windows unplayable on SteamOS at the same settings.</p>
+<p>Griffais wasn&#8217;t specific about the fixes planned to address these problems, or about the timeline for rolling them out. But this performance gap is something the company is actively working to address.</p>
+<p>&#8220;We have some work around improving video memory management that&#8217;s about to get merged into SteamOS main [a testing branch of SteamOS, separate from the Steam Deck&#8217;s stable channel] that should improve things there,&#8221; Griffais told Ars.</p>
+<p>Up until now, memory management simply hasn&#8217;t been an issue for SteamOS, at least not for hardware like the Steam Deck and the Legion Go S that Valve is officially supporting. That&#8217;s partly because these systems&#8217; slower integrated GPUs will usually bottleneck performance way before a lack of video RAM will. But one benefit of integrated GPUs is that, because they use your system&#8217;s main RAM rather than their own dedicated pool of high-speed memory, they can use essentially as much of your system RAM as they need to. Framework uses it as a selling point for <a href="https://arstechnica.com/gadgets/2025/08/review-framework-desktop-is-a-mash-up-of-a-regular-desktop-pc-and-the-mac-studio/">its Framework Desktop</a>&#8212;its Radeon RX 8050S and 8060S GPUs are in the same general performance class as the RX 7600, but can access <a href="https://frame.work/desktop?tab=machine-learning">between 24GB and 96GB</a> of the PC&#8217;s pool of system RAM.</p>
+<p>In short, the Steam Machine will be Valve&#8217;s first officially supported hardware that actually needs to care about a fixed allotment of video memory. The Steam Machine&#8217;s 8GB of VRAM is still going to be a performance limiter for some games, but hopefully Valve&#8217;s SteamOS and Proton patches can at least help 8GB GPUs work as well in SteamOS as they do in Windows.</p>
+
+
+          
+                  
+
+                  
+          </div>
