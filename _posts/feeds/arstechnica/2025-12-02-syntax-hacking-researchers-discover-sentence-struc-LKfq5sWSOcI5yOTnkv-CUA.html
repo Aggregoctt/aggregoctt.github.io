@@ -1,0 +1,94 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/12/syntax-hacking-researchers-discover-sentence-structure-can-bypass-ai-safety-rules/
+date: '2025-12-02T12:15:55'
+excerpt: New research offers clues about why some prompt injection attacks may succeed.
+image: assets/media/LKfq5sWSOcI5yOTnkv-CUA-ui5GminjHCky7Iv7yxR_oA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI alignment
+- AI research
+- AI security
+- AI study
+- Chantal Shaib
+- GPT-4o
+- jailbreaking
+- large language models
+- machine learning
+- meta
+- MIT
+- Northeastern University
+- OLMo
+- openai
+- prompt injections
+- spurious correlations
+- Vinith M. Suriyakumar
+title: 'Syntax hacking: Researchers discover sentence structure can bypass AI safety
+  rules'
+---
+<div>
+                      
+                      
+          <p>Researchers from MIT, Northeastern University, and Meta recently <a href="https://arxiv.org/abs/2509.21155v2">released</a> a paper suggesting that large language models (LLMs) similar to those that power ChatGPT may sometimes prioritize sentence structure over meaning when answering questions. The findings reveal a weakness in how these models process instructions that may shed light on why some <a href="https://arstechnica.com/information-technology/2022/09/twitter-pranksters-derail-gpt-3-bot-with-newly-discovered-prompt-injection-hack/">prompt injection</a> or <a href="https://arstechnica.com/information-technology/2023/10/sob-story-about-dead-grandma-tricks-microsoft-ai-into-solving-captcha/">jailbreaking</a> approaches work, though the researchers caution their analysis of some production models remains speculative since training data details of prominent commercial AI models are not publicly available.</p>
+<p>The team, led by Chantal Shaib and Vinith M. Suriyakumar, tested this by asking models questions with preserved grammatical patterns but nonsensical words. For example, when prompted with &#8220;Quickly sit Paris clouded?&#8221; (mimicking the structure of &#8220;Where is Paris located?&#8221;), models still answered &#8220;France.&#8221;</p>
+<p>This suggests models absorb both meaning and syntactic patterns, but can overrely on structural shortcuts when they strongly correlate with specific domains in training data, which sometimes allows patterns to override semantic understanding in edge cases. The team plans to present these findings at <a href="https://neurips.cc/">NeurIPS</a> later this month.</p>
+<p>As a refresher, syntax describes sentence structure&#8212;how words are arranged grammatically and what parts of speech they use. Semantics describes the actual meaning those words convey, which can vary even when the grammatical structure stays the same.</p>
+<p>Semantics depends heavily on context, and navigating context is what makes LLMs work. The process of turning an input, your prompt, into an output, an LLM answer, involves a complex chain of pattern matching against encoded training data.</p>
+<p>To investigate when and how this pattern-matching can go wrong, the researchers designed a controlled experiment. They created a <a href="https://github.com/cshaib/diversity/">synthetic dataset</a> by designing prompts in which each subject area had a unique grammatical template based on part-of-speech patterns. For instance, geography questions followed one structural pattern while questions about creative works followed another. They then trained Allen AI&#8217;s <a href="https://allenai.org/olmo">Olmo models</a> on this data and tested whether the models could distinguish between syntax and semantics.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+
+<p>The analysis revealed a &#8220;spurious correlation&#8221; where models in these edge cases treated syntax as a proxy for the domain. When patterns and semantics conflict, the research suggests, the AI&#8217;s memorization of specific grammatical &#8220;shapes&#8221; can override semantic parsing, leading to incorrect responses based on structural cues rather than actual meaning.</p>
+<p>In layperson terms, the research shows that AI language models can become overly fixated on the style of a question rather than its actual meaning. Imagine if someone learned that questions starting with &#8220;Where is&#8230;&#8221; are always about geography, so when you ask &#8220;Where is the best pizza in Chicago?&#8221;, they respond with &#8220;Illinois&#8221; instead of recommending restaurants based on some other criteria. They&#8217;re responding to the grammatical pattern (&#8220;Where is&#8230;&#8221;) rather than understanding you&#8217;re asking about food.</p>
+<p>This creates two risks: models giving wrong answers in unfamiliar contexts (a form of <a href="https://arstechnica.com/information-technology/2023/04/why-ai-chatbots-are-the-ultimate-bs-machines-and-how-people-hope-to-fix-them/">confabulation</a>), and bad actors exploiting these patterns to bypass safety conditioning by wrapping harmful requests in &#8220;safe&#8221; grammatical styles. It&#8217;s a form of domain switching that can reframe an input, linking it into a different context to get a different result.</p>
+<p>It&#8217;s worth noting that the paper does not specifically investigate whether this reliance on syntax-domain correlations contributes to confabulations, though the authors suggest this as an area for future research.</p>
+<h2>When patterns and meaning conflict</h2>
+<p>To measure the extent of this pattern-matching rigidity, the team subjected the models to a series of linguistic stress tests, revealing that syntax often dominates semantic understanding.</p>
+<p>The team&#8217;s experiments showed that OLMo models maintained high accuracy when presented with synonym substitutions or even antonyms within their training domain. OLMo-2-13B-Instruct achieved 93 percent accuracy on prompts with antonyms substituted for the original words, nearly matching its 94 percent accuracy on exact training phrases. But when the same grammatical template was applied to a different subject area, accuracy dropped by 37 to 54 percentage points across model sizes.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>The researchers tested five types of prompt modifications: exact phrases from training, synonyms, antonyms, paraphrases that changed sentence structure, and &#8220;disfluent&#8221; (syntactically correct nonsense) versions with random words inserted. Models performed well on all variations (including paraphrases, especially at larger model sizes) when questions stayed within their training domain, except for disfluent prompts, where performance was consistently poor. Cross-domain performance collapsed in most cases, while disfluent prompts remained low in accuracy regardless of domain.</p>
+<p>To verify these patterns occur in production models, the team developed a benchmarking method using the <a href="https://huggingface.co/datasets/SirNeural/flan_v2">FlanV2</a> instruction-tuning dataset. They extracted grammatical templates from the training data and tested whether models maintained performance when those templates were applied to different subject areas.</p>
+ 
+
+<p>Tests on OLMo-2-7B, GPT-4o, and GPT-4o-mini revealed similar drops in cross-domain performance. On the <a href="https://huggingface.co/datasets/stanfordnlp/sentiment140">Sentiment140</a> classification task, GPT-4o-mini&#8217;s accuracy fell from 100 percent to 44 percent when geography templates were applied to sentiment analysis questions. GPT-4o dropped from 69 percent to 36 percent. The researchers found comparable patterns in other datasets.</p>
+<p>The team also documented a security vulnerability stemming from this behavior, which you might call a form of syntax hacking. By prepending prompts with grammatical patterns from benign training domains, they bypassed safety filters in OLMo-2-7B-Instruct. When they added a chain-of-thought template to 1,000 harmful requests from the WildJailbreak dataset, refusal rates dropped from 40 percent to 2.5 percent.</p>
+<p>The researchers provided examples where this technique generated detailed instructions for illegal activities. One jailbroken prompt produced a multi-step guide for organ smuggling. Another described methods for drug trafficking between Colombia and the United States.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<h2>Limitations and uncertainties</h2>
+<p>The findings come with several caveats. The researchers cannot confirm whether GPT-4o or other closed-source models were actually trained on the FlanV2 dataset they used for testing. Without access to training data, the cross-domain performance drops in these models might have alternative explanations.</p>
+<p>The benchmarking method also faces a potential circularity issue. The researchers define &#8220;in-domain&#8221; templates as those where models answer correctly, and then test whether models fail on &#8220;cross-domain&#8221; templates. This means they are essentially sorting examples into &#8220;easy&#8221; and &#8220;hard&#8221; based on model performance, then concluding the difficulty stems from syntax-domain correlations. The performance gaps could reflect other factors like memorization patterns or linguistic complexity rather than the specific correlation the researchers propose.</p>
+ 
+
+<p>The study focused on OLMo models ranging from 1 billion to 13 billion parameters. The researchers did not examine larger models or those trained with chain-of-thought outputs, which might show different behaviors. Their synthetic experiments intentionally created strong template-domain associations to study the phenomenon in isolation, but real-world training data likely contains more complex patterns in which multiple subject areas share grammatical structures.</p>
+<p>Still, the study seems to put more pieces in place that continue to point toward AI language models as pattern-matching machines that can be thrown off by errant context. There are many modes of failure when it comes to LLMs, and we don&#8217;t have the full picture yet, but continuing research like this sheds light on why some of them occur.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>
