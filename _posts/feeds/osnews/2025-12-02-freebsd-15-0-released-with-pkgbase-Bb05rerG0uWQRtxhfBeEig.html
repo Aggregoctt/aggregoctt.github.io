@@ -1,0 +1,42 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143942/freebsd-15-0-released-with-pkgbase/
+date: '2025-12-02T20:34:56'
+excerpt: 'The FreeBSD team has released FreeBSD 15.0, and with it come several major
+  changes, one of which you will surely want to know more about if you&#8217;re a
+  FreeBSD user. Since this change will eventually drastically change the way you use
+  FreeBSD, we should get right into it. Up until now, a full, system-wide update for
+  FreeBSD &#8211; as in, updating both the base operating system as well as any packages
+  you have installed on top of it &#8211; would use two separate tools: freebsd-update
+  and the pkg package manager. You used the former to update the base operating system,
+  which was installed as file sets, and the latter to update everything you had installed
+  on top of it in the form of packages. With FreeBSD 15.0, this is starting to change.
+  Instead of using two separate tools, in 15.0 you can opt to deprecate freebsd-update
+  and file sets, and rely entirely on pkg for updating both the base operating system
+  as well as any packages you have installed, because with this new method, the base
+  system moves from file sets to packages. When installing FreeBSD 15.0, the installer
+  will ask you to choose between the old method, or the new pkg-only method. Packages
+  (pkgbase / New Method): The base system is installed as a set of packages from the
+  &#8220;FreeBSD-base&#8221; repository. Systems installed this way are managed entirely
+  using the pkg(8) tool. This method is used by default for all VM images and images
+  published in public clouds. In FreeBSD 15.0, pkgbase is offered as a technology
+  preview, but it is expected to become the standard method for managing base system
+  installations and upgrades in future releases. ↫ FreeBSD 15.0 release announcement
+  As the release announcement notes, the net method is optional in FreeBSD 15 and
+  will remain optional during the entire 15.x release cycle, but the plan is to deprecate
+  freebsd-update and file sets entirely in FreeBSD 16.0. If you have an existing installation
+  you wish to convert to using pkgbase, there&#8217;s a tool called pkgbasify to do
+  just that. It&#8217;s sponsored by the FreeBSD Foundation, so it&#8217;s not some
+  random script. Of course, there&#8217;s way more in this release than just pkgbase.
+  Of note is that the 32bit platforms i386, armv6, and 32-bit powerpc have been retired,
+  but of course, 32bit code will continue to run on their 64bit counterparts. FreeBSD
+  15.0 also brings a native inotify implementation, a ton of improvements to the audio
+  components, improved Intel Wi-Fi drivers, and so, so much more.'
+image: null
+source: osnews
+tags:
+- FreeBSD
+title: FreeBSD 15.0 released with pkgbase
+---
+<div><p>The FreeBSD team has released FreeBSD 15.0, and with it come several major changes, one of which you will surely want to know more about if you&#8217;re a FreeBSD user. Since this change will eventually drastically change the way you use FreeBSD, we should get right into it.</p><p>Up until now, a full, system-wide update for FreeBSD &#8211; as in, updating both the base operating system as well as any packages you have installed on top of it &#8211; would use two separate tools: <code>freebsd-update</code> and the <code>pkg</code> package manager. You used the former to update the base operating system, which was installed as file sets, and the latter to update everything you had installed on top of it in the form of packages.</p><p>With FreeBSD 15.0, this is starting to change. Instead of using two separate tools, in 15.0 you can opt to deprecate <code>freebsd-update</code> and file sets, and rely entirely on <code>pkg</code> for updating both the base operating system as well as any packages you have installed, because with this new method, the base system moves from file sets to packages. When installing FreeBSD 15.0, the installer will ask you to choose between the old method, or the new <code>pkg</code>-only method.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Packages (pkgbase / New Method): The base system is installed as a set of packages from the &#8220;FreeBSD-base&#8221; repository. Systems installed this way are managed entirely using the pkg(8) tool. This method is used by default for all VM images and images published in public clouds. In FreeBSD 15.0, pkgbase is offered as a technology preview, but it is expected to become the standard method for managing base system installations and upgrades in future releases.</p>
+<a href="https://www.freebsd.org/releases/15.0R/announce/">&#8619; FreeBSD 15.0 release announcement</a></blockquote><p>As the release announcement notes, the net method is optional in FreeBSD 15 and will remain optional during the entire 15.x release cycle, but the plan is to deprecate <code>freebsd-update</code> and file sets entirely in FreeBSD 16.0. If you have an existing installation you wish to convert to using pkgbase, there&#8217;s a tool called <a href="https://github.com/FreeBSDFoundation/pkgbasify">pkgbasify</a> to do just that. It&#8217;s sponsored by the FreeBSD Foundation, so it&#8217;s not some random script.</p></div>
