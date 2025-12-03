@@ -1,0 +1,26 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/12/03/come-dimostrare-che-e-e-irrazionale/
+date: '2025-12-03T03:51:25'
+excerpt: Una dimostrazione alla portata di uno studente liceale.
+image: assets/media/6CcSIslItt5VapxlH9rIjQ-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Come dimostrare che e è irrazionale
+---
+<div>
+			<p>Come sapete, la costante &#43826; &#8773; 2,71828&#8230; se la gioca alla pari con &#960; nel campionato per il numero che appare pi&#249; spesso nelle formule matematiche. A differenza del pi greco, per&#242;, &#43826; &#232; pi&#249; facile da gestire, non tanto perch&#233; &#232; il limite per $n$ tendente all&#8217;infinito dell&#8217;espressione $(1 + 1/n)^n$ (la definizione usuale) quanto perch&#233; &#232; la somma della serie $ \frac{1}{0!} + \frac{1}{1!} + \frac{1}{3!} + \frac{1}{3!} + \frac{1}{4!} + \cdots $ che ha due vantaggi: &#232; facile da scrivere e converge molto rapidamente. Ci sono anche altre rappresentazioni interessanti di &#43826;, come la forma in frazione continua [1, 2, 1, 1, 4, 1, 1, 6, 1, &#8230;] che ha permesso a Eulero di dimostrare che &#232; un numero irrazionale. Non &#232; per&#242; immediato ricavare questo sviluppo; in compenso esiste una dimostrazione relativamente semplice, dovuta a Joseph Fourier (s&#236;, <i>quel</i> Fourier) dell&#8217;irrazionalit&#224; di &#43826;. Eccola qua.</p>
+<p>Cominciamo a considerare queste due successioni infinite (o meglio, la collezione di successioni infinite per ogni valore di $n$): </p>
+<p>$$ a_n = \frac{1}{n+1} + \frac{1}{(n+1)(n+2)} + \frac{1}{(n+1)(n+2)(n+3)} + \cdots $$<br>
+$$ b_n = \frac{1}{n+1} + \frac{1}{(n+1)^2} + \frac{1}{(n+1)^3} + \cdots $$</p>
+<p>&#200; immediato vedere che la successione $a_n$ &#232; una progressione geometrica, e quindi il suo valore &#232; $\frac{1}{n}$; d&#8217;altra parte, ogni termine di $a_n$ tranne il primo &#232; minore a quello corrispondente di $b_n$ mentre il primo &#232; uguale, e quindi $ 0 &lt; a_n &lt; \frac{1}{n} $. Adesso viene il bello. Prendiamo la definizione di &#43826; come somma infinita e moltiplichiamola per $n!$. I primi $n$ termini del risultato sono tutti interi, mentre la somma di quelli che rimangono, dopo avere tolto $n!$ a denominatore, corrisponde proprio a $a_n$ e quindi &#232; compresa tra 0 e 1. Possiamo riscrivere questo risultato dicendo 
+
+$$ a_n = n!&#43826; - \textrm{int}(n&#43826;)$$
+
+La dimostrazione &#232; praticamente terminata. Supponiamo infatti per assurdo che &#43826; sia razionale, e quindi possiamo scrivere $&#43826; = \frac{k}{m}$, con $k$ e $m$ interi. Ma allora $m!&#43826;$ &#232; intero, e dunque $ (m!&#43826;) = \textrm{int}(m!&#43826;)$, il che &#232; impossibile perch&#233; sappiamo che tutti gli $a_n$ sono maggiori di zero. QED.
+
+Cosa possiamo ricavare da questa dimostrazione? Che Fourier era uno che ne sapeva: a me non sarebbe mai venuto in mente un percorso del genere. Col senno di poi per&#242; si pu&#242; forse intuire cosa sia venuto in mente a Fourier. Il fatto che i termini della successione infinita tendono a zero molto, <i>molto</i> rapidamente ci fa capire che non hai spazio per riuscire a mettere insieme tutti i coefficienti dei denominatori per arrivare a un numeratore multiplo di essi; &#232; un po&#8217; la stessa idea che ebbe Liouville quando costru&#236; esplicitamente il primo numero che si poteva dimostrare essere trascendente. Il bello di questa dimostrazione &#232; comunque che possiamo tranquillamente spiegarla a uno studente liceale, una volta dato per assodato qual &#232; lo sviluppo in serie infinita di &#43826;; non &#232; che siano cose che capitino tutti i giorni!</p>
+ 
+  					</div>
