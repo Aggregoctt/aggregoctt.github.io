@@ -1,0 +1,67 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/12/fraudulent-gambling-network-may-be-a-nation-state-spying-operation/
+date: '2025-12-03T17:23:26'
+excerpt: Researchers say there's more to the network, which has operated for 14 years.
+image: assets/media/zqn0hT28VTlqSC1lzhmz2Q-6GjBv2fuDAyBdXjCPnd0OQ.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- espionage
+- exploits
+- fraud
+- hacking
+title: Fraudulent gambling network may actually be something more nefarious
+---
+<div>
+                      
+                      
+           
+<p>A sprawling infrastructure that has been bilking unsuspecting people through fraudulent gambling websites for 14 years is likely a dual operation run by a nation-state-sponsored group that is targeting government and private-industry organizations in the US and Europe, researchers said Wednesday.</p>
+<p>Researchers have previously tracked smaller pieces of the enormous infrastructure. Last month, security firm Sucuri <a href="https://blog.sucuri.net/2025/11/slot-gacor-the-rise-of-online-casino-spam.html">reported</a> that the operation seeks out and compromises poorly configured websites running the WordPress CMS. Imperva in January <a href="https://www.imperva.com/blog/how-hackers-use-php-backdoors-and-gsocket-to-facilitate-illegal-gambling-in-indonesia/">said</a> the attackers also scan for and exploit web apps built with the PHP programming language that have existing webshells or vulnerabilities. Once the weaknesses are exploited, the attackers install a GSocket, a backdoor that the attackers use to compromise servers and host gambling web content on them.</p>
+<p>All of the gambling sites target Indonesian-speaking visitors. Because Indonesian law prohibits gambling, many people in that country are drawn to illicit services. Most of the 236,433 attacker-owned domains hosting the gambling sites are hosted on Cloudflare. Most of the 1,481 hijacked subdomains were hosted on Amazon Web Services, Azure, and GitHub.</p>
+<h2>No &#8220;quickhit&#8221; gambling scam here</h2>
+<p>On Wednesday, researchers from security firm Malanta <a href="https://www.malanta.ai/blog-posts/what-if-indonesias-gambling-network-is-actually-a-state-aligned-cyber-operation">said</a> those details are only the most visible signs of a malicious network that&#8217;s actually much bigger and more complex than previously known. Far from being solely a financially motivated operation, the firm said, the network likely serves nation-state hackers targeting a wide range of organizations, including those in manufacturing, transport, healthcare, government, and education.</p>
+<p>The basis for the speculation is the tremendous amount of time and resources that have gone into creating and maintaining the infrastructure over 14 years. The resources include 328,000 separate domains, which comprise 236,000 addresses that the attackers bought and 90,000 that they commandeered by compromising legitimate websites. It&#8217;s also made up of nearly 1,500 hijacked subdomains from legitimate organizations. Malanta estimates that such infrastructure costs anywhere from $725,000 to $17 million per year to fund.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Adding to their suspicion that the operation is part of an APT (advanced persistent threat), the researchers said, is &#8220;advanced tradecraft&#8221; that includes:</p>
+<ul>
+<li>Widespread exploitation of WordPress and PHP apps</li>
+<li>Large-scale hijacking of subdomains belonging to legitimate, sometimes high-profile organizations</li>
+<li>Thousands of long-lived malicious Android apps running on AWS infrastructure</li>
+<li>38 GitHub accounts to host malware</li>
+<li>Stealth use of hijacked government domain names for use as reverse proxies</li>
+<li>Systematic abuse of search engine optimization</li>
+</ul>
+<p>&#8220;This combination&#8212;longevity, scale, cost, and sophistication&#8212;goes well beyond a typical &#8216;quickhit&#8217; gambling scam or financially motivated crew,&#8221; Malanta said. &#8220;That&#8217;s why we classify it as an APT and describe it as state sponsored-level, while being careful not to assert that we have direct evidence tying it to a specific government entity.&#8221;</p>
+ 
+<p>The focus on compromising government agencies in the US and Europe and a wide swath of industries is another reason for the assessment. In many cases, the attackers have compromised domain names or subdomains that legitimate organizations have allowed to lapse through phenomena including dangling DNS and dangling <a href="https://en.wikipedia.org/wiki/CNAME_record">CNAMEs</a>. In the former, the owner of a legitimate domain name or subdomain allows its DNS record to expire. In the latter, a cloud resource that once mapped a domain name or subdomain to an alias address inside a cloud service is abandoned. In either case, attackers can take control of the domain or subdomain by registering the expired IP address or cloud record.</p>
+<p>With control of those addresses, attackers use them for an array of purposes. One is to host webpages that spoof popular websites by using similar-looking domain names and graphics. There&#8217;s another benefit that arises from compromised subdomains belonging to sensitive organizations. In many cases, someone with control of the subdomain can use it to obtain session cookies set by other subdomains of the same parent domain. Possession of these credentials can allow hackers to access other parts of the network that can be used to covertly relay malicious traffic used for nation-state hacking activities. The access can also allow the attackers to obtain sensitive data stored on the compromised servers.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Malanta researchers wrote:</p>
+<blockquote><p>The second (and very troubling) scenario involves a focus on Western government domains. These hijacked subdomains are repurposed to capture the session cookie of the main domain. In addition, the attacker runs NGINX-based reverse proxies that terminate TLS on legitimate Fully Qualified Domain Names (FQDNs), then tunnel C2 traffic to their backend. This means the threat actor uses the government&#8217;s domain names and valid HTTPS to disguise their outbound traffic. The reverse proxy decrypts the incoming connection and then secretly forwards commands to the attacker&#8217;s C2 servers.</p>
+<p>In plain terms, this infrastructure can serve many purposes. For instance, highly stealthy cybercrime, as traffic appears legitimate coming from a government domain, or tunneling malware C2 communication through what looks like government infrastructure. In some of the cases we analyzed, we observed that the hijacked subdomain inherited and used the session cookie of the main domain. For example, the hijacked subdomain of a US-based global corporation with annual revenues of over 16 billion USD had the same cookie as the main domain.</p></blockquote>
+<p>Malanta identified more than 51,000 compromised credentials circulating online that had a &#8220;strong linkage&#8221; to gambling-related sites. Company researchers said the evidence suggests that the credentials were harvested either by the malicious Android apps or from the hijacked subdomains and then sold in underground crime markets.</p>
+<p>The researchers went on to say that it&#8217;s possible the operation is a joint venture between financially motivated hackers and actors working on behalf of a nation state. While Malanta has no proof that the infrastructure is being used for nation-state hacking, it said the totality of the evidence strongly suggests that&#8217;s the case.</p>
+<p>&#8220;Putting it all together, we see a structure where gambling is both a revenue stream and a cover,&#8221; the researchers wrote. &#8220;The same infrastructure can monetize local users and, at the same time, provide high-quality anonymity and covert communication channels for more sensitive cyber operations.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
