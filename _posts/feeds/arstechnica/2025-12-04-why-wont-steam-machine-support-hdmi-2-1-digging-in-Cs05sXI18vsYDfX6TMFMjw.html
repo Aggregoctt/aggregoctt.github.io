@@ -1,0 +1,51 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/gaming/2025/12/why-wont-steam-machine-support-hdmi-2-1-digging-in-on-the-display-standard-drama/
+date: '2025-12-04T19:53:14'
+excerpt: Valve tells Ars its "trying to unblock" limits caused by open source driver
+  issues.
+image: assets/media/Cs05sXI18vsYDfX6TMFMjw-OPl13V4_uAzED_R4e98EUw.jpeg
+source: arstechnica
+tags:
+- Gaming
+- AMD
+- drivers
+- Steam
+- steam machine
+- steamos
+- Valve
+- Windows
+title: Why won’t Steam Machine support HDMI 2.1? Digging in on the display standard
+  drama.
+---
+<div>
+                      
+                      
+          <p>When Valve <a href="https://arstechnica.com/gaming/2025/11/steam-deck-minus-the-screen-valve-announces-new-steam-machine-controller-hardware/">announced its upcoming Steam Machine hardware last month</a>, some eagle-eyed gamers may have been surprised to see that <a href="https://store.steampowered.com/sale/steammachine">the official spec sheet</a> lists support for HDMI 2.0 output, rather than the updated, higher-bandwidth HDMI 2.1 standard <a href="https://arstechnica.com/gadgets/2017/11/hdmi-2-1-spec-released-ushering-in-new-era-of-dynamic-hdr-video/">introduced in 2017</a>. Now, Valve tells Ars that, while the hardware itself actually supports HDMI 2.1, the company is struggling to offer full support for that standard due to Linux drivers that are &#8220;still a work-in-progress on the software side.&#8221;</p>
+<p>As <a href="https://arstechnica.com/gadgets/2024/02/hdmi-forum-to-amd-no-you-cant-make-an-open-source-hdmi-2-1-driver/">we noted last year</a>, the HDMI Forum (which manages the official specifications for HDMI standards) has officially blocked any open source implementation of HDMI 2.1. That means the open source AMD drivers used by SteamOS can&#8217;t fully implement certain features that are specific to the updated output standard.</p>
+<p>&#8220;At this time an open source HDMI 2.1 implementation is not possible without running afoul of the HDMI Forum requirements,&#8221; AMD engineer Alex Deucher said at the time.</p>
+<h2>Doing what they can</h2>
+<p>This situation has caused significant headaches for Valve, which tells Ars it has had to validate the Steam Machine&#8217;s HDMI 2.1 hardware via Windows during testing. And when it comes to HDMI performance via SteamOS, a Valve representative tells Ars that &#8220;we&#8217;ve been working on trying to unblock things there.&#8221;</p>
+<p>That includes unblocking HDMI 2.0&#8217;s resolution and frame-rate limits, which <a href="https://www.extron.com/article/hdmi2faq">max out at 60 Hz for a 4K output</a>, according to the official standard. Valve tells Ars it has been able to increase that limit to the &#8220;4K @ 120Hz&#8221; listed on the Steam Machine spec sheet, though, thanks to a technique called <a href="https://www.cablematters.com/Blog/HDMI/a-comprehensive-guide-to-chroma-subsampling?srsltid=AfmBOooodBYO5jloAUOgV_BWD8o479zIqMeMVxuI9lO9vsXT29AVrfEW">chroma sub-sampling</a>.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>At its base, this workaround compresses the luminance data that defines the color range of the video signal. That means SteamOS can maximize the resolution and frame rate it can squeeze through the more limited bandwidth allowed by Linux&#8217;s HDMI 2.0 drivers.</p>
+<p>Chroma subsampling&#8217;s reduced color information can noticeably affect the overall quality of video output, according to most accounts. Still, the display testers at RTINGS <a href="https://www.rtings.com/tv/learn/chroma-subsampling">suggest</a> that it shouldn&#8217;t &#8220;significantly affect picture quality&#8221; and that only &#8220;some PC games that have a strong focus on text might suffer&#8221; from slightly blurrier on-screen words, in some cases. And players that want to avoid the issue can use the Steam Machine&#8217;s DisplayPort 1.4 output, which supports even more bandwidth than HDMI 2.1 (and which can be converted to an HDMI signal with a simple dongle).</p>
+ 
+
+<p>The lack of full HDMI 2.1 support also limits how the Steam Machine will handle adaptive sync refresh rates. Valve says that it currently supports AMD&#8217;s FreeSync standard over HDMI, but is unable to support the more generalized <a href="https://hdmi.org/spec21sub/variablerefreshrate">HDMI-VRR</a> allowed by the 2.1 standard, due to the aforementioned driver issues. That could be a problem for some living rooms, as many TVs that support HDMI-VRR can&#8217;t specifically handle AMD&#8217;s FreeSync (<a href="https://www.flatpanelshd.com/focus.php?subaction=showfull&amp;id=1651050857">consult a list like this</a> to see which are which).</p>
+<p>These video standards issues aren&#8217;t exactly make-or-break problems for the Steam Machine effort, and most players probably won&#8217;t notice that these features are missing. Still, the whole situation highlights just some of the design points Valve has to address when building new Linux-based gaming hardware.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>

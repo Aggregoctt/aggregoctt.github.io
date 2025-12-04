@@ -1,0 +1,76 @@
+---
+author: Jacek Krywko
+canonical_url: https://arstechnica.com/science/2025/12/researchers-find-what-makes-ai-chatbots-politically-persuasive/
+date: '2025-12-04T20:07:20'
+excerpt: A massive study of political persuasion shows AIs have, at best, a weak effect.
+image: assets/media/2fCHWYqDebbOlITsryKfCQ-RmoilHpqUap0VwZAJEdE9w.jpeg
+source: arstechnica
+tags:
+- AI
+- Science
+- Behavioral science
+- chat-gpt
+- Computer science
+- grok
+- Human behavior
+- large language models
+title: Researchers find what makes AI chatbots politically persuasive
+---
+<div>
+                      
+                      
+           
+<p>Roughly two years ago, Sam Altman <a href="https://x.com/sama/status/1716972815960961174?lang=en">tweeted</a> that AI systems would be capable of superhuman persuasion well before achieving general intelligence&#8212;a prediction that raised concerns about the influence AI could have over democratic elections.</p>
+<p>To see if conversational large language models can really sway political views of the public, scientists at the UK AI Security Institute, MIT, Stanford, Carnegie Mellon, and many other institutions performed by far the largest study on AI persuasiveness to date, involving nearly 80,000 participants in the UK. It turned out political AI chatbots fell far short of superhuman persuasiveness, but the study raises some more nuanced issues about our interactions with AI.</p>
+<h2>AI dystopias</h2>
+<p>The public debate about the impact AI has on politics has largely revolved around notions drawn from dystopian sci-fi. Large language models have access to essentially every fact and story ever published about any issue or candidate. They have processed information from books on psychology, negotiations, and human manipulation. They can rely on absurdly high computing power in huge data centers worldwide. On top of that, they can often access tons of personal information about individual users thanks to hundreds upon hundreds of online interactions at their disposal.</p>
+<p>Talking to a powerful AI system is basically interacting with an intelligence that knows everything about everything, as well as almost everything about you. When viewed this way, LLMs can indeed appear kind of scary. The goal of this new gargantuan AI persuasiveness study was to break such scary visions down into their constituent pieces and see if they actually hold water.</p>
+<p>The team examined 19 LLMs, including the most powerful ones like three different versions of ChatGPT and xAI&#8217;s Grok-3 beta, along with a range of smaller, open source models. The AIs were asked to advocate for or against specific stances on 707 political issues selected by the team. The advocacy was done by engaging in short conversations with paid participants enlisted through a crowdsourcing platform. Each participant had to rate their agreement with a specific stance on an assigned political issue on a scale from 1 to 100 both before and after talking to the AI.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Scientists measured persuasiveness as the difference between the before and after agreement ratings. A control group had conversations on the same issue with the same AI models&#8212;but those models were not asked to persuade them.</p>
+<p>&#8220;We didn&#8217;t just want to test how persuasive the AI was&#8212;we also wanted to see what makes it persuasive,&#8221; says Chris&#160;Summerfield, a research director at the UK AI Security Institute and co-author of the study. As the researchers tested various persuasion strategies, the idea of AIs having &#8220;superhuman persuasion&#8221; skills crumbled.</p>
+<h2>Persuasion levers</h2>
+<p>The first pillar to crack was the notion that persuasiveness should increase with the scale of the model. It turned out that huge AI systems like ChatGPT or Grok-3 beta do have an edge over small-scale models, but that edge is relatively tiny. The factor that proved more important than scale was the kind of post-training AI models received. It was more effective to have the models learn from a limited database of successful persuasion dialogues and have them mimic the patterns extracted from them. This worked far better than adding billions of parameters and sheer computing power.</p>
+<p>This approach could be combined with reward modeling, where a separate AI scored candidate replies for their persuasiveness and selected the top-scoring one to give to the user. When the two were used together, the gap between large-scale and small-scale models was essentially closed. &#8220;With persuasion post-training like this we matched the Chat GPT-4o persuasion performance with a model we trained on a laptop,&#8221; says Kobi Hackenburg, a researcher at the UK AI Security Institute and co-author of the study.</p>
+ 
+<p>The next dystopian idea to fall was the power of using personal data. To this end, the team compared the persuasion scores achieved when models were given information about the participants&#8217; political views beforehand and when they lacked this data. Going one step further, scientists also tested whether persuasiveness increased when the AI knew the participants&#8217; gender, age, political ideology, or party affiliation. Just like with model scale, the effects of personalized messaging created based on such data were measurable but very small.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Finally, the last idea that didn&#8217;t hold up was AI&#8217;s potential mastery of using advanced psychological manipulation tactics. Scientists explicitly prompted the AIs to use techniques like moral reframing, where you present your arguments using the audience&#8217;s own moral values. They also tried deep canvassing, where you hold extended empathetic conversations with people to nudge them to reflect on and eventually shift their views.</p>
+<p>The resulting persuasiveness was compared with that achieved when the same models were prompted to use facts and evidence to back their claims or just to be as persuasive as they could without specifying any persuasion methods to use. I turned out using lots of facts and evidence was the clear winner, and came in just slightly ahead of the baseline approach where persuasion strategy was not specified. Using all sorts of psychological trickery actually made the performance significantly worse.</p>
+<p>Overall, AI models changed the participants&#8217; agreement ratings by 9.4 percent on average compared to the control group. The best performing mainstream AI model was Chat GPT 4o, which scored nearly 12 percent followed by GPT 4.5 with 10.51 percent, and Grok-3 with 9.05 percent. For context, static political ads like written manifestos had a persuasion effect of roughly 6.1 percent. The conversational AIs were roughly 40&#8211;50 percent more convincing than these ads, but that&#8217;s hardly &#8220;superhuman.&#8221;</p>
+<p>While the study managed to undercut some of the common dystopian AI concerns, it highlighted a few new issues.</p>
+<h2>Convincing inaccuracies</h2>
+<p>While the winning &#8220;facts and evidence&#8221; strategy looked good at first, the AIs had some issues with implementing it. When the team noticed that increasing the information density of dialogues made the AIs more persuasive, they started prompting the models to increase it further. They noticed that, as the AIs used more factual statements, they also became less accurate&#8212;they basically started misrepresenting things or making stuff up more often.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Hackenburg and his colleagues note that&#160; we can&#8217;t say if the effect we see here is causation or correlation&#8212;whether the AIs are becoming more convincing because they misrepresent the facts or whether spitting out inaccurate statements is a byproduct of asking them to make more factual statements.</p>
+<p>The finding that the computing power needed to make an AI model politically persuasive is relatively low is also a mixed bag. It pushes back against the vision that only a handful of powerful actors will have access to a persuasive AI that can potentially sway public opinion in their favor. At the same time, the realization that everybody can run an AI like that on a laptop creates its own concerns. &#8220;Persuasion is a route to power and influence&#8212;it&#8217;s what we do when we want to win elections or broke a multi-million-dollar deal,&#8221; Summerfield says. &#8220;But many forms of misuse of AI might involve persuasion. Think about fraud or scams, radicalization, or grooming. All these involve persuasion.&#8221;</p>
+<p>But perhaps the most important question mark in the&#160; study is the motivation behind the rather high participant engagement, which was needed for the high persuasion scores. After all, even the most persuasive AI can&#8217;t move you when you just close the chat window.</p>
+<p>People in Hackenburg&#8217;s experiments were told that they would be talking to the AI and that the AI would try to persuade them. To get paid, a participant only had to go through two turns of dialogue (they were limited to no more than 10). The average conversation length was seven turns, which seemed a bit surprising given how far beyond the minimum requirement most people went. Most people just roll their eyes and disconnect when they realize they are talking with a chatbot.</p>
+<p>Would Hackenburg&#8217;s study participants remain so eager to engage in political disputes with random chatbots on the Internet in their free time if there was no money on the table? &#8220;It&#8217;s unclear how our results would generalize to a real-world context,&#8221; Hackenburg says.</p>
+<p>Science, 2025. DOI: <a href="https://doi.org/10.1126/science.aea3884">10.1126/science.aea3884</a></p>
+
+
+          
+                  
+
+                  
+          </div>
