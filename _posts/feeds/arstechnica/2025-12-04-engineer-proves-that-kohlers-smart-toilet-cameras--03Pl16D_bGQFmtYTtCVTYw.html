@@ -1,0 +1,81 @@
+---
+author: Scharon Harding
+canonical_url: https://arstechnica.com/gadgets/2025/12/despite-accessing-user-data-kohler-still-says-its-smart-toilet-cameras-use-e2ee/
+date: '2025-12-04T21:23:40'
+excerpt: Kohler is getting the scoop on people's poop.
+image: assets/media/03Pl16D_bGQFmtYTtCVTYw-NPeGIz5zAdOuOxQVCCHpPQ.jpeg
+source: arstechnica
+tags:
+- Tech
+- cameras
+- e2ee
+- end to end encryption
+- smart home
+title: Engineer proves that Kohler’s smart toilet cameras aren’t very private
+---
+<div>
+                      
+                      
+           
+<p>Kohler is facing backlash after an engineer <a href="https://varlogsimon.leaflet.pub/3m6zrw6k2bs2p">pointed out</a> that the company&#8217;s new smart toilet cameras may not be as private as it wants people to believe. The discussion raises questions about Kohler&#8217;s use of the term &#8220;end-to-end encryption&#8221; (E2EE) and the inherent privacy limitations of a device that films the goings-on of a toilet bowl.</p>
+<p>In October, Kohler announced its first &#8220;health&#8221; product, the Dekoda. Kohler&#8217;s announcement described the $599 device (it also requires a subscription that starts at $7 per month) as a toilet bowl attachment that uses &#8220;optical sensors and validated machine-learning algorithms&#8221; to deliver &#8220;valuable insights into your health and wellness.&#8221; The announcement added:</p>
+<blockquote><p>Data flows to the personalized Kohler Health app, giving users continuous, private awareness of key health and wellness indicators&#8212;right on their phone. Features like fingerprint authentication and end-to-end encryption are designed for user privacy and security.</p></blockquote>
+<p>The average person is most likely to be familiar with E2EE through messaging apps, like Signal. Messages sent via apps with E2EE are encrypted throughout transmission. Only the message&#8217;s sender and recipient can view the decrypted messages, which is intended to prevent third parties, including the app developer, from reading them.</p>
+<p>But how does E2EE apply to a docked camera inside a toilet?</p>
+<p>Software engineer and former Federal Trade Commission technology advisor Simon Fondrie-Teitler sought answers about this, considering that &#8220;Kohler Health doesn&#8217;t have any user-to-user sharing features,&#8221; he wrote in a <a href="https://varlogsimon.leaflet.pub/3m6zrw6k2bs2p">blog post</a> this week:</p>
+<blockquote><p>&#160;&#8230; emails exchanged with Kohler&#8217;s privacy contact clarified that the other &#8216;end&#8217; that can decrypt the data is Kohler themselves: &#8216;User data is encrypted at rest, when it&#8217;s stored on the user&#8217;s mobile phone, toilet attachment, and on our systems. Data in transit is also encrypted end-to-end, as it travels between the user&#8217;s devices and our systems, where it is decrypted and processed to provide our service.&#8217;</p></blockquote>
+<p>Ars Technica contacted Kohler to ask if the above statement is an accurate summary of Dekoda&#8217;s &#8220;E2EE&#8221; and if Kohler employees can access data from Dekoda devices. A spokesperson responded with a company statement that basically argued that data gathered from Dekoda devices is encrypted from one end (the toilet camera) until it reaches another end, in this case, Kohler&#8217;s servers. The statement reads, in part:</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<blockquote><p>The term end-to-end encryption is often used in the context of products that enable a user (sender) to communicate with another user (recipient), such as a messaging application. Kohler Health is not a messaging application. In this case, we used the term with respect to the encryption of data between our users (sender) and Kohler Health (recipient).</p>
+<p>We encrypt data end-to-end in transit, as it travels between users&#8217; devices and our systems, where it is decrypted and processed to provide and improve our service. We also encrypt sensitive user data at rest, when it&#8217;s stored on a user&#8217;s mobile phone, toilet attachment, and on our systems.</p></blockquote>
+<p>Although Kohler somewhat logically defines the endpoints in what it considers E2EE, at a minimum, Kohler&#8217;s definition goes against the consumer-facing spirit of E2EE. Because E2EE is, as Kohler&#8217;s statement notes, most frequently used in messaging apps, people tend to associate it with privacy from the company that enables the data transmission. Since that&#8217;s not the case with the Dekoda, Kohler&#8217;s misuse of the term E2EE can give <a href="https://www.goodhousekeeping.com/health/wellness/a69500596/kohler-toilet-camera-review-health-tracking/">users a false sense of privacy</a>.</p>
+<p>As <a href="https://www.ibm.com/think/topics/end-to-end-encryption">IBM defines it</a>, E2EE &#8220;ensures that service providers facilitating the communications &#8230; can&#8217;t access the messages.&#8221; Kohler&#8217;s statement implies that the company understood how people typically think about E2EE and still chose to use the term over more accurate alternatives, such as Transport Layer Security (TLS) encryption, which &#8220;encrypts data as it travels between a client and a server. However, it doesn&#8217;t provide strong protection against access by intermediaries such as application servers or network providers,&#8221; per IBM.</p>
+<p>&#8220;Using terms like &#8216;anonymized&#8217; and &#8216;encrypted&#8217; gives an impression of a company taking privacy and security seriously&#8212;but that doesn&#8217;t mean it actually is,&#8221; RJ Cross, director of the consumer privacy program at the Public Interest Research Group (PIRG), told Ars Technica.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Smart toilet cameras are so new (and questionable) that there are few comparisons we can make here. But the Dekoda&#8217;s primary rival, the Throne, also uses confusing marketing language. The smart camera&#8217;s website makes no mention of end-to-end encryption but <a href="https://www.thronescience.com/frequently-asked-questions">claims</a> that the device uses &#8220;bank-grade encryption,&#8221; a vague term often used by marketers but that does not imply E2EE, which isn&#8217;t a mandatory banking security standard in the US.</p>
+ 
+<h2>Why didn&#8217;t anyone notice before?</h2>
+<p>As Fondrie-Teitler pointed out in his blog, it&#8217;s odd to see E2EE associated with a smart toilet camera. Despite this, I wasn&#8217;t immediately able to find online discussion around Dekoda&#8217;s use of the term,&#160;which includes the <a href="https://www.kohlerhealth.com/dekoda/">device&#8217;s website </a>saying that the Dekoda uses &#8220;encryption at every step.&#8221;</p>
+<p>Numerous stories about the toilet cam&#8217;s launch (examples <a class="c-link" href="https://www.theverge.com/news/802727/kohler-health-dekoda-toilet-camera-optical-sensors" target="_blank" rel="noopener noreferrer">here</a>,&#160;<a class="c-link" href="https://www.pcmag.com/news/kohlers-toilet-camera-analyzes-your-poop" target="_blank" rel="noopener noreferrer">here</a>,&#160;<a class="c-link" href="https://techcrunch.com/2025/10/19/kohler-unveils-a-camera-for-your-toilet/" target="_blank" rel="noopener noreferrer">here</a>, and&#160;<a class="c-link" href="https://www.cnet.com/health/medical/kohlers-tiny-toilet-camera-analyzes-the-contents-and-reports-back-to-you/" target="_blank" rel="noopener noreferrer">here</a>) mentioned the device&#8217;s purported E2EE but made no statements about how E2EE is used or the implications that E2EE claims have, or don&#8217;t have, for user privacy.</p>
+<p>It&#8217;s possible there wasn&#8217;t much questioning about the Dekoda&#8217;s E2EE claim since the type of person who worries about and understands such things is often someone who wouldn&#8217;t put a camera anywhere near their bathroom.</p>
+<p>It&#8217;s also possible that people had other ideas for how the smart toilet camera might work. Speaking with <a href="https://www.theregister.com/2025/12/03/pooppeeping_dekoda_toilet_attachment_encryption/">The Register</a>, Fondrie-Teitler suggested a design in which data never leaves the camera but admitted that he didn&#8217;t know if this is possible.</p>
+<p>&#8220;Ideally, this type of data would remain on the user&#8217;s device for analysis, and client-side encryption would be used for backups or synchronizing historical data to new devices,&#8221; he told The Register.</p>
+<h2>What is Kohler doing with the data?</h2>
+<p>For those curious about why Kohler wants data about its customers&#8217; waste, the answer, as it often is today, is marketing and AI.</p>
+
+          
+                  
+
+              
+          
+          
+<p>As Fondrie-Teitler noted, Kohler&#8217;s <a href="https://www.kohlerhealth.com/privacy-policy/">privacy policy</a> says Kohler can use customer data to &#8220;create aggregated, de-identified and/or anonymized data, which we may use and share with third parties for our lawful business purposes, including to analyze and improve the Kohler Health Platform and our other products and services, to promote our business, and to train our AI and machine learning models.&#8221;</p>
+<p>In its statement, Kohler said:</p>
+<blockquote><p>If a user consents (which is optional), Kohler Health may de-identify the data and use the de-identified data to train the AI that drives our product. This consent check-box is displayed in the Kohler Health app, is optional, and is not pre-checked.</p></blockquote>
+<h2>Words matter</h2>
+<p>Kohler isn&#8217;t the first tech company to confuse people with its use of the term E2EE. In April, there was debate over whether Google was truly giving <a href="https://arstechnica.com/security/2025/04/are-new-google-e2ee-emails-really-end-to-end-encrypted-kinda-but-not-really/">Gmail for business users E2EE</a>, since, in addition to the sender and recipient having access to decrypted messages, people inside the users&#8217; organization who deploy and manage the KACL (Key Access Control List) server can access the key necessary for decryption.</p>
+<p>In general, what matters most is whether the product provides the security users demand. As Ars Technica Senior Security Editor Dan Goodin <a href="https://arstechnica.com/security/2025/04/are-new-google-e2ee-emails-really-end-to-end-encrypted-kinda-but-not-really/">wrote</a> about Gmail&#8217;s E2EE debate:</p>
+<p>&#8220;The new feature is of potential value to organizations that must comply with onerous regulations mandating end-to-end encryption. It most definitely isn&#8217;t suitable for consumers or anyone who wants sole control over the messages they send. Privacy advocates, take note.&#8221;</p>
+<p>When the product in question is an Internet-connected camera that lives inside your toilet bowl, it&#8217;s important to ask whether any technology could ever make it private enough. For many, no proper terminology could rationalize such a device.</p>
+<p>Still, if a company is going to push &#8220;health&#8221; products to people who may have health concerns and, perhaps, limited cybersecurity and tech privacy knowledge, there&#8217;s an onus on that company for clear and straightforward communication.</p>
+<p>&#8220;Throwing security terms around that the public doesn&#8217;t understand to try and create an illusion of data privacy and security being a high priority for your company is misleading to the people who have bought your product,&#8221; Cross said.</p>
+
+
+          
+                  
+
+                  
+          </div>
