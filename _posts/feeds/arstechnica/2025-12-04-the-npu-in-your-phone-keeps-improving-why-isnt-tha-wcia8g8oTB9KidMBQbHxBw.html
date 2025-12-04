@@ -1,0 +1,130 @@
+---
+author: Ryan Whitwam
+canonical_url: https://arstechnica.com/gadgets/2025/12/the-npu-in-your-phone-keeps-improving-why-isnt-that-making-ai-better/
+date: '2025-12-04T12:00:42'
+excerpt: Shrinking AI for your phone is no simple matter.
+image: assets/media/wcia8g8oTB9KidMBQbHxBw-DwcdANOgzVsxP8SlemRUkA.jpeg
+source: arstechnica
+tags:
+- AI
+- Features
+- Tech
+- Artificial Intelligence
+- generative ai
+- google
+- NPU
+- smartphones
+title: The NPU in your phone keeps improving—why isn’t that making AI better?
+---
+<div>
+                      
+                      
+           
+<p>Almost every technological innovation of the past several years has been laser-focused on one thing: generative AI. Many of these supposedly revolutionary systems run on big, expensive servers in a data center somewhere, but at the same time, chipmakers are crowing about the power of the neural processing units (NPU) they have brought to consumer devices. Every few months, it&#8217;s the same thing: This new NPU is 30 or 40 percent faster than the last one. That&#8217;s supposed to let you do something important, but no one really gets around to explaining what that is.</p>
+<p>Experts envision a future of secure, personal AI tools with on-device intelligence, but does that match the reality of the AI boom? AI on the &#8220;edge&#8221; sounds great, but almost every AI tool of consequence is running in the cloud. So what&#8217;s that chip in your phone even doing?</p>
+<h2>What is an NPU?</h2>
+<p>Companies launching a new product often get bogged down in superlatives and vague marketing speak, so they do a poor job of explaining technical details. It&#8217;s not clear to most people buying a phone why they need the hardware to run AI workloads, and the supposed benefits are largely theoretical.</p>
+<p>Many of today&#8217;s flagship consumer processors are systems-on-a-chip (SoC) because they incorporate multiple computing elements&#8212;like CPU cores, GPUs, and imaging controllers&#8212;on a single piece of silicon. This is true of mobile parts like Qualcomm&#8217;s Snapdragon or Google&#8217;s Tensor, as well as PC components like the Intel Core Ultra.</p>
+<p>The NPU is a newer addition to chips, but it didn&#8217;t just appear one day&#8212;there&#8217;s a lineage that brought us here. NPUs are good at what they do because they emphasize parallel computing, something that&#8217;s also important in other SoC components.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Qualcomm devotes significant time during its new product unveilings to talk about its Hexagon NPUs. Keen observers may recall that this branding has been reused from the company&#8217;s line of digital signal processors (DSPs), and there&#8217;s a good reason for that.</p>
+<p>&#8220;Our journey into AI processing started probably 15 or 20 years ago, wherein our first anchor point was looking at signal processing,&#8221; said Vinesh Sukumar, Qualcomm&#8217;s head of AI products. DSPs have a similar architecture compared to NPUs, but they&#8217;re much simpler, with a focus on processing audio (e.g., speech recognition) and modem signals.</p>
+ 
+
+<p>As the collection of technologies we refer to as &#8220;artificial intelligence&#8221; developed, engineers began using DSPs for more types of parallel processing, like long short-term memory (LSTM). Sukumar explained that as the industry became enamored with convolutional neural networks (CNNs), the technology underlying applications like computer vision, DSPs became focused on matrix functions, which are essential to generative AI processing as well.</p>
+<p>While there is an architectural lineage here, it&#8217;s not quite right to say NPUs are just fancy DSPs. &#8220;If you talk about DSPs in the general term of the word, yes, [an NPU] is a digital signal processor,&#8221; said MediaTek Assistant Vice President Mark Odani. &#8220;But it&#8217;s all come a long way and it&#8217;s a lot more optimized for parallelism, how the transformers work, and holding huge numbers of parameters for processing.&#8221;</p>
+<p>Despite being so prominent in new chips, NPUs are not strictly necessary for running AI workloads on the &#8220;edge,&#8221; a term that differentiates local AI processing from cloud-based systems. CPUs are slower than NPUs but can handle some light workloads without using as much power. Meanwhile, GPUs can often chew through more data than an NPU, but they use more power to do it. And there are times you may want to do that, according to Qualcomm&#8217;s Sukumar. For example, running AI workloads while a game is running could favor the GPU.</p>
+
+          
+                   
+            
+
+              
+          
+          
+ 
+<p>&#8220;Here, your measurement of success is that you cannot drop your frame rate while maintaining the spatial resolution, the dynamic range of the pixel, and also being able to provide AI recommendations for the player within that space,&#8221; says Sukumar. &#8220;In this kind of use case, it actually makes sense to run that in the graphics engine, because then you don&#8217;t have to keep shifting between the graphics and a domain-specific AI engine like an NPU.&#8221;</p>
+<h2>Livin&#8217; on the edge is hard</h2>
+<p>Unfortunately, the NPUs in many devices sit idle (and not just during gaming). The mix of local versus cloud AI tools favors the latter because that&#8217;s the natural habitat of LLMs. AI models are trained and fine-tuned on powerful servers, and that&#8217;s where they run best.</p>
+<p>A server-based AI, like the full-fat versions of Gemini and ChatGPT, is not resource-constrained like a model running on your phone&#8217;s NPU. Consider the latest version of Google&#8217;s on-device Gemini Nano model, which has a context window of 32k tokens. That is a more than 2x improvement over the last version. However, the cloud-based Gemini models have context windows of up to 1 million tokens, meaning they can process much larger volumes of data.</p>
+<p>Both cloud-based and edge AI hardware will continue getting better, but the balance may not shift in the NPU&#8217;s favor. &#8220;The cloud will always have more compute resources versus a mobile device,&#8221; said Google&#8217;s Shenaz Zack, senior product manager on the Pixel team.</p>
+<p>&#8220;If you want the most accurate models or the most brute force models, that all has to be done in the cloud,&#8221; Odani said. &#8220;But what we&#8217;re finding is that, in a lot of the use cases where there&#8217;s just summarizing some text or you&#8217;re talking to your voice assistant, a lot of those things can fit within three billion parameters.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>Squeezing AI models onto a phone or laptop involves some compromise&#8212;for example, by reducing the parameters included in the model. Odani explained that cloud-based models run hundreds of billions of parameters, the weighting that determines how a model processes input tokens to generate outputs. You can&#8217;t run anything like that on a consumer device right now, so developers have to vastly scale back the size of models for the edge. Odani says MediaTek&#8217;s latest ninth-generation NPU can handle about 3 billion parameters&#8212;a difference of several orders of magnitude.</p>
+<p>The amount of memory available in a phone or laptop is also a limiting factor, so mobile-optimized AI models are usually quantized. That means the model&#8217;s estimation of the next token runs with less precision. Let&#8217;s say you want to run one of the larger open models, like Llama or Gemma 7b, on your device. The de facto standard is FP16, known as half-precision. At that level, a model with 7 billion parameters will lock up 13 or 14 gigabytes of memory. Stepping down to FP4 (quarter-precision) brings the size of the model in memory to a few gigs.</p>
+<p>&#8220;When you compress to, let&#8217;s say, between three and four gigabytes, it&#8217;s a sweet spot for integration into memory constrained form factors like a smartphone,&#8221; Sukumar said. &#8220;And there&#8217;s been a lot of investment in the ecosystem and at Qualcomm to look at various ways of compressing the models without losing quality.&#8221;</p>
+<p>It&#8217;s difficult to create a generalized AI with these limitations for mobile devices, but computers&#8212;and especially smartphones&#8212;are a wellspring of data that can be pumped into models to generate supposedly helpful outputs. That&#8217;s why most edge AI is geared toward specific, narrow use cases, like analyzing screenshots or suggesting calendar appointments. Google says its latest Pixel phones run more than 100 AI models, both generative and traditional.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Even AI skeptics can recognize that the landscape is changing quickly. In the time it takes to shrink and optimize AI models for a phone or laptop, new cloud models may appear that make that work obsolete. This is also why third-party developers have been slow to utilize NPU processing in apps. They either have to plug into an existing on-device model, which involves <a href="https://arstechnica.com/google/2025/05/google-to-give-app-devs-access-to-gemini-nano-for-on-device-ai/">restrictions and rapidly moving development targets</a>, or deploy their own custom models. Neither is a great option currently.</p>
+<h2>A matter of trust</h2>
+<p>If the cloud is faster and easier, why go to the trouble of optimizing for the edge and burning more power with an NPU? Leaning on the cloud means accepting a level of dependence and trust in the people operating AI data centers that may not always be appropriate.</p>
+<p>&#8220;We always start off with user privacy as an element,&#8221; said Qualcomm&#8217;s Sukumar. He explained that the best inference is not general in nature&#8212;it&#8217;s personalized based on the user&#8217;s interests and what&#8217;s happening in their lives. Fine-tuning models to deliver that experience calls for personal data, and it&#8217;s safer to store and process that data locally.</p>
+ 
+<p>Even when companies say the right things about privacy in their cloud services, they&#8217;re far from guarantees. The helpful, friendly vibe of general chatbots also encourages people to divulge a lot of personal information, and if that assistant is running in the cloud, your data is there as well. OpenAI&#8217;s copyright fight with The New York Times could lead to <a href="https://arstechnica.com/tech-policy/2025/11/openai-fights-order-to-hand-over-20-million-private-chatgpt-conversations/">millions of private chats</a> being handed over to the publisher. The explosive growth and uncertain regulatory framework of gen AI make it hard to know what&#8217;s going to happen to your data.</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;People are using a lot of these generative AI assistants like a therapist,&#8221; Odani said. &#8220;And you don&#8217;t know one day if all this stuff is going to come out on the Internet.&#8221;</p>
+<p>Not everyone is so concerned. Zack claims Google has built &#8220;the world&#8217;s most secure cloud infrastructure,&#8221; allowing it to process data where it delivers the best results. Zack uses Video Boost and Pixel Studio as examples of this approach, noting that Google&#8217;s cloud is the only way to make these experiences fast and high-quality. The company recently announced its new Private AI Compute system, which it claims is <a href="https://arstechnica.com/google/2025/11/google-says-new-cloud-based-private-ai-compute-is-just-as-secure-as-local-processing/">just as safe as local AI</a>.</p>
+<p>Even if that&#8217;s true, the edge has other advantages&#8212;edge AI is just more reliable than a cloud service. &#8220;On-device is fast,&#8221; Odani said. &#8220;Sometimes I&#8217;m talking to ChatGPT and my Wi-Fi goes out or whatever, and it skips a beat.&#8221;</p>
+<p>The services hosting cloud-based AI models aren&#8217;t just a single website&#8212;the Internet of today is massively interdependent, with content delivery networks, DNS providers, hosting, and other services that could degrade or shut down your favorite AI in the event of a glitch. When Cloudflare suffered a <a href="https://arstechnica.com/tech-policy/2025/11/cloudflare-broke-much-of-the-internet-with-a-corrupted-bot-management-file/">self-inflicted outage</a> recently, ChatGPT users were annoyed to find their trusty chatbot was unavailable. Local AI features don&#8217;t have that drawback.</p>
+<h2>Cloud dominance</h2>
+<p>Everyone seems to agree that a hybrid approach is necessary to deliver truly useful AI features (assuming those exist), sending data to more powerful cloud services when necessary&#8212;Google, Apple, and every other phone maker does this. But the pursuit of a seamless experience can also obscure what&#8217;s happening with your data. More often than not, the AI features on your phone aren&#8217;t running in a secure, local way, even when the device has the hardware to do that.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Take, for example, the new <a href="https://arstechnica.com/gadgets/2025/11/oneplus-15-review-the-end-of-range-anxiety/">OnePlus 15</a>. This phone has Qualcomm&#8217;s brand-new Snapdragon 8 Elite Gen 5, which has an NPU that is 37 percent faster than the last one, for whatever that&#8217;s worth. Even with all that on-device AI might, OnePlus is heavily reliant on the cloud to analyze your personal data. Features like AI Writer and the AI Recorder connect to the company&#8217;s servers for processing, a system OnePlus assures us is totally safe and private.</p>
+<p>Similarly, Motorola released a new line of <a href="https://arstechnica.com/gadgets/2025/05/motorola-razr-and-razr-ultra-2025-review-cool-as-hell-but-too-much-ai/">foldable Razr phones</a> over the summer that are loaded with AI features from multiple providers. These phones can summarize your notifications using AI, but you might be surprised how much of it happens in the cloud unless you read the terms and conditions. If you buy the Razr Ultra, that summarization happens on your phone. However, the cheaper models with less RAM and NPU power use cloud services to process your notifications. Again, Motorola says this system is secure, but a more secure option would have been to re-optimize the model for its cheaper phones.</p>
+<p>Even when an OEM focuses on using the NPU hardware, the results can be lacking. Look at Google&#8217;s Daily Hub and Samsung&#8217;s Now Brief. These features are supposed to chew through all the data on your phone and generate useful recommendations and actions, but they rarely do anything aside from showing calendar events. In fact, Google has temporarily <a href="https://arstechnica.com/google/2025/09/google-pulls-daily-hub-ai-feature-from-pixel-10-phones/">removed Daily Hub from Pixels</a> because the feature did so little, and Google is a pioneer in local AI with Gemini Nano. Google has actually moved some parts of its mobile AI experience from local to cloud-based processing in recent months.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<p>Those &#8220;brute force&#8221; models appear to be winning, and it doesn&#8217;t hurt that companies also get more data when you interact with their private computing cloud services.</p>
+<h2>Maybe take what you can get?</h2>
+<p>There&#8217;s plenty of interest in local AI, but so far, that hasn&#8217;t translated to an AI revolution in your pocket. Most of the AI advances we&#8217;ve seen so far depend on the ever-increasing scale of cloud systems and the generalized models that run there. Industry experts say that extensive work is happening behind the scenes to shrink AI models to work on phones and laptops, but it will take time for that to make an impact.</p>
+<p>In the meantime, local AI processing is out there in a limited way. Google still makes use of the Tensor NPU to handle sensitive data for features like Magic Cue, and Samsung really makes the most of Qualcomm&#8217;s AI-focused chipsets. While Now Brief is of questionable utility, Samsung is cognizant of how reliance on the cloud may impact users, offering a toggle in the system settings that restricts AI processing to run only on the device. This limits the number of available AI features, and others don&#8217;t work as well, but you&#8217;ll know none of your personal data is being shared. No one else offers this option on a smartphone.</p>
+ 
+
+<p>Samsung spokesperson Elise Sembach said the company&#8217;s AI efforts are grounded in enhancing experiences while maintaining user control. &#8220;The on-device processing toggle in One UI reflects this approach. It gives users the option to process AI tasks locally for faster performance, added privacy, and reliability even without a network connection,&#8221; Sembach said.</p>
+<p>Interest in edge AI might be a good thing even if you don&#8217;t use it. Planning for this AI-rich future can encourage device makers to invest in better hardware&#8212;like more memory to run all those theoretical AI models.</p>
+<p>&#8220;We definitely recommend our partners increase their RAM capacity,&#8221; said Sukumar. Indeed, Google, Samsung, and others have boosted memory capacity in large part to support on-device AI. Even if the cloud is winning, we&#8217;ll take the extra RAM.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
