@@ -1,0 +1,56 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/12/admins-and-defenders-gird-themselves-against-maximum-severity-server-vulnerability/
+date: '2025-12-03T23:16:03'
+excerpt: Open source React executes malicious code with malformed HTML—no authentication
+  needed.
+image: assets/media/9MxrjpJ4ZjuqqtJbFpJJ-w-btdp7t7ycC2ZugOJbH5y8g.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- exploits
+- react server components
+- vulnerabilities
+title: Admins and defenders gird themselves against maximum-severity server vuln
+---
+<div>
+                      
+                      
+          <p>Security defenders are girding themselves in response to the disclosure of a maximum-severity vulnerability disclosed Wednesday in React Server, an open-source package that&#8217;s widely used by websites and in cloud environments.</p>
+<p>The vulnerability is easy to exploit and allows hackers to execute malicious code on servers that run it. Exploit code is now <a href="https://github.com/ejpir/CVE-2025-55182-poc/tree/main">publicly available</a>.</p>
+<p>React is embedded into web apps running on servers so that remote devices render JavaScript and content more quickly and with fewer resources required. React is used by an estimated <a href="https://www.wiz.io/blog/critical-vulnerability-in-react-cve-2025-55182">6 percent</a> of all websites and 39 percent of cloud environments. When end users reload a page, React allows servers to re-render only parts that have changed, a feature that drastically speeds up performance and lowers the computing resources required by the server.</p>
+<h2>A perfect 10</h2>
+<p>Security firm Wiz <a href="https://www.wiz.io/blog/critical-vulnerability-in-react-cve-2025-55182">said</a> exploitation requires only a single HTTP request and had a &#8220;near-100% reliability&#8221; in its testing. Multiple software frameworks and libraries embed React implementations by default. As a result, even when apps don&#8217;t explicitly make use of React functionality, they can still be vulnerable, since the integration layer itself invokes the buggy code.</p>
+<p>The combination of the widespread use of React&#8212;particularly in cloud environments&#8212;the ease of exploitation, and the ability to execute code that gives attackers control of servers has earned the vulnerability a severity rating of 10, the highest score possible. On social media, security defenders and software engineers urged anyone responsible for React-related apps to immediately install an <a href="https://github.com/facebook/react/commit/7dc903cd29dac55efb4424853fd0442fef3a8700">update</a> released Wednesday.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>&#8220;I usually don&#8217;t say this, but patch right freakin&#8217; now,&#8221; one researcher <a href="https://infosec.exchange/@mttaggart/115656660264185977">wrote</a>. &#8220;The React CVE listing (CVE-2025-55182) is a perfect 10.&#8221;</p>
+<p>React versions 19.0.1, 19.1.2, or 19.2.1 contain the vulnerable code. Third-party components known to be affected include:</p>
+<ul>
+<li><span>Vite RSC plugin</span></li>
+<li><span>Parcel RSC plugin</span></li>
+<li><span>React Router RSC preview</span></li>
+<li><span>RedwoodSDK</span></li>
+<li><span>Waku</span></li>
+<li><span>Next.js</span></li>
+</ul>
+<p>According to Wiz and fellow security firm <a href="https://www.aikido.dev/blog/react-nextjs-cve-2025-55182-rce">Aikido,</a> the vulnerability, tracked as CVE-2025-55182, resides in Flight, a protocol found in the React Server Components. Next.js has assigned the designation CVE-2025-66478 to track the vulnerability in its package.</p>
+<p>The vulnerability stems from unsafe deserialization, the coding process of converting strings, byte streams, and other &#8220;serialized&#8221; formats into objects or data structures in code. Hackers can exploit the insecure deserialization using payloads that execute malicious code on the server. Patched React versions include stricter validation and hardened deserialization behavior.</p>
+<p>&#8220;When a server receives a specially crafted, malformed payload, it fails to validate the structure correctly,&#8221; Wiz explained. &#8220;This allows attacker-controlled data to influence server-side execution logic, resulting in the execution of privileged JavaScript code.&#8221;</p>
+<p>The company added:</p>
+<blockquote><p>In our experimentation, exploitation of this vulnerability had high fidelity, with a near 100% success rate and can be leveraged to a full remote code execution. The attack vector is unauthenticated and remote, requiring only a specially crafted HTTP request to the target server. It affects the default configuration of popular frameworks.</p></blockquote>
+<p>Both companies are advising admins and developers to upgrade React and any dependencies that rely on it. Users of any of the Remote-enabled frameworks and plugins mentioned above should check with the maintainers for guidance. Aikido also suggests admins and developers scan their codebases and repositories for any use of React using <a href="https://app.aikido.dev/login?_gl=1*1czpwpg*_gcl_au*ODIxNjcwMTU2LjE3NjQ3ODg2NTI.*FPAU*NjIzODM2OTQ3LjE3NjQ3ODg2NTI.*_ga*ODgyNTA0MzYyLjE3NjQ3ODg2NTI.*_ga_NCP2435BFQ*czE3NjQ3ODg2NTIkbzEkZzEkdDE3NjQ3ODkwMTAkajYwJGwwJGgxNzMyMDM0NjIw">this</a> link.</p>
+
+
+          
+                  
+
+                  
+          </div>

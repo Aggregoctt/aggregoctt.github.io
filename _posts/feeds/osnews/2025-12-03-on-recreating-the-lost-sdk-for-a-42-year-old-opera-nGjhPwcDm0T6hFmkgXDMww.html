@@ -1,0 +1,45 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143959/on-recreating-the-lost-sdk-for-a-42-year-old-operating-system-visicorp-vision/
+date: '2025-12-03T22:37:05'
+excerpt: 'I would think most of us here at OSNews are aware of VisiOn, the graphical
+  multitasking operating system for the IBM PC which was one of the first operating
+  systems with a graphical user interface, predating Windows, GEM, the Mac, and even
+  the Apple Lisa. While VisiOn was technically an &#8220;open&#8221; platform anybody
+  could develop an application for, the operating system&#8217;s SDK cost $7000 at
+  the time and required a VAX system. This, combined with VisiOn failing in the market,
+  means nobody knows how to develop an application for it. Until now. Over the past
+  few months, Nina Kalinina painstakingly unraveled VisiOn so that she she could recreate
+  the SDK from scratch. In turn, this allowed developer Atsuko to develop a clean-room
+  application for VisiOn &#8211; which is most likely the very first third-party application
+  ever developed and released for VisiOn. I&#8217;ve been following along with the
+  pains Kalinina had to go through for this endeavour over on Fedi, and it sure was
+  a wild ride few would be willing (and capable) to undertake. It took me a month
+  of working 1-2 hours a day to produce a specification that allowed Atsuko to implement
+  a&#160;clean-room&#160;homebrew application for VisiOn that is capable of bitmap
+  display, menus and mouse handling. If you&#8217;re wondering what it felt like:
+  this project is the largest &#8220;Sudoku puzzle&#8221; I have ever tried to solve.
+  In this note, I have tried to explain the process of solving this puzzle, as well
+  as noteworthy things about VisiOn and its internals. ↫ Nina Kalinina The article
+  contains both a detailed look at VisiOn, as well as the full process of recreating
+  its SDK and developing an application with it. Near the end of the article, after
+  going over all the work that was required to get here, there&#8217;s a sobering
+  clarification: This reverse-engineering project ended up being much bigger than
+  I anticipated. We have a working application, yes, but so far I&#8217;ve documented
+  less than 10% of all the VisiHost and VisiOp calls. We still don&#8217;t know how
+  to implement keyboard input, or how to work with timers and background processes
+  (if it is possible). ↫ Nina Kalinina I&#8217;d love for more people to be interested
+  in helping this effort out, as it&#8217;s not just an extremely difficult challenge,
+  but also a massive contribution to software preservation. VisiOn may not be more
+  than a small footnote in computing history, but it still deserves to be remembered
+  and understood, and Kalinina and Atsuko have done an amazing amount of legwork for
+  whomever wants to pick this up, too.'
+image: null
+source: osnews
+tags:
+- Retro computing
+title: 'On recreating the lost SDK for a 42-year-old operating system: VisiCorp VisiOn'
+---
+<div><p>I would think most of us here at OSNews are aware of <a href="https://en.wikipedia.org/wiki/Visi_On">VisiOn</a>, the graphical multitasking operating system for the IBM PC which was one of the first operating systems with a graphical user interface, predating Windows, GEM, the Mac, and even the Apple Lisa. While VisiOn was technically an &#8220;open&#8221; platform anybody could develop an application for, the operating system&#8217;s SDK cost $7000 at the time and required a VAX system. This, combined with VisiOn failing in the market, means nobody knows how to develop an application for it.</p><p>Until now. Over the past few months, Nina Kalinina painstakingly unraveled VisiOn so that she she could recreate the SDK from scratch. In turn, this allowed developer Atsuko to develop a clean-room application for VisiOn &#8211; which is most likely the very first third-party application ever developed and released for VisiOn. I&#8217;ve been following along with the pains Kalinina had to go through for this endeavour <a href="https://tech.lgbt/@nina_kali_nina">over on Fedi</a>, and it sure was a wild ride few would be willing (and capable) to undertake.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>It took me a month of working 1-2 hours a day to produce a specification that allowed Atsuko to implement a&#160;<a href="https://en.wikipedia.org/wiki/Clean-room_design">clean-room</a>&#160;homebrew application for VisiOn that is capable of bitmap display, menus and mouse handling.</p><p>If you&#8217;re wondering what it felt like: this project is the largest &#8220;Sudoku puzzle&#8221; I have ever tried to solve. In this note, I have tried to explain the process of solving this puzzle, as well as noteworthy things about VisiOn and its internals.</p>
+<a href="https://git.sr.ht/~nkali/vision-sdk/tree/main/item/note/index.md">&#8619; Nina Kalinina</a></blockquote><p>The article contains both a detailed look at VisiOn, as well as the full process of recreating its SDK and developing an application with it. Near the end of the article, after going over all the work that was required to get here, there&#8217;s a sobering clarification:</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>This reverse-engineering project ended up being much bigger than I anticipated. We have a working application, yes, but so far I&#8217;ve documented less than 10% of all the VisiHost and VisiOp calls. We still don&#8217;t know how to implement keyboard input, or how to work with timers and background processes (if it is possible).</p>
+<a href="https://git.sr.ht/~nkali/vision-sdk/tree/main/item/note/index.md">&#8619; Nina Kalinina</a></blockquote><p>I&#8217;d love for more people to be interested in helping this effort out, as it&#8217;s not just an extremely difficult challenge, but also a massive contribution to software preservation. VisiOn may not be more than a small footnote in computing history, but it still deserves to be remembered and understood, and Kalinina and Atsuko have done an amazing amount of legwork for whomever wants to pick this up, too.</p></div>
