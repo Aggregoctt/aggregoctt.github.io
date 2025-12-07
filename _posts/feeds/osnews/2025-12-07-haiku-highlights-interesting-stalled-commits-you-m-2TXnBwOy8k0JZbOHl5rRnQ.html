@@ -1,0 +1,37 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143973/haiku-highlights-interesting-stalled-commits-you-might-want-to-adopt/
+date: '2025-12-07T16:03:08'
+excerpt: 'Now this is a great initiative by the Haiku team: highlight a number of
+  stale commits that&#8217;ve been without interaction for years, explain why they&#8217;ve
+  stalled, and then hope renewed interest might grow (part 1 and part 2). Recently
+  some discussions on the forum led to asking about the status of our Gerrit code
+  review. There are a lot of changes there that have been inactive for several years,
+  with no apparent interest from anyone. To be precise, there are currently 358 commits
+  waiting for review (note that Gerrit, unlike Github and other popular code review
+  tools, works on a commit-by-commit basis, so each commit from a multiple-commit
+  change is counted separately). The oldest one has not seen any comments since 2018.
+  Today, let’s have a look at some of these changes and see why they are stalled.
+  Hopefully it will inspire someone to pick up the work and help finishing them up.
+  ↫ Pulkomandy at the Haiku website Browsing through the highlighted stalled commits,
+  there&#8217;s a few that seem quite interesting and relatively easy for a (new?)
+  contributor to seek their teeth into. For instance, there&#8217;s a stalled commit
+  to remove GCC from Haiku images built with clang/llvm, which stalled mostly because
+  there are still other issues when building Haiku with clang/llvm. For a more complex
+  problem, there&#8217;s the issue of how every menu in BeOS/Haiku is also a window,
+  including its own thread, which means navigating deeply nested menus creates and
+  destroys a lot of threads, that all need to be synchronised, too. If you want to
+  get really ambitious, there&#8217;s the stalled commit to add initial 64bit PowerPC
+  support. There&#8217;s more of these, of course, so if you have the skills and will
+  to contribute to a project like Haiku, this might be a great place to start and
+  get your feet wet. Now that these commits are back in the spotlight, there&#8217;s
+  sure to be team members and regular contributors lined up to lend an extra hand,
+  as well.'
+image: null
+source: osnews
+tags:
+- Haiku
+title: Haiku highlights interesting stalled commits you might want to adopt
+---
+<div><p>Now this is a great initiative by the Haiku team: highlight a number of stale commits that&#8217;ve been without interaction for years, explain why they&#8217;ve stalled, and then hope renewed interest might grow (<a href="https://www.haiku-os.org/blog/pulkomandy/2025-11-24-the_gerrit_pending_review_iceberg/">part 1</a> and <a href="https://www.haiku-os.org/blog/pulkomandy/2025-12-05-the_gerrit_pending_review_iceberg_2/">part 2</a>).</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Recently some discussions on the forum led to asking about the status of our Gerrit code review. There are a lot of changes there that have been inactive for several years, with no apparent interest from anyone. To be precise, there are currently 358 commits waiting for review (note that Gerrit, unlike Github and other popular code review tools, works on a commit-by-commit basis, so each commit from a multiple-commit change is counted separately). The oldest one has not seen any comments since 2018.</p><p>Today, let&#8217;s have a look at some of these changes and see why they are stalled. Hopefully it will inspire someone to pick up the work and help finishing them up.</p>
+<a href="https://www.haiku-os.org/blog/pulkomandy/2025-11-24-the_gerrit_pending_review_iceberg/">&#8619; Pulkomandy at the Haiku website</a></blockquote><p>Browsing through the highlighted stalled commits, there&#8217;s a few that seem quite interesting and relatively easy for a (new?) contributor to seek their teeth into. For instance, there&#8217;s a stalled commit to remove GCC from Haiku images built with clang/llvm, which stalled mostly because there are still other issues when building Haiku with clang/llvm. For a more complex problem, there&#8217;s the issue of how every menu in BeOS/Haiku is also a window, including its own thread, which means navigating deeply nested menus creates and destroys a lot of threads, that all need to be synchronised, too. If you want to get really ambitious, there&#8217;s the stalled commit to add initial 64bit PowerPC support.</p><p>There&#8217;s more of these, of course, so if you have the skills and will to contribute to a project like Haiku, this might be a great place to start and get your feet wet. Now that these commits are back in the spotlight, there&#8217;s sure to be team members and regular contributors lined up to lend an extra hand, as well.</p></div>
