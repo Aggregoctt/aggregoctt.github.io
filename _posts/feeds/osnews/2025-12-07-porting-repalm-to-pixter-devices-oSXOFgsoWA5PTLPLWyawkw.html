@@ -1,0 +1,42 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143975/porting-repalm-to-pixter-devices/
+date: '2025-12-07T20:24:03'
+excerpt: Some of you may be aware of rePalm, a project by Dmitry Grinberg to port
+  the PalmOS to various devices it was never supposed to run on. We covered rePalm
+  back in 2019 and again in 2023. His latest project involved porting PalmOS to a
+  set of digital toys that were never intended to run PalmOS in any way. Fisher-Price
+  (owned by Mattel) produced some toys in the early 2000 under the Pixter brand. They
+  were touchscreen-based drawing toys, with cartridge-based extra games one could
+  plug in. Pixter devices of the first three generations (&#8220;classic&#8221;, &#8220;plus&#8221;,
+  and &#8220;2.0&#8221;) featured 80&#215;80 black-and-white screens, which makes
+  them of no interest for rePalm. The last two generations of Pixter (&#8220;color&#8221;
+  and &#8220;multimedia&#8221;) featured 160&#215;160 color displays. Now, this was
+  more like it! Pixter was quite popular, as far as kids&#8217; toys go, in USA in
+  the early 2000s. A friend brought it to my attention a year ago as a potential rePalm
+  target. The screen resolution was right and looking inside a &#8220;Pixter Color&#8221;
+  showed an ARM SoC &#8211; a Sharp LH75411. The device had sound (games made noises),
+  and touch panel was resistive. In theory &#8211; a viable rePalm target indeed.
+  ↫ Dmitry Grinberg Considering the immensely limited ARMv7 implementation he had
+  to deal with &#8211; no cache, no memory management unit, no memory protection unit
+  &#8211; it&#8217;s a miracle Grinberg managed to succeed. To make matters even harder,
+  the first revision boards of the &#8220;color&#8221; model only had 1MB of flash,
+  which is incredibly small even for PalmOS 5, so he had to rewrite parts of it to
+  make it fit. Implementing communication over infrared was also a major difficulty,
+  but that, too he managed to get working &#8211; on a device that doesn&#8217;t have
+  IrDA SIR modulation. Wild. Grinberg went above and beyond, making sure the buttons
+  on the devices work, developing and building a way to put PalmOS on a &#8220;game&#8221;
+  cartridge, reverse-engineering the display controller to make sure things like brightness
+  adjustment works, adding screen type detection for that one small run of Pixter
+  Color devices that came with a TFT instead of an STN screen, and so, so much more.
+  Until you read the article, you have no idea how much work Grinberg put into this
+  project. I continue to be in awe of Grinberg&#8217;s work every time I come across
+  it.
+image: null
+source: osnews
+tags:
+- Mobile
+title: Porting rePalm to Pixter devices
+---
+<div><p>Some of you may be aware of rePalm, a project by Dmitry Grinberg to port the PalmOS to various devices it was never supposed to run on. We covered rePalm <a href="https://www.osnews.com/story/129906/repalm/">back in 2019</a> and again <a href="https://www.osnews.com/story/137189/raspberry-pi-rp2040-becomes-palm-os-pda/">in 2023</a>. His latest project involved porting PalmOS to a set of digital toys that were never intended to run PalmOS in any way.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Fisher-Price (owned by Mattel) produced some toys in the early 2000 under the <a href="https://en.wikipedia.org/wiki/Pixter">Pixter</a> brand. They were touchscreen-based drawing toys, with cartridge-based extra games one could plug in. Pixter devices of the first three generations (&#8220;classic&#8221;, &#8220;plus&#8221;, and &#8220;2.0&#8221;) featured 80&#215;80 black-and-white screens, which makes them of no interest for rePalm. The last two generations of Pixter (&#8220;color&#8221; and &#8220;multimedia&#8221;) featured 160&#215;160 color displays. Now, this was more like it! Pixter was quite popular, as far as kids&#8217; toys go, in USA in the early 2000s. A friend brought it to my attention a year ago as a potential rePalm target. The screen resolution was right and looking inside a &#8220;Pixter Color&#8221; showed an ARM SoC &#8211; a <a href="https://web.archive.org/web/20250206223428/https://www.keil.com/dd/docs/datashts/philips/lh75401_lh75411_ds.pdf">Sharp LH75411</a>. The device had sound (games made noises), and touch panel was resistive. In theory &#8211; a viable rePalm target indeed.</p>
+<a href="https://dmitry.gr/?r=05.Projects&amp;proj=27.%20rePalm#pixter">&#8619; Dmitry Grinberg</a></blockquote><p>Considering the immensely limited ARMv7 implementation he had to deal with &#8211; no cache, no memory management unit, no memory protection unit &#8211; it&#8217;s a miracle Grinberg managed to succeed. To make matters even harder, the first revision boards of the &#8220;color&#8221; model only had 1MB of flash, which is incredibly small even for PalmOS 5, so he had to rewrite parts of it to make it fit. Implementing communication over infrared was also a major difficulty, but that, too he managed to get working &#8211; on a device that doesn&#8217;t have IrDA SIR modulation. Wild.</p><p>Grinberg went above and beyond, making sure the buttons on the devices work, developing and building a way to put PalmOS on a &#8220;game&#8221; cartridge, reverse-engineering the display controller to make sure things like brightness adjustment works, adding screen type detection for that one small run of Pixter Color devices that came with a TFT instead of an STN screen, and so, so much more. Until you read the article, you have no idea how much work Grinberg put into this project.</p><p>I continue to be in awe of Grinberg&#8217;s work every time I come across it.</p></div>
