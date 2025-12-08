@@ -1,0 +1,53 @@
+---
+author: Ivan Mehta
+canonical_url: https://techcrunch.com/2025/12/08/google-details-security-measures-for-chromes-agentic-features/
+date: '2025-12-08T18:00:00'
+excerpt: Google details how it is enacting security guardrails before rolling out
+  agentic capabilities on Chrome.
+image: assets/media/D4g8hzi1vdbCfU4eFL-uVw-zm9wlIf5NdBqLmBv1L2WOQ.jpeg
+source: techcrunch
+tags:
+- AI
+- Apps
+- Google
+- security
+- Google Chrome
+- AI agents
+title: Google details security measures for Chrome’s agentic features
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">An increasing number of browsers are experimenting with agentic features that will take actions on your behalf, such as booking tickets or shopping for different items. However, these agentic capabilities also <a rel="nofollow" href="https://bdtechtalks.com/2025/10/27/openai-atlas-browser-prompt-injection/">come with</a> <a href="https://techcrunch.com/2025/10/25/the-glaring-security-risks-with-ai-browser-agents/">security risks</a> that could lead to loss of data or money. </p>
+
+<p class="wp-block-paragraph">Google detailed its approach to handling user security on Chrome using observer models and consent for user action. The company previewed <a href="https://techcrunch.com/2025/09/18/google-brings-gemini-in-chrome-to-us-users-unveils-agentic-browsing-capabilities-and-more/">agentic capabilities on Chrome in September</a> and said these features will roll out in the coming months.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The company said it is using the help of a few models to keep agentic actions in check. Google said it built a User Alignment Critic using Gemini to scrutinize the action items built by the planner model for a particular task. If the critic model thinks that the planned tasks don&#8217;t serve the user&#8217;s goal, it asks the planner model to rethink the strategy. Google noted that the critic model only sees the metadata of the proposed action and not the actual web content.</p>
+
+ 
+
+<p class="wp-block-paragraph">What&#8217;s more, to prevent agents from accessing disallowed or untrustworthy sites, Google is using Agent Origin Sets, which restrict the model to access read-only origins and read-writeable origins. Read-only origin is data that Gemini is permitted to consume content from. For instance, on a shopping site, the listings are relevant to the task, but banner ads aren&#8217;t. Similarly, Google said the agent is only allowed to click or type on certain iframes of a page.</p>
+
+<p class="wp-block-paragraph">&#8220;This delineation enforces that only data from a limited set of origins is available to the agent, and this data can only be passed on to the writable origins. This bounds the threat vector of cross-origin data leaks. This also gives the browser the ability to enforce some of that separation, such as by not even sending to the model data that is outside the readable set,&#8221; the company said in a blog post. </p>
+
+<p class="wp-block-paragraph">Google is also keeping a check on page navigation by investigating URLs through another observer model. This can prevent navigation to harmful model-generated URLs, the company said.</p>
+
+ 
+
+<p class="wp-block-paragraph">The search giant said that it is also handing over the reins to users for sensitive tasks. For instance, when an agent tries to navigate to a sensitive site with information like banking or your medical data, it first asks the user. For sites that require sign-in, it&#8217;ll ask the user for permission to let Chrome use the password manager. Google said that the agent&#8217;s model doesn&#8217;t have exposure to password data. The company added that it will ask users before taking actions like making a purchase or sending a message.</p>
+ 
+
+<p class="wp-block-paragraph">Google said that, in addition to this, it also has a prompt-injection classifier to prevent unwanted actions and is also testing agentic capabilities against attacks created by researchers. </p>
+
+ 
+
+ 
+
+
+			
+
+			</div>
