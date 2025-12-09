@@ -1,0 +1,37 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/143992/what-do-linux-kernel-version-numbers-mean/
+date: '2025-12-09T20:43:37'
+excerpt: If you&#8217;re old enough, you no doubt remember that up until the 2.6.0
+  release of the Linux kernel, an odd number after the first version number indicated
+  a pre-release, development version of the kernel. Even though this scheme was abandoned
+  with the 2.6.0 release in 2003 and since then every single release has been a stable
+  release, it seems the ghosts of this old versioning scheme still roam the halls,
+  because prominent Linux kernel developer Greg Kroah-Hartman just published an explainer
+  about Linux kernel versions. Despite having a stable release model and cadence since
+  December 2003, Linux kernel version numbers seem to baffle and confuse those that
+  run across them, causing numerous groups to mistakenly make versioning statements
+  that are flat out false. So let’s go into how this all works in detail. ↫ Greg Kroah-Hartman
+  I genuinely find it difficult to imagine what could possibly be unclear about Linux
+  kernel version numbers. The Linux kernel uses a very generic major.minor scheme,
+  but that&#8217;s not where the problems lie &#8211; it&#8217;s the actual development
+  process of each of these numbered release that&#8217;s a bit more complex. This
+  is where we have to talk about things like the roughly 10-week release cycle, containing
+  a 2-week merge window, as well as Torvalds handing off the stable branch to the
+  stable kernel maintainers. The other oddity is when the major version number gets
+  incremented &#8211; the first number in the version number. There&#8217;s no real
+  method to this, as Kroah-Hartman admits Torvalds increments this number whenever
+  the remaining numbers get too high and unwieldy to deal with. Very practical, but
+  it does mean that going from, say, 5.x to 6.x doesn&#8217;t really imply there&#8217;s
+  any changes in there that are any bigger or more disruptive than when going from
+  6.8.x to 6.9.x or whatever. There&#8217;s a few more important details in here,
+  of course, like where LTS releases come from, but that&#8217;s really it &#8211;
+  nothing particularly groundbreaking or confusing.
+image: null
+source: osnews
+tags:
+- Linux
+title: What do Linux kernel version numbers mean?
+---
+<div><p>If you&#8217;re old enough, you no doubt remember that up until the 2.6.0 release of the Linux kernel, an odd number after the first version number indicated a pre-release, development version of the kernel. Even though this scheme was abandoned with the 2.6.0 release in 2003 and since then every single release has been a stable release, it seems the ghosts of this old versioning scheme still roam the halls, because prominent Linux kernel developer Greg Kroah-Hartman just published an explainer about Linux kernel versions.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Despite having a stable release model and cadence since December 2003, Linux kernel version numbers seem to baffle and confuse those that run across them, causing numerous groups to mistakenly make versioning statements that are flat out false. So let&#8217;s go into how this all works in detail.</p>
+<a href="http://www.kroah.com/log/blog/2025/12/09/linux-kernel-version-numbers/">&#8619; Greg Kroah-Hartman</a></blockquote><p>I genuinely find it difficult to imagine what could possibly be unclear about Linux kernel version numbers. The Linux kernel uses a very generic major.minor scheme, but that&#8217;s not where the problems lie &#8211; it&#8217;s the actual development process of each of these numbered release that&#8217;s a bit more complex. This is where we have to talk about things like the roughly 10-week release cycle, containing a 2-week merge window, as well as Torvalds handing off the stable branch to the stable kernel maintainers.</p><p>The other oddity is when the major version number gets incremented &#8211; the first number in the version number. There&#8217;s no real method to this, as Kroah-Hartman admits Torvalds increments this number whenever the remaining numbers get too high and unwieldy to deal with. Very practical, but it does mean that going from, say, 5.x to 6.x doesn&#8217;t really imply there&#8217;s any changes in there that are any bigger or more disruptive than when going from 6.8.x to 6.9.x or whatever.</p><p>There&#8217;s a few more important details in here, of course, like where LTS releases come from, but that&#8217;s really it &#8211; nothing particularly groundbreaking or confusing.</p></div>
