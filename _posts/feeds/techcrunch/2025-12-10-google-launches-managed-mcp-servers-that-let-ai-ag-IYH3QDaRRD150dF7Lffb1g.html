@@ -1,0 +1,69 @@
+---
+author: Rebecca Bellan
+canonical_url: https://techcrunch.com/2025/12/10/google-is-going-all-in-on-mcp-servers-agent-ready-by-design/
+date: '2025-12-10T15:00:00'
+excerpt: Google is rolling out managed MCP servers to make its services “agent-ready
+  by design,” starting with Maps and BigQuery, aiming to simplify messy integrations
+  and help AI agents use real tools.
+image: assets/media/IYH3QDaRRD150dF7Lffb1g-kaFufsCxUVbXo7vTFD4GcA.jpeg
+source: techcrunch
+tags:
+- AI
+- Enterprise
+title: Google launches managed MCP servers that let AI agents simply plug into its
+  tools
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">AI agents are being sold as the solution for planning trips, answering business questions, and solving problems of all kinds, but getting them to work with tools and data outside their chat interfaces has been tricky. Developers have to patch together various connectors and keep them running, but that&#8217;s a fragile approach that&#8217;s hard to scale and creates governance headaches.</p>
+
+<p class="wp-block-paragraph">Google claims it&#8217;s trying to solve that by launching its own fully managed, remote MCP servers that would make its Google and Cloud services &#8212; like Maps and BigQuery &#8212; easier for agents to plug into.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The move follows the launch of <a href="https://techcrunch.com/2025/11/18/google-launches-gemini-3-with-new-coding-app-and-record-benchmark-scores/">Google&#8217;s latest Gemini 3 model</a>, and the company is looking to pair stronger reasoning with more dependable connections to real-world tools and data.</p>
+
+<p class="wp-block-paragraph">&#8220;We are making Google agent-ready by design,&#8221; Steren Giannini, product management director at Google Cloud, told TechCrunch.&#160;</p>
+
+<p class="wp-block-paragraph">Instead of spending a week or two setting up connectors, developers can now essentially paste in a URL to a managed endpoint, Giannini said.</p>
+
+<p class="wp-block-paragraph">At launch, Google is starting with MCP servers for Maps, BigQuery, Compute Engine, and Kubernetes Engine. In practice, this might look like an analytics assistant querying BigQuery directly, or an ops agent interacting with infrastructure services.&#160;</p>
+
+<p class="wp-block-paragraph">In the case of Maps, Giannini said, without the MCP, developers would rely on the model&#8217;s built-in knowledge. &#8220;But by giving your agent [&#8230;] a tool like the Google Maps MCP server, then it gets grounded on actual, up-to-date location information for places or trips planning,&#8221; he added.</p>
+ 
+
+<p class="wp-block-paragraph">While the MCP servers will eventually be offered across all of Google&#8217;s tools, they are initially launching under public preview, meaning they&#8217;re not yet fully covered by Google Cloud terms of service. They are, however, being offered to enterprise customers that already pay for Google services at no extra cost.&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;We expect to bring them to general availability very soon in the new year,&#8221; Giannini said, adding that he expects more MCP servers to trickle in every week.</p>
+
+<p class="wp-block-paragraph">MCP, which stands for Model Context Protocol, was developed by Anthropic about a year ago as an open-source standard to connect AI systems with data and tools. The protocol has been widely adopted across the agent tooling world, and Anthropic earlier this week <a href="https://techcrunch.com/2025/12/09/openai-anthropic-and-block-join-new-linux-foundation-effort-to-standardize-the-ai-agent-era/">donated MCP to a new Linux Foundation fund</a> dedicated to open-sourcing and standardizing AI agent infrastructure.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;The beauty of MCP is that, because it&#8217;s a standard, if Google provides a server, it can connect to any client,&#8221; Giannini said. &#8220;I&#8217;m looking forward to seeing how many more clients will emerge.&#8221;</p>
+
+<p class="wp-block-paragraph">One can think of MCP clients as the AI apps on the other end of the wire that talk to MCP servers and call the tools they offer. For Google, that includes Gemini CLI and AI Studio. Giannini said he&#8217;s also tried it with Anthropic&#8217;s Claude and OpenAI&#8217;s ChatGPT as clients, and &#8220;they just work.&#8221;</p>
+
+<p class="wp-block-paragraph">Google argues this isn&#8217;t just about connecting agents to its services. The bigger enterprise play is <a href="https://techcrunch.com/2021/02/04/google-cloud-launches-apigee-x-the-next-generation-of-its-api-management-platform/">Apigee, its API management product</a>, which many companies already use to issue API keys, set quotas, and monitor traffic.&#160;</p>
+
+<p class="wp-block-paragraph">Giannini said Apigee can essentially &#8220;translate&#8221; a standard API into an MCP server, turning endpoints like a product catalog API into tools an agent can discover and use, with<a href="https://techcrunch.com/2023/04/24/apigee-rolls-out-new-ai-powered-api-protection-features/"> existing security and governance controls</a> layered on top.&#160;</p>
+
+<p class="wp-block-paragraph">In other words, the same API guardrails companies use for human-built apps could now apply to AI agents, too.&#160;</p>
+
+<p class="wp-block-paragraph">Google&#8217;s new MCP servers are protected by a permission mechanism called Google Cloud IAM, which explicitly protects what an agent can do with that server. They are also protected by Google Cloud Model Armor, which Giannini describes as a firewall dedicated to agentic workloads that defends against advanced agentic threats like prompt injection and data exfiltration. Administrators can also rely on audit logging for additional observability.&#160;</p>
+
+<p class="wp-block-paragraph">Google plans to expand MCP support beyond the initial set of servers. In the next few months, the company will roll out support for services across areas like storage, databases, logging and monitoring, and security.</p>
+
+<p class="wp-block-paragraph">&#8220;We built the plumbing so that developers don&#8217;t have to,&#8221; Giannini said.</p>
+
+
+			
+
+			</div>
