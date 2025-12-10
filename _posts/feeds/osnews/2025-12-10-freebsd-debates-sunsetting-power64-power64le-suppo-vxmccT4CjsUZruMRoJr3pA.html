@@ -1,0 +1,51 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144002/freebsd-debates-sunsetting-power64-power64le-support/
+date: '2025-12-10T21:41:45'
+excerpt: I have some potentially devastating news for POWER users interested in using
+  FreeBSD, uncovered late last month by none other than Cameron Kaiser. FreeBSD is
+  considering retiring powerpc64 prior to branching 16, which would make FreeBSD 15
+  the last stable version to support the architecture. (32-bit PowerPC is already
+  dropped as of FreeBSD 14, though both OpenBSD and NetBSD generally serve this use
+  case, and myself I have a Mac mini G4 running a custom NetBSD kernel with code from
+  FreeBSD for automatic restart.) Although the message says &#8220;powerpc64 and powerpc64le&#8221;
+  it later on only makes specific reference to the big-endian port, whereas both endiannesses
+  appear on the FreeBSD platform page and on the download server. ↫ Cameron Kaiser
+  There&#8217;s two POWER9 systems in my office, so this obviously makes me quite
+  sad. At the same time, though, it&#8217;s hard not to understand any possible decision
+  to drop powerpc64/powerpc64le at this point in time. Raptor&#8217;s excellent POWER9
+  systems &#8211; the Blackbird, which I reviewed a few years ago, and the Talos II,
+  which I also have &#8211; are very long in the tooth at this point and still quite
+  expensive, and thanks to IBM royally screwing up POWER10, we never got any timely
+  successors. There were rumblings about a possible POWER11-based successor from Raptor
+  back in July 2025, but it&#8217;s been quiet on that front since. In other words,
+  there are no modern powerpc64 and powerpc64le systems available. POWER10 and brand
+  new POWER11 hardware are strictly IBM and incredibly expensive, so unless IBM makes
+  some sort of generous donation to the FreeBSD Foundation, I honestly don&#8217;t
+  know how FreeBSD is supposed to keep their powerpc64 and powerpc64le ports up-to-date
+  with the latest generation of POWER hardware in the first place. It&#8217;s important
+  to note that no final decision has been made yet, and since that initial report
+  by Kaiser, several people have chimed in to argue the case that at least powerpc64le
+  (the little endian variant) should remain properly supported. In fact, Timothy Pearson
+  from Raptor Engineering stepped up the place, and stated he&#8217;s willing to take
+  over maintainership of the port, as Raptor has been contributing to it for years
+  anyway. Raptor remains committed to the architecture as a whole, and we have resources
+  to assist with development. In fact, we sponsor several FreeBSD build machines already
+  in our cloud environment, and have kernel developers working on expanding and maintaining
+  the FreeBSD codebase. If there is any concern regarding hardware availability or
+  developer resources, Raptor is willing and able to assist. ↫ Timothy Pearson Whatever
+  decision the FreeBSD project makes, the Linux world will be fine for a while yet
+  as IBM contributes to its development, and popular distributions still consider
+  POWER a primary target. However, unless either IBM moves POWER hardware downmarket
+  (extremely unlikely) or the rumours around Raptor have merit, I think at least the
+  FreeBSD powerpc64 (big endian) port is done for, with the powerpc64le port hopefully
+  being saved by people hearing these alarm bells.
+image: null
+source: osnews
+tags:
+- FreeBSD
+title: FreeBSD debates sunsetting power64/power64le support
+---
+<div><p>I have some potentially devastating news for POWER users interested in using FreeBSD, uncovered late last month by none other than Cameron Kaiser.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>FreeBSD is <a href="https://lists.freebsd.org/archives/freebsd-arch/2025-November/001078.html">considering retiring powerpc64 prior to branching 16</a>, which would make FreeBSD 15 the last stable version to support the architecture. (32-bit PowerPC is already dropped as of FreeBSD 14, though both OpenBSD and NetBSD generally serve this use case, and myself I have a Mac mini G4 running a custom NetBSD kernel with code from FreeBSD for automatic restart.) Although the message says &#8220;powerpc64 and powerpc64le&#8221; it later on only makes specific reference to the big-endian port, whereas both endiannesses appear on the <a href="https://www.freebsd.org/platforms/ppc/">FreeBSD platform page</a> and on the <a href="https://download.freebsd.org/ftp/releases/powerpc/">download server</a>.</p>
+<a href="https://www.talospace.com/2025/11/freebsd-considering-end-of-ppc64-support.html#comments">&#8619; Cameron Kaiser</a></blockquote><p>There&#8217;s two POWER9 systems in my office, so this obviously makes me quite sad. At the same time, though, it&#8217;s hard not to understand any possible decision to drop powerpc64/powerpc64le at this point in time. Raptor&#8217;s excellent POWER9 systems &#8211; the Blackbird, <a href="https://www.osnews.com/story/133093/review-blackbird-secure-desktop-a-fully-open-source-modern-power9-workstation-without-any-proprietary-code/">which I reviewed a few years ago</a>, and the Talos II, which I also have &#8211; are very long in the tooth at this point and still quite expensive, and thanks to <a href="https://www.osnews.com/story/133931/unlike-power9-ibms-new-power10-processors-are-not-completely-open-source/">IBM royally screwing up POWER10</a>, we never got any timely successors. There were <a href="https://www.osnews.com/story/142734/ibm-launches-power11-vague-rumblings-about-new-raptor-workstations-while-ibm-continues-to-not-care-about-power-workstations/">rumblings</a> about a possible POWER11-based successor from Raptor back in July 2025, but it&#8217;s been quiet on that front since.</p><p>In other words, there are no modern powerpc64 and powerpc64le systems available. POWER10 and brand new POWER11 hardware are strictly IBM and incredibly expensive, so unless IBM makes some sort of generous donation to the FreeBSD Foundation, I honestly don&#8217;t know how FreeBSD is supposed to keep their powerpc64 and powerpc64le ports up-to-date with the latest generation of POWER hardware in the first place.</p><p>It&#8217;s important to note that no final decision has been made yet, and since that initial report by Kaiser, several people have chimed in to argue the case that at least powerpc64le (the little endian variant) should remain properly supported. In fact, Timothy Pearson from Raptor Engineering stepped up the place, and stated he&#8217;s willing to <a href="https://lists.freebsd.org/archives/freebsd-arch/2025-November/001097.html">take over maintainership of the port</a>, as Raptor has been contributing to it for years anyway.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Raptor remains committed to the architecture as a whole, and we have resources to assist with development. In fact, we sponsor several FreeBSD build machines already in our cloud environment, and have kernel developers working on expanding and maintaining the FreeBSD codebase. If there is any concern regarding hardware availability or developer resources, Raptor is willing and able to assist.</p>
+<a href="https://lists.freebsd.org/archives/freebsd-arch/2025-November/001096.html">&#8619; Timothy Pearson</a></blockquote><p>Whatever decision the FreeBSD project makes, the Linux world will be fine for a while yet as IBM contributes to its development, and popular distributions still consider POWER a primary target. However, unless either IBM moves POWER hardware downmarket (extremely unlikely) or the rumours around Raptor have merit, I think at least the FreeBSD powerpc64 (big endian) port is done for, with the powerpc64le port hopefully being saved by people hearing these alarm bells.</p></div>

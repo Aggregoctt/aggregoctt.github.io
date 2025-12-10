@@ -1,0 +1,52 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/12/mistral-bets-big-on-vibe-coding-with-new-autonomous-software-engineering-agent/
+date: '2025-12-10T20:38:58'
+excerpt: Devstral 2 model scores 72% on industry benchmark, nearing proprietary rivals.
+image: assets/media/g0Lx6jcV2YWCe1U6B8Z2qA-TdBUVb-ODdt3mQk3p2cizw.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI coding
+- AI programming
+- Andrej Karpathy
+- ASML
+- machine learning
+- Mistral AI
+- open source
+- open weights
+- software engineering
+- SWE-bench
+- vibe coding
+title: A new open-weights AI coding model is closing in on proprietary options
+---
+<div>
+                      
+                      
+          <p>On Tuesday, French AI startup Mistral AI <a href="https://mistral.ai/news/devstral-2-vibe-cli">released</a> Devstral 2, a 123 billion parameter open-weights coding model designed to work as part of an autonomous software engineering agent. The model achieves a 72.2 percent score on <a href="https://www.swebench.com/">SWE-bench Verified</a>, a benchmark that attempts to test whether AI systems can solve real GitHub issues, putting it among the top-performing open-weights models.</p>
+<p>Perhaps more notably, Mistral didn&#8217;t just release an AI model, it released a new development app called Mistral Vibe. It&#8217;s a command line interface (CLI) similar to <a href="https://arstechnica.com/ai/2025/10/claude-code-gets-a-web-version-but-its-the-new-sandboxing-that-really-matters/">Claude Code</a>, <a href="https://arstechnica.com/ai/2025/05/openai-introduces-codex-its-first-full-fledged-ai-agent-for-coding/">OpenAI Codex</a>, and <a href="https://arstechnica.com/ai/2025/06/google-is-bringing-vibe-coding-to-your-terminal-with-gemini-cli/">Gemini CLI</a> that lets developers interact with the Devstral models directly in their terminal. The tool can scan file structures and Git status to maintain context across an entire project, make changes across multiple files, and execute shell commands autonomously. Mistral released the CLI under the Apache 2.0 license.</p>
+<p>It&#8217;s always wise to take AI benchmarks with a large grain of salt, but we&#8217;ve heard from employees of the big AI companies that they pay very close attention to how well models do on SWE-bench Verified, which presents AI models with 500 real software engineering problems pulled from GitHub issues in popular Python repositories. The AI must read the issue description, navigate the codebase, and generate a working patch that passes unit tests. While some AI researchers have <a href="https://epoch.ai/blog/what-skills-does-swe-bench-verified-evaluate">noted</a> that around 90 percent of the tasks in the benchmark test relatively simple bug fixes that experienced engineers could complete in under an hour, it&#8217;s one of the few standardized ways to compare coding models.</p>
+<p>At the same time as the larger AI coding model, Mistral also released <a href="https://docs.mistral.ai/models/devstral-small-2-25-12">Devstral Small 2</a>, a 24 billion parameter version that scores 68 percent on the same benchmark and can run locally on consumer hardware like a laptop with no Internet connection required. Both models support a 256,000 token context window, allowing them to process moderately large codebases (although whether you consider it large or small is very relative depending on overall project complexity). The company released Devstral 2 under a modified MIT license and Devstral Small 2 under the more permissive Apache 2.0 license.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Devstral 2 is currently free to use through Mistral&#8217;s API. After the free period ends, pricing will be $0.40 per million input tokens and $2.00 per million output tokens. Devstral Small 2 will cost $0.10 per million input tokens and $0.30 per million output tokens. Mistral says it&#8217;s about &#8220;7x more cost-efficient than Claude Sonnet at real-world tasks.&#8221; Anthropic&#8217;s Sonnet 4.5 through the API <a href="https://www.claude.com/pricing#api">costs</a> $3 per million input tokens and $15 per million output tokens, with increases depending on the total number of tokens used.</p>
+<h2>The vibe-coding connection</h2>
+<p>The name &#8220;Mistral Vibe&#8221; references &#8220;vibe coding,&#8221; a term that AI researcher Andrej Karpathy <a href="https://arstechnica.com/ai/2025/03/is-vibe-coding-with-ai-gnarly-or-reckless-maybe-some-of-both/">coined</a> in February 2025 to describe a style of programming where developers describe what they want in natural language and accept AI-generated code without reviewing it closely. As Karpathy describes it, you can &#8220;fully giv[e] in to the vibes, embrace exponentials, and forget that the code even exists.&#8221; Collins Dictionary <a href="https://www.collinsdictionary.com/us/woty">named it</a> Word of the Year for 2025.</p>
+<p>The vibe coding approach has drawn both enthusiasm and concern. In an interview with Ars Technica in March, developer Simon Willison <a href="https://arstechnica.com/ai/2025/03/is-vibe-coding-with-ai-gnarly-or-reckless-maybe-some-of-both/">said</a>, &#8220;I really enjoy vibe coding. It&#8217;s a fun way to try out an idea and prove if it can work.&#8221; But he also warned that &#8220;vibe coding your way to a production codebase is clearly risky. Most of the work we do as software engineers involves evolving existing systems, where the quality and understandability of the underlying code is crucial.&#8221;</p>
+<p>Mistral is betting that Devstral 2 will be able to maintain coherency across entire projects, detect failures, and retry with corrections, and that those claimed abilities will make it suitable for more serious work than simple prototypes and in-house tools. The company says the model can track framework dependencies and handle tasks like bug fixing and modernizing legacy systems at repository scale. We have not experimented with it yet, but you might see an Ars Technica head-to-head test of several AI coding tools soon.</p>
+
+
+          
+                  
+
+                  
+          </div>

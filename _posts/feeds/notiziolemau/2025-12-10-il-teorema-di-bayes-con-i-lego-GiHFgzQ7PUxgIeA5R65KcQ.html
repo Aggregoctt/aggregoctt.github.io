@@ -1,0 +1,32 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/12/10/il-teorema-di-bayes-con-i-lego/
+date: '2025-12-10T21:22:38'
+excerpt: Magari è un po' più semplice da seguire, no?
+image: assets/media/GiHFgzQ7PUxgIeA5R65KcQ-JBQTDTN2D4ogdNj2pt3M5g.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Il teorema di Bayes con i Lego
+---
+<div>
+			<p>Il libro di Will Kurt &#8220;<a href="https://nostarch.com/learnbayes">Bayesian Statistics the Fun Way</a>&#8221; &#232; un&#8217;introduzione interessante alle finezze del teorema di Bayes e soprattutto al suo significato pratico. Per chi non si ricordasse la formula del teorema, &#232; questa: $$ P(A|B) = \frac{P(B\!|\! A)\cdot P(A)}{P(B)}$$ dove $P(A)$ indica la probabilit&#224; di un evento $A$ (chess&#242;, ho il raffreddore) e $P(A\!|\! B)$ la probabilit&#224; dell&#8217;evento $A$ sapendo che c&#8217;&#232; stato l&#8217;evento $B$ (ho il raffreddore tutte le volte che il giorno prima &#232; piovuto). Se proprio non vi resta in mente la formula, vi svelo un trucchetto: immaginando che tutte le probabilit&#224; in gioco siano maggiori di zero &#8211; anche perch&#233; altrimenti non c&#8217;&#232; molto da calcolare&#8230; &#8211; si pu&#242; scrivere la formula come $$ P(A\!|\!B) \cdot P(B) =  P(B\!|\!A) \cdot P(A)$$, che &#232; pi&#249; simmetrica. In ogni caso, noi cerchiamo di aggiornare la probabilit&#224; del nostro evento $A$ (che avevamo a priori) una volta che abbiamo una nuova informazione $B$ (che per definizione conosciamo), e lo facciamo rovesciando la logica, cio&#232; sapendo qual &#232; la probabilit&#224; di $B$ nota $A$. </p>
+<p>Come dicevo, Will Kurt fa un esempio con il Lego, esempio che trovate <a href="https://www.countbayesie.com/blog/2015/2/18/bayes-theorem-with-lego">in questo suo vecchio post</a> e che ora vi racconto. Partiamo con alcuni mattoncini ($1 \times 1$, anche se i pezzi in realt&#224; sono pi&#249; grandi, ma non so come chiamare l&#8217;unit&#224; minimale) come in figura:</p>
+ 
+<p>Abbiamo una superficie $6 \times 10$ di mattoncini di tre colori, che rappresentano il nostro spazio di probabilit&#224;: c&#8217;&#232; un rettangolo $4 \times 10$ blu, uno $2\times 10$ rosso e uno $3 \times 2$ giallo posato sopra gli altri due (purtroppo con le mie capacit&#224; grafiche &#232; difficile mostrarlo bene, ma il fatto che siano leggermente spostati sulla destra dovrebbe essere un indizio). Calcolando le probabilit&#224; dello strato di base, abbiamo $P(\rm{blu}) = \frac{2}{3}$ e $P(\rm{rosso}) = \frac{1}{3}$. Chiaramente $P(\rm{blu}) + P(\rm{rosso}) = 1$, visto che lo strato di base ha solo mattoncini blu e rossi.</p>
+<p>Ora entrano in scena i mattoncini gialli. &#200; vero che $P(\rm{giallo}) = \frac{1}{10}$, perch&#233; ci sono sei mattoncini gialli su 60. Ma nel nostro spazio degli eventi noi non consideriamo l&#8217;evento &#8220;c&#8217;&#232; un mattoncino giallo&#8221;, anche perch&#233; altrimenti la probabilit&#224; totale sarebbe maggiore di 1. Ripeto: gli eventi per noi sono solo quello che si trova sullo strato di base. Consideriamo ora la probabilit&#224; condizionata di avere un mattoncino giallo sopra uno blu oppure rosso, indicandola come $P(\rm{giallo\!|\! blu})$ o $P(\rm{giallo\!|\! rosso})$ rispettivamente. Come possiamo calcolare $P(\rm{giallo\!|\! rosso})$? Semplice: separiamo il blu dal rosso e consideriamo solo la parte rossa, come in figura. Abbiamo che l&#8217;area rossa &#232; come prima $2\times 10 = 20$, quella gialla &#232; $2\times 2 = 4$, e pertanto  $P(\rm{giallo\!|\! rosso}) = \frac{4}{20} = \frac{1}{5}$.</p>
+ 
+<p>E se invece volessimo calcolare $P(\rm{rosso\!|\! giallo})$? Banale, mi direte. Ci sono sei mattoncini gialli di cui quattro sono sopra il rosso: se dall&#8217;alto vediamo un mattoncino giallo sappiamo che la probabilit&#224; che sotto ce ne sia uno rosso &#232; $\frac{2}{3}$. Non ci crederete, ma questo &#232; proprio il teorema di Bayes! Intuitivamente, insomma, il teorema non &#232; niente di che, e possiamo anche intuire che il reverendo Bayes lo considerasse talmente ovvio da non scriverne nemmeno. Vediamo ora come tirare fuori la formula mostrata all&#8217;inizio, formalizzando la nostra intuizione. </p>
+<p>Partiamo calcolando il numero di mattoncini gialli a partire dalla probabilit&#224; di trovarli: </p>
+<p>$$ \rm{NumGialli} = P(\rm{giallo}) \cdot \rm{TotNum} = \frac{1}{10} \cdot 60 = 6 $$</p>
+<p>Cosa vuol dire &#8220;Quattro mattoncini gialli sono sul rosso&#8221;? Per prima cosa dobbiamo calcolare quanti sono i mattoncini rossi, con una formula simile a quella sopra:</p>
+<p>$$ \rm{NumRossi} = P(\rm{rosso}) \cdot \rm{TotNum} = \frac{1}{3} \cdot 60 = 20 $$</p>
+<p>Sappiamo poi che il rapporto dei mattoncini gialli sopra quelli rossi &#232; $P(\rm{giallo\!|\! rosso})$; moltiplicandolo per il numero dei mattoncini rossi troviamo quanti sono i mattoncini gialli sui rossi:</p>
+<p>$$ \rm{NumGialliSuiRossi} = P(\rm{giallo\!|\! rosso}) \cdot \rm{NumRossi} = \frac{1}{5} \cdot 20 = 4 $$</p>
+<p>Infine dobbiamo calcolare il rapporto tra i mattoncini rossi coperti da quelli gialli e il totale di quelli gialli: </p>
+<p>$$ P(\rm{rosso\!|\! giallo}) = \frac{\rm{NumGialliSuiRossi}}{\rm{NumGialli}} = \frac{4}{6} = \frac{2}{3} $$</p>
+<p>Da qui possiamo usare le tre formule precedenti per scrivere i due termini della frazione usando le probabilit&#224; e il numero totale di mattoncini; quest&#8217;ultimo fa il piacere di eliminarsi e otteniamo il teorema di Bayes. Diciamocelo, per&#242;: la formalizzazione non &#232; cos&#236; facile da vedere, ed &#232; forse per questo che il teorema rimane spesso piuttosto oscuro, anche se come abbiamo visto non c&#8217;&#232; nulla di davvero complicato. </p>
+<p class="post-modified-info">Ultimo aggiornamento: 2025-12-10 22:22</p>
+ 
+  					</div>
