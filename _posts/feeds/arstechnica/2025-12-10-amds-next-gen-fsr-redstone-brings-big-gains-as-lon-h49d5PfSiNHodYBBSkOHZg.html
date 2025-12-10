@@ -1,0 +1,69 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2025/12/amds-fsr-redstone-upscaling-claims-to-close-the-gap-with-nvidias-dlss/
+date: '2025-12-10T14:00:43'
+excerpt: '"Redstone" is a promising mix of old and new ideas, but Nvidia is years
+  ahead.'
+image: assets/media/h49d5PfSiNHodYBBSkOHZg-hlnsldM0ELgF9U3N6Vjitw.jpeg
+source: arstechnica
+tags:
+- Gaming
+- Tech
+- AMD
+- Radeon
+- rdna4
+title: AMD’s next-gen “FSR Redstone” brings big gains, as long as you’re using a new
+  GPU
+---
+<div>
+                      
+                      
+           
+<p>Nvidia, AMD, and Intel have all made high-quality image upscaling a cornerstone feature of their new GPUs this decade. Upscaling technologies like Nvidia&#8217;s Deep Learning Super Sampling (DLSS), AMD&#8217;s FidelityFX Super Resolution (FSR), and Intel&#8217;s Xe Super Sampling (XeSS) are all ways to transform a lower-resolution source image into a higher-resolution image, delivering better-looking games without requiring as much graphics hardware as you&#8217;d need to render the higher-resolution image natively. Later additions have focused on improving ray-tracing performance and &#8220;frame generation&#8221; technologies that boost frame rates by creating new AI-generated frames to insert between natively rendered frames.</p>
+<p>Generally speaking, Nvidia&#8217;s DLSS technologies have provided better image quality than AMD&#8217;s FSR, but they have only been available on newer Nvidia hardware&#8212;the GeForce RTX 20-series or newer for most features, with frame-generation features locked to the RTX 40- and 50-series. FSR&#8217;s results don&#8217;t look as good, but they have benefited from running on just about anything, including older GPUs, Nvidia GPUs, and even integrated Intel and AMD GPUs.</p>
+<p>Today, AMD is trying to shift that dynamic with something called &#8220;FSR Redstone,&#8221; a collection of ray-tracing and frame-generation features all intended to boost AMD&#8217;s image quality while being relatively easy to implement for game developers who are already using FSR 3.1 or FSR 4.</p>
+<p>The downside is that closing the quality and feature gap with Nvidia also apparently requires sticking with Nvidia-like hardware restrictions: like <a href="https://arstechnica.com/gadgets/2025/02/amds-fsr-4-upscaling-is-exclusive-to-90-series-radeon-gpus-wont-work-on-other-cards/">FSR 4 upscaling</a>, FSR Redstone will only be available on AMD&#8217;s latest-generation GPUs with the RDNA4 GPU architecture, including the Radeon RX 9070 and RX 9060 series.</p>
+<h2>Improvements in FSR Redstone</h2>
+ 
+
+<p>FSR Redstone is a collection of four technologies, three of which are new and one that has just been renamed, and all of which can be mixed and matched based on the preferences of the game developer and the user.</p>
+<p><strong>FSR Radiance Caching</strong> is a &#8220;real-time, neural network-based&#8221; system for improving performance and image quality for indirect lighting and global illumination. An AMD-trained lighting model allows the various bounces of light in a scene to be predicted &#8220;as soon as the second ray intersection,&#8221; according to AMD, saving the GPU from actually having to calculate and render subsequent bounces of light.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p><strong>FSR Ray Regeneration&#160;</strong>can help reduce the number of rays and paths that need to be traced to deliver realistic-looking lighting in a scene. Rather than rendering every single point of light for every single pixel on your screen, the GPU will instead try to render a representative sampling of rays. This generates a noisy-looking image&#8212;the &#8220;missing&#8221; rays show up as tiny gaps in the image&#8212;which AMD&#8217;s ML-backed denoising algorithm can then clean up into a nicer-looking image. This delivers the benefits of real-time ray-tracing without incurring the same performance hit.</p>
+<p>There&#8217;s also a new version of&#160;<strong>FSR Frame Generation</strong>, which, like FSR 4, improves over the previous version by switching to a hardware-based implementation backed by machine-learning models. AMD&#8217;s demo footage showed frame generation in F1 25 with considerably cleaner shadows and fewer weird graphical artifacts than the FSR 3.1 version of Frame Generation.</p>
+<p>For all three of these new or improved technologies, it&#8217;s worth noting that AMD is still chasing Nvidia. In some cases, the AMD versions of these technologies are trailing Nvidia&#8217;s versions by two or three years.</p>
+<p>DLSS 3.5 added ray reconstruction <a href="https://www.nvidia.com/en-us/geforce/news/nvidia-dlss-3-5-ray-reconstruction/">in August 2023</a> on hardware dating back to 2018&#8217;s RTX 20-series (though only 40- and 50-series cards can support ray reconstruction, DLSS upscaling, and frame generation at the same time). Radiance caching debuted <a href="https://developer.nvidia.com/blog/nvidia-rtx-neural-rendering-introduces-next-era-of-ai-powered-graphics-innovation/">alongside the RTX 50-series GPUs</a> earlier this year. And while the new version of AMD&#8217;s frame generation looks better than the old one, it still appears to offer only one interpolated frame in between each pair of rendered frames, without offering an answer to Nvidia&#8217;s DLSS Multi-Frame Generation. Nvidia&#8217;s single-frame generation dates back to the RTX 40-series, which launched in late 2022 through 2023.</p>
+ 
+ 
+
+<p>Finally, there&#8217;s <strong>FSR Upscaling</strong>, which we cover last because it isn&#8217;t actually new. This appears to be the same upscaler that AMD announced as FSR 4 earlier this year. It closes the gap with DLSS by switching to hardware-backed machine-learning algorithms for upscaling games. This requires specific GPU hardware&#8212;it still only works on RDNA 4 GPUs, despite <a href="https://www.xda-developers.com/running-fsr-4-rdna-3/">some community efforts</a> to make it function on older architectures&#8212;but delivers better results than the temporal upscaling used in FSR 2 and FSR 3.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>FSR Upscaling (n&#233;e FSR 4) is still meant to be interchangeable with FSR 3.1, the latest version of the temporal upscaler. Games that support FSR 3.1 can support FSR 4 with a simple DLL replacement, which the Radeon driver can handle for you if the game&#8217;s menus don&#8217;t offer it as an option; games that support FSR 4 should also pick up &#8220;free&#8221; support for FSR 3.1 for older Radeon cards and other GPUs. That&#8217;s one consolation prize for people without an RX 9070 or RX 9060 card&#8212;you might not get the new FSR, but you&#8217;ll still get some benefit if and when games add support for it. (AMD also says the new version of Frame Generation should automatically be supported in games that support the FSR 3.1.4 version of FSR Frame Generation.)</p>
+<p>AMD makes some pretty lofty performance claims about how much performance can improve in games where all four of the Redstone technologies are enabled at once. Compared to native 4K rendering on an RX 9070 XT, the company is claiming anything from a 2.2x improvement in God of War: Ragnarok to 4.7x in&#160;Cyberpunk 2077.</p>
+ 
+
+<p>But there are several caveats to take note of&#8212;all of the Redstone games were tested in the lower-quality &#8220;Performance&#8221; mode rather than one of the &#8220;Balanced&#8221; or &#8220;Quality&#8221; modes. And whether frame-generation technologies cause more problems than they solve varies a lot from game to game, since they can also add latency and need your game to be running at a relatively high base frame rate to look good. Nevertheless, especially for games with ray-tracing effects included, it seems like AMD&#8217;s new additions could go a long way toward closing multiple performance and image-quality gaps with Nvidia.</p>
+<p>But knowing that none of the improvements shown off today will be available to any past-generation GPUs, any current integrated GPUs, or current Radeon-based game consoles does make them less exciting, particularly given how much older RDNA architectures struggle with ray-tracing performance. AMD has been slow to roll out RDNA4&#160;and doesn&#8217;t offer top-tier GPUs for enthusiasts, sub-$300 GPUs for budget builds, or integrated GPUs for laptops or mini desktops. And a relatively narrow user base may dampen game developer enthusiasm for actually implementing some of these features, at least in the short term. &#160;</p>
+<p>FSR Upscaling, Frame Generation, and Ray Regeneration are all available now and have appeared in a handful of currently shipping games. Radiance Caching is available to developers starting now, and AMD says it will begin appearing in games in 2026.</p>
+
+
+          
+                   
+                  
+
+                  
+          </div>

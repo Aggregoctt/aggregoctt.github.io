@@ -1,0 +1,87 @@
+---
+author: Zack Whittaker
+canonical_url: https://techcrunch.com/2025/12/10/petco-takes-down-vetco-website-after-exposing-customers-personal-information/
+date: '2025-12-10T13:40:58'
+excerpt: TechCrunch found Petco's veterinary clinics were spilling customers' personal
+  information and medical histories of their pets to the open web.
+image: assets/media/DeLsC3no6PCsSxa32PItRA-k9T5Wk8u-F1fIBcpH9qaJw.jpeg
+source: techcrunch
+tags:
+- Security
+- cybersecurity
+- data breach
+- data exposure
+- Exclusive
+- Petco
+- vetco
+title: Petco takes down Vetco website after exposing customers’ personal information
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">Pet wellness company Petco has taken a portion of its Vetco Clinics website offline after a security lapse exposed reams of customers&#8217; personal information to the open web.&#160;</p>
+
+<p class="wp-block-paragraph">After TechCrunch alerted the company to the exposed data relating to Vetco customers and their pets, Petco confirmed in a statement that it was investigating the data leak at its veterinary services company, and declined to comment further.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">The security lapse allowed anyone on the internet to download customer records from Vetco&#8217;s website without needing a user&#8217;s login information. At least one customer record was exposed and indexed by Google, allowing anyone to find the data by searching for it.</p>
+
+<p class="wp-block-paragraph">The customer records, seen by TechCrunch, included visit summaries, medical histories, and prescription and vaccination records, among other files relating to Vetco customers and their pets.&#160;</p>
+
+<p class="wp-block-paragraph">The files also contained customer names; their home address, email address, and phone number; the location of the Vetco clinic where the services were performed; medical assessments, tests and diagnoses; and the costs of goods, names of veterinarians, consent forms, owner signatures, and dates of service.</p>
+
+<p class="wp-block-paragraph">We also found animal names, species and breed, their sex, age and date of birth, their microchip number (if registered), their medical vitals, and prescription records in the files.</p>
+
+<p class="wp-block-paragraph">TechCrunch alerted Petco to the security lapse on Friday after discovering the vulnerability. The company acknowledged the data exposure days later on the following Tuesday after TechCrunch followed-up by attaching several exposed customer files to our email.</p>
+
+<p class="wp-block-paragraph">Petco spokesperson Ventura Olvera told TechCrunch late on Tuesday that the company has &#8220;implemented, and will continue to implement, additional measures to further strengthen the security of our systems,&#8221; though the company did not provide evidence for the claim.</p>
+
+<p class="wp-block-paragraph">Olvera would not say if the company has the technical means, such as logs, to determine if any data was extracted from the company&#8217;s systems during the course of the data spill.</p>
+
+<h2 class="wp-block-heading" id="h-how-techcrunch-found-the-data-spill">How TechCrunch found the data spill</h2>
+
+<p class="wp-block-paragraph">TechCrunch identified a vulnerability in how Vetco&#8217;s website generates copies of PDF documents for its customers.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Vetco&#8217;s customer portal, located at <code>petpass.com</code>, allows customers to log in and obtain veterinary records and other documents relating to their pet&#8217;s care. But TechCrunch found that the PDF generating page on Vetco&#8217;s website was public, and not protected with a password.</p>
+
+<p class="wp-block-paragraph">As such, it was possible for anyone on the internet to access sensitive customer files directly from Vetco&#8217;s servers by modifying the web address to input a customer&#8217;s unique identification number. Vetco customer numbers are sequential, which means one could access other customers&#8217; data simply by changing a customer number by one or two digits.&#160;</p>
+
+<p class="wp-block-paragraph">TechCrunch checked at intervals of 100,000 customers to determine how many records may have been exposed in total. The sequential customer numbers suggest that millions of Petco customers&#8217; information could have been retrieved.</p>
+
+<p class="wp-block-paragraph">The bug is classed as an <a href="https://techcrunch.com/2023/07/27/cisa-nsa-australia-idor-flaws/">insecure direct object reference</a> (or IDOR), a common lapse in security practices&#160; that allows unfettered access to files on a server because there aren&#8217;t proper checks in place to make sure the person accessing the data is permitted to.</p>
+
+<p class="wp-block-paragraph">It&#8217;s not clear how long these customer records have been left exposed, but the customer record listed on Google was dated mid-2020.</p>
+
+<h2 class="wp-block-heading" id="h-third-petco-breach-this-year">Third Petco breach this year</h2>
+
+<p class="wp-block-paragraph">By TechCrunch&#8217;s count, this is Petco&#8217;s third data breach in 2025.</p>
+
+<p class="wp-block-paragraph">Earlier this year, hackers associated with the Scattered Lapsus$ Hunters hacking collective <a href="https://techcrunch.com/2025/10/03/hacking-group-claims-theft-of-1-billion-records-from-salesforce-customer-databases/">allegedly stole reams of data</a> from a database of customer information that Petco hosts with cloud giant Salesforce. The hackers demanded victim companies pay a ransom to not have their information leaked.</p>
+
+<p class="wp-block-paragraph">In September, Petco <a href="https://techcrunch.com/2025/12/05/petco-confirms-security-lapse-exposed-customers-personal-data/">disclosed a second data breach</a> involving a security issue that the company said it discovered on its own. Petco blamed the data leak on &#8220;a setting within one of our software applications that inadvertently allowed certain files to be accessible online,&#8221; but did not provide specific details of the incident.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">That <a href="https://techcrunch.com/2025/12/08/petcos-security-lapse-affected-customers-ssns-drivers-licenses-and-more/">data breach included sensitive customer information</a>, such as Social Security numbers, driver&#8217;s licenses, and financial information, including debit and credit card numbers.</p>
+
+<p class="wp-block-paragraph">Olvera declined to say how many people are affected by the September incident, but California law requires companies to disclose data breaches publicly when the number of victims in the state crosses 500 people.</p>
+
+<p class="wp-block-paragraph">TechCrunch believes this latest data leak involving Vetco is a separate security incident, given that Petco began notifying its customers of the previous data leak several months ago.</p>
+
+
+			
+
+			</div>
