@@ -1,0 +1,44 @@
+---
+author: Jesse Welch
+canonical_url: https://blog.duolingo.com/agentic-workflows/
+date: '2025-12-11T13:00:49'
+excerpt: We’ve made it easy for Duos to create and share agentic workflows without
+  custom code.
+image: assets/media/GH89ElMaMkn1XTKzeZuePQ-NmOCEnyP-nnB6JBt5H1hQg.jpeg
+source: duolingo
+tags:
+- Life at Duolingo
+- Engineering
+title: 'Agentic Workflows: Scale AI Prompts Beyond Cursor—No Code Required'
+---
+<div>
+                <p>TL;DR: A good prompt in tools like Cursor helps individual Duos move faster to scale our mission to develop the best education in the world and make it universally accessible. But what if Duos would like to unlock usage of the prompt for an entire team, or even Duolingo as a whole? That&#8217;s the goal of agentic workflows. Duos are already building a growing fleet of coding agents customized to Duolingo&#8217;s most repetitive tasks. Our engineers use these custom agents to take routine tasks off their plates so they can focus on product thinking and core logic. Better yet, for workflows that follow typical patterns, Duos can now create an agent in under five minutes.</p><h2 id="the-agents-we-have"><strong>The agents we have</strong></h2><p>We have already deployed agents for many routine purposes. Some existing agent capabilities:</p><ul><li>Remove Deprecated Feature Flags</li><li>Launch / Shut Down an Experiment</li><li>Modify Terraform and Create PR</li></ul><h2 id="%E2%80%9Cthe-pattern%E2%80%9D"><strong>&#8220;The pattern&#8221;</strong></h2><p>As we developed coding agents, we found the same pattern emerged again and again as the simple way to make code changes.</p><ol><li>Clone the repo</li><li>The AI agent makes a code change</li><li>Commit the code and optionally open a PR</li></ol><p>When a creator only needs a single agentic pass for an agent to make its change, this pattern can cover a large number of scenarios.</p><h2 id="make-your-first-agentic-workflow-in-less-than-5-minutes"><strong>Make your first agentic workflow in less than 5 minutes!</strong></h2><p>For common patterns like this, we&#8217;ve made it easy for Duos to create a new workflow and share it internally without requiring any custom code. This is not limited to Engineers&#8212;PMs, researchers, everyone can set up an agent.</p><h3 id="how-to-create"><strong>How to create</strong></h3><p>Our Duos start by filling out a simple JSON form about the workflow. This form allows them to provide a prompt, a code repo for it to run against, and 0 or more parameters (useful for sharing and reusing the workflow).</p><h3 id="testing"><strong>Testing</strong></h3><p>The prompt is the core of a workflow, so Duos test this prompt until they judge it successful. Generally, we take some time to craft it in <a href="https://chatgpt.com/codex?ref=blog.duolingo.com">Codex</a> or <a href="https://duolingo.atlassian.net/wiki/spaces/DUO/pages/4217241800/Getting+Started+with+Claude+Code?ref=blog.duolingo.com">Claude</a>, and make sure it works as intended in a variety of situations. Once the prompt is ready and the form filled out, the workflow can be staged for end to end testing. Faster iteration means we can test more ideas to improve learning efficacy for our learners.</p><h3 id="how-to-run"><strong>How to run</strong></h3><p>Once ready, Duos can easily merge their forms for them to automatically show up in a list of internal tools that any Duo can run. We also added Slack notifications to keep users informed about its progress.</p><h2 id="build-your-own-on-temporal"><strong>Build your own (on Temporal)</strong></h2><p>The simple JSON workflow covers a number of scenarios, but it is too simplistic for others, which may need to make multiple agentic passes, run additional tools, determine which tasks to run at runtime, or otherwise do some more interesting work.</p><p>Custom workflows are still very easy to make! By running the BootstrapTemporalWorkflow and copying from the existing workflows, our average time for new workflow creation is 1-2 days. The infrastructure around Temporal is evolving quickly, and the platform is flexible. It is likely set up to meet needs, or can be easily made to do so.</p><h2 id="coding-agent-library"><strong>Coding agent library</strong></h2><p>We have created a single library, CodingAgent, which wraps both Codex CLI and Claude Code SDK into a single library. Once a creator has set up its API keys as environment variables, calling an agent is as simple as declaring a prompt, and in most cases switching agents is as simple as changing a single enum parameter. This is how easy it is to get started:</p><pre><code class="language-CSS">async def simple_codex_prompt(current_working_dir: str):
+  agent = CodingAgent()
+
+  result = await agent.prompt(
+
+    prompt="Create a Python function that calculates fibonacci numbers",
+
+    cwd=current_working_dir
+
+  )
+
+  return result
+
+
+
+async def simple_claude_prompt(current_working_dir: str):
+  agent = CodingAgent(coding_agent_type=CodingAgentType.CLAUDE)
+
+  result = await agent.prompt(
+
+    prompt="Refactor this code to use modern Python best practices",
+
+    cwd=current_working_dir
+
+  )
+
+  return result
+</code></pre><h2 id="github-library"><strong>Github library</strong></h2><p>We have set up a util directory for common interactions (cloning a repo, opening a PR, etc.) This repo common code package is used in all of our agents to avoid repeated code, make it easier to follow our key patterns, and generally support development velocity. This library is able to use a shared Github App token to have all of our PRs correctly come from a bot account with centrally controlled permissions.</p><h2 id="multi-step-workflows"><strong>Multi-step workflows</strong></h2><p>While the simple pattern allows us to do interesting work in a single activity, we need multi-step workflows to do more complex work. These workflows are able to do more advanced and long-running work without sacrificing durability. In a multi-step pattern, each step contains a single, retryable activity, with its own timeouts and retry policy. This allows us to make many LLM calls within a single agent without AI non-determinism causing the whole process to restart.</p><h2 id="next-steps"><strong>Next steps</strong></h2><p>There are a few key features coming down the pipeline which will enable the agents our Duos build to be even more impactful. A large set of features is blocked by issues running Docker in Docker on Temporal, an issue which is being actively addressed and is expected to be solved within the next month.</p><h3 id="mcp"><strong>MCP</strong></h3><p>MCP access is well-established as a way to grant more abilities to any given agent. Prototype agents with access to the Github MCP are able to make reference to other codebases while upgrading their own, significantly improving their ability to solve problems. Other MCP servers, in particular Atlassian, should allow agentic workflows to connect to other portions of Duolingo&#8217;s business besides the codebase.</p><h3 id="expanding-agentjson"><strong>Expanding agent.json</strong></h3><p>The JSON created agents run a common workflow under the hood. We can expand its functionality to more flexibly accommodate other common patterns (e.g. multi-step workflows).</p><h2 id="final-thoughts"><strong>Final thoughts</strong></h2><p>Agentic workflows are still in their early days at Duolingo, and the pattern captured by this blog post is only one of many. More broadly, both the capabilities of agentic workflows and the best ways to support them with infrastructure remain very much open questions.</p><p>With that in mind, this is an early, and by no means definitive, attempt to answer these questions. We expect the space to evolve rapidly.</p><p>If you want to work at a place that creates innovative internal tools that make complex engineering tasks easier and is innovating in service of a clear mission, we&#8217;re hiring!</p> 
+            
+        </div>

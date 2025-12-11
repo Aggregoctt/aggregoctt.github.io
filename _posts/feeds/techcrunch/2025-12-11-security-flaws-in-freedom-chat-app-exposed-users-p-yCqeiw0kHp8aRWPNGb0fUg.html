@@ -1,0 +1,56 @@
+---
+author: Zack Whittaker
+canonical_url: https://techcrunch.com/2025/12/11/security-flaws-in-freedom-chat-app-exposed-users-phone-numbers-and-pins/
+date: '2025-12-11T13:35:08'
+excerpt: The founder of Freedom Chat said the company has reset user PINs and released
+  a new version to app stores.
+image: assets/media/yCqeiw0kHp8aRWPNGb0fUg-NVRADZvkbA97VS0aUFnpLg.jpeg
+source: techcrunch
+tags:
+- Security
+- TC
+- cybersecurity
+- encryption
+- Exclusive
+- messaging
+title: Security flaws in Freedom Chat app exposed users’ phone numbers and PINs
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">Messaging app Freedom Chat has fixed a pair of security flaws: one that allowed a security researcher to guess registered users&#8217; phone numbers, and another that exposed user-set PINs to others on the app.</p>
+
+<p class="wp-block-paragraph">Freedom Chat, released in June, bills itself as a secure messaging app, and claims on its website that users&#8217; phone numbers stay private.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">But security researcher Eric Daigle told TechCrunch that users&#8217; phone numbers and PIN codes, used for locking the app, could be easily obtained by exploiting vulnerabilities.</p>
+
+<p class="wp-block-paragraph">Daigle found the vulnerabilities last week and shared their details with TechCrunch, as Freedom Chat does not provide a public way to report security flaws, like a vulnerability disclosure program. TechCrunch then alerted Freedom Chat founder Tanner Haas to the security flaws by email.</p>
+
+<p class="wp-block-paragraph">Haas confirmed to TechCrunch that the app has now reset user PINs and released a new version. Haas added that the company is removing instances where users&#8217; phone numbers were occasionally visible, and has notched up rate-limiting on its servers to prevent mass-guess attempts.</p>
+
+<p class="wp-block-paragraph">Daigle, who published his findings <a rel="nofollow" href="https://ericdaigle.ca/posts/super-secure-maga-messaging-app-leaks-everyones-phone-number/">in a blog post</a>, told TechCrunch it was possible to enumerate the phone numbers of close to 2,000 users who had signed up to use Freedom Chat since it launched. Daigle said Freedom Chat&#8217;s servers allowed anyone to flood it with millions of phone number guesses to determine if a user&#8217;s phone number was stored on the servers.</p>
+
+<p class="wp-block-paragraph">Per Daigle, this technique is identical to one <a rel="nofollow" href="https://www.univie.ac.at/en/news/detail/forscherinnen-entdecken-grosse-sicherheitsluecke-in-whatsapp">described by the University of Vienna</a> in research last month, where <a rel="nofollow" href="https://www.wired.com/story/a-simple-whatsapp-security-flaw-exposed-billions-phone-numbers/">academics scraped</a> data on some 3.5 billion user accounts who signed up to WhatsApp by matching billions of phone numbers against WhatsApp&#8217;s servers.</p>
+
+<p class="wp-block-paragraph">Daigle also found Freedom Chat was leaking users&#8217; PIN codes. Using an open-source network traffic inspection tool to analyze the data going in and out of the app, Daigle saw that the app would respond with the PIN codes of every other user in the same public channel &#8212; even if the PINs weren&#8217;t visible to users within the app itself.</p>
+
+<p class="wp-block-paragraph">According to Daigle, anyone who was in the default Freedom Chat channel, which users are automatically subscribed to when they first sign up, had their PIN broadcast to everyone else in the channel. Daigle told TechCrunch that knowledge of a person&#8217;s PIN could allow someone to open the app from a user&#8217;s stolen device.</p>
+
+<p class="wp-block-paragraph">In an app store update published Sunday, Freedom Chat noted: &#8220;A critical reset: A recent backend update inadvertently exposed user PINs in a system response. No messages were ever at risk, and because Freedom Chat does not support linked devices, your conversations were never accessible; however, we&#8217;ve reset all user PINs to ensure your account stays secure. Your privacy remains our top priority.&#8221;</p>
+
+ 
+
+
+ 
+
+
+ 
+
+
+			
+
+			</div>
