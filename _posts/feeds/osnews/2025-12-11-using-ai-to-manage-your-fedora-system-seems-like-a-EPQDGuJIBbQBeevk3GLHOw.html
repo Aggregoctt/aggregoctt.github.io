@@ -1,0 +1,58 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144006/using-ai-to-manage-your-fedora-system-seems-like-a-really-bad-idea/
+date: '2025-12-11T19:51:53'
+excerpt: 'IBM owns Red Hat which in turn runs Fedora, the popular desktop Linux distribution.
+  Sadly, shit rolls downhill, so we&#8217;re starting to see some worrying signs that
+  Fedora is going to be used a means to push &#8220;AI&#8221;. Case in point, this
+  article in the Fedora Magazine: Generative AI systems are changing the way people
+  interact with computers. MCP (model context protocol) is a way that enables generate
+  AI systems to run commands and use tools to enable live, conversational interaction
+  with systems. Using the new linux-mcp-server, let’s walk through how you can talk
+  with your Fedora system for understanding your system and getting help troubleshooting
+  it! ↫ Máirín Duffy and Brian Smith at Fedora Magazine This &#8220;linux-mcp-server&#8221;
+  tool is developed by IBM&#8217;s Red Hat, and of course, IBM has a vested interest
+  in further increasing the size of the &#8220;AI&#8221; bubble. As such, it makes
+  sense from their perspective to start pushing &#8220;AI&#8221; services and tools
+  all the way down to the Fedora community, ending up with articles like this one.
+  What&#8217;s sad is that even in this article, which surely uses the best possible
+  examples, it&#8217;s hard to see how any of it could possibly be any faster than
+  doing the example tasks without the &#8220;help&#8221; of an &#8220;AI&#8221;. In
+  the first example, the &#8220;AI&#8221; is supposed to figure out why the computer
+  is having Wi-Fi connection issues, and while it does figure that out, the solutions
+  it presents are really dumb and utterly wrong. Most notably, even though this is
+  an article about running these tools on a Fedora system, written for Fedora Magazine,
+  the &#8220;AI&#8221; stubbornly insists on using apt for every solution, which is
+  a basic, stupid mistake that doesn&#8217;t exactly instill confidence in any of
+  its other findings being accurate. The second example involves asking the &#8220;AI&#8221;
+  to explain how much disk space the system is using, and why. The &#8220;prompt&#8221;
+  (the human-created &#8220;question&#8221; the &#8220;AI&#8221; is supposed to &#8220;answer&#8221;)
+  is bonkers long &#8211; it&#8217;s a 117 words long monstrosity, formatted into
+  several individual questions &#8211; and the output is so verbose and it takes such
+  a scattershot approach that following-up on everything is going to take a huge amount
+  of time. Within that same time frame, it would&#8217;ve been not only much faster,
+  but also much more user-friendly to just open Filelight (installed by default as
+  part of KDE), which creates a nice diagram which instantly shows you what is taking
+  up space, and why. The third example is about creating an update readiness report
+  for upgrading from Fedora 42 to Fedora 43, and its &#8220;prompt&#8221; is even
+  longer at 190 words, and writing that up with all those individual questions must&#8217;ve
+  taken more time than to just&#8230; Do a simple dry-run of a dnf system upgrade
+  which gets you like 90% of the way there. Here, too, the &#8220;AI&#8221; blurts
+  out so much information, much of which entirely useless, that going through it all
+  takes more time than just manually checking up on a dnf dry run and peaking at your
+  disk space usage. All this effort to set all of this up, and so much effort to carefully
+  craft complex &#8220;prompts&#8221;, only to end up with clearly wrong information,
+  and way too much superfluous information that just ends up distracting you from
+  the task you set out to accmplish. Is this really the kind of future of computing
+  we&#8217;re supposed to be rooting for? Is this the kind of stuff Fedora&#8217;s
+  new &#8220;AI&#8221; policy is supposed to enable? If so, I&#8217;m afraid the disconnect
+  between Fedora&#8217;s leadership and whatever its users actually use Fedora for
+  is far, far wider than I imagined.'
+image: null
+source: osnews
+tags:
+- Fedora Core
+title: Using “AI” to manage your Fedora system seems like a really bad idea
+---
+<div><p>IBM owns Red Hat which in turn runs Fedora, the popular desktop Linux distribution. Sadly, shit rolls downhill, so we&#8217;re starting to see some worrying signs that Fedora is going to be used a means to push &#8220;AI&#8221;. Case in point, this article in the Fedora Magazine:</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Generative AI systems are changing the way people interact with computers. MCP (model context protocol) is a way that enables generate AI systems to run commands and use tools to enable live, conversational interaction with systems. Using the new <a href="https://github.com/rhel-lightspeed/linux-mcp-server">linux-mcp-server</a>, let&#8217;s walk through how you can talk with your Fedora system for understanding your system and getting help troubleshooting it!</p>
+<a href="https://fedoramagazine.org/find-out-how-your-fedora-system-really-feels-with-the-linux-mcp-server/">&#8619; M&#225;ir&#237;n Duffy and Brian Smith at Fedora Magazine</a></blockquote><p>This &#8220;linux-mcp-server&#8221; tool is developed by IBM&#8217;s Red Hat, and of course, IBM has a vested interest in further increasing the size of the &#8220;AI&#8221; bubble. As such, it makes sense from their perspective to start pushing &#8220;AI&#8221; services and tools all the way down to the Fedora community, ending up with articles like this one. What&#8217;s sad is that even in this article, which surely uses the best possible examples, it&#8217;s hard to see how any of it could possibly be any faster than doing the example tasks without the &#8220;help&#8221; of an &#8220;AI&#8221;.</p><p>In the first example, the &#8220;AI&#8221; is supposed to figure out why the computer is having Wi-Fi connection issues, and while it does figure that out, the solutions it presents are really dumb and utterly wrong. Most notably, even though this is an article about running these tools on a Fedora system, written for Fedora Magazine, the &#8220;AI&#8221; stubbornly insists on using <code>apt</code> for every solution, which is a basic, stupid mistake that doesn&#8217;t exactly instill confidence in any of its other findings being accurate.</p><p>The second example involves asking the &#8220;AI&#8221; to explain how much disk space the system is using, and why. The &#8220;prompt&#8221; (the human-created &#8220;question&#8221; the &#8220;AI&#8221; is supposed to &#8220;answer&#8221;) is bonkers long &#8211; it&#8217;s a 117 words long monstrosity, formatted into several individual questions &#8211; and the output is so verbose and it takes such a scattershot approach that following-up on everything is going to take a huge amount of time. Within that same time frame, it would&#8217;ve been not only much faster, but also much more user-friendly to just open Filelight (installed by default as part of KDE), which creates a nice diagram which instantly shows you what is taking up space, and why.</p><p>The third example is about creating an update readiness report for upgrading from Fedora 42 to Fedora 43, and its &#8220;prompt&#8221; is even longer at 190 words, and writing that up with all those individual questions must&#8217;ve taken more time than to just&#8230; Do a simple dry-run of a dnf system upgrade which gets you like 90% of the way there. Here, too, the &#8220;AI&#8221; blurts out so much information, much of which entirely useless, that going through it all takes more time than just manually checking up on a dnf dry run and peaking at your disk space usage.</p><p>All this effort to set all of this up, and so much effort to carefully craft complex &#8220;prompts&#8221;, only to end up with clearly wrong information, and way too much superfluous information that just ends up distracting you from the task you set out to accmplish. Is this really the kind of future of computing we&#8217;re supposed to be rooting for? Is this the kind of stuff <a href="https://www.osnews.com/story/143515/fedoras-ai-policy-process-highlights-rift-between-ibm-red-hat-and-fedora/">Fedora&#8217;s new &#8220;AI&#8221; policy</a> is supposed to enable?</p><p>If so, I&#8217;m afraid the disconnect between Fedora&#8217;s leadership and whatever its users actually use Fedora for is far, far wider than I imagined.</p></div>
