@@ -1,0 +1,122 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/12/how-openai-is-using-gpt-5-codex-to-improve-the-ai-tool-itself/
+date: '2025-12-12T22:16:42'
+excerpt: '"The vast majority of Codex is built by Codex," OpenAI told us about its
+  new AI coding agent.'
+image: assets/media/k_M8udoXFR8dCSUGTeiBaA-lKfr45N4vNMmTamVQs_TEw.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI assistants
+- AI coding
+- AI development tools
+- AI programming
+- AI work
+- Anthropic
+- chatbots
+- Claude
+- code agents
+- Codex
+- Dario Amodei
+- generative ai
+- GitHub Copilot
+- google
+- GPT-5
+- large language models
+- machine learning
+- Mistral
+- open source
+- openai
+- Programming
+- sam altman
+- software development
+- vibe coding
+title: How OpenAI is using GPT-5 Codex to improve the AI tool itself
+---
+<div>
+                      
+                      
+           
+<p>In interviews with Ars Technica this week, OpenAI employees revealed the extent to which the company now relies on its own AI coding agent, <a href="https://arstechnica.com/ai/2025/05/openai-introduces-codex-its-first-full-fledged-ai-agent-for-coding/">Codex</a>, to build and improve the development tool. &#8220;I think the vast majority of Codex is built by Codex, so it&#8217;s almost entirely just being used to improve itself,&#8221; said Alexander Embiricos, product lead for Codex at OpenAI, in a conversation on Tuesday.</p>
+<p>Codex, which OpenAI <a href="https://openai.com/index/introducing-codex/">launched</a> in its modern incarnation as a research preview in May 2025, operates as a cloud-based software engineering agent that can handle tasks like writing features, fixing bugs, and proposing pull requests. The tool runs in sandboxed environments linked to a user&#8217;s code repository and can execute multiple tasks in parallel. OpenAI offers Codex through ChatGPT&#8217;s web interface, a command-line interface (CLI), and IDE extensions for VS Code, <a href="https://arstechnica.com/ai/2025/04/cursor-ai-support-bot-invents-fake-policy-and-triggers-user-uproar/">Cursor</a>, and <a href="https://windsurf.com/">Windsurf</a>.</p>
+<p>The &#8220;Codex&#8221; name itself dates back to a <a href="https://arxiv.org/abs/2107.03374">2021 OpenAI model</a> based on GPT-3 that powered GitHub Copilot&#8217;s tab completion feature. Embiricos said the name is rumored among staff to be short for &#8220;code execution.&#8221; OpenAI wanted to connect the new agent to that earlier moment, which was crafted in part by some who have left the company.</p>
+<p>&#8220;For many people, that model powering GitHub Copilot was the first &#8216;wow&#8217; moment for AI,&#8221; Embiricos said. &#8220;It showed people the potential of what it can mean when AI is able to understand your context and what you&#8217;re trying to do and accelerate you in doing that.&#8221;</p>
+ 
+
+<p>It&#8217;s no secret that the current command-line version of Codex bears some resemblance to <a href="https://arstechnica.com/ai/2025/10/claude-code-gets-a-web-version-but-its-the-new-sandboxing-that-really-matters/">Claude Code</a>, Anthropic&#8217;s agentic coding tool that <a href="https://arstechnica.com/ai/2025/02/claude-3-7-sonnet-debuts-with-extended-thinking-to-tackle-complex-problems/">launched</a> in February 2025. When asked whether Claude Code influenced Codex&#8217;s design, Embiricos parried the question but acknowledged the competitive dynamic. &#8220;It&#8217;s a fun market to work in because there&#8217;s lots of great ideas being thrown around,&#8221; he said. He noted that OpenAI had been building web-based Codex features internally before shipping the CLI version, which arrived after Anthropic&#8217;s tool.</p>
+
+          
+                       
+                   
+                  
+
+              
+          
+          
+<p>OpenAI&#8217;s customers apparently love the command line version, though. Embiricos said Codex usage among external developers jumped 20 times after OpenAI shipped the interactive CLI extension alongside GPT-5 in August 2025. On September 15, OpenAI <a href="https://openai.com/blog/introducing-upgrades-to-codex">released</a> GPT-5 Codex, a specialized version of GPT-5 optimized for agentic coding, which further accelerated adoption.</p>
+<p>It hasn&#8217;t just been the outside world that has embraced the tool. Embiricos said the vast majority of OpenAI&#8217;s engineers now use Codex regularly. The company uses the same <a href="https://github.com/openai/codex">open-source version</a> of the CLI that external developers can freely download, suggest additions to, and modify themselves. &#8220;I really love this about our team,&#8221; Embiricos said. &#8220;The version of Codex that we use is literally the open source repo. We don&#8217;t have a different repo that features go in.&#8221;</p>
+ 
+<p>The recursive nature of Codex development extends beyond simple code generation. Embiricos described scenarios where Codex monitors its own training runs and processes user feedback to &#8220;decide&#8221; what to build next. &#8220;We have places where we&#8217;ll ask Codex to look at the feedback and then decide what to do,&#8221; he said. &#8220;Codex is writing a lot of the research harness for its own training runs, and we&#8217;re experimenting with having Codex monitoring its own training runs.&#8221; OpenAI employees can also submit a ticket to Codex through project management tools like <a href="https://linear.app/">Linear</a>, assigning it tasks the same way they would assign work to a human colleague.</p>
+<p>This kind of recursive loop, of using tools to build better tools, has deep roots in computing history. Engineers <a href="https://en.wikipedia.org/wiki/Invention_of_the_integrated_circuit">designed</a> the first integrated circuits by hand on vellum and paper in the 1960s, then fabricated physical chips from those drawings. Those chips powered the computers that ran the first <a href="https://en.wikipedia.org/wiki/Electronic_design_automation">electronic design automation</a> (EDA) software, which in turn enabled engineers to design circuits far too complex for any human to draft manually. Modern processors contain billions of transistors arranged in patterns that exist only because software made them possible. OpenAI&#8217;s use of Codex to build Codex seems to follow the same pattern: each generation of the tool creates capabilities that feed into the next.</p>
+
+          
+                  
+
+              
+          
+          
+<p>But describing what Codex actually does presents something of a linguistic challenge. At Ars Technica, we try to reduce anthropomorphism when discussing AI models as much as possible while also describing what these systems do using analogies that make sense to general readers. People can talk to Codex like a human, so it feels natural to use human terms to describe interacting with it, even though it is not a person and <a href="https://arstechnica.com/information-technology/2025/08/the-personhood-trap-how-ai-fakes-human-personality/">simulates human personality</a> through statistical modeling.</p>
+<p>The system runs many processes autonomously, addresses feedback, spins off and manages child processes, and produces code that ships in real products. OpenAI employees call it a &#8220;teammate&#8221; and assign it tasks through the same tools they use for human colleagues. Whether the tasks Codex handles constitute &#8220;decisions&#8221; or sophisticated conditional logic smuggled through a neural network depends on definitions that computer scientists and philosophers continue to debate. What we can say is that a semi-autonomous feedback loop exists: Codex produces code under human direction, that code becomes part of Codex, and the next version of Codex produces different code as a result.</p>
+<h2>Building faster with &#8220;AI teammates&#8221;</h2>
+<p>According to our interviews, the most dramatic example of Codex&#8217;s internal impact came from OpenAI&#8217;s development of the <a href="https://play.google.com/store/apps/details?id=com.openai.sora&amp;hl=en_US&amp;pli=1">Sora Android app</a>. According to Embiricos, the development tool allowed the company to create the app in record time.</p>
+<p>&#8220;The Sora Android app was shipped by four engineers from scratch,&#8221; Embiricos told Ars. &#8220;It took 18 days to build, and then we shipped it to the app store in 28 days total,&#8221; he said. The engineers already had the iOS app and server-side components to work from, so they focused on building the Android client. They used Codex to help plan the architecture, generate sub-plans for different components, and implement those components.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Ed Bayes, a designer on the Codex team, described how the tool has changed his own workflow. Bayes said Codex now integrates with project management tools like Linear and communication platforms like Slack, allowing team members to assign coding tasks directly to the AI agent. &#8220;You can add Codex, and you can basically assign issues to Codex now,&#8221; Bayes told Ars. &#8220;Codex is literally a teammate in your workspace.&#8221;</p>
+<p>This integration means that when someone posts feedback in a Slack channel, they can tag Codex and ask it to fix the issue. The agent will create a pull request, and team members can review and iterate on the changes through the same thread. &#8220;It&#8217;s basically approximating this kind of coworker and showing up wherever you work,&#8221; Bayes said.</p>
+<p>For Bayes, who works on the visual design and interaction patterns for Codex&#8217;s interfaces, the tool has enabled him to contribute code directly rather than handing off specifications to engineers. &#8220;It kind of gives you more leverage. It enables you to work across the stack and basically be able to do more things,&#8221; he said. He noted that designers at OpenAI now prototype features by building them directly, using Codex to handle the implementation details.</p>
+ 
+
+ 
+<p>OpenAI&#8217;s approach treats Codex as what Bayes called &#8220;a junior developer&#8221; that the company hopes will graduate into a senior developer over time. &#8220;If you were onboarding a junior developer, how would you onboard them? You give them a Slack account, you give them a Linear account,&#8221; Bayes said. &#8220;It&#8217;s not just this tool that you go to in the terminal, but it&#8217;s something that comes to you as well and sits within your team.&#8221;</p>
+<p>Given this teammate approach, will there be anything left for humans to do? When asked, Embiricos drew a distinction between &#8220;<a href="https://arstechnica.com/ai/2025/03/is-vibe-coding-with-ai-gnarly-or-reckless-maybe-some-of-both/">vibe coding</a>,&#8221; where developers accept AI-generated code without close review, and what AI researcher Simon Willison calls &#8220;<a href="https://simonwillison.net/2025/Oct/7/vibe-engineering/">vibe engineering</a>,&#8221; where humans stay in the loop. &#8220;We see a lot more vibe engineering in our code base,&#8221; he said. &#8220;You ask Codex to work on that, maybe you even ask for a plan first. Go back and forth, iterate on the plan, and then you&#8217;re in the loop with the model and carefully reviewing its code.&#8221;</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>He added that vibe coding still has its place for prototypes and throwaway tools. &#8220;I think vibe coding is great,&#8221; he said. &#8220;Now you have discretion as a human about how much attention you wanna pay to the code.&#8221;</p>
+<h2>Looking ahead</h2>
+<p>Over the past year, &#8220;monolithic&#8221; large language models (LLMs) like <a href="https://arstechnica.com/ai/2025/02/its-a-lemon-openais-largest-ai-model-ever-arrives-to-mixed-reviews/">GPT-4.5</a> have apparently become something of a dead end in terms of frontier benchmarking progress as AI companies pivot to <a href="https://arstechnica.com/ai/2025/06/with-the-launch-of-o3-pro-lets-talk-about-what-ai-reasoning-actually-does/">simulated reasoning models</a> and also agentic systems built from multiple AI models running in parallel. We asked Embiricos whether agents like Codex represent the best path forward for squeezing utility out of existing LLM technology.</p>
+<p>He dismissed concerns that AI capabilities have plateaued. &#8220;I think we&#8217;re very far from plateauing,&#8221; he said. &#8220;If you look at the velocity on the research team here, we&#8217;ve been shipping models almost every week or every other week.&#8221; He pointed to recent improvements where GPT-5-Codex reportedly completes tasks 30 percent faster than its predecessor at the same intelligence level. During testing, the company has seen the model work independently for 24 hours on complex tasks.</p>
+<p>OpenAI faces competition from multiple directions in the AI coding market. Anthropic&#8217;s Claude Code and Google&#8217;s <a href="https://arstechnica.com/ai/2025/06/google-is-bringing-vibe-coding-to-your-terminal-with-gemini-cli/">Gemini CLI</a> offer similar terminal-based agentic coding experiences. This week, Mistral AI <a href="https://arstechnica.com/ai/2025/12/mistral-bets-big-on-vibe-coding-with-new-autonomous-software-engineering-agent/">released</a> Devstral 2 alongside a CLI tool called Mistral Vibe. Meanwhile, startups like Cursor have built dedicated IDEs around AI coding, reportedly reaching $300 million in annualized revenue.</p>
+<p>Given the well-known issues with <a href="https://arstechnica.com/information-technology/2023/04/why-ai-chatbots-are-the-ultimate-bs-machines-and-how-people-hope-to-fix-them/">confabulation</a> in AI models when people <a href="https://arstechnica.com/information-technology/2025/08/the-personhood-trap-how-ai-fakes-human-personality/">attempt</a> to use them as factual resources, could it be that coding has become the killer app for LLMs? We wondered if OpenAI has noticed that coding seems to be a clear business use case for today&#8217;s AI models with less hazard than, say, using AI language models for writing or as emotional companions.</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;We have absolutely noticed that coding is both a place where agents are gonna get good really fast and there&#8217;s a lot of economic value,&#8221; Embiricos said. &#8220;We feel like it&#8217;s very mission-aligned to focus on Codex. We get to provide a lot of value to developers. Also, developers build things for other people, so we&#8217;re kind of intrinsically scaling through them.&#8221;</p>
+<p>But will tools like Codex threaten software developer jobs? Bayes acknowledged concerns but said Codex has not reduced headcount at OpenAI, and &#8220;there&#8217;s always a human in the loop because the human can actually read the code.&#8221; Similarly, the two men don&#8217;t project a future where Codex runs by itself without some form of human oversight. They feel the tool is an amplifier of human potential rather than a replacement for it.</p>
+<p>The practical implications of agents like Codex extend beyond OpenAI&#8217;s walls. Embiricos said the company&#8217;s long-term vision involves making coding agents useful to people who have no programming experience. &#8220;All humanity is not gonna open an IDE or even know what a terminal is,&#8221; he said. &#8220;We&#8217;re building a coding agent right now that&#8217;s just for software engineers, but we think of the shape of what we&#8217;re building as really something that will be useful to be a more general agent.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
