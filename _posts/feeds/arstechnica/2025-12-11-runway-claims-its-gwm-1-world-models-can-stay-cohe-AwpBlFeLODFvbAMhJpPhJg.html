@@ -1,0 +1,77 @@
+---
+author: Samuel Axon
+canonical_url: https://arstechnica.com/ai/2025/12/with-gwm-1-family-of-world-models-runway-shows-ambitions-beyond-hollywood/
+date: '2025-12-11T23:47:33'
+excerpt: Runway joins a competitive field alongside Google, Nvidia, and others.
+image: assets/media/AwpBlFeLODFvbAMhJpPhJg-vdnIhFf79HoJLHNtgDsw6Q.jpeg
+source: arstechnica
+tags:
+- AI
+- Gen-4.5
+- GWM-1
+- ML
+- Robotics
+- Runway
+- Runway Gen-4.5
+- runway ml
+- world models
+title: Runway claims its GWM-1 “world models” can stay coherent for minutes at a time
+---
+<div>
+                      
+                      
+           
+<p>AI company Runway has <a href="https://runwayml.com/research/introducing-runway-gwm-1">announced</a> what it calls its first world model, GWM-1. It&#8217;s a significant step in a new direction for a company that has made its name primarily on video generation, and it&#8217;s part of a wider gold rush to build <a href="https://arstechnica.com/ai/2025/11/metas-star-ai-scientist-yann-lecun-plans-to-leave-for-own-startup/">a new frontier of models</a> as large language models and image and video generation move into a refinement phase, no longer an untapped frontier.</p>
+<p>GWM-1 is a blanket term for a trio of autoregression models, each built on top Runway&#8217;s Gen-4.5 text-to-video generation model and then post-trained with domain-specific data for different kinds of applications. Here&#8217;s what each does.</p>
+ 
+<h2>GWM Worlds</h2>
+<p>GWM Worlds offers an interface for digital environment exploration with real-time user input that affects the generation of coming frames, which Runway suggests can remain consistent and coherent &#8220;across long sequences of movement.&#8221;</p>
+<p>Users can define the nature of the world&#8212;what it contains and how it appears&#8212;as well as rules like physics. They can give it actions or changes that will be reflected in real-time, like camera movements or descriptions of changes to the environment or the objects in it. As the methodology here is basically an advanced form of frame prediction, it might be a stretch to say these are full-on world simulations, but the claim is that they&#8217;re reliable enough to be usable as such.</p>
+<p>Potential applications include pre-visualization and early iteration for game design and development, generation of virtual reality environments, or educational explorations of historical spaces.</p>
+<p>There&#8217;s also a major use case that takes this outside Runway&#8217;s usual area of focus: World models like this can be used to train AI agents of various types, including robots.</p>
+<h2>GWM Robotics</h2>
+<p>The second model, GWM Robotics, does just that. It can be used &#8220;to generate synthetic training data that augments your existing robotics datasets across multiple dimensions, including novel objects, task instructions, and environmental variations.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+
+<p>There are a couple of key applications for this in the field of robotics. First, a world model could be used for training scenarios that are otherwise very hard to reliably reproduce in the physical world, such as varying weather conditions. There&#8217;s also policy evaluation&#8212;testing control policies entirely in a simulated world before real-world testing, which is safer and cheaper.</p>
+<p>Runway has put together a Python SDK for its robotics world model API that is currently available on a per-request basis.</p>
+<h2>GWM Avatars</h2>
+<p>Lastly, GWM Avatars combines generative video and speech in a unified model to produce human-like avatars that emote and move naturally both while speaking and listening. Runway claims they can maintain &#8220;extended conversations without quality degradation&#8221;&#8212;a mighty feat if true. It&#8217;s coming to the web app and the API in the future.</p>
+ 
+
+ 
+<h2>&#8220;General&#8221;-ish</h2>
+<p>Those who have described &#8220;general&#8221; world models are aiming for something grand: a multi-purpose, foundational model that works out of the box to simulate many types of environments, usable for any tasks, agents, and applications across multiple domains.</p>
+<p>World models are definitely not new, but the idea that they can be that general is a relatively recent ambition, and it&#8217;s often framed as a stepping stone to artificial general intelligence (AGI)&#8212;though there&#8217;s no evidence yet that they will in fact lead there for most definitions of the term.</p>
+<p>Runway didn&#8217;t use AGI framing in this announcement as others like Google&#8217;s DeepMind have. That said, CEO Crist&#243;bal Valenzuela did take to X to describe GWM-1 as &#8220;a major step toward universal simulation.&#8221; That itself is a lofty end point, as we don&#8217;t yet have any evidence the current path will lead to something that comprehensive, and you also have to consider that there&#8217;s not much consensus on the definition of &#8220;universal.&#8221;</p>
+
+          
+                   
+                   
+                  
+
+              
+          
+          
+<p>Even using the word &#8220;general&#8221; has an air of aspiration to it. You would expect a general world model to be, well, one model&#8212;but in this case, we&#8217;re looking at three distinct, post-trained models. That caveats the general-ness a bit, but Runway says that it&#8217;s &#8220;working toward unifying many different domains and action spaces under a single base world model.&#8221;</p>
+<h2>A competitive field</h2>
+<p>And that brings us to another important consideration: With GWM-1, Runway is entering a competitive gold-rush space where its differentiators and competitive advantages are less clear than they were for video. With video, Runway has been able to make major inroads in film/television, advertising, and other industries because its founders are perceived as being more rooted in those creative industries than most competitors, and they&#8217;ve designed tools with those industries in mind.</p>
+<p>There are indeed hypothetical applications of world models in film, television, advertising, and game development&#8212;but it was apparent from Runway&#8217;s livestream that the company is also looking at applications in robotics as well as physics and life sciences research, where competitors are already well-established and where we&#8217;ve seen increasing investment in recent months.</p>
+<p>Many of those competitors are big tech companies with massive resource advantages over Runway. Runway was one of the first to market with a sellable product, and its aggressive efforts to court industry professionals directly has so far allowed it to overcome those advantages in video generation, but it remains to be seen how things will play out with world models, where it doesn&#8217;t enjoy either advantage any more than the other entrants.</p>
+<p>Regardless, the GWM-1 advancements are impressive&#8212;especially if Runway&#8217;s claims about consistency and coherence over longer stretches of time are true.</p>
+<p>Runway also used its livestream to announce new Gen 4.5 video generation capabilities, including native audio, audio editing, and multi-shot video editing. Further, it announced a deal with CoreWeave, a cloud computing company with an AI focus. The deal will see Runway utilizing Nvidia&#8217;s GB300 NVL72 racks on CoreWeave&#8217;s cloud infrastructure for future training and inference.</p>
+
+
+          
+                  
+
+                  
+          </div>
