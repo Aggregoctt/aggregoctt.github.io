@@ -1,0 +1,65 @@
+---
+author: Jacek Krywko
+canonical_url: https://arstechnica.com/ai/2025/12/scientists-built-an-ai-co-pilot-for-prosthetic-bionic-hands/
+date: '2025-12-12T19:14:31'
+excerpt: Managing each finger separately can, with the right sensors, ease control
+  issues.
+image: assets/media/7_XzlZV8KG39GZpSAIN7lA-BLvqfH6Xwdsqf4zRq2HzNg.jpeg
+source: arstechnica
+tags:
+- AI
+- Science
+- prosthetics
+- robotic hands
+- Robotics
+- sensors
+title: Scientists built an AI co-pilot for prosthetic bionic hands
+---
+<div>
+                      
+                      
+           
+<p>Modern bionic hand prostheses nearly match their natural counterparts when it comes to dexterity, degrees of freedom, and capability. And many amputees who tried advanced bionic hands apparently didn&#8217;t like them. &#8220;Up to 50 percent of people with upper limb amputation abandon these prostheses, never to use them again,&#8221; says Jake George, an electrical and computer engineer at the University of Utah.</p>
+<p>The main issue with bionic hands that drives users away from them, George explains, is that they&#8217;re difficult to control. &#8220;Our goal was making such bionic arms more intuitive, so that users could go about their tasks without having to think about it,&#8221; George says. To make this happen, his team came up with an AI bionic hand co-pilot.</p>
+<h2>Micro-management issues</h2>
+<p>Bionic hands&#8217; control problems stem largely from their lack of autonomy. Grasping a paper cup without crushing it or catching a ball mid-flight appear so effortless because our natural movements rely on an elaborate system of reflexes and feedback loops. When an object you hold begins to slip, tiny mechanoreceptors in your fingertips send signals to the nervous system that make the hand tighten its grip. This all happens within 60 to 80 milliseconds&#8212;before you even consciously notice. This reflex is just one of many ways your brain automatically assists you in dexterity-based tasks.</p>
+<p>Most commercially available bionic hands do not have that built-in autonomic reflex&#8212;everything must be controlled by the user, which makes them extremely involved to use. To get an idea of how hard this is, you&#8217;d need to imagine trying to think about precisely adjusting the position of 27 major joints and choosing the appropriate force to apply with each of the 20 muscles present in a natural hand. It doesn&#8217;t help that the bandwidth of the interface between the bionic hand and the user is often limited.</p>
+<p>In most cases, users controlled bionic hands via an app where they could choose predetermined grip types and adjust forces applied by various actuators. A slightly more natural alternative is electromyography, where electric signals from the remaining muscles are in commands the bionic hand followed. But this too was far from perfect. &#8220;To grasp the object, you have to reach towards it, flex the muscles, and then effectively sit there and concentrate on holding your muscles in the exact same position to maintain the same grasp,&#8221; explains Marshall Trout, a University of Utah researcher and lead author of the study.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>To build their &#8220;intuitive&#8221; bionic hand, George, Trout, and their colleagues started by fitting it with custom sensors.</p>
+<h2>Feeling the grip</h2>
+<p>The researchers started their work with taking one of the commercially available bionic hands and replacing its fingertips with silicone-wrapped pressure and proximity sensors. This allowed the hand to detect when it was getting close to an object and precisely measure the force required to hold it without crushing it or letting it slip. To process the data gathered by the sensors, the team built an AI controller that moved the joints and adjusted the force of the grip. &#8220;We had the hand still and moved it back and forth so that the fingertips would touch the object and then we backed away,&#8221; Tout says.</p>
+<p>By repeating those back-and-forth movements countless times, the team collected enough training data to have the AI recognize various objects and switch between different grip types. The AI also controlled each finger individually. &#8220;This way we achieved natural grasping patterns,&#8221; George explains. &#8220;When you put an object in front of the hand it will naturally conform and each finger will do its own thing.&#8221;</p>
+ 
+<h2>Assisted driving</h2>
+<p>While this kind of autonomous gripping was demonstrated before, the brand-new touch the team applied was deciding what was in charge of the system. Earlier research projects that investigated autonomous prostheses relied on the user switching the autonomy on and off. By contrast, George and Trout&#8217;s approach focused on shared control.</p>
+<p>&#8220;It&#8217;s a subtle way the machine is helping. It&#8217;s not a self-driving car that drives you on its own and it&#8217;s not like an assistant that pulls you back into the lane when you turn the steering wheel without an indicator turned on,&#8221; George says. Instead, the system quietly works behind the scenes without it feeling like it&#8217;s fighting the user or taking over. The user remained in charge at all times and can tighten or loosen the grip, or release the object to let it drop.</p>
+
+          
+                  
+
+              
+          
+          
+<p>To test their AI-powered hand, the team asked intact and amputee participants to manipulate fragile objects: pick up a paper cup and drink from it, or take an egg from a plate and put it down somewhere else. Without the AI, they could succeed roughly one or two times in 10 attempts. With the AI assistant turned on, their success rate jumped to 80 or 90 percent. The AI also decreased the participants&#8217; cognitive burden, meaning they had to focus less on making the hand work.</p>
+<p>But we&#8217;re still a long way away from seamlessly integrating machines with the human body.</p>
+<h2>Into the wild</h2>
+<p>&#8220;The next step is to really take this system into the real world and have someone use it in their home setting,&#8221; Trout says. So far, the performance of the AI bionic hand was assessed under controlled laboratory conditions, working with settings and objects the team specifically chose or designed.</p>
+<p>&#8220;I want to make a caveat here that this hand is not as dexterous or easy to control as a natural, intact limb,&#8221; George cautions. He thinks that every little increment that we make in prosthetics is allowing amputees to do more tasks in their daily life. Still, to get to the Star Wars or Cyberpunk technology level where bionic prostheses are just as good or better than natural limbs, we&#8217;re going to need more than just incremental changes.</p>
+<p>Trout says we&#8217;re almost there as far as robotics go. &#8220;These prostheses are really dexterous, with high degrees of freedom,&#8221; Trout says, &#8220;but there&#8217;s no good way to control them.&#8221; This in part comes down to the challenge of getting the information in and out of users themselves. &#8220;Skin surface electromyography is very noisy, so improving this interface with things like internal electromyography or using neural implants can really improve the algorithms we already have,&#8221; Trout argued. This is why the team is currently working on neural interface technologies and looking for industry partners.</p>
+<p>&#8220;The goal is to combine all these approaches in one device,&#8221; George says. &#8220;We want to build an AI-powered robotic hand with a neural interface working with a company that would take it to the market in larger clinical trials.&#8221;</p>
+<p>Nature Communications, 2025. &#160;DOI: <a href="https://doi.org/10.1038/s41467-025-65965-9">10.1038/s41467-025-65965-9</a></p>
+
+
+          
+                  
+
+                  
+          </div>
