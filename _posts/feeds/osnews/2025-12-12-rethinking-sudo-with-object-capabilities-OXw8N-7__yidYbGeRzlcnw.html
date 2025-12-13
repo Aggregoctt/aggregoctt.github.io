@@ -1,0 +1,36 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144017/rethinking-sudo-with-object-capabilities/
+date: '2025-12-12T23:35:15'
+excerpt: 'Alpine Linux maintainer Ariadne Conill has published a very interesting
+  blog post about the shortcomings of both sudo and doas, and offers a potential different
+  way of achieving the same goals as those tools. Systems built around identity-based
+  access control tend to rely on ambient authority: policy is centralized and errors
+  in the policy configuration or bugs in the policy engine can allow attackers to
+  make full use of that ambient authority. In the case of a SUID binary like doas
+  or sudo, that means an attacker can obtain root access in the event of a bug or
+  misconfiguration. What if there was a better way? Instead of thinking about privilege
+  escalation as becoming root for a moment, what if it meant being handed a narrowly
+  scoped capability, one with just enough authority to perform a specific action and
+  nothing more? Enter the object-capability model. ↫ Ariadne Conill To bring this
+  approach to life, they created a tool called capsudo. Instead of temporarily changing
+  your identity, capsudo can grant far more fine-grained capabilities that match the
+  exact task you&#8217;re trying to accomplish. As an example, Conill details mounting
+  and unmounting &#8211; with capsudo, you can not only grant the ability for a user
+  to mount and unmount whatever device, but also allow the user to only mount or unmount
+  just one specific device. Another example given is how capsudo can be used to give
+  a service account user to only those resources the account needs to perform its
+  tasks. Of course, Conill explains all of this way better than I ever could, with
+  actual example commands and more details. Conill happens to be the same person who
+  created Wayback, illustrating that they have a tendency to look at problems in a
+  unique and interesting way. I&#8217;m not smart enough to determine if this approach
+  makes sense compared to sudo or doas, but the way it&#8217;s described it does feel
+  like a superior, more secure solution.'
+image: null
+source: osnews
+tags:
+- Privacy, Security
+title: Rethinking sudo with object capabilities
+---
+<div><p>Alpine Linux maintainer Ariadne Conill has published a very interesting blog post about the shortcomings of both sudo and doas, and offers a potential different way of achieving the same goals as those tools.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Systems built around identity-based access control tend to rely on ambient authority: policy is centralized and errors in the policy configuration or bugs in the policy engine can allow attackers to make full use of that ambient authority. In the case of a SUID binary like <code>doas</code> or <code>sudo</code>, that means an attacker can obtain root access in the event of a bug or misconfiguration.</p><p>What if there was a better way? Instead of thinking about privilege escalation as becoming root for a moment, what if it meant being handed a narrowly scoped capability, one with just enough authority to perform a specific action and nothing more? Enter the <a href="https://en.wikipedia.org/wiki/Object-capability_model">object-capability model</a>.</p>
+<a href="https://ariadne.space/2025/12/12/rethinking-sudo-with-object-capabilities.html">&#8619; Ariadne Conill</a></blockquote><p>To bring this approach to life, they created a tool called <a href="https://github.com/kaniini/capsudo">capsudo</a>. Instead of temporarily changing your identity, capsudo can grant far more fine-grained capabilities that match the exact task you&#8217;re trying to accomplish. As an example, Conill details mounting and unmounting &#8211; with capsudo, you can not only grant the ability for a user to mount and unmount whatever device, but also allow the user to only mount or unmount just one specific device. Another example given is how capsudo can be used to give a service account user to only those resources the account needs to perform its tasks.</p></div>
