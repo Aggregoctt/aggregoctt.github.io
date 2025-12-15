@@ -1,0 +1,59 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/12/microsoft-will-finally-kill-obsolete-cipher-that-has-wreaked-decades-of-havoc/
+date: '2025-12-15T21:15:55'
+excerpt: The weak RC4 for administrative authentication has been a hacker holy grail
+  for decades.
+image: assets/media/cNtQ9e6OuyNT9FLo3B0OCA-PMRpX2fiv-_PuyT3A1iEUg.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- encryption
+- rc4
+- Windows Server
+title: Microsoft will finally kill obsolete cipher that has wreaked decades of havoc
+---
+<div>
+                      
+                      
+          <p>Microsoft is killing off an obsolete and vulnerable encryption cipher that Windows has supported by default for 26 years following more than a decade of devastating hacks that exploited it and recently faced blistering criticism from a prominent US senator.</p>
+<p>When the software maker rolled out Active Directory in 2000, it made RC4 a sole means of securing the Windows component, which administrators use to configure and provision fellow administrator and user accounts inside large organizations. RC4, short for Rivist Cipher 4, is a nod to mathematician and cryptographer Ron Rivest of RSA Security, who developed the stream cipher in 1987. Within days of the trade-secret-protected algorithm being leaked in 1994, a researcher demonstrated a cryptographic attack that significantly weakened the security it had been believed to provide. Despite the known susceptibility, RC4 remained a staple in encryption protocols, including SSL and its successor TLS, until about a decade ago.</p>
+<h2>Out with the old</h2>
+<p>One of the most visible holdouts in supporting RC4 has been Microsoft. Eventually, Microsoft upgraded Active Directory to support the much more secure AES encryption standard. But by default, Windows servers have continued to respond to RC4-based authentication requests and return an RC4-based response. The RC4 fallback has been a favorite weakness hackers have exploited to compromise enterprise networks. Use of RC4 played a <a href="https://arstechnica.com/security/2025/09/how-weak-passwords-and-other-failings-led-to-catastrophic-breach-of-ascension/">key role</a> in last year&#8217;s breach of health giant Ascension. The breach caused life-threatening disruptions at 140 hospitals and put the medical records of 5.6 million patients into the hands of the attackers. US Senator Ron Wyden (D-Ore.) <a href="https://arstechnica.com/security/2025/09/senator-blasts-microsoft-for-making-default-windows-vulnerable-to-kerberoasting">in September</a> called on the Federal Trade Commission to investigate Microsoft for &#8220;gross cybersecurity negligence,&#8221; citing the continued default support for RC4.</p>
+<p>Last week, Microsoft <a href="https://www.microsoft.com/en-us/windows-server/blog/2025/12/03/beyond-rc4-for-windows-authentication">said</a> it was finally deprecating RC4 and cited its susceptibility to Kerberoasting, the form of attack, known since 2014, that was the root cause of the initial intrusion into Ascension&#8217;s network.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>&#8220;By mid-2026, we will be updating domain controller defaults for the Kerberos Key Distribution Center (KDC) on Windows Server 2008 and later to only allow AES-SHA1 encryption,&#8221; Matthew Palko, a Microsoft principal program manager, wrote. &#8220;RC4 will be disabled by default and only used if a domain administrator explicitly configures an account or the KDC to use it.&#8221;</p>
+<p>AES-SHA1, an algorithm widely believed to be secure, has been available in all supported Windows versions since the roll out of Windows Server 2008. Since then, Windows clients by default authenticated using the much more secure standard, and servers responded using the same. But, Windows servers, also by default, respond to RC4-based authentication requests and returned an RC4-based response, leaving networks open to Kerberoasting.</p>
+<p>Following next year&#8217;s change, RC4 authentication will no longer function unless administrators perform the extra work to allow it. In the meantime, Palko said, it&#8217;s crucial that admins identify any systems inside their networks that rely on the cipher. Despite the known vulnerabilities, RC4 remains the sole means of some third-party legacy systems for authenticating to Windows networks. These systems can often go overlooked in networks even though they are required for crucial functions.</p>
+<p>To streamline the identification of such systems, Microsoft is making several tools available. One is an update to KDC logs that will track both requests and responses that systems make using RC4 when performing requests through Kerberos. Kerberos is an industry-wide authentication protocol for verifying the identities of users and services over a non-secure network. It&#8217;s the sole means for mutual authentication to Active Directory, which hackers attacking Windows networks widely consider a Holy Grail because of the control they gain once it has been compromised.</p>
+<p>Microsoft is also introducing new PowerShell scripts to sift through security event logs to more easily pinpoint problematic RC4 usage.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Microsoft said it has steadily worked over the past decade to deprecate RC4, but that the task wasn&#8217;t easy.</p>
+<h2>No salt, no iteration? Really?</h2>
+<p>&#8220;The problem though is that it&#8217;s hard to kill off a cryptographic algorithm that is present in every OS that&#8217;s shipped for the last 25 years and was the default algorithm for so long, Steve Syfuhs, who runs Microsoft&#8217;s Windows Authentication team, <a href="https://bsky.app/profile/syfuhs.net/post/3m7npxlaiy22r">wrote</a> on Bluesky. &#8220;See,&#8221; he continued, &#8220;the problem is not that the algorithm exists. The problem is how the algorithm is chosen, and the rules governing that spanned 20 years of code changes.&#8221;</p>
+<p>Over those two decades, developers discovered a raft of critical RC4 vulnerabilities that required &#8220;surgical&#8221; fixes. Microsoft considered deprecating RC4 by this year, but ultimately &#8220;punted&#8221; after discovering vulnerabilities that required still more fixes. During that time Microsoft introduced some &#8220;minor improvements&#8221; that favored the use of AES, and as a result, usage dropped by &#8220;orders of magnitude.&#8221;</p>
+<p>&#8220;Within a year we had observed RC4 usage drop to basically nil. This is not a bad thing and in fact gave us a lot more flexibility to kill it outright because we knew it genuinely wasn&#8217;t going to break folks, because folks weren&#8217;t using it.&#8221;</p>
+<p>Syfuhs went on to document additional challenges Microsoft encountered and the approach it took to solving them.</p>
+<p>While RC4 has known cipher weaknesses that make it insecure, Kerberoasting exploits a separate weakness. As implemented in Active Directory authentication, it uses no cryptographic salt and a single round of the MD4 hashing function. Salt is a technique that adds random input to each password before it is hashed. That requires hackers to invest considerable time and resources into cracking the hash. MD4, meanwhile, is a fast algorithm that requires modest resources. Microsoft&#8217;s implementation of AES-SHA1 is much slower and iterates the hash to further slow down cracking efforts. Taken together, AES-Sha1-hashed passwords require about 1,000 times the time and resources to be cracked.</p>
+<p>Windows admins would do well to audit their networks for any usage of RC4. Given its wide adoption and continued use industry-wide, it may still be active, much to the surprise and chagrin of those charged with defending against hackers.</p>
+
+
+          
+                  
+
+                  
+          </div>
