@@ -1,0 +1,25 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144025/closures-as-win32-window-procedures/
+date: '2025-12-16T15:27:34'
+excerpt: Back in 2017 I wrote about a technique for creating closures in C using JIT-compiled
+  wrapper. It’s neat, though rarely necessary in real programs, so I don’t think about
+  it often. I applied it to qsort, which sadly accepts no context pointer. More practical
+  would be working around insufficient custom allocator interfaces, to create allocation
+  functions at run-time bound to a particular allocation region. I’ve learned a lot
+  since I last wrote about this subject, and a recent article had me thinking about
+  it again, and how I could do better than before. In this article I will enhance
+  Win32 window procedure callbacks with a fifth argument, allowing us to more directly
+  pass extra context. I’m using w64devkit on x64, but the everything here should work
+  out-of-the-box with any x64 toolchain that speaks GNU assembly. ↫ Chris Wellons
+  Sometimes, people get upset when I mention something is out of my wheelhouse, so
+  just for those people, here&#8217;s an article well outside of my wheelhouse. I
+  choose honesty over faking confidence.
+image: null
+source: osnews
+tags:
+- General Development
+title: Closures as Win32 window procedures
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Back in 2017 I wrote <a href="https://nullprogram.com/blog/2017/01/08/">about a technique for creating closures in C</a> using <a href="https://nullprogram.com/blog/2015/03/19/">JIT-compiled</a> wrapper. It&#8217;s neat, though rarely necessary in real programs, so I don&#8217;t think about it often. I applied it to <code>qsort</code>, which <a href="https://nullprogram.com/blog/2023/02/11/">sadly</a> accepts no context pointer. More practical would be working around <a href="https://nullprogram.com/blog/2023/12/17/">insufficient custom allocator interfaces</a>, to create allocation functions at run-time bound to a particular allocation region. I&#8217;ve learned a lot since I last wrote about this subject, and <a href="https://lowkpro.com/blog/creating-c-closures-from-lua-closures.html">a recent article</a> had me thinking about it again, and how I could do better than before. In this article I will enhance Win32 window procedure callbacks with a fifth argument, allowing us to more directly pass extra context. I&#8217;m using <a href="https://github.com/skeeto/w64devkit">w64devkit</a> on x64, but the everything here should work out-of-the-box with any x64 toolchain that speaks GNU assembly.</p>
+<a href="https://nullprogram.com/blog/2025/12/12/">&#8619; Chris Wellons</a></blockquote><p>Sometimes, people get upset when I mention something is out of my wheelhouse, so just for those people, here&#8217;s an article well outside of my wheelhouse. I choose honesty over faking confidence.</p></div>
