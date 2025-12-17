@@ -1,0 +1,17 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2025/12/17/meglio-non-usare-tutte-cifre-diverse-per-il-pin/
+date: '2025-12-17T03:51:43'
+excerpt: Almeno se avete paura che qualcuno sappia quali cifre avete digitato
+image: assets/media/pEWu1mtq0ALKhYsB8fQTSw-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- '2025'
+- matematica_light
+title: Meglio non usare tutte cifre diverse per il pin
+---
+<div>
+			<p>Supponete di avere un pin di quattro cifre su un telefono senza riconoscimento biometrico. Se qualcuno vi rubasse il telefono, potrebbe vedere in quali punti dello schermo ci sono pi&#249; ditate e intuire che quei punti corrispondono alle cifre del pin. Partiamo quindi dall&#8217;ipotesi che un Cattivo sappia che noi abbiamo un pin di quattro cifre e sappia anche quali cifre abbiamo usato. Quante possibilit&#224; diverse ci sono? Beh, se tutte e quattro le cifre sono diverse, la risposta &#232; semplice: sono 4!, cio&#232; 24. Un po&#8217; poche, conviene usare un pin pi&#249; lungo. Ma attenzione: cosa succede se si ripete una cifra e quindi se ne usano solo tre? Si possono fare i conti a mano. Supponiamo che si usino le cifre 1, 2, 3 (quali siano &#232; indifferente, il Cattivo conosce il terzetto) e che ci siano due 1. Abbiamo 12 combinazioni: 1123, 1132,  1213, 1312, 1231, 1321, 2113, 2131, 2311, 3112, 3121, 3211; in tutto 12 possibilit&#224;. Ma la cifra ripetuta potrebbe essere anche il 2 oppure il 3, e questo il Cattivo non lo pu&#242; sapere; quindi in totale le combinazioni possibili sono 36. Sempre poche, ma un po&#8217; di pi&#249;. Per la cronaca: non conviene ridurre il numero di cifre: se ne usiamo due abbiamo 14 possibilit&#224;, perch&#233; ci sono 16 numeri binari di quattro cifre ma dobbiamo eliminare le combinazioni 1111 e 2222, e con una cifra sola abbiamo evidentemente una sola possibilit&#224;.</p>
+<p>Gli iPhone ora richiedono sei caratteri come lunghezza minima di un pin; cosa conviene fare in questo caso? Con sei cifre diverse abbiamo sicuramente 6! = 720 combinazioni; con cinque cifre diverse e una ripetuta, per ciascuna cifra ripetuta abbiamo 6!/2! = 360 combinazioni, quindi in tutto ben 1800. I conti poi si fanno pi&#249; complicati, ma per fortuna <a href="https://oeis.org/A090582">OEIS viene in nostro aiuto</a>. Abbiamo cos&#236; che per quattro cifre distinte le combinazioni sono 1560, mentre per 3, 2, 1 sono rispettivamente 540, 62, 1. Occhei, gli ultimi due casi erano facili come i primi due. Per curiosit&#224;, con 7 cifre conviene ripeterne due, cos&#236; come con 8 e 9 cifre. Potrebbe essere interessante studiare al crescere del numero di caratteri possibili (le cifre finiscono troppo presto) qual &#232; il numero di caratteri da ripetere per ottenere il massimo numero di combinazioni. Sono troppo pigro per mettermi a programmare (non basta excel, qui ci vogliono programmi che usino numeri interi di un numero qualunque di cifre) per ottenere una stima precisa, ma non mi stupirei pi&#249; di tanto se la risposta per <i>n</i> caratteri fosse dalle parti di <i>n</i>/e &#8230;</p>
+ 
+  					</div>
