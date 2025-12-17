@@ -1,0 +1,100 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/12/browser-extensions-with-8-million-users-collect-extended-ai-conversations/
+date: '2025-12-17T15:25:25'
+excerpt: The extensions, available for Chromium browsers, harvest full AI conversations
+  over months.
+image: assets/media/v8wpv73z4CsgxjDdIg19Ow-kRiLaAitcRkBA2azgsCcgQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Security
+- ai bot
+- browser extensions
+- chrome
+- EDGE
+- privacy
+title: Browser extensions with 8 million users collect extended AI conversations
+---
+<div>
+                      
+                      
+           
+<p>Browser extensions with more than 8 million installs are harvesting complete and extended conversations from users&#8217; AI conversations and selling them for marketing purposes, according to data collected from the Google and Microsoft pages hosting them.</p>
+<p><a href="https://www.koi.ai/blog/urban-vpn-browser-extension-ai-conversations-data-collection">Security firm Koi discovered</a> the eight extensions, which as of late Tuesday night remained available in both Google&#8217;s and Microsoft&#8217;s extension stores. Seven of them carry &#8220;Featured&#8221; badges, which are endorsements meant to signal that the companies have determined the extensions meet their quality standards. The free extensions provide functions such as VPN routing to safeguard online privacy and ad blocking for ad-free browsing. All provide assurances that user data remains anonymous and isn&#8217;t shared for purposes other than their described use.</p>
+<h2>A gold mine for marketers and data brokers</h2>
+<p>An examination of the extensions&#8217; underlying code tells a much more complicated story. Each contains eight of what Koi calls &#8220;executor&#8221; scripts, with each being unique for ChatGPT, Claude, Gemini, and five other leading AI chat platforms. The scripts are injected into webpages anytime the user visits one of these platforms. From there, the scripts override browsers&#8217; built-in functions for making network requests and receiving responses.</p>
+ 
+
+<p>As a result, all interaction between the browser and the AI bots is routed not by the legitimate browser APIs&#8212;in this case fetch() and HttpRequest&#8212;but through the executor script. The extensions eventually compress the data and send it to endpoints belonging to the extension maker.</p>
+<p>&#8220;By overriding the [browser APIs], the extension inserts itself into that flow and captures a copy of everything before the page even displays it,&#8221; Koi CTO Idan Dardikman wrote in an email. &#8220;The consequence: The extension sees your complete conversation in raw form&#8212;your prompts, the AI&#8217;s responses, timestamps, everything&#8212;and sends a copy to their servers.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Besides ChatGPT, Claude, and Gemini, the extensions harvest all conversations from Copilot, Perplexity, DeepSeek, Grok, and Meta AI. Koi said the full description of the data captured includes:</p>
+<ul>
+<li><span>Every prompt a user sends to the AI</span></li>
+<li><span>Every response received</span></li>
+<li><span>Conversation identifiers and timestamps</span></li>
+<li><span>Session metadata</span></li>
+<li><span>The specific AI platform and model used</span></li>
+</ul>
+<p>The executor script runs independently from the VPN networking, ad blocking, or other core functionality. That means that even when a user toggles off VPN networking, AI protection, ad blocking, or other functions, the conversation collection continues. The only way to stop the harvesting is to disable the extension in the browser settings or to uninstall it.</p>
+<p>Koi said it first discovered the conversation harvesting in <a href="https://chromewebstore.google.com/detail/urban-vpn-proxy/eppiocemhmnlbhjplcgkofciiegomcon">Urban VPN Proxy</a>, a VPN routing extension that lists &#8220;AI protection&#8221; as one of its benefits. The data collection began in early July with the release of version 5.5.0.</p>
+<p>&#8220;Anyone who used ChatGPT, Claude, Gemini, or the other targeted platforms while Urban VPN was installed after July 9, 2025 should assume those conversations are now on Urban VPN&#8217;s servers and have been shared with third parties,&#8221; the company said. &#8220;Medical questions, financial details, proprietary code, personal dilemmas&#8212;all of it, sold for &#8216;marketing analytics purposes.'&#8221;</p>
+<p>Following that discovery, the security firm uncovered seven additional extensions with identical AI harvesting functionality. Four of the extensions are available in the Chrome Web Store. The other four are on the Edge add-ons page. Collectively, they have been installed more than 8 million times.</p>
+<p>They are:</p>
+<p>Chrome Store</p>
+<ul>
+<li><span>Urban VPN Proxy: 6 million users</span></li>
+<li><span>1ClickVPN Proxy: 600,000 users</span></li>
+<li><span>Urban Browser Guard: 40,000 users</span></li>
+<li><span>Urban Ad Blocker: 10,000 users</span></li>
+</ul>
+<p>Edge Add-ons:</p>
+<ul>
+<li><span>Urban VPN Proxy: 1,32 million users</span></li>
+<li><span>1ClickVPN Proxy: 36,459 users</span></li>
+<li><span>Urban Browser Guard &#8211; 12,624 users</span></li>
+<li><span>Urban Ad Blocker &#8211; 6,476 users</span></li>
+</ul>
+ 
+<h2>Read the fine print</h2>
+<p>The extensions come with conflicting messages about how they handle bot conversations, which often contain deeply personal information about users&#8217; physical and mental health, finances, personal relationships, and other sensitive information that could be a gold mine for marketers and data brokers. The <a href="https://chromewebstore.google.com/detail/urban-vpn-proxy/eppiocemhmnlbhjplcgkofciiegomcon">Urban VPN Proxy</a> in the Chrome Web Store, for instance, lists &#8220;AI protection&#8221; as a benefit. It goes on to say:</p>
+
+          
+                  
+
+              
+          
+          
+<blockquote><p>Our VPN provides added security features to help shield your browsing experience from phishing attempts, malware, intrusive ads and AI protection which checks prompts for personal data (like an email or phone number), checks AI chat responses for suspicious or unsafe links and displays a warning before click or submit your prompt.</p></blockquote>
+<p>On the <a href="https://chromewebstore.google.com/detail/eppiocemhmnlbhjplcgkofciiegomcon/privacy">privacy policy</a> for the extension, Google says the developer has declared that user data isn&#8217;t sold to third parties outside of <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use/">approved use cases</a> and won&#8217;t be &#8220;used or transferred for purposes that are unrelated to the item&#8217;s core functionality.&#8221; The page goes on to list the personal data handled as location, web history, and website content.</p>
+<p>Koi said that a consent prompt that the extensions display during setup notifies the user that they process &#8220;ChatAI communication,&#8221; &#8220;pages you visit,&#8221; and &#8220;security signals.&#8221; The notification goes on to say that the data is processed to &#8220;provide these protections,&#8221; which presumably means the core functions such as VPN routing or ad blocking.</p>
+ 
+<p>The only explicit mention of AI conversations being harvested is in legalese buried in the privacy policy, such as <a href="https://www.urban-vpn.com/about-us/privacy/">this</a> 6,000-word one for Urban VPN Proxy, posted on each extension website. There, it says that the extension will &#8220;collect the prompts and outputs queried by the End-User or generated by the AI chat provider, as applicable.&#8221; It goes on to say that the extension developer will &#8220;disclose the AI prompts for marketing analytics purposes.&#8221;</p>
+<p>All eight extensions and the privacy policies covering them are developed and written by <a href="https://www.urbancybersec.com/about-us/">Urban Cyber Security</a>, a company that says its apps and extensions are used by 100 million people. The policies say the extensions share &#8220;Web Browsing Data&#8221; with &#8220;our affiliated company,&#8221; which is listed as both BiScience and B.I Science. The affiliated company &#8220;uses this raw data and creates insights which are commercially used and shared with Business Partners.&#8221; The policy goes on to refer users to the <a href="https://www.biscience.com/privacy/">BiScience privacy policy</a>. BiScience, whose privacy practices have been <a href="https://palant.info/2025/01/13/biscience-collecting-browsing-history-under-false-pretenses/">scrutinized before</a>, says its services &#8220;transform enormous volumes of digital signals into clear, actionable market intelligence.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>It&#8217;s hard to fathom how both Google and Microsoft would allow such extensions onto their platforms at all, let alone go out of their way to endorse seven of them with a featured badge. Neither company returned emails asking how they decide which extensions qualify for such a distinction, if they have plans to stop making them available to Chrome and Edge users, or why the privacy policies are so unclear to normal users.</p>
+<p>Messages sent to both individual extension developers and Urban Cyber Security went unanswered. BiScience provides no email. A call to the company&#8217;s New York office was answered by someone who said they were in Israel and to call back during normal business hours in that country.</p>
+<p>Koi&#8217;s discovery is the latest cautionary tale illustrating the growing perils of being online. It&#8217;s questionable in the first place whether people should trust their most intimate secrets and sensitive business information to AI chatbots, which come with no HIPAA assurances, attorney-client privilege, or expectations of privacy. Yet increasingly, that&#8217;s exactly what AI companies are encouraging, and users, it seems, are more than willing to comply.</p>
+<p>Compounding the risk is the rush to install free apps and extensions&#8212;particularly those from little-known developers and providing at best minimal benefits&#8212;on devices storing and transmitting these chats. Taken together, they&#8217;re a recipe for disaster, and that&#8217;s exactly what we have here.</p>
+
+
+          
+                  
+
+                  
+          </div>
