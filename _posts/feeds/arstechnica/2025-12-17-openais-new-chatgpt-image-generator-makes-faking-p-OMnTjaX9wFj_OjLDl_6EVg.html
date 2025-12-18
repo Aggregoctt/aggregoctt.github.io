@@ -1,0 +1,85 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2025/12/openais-new-chatgpt-image-generator-makes-faking-photos-easy/
+date: '2025-12-17T22:22:33'
+excerpt: New GPT Image 1.5 allows more detailed conversational image editing, for
+  better or worse.
+image: assets/media/OMnTjaX9wFj_OjLDl_6EVg-zillBO3QLZOFKCKYz_Tgfg.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI image generator
+- AI image generators
+- API
+- ChatGPT
+- deepfakes
+- generative ai
+- google
+- image synthesis
+- machine learning
+- multimodal AI
+- openai
+title: OpenAI’s new ChatGPT image generator makes faking photos easy
+---
+<div>
+                      
+                      
+           
+<p>For most of photography&#8217;s <a href="https://en.wikipedia.org/wiki/View_from_the_Window_at_Le_Gras">roughly 200-year</a> history, altering a photo convincingly required either a darkroom, some Photoshop expertise, or, at minimum, a steady hand with scissors and glue. On Tuesday, OpenAI <a href="https://openai.com/index/new-chatgpt-images-is-here/">released a tool</a> that reduces the process to typing a sentence.</p>
+<p>It&#8217;s not the first company to do so. While OpenAI had a conversational image-editing model in the works since <a href="https://arstechnica.com/information-technology/2024/05/chatgpt-4o-lets-you-have-real-time-audio-video-conversations-with-emotional-chatbot/">GPT-4o</a> in 2024, Google beat OpenAI to market <a href="https://arstechnica.com/ai/2025/03/farewell-photoshop-googles-new-ai-lets-you-edit-images-by-asking/">in March</a> with a public prototype, then refined it to a popular model called <a href="https://arstechnica.com/ai/2025/08/google-improves-gemini-ai-image-editing-with-nano-banana-model/">Nano Banana</a> image model (and <a href="https://arstechnica.com/google/2025/11/google-launches-nano-banana-pro-image-model-adds-ai-image-detection-in-gemini-app/">Nano Banana Pro</a>). The enthusiastic response to Google&#8217;s image-editing model in the AI community <a href="https://arstechnica.com/ai/2025/12/openai-ceo-declares-code-red-as-gemini-gains-200-million-users-in-3-months/">got OpenAI&#8217;s attention</a>.</p>
+<p>OpenAI&#8217;s new <a href="https://openai.com/index/new-chatgpt-images-is-here/">GPT Image 1.5</a> is an AI image synthesis model that reportedly generates images up to four times faster than its predecessor and costs about 20 percent less through the API. The model rolled out to all ChatGPT users on Tuesday and represents <a href="https://arstechnica.com/ai/2025/03/farewell-photoshop-googles-new-ai-lets-you-edit-images-by-asking/">another step</a> toward making photorealistic image manipulation a casual process that requires no particular visual skills.</p>
+ 
+
+<p>GPT Image 1.5 is notable because it&#8217;s a &#8220;native multimodal&#8221; image model, meaning image generation happens inside the same neural network that processes language prompts. (In contrast, <a href="https://arstechnica.com/information-technology/2023/11/from-toy-to-tool-dall-e-3-is-a-wake-up-call-for-visual-artists-and-the-rest-of-us/">DALL-E 3</a>, an earlier OpenAI image generator previously built into ChatGPT, used a different technique called diffusion to generate images.)</p>
+<p>This newer type of model, which we <a href="https://arstechnica.com/ai/2025/03/farewell-photoshop-googles-new-ai-lets-you-edit-images-by-asking/">covered</a> in more detail in March, treats images and text as the same kind of thing: chunks of data called &#8220;tokens&#8221; to be predicted, patterns to be completed. If you upload a photo of your dad and type &#8220;put him in a tuxedo at a wedding,&#8221; the model processes your words and the image pixels in a unified space, then outputs new pixels the same way it would output the next word in a sentence.</p>
+<p>Using this technique, GPT Image 1.5 can more easily alter visual reality than earlier AI image models, changing someone&#8217;s pose or position, or rendering a scene from a slightly different angle, with varying degrees of success. It can also remove objects, change visual styles, adjust clothing, and refine specific areas while preserving facial likeness across successive edits. You can converse with the AI model about a photograph, refining and revising, the same way you might workshop a draft of an email in ChatGPT.</p>
+
+          
+                       
+                   
+                  
+
+              
+          
+          
+<p>Fidji Simo, OpenAI&#8217;s CEO of applications, <a href="https://fidjisimo.substack.com/p/more-dynamic-ai-experiences">wrote</a> in a blog post that ChatGPT&#8217;s chat interface was never designed for visual work. &#8220;Creating and editing images is a different kind of task and deserves a space built for visuals,&#8221; Simo wrote. To that end, OpenAI introduced a dedicated image creation space in ChatGPT&#8217;s sidebar with preset filters and trending prompts.</p>
+ 
+
+<p>The release&#8217;s timing seems like a <a href="https://arstechnica.com/ai/2025/12/openai-ceo-declares-code-red-as-gemini-gains-200-million-users-in-3-months/">direct response</a> to Google&#8217;s technical gains in AI, including a massive growth in chatbot user base. In particular, Google&#8217;s <a href="https://arstechnica.com/ai/2025/08/google-improves-gemini-ai-image-editing-with-nano-banana-model/">Nano Banana</a> image model (and <a href="https://arstechnica.com/google/2025/11/google-launches-nano-banana-pro-image-model-adds-ai-image-detection-in-gemini-app/">Nano Banana Pro</a>) became popular on social media after its August release, thanks to its ability to render text relatively clearly and preserve faces consistently across edits.</p>
+<p>OpenAI&#8217;s <a href="https://arstechnica.com/ai/2025/03/openais-new-ai-image-generator-is-potent-and-bound-to-provoke/">previous</a> token-based image synthesis model could make some targeted edits based on conversational prompts, but it often changed facial details and other elements that users might have wanted to keep. GPT Image 1.5 appears designed to match the editing features that Google already shipped. But if you happen to prefer the older ChatGPT image generator, OpenAI says the previous version will remain available as a custom GPT (for now) for users who prefer it.</p>
+ 
+<h2>The friction keeps dropping</h2>
+<p>GPT Image 1.5 is not perfect. In our brief testing, it didn&#8217;t always follow prompting directions very well. But when it does work, the results seem more convincing and detailed than OpenAI&#8217;s previous multimodal image model. For a more detailed comparison, a software consultant named Shaun Pedicini has <a href="https://genai-showdown.specr.net/image-editing">put together</a> an instructive site (&#8220;GenAI Image Editing Showdown&#8221;) that conducts A/B testing of various AI image models.</p>
+<p>And while we&#8217;ve written about this <a href="https://arstechnica.com/information-technology/2022/09/with-stable-diffusion-you-may-never-believe-what-you-see-online-again/">a lot</a> over the past few years, it&#8217;s probably worth repeating that barriers to realistic photo editing and manipulation keep dropping. This kind of seamless, realistic, effortless AI image manipulation may prompt (pun intended) a cultural recalibration of what visual images mean to society. It can also feel a little scary, for someone who grew up in an earlier media era, to see yourself put into situations that didn&#8217;t really happen.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+ 
+
+<p>For most of photography&#8217;s history, a convincing forgery required skill, time, and resources. Those barriers made fakery rare enough that we could treat many photographs as a reasonable proxy for truth, although they could be manipulated (and <a href="https://en.wikipedia.org/wiki/Adobe_Photoshop">often were</a>). That era has <a href="https://arstechnica.com/information-technology/2024/09/due-to-ai-fakes-the-deep-doubt-era-is-here/">ended</a> due to AI, but GPT Image 1.5 seems to remove yet more of the remaining friction.</p>
+<p>The capability to preserve facial likeness across edits has obvious utility for legitimate photo editing and equally obvious potential for misuse. Image generators have already been <a href="https://arstechnica.com/tech-policy/2023/11/deepfake-nudes-of-high-schoolers-spark-police-probe-in-nj/">used</a> to create non-consensual intimate imagery and <a href="https://arstechnica.com/tech-policy/2024/02/deepfake-scammer-walks-off-with-25-million-in-first-of-its-kind-ai-heist/">impersonate</a> real people.</p>
+ 
+
+<p>With those hazards in mind, OpenAI&#8217;s image generators have always included a filter that usually blocks sexual or violent outputs. But it&#8217;s still possible to create <a href="https://arstechnica.com/information-technology/2022/12/thanks-to-ai-its-probably-time-to-take-your-photos-off-the-internet/">embarrassing images</a> of people without their consent (even though it violates OpenAI&#8217;s terms of service) while avoiding those topics. The company says generated images include <a href="https://arstechnica.com/information-technology/2024/09/google-seeks-authenticity-in-the-age-of-ai-with-new-content-labeling-system/">C2PA metadata</a> identifying them as AI-created, though that data can be stripped by resaving the file.</p>
+<p>Speaking of fakes, text rendering has been a long-standing weakness in image generators that has <a href="https://arstechnica.com/information-technology/2024/09/my-dead-father-is-writing-me-notes-again/">slowly gotten better</a>. By prompting some older image synthesis models to create a sign or poster with specific words, the results often come back garbled or misspelled.</p>
+<p>OpenAI says GPT Image 1.5 can handle denser and smaller text. The company&#8217;s blog post includes a demonstration where the model generated an image of a newspaper with a multi-paragraph article, complete with headlines, a byline, benchmark tables, and body text that remains legible at the paragraph level. Whether this holds up across varied prompts will require broader testing.</p>
+ 
+
+<p>While the newspaper in the example looks fake now, it&#8217;s another step toward the <a href="https://www.fastcompany.com/90549441/how-to-prevent-deepfakes">potential erosion</a> of the public&#8217;s perception of the pre-Internet historical record as image synthesis becomes more realistic.</p>
+<p>OpenAI acknowledged in its blog post that the new model still has problems, including limited support for certain drawing styles and mistakes when generating images that require scientific accuracy. But they think it will get better over time. &#8220;We believe we&#8217;re still at the beginning of what image generation can enable,&#8221; the company wrote. And if the past three years of <a href="https://arstechnica.com/information-technology/2024/01/a-crazy-update-midjourney-v6-upgrade-heaps-on-ai-generated-detail/">progress</a> in image synthesis are any indication, they may be correct.</p>
+
+
+          
+                   
+                   
+                   
+                  
+
+                  
+          </div>
