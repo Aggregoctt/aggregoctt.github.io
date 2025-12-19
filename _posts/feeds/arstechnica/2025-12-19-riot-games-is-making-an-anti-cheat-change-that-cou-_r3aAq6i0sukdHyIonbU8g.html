@@ -1,0 +1,65 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2025/12/some-valorant-players-need-to-update-their-pc-bios-to-keep-anti-cheat-software-happy/
+date: '2025-12-19T20:27:36'
+excerpt: BIOS checks will only affect a limited subset of <em>Valorant</em> players
+  for now.
+image: assets/media/_r3aAq6i0sukdHyIonbU8g-70quBpilKpWVi8KyujtbGA.jpeg
+source: arstechnica
+tags:
+- Gaming
+- Tech
+- AMD
+- anti-cheat
+- Intel
+- Riot games
+- valorant
+- Vanguard
+title: Riot Games is making an anti-cheat change that could be rough on older PCs
+---
+<div>
+                      
+                      
+           
+<p>At this point, most competitive online multiplayer games on the PC come with some kind of <a href="https://arstechnica.com/gaming/2020/04/ring-0-of-fire-does-riot-games-new-anti-cheat-measure-go-too-far/">kernel-level anti-cheat software</a>. <a href="https://arstechnica.com/gaming/2022/09/eas-new-anti-cheat-tools-dip-into-the-dreaded-kernel-mode/">As we&#8217;ve written before</a>, this is software that runs with more elevated privileges than most other apps and games you run on your PC, allowing it to load in earlier and detect advanced methods of cheating. More recently, anti-cheat software has started to require more Windows security features like <a href="https://arstechnica.com/gaming/2025/08/battlefield-6-dev-apologizes-for-requiring-secure-boot-to-power-anti-cheat-tools/">Secure Boot</a>, a TPM 2.0 module, and <a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?tabs=security">virtualization-based memory integrity protection</a>.</p>
+<p>Riot Games, best known for titles like&#160;Valorant and&#160;League of Legends and the Vanguard anti-cheat software, has often been one of the earliest to implement new anti-cheat requirements. There&#8217;s already <a href="https://support-valorant.riotgames.com/hc/en-us/articles/22291331362067-Vanguard-Restrictions">a long list of checks</a> that systems need to clear before they&#8217;ll be allowed to play Riot&#8217;s games online, and now the studio is announcing <a href="https://www.riotgames.com/en/news/vanguard-security-update-motherboard">a new one</a>: a BIOS update requirement that will be imposed on &#8220;certain players&#8221; following <a href="https://www.kb.cert.org/vuls/id/382314">Riot&#8217;s discovery of a UEFI bug</a> that could allow especially dedicated and motivated cheaters to circumvent certain memory protections.</p>
+<p>In short, the bug affects the input-output memory management unit (IOMMU) &#8220;on some UEFI-based motherboards from multiple vendors.&#8221; One feature of the IOMMU is to protect system memory from direct access during boot by external hardware devices, which otherwise might manipulate the contents of your PC&#8217;s memory in ways that could enable cheating.</p>
+<p>The patch for these security vulnerabilities (CVE-2025-11901,&#160; CVE-2025&#8209;14302, CVE-2025-14303, and CVE-2025-14304) fixes a problem where this pre-boot direct memory access (DMA) protection could be disabled even if it was marked as enabled in the BIOS, creating a small window during the boot process where DMA devices could gain access to RAM.</p>
+<p>The relative obscurity and complexity of this hardware exploit means that Vanguard isn&#8217;t going to be enforcing these BIOS requirements on every single player of its games. For now, it will just apply to &#8220;restricted&#8221; players of Valorant whose systems, for one reason or another, are &#8220;too similar to cheaters who get around security features in order to become undetectable to Vanguard.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>But Riot says it&#8217;s considering rolling the BIOS requirement out to all players in Valorant&#8216;s highest competitive ranking tiers (Ascendant, Immortal, and Radiant), where there&#8217;s more to be gained from working around the anti-cheat software. And Riot anti-cheat analyst Mohamed Al-Sharifi says the same restrictions <a href="https://x.com/ItsGamerDoc/status/2001831378401530297">could be turned on</a> for&#160;League of Legends, though they aren&#8217;t currently. If users are blocked from playing by Vanguard, they&#8217;ll need to download and install the latest BIOS update for their motherboard before they&#8217;ll be allowed to launch the game.</p>
+ 
+<h2>Newer PCs are getting patched; older PCs might not be</h2>
+ 
+
+<p>The vulnerability is known to affect four of the largest PC motherboard makers: ASRock, Asus, Gigabyte, and MSI. All four have released updates for at least some of their newer motherboards, while other boards have updates coming later. According to <a href="https://www.kb.cert.org/vuls/id/382314">the vulnerability note</a>, it&#8217;s unclear whether systems from OEMs like Dell, Lenovo, Acer, or HP are affected.</p>
+<p><a href="https://www.asrock.com/support/Security.asp?iD=1">ASRock&#8217;s security bulletin</a> about the issue says it affects Intel boards based on the 500-, 600-, 700-, and 800-series chipsets; <a href="https://csr.msi.com/global/product-security-advisories">MSI</a> only lists the 600- and 700-series chipsets. <a href="https://www.asus.com/security-advisory/">Asus</a> is also missing the 800-series, but says the vulnerability affects boards based on even older 400-series Intel chipsets; <a href="https://www.gigabyte.com/Support/Security/2338">Gigabyte</a>, meanwhile, covers 600-through-800-series Intel chipsets, but is also the only vendor to mention patches for AMD&#8217;s 600- and 800-series chipsets (any motherboard with an AM5 socket, in short).</p>
+<p>Collectively, all of these chipsets cover Intel&#8217;s 10th-generation Core processors and newer, and AMD Ryzen 7000 series and newer.</p>
+<p>What&#8217;s unclear is whether the boards and chipsets that go unmentioned by each vendor aren&#8217;t getting a patch because they don&#8217;t need a patch, if they will be patched but they just aren&#8217;t being mentioned, or if they aren&#8217;t getting a patch at all. The bulletins at least suggest that 400- and 500-series Intel chipsets and 600- and 800-series AMD chipsets could be affected, but not all vendors have promised patches for them.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>Crucially, they also don&#8217;t mention support for AMD&#8217;s socket AM4 chipsets in the 300-through-500 chipset families, or Intel&#8217;s 2018-era 300-series chipsets. These boards support Intel&#8217;s 8th- and 9th-generation Core CPUs and AMD&#8217;s Ryzen 2000, 3000, and 5000 CPU families&#8212;all slightly older chips, but CPUs that are otherwise capable of supporting Windows 11 and <a href="https://support-valorant.riotgames.com/hc/en-us/articles/22291331362067-Vanguard-Restrictions">the standard list of security features</a> that Vanguard requires to do its thing.</p>
+<p>We bring this up because the prospect of BIOS-version-based anti-cheat checks raises the possibility that gamers on somewhat older systems could find themselves locked out of games with no recourse, if their system configuration is deemed suspicious or vulnerable and their motherboard or PC manufacturer isn&#8217;t offering an update.</p>
+<p>Practically speaking, this may not be an issue that affects many players. Even if the BIOS requirement is applied to all top-tier Valorant players, people playing these games at high levels are also usually people who upgrade their systems aggressively, seeking real and perceived competitive advantages that come with higher frame rates and less lag. But if these kinds of requirements creep down Valorant&#8217;s competitive ladder or if they become a more common requirement in other anti-cheat software, it could pose a problem for those with older or hand-me-down PCs.</p>
+<p>And while some people may be happy to have an excuse to buy a shiny, new upgrade, the fact is that PC upgrading is less rewarding and more difficult right now than it has been in the past. Recent CPU and GPU updates have provided <a href="https://arstechnica.com/gadgets/2024/08/amd-ryzen-9000-review-impressive-efficiency-with-bugs-and-so-so-speed-boosts/">relatively modest performance benefits</a>, and <a href="https://arstechnica.com/gadgets/2025/12/for-just-a-couple-of-months-in-the-middle-of-2025-it-was-an-ok-time-to-build-a-pc/">rolling shortages of GPUs, RAM, and other components</a> mean upgrading can get expensive pretty quickly; a motherboard upgrade frequently requires a CPU upgrade and/or a new RAM kit to go along with it. Anything that might force users to upgrade their hardware before they would otherwise want to is worth eyeing skeptically.</p>
+<p>We&#8217;ve contacted Riot, Intel, AMD, and multiple motherboard vendors for comment to determine whether these older boards are affected by the IOMMU bug&#160;and whether they&#8217;ll be patched. We&#8217;ll update the article if we receive a response.</p>
+
+
+          
+                  
+
+                  
+          </div>
