@@ -1,0 +1,105 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2025/12/how-do-ai-coding-agents-work-we-look-under-the-hood/
+date: '2025-12-24T12:00:27'
+excerpt: From compression tricks to multi-agent teamwork, here's what makes them tick.
+image: assets/media/BVe2cLVyGnbZEo_a-trWxA-ypw4Ibuz3ju2T_t9-0vp1w.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI coding
+- AI work
+- Anthropic
+- Claude Code
+- Codex
+- context windows
+- large language models
+- machine learning
+- openai
+- Programming
+- software development
+- vibe coding
+title: How AI coding agents work—and what to remember if you use them
+---
+<div>
+                      
+                      
+           
+<p>AI coding agents from OpenAI, Anthropic, and Google can now <a href="https://arstechnica.com/ai/2025/12/the-ars-technica-ai-coding-agent-test-minesweeper-edition/">work on</a> software projects <a href="https://arstechnica.com/ai/2025/09/anthropic-says-its-new-ai-model-maintained-focus-for-30-hours-on-multistep-tasks/">for hours</a> at a time, writing complete apps, running tests, and fixing bugs with human supervision. But these tools are not magic and can complicate rather than simplify a software project. Understanding how they work under the hood can help developers know when (and if) to use them, while avoiding common pitfalls.</p>
+<p>We&#8217;ll start with the basics: At the core of every AI coding agent is a technology called a large language model (LLM), which is a type of neural network trained on vast amounts of text data, including lots of programming code. It&#8217;s a pattern-matching machine that uses a prompt to &#8220;extract&#8221; compressed statistical representations of data it saw during training and provide a plausible continuation of that pattern as an output. In this extraction, an LLM can <a href="https://en.wikipedia.org/wiki/Interpolation">interpolate</a> across domains and concepts, resulting in some useful logical inferences when done well and <a href="https://arstechnica.com/information-technology/2023/04/why-ai-chatbots-are-the-ultimate-bs-machines-and-how-people-hope-to-fix-them/">confabulation errors</a> when done poorly.</p>
+<p>These base models are then further refined through techniques like fine-tuning on curated examples and reinforcement learning from human feedback (RLHF), which shape the model to follow instructions, use tools, and produce more useful outputs.</p>
+ 
+
+<p>Over the past few years, AI researchers have been probing LLMs&#8217; deficiencies and finding ways to work around them. One recent innovation was the <a href="https://arstechnica.com/ai/2025/06/with-the-launch-of-o3-pro-lets-talk-about-what-ai-reasoning-actually-does/">simulated reasoning model</a>, which generates context (extending the prompt) in the form of reasoning-style text that can help an LLM home in on a more accurate output. Another innovation was an application <a href="https://arstechnica.com/information-technology/2023/04/hype-grows-over-autonomous-ai-agents-that-loop-gpt-4-outputs/">called an &#8220;agent&#8221;</a> that links several LLMs together to perform tasks simultaneously and evaluate outputs.</p>
+<h2>How coding agents are structured</h2>
+<p>In that sense, each AI coding agent is a program wrapper that works with multiple LLMs. There is typically a &#8220;supervising&#8221; LLM that interprets tasks (prompts) from the human user and then assigns those tasks to parallel LLMs that can use software tools to execute the instructions. The supervising agent can interrupt tasks below it and evaluate the subtask results to see how a project is going. Anthropic&#8217;s engineering documentation <a href="https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk">describes</a> this pattern as &#8220;gather context, take action, verify work, repeat.&#8221;</p>
+
+          
+                       
+                   
+                  
+
+              
+          
+          
+<p>If run locally through a command-line interface (CLI), users give the agents conditional permission to write files on the local machine (code or whatever is needed), run exploratory commands (say, &#8220;ls&#8221; to list files in a directory), fetch websites (usually using &#8220;curl&#8221;), download software, or upload files to remote servers. There are lots of possibilities (and <a href="https://arstechnica.com/information-technology/2025/09/anthropics-new-claude-feature-can-leak-data-users-told-to-monitor-chats-closely/">potential dangers</a>) with this approach, so it needs to be used carefully.</p>
+<p>In contrast, when a user starts a task in the web-based agent like the web versions of Codex and Claude Code, the system <a href="https://developers.openai.com/codex/cloud/">provisions</a> a <a href="https://www.anthropic.com/engineering/claude-code-sandboxing">sandboxed</a> cloud container preloaded with the user&#8217;s code repository, where Codex can read and edit files, run commands (including test harnesses and linters), and execute code in isolation. Anthropic&#8217;s Claude Code uses operating system-level features to create filesystem and network boundaries within which the agent can work more freely.</p>
+ 
+<h2>The context problem</h2>
+<p>Every LLM has a short-term memory, so to speak, that limits the amount of data it can process before it &#8220;forgets&#8221; what it&#8217;s doing. This is called &#8220;context.&#8221; Every time you submit a response to the supervising agent, you are amending one gigantic prompt that includes the entire history of the conversation so far (and all the code generated, plus the simulated reasoning tokens the model uses to &#8220;think&#8221; more about a problem). The AI model then evaluates this prompt and produces an output. It&#8217;s a <a href="https://arstechnica.com/ai/2024/12/why-ai-language-models-choke-on-too-much-text/">very computationally expensive</a> process that increases quadratically with prompt size because LLMs process every token (chunk of data) <a href="https://en.wikipedia.org/wiki/Attention_(machine_learning)">against</a> every other token in the prompt.</p>
+<p>Anthropic&#8217;s engineering team <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">describes</a> context as a finite resource with diminishing returns. Studies have revealed what researchers call &#8220;context rot&#8221;: As the number of tokens in the context window increases, the model&#8217;s ability to accurately recall information decreases. Every new token depletes what the documentation calls an &#8220;attention budget.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>This context limit naturally limits the size of a codebase a LLM can process at one time, and if you feed the AI model lots of huge code files (which have to be re-evaluated by the LLM every time you send another response), it can burn up token or usage limits pretty quickly.</p>
+<h2>Tricks of the trade</h2>
+<p>To get around these limits, the creators of coding agents use several tricks. For example, AI models are fine-tuned to write code to outsource activities to other software tools. For example, they might write Python scripts to extract data from images or files rather than feeding the whole file through an LLM, which saves tokens and avoids inaccurate results.</p>
+<p>Anthropic&#8217;s documentation <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">notes</a> that Claude Code also uses this approach to perform complex data analysis over large databases, writing targeted queries and using Bash commands like &#8220;head&#8221; and &#8220;tail&#8221; to analyze large volumes of data without ever loading the full data objects into context.</p>
+<p>(In a way, these AI agents are guided but semi-autonomous tool-using programs that are a major extension of a concept we <a href="https://arstechnica.com/information-technology/2023/02/meta-develops-an-ai-language-bot-that-can-use-external-software-tools/">first saw</a> in early 2023.)</p>
+<p>Another major breakthrough in agents came from dynamic context management. Agents can do this in a few ways that are not fully disclosed in proprietary coding models, but we do know the most important technique they use: context compression.</p>
+ 
+
+<p>When a coding LLM nears its context limit, this technique compresses the context history by summarizing it, losing details in the process but shortening the history to key details. Anthropic&#8217;s documentation <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">describes</a> this &#8220;compaction&#8221; as distilling context contents in a high-fidelity manner, preserving key details like architectural decisions and unresolved bugs while discarding redundant tool outputs.</p>
+<p>This means the AI coding agents periodically &#8220;forget&#8221; a large portion of what they are doing every time this compression happens, but unlike older LLM-based systems, they aren&#8217;t completely clueless about what has transpired and can rapidly re-orient themselves by reading existing code, written notes left in files, change logs, and so on.</p>
+
+          
+                   
+                  
+
+              
+          
+          
+<p>Anthropic&#8217;s documentation <a href="https://www.anthropic.com/engineering/claude-code-best-practices">recommends</a> using CLAUDE.md files to document common bash commands, core files, utility functions, code style guidelines, and testing instructions. <a href="https://agents.md/">AGENTS.md</a>, now a multi-company standard, is another useful way of guiding agent actions in between context refreshes. These files act as external notes that let agents track progress across complex tasks while maintaining critical context that would otherwise be lost.</p>
+ 
+<p>For tasks requiring extended work, both companies employ multi-agent architectures. According to Anthropic&#8217;s research <a href="https://www.anthropic.com/engineering/multi-agent-research-system">documentation</a>, its system uses an &#8220;orchestrator-worker pattern&#8221; in which a lead agent coordinates the process while delegating to specialized subagents that operate in parallel. When a user submits a query, the lead agent analyzes it, develops a strategy, and spawns subagents to explore different aspects simultaneously. The subagents act as intelligent filters, returning only relevant information rather than their full context to the lead agent.</p>
+<p>The multi-agent approach burns through tokens rapidly. Anthropic&#8217;s documentation <a href="https://www.anthropic.com/engineering/multi-agent-research-system">notes</a> that agents typically use about four times more tokens than chatbot interactions, and multi-agent systems use about 15 times more tokens than chats. For economic viability, these systems require tasks where the value is high enough to justify the increased cost.</p>
+<h2>Best practices for humans</h2>
+<p>While using these agents is contentious in some programming circles, if you use one to code a project, knowing good software development practices helps to head off future problems. For example, it&#8217;s good to know about version control, making incremental backups, implementing one feature at a time, and testing it before moving on.</p>
+<p>What people call &#8220;<a href="https://arstechnica.com/ai/2025/03/is-vibe-coding-with-ai-gnarly-or-reckless-maybe-some-of-both/">vibe coding</a>&#8221;&#8212;creating AI-generated code without understanding what it&#8217;s doing&#8212;is clearly dangerous for production work. Shipping code you didn&#8217;t write yourself in a production environment is risky because it could introduce security issues or other bugs or begin gathering technical debt that could snowball over time.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Independent AI researcher Simon Willison recently <a href="https://simonwillison.net/2025/Dec/18/code-proven-to-work/">argued</a> that developers using coding agents still bear responsibility for proving their code works. &#8220;Almost anyone can prompt an LLM to generate a thousand-line patch and submit it for code review,&#8221; Willison wrote. &#8220;That&#8217;s no longer valuable. What&#8217;s valuable is contributing code that is proven to work.&#8221;</p>
+<p>In fact, human planning is key. Claude Code&#8217;s best practices documentation <a href="https://www.anthropic.com/engineering/claude-code-best-practices">recommends</a> a specific workflow for complex problems: First, ask the agent to read relevant files and explicitly tell it not to write any code yet, then ask it to make a plan. Without these research and planning steps, the documentation warns, Claude&#8217;s outputs tend to jump straight to coding a solution.</p>
+<p>Without planning, LLMs sometimes reach for quick solutions to satisfy a momentary objective that might break later if a project were expanded. So having some idea of what makes a good architecture for a modular program that can be expanded over time can help you guide the LLM to craft something more durable.</p>
+<p>As mentioned above, these agents aren&#8217;t perfect, and some people prefer not to use them at all. A randomized controlled trial <a href="https://arxiv.org/abs/2507.09089">published</a> by the nonprofit research organization METR in July 2025 found that experienced open-source developers actually took 19 percent longer to complete tasks when using AI tools, despite believing they were working faster. The study&#8217;s authors note several caveats: The developers were highly experienced with their codebases (averaging five years and 1,500 commits), the repositories were large and mature, and the models used (primarily Claude 3.5 and 3.7 Sonnet via Cursor) have since been superseded by more capable versions.</p>
+<p>Whether newer models would produce different results remains an open question, but the study suggests that AI coding tools may not always provide universal speed-ups, particularly for developers who already know their codebases well.</p>
+<p>Given these potential hazards, coding proof-of-concept demos and internal tools is probably the ideal use of coding agents right now. Since AI models have <a href="https://arstechnica.com/information-technology/2025/08/the-personhood-trap-how-ai-fakes-human-personality/">no actual agency</a> (despite being called agents) and are not people who can be held accountable for mistakes, human oversight is key.</p>
+
+
+          
+                  
+
+                  
+          </div>
