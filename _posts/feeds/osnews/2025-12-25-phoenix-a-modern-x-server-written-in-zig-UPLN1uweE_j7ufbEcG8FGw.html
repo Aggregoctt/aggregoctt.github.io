@@ -1,0 +1,32 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144068/phoenix-a-modern-x-server-written-in-zig/
+date: '2025-12-25T14:52:31'
+excerpt: We&#8217;ve got more X11-related news this day, the day of Xmas. Phoenix
+  is a new X server, written from scratch in Zig (not a fork of Xorg server). This
+  X server is designed to be a modern alternative to the Xorg server. ↫ Phoenix&#8217;
+  readme page Phoenix will only support a modern subset of the X11 protocol, focusing
+  on making sure modern applications from roughly the last 20 years or so work. It
+  also takes quite a few pages out of the Wayland playbook by not having a server
+  driver interface and by having a compositor included. On top of that, it will isolate
+  applications from each other, and won&#8217;t have a single framebuffer for all
+  displays, instead allowing different refresh rates for individual displays. The
+  project also intends to develop new standards to support things like per-monitor
+  DPI, among many other features. That&#8217;s a lot of features and capabilities
+  to promise for an X server, and much like Wayland, the way they aim to get there
+  is by effectively gutting traditional X and leaving a ton of cruft behind. The use
+  of Zig is also interesting, as it can catch some issues before they affect any users
+  thanks to Zig&#8217;s runtime safety option. At least it&#8217;s not yet another
+  thing written in Rust like every other project competing with an established project.
+  I think this look like an incredibly interesting project to keep an eye on, and
+  I hope more people join the effort. Competition and fresh, new ideas are good, especially
+  now that everything is gravitating towards Wayland &#8211; we need alternatives
+  to promote the sharing of ideas.
+image: null
+source: osnews
+tags:
+- Wayland
+title: 'Phoenix: a modern X server written in Zig'
+---
+<div><p>We&#8217;ve got more X11-related news this day, the day of <a href="https://en.wikipedia.org/wiki/Xmas#History">Xmas</a>.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Phoenix is a new X server, written from scratch in Zig (not a fork of Xorg server). This X server is designed to be a modern alternative to the Xorg server.</p>
+<a href="https://git.dec05eba.com/phoenix/about/">&#8619; Phoenix&#8217; readme page</a></blockquote><p>Phoenix will only support a modern subset of the X11 protocol, focusing on making sure modern applications from roughly the last 20 years or so work. It also takes quite a few pages out of the Wayland playbook by not having a server driver interface and by having a compositor included. On top of that, it will isolate applications from each other, and won&#8217;t have a single framebuffer for all displays, instead allowing different refresh rates for individual displays. The project also intends to develop new standards to support things like per-monitor DPI, among many other features.</p><p>That&#8217;s a lot of features and capabilities to promise for an X server, and much like Wayland, the way they aim to get there is by effectively gutting traditional X and leaving a ton of cruft behind. The use of Zig is also interesting, as it can catch some issues before they affect any users thanks to <a href="https://zig.guide/language-basics/runtime-safety/">Zig&#8217;s runtime safety option</a>. At least it&#8217;s not yet another thing written in Rust like every other project competing with an established project.</p><p>I think this look like an incredibly interesting project to keep an eye on, and I hope more people join the effort. Competition and fresh, new ideas are good, especially now that everything is gravitating towards Wayland &#8211; we need alternatives to promote the sharing of ideas.</p></div>
