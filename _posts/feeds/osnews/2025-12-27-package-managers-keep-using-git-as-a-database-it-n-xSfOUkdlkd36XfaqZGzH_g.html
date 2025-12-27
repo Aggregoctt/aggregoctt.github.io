@@ -1,0 +1,25 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144077/package-managers-keep-using-git-as-a-database-it-never-works-out/
+date: '2025-12-27T12:57:35'
+excerpt: If you’re building a package manager and git-as-index seems appealing, look
+  at Cargo, Homebrew, CocoaPods, vcpkg, Go. They all had to build workarounds as they
+  grew, causing pain for users and maintainers. The pull request workflow is nice.
+  The version history is nice. You will hit the same walls they did. ↫ Andrew Nesbitt
+  It&#8217;s wild to read some of these stories. I can&#8217;t believe CocoaPods had
+  16000 directories contained in a single directory, which is absolutely bananas when
+  you know how git actually works. Then there&#8217;s the issue that git is case-sensitive,
+  as any proper file system should be, which causes major headaches on Windows and
+  macOS, which are dumb and are case-insensitive. Even Windows&#8217; path length
+  limits, inherited from DOS, cause problems with git. There just so many problems
+  with using git for a package managers&#8217; database. The basic gist is that git
+  is not a database, and shouldn&#8217;t be used as such. It&#8217;s incredulous to
+  me that seasoned developers would opt for &#8220;solutions&#8221; like this.
+image: null
+source: osnews
+tags:
+- General Development
+title: Package managers keep using git as a database, it never works out
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>If you&#8217;re building a package manager and git-as-index seems appealing, look at Cargo, Homebrew, CocoaPods, vcpkg, Go. They all had to build workarounds as they grew, causing pain for users and maintainers. The pull request workflow is nice. The version history is nice. You will hit the same walls they did.</p>
+<a href="https://nesbitt.io/2025/12/24/package-managers-keep-using-git-as-a-database.html">&#8619; Andrew Nesbitt</a></blockquote><p>It&#8217;s wild to read some of these stories. I can&#8217;t believe CocoaPods had 16000 directories contained in a single directory, which is absolutely bananas when you know how git actually works. Then there&#8217;s the issue that git is case-sensitive, as any proper file system should be, which causes major headaches on Windows and macOS, which are dumb and are case-insensitive. Even Windows&#8217; path length limits, inherited from DOS, cause problems with git. There just so many problems with using git for a package managers&#8217; database.</p><p>The basic gist is that git is not a database, and shouldn&#8217;t be used as such. It&#8217;s incredulous to me that seasoned developers would opt for &#8220;solutions&#8221; like this.</p></div>
