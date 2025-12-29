@@ -1,0 +1,59 @@
+---
+author: John Timmer
+canonical_url: https://arstechnica.com/science/2025/12/researchers-make-neuromorphic-artificial-skin-for-robots/
+date: '2025-12-29T19:00:42'
+excerpt: Information from sensors is transmitted using neural-style activity spikes.
+image: assets/media/RVs9PU6FNhzjyJG0Ts2f8A-AhNm2lPs0x8B6hIctkpFMg.jpeg
+source: arstechnica
+tags:
+- Science
+- Computer science
+- neurobiology
+- Neuromorphic
+- Robotics
+- sensors
+title: Researchers make “neuromorphic” artificial skin for robots
+---
+<div>
+                      
+                      
+          <p>The nervous system does an astonishing job of tracking sensory information, and does so using signals that would drive many computer scientists insane: a noisy stream of activity spikes that may be transmitted to hundreds of additional neurons, where they are integrated with similar spike trains coming from still other neurons.</p>
+<p>Now, researchers have used spiking circuitry to build an artificial robotic skin, adopting some of the principles of how signals from our sensory neurons are transmitted and integrated. While the system relies on a few decidedly not-neural features, it has the advantage that <a href="https://arstechnica.com/science/2021/09/understanding-neuromorphic-computing-and-why-intels-excited-about-it/">we have chips</a> that can run neural networks using spiking signals, which would allow this system to integrate smoothly with some energy-efficient hardware to run <a href="https://arstechnica.com/ai/2025/12/scientists-built-an-ai-co-pilot-for-prosthetic-bionic-hands/">AI-based control software</a>.</p>
+<h2>Location via spikes</h2>
+<p>The nervous system in our skin is remarkably complex. It has specialized sensors for different sensations: heat, cold, pressure, pain, and more. In most areas of the body, these feed into the spinal column, where some preliminary processing takes place, allowing reflex reactions to be triggered without even involving the brain. But signals do make their way along specialized neurons into the brain, allowing further processing and (potentially) conscious awareness.</p>
+<p>The researchers behind the recent work, based in China, decided to implement something similar for an artificial skin that could be used to cover a robotic hand. They limited sensing to pressure, but implemented other things the nervous system does, including figuring out the location of input and injuries, and using multiple layers of processing.</p>
+<p>All of this started out by making a flexible polymer skin with embedded pressure sensors that were linked up to the rest of the system via conductive polymers. The next layer of the system converted the inputs from the pressure sensors to a series of activity spikes&#8212;short pulses of electrical current.</p>
+<p>There are three ways that these trains of spikes can convey information: the shape of an individual pulse, through their magnitude, through the length of the spike, and through the frequency of the spikes. Spike frequency is the most commonly used means of conveying information in biological systems, and the researchers use that to convey the pressure experienced by a sensor. The remaining forms of information are used to create something akin to a bar code that helps identify which sensor the reading came from.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>In addition to registering the pressure, the researchers had each sensor send a &#8220;I&#8217;m still here&#8221; signal at regular time intervals. Failure to receive this would be an indication that something has gone wrong with a sensor.</p>
+<p>The spiking signals allow the next layer of the system to identify any pressure being experienced by the skin, as well as where it originated. This layer can also do basic evaluation of the sensory input: &#8220;Pressure-initiated raw pulses from the pulse generator accumulated in the signal cache center until a predefined pain threshold is surpassed, activating a pain signal.&#8221; This can allow the equivalent of basic reflex reactions that don&#8217;t involve higher-level control systems. For example, the researchers set up a robotic arm covered with their artificial skin, and got it to move the arm whenever it experiences pressure that can cause damage.</p>
+<p>The second layer also combines and filters signals from the skin before sending the information on to the arm&#8217;s controller, which is the equivalent of the brain in this situation. So, the same system caused a robotic face to change expressions based on how much pressure its arm was sensing.</p>
+<h2>Easy fixes</h2>
+<p>A lot of the details of how the system operates were figured out empirically. For example, they applied the amount of pressure that registers as pain in human skin, and figured out how frequently their sensors generated spikes. This was then set as a threshold to emit a pain signal to the higher control system, and would trigger any reflex responses to excessive pressure. A lot of the more elaborate responses will ultimately depend on how these higher-level systems are programmed. For example, it&#8217;s easy for the system to generate a signal that indicates damage in a specific location in the skin; how the overall system responds to that damage isn&#8217;t specified by the skin itself.</p>
+
+          
+                  
+
+              
+          
+          
+<p>But the team did make it easy to repair things if damage occurs. The skin is designed to be assembled from a collection of segments that can snap together using magnetic interlocks. These automatically link up any necessary wiring, and each segment of skin broadcasts a unique identity code. So, if the system identifies damage, it&#8217;s relatively easy for an operator to pop out the damaged segment and replace it with fresh hardware, and then update any data that links the new segment&#8217;s ID with its location.</p>
+<p>The researchers call their development a neuromorphic robotic e-skin, or NRE-skin. &#8220;Neuromorphic&#8221; as a term is a bit vague, with some people using it to mean a technology that directly follows the principles used by the nervous system. That&#8217;s definitely not this skin. Instead, it uses &#8220;neuromorphic&#8221; far more loosely, with the operation of the nervous system acting as an inspiration for the system.</p>
+<p>This is clearest in the case of the positional information. The nervous system actually maintains a map of the body, and links sensory inputs to locations on this map. Biology uses nothing at all like the encoding of positional information in the properties of the activity spikes that the NRE-skin uses. So, this system is more biology-inspired than it is a model of actual biology.</p>
+<p>It also falls a bit short of biology in its current implementation, in that all it senses is pressure. Actual skin can process a variety of different sensory inputs, including things like temperatures, irritants, and more. These could all potentially be added to something like NRE-skin, but it would require a parallel processing system to keep the additional signals from getting intermingled with the ones from the pressure-sensitive hardware.</p>
+<p>All that said, spiking neuromorphic processors can host neural networks and are far more energy-efficient when doing so. So, even with its limitations, this seems like an area of research worth exploring.</p>
+<p>PNAS, 2025. DOI: <a href="http://dx.doi.org/10.1073/pnas.2520922122">10.1073/pnas.2520922122</a> &#160;(<a href="http://arstechnica.com/science/news/2010/03/dois-and-their-discontents-1/">About DOIs</a>).</p>
+
+
+          
+                  
+
+                  
+          </div>
