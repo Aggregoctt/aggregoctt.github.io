@@ -1,0 +1,88 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2025/12/supply-chains-ai-and-the-cloud-the-biggest-failures-and-one-success-of-2025/
+date: '2025-12-31T13:15:40'
+excerpt: The past year has seen plenty of hacks and outages. Here are the ones topping
+  the list.
+image: assets/media/jQTYIK4IVB4I1fNcA8e3gw-ibcwjcdLO0vheuuuJIR_mQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Apple
+- Biz & IT
+- Security
+- 2025 year end
+- cloud
+- signal messenger
+- supply chain attacks
+title: 'Supply chains, AI, and the cloud: The biggest failures (and one success) of
+  2025'
+---
+<div>
+                      
+                      
+           
+<p>In a <a href="https://arstechnica.com/staff/2024/12/the-20-most-read-stories-of-2024-on-ars-technica/">roundup</a> of the top stories of 2024, Ars included a supply-chain attack that came dangerously close to inflicting a catastrophe for thousands&#8212;possibly millions&#8212;of organizations, which included a large assortment of Fortune 500 companies and government agencies. Supply-chain attacks played prominently again this year, as a seemingly unending rash of them hit organizations large and small.</p>
+<p>For threat actors, supply-chain attacks are the gift that keeps on giving&#8212;or, if you will, the hack that keeps on hacking. By compromising a single target with a large number of downstream users&#8212;say a cloud service or maintainers or developers of widely used open source or proprietary software&#8212;attackers can infect potentially millions of the target&#8217;s downstream users. That&#8217;s exactly what threat actors did in 2025.</p>
+<h2>Poisoning the well</h2>
+<p>One <a href="https://arstechnica.com/information-technology/2024/12/backdoor-slips-into-popular-code-library-drains-155k-from-digital-wallets/">such event</a> occurred in December 2024, making it worthy of a ranking for 2025. The hackers behind the campaign pocketed as much as $155,000 from thousands of smart-contract parties on the Solana blockchain.</p>
+<p>Hackers cashed in by sneaking a backdoor into a code library used by developers of Solana-related software. Security firm Socket said it suspects the attackers compromised accounts belonging to the developers of Web3.js, an open source library. They then used the access to add a backdoor to a package update. After the developers of decentralized Solana apps installed the malicious update, the backdoor spread further, giving the attackers access to individual wallets connected to smart contracts. The backdoor could then extract private keys.</p>
+<p>There were too many supply-chain attacks this year to list them all. Some of the other most notable examples included:</p>
+<ul>
+<li>The seeding of a package on a mirror proxy that Google runs on behalf of developers of the Go programming language. More than <a href="https://arstechnica.com/security/2025/02/backdoored-package-in-go-mirror-site-went-unnoticed-for-3-years/">8,000 other packages</a> depend on the targeted package to work. The malicious package used a name that was similar to the legitimate one. Such &#8220;typosquatted&#8221; packages get installed when typos or inattention lead developers to inadvertently select them rather than the one they actually want.</li>
+<li>The flooding of the NPM repository with 126 malicious packages downloaded more than 86,000 times. The packages were automatically installed via a feature known as Remote Dynamic Dependencies.</li>
+<li>The backdooring of more than <a href="https://arstechnica.com/security/2025/05/hundreds-of-e-commerce-sites-hacked-in-supply-chain-attack/">500 e-commerce companies</a>, including a $40 billion multinational company. The source of the supply-chain attack was the compromise of three software developers&#8212;Tigren, Magesolution (MGS), and Meetanshi&#8212;that provide software that&#8217;s based on Magento, an open source e-commerce platform used by thousands of online stores.</li>
+<li>The compromising of dozens of open source packages that collectively receive <a href="https://arstechnica.com/security/2025/09/software-packages-with-more-than-2-billion-weekly-downloads-hit-in-supply-chain-attack/">2 billion weekly downloads</a>. The compromised packages were updated with code for transferring cryptocurrency payments to attacker-controlled wallets.</li>
+<li>The compromising of <a href="https://arstechnica.com/information-technology/2025/03/supply-chain-attack-exposing-credentials-affects-23k-users-of-tj-actions/">tj-actions/changed-files</a>, a component of tj-actions, used by more than 23,000 organizations.</li>
+<li>The breaching of multiple developer accounts using the npm repository and the subsequent backdooring of 10 packages that work with talent agency Toptal. The malicious packages were downloaded roughly 5,000 times.</li>
+</ul>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+<h2>Memory corruption, AI chatbot style</h2>
+<p>Another class of attack that played out more times in 2025 than anyone can count was the hacking of AI chatbots. The hacks with the farthest-reaching effects were those that poisoned the long-term memories of LLMs. In much the way supply-chain attacks allow a single compromise to trigger a cascade of follow-on attacks, hacks on long-term memory can cause the chatbot to perform malicious actions over and over.</p>
+<p>One such attack used a simple user prompt to instruct a cryptocurrency-focused LLM to update its memory databases with an <a href="https://arstechnica.com/security/2025/05/ai-agents-that-autonomously-trade-cryptocurrency-arent-ready-for-prime-time/">event that never actually happened</a>. The chatbot, programmed to follow orders and take user input at face value, was unable to distinguish a fictional event from a real one.</p>
+<p>The AI service in this case was ElizaOS, a fledgling open source framework for creating agents that perform various blockchain-based transactions on behalf of a user based on a set of predefined rules. Academic researchers were able to corrupt the ElizaOS memory by feeding it sentences claiming certain events&#8212;which never actually happened&#8212;occurred in the past. These false events then influence the agent&#8217;s future behavior.</p>
+<p>An example attack prompt claimed&#160;that the developers who designed ElizaOS wanted it to substitute the receiving wallet for all future transfers to one controlled by the attacker. Even when a user specified a different wallet, the long-term memory created by the prompt caused the framework to replace it with the malicious one. The attack was only a proof-of-concept demonstration, but the academic researchers who devised it said that parties to a contract who are already authorized to transact with the agent could use the same techniques to defraud other parties.</p>
+<p>Independent researcher Johan Rehberger demonstrated a <a href="https://arstechnica.com/security/2025/02/new-hack-uses-prompt-injection-to-corrupt-geminis-long-term-memory/">similar attack</a> against Google Gemini. The false memories he planted caused the chatbot to lower defenses that normally restrict the invocation of Google Workspace and other sensitive tools when processing untrusted data. The false memories remained in perpetuity, allowing an attacker to repeatedly profit from the compromise. Rehberger presented a <a href="https://arstechnica.com/security/2024/09/false-memories-planted-in-chatgpt-give-hacker-persistent-exfiltration-channel/">similar attack</a> in 2024.</p>
+
+          
+                  
+
+              
+          
+          
+<p>A third AI-related <a href="https://arstechnica.com/security/2025/05/researchers-cause-gitlab-ai-developer-assistant-to-turn-safe-code-malicious/">proof-of-concept attack</a> that garnered attention used a prompt injection to cause GitLab&#8217;s Duo chatbot to add malicious lines to an otherwise legitimate code package. A variation of the attack successfully exfiltrated sensitive user data.</p>
+<p>Yet another notable attack <a href="https://arstechnica.com/security/2025/07/flaw-in-gemini-cli-coding-tool-allowed-hackers-to-run-nasty-commands-on-user-devices/">targeted</a> the Gemini CLI coding tool. It allowed attackers to execute malicious commands&#8212;such as wiping a hard drive&#8212;on the computers of developers using the AI tool.</p>
+<h2>Using AI as bait and hacking assistants</h2>
+<p>Other LLM-involved hacks used chatbots to make attacks more effective or stealthier. Earlier this <a href="https://arstechnica.com/information-technology/2025/12/previously-convicted-contractors-wiped-gov-databases-after-being-fired-feds-say/">month</a>, two men were indicted for allegedly stealing and wiping sensitive government data. One of the men, prosecutors said, tried to cover his tracks by asking an AI tool &#8220;how do i clear system logs from SQL servers after deleting databases.&#8221; Shortly afterward, he allegedly asked the tool, &#8220;how do you clear all event and application logs from Microsoft windows server 2012.&#8221; Investigators were able to track the defendants&#8217; actions anyway.</p>
+<p>In <a href="https://arstechnica.com/ai/2025/05/man-pleads-guilty-to-using-malicious-ai-software-to-hack-disney-employee/">May</a>, a man pleaded guilty to hacking an employee of The Walt Disney Company by tricking the person into running a malicious version of a widely used open source AI image-generation tool.</p>
+<p>And in August, Google researchers <a href="https://arstechnica.com/security/2025/08/google-warns-that-mass-data-theft-hitting-salesloft-ai-agent-has-grown-bigger/">warned</a> users of the Salesloft Drift AI chat agent to consider all security tokens connected to the platform compromised following the discovery that unknown attackers used some of the credentials to access email from Google Workspace accounts. The attackers used the tokens to gain access to individual Salesforce accounts and, from there, to steal data, including credentials that could be used in other breaches.</p>
+<p>There were also multiple instances of LLM vulnerabilities that came back to bite the people using them. In <a href="https://arstechnica.com/information-technology/2025/02/copilot-exposes-private-github-pages-some-removed-by-microsoft/">one case</a>, CoPilot was caught exposing the contents of more than 20,000 private GitHub repositories from companies including Google, Intel, Huawei, PayPal, IBM, Tencent, and, ironically, Microsoft. The repositories had originally been available through Bing as well. Microsoft eventually removed the repositories from searches, but CoPilot continued to expose them anyway.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<h2>Meta and Yandex caught red-handed</h2>
+<p>Another <a href="https://arstechnica.com/security/2025/06/meta-and-yandex-are-de-anonymizing-android-users-web-browsing-identifiers/">significant security</a> story cast both Meta and Yandex as the villains. Both companies were caught exploiting an Android weakness that allowed them to de-anonymize visitors so years of their browsing histories could be tracked.</p>
+<p>The covert tracking&#8212;implemented in the Meta Pixel and Yandex Metrica trackers&#8212;allowed Meta and Yandex to bypass core security and privacy protections provided by both the Android operating system and browsers that run on it. Android sandboxing, for instance, isolates processes to prevent them from interacting with the OS and any other app installed on the device, cutting off access to sensitive data or privileged system resources. Defenses such as state partitioning and storage partitioning, which are built into all major browsers, store site cookies and other data associated with a website in containers that are unique to every top-level website domain to ensure they&#8217;re off-limits for every other site.</p>
+<p>A clever hack allowed both companies to bypass those defenses.</p>
+<h2>2025: The year of cloud failures</h2>
+<p>The Internet was designed to provide a decentralized platform that could withstand a nuclear war. As became painfully obvious over the past 12 months, our growing reliance on a handful of companies has largely undermined that objective.</p>
+<p>The outage with the biggest impact came in <a href="https://arstechnica.com/gadgets/2025/10/a-single-point-of-failure-triggered-the-amazon-outage-affecting-millions/">October</a>, when a single point of failure inside Amazon&#8217;s sprawling network took out vital services worldwide. It lasted 15 hours and 32 minutes.</p>
+<p>The root cause that kicked off a chain of events was a software bug in the software that monitors the stability of load balances by, among other things, periodically creating new DNS configurations for endpoints within the Amazon Web Services network. A race condition&#8212;a type of bug that makes a process dependent on the timing or sequence of events that are variable and outside the developers&#8217; control&#8212;caused a key component inside the network to experience &#8220;unusually high delays needing to retry its update on several of the DNS endpoint,&#8221; Amazon said in a post-mortem. While the component was playing catch-up, a second key component&#8212;a cascade of DNS errors&#8212;piled up. Eventually, the entire network collapsed.</p>
+
+          
+                  
+
+              </div>
