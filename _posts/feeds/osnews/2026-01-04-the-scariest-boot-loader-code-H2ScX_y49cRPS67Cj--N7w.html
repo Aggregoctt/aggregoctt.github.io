@@ -1,0 +1,23 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144107/the-scariest-boot-loader-code/
+date: '2026-01-04T00:57:22'
+excerpt: 'It shouldn&#8217;t be surprising that the HP-UX FAQ eventually grew an entry
+  for &#8220;how can I make a 712 run headless&#8221;. It was possible, and to do
+  it you had to change the firmware &#8220;console&#8221; path. The 712 firmware would
+  not allow you to do this, to keep you locked to a keyboard and frame buffer console,
+  but some of the HP-UX standalone tools could be used to change this without the
+  firmware getting in the way, so the FAQ recipe was roughly &#8220;abort the boot
+  sequence, at the BOOT_ADMIN&#62; prompt, do not start the HP-UX kernel but some
+  diagnostic tool, and then at the tools prompt, type a magic sequence without any
+  mistake or you&#8217;ll be very, very, very sorry&#8221;. There was no exaggeration
+  in these words: the magic sequence is conspath 2/0/4.0x283, which is everything
+  but intuitive and easy to remember. ↫ Miod Vallat What a great story.'
+image: null
+source: osnews
+tags:
+- OpenBSD
+title: The scariest boot loader code
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>It shouldn&#8217;t be surprising that the HP-UX FAQ eventually grew an entry for &#8220;how can I make a 712 run headless&#8221;. It was possible, and to do it you had to change the firmware &#8220;console&#8221; path. The 712 firmware would not allow you to do this, to keep you locked to a keyboard and frame buffer console, but some of the HP-UX standalone tools could be used to change this without the firmware getting in the way, so the FAQ recipe was roughly &#8220;abort the boot sequence, at the <code>BOOT_ADMIN&gt;</code> prompt, do not start the HP-UX kernel but some diagnostic tool, and then at the tools prompt, type a magic sequence without any mistake or you&#8217;ll be very, very, very sorry&#8221;.</p><p>There was no exaggeration in these words: the magic sequence is <code>conspath 2/0/4.0x283</code>, which is everything but intuitive and easy to remember.</p>
+<a href="http://miod.online.fr/software/openbsd/stories/boot_hppa.html">&#8619; Miod Vallat</a></blockquote><p>What a great story.</p></div>
