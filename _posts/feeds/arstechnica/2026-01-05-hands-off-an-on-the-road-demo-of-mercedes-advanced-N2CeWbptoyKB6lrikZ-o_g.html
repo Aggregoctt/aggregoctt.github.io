@@ -1,0 +1,51 @@
+---
+author: Jonathan M. Gitlin
+canonical_url: https://arstechnica.com/cars/2026/01/mercedes-teaches-its-driver-assist-how-to-handle-surface-streets/
+date: '2026-01-05T14:00:47'
+excerpt: It's like Tesla Autopilot, but made by a company with a culture of safety.
+image: assets/media/N2CeWbptoyKB6lrikZ-o_g-dYtHs_c-ug1PD_XV5k2rjA.jpeg
+source: arstechnica
+tags:
+- Cars
+- Mercedes-Benz CLA
+- partially automated driving
+title: Hands off! An on-the-road demo of Mercedes’ advanced new driver assist
+---
+<div>
+                      
+                      
+          <p>There&#8217;s some debate as to when adaptive cruise control first showed up, but if you ask Mercedes-Benz, it will say in 1999 with that year&#8217;s S-Class. Instead of just keeping a set speed, radar-enabled adaptive cruise control allowed the car to react to deceleration by the car ahead, and thus was created the first partially automated car. From there, automakers added a function to keep cars in their lanes, and now we have location-aware, GPS-geofenced vehicles that, as long as the driver is paying attention, will do most of the driving&#8212;on the highway at least.</p>
+<p>But the goal for developers of both autonomous and partially automated vehicles is to remove as much of the burden of driving from the human as possible, not just on controlled access highways but at lower speeds, on surface streets. Which is what Mercedes&#8217; latest Drive Assist Pro has been designed to do. And after a recent demo&#8212;albeit from the passenger seat&#8212;on the streets of downtown San Francisco, it appears to be a very credible effort.</p>
+<h2>CLA gets it first</h2>
+<p>The big, powerful, comfortable S-Class is normally the standard-bearer for the latest and greatest tech Mercedes has cooked up, but not always. In December <a href="https://arstechnica.com/cars/2025/12/2026-mercedes-cla-first-drive-entry-level-doesnt-mean-basic/">we drove the production version of its new entry-level EV, the CLA</a>. At under $50,000, the sleek Mercedes sedan (or four-door coup&#233;) is already available with the current version of the automaker&#8217;s Drive Assist suite, with better control of braking and deceleration. A particular improvement, which I&#8217;m not sure made the final version of our first drive report, is the way you can use the brake while adaptive cruise control is active without canceling the system.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Light applications of the brake&#8212;to shed a few miles per hour, not to conduct an emergency stop&#8212;will slow the car, which then resumes its original speed, much the same way you have always been able to apply the throttle to temporarily speed up while using cruise control.</p>
+<p>Drive Assist Pro takes this collaborative approach between the car and driver and runs with it. Given a destination to work with, it knows which lanes you&#8217;ll need ahead of time, and the car reads both stop signs but also traffic lights. It even detects, and slows down for, speed bumps. On a 20 minute drive around the Waymo-clogged streets of the tech industry&#8217;s favorite city, the engineer in the driving seat didn&#8217;t have to intervene once, although I believe at least a couple of colleagues&#8217; demos got confused by human crosswalk attendants moving around with their stop signs.</p>
+<p>The CLA drove at safe and legal speeds, knew how to handle construction zones, and wasn&#8217;t flummoxed by one of those most common of city driving annoyances, the double-parked car. The time the car takes to come to a complete stop at stop signs can and will irritate human drivers behind you; it&#8217;s definitely not a California stop.</p>
+<h2>Needs to be an SDV</h2>
+<p>All of this is possible thanks to the CLA being what the industry calls a software-defined vehicle. Four powerful computers run all the electronics, rather than dozens and dozens of discrete black boxes. One of those computers is (of course) from Nvidia&#8212;that company&#8217;s Orin, which handles things like perception and path planning.</p>
+<p>&#8220;We completely elevated our autonomous driving stack. It is no longer on a rule-based stack,&#8221; explained Magnus &#214;stberg, chief software officer at Mercedes-Benz. Now it uses an end-to-end AI model, &#8220;which of course is giving you some basic advantages. When it comes to parking, for example, [it offers] much faster navigation of parking lots&#8230;, moving in and out of the parking lots, but also already you find&#8230; how it&#8217;s on the highway and how it actually follows the lane and moving across it,&#8221; &#214;stberg said.</p>
+
+          
+                  
+
+              
+          
+          
+<p>As seamless as the experience appeared, the human behind the wheel remains the one in charge. I don&#8217;t love the SAE levels as a scheme for explaining the spectrum of partially automated and autonomous driving these days, but Drive Assist Pro is what an engineer might call &#8220;level 2 ++,&#8221; if &#8220;level 2+&#8221; is something tightly geofenced like <a href="https://arstechnica.com/cars/2018/02/the-cadillac-ct6-review-super-cruise-is-a-game-changer/">Super Cruise</a>&#160;and true level 3 is Mercedes Drive Pilot, <a href="https://arstechnica.com/cars/2023/09/mercedes-benzs-level-3-autonomous-driving-system-takes-over-in-heavy-traffic/">which is only available in Nevada and California</a> and only works in relatively low-speed freeway traffic jams.</p>
+<p>The closest thing might be Tesla&#8217;s much-maligned driver assist, which has long had the goal of letting its users go from point to point with no human intervention. I shan&#8217;t dwell on that company&#8217;s record of either safety or success (although apparently, many years after Musk first promised a coast-to-coast drive, someone actually finally pulled it off in late 2025). Needless to say, Mercedes-Benz has a very different approach to safety. There are redundant sensor modalities, not just a smattering of cameras. The end-to-end AI model tokenizes input and output trajectories, and there&#8217;s a safety guardrail with a rules-based model to make sure any AI trajectory mistake is caught before it&#8217;s driven. There&#8217;s certainly no &#8220;<a href="https://arstechnica.com/cars/2025/10/feds-probe-tesla-about-its-mad-max-mode/">mad max</a>&#8221; setting to make it break speed limits, unlike those camera-only Teslas.</p>
+<p>Mercedes has already launched Drive Assist Pro in China and told Ars the safety certification process is complete for the US, with it arriving late this year in the CLA and then other Mercedes vehicles as they get their SDV upgrades during midlife refreshes. As for Europe, that will require some regulation changes, we believe.</p>
+
+
+          
+                  
+
+                  
+          </div>
