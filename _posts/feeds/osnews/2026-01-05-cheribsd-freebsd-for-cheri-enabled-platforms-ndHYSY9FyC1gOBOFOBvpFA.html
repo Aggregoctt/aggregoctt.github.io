@@ -1,0 +1,42 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144123/cheribsd-freebsd-for-cheri-enabled-platforms/
+date: '2026-01-05T22:53:45'
+excerpt: CheriBSD is a Capability Enabled, Unix-like Operating System that extends
+  FreeBSD to take advantage of Capability Hardware on Arm’s Morello and CHERI-RISC-V
+  platforms. CheriBSD implements memory protection and software compartmentalization
+  features, and is developed by SRI International and the University of Cambridge.
+  ↫ CheriBSD website This obviously raises the question &#8211; what exactly is CHERI?
+  The FreeBSD Foundation has an article about this from 2023 providing more details.
+  CHERI extends existing architectures (Armv8-A, MIPS64 (retired), RISC-V, and x86_64
+  (in development)) with a new hardware type, the CHERI capability. In CHERI systems,
+  all access to memory is via CHERI capabilities either explicitly via new instructions
+  or implicitly via a Default Data Capability (DDC) and Program Counter Capability
+  (PCC) used by instructions with integer arguments. Capabilities grant access to
+  specific ranges of (virtual, or occasionally, physical) memory via a base and length,
+  and can further restrict access with permissions, which are compressed into a 128-bit
+  representation (64-bits for the address and 64-bits for the metadata). In memory
+  and in registers, capabilities are protected by tags that are cleared when the capability
+  data is modified by a non-capability instruction or if a capability instruction
+  would increase the access the capability grants. Tags are stored separately from
+  data and cannot be manipulated directly. ↫ Brooks Davis CheriBSD brings this capability
+  to anyone with compatible hardware, providing access to about 10000 pre-built memory-safe
+  packages alongside more than 260000 pre-built memory-unsafe packages, as well as
+  fully memory-safe versions of the KDE desktop, bhyve, and a ton of others. You can
+  use both types of packages alongside one another, there&#8217;s a nice installer,
+  and it basically seems like you&#8217;re using regular FreeBSD, just with additional
+  complications, the biggest of which is, of course, the limited hardware support.
+  I have a feeling that if you&#8217;re the kind of person to own CHERI-enabled hardware,
+  you&#8217;re most likely already aware of CheriBSD. Still, if this is something
+  you&#8217;re looking for, be aware that you&#8217;re going ot need special hardware.
+  It&#8217;s also important to note that DTrace won&#8217;t work on CheriBSD, and
+  most optional modules, like firewall systems, don&#8217;t work either.
+image: null
+source: osnews
+tags:
+- FreeBSD
+title: 'CheriBSD: FreeBSD for CHERI-enabled platforms'
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>CheriBSD is a Capability Enabled, Unix-like Operating System that extends FreeBSD to take advantage of Capability Hardware on Arm&#8217;s Morello and CHERI-RISC-V platforms. CheriBSD implements memory protection and software compartmentalization features, and is developed by SRI International and the University of Cambridge.</p>
+<a href="https://www.cheribsd.org/">&#8619; CheriBSD website</a></blockquote><p>This obviously raises the question &#8211; what exactly is CHERI? The FreeBSD Foundation has an article about this from 2023 providing more details.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>CHERI extends existing architectures (Armv8-A, MIPS64 (retired), RISC-V, and x86_64 (in development)) with a new hardware type, the CHERI capability. In CHERI systems, all access to memory is via CHERI capabilities either explicitly via new instructions or implicitly via a Default Data Capability (DDC) and Program Counter Capability (PCC) used by instructions with integer arguments. Capabilities grant access to specific ranges of (virtual, or occasionally, physical) memory via a base and length, and can further restrict access with permissions, which are compressed into a 128-bit representation (64-bits for the address and 64-bits for the metadata). In memory and in registers, capabilities are protected by tags that are cleared when the capability data is modified by a non-capability instruction or if a capability instruction would increase the access the capability grants. Tags are stored separately from data and cannot be manipulated directly.</p>
+<a href="https://freebsdfoundation.org/wp-content/uploads/2023/06/davis_cambridge.pdf">&#8619; Brooks Davis</a></blockquote><p>CheriBSD brings this capability to anyone with compatible hardware, providing access to about 10000 pre-built memory-safe packages alongside more than 260000 pre-built memory-unsafe packages, as well as fully memory-safe versions of the KDE desktop, bhyve, and a ton of others. You can use both types of packages alongside one another, there&#8217;s a nice installer, and it basically seems like you&#8217;re using regular FreeBSD, just with additional complications, the biggest of which is, of course, the limited hardware support.</p></div>
