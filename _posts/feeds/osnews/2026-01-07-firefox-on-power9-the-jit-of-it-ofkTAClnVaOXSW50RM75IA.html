@@ -1,0 +1,85 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144144/firefox-on-power9-the-jit-of-it/
+date: '2026-01-07T16:41:23'
+excerpt: 'Four years ago, I reviewed a truly fully open source desktop computer, from
+  operating system down to firmware: the Raptor Blackbird, built entirely around IBM&#8217;s
+  POWER9 processor. The overall conclusion was that using was mostly an entirely boring
+  experience, which was a very good thing &#8211; usually ideologically-fueled computers
+  come with a ton of downsides and limitations for average users, but Raptor&#8217;s
+  POWER9 machines bucked this trend by presenting a bog-standard, run-of-the-mill
+  desktop Linux experience, almost indistinguishable from using an x86 machine. Almost
+  indistinguishable. The one thing that was missing from using desktop Linux on POWER9
+  was Firefox&#8217; JIT, which meant that many websites, especially more complex
+  ones, would bring the browsing experience down to a crawl. One area where this affected
+  me quite a bit was our own WordPress backend, which is effectively unusable on Firefox
+  without its JIT. The only other option was to use Chromium, which was fully ported
+  to POWER9 &#8211; but I don&#8217;t like Chromium, and want to use Firefox to be
+  able to share tabs, history, passwords, and so on. Since then, back in 2021, things
+  have improved. The ongoing effort to port Firefox&#8217; JIT to POWER9, led by Cameron
+  Kaiser, made a ton of progress, to the point where community Firefox builds with
+  Kaiser&#8217;s JIT integrated became available through a dedicated Fedora copr.
+  Sadly, the last build is from four months ago, and covers Firefox 128.14.0-1, an
+  old ESR release. Since I recently set up the other machine Raptor sent to me &#8211;
+  a Talos II workstation with two POWER9 processors &#8211; I was curious what the
+  state of the POWER9 JIT effort was, so I inquired on the related bug report for
+  Firefox. Kaiser replied, and explained that due to a critical error with wasm against
+  later versions of the JIT, as well as a change in his personal circumstances forcing
+  him to work on this effort remotely &#8211; obviously not great for a client application
+  like Firefox &#8211; there simply hasn&#8217;t been much progress, until last week
+  (what a coincidence!). Last week I took some time off work and dragged the JIT up
+  to the current ESR. This compiles and links. However, although it passes the majority
+  of the test suite, there are still too many serious failures to make it useable.
+  I&#8217;m continuing work on this in whatever free time I actually have on my workstation.
+  If I can restore test compliance in Baseline mode, this would suffice for a community
+  third-party build like what Dan Horak generates now, since that is what is in 128.
+  To get it in tree, however, I would also need to solve that critical wasm fault
+  which manifested in the interim and fix the remaining gaps in the CodeGenerator
+  to get it to a point of sufficient quality. ↫ Cameron Kaiser There are two main
+  problems at the moment that make it harder than it needs to be to work on this effort.
+  First, the state of debugging tools on ppc64le &#8211; to which POWER9 belongs &#8211;
+  is apparently not great, requiring Kaiser to step through thousands of instructions
+  manually using gdb just to fix the last bug he discovered. That&#8217;s clearly
+  deeply suboptimal, not fun, and not something somebody should spend their precious
+  free time on. At this point in the discussion, Raptor&#8217;s Timothy Pearson jumped
+  in and noted that getting rr-debugger to work on POWER9 is something Raptor would
+  be interested in, but it wouldn&#8217;t be cheap: On the topic of the debugger (rr-debugger),
+  while this isn&#8217;t on our internal roadmap at the moment it is something that
+  Raptor could do under a development contract. The main question is whether there
+  is enough interest to make that viable; the work is significant so the cost would
+  probably be in the mid to upper 5 figures range (USD), assuming no major roadblocks
+  are discovered. When I was looking into it before I was fairly certain the PMU on
+  POWER9 supports the overall structure of rr-debugger&#8217;s methods, and that our
+  load-store idioms are generally compatible. The former is what stops it working
+  on most arm64 devices IIRC, and the latter is relevant mainly to non-POWER RISC
+  architectures. ↫ Timothy Pearson Kaiser noted that while having rr-debugger available
+  wouldn&#8217;t be a magic bullet, it would make the whole process a lot easier.
+  The second major issue is, of course, the same one as it always is for such niche
+  efforts: a lack of manpower. According to Kaiser, there&#8217;s enough interest
+  and awareness in getting Firefox&#8217; JIT ported to POWER9, with the real problem
+  being that there simply aren&#8217;t a lot of people with enough knowledge of both
+  Firefox&#8217; JIT and the modern ppc64le ISA. Understandably, Kaiser would like
+  to avoid having to deal with people who are well-intentioned but don&#8217;t fully
+  grasp the complexity of the undertaking at hand. This is not exactly an easy effort,
+  and it&#8217;s honestly downright amazing how far along the project already is.
+  Even if it&#8217;s an older version, being able to run Firefox 128ESR on POWER9
+  with a working JIT makes such a huge difference to the overall desktop user experience,
+  and I&#8217;m sure I speak for the entire POWER9 community when I say I&#8217;m
+  incredibly grateful for it. Still, it would be amazing if we could find someone
+  with just the right skillset to help Kaiser out, to be able to get the JIT stable
+  enough again for community Firefox builds &#8211; and perhaps even look at what
+  lies beyond: getting it upstreamed into Firefox as a whole. The odds of finding
+  that person are slim &#8211; if you&#8217;re into this sort of stuff, you&#8217;re
+  most likely already aware of the POWER9 JIT effort &#8211; but who knows, maybe
+  shining some renewed light on this task will make a difference. If you happen to
+  have the right skillset and appreciate the complexities involved in this effort,
+  you might want to reach out.'
+image: null
+source: osnews
+tags:
+- Mozilla, Gecko
+title: 'Firefox on POWER9: the JIT of it'
+---
+<div><p>Four years ago, I <a href="https://www.osnews.com/story/133093/review-blackbird-secure-desktop-a-fully-open-source-modern-power9-workstation-without-any-proprietary-code/">reviewed</a> a truly fully open source desktop computer, from operating system down to firmware: the Raptor Blackbird, built entirely around IBM&#8217;s POWER9 processor. The overall conclusion was that using was mostly an entirely boring experience, which was a very good thing &#8211; usually ideologically-fueled computers come with a ton of downsides and limitations for average users, but Raptor&#8217;s POWER9 machines bucked this trend by presenting a bog-standard, run-of-the-mill desktop Linux experience, almost indistinguishable from using an x86 machine.</p><p>Almost indistinguishable. The one thing that was missing from using desktop Linux on POWER9 was Firefox&#8217; JIT, which meant that many websites, especially more complex ones, would bring the browsing experience down to a crawl. One area where this affected me quite a bit was our own WordPress backend, which is effectively unusable on Firefox without its JIT. The only other option was to use Chromium, which was fully ported to POWER9 &#8211; but I don&#8217;t like Chromium, and want to use Firefox to be able to share tabs, history, passwords, and so on.</p><p>Since then, back in 2021, things have improved. The ongoing effort to port Firefox&#8217; JIT to POWER9, led by Cameron Kaiser, made a ton of progress, to the point where community Firefox builds with Kaiser&#8217;s JIT integrated became available through <a href="https://copr.fedorainfracloud.org/coprs/sharkcz/talos/">a dedicated Fedora copr</a>. Sadly, the last build is from four months ago, and covers Firefox 128.14.0-1, an old ESR release. Since I recently set up the other machine Raptor sent to me &#8211; a Talos II workstation with two POWER9 processors &#8211; I was curious what the state of the POWER9 JIT effort was, so <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1860412#c17">I inquired</a> on the related bug report for Firefox.</p><p>Kaiser replied, and explained that due to a critical error with wasm against later versions of the JIT, as well as a change in his personal circumstances forcing him to work on this effort remotely &#8211; obviously not great for a client application like Firefox &#8211; there simply hasn&#8217;t been much progress, until last week (what a coincidence!).</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Last week I took some time off work and dragged the JIT up to the current ESR. This compiles and links. However, although it passes the majority of the test suite, there are still too many serious failures to make it useable. I&#8217;m continuing work on this in whatever free time I actually have on my workstation. If I can restore test compliance in Baseline mode, this would suffice for a community third-party build like what Dan Horak generates now, since that is what is in 128. To get it in tree, however, I would also need to solve that critical wasm fault which manifested in the interim and fix the remaining gaps in the CodeGenerator to get it to a point of sufficient quality.</p>
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1860412#c18">&#8619; Cameron Kaiser</a></blockquote><p>There are two main problems at the moment that make it harder than it needs to be to work on this effort. First, the state of debugging tools on ppc64le &#8211; to which POWER9 belongs &#8211; is apparently not great, requiring Kaiser to step through thousands of instructions manually using gdb just to fix the last bug he discovered. That&#8217;s clearly deeply suboptimal, not fun, and not something somebody should spend their precious free time on.</p><p>At this point in the discussion, Raptor&#8217;s Timothy Pearson jumped in and noted that getting rr-debugger to work on POWER9 is something Raptor would be interested in, but it wouldn&#8217;t be cheap:</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>On the topic of the debugger (<a href="https://rr-project.org/">rr-debugger</a>), while this isn&#8217;t on our internal roadmap at the moment it is something that Raptor could do under a development contract. The main question is whether there is enough interest to make that viable; the work is significant so the cost would probably be in the mid to upper 5 figures range (USD), assuming no major roadblocks are discovered.</p><p>When I was looking into it before I was fairly certain the PMU on POWER9 supports the overall structure of rr-debugger&#8217;s methods, and that our load-store idioms are generally compatible. The former is what stops it working on most arm64 devices IIRC, and the latter is relevant mainly to non-POWER RISC architectures.</p>
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1860412#c19">&#8619; Timothy Pearson</a></blockquote><p>Kaiser noted that while having  rr-debugger available wouldn&#8217;t be a magic bullet, it would make the whole process a lot easier.</p><p>The second major issue is, of course, the same one as it always is for such niche efforts: a lack of manpower. According to Kaiser, there&#8217;s enough interest and awareness in getting Firefox&#8217; JIT ported to POWER9, with the real problem being that there simply aren&#8217;t a lot of people with enough knowledge of both Firefox&#8217; JIT and the modern ppc64le ISA. Understandably, Kaiser would like to avoid having to deal with people who are well-intentioned but don&#8217;t fully grasp the complexity of the undertaking at hand.</p><p>This is not exactly an easy effort, and it&#8217;s honestly downright amazing how far along the project already is. Even if it&#8217;s an older version, being able to run Firefox 128ESR on POWER9 with a working JIT makes such a huge difference to the overall desktop user experience, and I&#8217;m sure I speak for the entire POWER9 community when I say I&#8217;m incredibly grateful for it. Still, it would be amazing if we could find someone with just the right skillset to help Kaiser out, to be able to get the JIT stable enough again for community Firefox builds &#8211; and perhaps even look at what lies beyond: getting it upstreamed into Firefox as a whole.</p><p>The odds of finding that person are slim &#8211; if you&#8217;re into this sort of stuff, you&#8217;re most likely already aware of the POWER9 JIT effort &#8211; but who knows, maybe shining some renewed light on this task will make a difference. If you happen to have the right skillset and appreciate the complexities involved in this effort, you might want to reach out.</p></div>
