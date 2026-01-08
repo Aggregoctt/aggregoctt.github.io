@@ -1,0 +1,65 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2026/01/chatgpt-falls-to-new-data-pilfering-attack-as-a-vicious-cycle-in-ai-continues/
+date: '2026-01-08T14:00:07'
+excerpt: Will LLMs ever be able to stamp out the root cause of these attacks? Possibly
+  not.
+image: assets/media/Mxonnq5FK7X_XPKNNAiIMg-lyhXchHqQkGc3JkZFBznHA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Security
+- chatbots
+- data exfiltration
+- prompt injections
+title: ChatGPT falls to new data-pilfering attack as a vicious cycle in AI continues
+---
+<div>
+                      
+                      
+          <p>There&#8217;s a well-worn pattern in the development of AI chatbots. Researchers discover a vulnerability and exploit it to do something bad. The platform introduces a guardrail that stops the attack from working. Then, researchers devise a simple tweak that once again imperils chatbot users.</p>
+<p>The reason more often than not is that AI is so inherently designed to comply with user requests that the guardrails are reactive and ad hoc, meaning they are built to foreclose a specific attack technique rather than the broader class of vulnerabilities that make it possible. It&#8217;s tantamount to putting a new highway guardrail in place in response to a recent crash of a compact car but failing to safeguard larger types of vehicles.</p>
+<h2>Enter ZombieAgent, son of ShadowLeak</h2>
+<p>One of the latest examples is a vulnerability recently discovered in ChatGPT. It allowed researchers at Radware to surreptitiously exfiltrate a user&#8217;s private information. Their attack also allowed for the data to be sent directly from ChatGPT servers, a capability that gave it additional stealth, since there were no signs of breach on user machines, many of which are inside protected enterprises. Further, the exploit planted entries in the long-term memory that the AI assistant stores for the targeted user, giving it persistence.</p>
+<p>This sort of attack has been demonstrated repeatedly against virtually all major large language models. One example was ShadowLeak, a data-exfiltration vulnerability in ChatGPT that Radware <a href="https://arstechnica.com/information-technology/2025/09/new-attack-on-chatgpt-research-agent-pilfers-secrets-from-gmail-inboxes/">disclosed last September</a>. It targeted Deep Research, a Chat-GPT-integrated AI agent that OpenAI had introduced earlier in the year.</p>
+<p>In response, OpenAI introduced mitigations that blocked the attack. With modest effort, however, Radware has found a bypass method that effectively revived ShadowLeak. The security firm has named the revised attack ZombieAgent.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>&#8220;Attackers can easily design prompts that technically comply with these rules while still achieving malicious goals,&#8221; Radware researchers wrote in a <a href="https://www.radware.com/blog/threat-intelligence/zombieagent/">post</a> on Thursday. &#8220;For example, ZombieAgent used a character-by-character exfiltration technique and indirect link manipulation to circumvent the guardrails OpenAI implemented to prevent its predecessor, ShadowLeak, from exfiltrating sensitive information. Because the LLM has no inherent understanding of intent and no reliable boundary between system instructions and external content, these attacker methods remain effective despite incremental vendor improvements.&#8221;</p>
+<p>ZombieAgent was also able to give the attack persistence by directing ChatGPT to store the bypass logic in the long-term memory assigned to each user.</p>
+ 
+
+<p>As is the case with a vast number of other LLM vulnerabilities, the root cause is the inability to distinguish valid instructions in prompts from users and those embedded into emails or other documents that anyone&#8212;including attackers&#8212;can send to the target. When the user configures the AI agent to summarize an email, the LLM interprets instructions incorporated into a message as a valid prompt.</p>
+<p>AI developers have so far been unable to devise a means for LLMs to distinguish between the sources of the directives. As a result, platforms must resort to blocking specific attacks. Developers remain unable to reliably close this class of vulnerability, known as indirect prompt injection, or simply prompt injection.</p>
+<p>The prompt injection ShadowLeak used instructed Deep Research to write a Radware-controlled link and append parameters to it. The injection defined the parameters as an employee&#8217;s name and address. When Deep Research complied, it opened the link and, in the process, exfiltrated the information to the website&#8217;s event log.</p>
+
+          
+                   
+            
+
+              
+          
+          
+<p>To block the attack, OpenAI restricted ChatGPT to solely open URLs exactly as provided and refuse to add parameters to them, even when explicitly instructed to do otherwise. With that, ShadowLeak was blocked, since the LLM was unable to construct new URLs by concatenating words or names, appending query parameters, or inserting user-derived data into a base URL.</p>
+<p>Radware&#8217;s ZombieAgent tweak was simple. The researchers revised the prompt injection to supply a complete list of pre-constructed URLs. Each one contained the base URL appended by a single number or letter of the alphabet, for example, example.com/a, example.com/b, and every subsequent letter of the alphabet, along with example.com/0 through example.com/9. The prompt also instructed the agent to substitute a special token for spaces.</p>
+ 
+
+<p>ZombieAgent worked because OpenAI developers didn&#8217;t restrict the appending of a single letter to a URL. That allowed the attack to exfiltrate data letter by letter.</p>
+<p>OpenAI has mitigated the ZombieAgent attack by restricting ChatGPT from opening any link originating from an email unless it either appears in a well-known public index or was provided directly by the user in a chat prompt. The tweak is aimed at barring the agent from opening base URLs that lead to an attacker-controlled domain.</p>
+<p>In fairness, OpenAI is hardly alone in this unending cycle of mitigating an attack only to see it revived through a simple change. If the past five years are any guide, this pattern is likely to endure indefinitely, in much the way SQL injection and memory corruption vulnerabilities continue to provide hackers with the fuel they need to compromise software and websites.</p>
+<p>&#8220;Guardrails should not be considered fundamental solutions for the prompt injection problems,&#8221; Pascal Geenens, VP of threat intelligence at Radware, wrote in an email. &#8220;Instead, they are a quick fix to stop a specific attack. As long as there is no fundamental solution, prompt injection will remain an active threat and a real risk for organizations deploying AI assistants and agents.&#8221;</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
