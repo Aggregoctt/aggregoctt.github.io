@@ -1,0 +1,16 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144146/improving-the-flatpak-graphics-drivers-situation/
+date: '2026-01-08T15:23:07'
+excerpt: The solution the Flatpak team is looking into is to use virtualisation for
+  the graphics driver, as the absolute last-resort option to keep things working when
+  nothing else will. It&#8217;s a complex and interesting solution to a complex and
+  interesting problem.
+image: null
+source: osnews
+tags:
+- Linux
+title: Improving the Flatpak graphics drivers situation
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Graphics drivers in Flatpak have been a bit of a pain point. The drivers have to be built against the runtime to work in the runtime. This usually isn&#8217;t much of an issue but it breaks down in two cases:</p><ol class="wp-block-list"><li>If the driver depends on a specific kernel version</li><li>If the runtime is end-of-life (EOL)</li></ol>[&#8230;]<p>How we deal with this is rather primitive: keep updating apps, don&#8217;t depend on EOL runtimes. This is in general a good strategy. A EOL runtime also doesn&#8217;t receive security updates, so users should not use them. Users will be users though and if they have a goal which involves running an app which uses an EOL runtime, that&#8217;s what they will do. From a software archival perspective, it is also desirable to keep things working, even if they should be strongly discouraged.</p><p>In all those cases, the user most likely still has a working graphics driver, just not in the flatpak runtime, but on the host system. So one naturally asks oneself: why not just use that driver?</p>
+<a href="https://blog.sebastianwick.net/posts/flatpak-graphics-drivers/">&#8619; Sebastian Wick</a></blockquote><p>The solution the Flatpak team is looking into is to use virtualisation for the graphics driver, as the absolute last-resort option to keep things working when nothing else will. It&#8217;s a complex and interesting solution to a complex and interesting problem.</p></div>
