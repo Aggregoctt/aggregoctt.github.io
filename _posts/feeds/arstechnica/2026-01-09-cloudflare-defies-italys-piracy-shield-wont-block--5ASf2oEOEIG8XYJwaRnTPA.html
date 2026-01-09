@@ -1,0 +1,64 @@
+---
+author: Jon Brodkin
+canonical_url: https://arstechnica.com/tech-policy/2026/01/cloudflare-may-pull-servers-out-of-italy-over-order-that-it-block-pirate-sites/
+date: '2026-01-09T19:22:37'
+excerpt: Italy fines Cloudflare 14M euros for not blocking pirate sites on 1.1.1.1
+  DNS service.
+image: assets/media/5ASf2oEOEIG8XYJwaRnTPA-AABqD4txvNR9qTOKFf8_JQ.jpeg
+source: arstechnica
+tags:
+- Policy
+- cloudflare
+- italy
+- piracy shield
+title: Cloudflare defies Italy’s Piracy Shield, won’t block websites on 1.1.1.1 DNS
+---
+<div>
+                      
+                      
+           
+<p>Italy fined Cloudflare 14.2 million euros for refusing to block access to pirate sites on its 1.1.1.1 DNS service, the country&#8217;s communications regulatory agency, AGCOM, <a href="https://www.agcom.it/comunicazione/comunicati-stampa/comunicato-stampa-71">announced</a> yesterday. Cloudflare said it will fight the penalty and threatened to remove all of its servers from Italian cities.</p>
+<p>AGCOM issued the fine under Italy&#8217;s controversial Piracy Shield law, saying that Cloudflare was required to disable DNS resolution of domain names and routing of traffic to IP addresses reported by copyright holders. The law provides for fines up to 2 percent of a company&#8217;s annual turnover, and the agency said it applied a fine equal to 1 percent.</p>
+<p>The fine relates to a blocking order issued to Cloudflare in February 2025. Cloudflare argued that installing a filter applying to the roughly 200 billion daily requests to its DNS system would significantly increase latency and negatively affect DNS resolution for sites that aren&#8217;t subject to the dispute over piracy.</p>
+<p>AGCOM rejected Cloudflare&#8217;s arguments. The agency said the required blocking would impose no risk on legitimate websites because the targeted IP addresses were all uniquely intended for copyright infringement.</p>
+<p>In a <a href="https://labs.ripe.net/author/antonio-prado/live-event-blocking-at-scale-effectiveness-vs-collateral-damage-in-italys-piracy-shield/">September 2025 report</a> on Piracy Shield, researchers said they found &#8220;hundreds of legitimate websites unknowingly affected by blocking, unknown operators experiencing service disruption, and illegal streamers continuing to evade enforcement by exploiting the abundance of address space online, leaving behind unusable and polluted address ranges.&#8221; This is &#8220;a conservative lower-bound estimate,&#8221; the report said.</p>
+<p>The Piracy Shield law was adopted in 2024. &#8220;To effectively tackle live sports piracy, its broad blocking powers aim to block piracy-related domain names and IP addresses within 30 minutes,&#8221; TorrentFreak wrote in an <a href="https://torrentfreak.com/italy-fines-cloudflare-e14-million-for-refusing-to-filter-pirate-sites-on-public-1-1-1-1-dns/">article</a> today about the Cloudflare fine.</p>
+<h2>Cloudflare to fight fine, may withhold services</h2>
+<p>Cloudflare co-founder and CEO Matthew Prince <a href="https://x.com/eastdakota/status/2009654937303896492">wrote</a> today that Cloudflare already &#8220;had multiple legal challenges pending against the underlying scheme&#8221; and will &#8220;fight the unjust fine.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>&#8220;Yesterday a quasi-judicial body in Italy fined Cloudflare $17 million for failing to go along with their scheme to censor the Internet,&#8221; Prince wrote. He continued:</p>
+<blockquote><p>The scheme, which even the EU has called concerning, required us within a mere 30 minutes of notification to fully censor from the Internet any sites a shadowy cabal of European media elites deemed against their interests. No judicial oversight. No due process. No appeal. No transparency. It required us to not just remove customers, but also censor our 1.1.1.1 DNS resolver meaning it risked blacking out any site on the Internet. And it required us not just to censor the content in Italy but globally. In other words, Italy insists a shadowy, European media cabal should be able to dictate what is and is not allowed online.</p></blockquote>
+<p>Prince said he will discuss the matter with US government officials next week and that Cloudflare is &#8220;happy to discuss this with Italian government officials who, so far, have been unwilling to engage beyond issuing fines.&#8221; In addition to challenging the fine, Prince said Cloudflare is &#8220;considering the following actions: 1) discontinuing the millions of dollars in pro bono cyber security services we are providing the upcoming Milano-Cortina Olympics; 2) discontinuing Cloudflare&#8217;s Free cyber security services for any Italy-based users; 3) removing all servers from Italian cities; and 4) terminating all plans to build an Italian Cloudflare office or make any investments in the country.&#8221;</p>
+<p>&#8220;Play stupid games, win stupid prizes,&#8221; Prince wrote.</p>
+ 
+<h2>Google also in Piracy Shield crosshairs</h2>
+<p>AGCOM said today that in the past two years, the Piracy Shield law disabled over 65,000 domain names and about 14,000 IP addresses. Italian authorities also previously <a href="https://arstechnica.com/gadgets/2025/03/italian-court-orders-google-to-block-iptv-pirate-sites-at-dns-level/">ordered Google</a> to block pirate sites at the DNS level.</p>
+<p>The Computer &amp; Communications Industry Association (CCIA), a trade group that represents tech companies including Cloudflare and Google, has criticized the Piracy Shield law. &#8220;Italian authorities have included virtual private networks (VPN) and public DNS resolvers in the Piracy Shield, which are services fundamental to the protection of free expression and not appropriate tools for blocking,&#8221; the CCIA said in a January 2025 <a href="https://ccianet.org/wp-content/uploads/2025/01/Italian-Piracy-Shield-and-Copyright-Law-Amendments-.pdf">letter</a> to European Commission officials.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The CCIA added that &#8220;the Piracy Shield raises a significant number of concerns which can inadvertently affect legitimate online services, primarily due to the potential for overblocking.&#8221; The letter said that in October 2024, &#8220;Google Drive was mistakenly blocked by the Piracy Shield system, causing a three-hour blackout for all Italian users, while 13.5 percent of users were still blocked at the IP level, and 3 percent were blocked at the DNS level after 12 hours.&#8221;</p>
+<p>The Italian system &#8220;aims to automate the blocking process by allowing rights holders to submit IP addresses directly through the platform, following which ISPs have to implement a block,&#8221; the CCIA said. &#8220;Verification procedures between submission and blocking are not clear, and indeed seem to be lacking. Additionally, there is a total lack of redress mechanisms for affected parties, in case a wrong domain or IP address is submitted and blocked.&#8221;</p>
+<h2>30-minute blocking prevents &#8220;careful verification&#8221;</h2>
+<p>The 30-minute blocking window &#8220;leaves extremely limited time for careful verification by ISPs that the submitted destination is indeed being used for piracy purposes,&#8221; the CCIA said. The trade group also questioned the piracy-reporting system&#8217;s ties to the organization that runs Italy&#8217;s top football league.</p>
+<p>&#8220;Additionally, the fact that the Piracy Shield platform was developed for AGCOM by a company affiliated with Lega Serie A, which is one of the very few entities authorized to report, raises serious questions about the potential conflict of interest exacerbating the lack of transparency issue,&#8221; the letter said.</p>
+<p>A trade group for Italian ISPs has argued that the law requires &#8220;filtering and tasks that collide with individual freedoms&#8221; and is contrary to European legislation that classifies broadband network services as mere conduits that are exempt from liability.</p>
+<p>&#8220;On the contrary, in Italy criminal liability has been expressly established for ISPs,&#8221; Dalia Coffetti, head of regulatory and EU affairs at the Association of Italian Internet Providers, <a href="https://www.euroispa.org/2025/04/piracy-shield-a-flawed-approach-in-the-fight-against-online-piracy/">wrote in April 2025</a>. Coffetti argued, &#8220;There are better tools to fight piracy, including criminal Law, cooperation between States, and digital solutions that downgrade the quality of the signal broadcast via illegal streaming websites or IPtv. European ISPs are ready to play their part in the battle against piracy, but the solution certainly does not lie in filtering and blocking IP addresses.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
