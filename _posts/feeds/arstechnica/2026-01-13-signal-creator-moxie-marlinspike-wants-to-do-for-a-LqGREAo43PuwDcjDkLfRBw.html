@@ -1,0 +1,96 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2026/01/signal-creator-moxie-marlinspike-wants-to-do-for-ai-what-he-did-for-messaging/
+date: '2026-01-13T12:00:36'
+excerpt: Introducing Confer, an end-to-end AI assistant that just works.
+image: assets/media/LqGREAo43PuwDcjDkLfRBw-kRiLaAitcRkBA2azgsCcgQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Features
+- Security
+- end-to-end encryptioon
+- LLMs
+- privacy
+title: Signal creator Moxie Marlinspike wants to do for AI what he did for messaging
+---
+<div>
+                      
+                      
+           
+<p>Moxie Marlinspike&#8212;the pseudonym of an engineer who set a new standard for private messaging with the creation of the Signal Messenger&#8212;is now aiming to revolutionize AI chatbots in a similar way.</p>
+<p>His latest brainchild is <a href="https://confer.to/">Confer</a>, an open source AI assistant that provides strong assurances that user data is unreadable to the platform operator, hackers, law enforcement, or any other party other than account holders. The service&#8212;including its large language models and back-end components&#8212;runs entirely on open source software that users can cryptographically verify is in place.</p>
+<p>Data and conversations originating from users and the resulting responses from the LLMs are encrypted in a trusted execution environment (TEE) that prevents even server administrators from peeking at or tampering with them. Conversations are stored by Confer in the same encrypted form, which uses a key that remains securely on users&#8217; devices.</p>
+<p>Like Signal, the under-the-hood workings of Confer are elegant in their design and simplicity. Signal was the first end-user privacy tool that made using it a snap. Prior to that, using PGP email or other options to establish encrypted channels between two users was a cumbersome process that was easy to botch. Signal broke that mold. Key management was no longer a task users had to worry about. Signal was designed to prevent even the platform operators from peering into messages or identifying users&#8217; real-world identities.</p>
+<h2>&#8220;Inherent data collectors&#8221;</h2>
+<p>All major platforms are required to turn over user data to law enforcement or private parties in a lawsuit when either provides a valid subpoena. Even when users opt out of having their data stored long term, parties to a lawsuit can compel the platform to store it, as the world learned last May when a court ordered OpenAI to <a href="https://arstechnica.com/tech-policy/2025/06/openai-says-court-forcing-it-to-save-all-chatgpt-logs-is-a-privacy-nightmare/">preserve all ChatGPT users&#8217; logs</a>&#8212;including deleted chats and sensitive chats logged through its API business offering. Sam Altman, CEO of OpenAI, <a href="https://ca.news.yahoo.com/sam-altman-says-chatgpt-therapy-115344758.html">has said</a> such rulings mean even psychotherapy sessions on the platform may not stay private. Another carve out to opting out: AI platforms like Google Gemini may have <a href="https://support.google.com/gemini/answer/13594961?hl=en">humans read chats</a>.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Data privacy expert <a href="https://infosec.exchange/deck/@Em0nM4stodon">Em</a> (she keeps her last name off the Internet) called AI assistants the &#8220;archnemesis&#8221; of data privacy because their utility relies on assembling massive amounts of data from myriad sources, including individuals.</p>
+<p>&#8220;AI models are inherent data collectors,&#8221; she told Ars. &#8220;They rely on large data collection for training, improvements, operations, and customizations. More often than not, this data is collected without clear and informed consent (from unknowing training subjects or from platform users), and is sent to and accessed by a private company with many incentives to share and monetize this data.&#8221;</p>
+<p>The lack of user-control is especially problematic given the nature of LLM interactions, Marlinspike <a href="https://confer.to/blog/2025/12/confessions-to-a-data-lake/">says</a>. Users often treat dialogue as an intimate conversation. Users share their thoughts, fears, transgressions, business dealings, and deepest, darkest secrets as if AI assistants are trusted confidants or personal journals. The interactions are fundamentally different from traditional web search queries, which usually adhere to a transactional model of keywords in and links out.</p>
+<p>He likens AI use to confessing into a &#8220;data lake.&#8221;</p>
+<h2>Awaking from the nightmare that is today&#8217;s AI landscape</h2>
+<p>In response, Marlinspike has developed and is now trialing <a href="https://confer.to/">Confer</a>. In much the way Signal uses encryption to make messages readable only to parties participating in a conversation, Confer protects user prompts, AI responses, and all data included in them. And just like Signal, there&#8217;s no way to tie individual users to their real-world identity through their email address, IP address, or other details.</p>
+<p>&#8220;The character of the interaction is fundamentally different because it&#8217;s a private interaction,&#8221; Marlinspike told Ars. &#8220;It&#8217;s been really interesting and encouraging and amazing to hear stories from people who have used Confer and had life-changing conversations. In part because they haven&#8217;t felt free to include information in those conversations with sources like ChatGPT or they had insights using data that they weren&#8217;t really free to share with ChatGPT before but can using an environment like Confer.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<p>One of the main ingredients of Confer encryption is <a href="https://arstechnica.com/information-technology/2023/05/passkeys-may-not-be-for-you-but-they-are-safe-and-easy-heres-why/">passkeys</a>. The industry-wide standard generates a 32-byte encryption keypair that&#8217;s unique to each service a user logs into. The public key is sent to the server. The private key is stored only on the user device, inside protected storage hardware that hackers (even those with physical access) can&#8217;t access. Passkeys provide two-factor authentication and can be configured to log in to an account with a fingerprint, face scan (both of which also stay securely on a device), or a device unlock PIN or passcode.</p>
+<p>The private key allows the device to log in to Confer and encrypt all input and output with encryption that&#8217;s widely believed to be impossible to break. That allows users to store conversations on Confer servers with confidence that they can&#8217;t be read by anyone other than themselves. The storage allows conversations to sync across other devices the user owns. The code making this all work is available for anyone to inspect. It looks like this:</p>
+
+
+<pre class="highlight"><code>
+  <span class="kd">const</span> <span class="nx">assertion</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">credentials</span><span class="p">.</span><span class="kd">get</span><span class="p">({</span>
+    <span class="na">mediation</span><span class="p">:</span> <span class="dl">"</span><span class="s2">optional</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">publicKey</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">challenge</span><span class="p">:</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">getRandomValues</span><span class="p">(</span><span class="k">new</span> <span class="nb">Uint8Array</span><span class="p">(</span><span class="mi">32</span><span class="p">)),</span>
+      <span class="na">allowCredentials</span><span class="p">:</span> <span class="p">[{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">credId</span><span class="p">,</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">public-key</span><span class="dl">"</span> <span class="p">}],</span>
+      <span class="na">userVerification</span><span class="p">:</span> <span class="dl">"</span><span class="s2">required</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">extensions</span><span class="p">:</span> <span class="p">{</span> <span class="na">prf</span><span class="p">:</span> <span class="p">{</span> <span class="na">eval</span><span class="p">:</span> <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">salt</span><span class="p">)</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">})</span> <span class="k">as</span> <span class="nx">PublicKeyCredential</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">prf</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">assertion</span><span class="p">.</span><span class="nx">getClientExtensionResults</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">rawKey</span>  <span class="o">=</span> <span class="k">new</span> <span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">prf</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">first</span><span class="p">);</span> 
+</code></pre>
+
+
+ 
+ 
+<p>This robust internal engine is fronted by a user interface (shown in the two images above) that&#8217;s deceptively simple. In just two strokes, a user is logged in, and all previous chats are decrypted. These chats are then available to any device logged into the same account. This way, Confer can sync chats without compromising privacy. The ample 32 bytes of key material allow the private key to change regularly, a feature that allows for <a href="https://en.wikipedia.org/wiki/Forward_secrecy">forward secrecy</a>, meaning that in the event a key is compromised, an attacker cannot read previous or future chats.</p>
+<p>The other main Confer ingredient is a TEE on the platform servers. TEEs encrypt all data and code flowing through the server CPU, protecting them from being read or modified by someone with administrative access to the machine. The Confer TEE also provides remote attestation. Remote attestation is a digital certificate sent by the server that cryptographically verifies that data and software are running inside the TEE and lists all software running on it.</p>
+
+          
+                  
+
+              
+          
+          
+<p>On Confer, remote attestation allows anyone to reproduce the bit-by-bit outputs that confirm that the publicly available <a href="https://github.com/conferlabs/confer-proxy">proxy</a> and <a href="https://github.com/conferlabs/confer-image">image</a> software&#8212;and only that software&#8212;is running on the server. To further verify Confer is running as promised, each release is digitally signed and published in a <a href="https://search.sigstore.dev/?email=releases%40conferlabs.iam.gserviceaccount.com">transparency log</a>.</p>
+<p>Native support for Confer is available in the most recent versions of macOS, iOS, and Android. On Windows, users must install a third-party authenticator. Linux support also doesn&#8217;t exist, although <a href="https://vitorpy.com/blog/2025-12-25-confer-to-linux-tpm-fido2-prf/">this extension</a> bridges that gap.</p>
+<h2>There are other private LLMs, but none from the big players</h2>
+<p>Another publicly available LLM offering E2EE is <a href="https://proton.me/blog/lumo-security-model">Lumo</a>, provided by Proton, a European company that&#8217;s behind the popular encrypted email service. It adopts the same encryption engine used by Proton Mail, Drive, and Calendar. The internals of the engine are considerably more complicated than Confer because they rely on a series of both symmetric and asymmetric keys. The end result for the user is largely the same, however.</p>
+<p>Once a user authenticates to their account, Proton says, all conversations, data, and metadata is encrypted with a symmetrical key that only the user has. Users can opt to store the encrypted data on Proton servers for device syncing or have it wiped immediately after the conversation is finished.</p>
+<p>A third LLM provider promising privacy is <a href="https://venice.ai/privacy">Venice</a>. It stores all data locally, meaning on the user device. No data is stored on the remote server.</p>
+<p>Most of the big LLM platforms offer a means for users to exempt their conversations and data for marketing and training purposes. But as noted earlier, these promises often come with major carve-outs. Besides selected review by humans, personal data may still be used to enforce terms of service or for other internal purposes, even when users have opted out of default storage.</p>
+<p>Given today&#8217;s legal landscape&#8212;which allows most data stored online to be obtained with a subpoena&#8212;and the regular occurrence of blockbuster data breaches by hackers, there can be no reasonable expectation that personal data remains private.</p>
+<p>It would be great if big providers offered end-to-end encryption protections, but there&#8217;s currently no indication they plan to do so. Until then, there are a handful of smaller alternatives that will keep user data out of the ever-growing data lake.</p>
+
+
+          
+                  
+
+                  
+          </div>
