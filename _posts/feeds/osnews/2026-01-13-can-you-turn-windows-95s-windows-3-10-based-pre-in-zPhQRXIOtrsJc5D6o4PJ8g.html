@@ -1,0 +1,43 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144180/can-you-turn-windows-95s-windows-3-10-based-pre-install-environment-into-a-full-desktop-without-using-microsoft-products/
+date: '2026-01-13T21:00:47'
+excerpt: 'It&#8217;s no secret that the Windows 95 installer uses a heavily stripped-down
+  Windows 3.10 runtime, but what can you actually do with it? How far can you take
+  this runtime? Can it run Photoshop? It is a long-standing tradition for Microsoft
+  to use a runtime copy of Windows as a part of Windows Setup. But the copy is so
+  stripped-down, it cannot run anything but the setup program (winsetup.bin). OR IS
+  IT? A mini-challenge for myself: create a semi-working desktop only based on runtime
+  Windows 3.10 shipped with Windows 95 installer but not using any other Microsoft
+  products. ↫ Nina Kalinina A crucial limitation here is that Kalinina is not allowing
+  herself to use any additional Microsoft products, so the easy route of just copying
+  missing DLLs and other files from a Windows 95 disk or whatever is not available
+  to her; she has to source any needed files from other sources. This may seem impossible,
+  but during those days, tons of Windows (and even DOS) applications would ship with
+  various Microsoft DLLs included, so there are definitely places to get Windows DLLs
+  that aren&#8217;t coming directly from Microsoft. As an example, since there&#8217;s
+  no shell of any kind included in the stripped-down Windows 3.10 runtime, Kalinina
+  tried Calmira and WinBar, which won&#8217;t work without a few DLLs. Where to get
+  them if you can&#8217;t get them straight from Microsoft? Well, it turns out programs
+  compiled with later version of MSVC would include several of these needed DLLs,
+  and AutoCad R12 was one of them. WinBar would now start and work, and while Calmira
+  would install, it didn&#8217;t work because it needs the Windows Multimedia Subsystem,
+  which don&#8217;t seem to be included in anything non-Microsoft. It turns out you
+  can take this approach remarkably far. Things like Calculator and Notepad will work,
+  but Pain or Paintbrush will not. Larger, more complex applications work too &#8211;
+  Photoshop 2.5.1 works, as does Netscape, but without any networking stack, it&#8217;s
+  a little bit moot. Even Calmira XP eventually runs, as some needed DLLs are found
+  inside &#8220;Mom For Windows 2.0&#8221;, at which point the installation starts
+  to look and feel a lot like a regular Windows 3.x installation, minus things like
+  settings panels and a bunch of default applications. Is this useful? Probably not,
+  but who cares &#8211; it&#8217;s an awesome trick, and that alone makes it a worthwhile
+  effort.'
+image: null
+source: osnews
+tags:
+- Windows
+title: Can you turn Windows 95’s Windows 3.10-based pre-install environment into a
+  full desktop without using Microsoft products?
+---
+<div><p>It&#8217;s no secret that the Windows 95 installer uses a heavily stripped-down Windows 3.10 runtime, but what can you actually do with it? How far can you take this runtime? Can it run Photoshop?</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>It is a long-standing tradition for Microsoft to use a runtime copy of Windows as a part of Windows Setup. But the copy is so stripped-down, it cannot run anything but the setup program (winsetup.bin).</p><p>OR IS IT?</p><p>A mini-challenge for myself: create a semi-working desktop only based on runtime Windows 3.10 shipped with Windows 95 installer but not using any other Microsoft products.</p>
+<a href="https://tech.lgbt/@nina_kali_nina/115871854239918291">&#8619; Nina Kalinina</a></blockquote><p>A crucial limitation here is that Kalinina is not allowing herself to use any additional Microsoft products, so the easy route of just copying missing DLLs and other files from a Windows 95 disk or whatever is not available to her; she has to source any needed files from other sources. This may seem impossible, but during those days, tons of Windows (and even DOS) applications would ship with various Microsoft DLLs included, so there are definitely places to get Windows DLLs that aren&#8217;t coming directly from Microsoft.</p><p>As an example, since there&#8217;s no shell of any kind included in the stripped-down Windows 3.10 runtime, Kalinina tried Calmira and WinBar, which won&#8217;t work without a few DLLs. Where to get them if you can&#8217;t get them straight from Microsoft? Well, it turns out programs compiled with later version of MSVC would include several of these needed DLLs, and AutoCad R12 was one of them. WinBar would now start and work, and while Calmira would install, it didn&#8217;t work because it needs the Windows Multimedia Subsystem, which don&#8217;t seem to be included in anything non-Microsoft.</p><p>It turns out you can take this approach remarkably far. Things like Calculator and Notepad will work, but Pain or Paintbrush will not. Larger, more complex applications work too &#8211; Photoshop 2.5.1 works, as does Netscape, but without any networking stack, it&#8217;s a little bit moot. Even Calmira XP eventually runs, as some needed DLLs are found inside &#8220;Mom For Windows 2.0&#8221;, at which point the installation starts to look and feel a lot like a regular Windows 3.x installation, minus things like settings panels and a bunch of default applications.</p><p>Is this useful? Probably not, but who cares &#8211; it&#8217;s an awesome trick, and that alone makes it a worthwhile effort.</p></div>
