@@ -1,0 +1,114 @@
+---
+author: Zack Whittaker
+canonical_url: https://techcrunch.com/2026/01/14/us-cargo-tech-company-publicly-exposed-its-shipping-systems-and-customer-data-to-the-web/
+date: '2026-01-14T15:40:53'
+excerpt: Shipping tech company Bluspark left internal plaintext passwords, including
+  those of executives, exposed to the internet, at a time when hacks in the shipping
+  industry are on the rise.
+image: assets/media/immp1ikc4ZA7mDpqntrBaQ-XEVeJJggyzpgUo9QFHdxoA.jpeg
+source: techcrunch
+tags:
+- Security
+- Transportation
+- cargo
+- cybersecurity
+- data exposure
+- Exclusive
+- freight
+- Shipping
+title: US cargo tech company publicly exposed its shipping systems and customer data
+  to the web
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">For the past year, security researchers have been urging the global shipping industry to shore up their cyber defenses after a spate of cargo thefts were linked to hackers. The researchers say they have seen elaborate hacks targeting logistics companies to hijack and redirect large amounts of their customers&#8217; products into the hands of criminals, in what has become an alarming collusion between hackers and real-life organized crime gangs.&#160;</p>
+
+<p class="wp-block-paragraph">A <a href="https://www.bloomberg.com/news/newsletters/2025-12-10/hijackers-stole-a-delivery-truck-after-hack-spotlighting-uptick-in-cargo-theft" target="_blank" rel="noreferrer noopener nofollow">delivery truck of stolen vapes</a> here, a <a href="https://www.usatoday.com/story/news/nation/2025/12/29/lobster-stolen-massachusetts-warehouse/87950372007/" target="_blank" rel="noreferrer noopener nofollow">suspected lobster heist</a> there.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">One little-known and critical U.S. shipping tech company has spent the last few months patching its own systems following the discovery of a raft of simple vulnerabilities, which inadvertently left the doors to its shipping platform wide open to anyone on the internet.</p>
+
+<p class="wp-block-paragraph">The company is Bluspark Global, a New York-based firm whose shipping and supply chain platform, Bluvoyix, allows hundreds of big companies to transport their products and track their cargo as it travels across the globe. While Bluspark may not be a household name, the company helps to power a large slice of worldwide freight shipments, including retail giants, grocery stores, furniture makers, and more. The company&#8217;s software is also used by several other companies affiliated with Bluspark.</p>
+
+<p class="wp-block-paragraph">Bluspark told TechCrunch this week that its security issues are now resolved. The company fixed five flaws in its platform, including the use of plaintext passwords by employees and customers, and the ability to remotely access and interact with Bluvoyix&#8217;s shipping software. The flaws exposed access to all of the customer&#8217;s data, including their shipment records, dating back decades.&#160;</p>
+
+<p class="wp-block-paragraph">But for security researcher Eaton Zveare, who uncovered the vulnerabilities in Bluspark&#8217;s systems back in October, alerting the company to the security flaws took longer than the discovery of the bugs themselves &#8212; since Bluspark had no discernable way to contact it.</p>
+
+<p class="wp-block-paragraph">In a now-published <a href="https://eaton-works.com/2026/01/14/bluspark-bluvoyix-hack/" target="_blank" rel="noreferrer noopener nofollow">blog post</a>, Zveare said he submitted details of the five flaws in Bluspark&#8217;s platform to the <a href="https://maritimehackingvillage.com" target="_blank" rel="noreferrer noopener nofollow">Maritime Hacking Village</a>, a non-profit that works to secure maritime space and, as with this case, helps researchers to notify companies working in the maritime industry of active security flaws.&#160;</p>
+
+<p class="wp-block-paragraph">Weeks later and following multiple emails, voicemails, and LinkedIn messages, the company had not responded to Zveare. All the while, the flaws could still be exploited by anyone on the internet.</p>
+
+<p class="wp-block-paragraph">As a last resort, Zveare contacted TechCrunch in an effort to get the issues flagged.&#160;</p>
+
+<p class="wp-block-paragraph">TechCrunch sent emails to Bluspark CEO Ken O&#8217;Brien and the company&#8217;s senior leadership alerting them to a security lapse, but did not receive a response. TechCrunch later emailed a Bluspark customer, a U.S. publicly traded retail company, to alert them of the upstream security lapse, but we also did not hear back.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">On the third time TechCrunch emailed Bluspark&#8217;s CEO, we included a partial copy of his password to demonstrate the seriousness of the security lapse.</p>
+
+<p class="wp-block-paragraph">A couple of hours later, TechCrunch received a response &#8212; from a law firm representing Bluspark.&#160;</p>
+
+<h2 class="wp-block-heading" id="h-plaintext-passwords-and-an-unauthenticated-api">Plaintext passwords and an unauthenticated API</h2>
+
+<p class="wp-block-paragraph">In his blog post, Zveare explained he initially discovered the vulnerabilities after visiting the website of a Bluspark customer.</p>
+
+<p class="wp-block-paragraph">Zveare wrote that the customer&#8217;s website had a contact form that allowed prospective customers to make inquiries. By viewing the web page source code with his browser&#8217;s built-in tools, Zveare noticed the form would send the customer&#8217;s message through Bluspark&#8217;s servers via its API. (An API allows two or more connected systems to communicate with each other over the internet; in this case, a website contact form and the Bluspark customer&#8217;s inbox.)</p>
+
+<p class="wp-block-paragraph">Since the email-sending code was embedded in the webpage itself, this meant it was possible for anyone to modify the code and abuse this form to <a href="https://www.cve.org/cverecord?id=CVE-2026-22239" target="_blank" rel="noreferrer noopener nofollow">send malicious emails</a>, such as phishing lures, originating from a real Bluspark customer.</p>
+
+<p class="wp-block-paragraph">Zveare pasted the API&#8217;s web address into his browser, which loaded a page containing the API&#8217;s auto-generated documentation. This web page was a <a href="https://www.cve.org/cverecord?id=CVE-2026-22237" target="_blank" rel="noreferrer noopener nofollow">master list</a> of all the actions that can be performed with the company&#8217;s API, such as requesting a list of users who have access to Bluspark&#8217;s platforms, as well as creating new user accounts.</p>
+
+<p class="wp-block-paragraph">The API documentation page also had a feature allowing anyone the ability to &#8220;test&#8221; the API by submitting commands to retrieve data from Bluspark&#8217;s servers as a logged-in user.&#160;</p>
+
+<p class="wp-block-paragraph">Zveare found that the API, despite the page claiming that it required authentication to use, <a href="https://www.cve.org/cverecord?id=CVE-2026-22236" target="_blank" rel="noreferrer noopener nofollow">did not need a password</a> or any credentials to return sensitive information from Bluspark&#8217;s servers.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Using only the list of API commands, Zveare was able to retrieve reams of user account records of employees and customers who use Bluspark&#8217;s platform, entirely unauthenticated. This included usernames and passwords, which were <a href="https://www.cve.org/cverecord?id=CVE-2026-22240" target="_blank" rel="noreferrer noopener nofollow">visible in plaintext</a> and not encrypted &#8212; including an account associated with the platform&#8217;s administrator.</p>
+
+<p class="wp-block-paragraph">With the admin&#8217;s username and password in hand, an attacker could have logged into this account and run amok. As a good-faith security researcher, Zveare could not use the credentials, as using someone else&#8217;s password without their permission is unlawful.&#160;</p>
+
+<p class="wp-block-paragraph">Since the API documentation listed a command that allowed anyone to <a href="https://www.cve.org/cverecord?id=CVE-2026-22238" target="_blank" rel="noreferrer noopener nofollow">create a new user</a> with administrator access, Zveare went ahead and did just that, and got unrestricted access to its Bluvoyix supply chain platform. Zveare said the administrator&#8217;s level of access allowed the viewing of customer data as far back as 2007.</p>
+
+<p class="wp-block-paragraph">Zveare found that once logged in with this newly created user, each API request was wrapped in a user-specific token, which was meant to ensure the user was in fact allowed to access a portal page each time they clicked on a link. But the token was not necessary to complete the command, allowing Zveare to send requests without the token altogether, further confirming that the API was unauthenticated.&#160;</p>
+
+<h2 class="wp-block-heading" id="h-bugs-fixed-company-plans-new-security-policy">Bugs fixed, company plans new security policy</h2>
+
+<p class="wp-block-paragraph">After establishing contact with Bluspark&#8217;s law firm, Zveare gave TechCrunch permission to share a copy of his vulnerability report with its representatives.&#160;</p>
+
+<p class="wp-block-paragraph">Days later, the law firm said Bluspark had remediated most of the flaws and was working to retain a third-party company for an independent assessment.</p>
+
+<p class="wp-block-paragraph">Zveare&#8217;s efforts to disclose the bugs highlight a common problem in the cybersecurity world. Companies oftentimes do not provide a way, such as a publicly listed email address, to alert them about security vulnerabilities. As such, this can make it challenging for security researchers to publicly reveal security flaws that remain active, out of concerns that disclosing details could put users&#8217; data at risk.</p>
+
+<p class="wp-block-paragraph">Ming Lee, an attorney representing Bluspark, told TechCrunch on Tuesday the company is &#8220;confident in the steps taken to mitigate potential risk arising from the researcher&#8217;s findings,&#8221; but would not comment on specifics of the vulnerabilities or their fixes; say which third-party assessment company it retained, if any; or comment on its specific security practices.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">When asked by TechCrunch, Bluspark would not say if it was able to ascertain if any of its customer shipments had been manipulated by someone maliciously exploiting the bugs. Lee said there was &#8220;no indication of customer impact or malicious activity attributable to the issues identified by the researcher.&#8221; Bluspark would not say what evidence it had to reach that conclusion.</p>
+
+<p class="wp-block-paragraph">Lee said Bluspark was planning to introduce a disclosure program, allowing outside security researchers to report bugs and flaws to the company, but that its discussions were still underway.</p>
+
+<p class="wp-block-paragraph">Bluspark CEO Ken O&#8217;Brien did not provide comment for this article.</p>
+
+<p class="wp-block-paragraph">To securely contact this reporter, you can reach out using Signal via the username: zackwhittaker.1337</p>
+
+
+			
+
+			</div>
