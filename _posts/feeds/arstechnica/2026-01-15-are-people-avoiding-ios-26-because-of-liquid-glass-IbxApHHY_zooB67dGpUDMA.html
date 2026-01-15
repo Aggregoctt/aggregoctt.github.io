@@ -1,0 +1,111 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2026/01/are-people-avoiding-ios-26-because-of-liquid-glass-its-complicated/
+date: '2026-01-15T18:37:34'
+excerpt: Liquid Glass is controversial, but adoption rates aren't as low as they seem.
+image: assets/media/IbxApHHY_zooB67dGpUDMA-v46TpjwKfj5pjdX8Ejob3g.jpeg
+source: arstechnica
+tags:
+- Apple
+- Tech
+- apple
+- ios 18
+- ios 26
+title: Are people avoiding iOS 26 because of Liquid Glass? It’s complicated.
+---
+<div>
+                      
+                      
+           
+<p>Last week, news about the adoption rates for Apple&#8217;s iOS 26 update started making the rounds. The new update, these reports <a href="https://www.cultofmac.com/news/ios-26-adoption-struggles-with-iphone-users">claim</a>, was being installed at dramatically lower rates than past iOS updates. And while we can&#8217;t infer anything about why people might choose not to install iOS 26, the conclusion being jumped to is that iPhone users are simply desperate to avoid the redesigned Liquid Glass user interface.</p>
+<p>The numbers do, in fact, look bad: Statcounter data for January <a href="https://gs.statcounter.com/ios-version-market-share/mobile-tablet/worldwide/#monthly-202506-202601">suggests</a> that the various versions of iOS 26 are running on just 16.6 percent of all devices, compared to around 70 percent for the various versions of iOS 18. The iOS 18.7 update alone&#8212;released at the same time as iOS 26.0 in September for people who wanted the security patches but weren&#8217;t ready to step up to a brand-new OS&#8212;appears to be running on nearly one-third of all iOS devices.</p>
+<p>Those original reports were picked up and repeated because they tell a potentially interesting story of the &#8220;huge if true&#8221; variety: that users&#8217; aversion to the Liquid Glass design is so intense and widespread that it&#8217;s actively keeping users away from the operating system. But after examining our own traffic numbers, as well as some technical changes made in iOS 26, it appears Statcounter&#8217;s data is dramatically undercounting the number of iOS 26 devices in the wild.</p>
+<p>We&#8217;ve taken a high-level look at all iPhone traffic across all Cond&#233; Nast websites for October, November, and December of 2025 and compared it to traffic from October, November, and December of 2024. This data suggests that iOS 26 is being adopted more slowly than iOS 18 was the year before&#8212;roughly 76 percent of all iPhone pageviews came from devices running iOS 18 in December of 2024, compared to about 45 percent for iOS 26 in December of 2025.</p>
+<p>That&#8217;s not as cataclysmic a dropoff as Statcounter&#8217;s data suggests, even before considering other mitigating factors&#8212;iOS 26 <a href="https://arstechnica.com/gadgets/2025/06/ios-and-ipados-26-will-run-on-most-things-that-support-ios-and-ipados-18/">dropped support</a> for 2018&#8217;s iPhone XS, XS Max, and XR, for example, while iOS 18 ran on every iPhone that could run iOS 17.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>But it&#8217;s still a much slower rate of adoption than we&#8217;re used to for most iOS versions, and it&#8217;s something to monitor as we get closer to iOS 27 and Apple&#8217;s first opportunity to make major changes to Liquid Glass. And to monitor it, it&#8217;s important to be able to measure it correctly. There have been behind-the-scenes changes to iOS 26 that appear to have thrown off Statcounter&#8217;s data collection&#8212;let&#8217;s talk about those, about what our own data shows, and about why you may want to upgrade to iOS 26 soon even if you don&#8217;t care for Liquid Glass.</p>
+<h2>User agent string changes in iOS 26</h2>
+<p>It turns out that telling an iOS 18 device from an iOS 26 device is harder than it ought to be, and that&#8217;s because of a change Apple made to Safari in iOS 26.</p>
+<p>Web analytics software (and services like Statcounter) attempt to gather device data by looking at the browser&#8217;s <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/User-Agent">user agent string</a>, a short list of information about the hardware, operating system, browser, and browser engine. There are benign and useful reasons to collect this kind of data. If you&#8217;re a web developer fielding a ton of user complaints from people who are all using a specific browser or OS version, it can help you narrow down what the issue is and test a fix. You could also use the user agent string to decide whether to show the desktop or mobile version of your site to a user.</p>
+<p>But if this information is&#160;too accurate or detailed, it can lead to &#8220;fingerprinting"&#8212;the ability for sites to identify a specific user or specific type of user from their user-agent string. Browser makers have taken steps, both together and separately, to reduce the amount of fingerprinting that is possible.</p>
+<p>And occasionally, browsers will intentionally misrepresent their user agent string for compatibility reasons. For example, the default user agent string for Safari running on modern versions of iPadOS claims that the browser is running on top of macOS to make sites rendered on an iPad work more like sites rendered on a Mac. Apple froze the macOS version in Safari&#8217;s user agent string to 10.15.7 several years ago, partly to reduce fingerprinting and partly to resolve compatibility problems that some sites had when Apple put &#8220;macOS 11&#8221; in the user agent string after decades of macOS 10.</p>
+
+          
+                  
+
+              
+          
+          
+<p>All of this is to say: information derived from the user-agent string is only as accurate as the OSes and browsers that are reporting their user-agent strings. And in iOS 26, Apple decided to freeze the iOS version in Safari&#8217;s user agent string to version 18 in order to reduce fingerprinting (credit to developer and blogger Niels Leenheer, who both <a href="https://nielsleenheer.com/articles/2025/the-user-agent-string-of-safari-on-ios-26-and-macos-26/">explained this change</a> and <a href="https://mastodon.cloud/@karlcow/115152108505379796">confirmed with Apple engineer Karl Dubost</a> why it was made).</p>
+<p>Which explains why anyone looking at Statcounter&#8217;s data could draw incorrect conclusions about iOS 26 adoption: because most iOS users are running Safari, and because all Safari versions running on iOS 26 are claiming to be running on iOS 18.6 or 18.7 instead.</p>
+<p>Only third-party browsers like Google Chrome or Microsoft Edge are reporting an iOS version of 26 in their user agent strings, so what Statcounter is inadvertently measuring is the number of Chrome users who have updated to iOS 26, not the total number of users who have updated.</p>
+ 
+<h2>What our data says</h2>
+<p>There is a workaround for this, at least for iOS. Safari on iOS 26 will report an iOS version of 18.6 or 18.7, but it also reports a Safari version of 26.x. This isn&#8217;t as useful on macOS, where Safari 26 could be running on macOS 14 Sonoma, macOS 15 Sequoia, or macOS 26 Tahoe. But on iOS, Safari 26&#160;only runs on iOS 26, so it&#8217;s a useful proxy for identifying the operating system version.</p>
+
+
+
+ 
+iOS 18 Safari pageviews in 2024
+iOS 26 Safari pageviews in 2025
+
+
+<strong>October</strong>
+24.9%
+22.1%
+
+
+<strong>November</strong>
+35.1%
+26.3%
+
+
+<strong>December</strong>
+75.9%
+45.3%
+
+
+
+<p>For these stats, we&#8217;ve grouped together all devices claiming to run Safari 26 on an iPhone, regardless of whether the underlying iOS version is listed as 18.x or 26.x (some apps or third-party browsers using Apple&#8217;s built-in WebKit engine can still identify themselves as &#8220;Safari,&#8221; though Chrome, Edge, and Mozilla Firefox at least report their own user-agent strings). We&#8217;ve compared those numbers to all devices claiming to run Safari 18 on iPhones claiming to run iOS 18. This does screen out users running third-party browsers on iPhones, but Statcounter data <a href="https://gs.statcounter.com/browser-version-market-share#monthly-202408-202512">suggests</a> that the ratio of Safari to Chrome users on iOS hasn&#8217;t changed much over that period.</p>
+
+          
+                  
+
+              
+          
+          
+<p>What&#8217;s interesting is that for October 2024 and October 2025&#8212;the first full month that iOS 18 and iOS 26 were available, respectively&#8212;adoption numbers don&#8217;t look all that different. About 25 percent of iPhone pageviews across all Cond&#233; Nast were served to devices running Safari on iOS 18, compared to 22 percent for iOS 26 the following year. That is a step down, but it suggests that early adopters weren&#8217;t repelled en masse by Liquid Glass or anything else about the operating system.</p>
+<p>But the gap widens over the next two months, which&#160;does suggest that &#8220;normal&#8221; users aren&#8217;t in a rush to get the update. By December 2024, our data shows that 76 percent of iPhone Safari pageviews were going to iOS 18 devices, compared to just 45 percent for iOS 26 in December 2025.</p>
+<p>Adoption of new iOS versions does plateau after a while. Adoption of iOS 18 hit 80 percent in January 2025, according to our data, and then rose more slowly afterward, peaking at around 91 percent in August 2025. Those stats are in the same ballpark as both <a href="https://gs.statcounter.com/ios-version-market-share/mobile-tablet/worldwide/#monthly-202501-202508">Statcounter data</a> (78 percent as of August 2025) and <a href="https://developer.apple.com/support/app-store/">the last stats Apple has published</a> (82 percent of all iPhones as of June 2025) for iOS 18. (We&#8217;ve asked the company if it has any updated internal stats to share and will update the article if we receive a response.)</p>
+<p>We&#8217;ll see where iOS 26 eventually settles. If I&#8217;m Apple, I&#8217;m a bit less worried about slower adoption as long as iOS 26 eventually hits that same 80 to 90 percent range. But if usage settles significantly below that historical watermark, it could signal a more lasting negative response to the iOS 26 update that needs to be addressed in future versions.</p>
+<h2>Why it&#8217;s time to take the plunge, even if you don&#8217;t like Liquid Glass</h2>
+ 
+
+<p>However you feel about Liquid Glass, we&#8217;re getting to the point that upgrading is going to become necessary for people who want security patches and functional fixes for their phones.</p>
+
+          
+                   
+            
+
+              
+          
+          
+<p>For a short time after each new iOS version is released, Apple continues to provide security patches for the previous version of iOS, for people who would rather wait for early bugs in the new OS to be patched. The company <a href="https://arstechnica.com/gadgets/2021/09/psa-you-dont-have-to-upgrade-to-ios-15/">started this practice in 2021</a>, when it provided security patches for iOS 14 for a couple of months after the release of iOS 15.&#160;But those patches <a href="https://arstechnica.com/gadgets/2022/01/apple-ends-security-updates-for-ios-14-pushes-users-to-install-ios-15-instead/">don&#8217;t last forever</a>, and eventually devices that can upgrade to the new operating system will need to do it to stay patched.</p>
+<p>Apple never formally announces when these security updates have stopped, but you can tell by looking at <a href="https://support.apple.com/en-us/100100">the company&#8217;s security updates page</a>. The iOS 18.7, 18.7.1, and 18.7.2 updates all apply to the &#8220;iPhone XS and later.&#8221; But the iOS 18.7.3 update released on December 12, 2025, only applies to the iPhone XS, iPhone XS Max, and iPhone XR. It&#8217;s a subtle difference, but it means that Apple is only continuing to patch iOS 18 on devices that can&#8217;t run iOS 26.</p>
+<p>This is <a href="https://arstechnica.com/gadgets/2022/12/apple-releases-ios-15-security-updates-for-devices-that-cant-upgrade-to-16/">standard practice for iPhones and iPads</a>, but it differs from the update model Apple uses for macOS&#8212;any Mac can continue to download and install security updates for macOS 14 Sonoma and macOS 15 Sequoia, regardless of whether they&#8217;re eligible for the macOS 26 Tahoe upgrade.</p>
+<p>If you skipped the early versions of iOS 26 and iPadOS 26 because of Liquid Glass, the good news is that Apple provided options to allow users to tone down the effect. The iOS 26.1 update <a href="https://arstechnica.com/gadgets/2025/10/new-ios-and-macos-betas-add-tinted-toggle-to-tone-down-liquid-glass/">added a &#8220;tinted&#8221; option</a> for Liquid Glass, increasing the interface&#8217;s contrast and opacity to help with the legibility issues you&#8217;ll occasionally run into with the default settings. The company also <a href="https://www.macrumors.com/2025/11/04/ios-26-2-liquid-glass-slider/">added opacity controls for the lock screen clock</a> in iOS 26.2. Personally, I also found it helpful to switch the Tabs view in the Safari settings from &#8220;Compact&#8221; to &#8220;Bottom&#8221; to make the browser look and act more like it did in its iOS 18-era iteration.</p>
+<p>Those settings may feel like half-measures to hardcore Liquid Glass haters who just want Apple to revert to its previous design language. But if you&#8217;ve got a modern iPhone or iPad and you want to stay up to date and secure, those toggles (plus additional controls for motion and transparency in the Accessibility settings) may at least ease the transition for you.</p>
+
+
+          
+                  
+
+                  
+          </div>
