@@ -1,0 +1,44 @@
+---
+author: Ryan Whitwam
+canonical_url: https://arstechnica.com/gadgets/2026/01/researchers-reveal-whisperpair-attack-to-eavesdrop-on-google-fast-pair-headphones/
+date: '2026-01-15T17:46:40'
+excerpt: Even Google's own earbuds are vulnerable to the Fast Pair hack.
+image: assets/media/F6QDAZo_lSNmniAXKS937Q-BSc_vFq8PnywVWX1gsQPDw.jpeg
+source: arstechnica
+tags:
+- Google
+- Security
+- Tech
+- bluetooth
+- google
+- security
+title: Many Bluetooth devices with Google Fast Pair vulnerable to “WhisperPair” hack
+---
+<div>
+                      
+                      
+          <p>Pairing Bluetooth devices can be a pain, but Google Fast Pair makes it almost seamless. Unfortunately, it may also leave your headphones vulnerable to remote hacking. A team of security researchers from Belgium&#8217;s KU Leuven University has revealed a vulnerability dubbed WhisperPair that allows an attacker to hijack Fast Pair-enabled devices to spy on the owner.</p>
+<p>Fast Pair is widely used, and your device may be vulnerable even if you&#8217;ve never used a Google product. The bug affects more than a dozen devices from 10 manufacturers, including Sony, Nothing, JBL, OnePlus, and Google itself. Google has acknowledged the flaw and notified its partners of the danger, but it&#8217;s up to these individual companies to create patches for their accessories. A full list of vulnerable devices is available on the <a href="https://whisperpair.eu/">project&#8217;s website</a>.</p>
+<p>The researchers say that it takes only a moment to gain control of a vulnerable Fast Pair device (a median of just 10 seconds) at ranges up to 14 meters. That&#8217;s near the limit of the Bluetooth protocol and far enough that the target wouldn&#8217;t notice anyone skulking around while they hack headphones.</p>
+<p>Once an attacker has forced a connection to a vulnerable audio device, they can perform relatively innocuous actions, such as interrupting the audio stream or playing audio of their choice. However, WhisperPair also allows for location tracking and microphone access. So the attacker can listen in on your conversations and follow you around via the Bluetooth device in your pocket. The researchers have created a helpful video dramatization (below) that shows how WhisperPair can be used to spy on unsuspecting people.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+<p>The flaw arises from an incomplete implementation of the Fast Pair standard. Bluetooth devices that get a Fast Pair connection request are supposed to accept only when in pairing mode. However, the researchers say that many devices fail this check and will pair regardless. WhisperPair forces the connection through via the regular Bluetooth pairing process.</p>
+<h2>Hoping for an update</h2>
+<p>When vulnerabilities are found in phone or computer software, it&#8217;s a relatively simple matter to get patches rolled out, as most devices now support automatic updates for critical issues. Accessories aren&#8217;t quite the same, though. Many people never install accessory apps on their devices, so they never move beyond the original firmware.</p>
+<p>WhisperPair is even more problematic because you cannot disable Fast Pair functionality on supported devices. The only thing you can do is install the companion app and wait for an update. Google says it has pushed an update to its own vulnerable devices, but the researchers tell <a href="https://www.wired.com/story/google-fast-pair-bluetooth-audio-accessories-vulnerability-patches/">Wired</a> that it was a simple matter to find a workaround for that patch. It may take weeks or months for all the affected devices to be fully fixed, particularly when there&#8217;s so much confusion about what needs to be fixed.</p>
+<p>Google has said it is not aware of WhisperPair being leveraged in the wild. However, the risk of that goes up now that it&#8217;s public. If you&#8217;re worried someone has used this flaw to gain access to your headphones, all you can do is factory reset them, forcing the attacker to redo the hack. It&#8217;s also smart to keep the official app installed so you can get firmware updates as soon as they&#8217;re available.</p>
+
+
+          
+                  
+
+                  
+          </div>
