@@ -1,0 +1,37 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144195/fun-fact-theres-plan-9-in-windows-and-qemu/
+date: '2026-01-15T23:53:54'
+excerpt: 'If you&#8217;re only even remotely aware of the operating system Plan 9,
+  you&#8217;ll most likely know that it takes the UNIX concept of &#8220;everything
+  is a file&#8221; to the absolute extreme. In order to make sure all these files
+  &#8211; and thus the components of Plan 9 &#8211; can properly communicate with
+  one another, there&#8217;s 9P, or the Plan 9 Filesystem Protocol. Several Plan 9
+  applications are 9P file servers, for instance, and even things like windows are
+  files. It&#8217;s a lot more complicated than this, of course, but that&#8217;s
+  not relevant right now. Since Plan 9 wasn&#8217;t exactly a smashing success that
+  took the operating system world by storm, you might not be aware that 9P is actually
+  implemented in a few odd places. My favourite is how Microsoft turned to 9P for
+  a crucial feature of its Windows Subsystem for Linux: accessing files inside a Linux
+  VM running on Windows. To put it briefly: a 9P protocol file server facilitates
+  file related requests, with Windows acting as the client. We’ve modified the WSL
+  init daemon to initiate a 9P server. This server contains protocols that support
+  Linux metadata, including permissions. A Windows service and driver that act as
+  the client and talks to the 9P server (which is running inside of a WSL instance).
+  Client and server communicate over AF_UNIX sockets, since WSL allows interop between
+  a Windows application and a Linux application using AF_UNIX as described in this
+  post. ↫ Craig Loewen at Microsoft&#8217;s Dev Blogs This implementation is still
+  around today, so if you&#8217;re using Windows Subsystem for Linux, you&#8217;re
+  using a little bit of Plan 9 as glue to make it all come together. Similarly, if
+  you&#8217;re using QEMU and sharing files between the host and a VM through the
+  VirtFS driver, you&#8217;re also using 9P. Both NixOS and GNU Guix use 9P when they
+  build themselves inside a virtual machine, too, and there&#8217;s probably a few
+  other places where you can run into 9P. I don&#8217;t know, I thought this was interesting.'
+image: null
+source: osnews
+tags:
+- OS News
+title: 'Fun fact: there’s Plan 9 in Windows and QEMU'
+---
+<div><p>If you&#8217;re only even remotely aware of the operating system <a href="https://www.9front.org/">Plan 9</a>, you&#8217;ll most likely know that it takes the UNIX concept of &#8220;everything is a file&#8221; to the <a href="http://man.9front.org/5/intro">absolute extreme</a>. In order to make sure all these files &#8211; and thus the components of Plan 9 &#8211; can properly communicate with one another, there&#8217;s 9P, or the Plan 9 Filesystem Protocol. Several Plan 9 applications are 9P file servers, for instance, and even things like windows are files. It&#8217;s a lot more complicated than this, of course, but that&#8217;s not relevant right now.</p><p>Since Plan 9 wasn&#8217;t exactly a smashing success that took the operating system world by storm, you might not be aware that 9P is actually implemented in a few odd places. My favourite is how Microsoft turned to 9P for a crucial feature of its Windows Subsystem for Linux: accessing files inside a Linux VM running on Windows.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>To put it briefly: a <a href="https://en.wikipedia.org/wiki/9P_%28protocol%29" target="_blank" rel="noreferrer noopener">9P protocol file server</a> facilitates file related requests, with Windows acting as the client.</p><p>We&#8217;ve modified the WSL init daemon to initiate a 9P server. This server contains protocols that support Linux metadata, including permissions. A Windows service and driver that act as the client and talks to the 9P server (which is running inside of a WSL instance). Client and server communicate over AF_UNIX sockets, since WSL allows interop between a Windows application and a Linux application using AF_UNIX as described in <a href="https://devblogs.microsoft.com/commandline/windowswsl-interop-with-af_unix/">this post</a>.</p>
+<a href="https://devblogs.microsoft.com/commandline/whats-new-for-wsl-in-windows-10-version-1903/">&#8619; Craig Loewen at Microsoft&#8217;s Dev Blogs</a></blockquote><p>This implementation is still around today, so if you&#8217;re using Windows Subsystem for Linux, you&#8217;re using a little bit of Plan 9 as glue to make it all come together. Similarly, if you&#8217;re using QEMU and sharing files between the host and a VM through the VirtFS driver, <a href="https://wiki.qemu.org/Documentation/9psetup">you&#8217;re also using 9P</a>. Both NixOS and GNU Guix use 9P when they build themselves inside a virtual machine, too, and there&#8217;s probably a few other places where you can run into 9P.</p><p>I don&#8217;t know, I thought this was interesting.</p></div>
