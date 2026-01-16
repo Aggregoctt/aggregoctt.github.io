@@ -1,0 +1,48 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2026/01/mandiant-releases-rainbow-table-that-cracks-weak-admin-password-in-12-hours/
+date: '2026-01-16T21:05:37'
+excerpt: 'Windows laggards still using the vulnerable hashing function: Your days
+  are numbered.'
+image: assets/media/Pu5H1qkWkZP65XYtFKKSUg-_K4VtAGMqNB1ObT-xvPAhQ.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- hashes
+- ntlm
+- password cracking
+title: Mandiant releases rainbow table that cracks weak admin password in 12 hours
+---
+<div>
+                      
+                      
+          <p>Security firm Mandiant has released a database that allows any administrative password protected by Microsoft&#8217;s NTLM.v1 hash algorithm to be hacked in an attempt to nudge users who continue using the deprecated function despite known weaknesses.</p>
+<p>The database comes in the form of a <a href="https://en.wikipedia.org/wiki/Rainbow_table">rainbow table</a>, which is a precomputed table of hash values linked to their corresponding plaintext. These generic tables, which work against multiple hashing schemes, allow hackers to take over accounts by quickly mapping a stolen hash to its password counterpart. NTLMv1 rainbow tables are particularly easy to construct because of NTLMv1&#8217;s limited keyspace, meaning the relatively small number of possible passwords the hashing function allows for. NTLMv1 rainbow tables have existed for two decades but typically require large amounts of resources to make any use of them.</p>
+<h2>New ammo for security pros</h2>
+<p>On Thursday, Mandiant <a href="https://cloud.google.com/blog/topics/threat-intelligence/net-ntlmv1-deprecation-rainbow-tables/">said</a> it had <a href="https://research.google/resources/datasets/?dataset_types=other&amp;search=Net-NTLMv1&amp;">released</a> an NTLMv1 rainbow table that will allow defenders and researchers (and, of course, malicious hackers, too) to recover passwords in under 12 hours using consumer hardware costing less than $600 USD. The table is hosted in Google Cloud. The database works against Net-NTLMv1 passwords, which are used in network authentication for accessing resources such as SMB network sharing.</p>
+<p>Despite its long- and well-known susceptibility to easy cracking, NTLMv1 remains in use in some of the world&#8217;s more sensitive networks. One reason for the lack of action is that utilities and organizations in industries, including health care and industrial control, often rely on legacy apps that are incompatible with more recently released hashing algorithms. Another reason is that organizations relying on mission-critical systems can&#8217;t afford the downtime required to migrate. Of course, inertia and penny-pinching are also causes.</p>
+<p>&#8220;By releasing these tables, Mandiant aims to lower the barrier for security professionals to demonstrate the insecurity of Net-NTLMv1,&#8221; Mandiant said. &#8220;While tools to exploit this protocol have existed for years, they often required uploading sensitive data to third-party services or expensive hardware to brute-force keys.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Microsoft released NTLMv1 in the <a href="https://medium.com/@petergombos/lm-ntlm-net-ntlmv2-oh-my-a9b235c58ed4">1980s</a> with the release of OS/2. In 1999, cryptanalyst Bruce Schneier and Mudge <a href="https://www.schneier.com/academic/archives/1999/09/cryptanalysis_of_mic_1.html">published</a> research that exposed key weaknesses in the NTLMv1 underpinnings. At the 2012 Defcon 20 conference, researchers released a <a href="https://github.com/urbanesec/ZackAttack">tool set</a> that allowed attackers to move from untrusted network guest to admin in 60 seconds, by attacking the underlying weakness. With the 1998 release of <a href="https://news.microsoft.com/source/1998/10/19/microsoft-releases-service-pack-4-0-for-windows-nt-workstation-4-0-and-windows-nt-server-4-0/">Windows NT SP4</a> in 1998, Microsoft introduced NTLMv2, which fixed the weakness.</p>
+<p>Organizations that rely on Windows networking aren&#8217;t the only laggards. Microsoft only <a href="https://support.microsoft.com/en-us/topic/upcoming-changes-to-ntlmv1-in-windows-11-version-24h2-and-windows-server-2025-c0554217-cdbc-420f-b47c-e02b2db49b2e">announced</a> plans to deprecate NTLMv1 last August.</p>
+<p>Despite the public awareness that NTLMv1 is weak, &#8220;Mandiant consultants continue to identify its use in active environments,&#8221; the company said. &#8220;This legacy protocol leaves organizations vulnerable to trivial credential theft, yet it remains prevalent due to inertia and a lack of demonstrated immediate risk.&#8221;</p>
+<p>The table first assists attackers in providing the proper answer to a challenge that Windows sends during the authentication process by using a <a href="https://en.wikipedia.org/wiki/Known-plaintext_attack">known plaintext</a> attack with the challenge 1122334455667788. Once the challenge has been solved, the attacker obtains the Net-NTLMv1 hash and uses the table to rapidly crack it. Typically tools including <a href="https://github.com/lgandx/Responder">Responder</a>, <a href="https://github.com/topotam/PetitPotam">PetitPotam</a>, and <a href="https://github.com/Wh04m1001/DFSCoerce">DFSCoerce</a> are involved.</p>
+<p>In a <a href="https://infosec.exchange/@mttaggart/115900120077508198">thread</a> on Mastodon, researchers and admins applauded the move, because they said it would give them added ammunition when trying to convince decision makers to make the investments to move off the insecure function.</p>
+<p>&#8220;I&#8217;ve had more than one instance in my (admittedly short) infosec career where I&#8217;ve had to prove the weakness of a system and it usually involves me dropping a sheet of paper on their desk with their password on it the next morning,&#8221; one person <a href="https://infosec.exchange/@Mustardfacial/115900490727810239">said</a>. &#8220;These rainbow tables aren&#8217;t going to mean much for attackers as they&#8217;ve likely already got them or have far better methods, but where it will help is in making the argument that NTLMv1 is unsafe.&#8221;</p>
+<p>The Mandiant post provides basic steps required to move off of NTLMv1. It links to more detailed instructions.</p>
+<p>&#8220;Organizations should immediately disable the use of Net-NTLMv1,&#8221; Mandiant said. Organizations that get hacked because they failed to heed will have only themselves to blame.</p>
+
+
+          
+                  
+
+                  
+          </div>
