@@ -1,0 +1,42 @@
+---
+author: Russell Brandom
+canonical_url: https://techcrunch.com/2026/01/18/moxie-marlinspike-has-a-privacy-conscious-alternative-to-chatgpt/
+date: '2026-01-18T15:30:00'
+excerpt: Confer is designed to look and feel like ChatGPT or Claude, but your conversations
+  can't be used for training or advertising.
+image: assets/media/yD_KRlWGlM5ml5_oZFqGsA-m_bY2ILu0AzM_-GJhFaudQ.jpeg
+source: techcrunch
+tags:
+- AI
+- moxie marlinspike
+- llm
+title: Moxie Marlinspike has a privacy-conscious alternative to ChatGPT
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">If you&#8217;re at all concerned about privacy, the rise of AI personal assistants can feel alarming. It&#8217;s difficult to use one without sharing personal information, which is retained by the model&#8217;s parent company. With OpenAI <a rel="nofollow" href="https://openai.com/index/our-approach-to-advertising-and-expanding-access/">already testing advertising</a>, it&#8217;s easy to imagine the same data collection that fuels Facebook and Google creeping into your chatbot conversations.</p>
+
+<p class="wp-block-paragraph">A new project, launched in December by Signal co-founder Moxie Marlinspike, is showing what a privacy-conscious AI service might look like. <a rel="nofollow" href="https://confer.to/">Confer</a> is designed to look and feel like ChatGPT or Claude, but the backend is arranged to avoid data collection, with the open-source rigor that makes Signal so trusted. Your Confer conversations can&#8217;t be used to train the model or target ads, for the simple reason that the host will never have access to them.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">For Marlinspike, those protections are a response to the intimate nature of the service.</p>
+
+<p class="wp-block-paragraph">&#8220;It&#8217;s a form of technology that actively invites confession,&#8221; says Marlinspike. &#8220;Chat interfaces like ChatGPT know more about people than any other technology before. When you combine that with advertising, it&#8217;s like someone paying your therapist to convince you to buy something.&#8221;&#160;</p>
+
+<p class="wp-block-paragraph">Ensuring that privacy requires several different systems working in concert. </p>
+
+<p class="wp-block-paragraph">First, Confer encrypts messages to and from the system using <a rel="nofollow" href="https://confer.to/blog/2025/12/passkey-encryption/">the WebAuthn passkey system</a>. (Unfortunately, that standard works best on mobile devices or Macs running Sequoia, although you can also make it work on Windows or Linux with a password manager.) <a rel="nofollow" href="https://confer.to/blog/2026/01/private-inference/">On the server side</a>, all Confer&#8217;s inference processing is done in a Trusted Execution Environment (TEE), with remote attestation systems in place to verify the system hasn&#8217;t been compromised. Inside that, there&#8217;s an array of open-weight foundation models handling whatever query comes in.&#160;</p>
+
+<p class="wp-block-paragraph">The result is a lot more complicated than a standard inference setup (which is fairly complicated already), but it delivers on Confer&#8217;s basic promise to users. As long as those protections are in place, you can have sensitive conversations with the model without any information leaking out.</p>
+ 
+
+<p class="wp-block-paragraph">Confer&#8217;s free tier is limited to 20 messages a day and five active chats. Users willing to pay $35 a month will get unlimited access, along with more advanced models and personalization. That&#8217;s quite a bit more than ChatGPT&#8217;s Plus plan &#8212; but privacy doesn&#8217;t come cheap.</p>
+
+
+			
+
+			</div>
