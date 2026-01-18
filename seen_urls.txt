@@ -92796,3 +92796,7 @@ https://www.osnews.com/story/144210/chaosbsd-a-freebsd-fork-to-serve-as-a-driver
 https://www.osnews.com/?p=144210
 https://kyivindependent.com/crashed-russian-drone-discovered-in-moldova-authorities-report/
 696c1952841a83006a48cde2
+https://techcrunch.com/2026/01/17/why-silicon-valley-is-really-talking-about-fleeing-california-its-not-the-5/
+https://techcrunch.com/?p=3083671
+https://kyivindependent.com/media-investigation-identifies-over-163-000-russian-soldiers-killed-in-ukraine/
+696c4d05841a83006a48dc0b
