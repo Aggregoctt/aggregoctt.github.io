@@ -1,0 +1,26 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144214/you-can-apparently-use-windows-7s-compositor-in-gnome-and-vice-versa-or-something/
+date: '2026-01-18T12:04:33'
+excerpt: 'There&#8217;s cursed computing, and then there&#8217;s cursed computing.
+  It turns out that you can render GNOME&#8217;s windows with the compositor from
+  Windows 7, dwm.exe. Yes. tl;dr of how this clusterfuck works: this is effectively
+  just x11 forwarding an x server from windows to linux. the fun part is a) making
+  gnome run with an already existing window manager (namely dwm.exe lol), b) making
+  gnome run over x11 forwarding (it is Not a fan, last time it tried running gnome
+  on windows this is what broke it and made it quit trying), and c) actually ripping
+  out parts of the gnome compositor again to make dwm instead of gnome render window
+  decorations to achieve &#x2728;&#xfe0f;aero gnome&#x2728;&#xfe0f; ↫ ⬡-49016 at Mastodon
+  This is already one of the most cursed things I&#8217;ve ever seen, but then things
+  got so much worse. How about Windows 7&#8217;s dwm.exe, but composited by GNOME?
+  I need an adult.'
+image: null
+source: osnews
+tags:
+- Gnome
+title: You can apparently use Windows 7’s compositor in GNOME, and vice versa – or
+  something
+---
+<div><p>There&#8217;s cursed computing, and then there&#8217;s cursed computing. It turns out that you can render GNOME&#8217;s windows with the compositor from Windows 7, dwm.exe. Yes.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>tl;dr of how this clusterfuck works: this is effectively just x11 forwarding an x server from windows to linux. the fun part is a) making gnome run with an already existing window manager (namely dwm.exe lol), b) making gnome run over x11 forwarding (it is Not a fan, last time it tried running gnome on windows this is what broke it and made it quit trying), and c) actually ripping out parts of the gnome compositor again to make dwm instead of gnome render window decorations to achieve &#10024;&#65039;aero gnome&#10024;&#65039;</p>
+<a href="https://mastodon.catgirl.cloud/@49016/115912436861018228">&#8619; &#11041;-49016 at Mastodon</a></blockquote><p>This is already one of the most cursed things I&#8217;ve ever seen, but then things got so much worse. How about <a href="https://mastodon.catgirl.cloud/@49016/115915819132836278">Windows 7&#8217;s dwm.exe, but composited by GNOME</a>?</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><ul class="wp-block-list"><li>firefox and vscode are rendered by gnome</li><li>the start menu and gadgets are rendered by dwm, and then composited by gnome</li><li>ghostty, which literally goes above and beyond the gadgets (which you cannot do by just streaming one compositor to the other), is rendered by gnome</li><li>and the cherry on top is gnome-control-center, which exclusively runs in gnome sessions, being managed by gnome, rendered by dwm, and composited by gnome again</li></ul><p>this is powered by about 7 layers of duct tape and a couple hundred lines of the worst C the world has ever seen</p>
+<a href="https://mastodon.catgirl.cloud/@49016/115915850798457892">&#8619; &#11041;-49016 at Mastodon</a></blockquote><p>I need an adult.</p></div>
