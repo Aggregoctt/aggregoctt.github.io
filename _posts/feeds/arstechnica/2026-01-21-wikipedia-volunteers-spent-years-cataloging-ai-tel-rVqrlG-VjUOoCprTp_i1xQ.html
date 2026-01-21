@@ -1,0 +1,72 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2026/01/new-ai-plugin-uses-wikipedias-ai-writing-detection-rules-to-help-it-sound-human/
+date: '2026-01-21T12:15:23'
+excerpt: The web's best guide to spotting AI writing has become a manual for hiding
+  it.
+image: assets/media/rVqrlG-VjUOoCprTp_i1xQ-QnEa0SzZzYCAwM7OprWZ_A.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI detection
+- AI detectors
+- ai slop
+- AI writing
+- Anthropic
+- chatbots
+- ChatGPT
+- chatgtp
+- Claude
+- generative ai
+- large language models
+- machine learning
+- wikipedia
+title: Wikipedia volunteers spent years cataloging AI tells. Now there's a plugin
+  to avoid them.
+---
+<div>
+                      
+                      
+          <p>On Saturday, tech entrepreneur Siqi Chen <a href="https://github.com/blader/humanizer">released</a> an open source plugin for Anthropic&#8217;s <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">Claude Code</a> AI assistant that instructs the AI model to stop writing like an AI model. Called &#8220;Humanizer,&#8221; the simple prompt plugin feeds Claude a list of 24 language and formatting patterns that Wikipedia editors have <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">listed</a> as chatbot giveaways. Chen published the plugin on GitHub, where it has picked up over 1,600 stars as of Monday.</p>
+<p>&#8220;It&#8217;s really handy that Wikipedia went and collated a detailed list of &#8216;signs of AI writing,&#8217;&#8221; Chen <a href="https://x.com/blader/status/2013015738622284156">wrote</a> on X. &#8220;So much so that you can just tell your LLM to &#8230; not do that.&#8221;</p>
+<p>The source material is a guide from WikiProject AI Cleanup, a group of Wikipedia editors who have been hunting AI-generated articles since late 2023. French Wikipedia editor Ilyas Lebleu founded the project. The volunteers have tagged over 500 articles for review and, in August 2025, <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">published</a> a formal list of the patterns they kept seeing.</p>
+<p>Chen&#8217;s tool is a &#8220;<a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills">skill file</a>&#8221; for Claude Code, Anthropic&#8217;s terminal-based coding assistant, which involves a Markdown-formatted file that adds a list of written instructions (you can <a href="https://github.com/blader/humanizer/blob/main/SKILL.md">see them here</a>) appended to the prompt fed into the large language model (LLM) that powers the assistant. Unlike a normal <a href="https://arstechnica.com/information-technology/2025/08/the-personhood-trap-how-ai-fakes-human-personality/">system prompt</a>, for example, the skill information is formatted in a standardized way that Claude models are fine-tuned to interpret with more precision than a plain system prompt. (Custom skills require a paid Claude subscription with code execution turned on.)</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>But as with all AI prompts, language models don&#8217;t always perfectly follow skill files, so does the Humanizer actually work? In our limited testing, Chen&#8217;s skill file made the AI agent&#8217;s output sound less precise and more casual, but it could have some drawbacks: it won&#8217;t improve factuality and might harm coding ability.</p>
+<p>In particular, some of Humanizer&#8217;s instructions might lead you astray depending on the task. For example, the Humanizer skill includes the line: &#8220;Have opinions. Don&#8217;t just report facts &#8211; react to them. &#8216;I genuinely don&#8217;t know how to feel about this&#8217; is more human than neutrally listing pros and cons.&#8221; While being imperfect seems human, this kind of advice would probably not do you any favors if you were using Claude to write technical documentation.</p>
+<p>Even with its drawbacks, it&#8217;s ironic that one of the web&#8217;s most referenced rule sets for detecting AI-assisted writing may help some people subvert it.</p>
+<h2>Spotting the patterns</h2>
+<p>So what does AI writing look like? The Wikipedia guide is specific with many examples, but we&#8217;ll give you just one here for brevity&#8217;s sake.</p>
+<p>Some chatbots love to pump up their subjects with phrases like &#8220;marking a pivotal moment&#8221; or &#8220;stands as a testament to,&#8221; according to the guide. They write like tourism brochures, calling views &#8220;breathtaking&#8221; and describing towns as &#8220;nestled within&#8221; scenic regions. They tack &#8220;-ing&#8221; phrases onto the end of sentences to sound analytical: &#8220;symbolizing the region&#8217;s commitment to innovation.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>To work around those rules, the Humanizer skill tells Claude to replace inflated language with plain facts and offers this example transformation:</p>
+<p><strong>Before:</strong> &#8220;The Statistical Institute of Catalonia was officially established in 1989, marking a pivotal moment in the evolution of regional statistics in Spain.&#8221;</p>
+<p><strong>After:</strong> &#8220;The Statistical Institute of Catalonia was established in 1989 to collect and publish regional statistics.&#8221;</p>
+<p>Claude will read that and do its best as a pattern-matching machine to create an output that matches the context of the conversation or task at hand.</p>
+<h2>An example of why AI writing detection fails</h2>
+<p>Even with such a confident set of rules crafted by Wikipedia editors, we&#8217;ve <a href="https://arstechnica.com/information-technology/2023/07/why-ai-detectors-think-the-us-constitution-was-written-by-ai/">previously written</a> about why AI writing detectors don&#8217;t work reliably: There is nothing inherently unique about human writing that reliably differentiates it from LLM writing.</p>
+<p>One reason is that even though most AI language models tend toward certain types of language, they can also be prompted to avoid them, as with the Humanizer skill. (Although sometimes it&#8217;s very difficult, as OpenAI found in its <a href="https://arstechnica.com/ai/2025/11/forget-agi-sam-altman-celebrates-chatgpt-finally-following-em-dash-formatting-rules/">yearslong struggle</a> against the em dash.)</p>
+<p>Also, humans can write in chatbot-like ways. For example, this article likely contains some &#8220;AI-written traits&#8221; that trigger AI detectors even though it was written by a professional writer&#8212;especially if we use even a single em dash&#8212;because most LLMs picked up writing techniques from examples of professional writing scraped from the web.</p>
+<p>Along those lines, the Wikipedia guide has a caveat worth noting: While the list points out some obvious tells of, say, unaltered ChatGPT usage, it&#8217;s still composed of observations, not ironclad rules. A 2025 preprint <a href="https://aclanthology.org/2025.acl-long.267/">cited</a> on the page found that heavy users of large language models correctly spot AI-generated articles about 90 percent of the time. That sounds great until you realize that 10 percent are false positives, which is enough to potentially throw out some quality writing in pursuit of detecting AI slop.</p>
+<p>Taking a step back, that probably means AI detection work might need to go deeper than flagging particular phrasing and delve (see <a href="https://arstechnica.com/ai/2024/07/the-telltale-words-that-could-identify-generative-ai-text/">what I did there</a>?) more into the substantive factual content of the work itself.</p>
+
+
+          
+                  
+
+                  
+          </div>
