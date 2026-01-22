@@ -1,0 +1,73 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2026/01/millions-of-people-imperiled-through-sign-in-links-sent-by-sms/
+date: '2026-01-21T23:22:14'
+excerpt: Even well-known services with millions of users are exposing sensitive data.
+image: assets/media/PW6I26WGTC9cIV-4LzfBBQ-u7c9m14Ii2Ts6tdh0WM73g.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Policy
+- Security
+- authentication links
+- privacy
+- security
+- sms messages
+title: Millions of people imperiled through sign-in links sent by SMS
+---
+<div>
+                      
+                      
+           
+<p>Websites that authenticate users through links and codes sent in text messages are imperiling the privacy of millions of people, leaving them vulnerable to scams, identity theft, and other crimes, recently published research has found.</p>
+<p>The links are sent to people seeking a range of services, including those offering insurance quotes, job listings, and referrals for pet sitters and tutors. To eliminate the hassle of collecting usernames and passwords&#8212;and for users to create and enter them&#8212;many such services instead require users to provide a cell phone number when signing up for an account. The services then send authentication links or passcodes by SMS when the users want to log in.</p>
+<h2>Easy to execute at scale</h2>
+<p>A <a href="https://arxiv.org/abs/2601.09232">paper</a> published last week has found more than 700 endpoints delivering such texts on behalf of more than 175 services that put user security and privacy at risk. One practice that jeopardizes users is the use of links that are easily enumerated, meaning scammers can guess them by simply modifying the security token, which usually appears at the right of a URL. By incrementing the token&#8212;for instance, by first changing 123 to 124 or ABC to ABD and so on&#8212;the researchers were able to access accounts belonging to other users. From there, the researchers could view personal details, such as partially completed insurance applications.</p>
+<p>In other cases, the researchers could have transacted sensitive business while masquerading as the other user. Other links used so few possible token combinations that they were easy to brute force. Other examples of shoddy practices were links that allowed attackers who gained unauthorized access to access or modify user data with no other authentication other than clicking on a link sent by SMS. Many of the links provide account access days or even months after they were sent, further raising the risk of unauthorized access.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>&#8220;We argue that these attacks are straightforward to test, verify, and execute at scale,&#8221; the researchers, from the universities of New Mexico, Arizona, Louisiana, and the firm Circle, wrote. &#8220;The threat model can be realized using consumer-grade hardware and only basic to intermediate Web security knowledge.&#8221;</p>
+<p>SMS messages are sent unencrypted. In past years, researchers have unearthed public databases of previously sent texts that contained authentication links and private details, including people&#8217;s names and addresses. One such discovery, <a href="https://techcrunch.com/2019/12/01/millions-sms-messages-exposed/">from 2019</a>, included millions of stored sent and received text messages over the years between a single business and its customers. It included usernames and passwords, university finance applications, and marketing messages with discount codes and job alerts.</p>
+<p>Despite the known insecurity, the practice continues to flourish. For ethical reasons, the researchers behind the study had no way to capture its true scale, because it would require bypassing access controls, however weak they were. As a lens offering only a limited view into the process, the researchers viewed public SMS gateways. These are typically ad-based websites that let people use a temporary number to receive texts without revealing their phone number. Examples of such gateways are <a href="https://receivefreesms.net/">here</a> and <a href="https://temp-number.com/">here</a>.</p>
+<p>With such a limited view of SMS-sent authentication messages, the researchers were unable to measure the true scope of the practice and the security and privacy risks it posed. Still, their findings were notable.</p>
+<p>The researchers collected 332,000 unique SMS-delivered URLs extracted from 33 million texts, sent to more than 30,000 phone numbers. The researchers found numerous evidence of security and privacy threats to the people receiving them. Of those, the researchers said, messages originating from 701 endpoints sent on behalf of the 177 services exposed &#8220;critical personally identifiable information.&#8221; The root cause of the exposure was weak authentication based on tokenized links for verification. Anyone with the link could then obtain users&#8217; personal information&#8212;including social security numbers, dates of birth, bank account numbers, and credit scores&#8212;from these services.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<p>Of the 701 services, 125 allowed &#8220;mass enumeration of valid URLs due to low entropy.&#8221; Attackers who had received links from the same service could then easily modify the tokens they had to access other people&#8217;s accounts.</p>
+<p>Because of the limited view into the practice, these numbers likely significantly undercount the true number of services jeopardizing users&#8217; security and privacy by sending such links.</p>
+<p>The likely widespread&#160;sending of unsafe links in SMS messages means there are few concrete steps most people can take to protect themselves. Stepping back and assessing the weak authentication processes in general, Muhammad Danish, the lead author of the paper, wrote in an email:</p>
+<blockquote><p>The root causes we found are related to service providers and the burden is on them. We can say users should not give sensitive details to untrusted sources, but that suggestion fails in our case as our list includes even well-established service providers with millions of active users. Users can help us by reporting to the service providers or removing their data until fixed if they see any of these issues in a website.</p></blockquote>
+<p>A list of the offending services can be found in the paper linked above.</p>
+<p>The practice is popular because it imposes lower perceived friction on potential customers. Another benefit is that endpoints don&#8217;t have to collect and store usernames and passwords, which have proven over and over to be easily stolen by hackers. Another reason they&#8217;re used is the false assumption by the people setting up the service that such links will restrict all others than those who sent the text and endpoint misconfigurations or lack of security reviews of them.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Muhammad, like other security professionals, said authentication links sent by SMS or email aren&#8217;t automatically unsafe. Privacy-minded sites, including DuckDuckGo and 404 Media, have opted to authenticate users with a &#8220;magic link&#8221; that&#8217;s sent to an account holder&#8217;s email address.</p>
+<p>&#8220;By not creating a password with us you have no risk of it leaking, and we don&#8217;t have to deal with the responsibility of keeping it secure, 404 Media editors <a href="https://www.404media.co/we-dont-want-your-password-3/">wrote</a>. &#8220;The sign in link is going to your email, which presumably is protected with two-factor authentication, if you have it set up (which you should!).&#8221; Many people who object to the use of magic links fail to realize that many services that require a password already fall back to the equivalent of magic links for account recovery.</p>
+<p>To be safe, magic links must be time-limited to lessen the chances of them being used by others. 404 Media says that links expire within 24 hours. DuckDuckGo&#8217;s authentication email system works differently. It sends a long one-time password. It&#8217;s unclear how long the passcode remains valid.</p>
+<p>Magic links also aren&#8217;t suitable for sites like Gmail, Office365, or banks that store large amounts of user data and must rely on robust account recovery mechanisms.</p>
+<p>Another way to strengthen the security of SMS- or email-based authentication is to require a second factor, in addition to the link sent, although a birthdate, zip code, or other low-entropy factor is insufficient. Further, login attempts must be rate-limited to prevent an attacker from making attempt after attempt until arriving at the right one.</p>
+<p>For now, people should recognize that many of the SMS-delivered authentication links they receive may be exposing their sensitive data, and this practice isn&#8217;t likely to change soon. Of the 150 affected service providers the researchers were able to contact, only 18 responded and only seven have fixed the failure.</p>
+
+
+          
+                  
+
+                  
+          </div>
