@@ -1,0 +1,51 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2026/01/overrun-with-ai-slop-curl-scraps-bug-bounties-to-ensure-intact-mental-health/
+date: '2026-01-22T22:46:30'
+excerpt: The onslaught includes LLMs finding bogus vulnerabilities and code that won't
+  compile.
+image: assets/media/ywproa2DCTcKpctSp0BV7g-f1QSjthWHgTlKgqZLfzu5Q.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Security
+- bug bounties
+- LLMs
+- slop
+title: Overrun with AI slop, cURL scraps bug bounties to ensure "intact mental health"
+---
+<div>
+                      
+                      
+          <p>The project developer for one of the Internet&#8217;s most popular networking tools is scrapping its vulnerability reward program after being overrun by a spike in the submission of low-quality reports, much of it AI-generated slop.</p>
+<p>&#8220;We are just a small single open source project with a small number of active maintainers,&#8221; Daniel Stenberg, the founder and lead developer of the open source app cURL, <a href="https://github.com/curl/curl/pull/20312">said Thursday</a>. &#8220;It is not in our power to change how all these people and their slop machines work. We need to make moves to ensure our survival and intact mental health.&#8221;</p>
+<h2>Manufacturing bogus bugs</h2>
+<p>His comments came as cURL users complained that the move was treating the symptoms caused by AI slop without addressing the cause. The users said they were concerned the move would eliminate a key means for ensuring and maintaining the security of the tool. Stenberg largely agreed, but indicated his team had little choice.</p>
+<p>In a <a href="https://curl.se/.well-known/security.txt">separate post</a> on Thursday, Stenberg wrote: &#8220;We will ban you and ridicule you in public if you waste our time on crap reports.&#8221; An <a href="https://github.com/curl/curl/blob/cc8df2b13d057a5d1e68380089eec220d7d0cef2/docs/BUG-BOUNTY.md">update</a> to cURL&#8217;s official GitHub account made the termination, which takes effect at the end of this month, official.</p>
+<p>cURL was first released three decades ago, under the name httpget and later urlget. It has since become an indispensable tool among admins, researchers, and security professionals, among others, for a wide range of tasks, including file transfers, troubleshooting buggy web software, and automating tasks. cURL is integrated into default versions of Windows, macOS, and most distributions of Linux.</p>
+<p>As such a widely used tool for interacting with vast amounts of data online, security is paramount. Like many other software makers, cURL project members have relied on private bug reports submitted by outside researchers. To provide an incentive and to reward high-quality submissions, the project members have paid cash bounties in return for reports of high-severity vulnerabilities.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Last May, Stenberg <a href="https://www.linkedin.com/posts/danielstenberg_hackerone-curl-activity-7324820893862363136-glb1/">said</a> the number of low-quality AI-generated reports was putting a strain on the cURL security team and was likely to metastasize, hampering other software developers.</p>
+<p>&#8220;AI slop is overwhelming maintainers *today* and it won&#8217;t stop at curl but only starts there,&#8221; he said at the time.</p>
+<p>The lead developer has also posted a <a href="https://gist.github.com/bagder/07f7581f6e3d78ef37dfbfc81fd1d1cd">page</a> listing some of the specious reports submitted in recent months. In response to one <a href="https://hackerone.com/reports/2199174">such report</a>, a cURL project member wrote: &#8220;I think you&#8217;re a victim of LLM hallucination.&#8221; The member continued:</p>
+<blockquote><p>The text has some similarities to the (bogus) CVE-2020-19909 and other reports. There are plenty of clues that Bard has manufactured bogus information: that code snippet of &#8220;curl_easy_setopt&#8221; doesn&#8217;t match the actual signature of the function (and wouldn&#8217;t even compile), a changelog that don&#8217;t match reality, and more indications that this is completely bogus. I&#8217;m curious to hear what your exploit does against a made-up vulnerability. Care to share it?</p></blockquote>
+<p>After the bug reporter complained and reiterated the risk posed by the non-existent vulnerability, Stenberg jumped in and wrote: &#8220;You were fooled by an AI into believing that. In what way did we not meet our end of the deal?</p>
+<p>Stenberg isn&#8217;t critical of AI-assisted bug reports in all cases. In September, he <a href="https://mastodon.social/@bagder/115241241075258997">publicly applauded</a> a researcher for sending a &#8220;massive list&#8221; of bugs that were found using a set of AI-assisted tools. The reports had resulted in 22 bug fixes at the time.</p>
+<p>In an interview, Stenberg said that the reporter, Joshua Rogers, mostly used AI-powered code analyzer called ZeroPath.</p>
+<p>&#8220;A clever person using a powerful tool,&#8221; Stenberg wrote. &#8220;I believe most of the worst reports we get are from people just asking an AI bot without caring or understanding much about what it reports.&#8221;</p>
+<p>Unfortunately, such cases seem to be the exception. AI slop has already flooded music-streaming services with so many songs&#8212;often misattributed to real artists&#8212;that the platforms are slowly becoming unusable for music discovery. cURL&#8217;s move may be an early indication that something similar is happening to bug bounty programs.</p>
+
+
+          
+                  
+
+                  
+          </div>
