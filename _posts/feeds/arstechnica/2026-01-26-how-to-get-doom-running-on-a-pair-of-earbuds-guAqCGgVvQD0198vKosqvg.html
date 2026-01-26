@@ -1,0 +1,44 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/gaming/2026/01/how-to-get-doom-running-on-a-pair-of-earbuds/
+date: '2026-01-26T16:13:22'
+excerpt: No display? No problem for the UART-to-web-server "Doombuds" project.
+image: assets/media/guAqCGgVvQD0198vKosqvg-ffeAhkdwUWicu0Q2unntKg.jpeg
+source: arstechnica
+tags:
+- Gaming
+- can it run doom
+- coding
+- Doom
+- hack
+- id
+- port
+title: How to get Doom running on a pair of earbuds
+---
+<div>
+                      
+                      
+          <p>Over the years, hackers and modders at large have <a href="https://canitrundoom.org/">made it their mission</a> to port classic FPS Doom to <a href="https://arstechnica.com/gaming/2025/01/someone-made-a-captcha-where-you-play-doom-on-nightmare-difficulty/">practically</a> <a href="https://arstechnica.com/gaming/2024/01/can-it-run-doom-gut-bacteria-edition/">anything</a> with <a href="https://arstechnica.com/gaming/2024/01/can-it-run-doom-gut-bacteria-edition/">a display</a>. Recently, though, coder <a href="https://www.linkedin.com/in/arin-sarkisian/">Arin Sarkisan</a> has taken the &#8220;Can it Run Doom?&#8221; idea in an unlikely direction: wireless earbuds that aren&#8217;t designed to output graphics at all.</p>
+<p>To be clear, this hack doesn&#8217;t apply to any generic set of earbuds. <a href="https://doombuds.com/">The &#8220;Doombuds&#8221; project</a> is designed specifically for the <a href="https://pine64.com/product/pinebuds-pro-open-firmware-capable-anc-wireless-earbuds/">PineBuds Pro</a>, which are unique in featuring <a href="https://github.com/pine64/OpenPineBuds">completely open source firmware</a> and <a href="https://pine64.org/documentation/PineBuds_Pro/Software/">a community-maintained SDK</a>.</p>
+<p>That means Sarkisan was able to <a href="https://github.com/arin-s/DOOMBUDS-JS">code up a JavaScript interface</a> that uses the earbuds&#8217; <a href="https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter">UART contact pads</a> to send <a href="https://www.adobe.com/creativecloud/file-types/video/codec/mjpeg.html">a heavily compressed MJPEG video stream</a> to a web server (via a serial server). The 2.4 MB/s data stream from the UART connection can put out about 22 to 27 frames per second in this format, which is more than enough for a CPU that can only run the game at a maximum of 18 fps anyway.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+ 
+
+<p>Squeezing the entirety of Doom onto modern earbuds wasn&#8217;t an easy task, either. The 4.2 MB of game data won&#8217;t quite fit on the PineBuds&#8217; 4MB of flash memory, for instance. That means the project needed to use <a href="https://github.com/fragglet/squashware">a 1.7 MB &#8220;squashware&#8221; build of Doom</a>, which eliminates some animation frames and shortens some music tracks to make the game even more portable.</p>
+<p>The earbuds also have just under 1MB of RAM, requiring the coding of <a href="https://github.com/arin-s/DOOMBuds">a new version of the game</a> that optimizes away many of the bits that usually fill up a full 4MB of RAM in the standard game. &#8220;Pre-generating lookup tables, making variables const, reading const variables from flash, disabling DOOM&#8217;s caching system, removing unneeded variables&#8230; it all adds up,&#8221; Sarkisan writes.</p>
+<p>For those without their own PineBuds to test this wild idea, Sarkisan has set up <a href="https://www.twitch.tv/doombudsdotcom">an interractive Twitch stream</a> that players can queue up to control for 45-second sessions <a href="https://doombuds.com/">via doombuds.com</a>. It&#8217;s a great little break-time diversion, especially for people ready to marvel that a set of $70 earbuds can now run a game that required a $1,000+ computer tower a few decades ago.</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
