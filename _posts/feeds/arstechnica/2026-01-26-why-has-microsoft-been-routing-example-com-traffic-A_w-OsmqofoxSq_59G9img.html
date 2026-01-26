@@ -1,0 +1,68 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/information-technology/2026/01/odd-anomaly-caused-microsofts-network-to-mishandle-example-com-traffic/
+date: '2026-01-26T21:02:26'
+excerpt: Company's autodiscover caused users' test credentials to be sent outside
+  Microsoft networks.
+image: assets/media/A_w-OsmqofoxSq_59G9img-LahMlg1zuSkCuL8_u5D-AA.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- example.com
+- Internet routing
+- microsoft
+title: Why has Microsoft been routing example.com traffic to a company in Japan?
+---
+<div>
+                      
+                      
+          <p>From the Department of Bizarre Anomalies: Microsoft has suppressed an unexplained anomaly on its network that was routing traffic destined to example.com&#8212;a domain reserved for testing purposes&#8212;to a maker of electronics cables located in Japan.</p>
+<p>Under the <a href="https://datatracker.ietf.org/doc/html/rfc2606">RFC2606</a>&#8212;an official standard maintained by the Internet Engineering Task Force&#8212;example.com isn&#8217;t obtainable by any party. Instead it resolves to IP addresses assigned to Internet Assiged Names Authority. The designation is intended to prevent third parties from being bombarded with traffic when developers, penetration testers, and others need a domain for testing or discussing technical issues. Instead of naming an Internet-routable domain, they are to choose example.com or two others, example.net and example.org.</p>
+<h2>Misconfig gone, but is it fixed?</h2>
+<p>Output from the terminal command cURL shows that devices inside Azure and other Microsoft networks have been routing some traffic to subdomains of sei.co.jp, a domain belonging to Sumitomo Electric. Most of the resulting text is exactly what&#8217;s expected. The exception is the JSON-based response. Here&#8217;s the JSON output from Friday:</p>
+<pre>{"email":"email@example.com","services":[],"protocols":[{"protocol":"imap","hostname":"imapgms.jnet.sei.co.jp","port":993,"encryption":"ssl","username":"email@example.com","validated":false},{"protocol":"smtp","hostname":"smtpgms.jnet.sei.co.jp","port":465,"encryption":"ssl","username":"email@example.com","validated":false}]}</pre>
+<p>Similarly, results when adding a new account for test@example.com in Outlook looked like this:</p>
+ 
+ 
+<p>In both cases, the results show that Microsoft was routing email traffic to two sei.co.jp subdomains: imapgms.jnet.sei.co.jp and smtpgms.jnet.sei.co.jp. The behavior was the result of Microsoft&#8217;s <a href="https://learn.microsoft.com/en-us/exchange/architecture/client-access/autodiscover">autodiscover</a> service.</p>
+<p>&#8220;I&#8217;m admittedly not an expert in Microsoft&#8217;s internal workings, but this appears to be a simple misconfiguration,&#8221; <a href="https://infosec.exchange/@mttaggart">Michael Taggart</a>, a senior cybersecurity researcher at UCLA Health, said. &#8220;The result is that anyone who tries to set up an Outlook account on an example.com domain might accidentally send test credentials to those sei.co.jp subdomains.&#8221;</p>
+<p>When asked early Friday afternoon why Microsoft was doing this, a representative had no answer and asked for more time. By Monday morning, the improper routing was no longer occurring, but the representative still had no answer.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p><b>Update:</b> in an email sent after this post went live, the representative confirmed that Microsoft has &#8220;updated the service to no longer provide suggested server information for example.com.&#8221; As already reported here, the behavior only affected people configuring email accounts through the Outlook autoconfiguration feature. The representative added that Microsoft is investigating.</p>
+<p>The new JSON response suggested that, as of Monday morning, Microsoft hadn&#8217;t fixed the endpoint routing traffic to the Sumitomo Electric servers. Instead, the JSON response no longer occurs. Where the output was occurring on Friday, the command now simply sits and hangs for 10 or 20 seconds and then terminates with a not found error. This behavior can be seen in the following output:</p>
+<pre>&gt; GET /autodetect/detect?app=outlookdesktopBasic HTTP/2
+&gt; Host: prod.autodetect.outlook.cloud.microsoft
+&gt; Authorization: Basic ZW1haWxAZXhhbXBsZS5jb206cGFzc3dvcmQ=
+&gt; User-Agent: curl/8.14.1
+&gt; Accept: */*
+&gt;
+* Request completely sent off
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+&lt; HTTP/2 204
+&lt; date: Mon, 26 Jan 2026 18:23:55 GMT
+&lt; server: Kestrel
+&lt; strict-transport-security: max-age=2592000
+&lt; x-olm-source-endpoint: /detect
+&lt; x-provider-id: Unknown
+&lt; x-debug-support: eyJkZWNpc2lvbiI6ImF1dG9EdjIgPiBhdXRvRHYxID4gZml4ZWQgZGIgcHJvdmlkZXIgPiBmaXhlZCBkYiBkb21haW4gcHJvdG9jb2xzID4gZGIgcHJvdmlkZXIgPiBkYiBkb21haW4gcHJvdG9jb2xzIiwiYXV0b0QiOnsidjIiOm51bGwsInYxIjpudWxsfSwiZGIiOnsicHJvdmlkZXIiOm51bGwsImRvbWFpbiI6eyJmaXhlZCI6ZmFsc2UsImF1dG9EdjJFbmRwb2ludCI6bnVsbCwicHJvdmlkZXJJZCI6bnVsbCwicHJvdG9jb2xzIjpudWxsfX19
+&lt; x-autodv2-error: ENOTFOUND</pre>
+<p>&#8220;It looks like they may have outright removed the endpoint that validates the email, because I&#8217;m seeing &#8216;not found&#8217; errors,&#8221; said <a href="https://infosec.exchange/@Viss@mastodon.social">Dan Tentler</a>, founder of Phobos Group. As denoted by ENOTFOUND, the error &#8220;suggests that [Microsoft admins] just ripped out whatever this thing was.&#8221;</p>
+<p>It&#8217;s unclear how Sumitomo Electric&#8217;s domain would have found itself part of this mess. Microsoft last year <a href="https://www.microsoft.com/en/customers/story/21914-sumitomo-corporation-microsoft-365-copilot">said</a> the Japanese company&#8217;s parent company, Sumitomo Corp., was deploying Microsoft 365 Copilot, but that still doesn&#8217;t explain why a subsidiary&#8217;s domain was added to Microsoft&#8217;s network configuration.</p>
+<p>Questions sent to Microsoft include: How are autodiscover records added at Microsoft; was the routing intentional; and how long has the behavior been occurring? (Tinyapps.org, which <a href="https://tinyapps.org/blog/microsoft-mishandling-example-com.html">noted</a> the odd routing behavior earlier this month, said it lasted five years.) There doesn&#8217;t appear to be anything nefarious about the improper routing, and as long as people inside Microsoft&#8217;s network weren&#8217;t sending live credentials in tests, there was no danger posed.</p>
+<p>There&#8217;s still reason for concern. In 2024, Microsoft revealed that one of its admins had assigned administrative privileges to a test account on the company network and then forgot about it. Russia-state hackers <a href="https://arstechnica.com/security/2024/01/in-major-gaffe-hacked-microsoft-test-account-was-assigned-admin-privileges/">seized on the gaffe</a> to gain initial access to Microsoft&#8217;s system. They went on to root through the network and monitor top executives&#8217; email for two months. The routing misconfiguration for example.com raises the question: What other possibly more severe errors lurk on the network?</p>
+
+
+          
+                  
+
+                  
+          </div>
