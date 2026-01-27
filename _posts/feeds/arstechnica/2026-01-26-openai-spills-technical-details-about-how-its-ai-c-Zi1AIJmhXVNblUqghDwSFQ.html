@@ -1,0 +1,65 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2026/01/openai-spills-technical-details-about-how-its-ai-coding-agent-works/
+date: '2026-01-26T23:05:17'
+excerpt: Unusually detailed post explains how OpenAI handles the Codex agent loop.
+image: assets/media/Zi1AIJmhXVNblUqghDwSFQ-oB-yBaoYKsqwUQiwER3umg.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI coding
+- AI development tools
+- API
+- code agents
+- Codex
+- Developer Tools
+- large language models
+- machine learning
+- openai
+- Programming
+- prompt caching
+title: OpenAI spills technical details about how its AI coding agent works
+---
+<div>
+                      
+                      
+          <p>On Friday, OpenAI engineer Michael Bolin <a href="https://openai.com/index/unrolling-the-codex-agent-loop/">published</a> a detailed technical breakdown of how the company&#8217;s <a href="https://arstechnica.com/ai/2025/05/openai-introduces-codex-its-first-full-fledged-ai-agent-for-coding/">Codex CLI</a> coding agent works internally, offering developers insight into AI coding tools that can write code, run tests, and fix bugs with human supervision. It complements our article <a href="https://arstechnica.com/information-technology/2025/12/how-do-ai-coding-agents-work-we-look-under-the-hood/">in December</a> on how AI agents work by filling in technical details on how OpenAI implements its &#8220;agentic loop.&#8221;</p>
+<p>AI coding agents are having something of a &#8220;ChatGPT moment,&#8221; where Claude Code with Opus 4.5 and Codex with GPT-5.2 have reached a new level of usefulness for rapidly coding up prototypes, interfaces, and churning out boilerplate code. The timing of OpenAI&#8217;s post details the design philosophy behind Codex just as AI agents are becoming more practical tools for everyday work.</p>
+<p>These tools aren&#8217;t perfect and remain controversial for some software developers. While OpenAI has <a href="https://arstechnica.com/ai/2025/12/how-openai-is-using-gpt-5-codex-to-improve-the-ai-tool-itself/">previously told</a> Ars Technica that it uses Codex as a coding tool to help develop the Codex product itself, we also <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">discovered</a>, through hands-on experience, that these tools can be astonishingly fast at simple tasks but remain brittle beyond their training data and require human oversight for production work. The rough framework of a project tends to come fast and feels magical, but filling in the details involves tedious debugging and workarounds for limitations the agent cannot overcome on its own.</p>
+<p>Bolin&#8217;s post doesn&#8217;t shy away from these engineering challenges. He discusses the inefficiency of quadratic prompt growth, performance issues caused by cache misses, and bugs the team discovered (like <a href="https://arstechnica.com/information-technology/2025/04/mcp-the-new-usb-c-for-ai-thats-bringing-fierce-rivals-together/">MCP tools</a> being enumerated inconsistently) that they had to fix.</p>
+<p>The level of technical detail is somewhat unusual for OpenAI, which has not published similar breakdowns of how other products like ChatGPT work internally, for example (there&#8217;s a lot going on under that hood we&#8217;d like to know). But we&#8217;ve already seen how OpenAI treats Codex differently during our interview with them in December, noting that programming tasks seem ideally suited for large language models.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>It&#8217;s worth noting that both <a href="https://github.com/openai/codex">OpenAI</a> and <a href="https://github.com/anthropics/claude-code">Anthropic</a> open-source their coding CLI clients on GitHub, allowing developers to examine the implementation directly, whereas they don&#8217;t do the same for ChatGPT or the Claude web interface.</p>
+<h2>An official look inside the loop</h2>
+<p>Bolin&#8217;s post focuses on what he calls &#8220;the agent loop,&#8221; which is the core logic that orchestrates interactions between the user, the AI model, and the software tools the model invokes to perform coding work.</p>
+<p>As we <a href="https://arstechnica.com/information-technology/2025/12/how-do-ai-coding-agents-work-we-look-under-the-hood/">wrote</a> in December, at the center of every AI agent is a repeating cycle. The agent takes input from the user and prepares a textual prompt for the model. The model then generates a response, which either produces a final answer for the user or requests a tool call (such as running a shell command or reading a file). If the model requests a tool call, the agent executes it, appends the output to the original prompt, and queries the model again. This process repeats until the model stops requesting tools and instead produces an assistant message for the user.</p>
+<p>That looping process has to start somewhere, and Bolin&#8217;s post reveals how Codex constructs the initial prompt sent to OpenAI&#8217;s Responses API, which handles model inference. The prompt is built from several components, each with an assigned role that determines its priority: system, developer, user, or assistant.</p>
+<p>The instructions field comes from either a user-specified configuration file or base instructions bundled with the CLI. The tools field defines what functions the model can call, including shell commands, planning tools, web search capabilities, and any custom tools provided through Model Context Protocol (MCP) servers. The input field contains a series of items that describe the sandbox permissions, optional developer instructions, environment context like the current working directory, and finally the user&#8217;s actual message.</p>
+
+          
+                  
+
+              
+          
+          
+<p>As conversations continue, each new turn includes the complete history of previous messages and tool calls. This means the prompt grows with every interaction, which has performance implications. According to the post, because Codex does not use an optional &#8220;previous_response_id&#8221; parameter that would allow the API to reference stored conversation state, every request is fully stateless (that is, it sends the entire conversation history with each API call rather than the server retrieving it from memory). Bolin says this design choice simplifies things for API providers and makes it easier to support customers who opt into &#8220;<a href="https://platform.openai.com/docs/guides/your-data">Zero Data Retention</a>,&#8221; where OpenAI does not store user data.</p>
+<p>The <a href="https://arstechnica.com/ai/2024/12/why-ai-language-models-choke-on-too-much-text/">quadratic growth</a> of prompts over a conversation is inefficient, but Bolin explains that prompt caching mitigates this issue somewhat. Cache hits only work for exact prefix matches within a prompt, which means Codex must carefully avoid operations that could cause cache misses. Changing the available tools, switching models, or modifying the sandbox configuration mid-conversation can all invalidate the cache and hurt performance.</p>
+<p>The ever-growing prompt length is directly related to the context window, which limits how much text the AI model can process in a single inference call. Bolin writes that Codex automatically compacts conversations when token counts exceed a threshold, just as Claude Code does. Earlier versions of Codex required manual compaction via a slash command, but the current system uses a specialized API endpoint that compresses context while preserving summarized portions of the model&#8217;s &#8220;understanding&#8221; of what happened through an encrypted content item.</p>
+<p>Bolin says that future posts in his series will cover the CLI&#8217;s architecture, tool implementation details, and Codex&#8217;s sandboxing model.</p>
+
+
+          
+                  
+
+                  
+          </div>
