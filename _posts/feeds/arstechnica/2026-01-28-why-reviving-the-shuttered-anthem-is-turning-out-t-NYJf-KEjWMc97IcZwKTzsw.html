@@ -1,0 +1,85 @@
+---
+author: Kyle Orland
+canonical_url: https://arstechnica.com/gaming/2026/01/why-reviving-the-shuttered-anthem-is-turning-out-tougher-than-expected/
+date: '2026-01-28T18:48:26'
+excerpt: Despite proof-of-concept video, EA's Frostbite Engine servers are difficult
+  to pick apart.
+image: assets/media/NYJf-KEjWMc97IcZwKTzsw-SSkm5qgald0whIZVE4wX-Q.jpeg
+source: arstechnica
+tags:
+- Gaming
+- anthem
+- Bioware
+- EA
+- revival
+title: Why reviving the shuttered Anthem is turning out tougher than expected
+---
+<div>
+                      
+                      
+           
+<p>On January 12, EA <a href="https://arstechnica.com/gaming/2026/01/biowares-anthem-will-soon-be-completely-unplayable/">shut down the official servers for Anthem</a>, making Bioware&#8217;s multiplayer sci-fi adventure completely unplayable for the first time since <a href="https://arstechnica.com/gaming/2019/02/anthem-game-review-honestly-its-not-finished/">its troubled 2019 launch</a>. Last week, though, the Anthem community woke up to <a href="https://www.youtube.com/watch?v=TPx5SJHFvGM">a new video</a> showing the game at least partially loading on what appears to be a simulated background server.</p>
+<p>The people behind that video&#8212;and the Anthem revival project that made it possible&#8212;told Ars they were optimistic about their efforts to coerce EA&#8217;s temperamental Frostbite engine into running the game without access to EA&#8217;s servers. That said, the team also wants to temper expectations that may have risen a bit too high in the wake of what is just a proof-of-concept video.</p>
+ 
+<p>&#8220;People are getting excited [about the video], and naturally people are going to get their hopes up,&#8221; project administrator Laurie told Ars. &#8220;I don&#8217;t want to be the person that&#8217;s going to have to deal with the aftermath if it turns out that we can&#8217;t actually get anywhere.&#8221;</p>
+<h2>Keep an eye on those packets</h2>
+<p>The Anthem revival effort currently centers around <a href="https://www.reddit.com/r/AnthemTheGame/comments/1qfqe29/the_forts_forge/">The Fort&#8217;s Forge</a>, a Discord server where a handful of volunteer engineers and developers have gathered to pick apart the game and its unique architecture. Laurie said they initially set up the group &#8220;out of little more than spite for EA and Bioware around the time the shutdown got announced&#8221; back in July.</p>
+<p>While Laurie has some experience with the community behind <a href="https://1379.tech/the-making-of-side-7-gundam-evolution-private-server-project/">Gundam Evolution revival project Side 7</a>, they knew they&#8217;d need help from people with direct experience working on EA&#8217;s Frostbite engine games. Luckily, Laurie said they were &#8220;able to catch the eyes of people who are familiar with this line of work [without] searching too much.&#8221;</p>
+<p>One of those people was Ness199X, an experienced Frostbite tinkerer who told Ars he &#8220;never really played much Anthem&#8221; before the game&#8217;s shutdown was announced. When a friend pointed out the impending death of the title, though, Ness said he was motivated to preserve the game for posterity.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Initial efforts to examine what made Anthem tick &#8220;came up empty,&#8221; Ness said, largely because the game uses EA&#8217;s bespoke Frostbite engine differently than other EA titles. To begin mapping out those differences, Ness released a packet logger tool in September that let contributors record their own network traffic between the client and EA&#8217;s official servers. In addition to helping with reverse-engineering work, Ness writes on the Fort&#8217;s Forge Discord that players who logged their packets should be able to fully recover their characters if and when Anthem comes back in playable form.</p>
+<h2>Catching Frostbite</h2>
+<p>By analyzing that crowdsourced packet data, Ness said the Fort&#8217;s Forge team has been able to break Anthem down into three essential services:</p>
+<ol>
+<li>EA&#8217;s Blaze server: Used for basic player authentication.</li>
+<li>Bioware Online Services (aka BIGS): A JSON web server used to track player information like inventory and quest progression.</li>
+<li>The Frostbite multiplayer engine: Loads level data and tracks the real-time positions of players and non-player characters in those levels.</li>
+</ol>
+<p>Early efforts to emulate the Blaze and BIGS portions of that architecture helped lead directly to last week&#8217;s proof-of-concept video. Andersson799&#8212;who says he&#8217;s been tinkering with Battlefield and other Frostbite games since 2015&#8212;said he was quickly able to use his own logged Anthem packets to create a &#8220;barebones anthem private server&#8221; that served as a &#8220;quick and dirty&#8221; sample that he decided to share via YouTube.</p>
+<p>&#8220;I basically made the tool to just simply reply with the packet captures that I got,&#8221; Andersson told me. That was enough to &#8220;get in to the game with player profiles loaded and everything.&#8221; And while Ness says there&#8217;s still some effort needed &#8220;to [make Blaze and BIGS] work well and smoothly in terms of quest progression, etc.,&#8221; the path forward on those portions is relatively straightforward.</p>
+<p>It&#8217;s the Frostbite engine and its odd client-server architecture that forms the biggest barrier to getting Anthem up and running again without EA&#8217;s servers. &#8220;Due to how Frostbite is designed, all gameplay in a Frostbite game runs in a &#8216;server&#8217; context,&#8221; Ness explained. Even in a single-player game like Mass Effect: Andromeda, he said, &#8220;the client just creates a separate server thread and pipes all the traffic internally.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;I feel like with Anthem, it heavily relies on online data that was stored in Bioware&#8217;s server,&#8221; Andersson added. &#8220;In my initial testing, the game couldn&#8217;t load into the level without that data.&#8221;</p>
+ 
+<p>There&#8217;s some hope that this crucial level data is still available and recoverable, though. Ness points out that Fort Tarsis, the game&#8217;s lobby area, already runs using offline data piped through a local &#8220;server&#8221; thread, meaning the rest of the game could theoretically be coerced to run similarly.</p>
+<p>Just as important, he says, &#8220;as far as we have been able to discern, all the logic for the other levels, which when the game was live ran on a remote server, also exists in the client,&#8221; Ness said. &#8220;By patching the game we can most likely enable the ability to host these in process as well. That&#8217;s what we&#8217;re exploring.&#8221;</p>
+ 
+<h2>&#8220;To be honest we&#8217;re not entirely sure&#8230;&#8221;</h2>
+<p>While all that local level data should be usable in theory, seemingly random differences between Anthem and other Frostbite games are getting in the way of loading the data in practice. Anthem acts like a standard Frostbite game &#8220;for the most part,&#8221; Ness said, but at times will show unusual behaviors that are hard to pin down.</p>
+<p>&#8220;For example, when we try to load most maps, no NPCs spawn, but in some maps they do,&#8221; he said. &#8220;And we have yet to determine why. Ness has some suspicion that the odd behavior is connected to the &#8220;fairly extensive amount of player data the game keeps as part of its online RPG nature,&#8221; but adds that &#8220;to be honest we&#8217;re not entirely sure how deep the differences go, other than that the engine didn&#8217;t behave how we expected it to.&#8221;</p>
+<p>Ness said he&#8217;s about 75 percent confident that the team will be able to figure out how to fully leverage the Frostbite engine to power a version of the game that runs without EA&#8217;s centralized servers. If that effort succeeds, he says a playable version of Anthem could be back up and running in &#8220;months, or less even, depending on motivation.&#8221; But if the efforts to pick apart Anthem&#8217;s take on Frostbite hits a brick wall, Ness says &#8220;the amount of work increases fairly exponentially and I&#8217;m a lot less confident that we have the motivation for that.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>&#8220;I&#8217;m fairly confident that we can get this game to be playable again, like how it is supposed to be,&#8221; Andersson said. &#8220;It&#8217;ll just take time as most of us have our own life to manage besides this.&#8221;</p>
+ 
+
+<p>In the meantime, Laurie is still trying to manage expectations set by the somewhat premature posting of Andersson&#8217;s proof-of-concept video. &#8220;Please, do not expect frequent updates,&#8221; Laurie wrote in the Fort&#8217;s Forge Discord. &#8220;We had not anticipated releasing anything this early, nor should the expedience of this video&#8217;s release serve as any kind of benchmark for how fast we make progress.&#8221;</p>
+<p>Laurie also <a href="https://www.reddit.com/r/AnthemTheGame/comments/1qfng76/comment/o06gfou/?context=3">took to Reddit</a> to publicly call the video &#8220;a really hacky thing so I want to ask people to manage their expectations just a bit. A lot of stuff clearly doesn&#8217;t work as &#8216;intended,&#8217; and definitely needs at minimum, more polish.&#8221;</p>
+<p>At one point last week, Laurie says they had to stop accepting new members to the Fort&#8217;s Forge Discord, &#8220;mostly to prevent an influx of people in response to&#8230; news coverage.&#8221; And while people with Frostbite engine modding experience are encouraged to reach out, the small team is being cautious about growing too large, too fast.</p>
+<p>&#8220;We&#8217;re a little reluctant to add developers right now as we have no real code base to work from,&#8221; Ness said, describing their current efforts as &#8220;scratch work&#8221; maintained in separate forms by multiple people. &#8220;But once we firm that up (hopefully in the next weeks), we will look to add more [coders].&#8221;</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
