@@ -1,0 +1,67 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2026/01/viral-ai-assistant-moltbot-rapidly-gains-popularity-but-poses-security-risks/
+date: '2026-01-28T12:30:44'
+excerpt: The open source "Jarvis" chats via WhatsApp but requires access to your files
+  and accounts.
+image: assets/media/VV4dmqc4z0ypqdTB0FDkkw-pfwnaFx0ulPzpLkMsU1-BQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI assistants
+- AI security
+- AI sycophancy
+- Anthropic
+- chatbots
+- machine learning
+- open source
+- Peter Steinberger
+title: Viral AI assistant Moltbot rapidly gains popularity but poses security risks
+---
+<div>
+                      
+                      
+          <p>An open source AI assistant called Moltbot (formerly &#8220;Clawdbot&#8221;) recently crossed 69,000 stars on <a href="https://github.com/moltbot/moltbot">GitHub</a> after a month, making it one of the fastest-growing AI projects of 2026. Created by Austrian developer <a href="https://steipete.me/">Peter Steinberger</a>, the tool lets users run a personal AI assistant and control it through messaging apps they already use. While some say it feels like the AI assistant of the future, running the tool as currently designed comes with serious security risks.</p>
+<p>Among the dozens of unofficial AI bot apps that never rise above the fray, Moltbot is perhaps most notable for its proactive communication with the user. The assistant works with WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, Microsoft Teams, and other platforms. It can reach out to users with reminders, alerts, or morning briefings based on calendar events or other triggers. The project has drawn comparisons to Jarvis, the AI assistant from the Iron Man films, for its ability to actively attempt to manage tasks across a user&#8217;s digital life.</p>
+<p>However, we&#8217;ll tell you up front that there are plenty of drawbacks to the still-hobbyist software: While the organizing assistant code runs on a local machine, the tool effectively requires a subscription to Anthropic or OpenAI for model access (or using an API key). Users can run local AI models with the bot, but they are currently less effective at carrying out tasks than the best commercial models. Claude Opus 4.5, which is Anthropic&#8217;s flagship large language model (LLM), is a popular choice.</p>
+ 
+
+<p>Setting up Moltbot requires configuring a server, managing authentication, and understanding sandboxing for even a slice of security in a system that basically demands access to every facet of your digital life. Heavy use can rack up significant API costs, since agentic systems make many calls behind the scenes and use up a lot of tokens.</p>
+
+          
+                       
+                   
+            
+
+              
+          
+          
+<p>We&#8217;ve only just begun to try Moltbot ourselves (more on that soon), but we&#8217;ve seen plenty of discussions about the new assistant circulating in the AI community. The all-in approach has serious security drawbacks, since it requires access to messaging accounts, API keys, and in some configurations, shell commands. Also, an always-on agent with access to messaging channels and personal systems can quickly expand your attack surface.</p>
+<h2>The always-on AI bot</h2>
+<p>Even with all the drawbacks listed above, people are still using Moltbot. MacStories editor Federico Viticci, who spent a week testing the tool, <a href="https://www.macstories.net/stories/clawdbot-showed-me-what-the-future-of-personal-ai-assistants-looks-like/">described</a> it as &#8220;Claude with hands,&#8221; referring to how it connects a large language model (LLM) backend with real-world capabilities like browser control, email management, and file operations.</p>
+<p>The project&#8217;s documentation describes it as a tool for users who want &#8220;a personal, single-user assistant that feels local, fast, and always-on.&#8221;</p>
+<p>According to the project&#8217;s GitHub page, Steinberger designed the bot to retain long-term memory and execute commands directly on the user&#8217;s system, unlike current web-based chatbots from major AI labs. It&#8217;s closer to <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">Claude Code</a> and <a href="https://arstechnica.com/ai/2026/01/openai-spills-technical-details-about-how-its-ai-coding-agent-works/">Codex CLI</a> (which also operate on local files using a cloud AI model), but with more latitude to take local actions on the user&#8217;s behalf.</p>
+<p>Moltbot stores memory as Markdown files and a SQLite database on the user&#8217;s machine. It auto-generates daily notes that log interactions and uses vector search to retrieve relevant context from past conversations. The memory persists across sessions because the bot runs as a background daemon.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Compared to Claude Code, which is session-based, Moltbot runs persistently (24/7) and maintains its stored memory indefinitely. It can reportedly recall what you discussed weeks ago. With Claude Code, when you close it, the conversation context is gone (unless you use CLAUDE.md files for project context).</p>
+<h2>Turbulent week for the project</h2>
+<p>The project&#8217;s rapid rise has not come without complications. On Monday, Anthropic <a href="https://x.com/moltbot/status/2016058924403753024">asked</a> Steinberger to change the project&#8217;s name due to trademark concerns (since &#8220;Clawd&#8221; sounds like &#8220;Claude&#8221;), prompting the rebrand from Clawdbot to Moltbot. &#8220;Clawdbot&#8221; was originally named after the ASCII art creature that appears when you launch Claude Code on a terminal.</p>
+<p>However, the transition enabled bad actors to hijack Steinberger&#8217;s old social media and GitHub handles, <a href="https://www.theregister.com/2026/01/27/clawdbot_moltbot_security_concerns/">reports</a> The Register. Crypto scammers launched fake tokens using the project&#8217;s name, with one reaching a $16 million market cap before crashing. Steinberger <a href="https://x.com/steipete/status/2016072109601001611">responded</a> on X: &#8220;Any project that lists me as a coin owner is a SCAM. No, I will not accept fees. You are actively damaging the project.&#8221;</p>
+<p>Security researchers have also <a href="https://www.bitdefender.com/en-us/blog/hotforsecurity/moltbot-security-alert-exposed-clawdbot-control-panels-risk-credential-leaks-and-account-takeovers">found</a> vulnerabilities in misconfigured public deployments. Bitdefender reported that exposed dashboards allowed outsiders to view configuration data, retrieve API keys, and browse full conversation histories from private chats.</p>
+<p>While there&#8217;s plenty of hype about Moltbot right now, be advised that any LLM that has access to your local machine is susceptible to <a href="https://arstechnica.com/information-technology/2025/09/anthropics-new-claude-feature-can-leak-data-users-told-to-monitor-chats-closely/">prompt injection</a> attacks that can &#8220;trick&#8221; the AI model to share your personal data with other people or remote servers. While Moltbot offers a glimpse at what future AI assistants from major vendors might look like, it&#8217;s still experimental and not yet ready for users who aren&#8217;t comfortable trading today&#8217;s AI convenience (such as it is) for major security risks.</p>
+
+
+          
+                  
+
+                  
+          </div>
