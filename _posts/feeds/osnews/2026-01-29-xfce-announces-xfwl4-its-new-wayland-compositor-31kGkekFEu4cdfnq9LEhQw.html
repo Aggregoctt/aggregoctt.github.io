@@ -1,0 +1,45 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144294/xfce-announces-xfwl4-its-new-wayland-compositor/
+date: '2026-01-29T10:17:27'
+excerpt: 'While the two major open source desktop environments get most of the airtime
+  &#8211; and for good reason, since they&#8217;re both exceptionally good &#8211;
+  there&#8217;s a long tail of other desktop environments out there catering to all
+  kinds of special workflows and weird niches. I think we can all agree that Xfce
+  leads this long tail of more niche desktop environments, without really being niche
+  itself. Xfce may not be as popular as KDE or GNOME, but it&#8217;s an amazing full-featured
+  desktop environment that offers a slightly more traditional, less fast-paced desktop
+  for those that desire so. Xfce, too, is moving to Wayland, which can mean significant
+  efforts in certain places, not the least of which is the window manager. Xfce originally
+  planned to adapt its venerable xfwm4 to support both X11 and Wayland at the same
+  time, but this turned out to be too complex for a variety of reasons, which all
+  more or less caused by differences between X11 and Wayland. On top of that, this
+  approach would risk introducing new bugs to the X11 side of things, and the Xfce
+  project does not want to subject its X11 users to that. As such, they&#8217;ve decided
+  to develop a Wayland compositor from scratch: xfwl4. The goal is, that xfwl4 will
+  offer the same functionality and behavior as xfwm4 does, or as much as possible
+  considering the differences between X11 and Wayland. Using xfwl4 should feel just
+  like using xfwm4 on X11. We even plan to reuse the existing xfwm4 configuration
+  dialogs and xfconf settings to ensure a seamless transition. Xfwl4 will not be based
+  on the existing xfwm4 code. Instead, it will be written from scratch in rust, using
+  smithay building blocks. ↫ The Xfce development team This project also includes
+  related tasks like rearchitecting session-startup to support Wayland, implementing
+  support for the xdg-session-management protocol, and adding support for XWayland.
+  This is obviously anything but a small effort, but it seems like a practical solution.
+  Xfce users generally seem to choose Xfce exactly because it&#8217;s a stable environment
+  that does not move fast(er) and break (some) things. As such, keeping the X11 window
+  manager separate and stable, without Wayland work possibly breaking it, seems like
+  the kind of thing the average Xfce user can get behind. Personally, I can&#8217;t
+  wait for Xfce to become a full Wayland desktop, as dealing with X11&#8217;s nonsense
+  feels decidedly retro to me now, and I don&#8217;t see Xfce as a retro environment
+  at all. It&#8217;s going to take some time, of course, but thanks to countless generous
+  donations to Xfce, longtime Xfce core developer Brian Tarricone will be paid to
+  work on this project. Excellent news for everyone involved.'
+image: null
+source: osnews
+tags:
+- Xfce
+title: Xfce announces xfwl4, its new Wayland compositor
+---
+<div><p>While the two major open source desktop environments get most of the airtime &#8211; and for good reason, since they&#8217;re both exceptionally good &#8211; there&#8217;s a long tail of other desktop environments out there catering to all kinds of special workflows and weird niches. I think we can all agree that Xfce leads this long tail of more niche desktop environments, without really being niche itself. Xfce may not be as popular as KDE or GNOME, but it&#8217;s an amazing full-featured desktop environment that offers a slightly more traditional, less fast-paced desktop for those that desire so.</p><p>Xfce, too, is moving to Wayland, which can mean significant efforts in certain places, not the least of which is the window manager. Xfce originally planned to adapt its venerable xfwm4 to support both X11 and Wayland at the same time, but this turned out to be too complex for a variety of reasons, which all more or less caused by differences between X11 and Wayland. On top of that, this approach would risk introducing new bugs to the X11 side of things, and the Xfce project does not want to subject its X11 users to that.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>As such, they&#8217;ve decided to develop a Wayland compositor from scratch: xfwl4.</p><p>The goal is, that xfwl4 will offer the same functionality and behavior as xfwm4 does, or as much as possible considering the differences between X11 and Wayland. Using xfwl4 should feel just like using xfwm4 on X11. We even plan to reuse the existing xfwm4 configuration dialogs and xfconf settings to ensure a seamless transition.</p><p>Xfwl4 will not be based on the existing xfwm4 code. Instead, it will be written from scratch in rust, using <a href="https://github.com/Smithay/smithay/" target="_blank" rel="noreferrer noopener">smithay</a> building blocks.</p>
+<a href="https://alexxcons.github.io/blogpost_15.html">&#8619; The Xfce development team</a></blockquote><p>This project also includes related tasks like rearchitecting session-startup to support Wayland, implementing support for the xdg-session-management protocol, and adding support for XWayland. This is obviously anything but a small effort, but it seems like a practical solution. Xfce users generally seem to choose Xfce exactly because it&#8217;s a stable environment that does not move fast(er) and break (some) things. As such, keeping the X11 window manager separate and stable, without Wayland work possibly breaking it, seems like the kind of thing the average Xfce user can get behind.</p></div>
