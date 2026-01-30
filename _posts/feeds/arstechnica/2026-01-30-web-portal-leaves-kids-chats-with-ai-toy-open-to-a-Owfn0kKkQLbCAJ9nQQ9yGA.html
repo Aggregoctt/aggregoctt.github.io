@@ -1,0 +1,67 @@
+---
+author: Andy Greenberg, wired.com
+canonical_url: https://arstechnica.com/security/2026/01/web-portal-leaves-kids-chats-with-ai-toy-open-to-anyone-with-gmail-account/
+date: '2026-01-30T17:49:19'
+excerpt: Just about anyone with a Gmail account could access Bondu chat transcripts.
+image: assets/media/Owfn0kKkQLbCAJ9nQQ9yGA-7jC_Ljx6u6oZNEgSfEHvKQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Security
+- Bondu
+- eavesdropping
+- Toys
+title: Web portal leaves kids' chats with AI toy open to anyone with Gmail account
+---
+<div>
+                      
+                      
+           
+<p>Earlier this month, Joseph Thacker&#8217;s neighbor mentioned to him that she&#8217;d preordered a couple of stuffed dinosaur toys for her children. She&#8217;d chosen the toys, called Bondus, because they offered an <a href="https://www.wired.com/tag/chatbots/">AI chat</a> feature that lets children talk to the toy like a kind of machine-learning-enabled imaginary friend. But she knew Thacker, a security researcher, had done work on <a href="https://www.wired.com/story/human-misuse-will-make-artificial-intelligence-more-dangerous/">AI risks</a> for kids, and she was curious about his thoughts.</p>
+<p>So Thacker looked into it. With just a few minutes of work, he and a web security researcher friend named Joel Margolis made a startling discovery: Bondu&#8217;s web-based portal, intended to allow parents to check on their children&#8217;s conversations and for Bondu&#8217;s staff to monitor the products&#8217; use and performance, also let anyone with a <a href="https://www.wired.com/tag/gmail">Gmail</a> account access transcripts of virtually every conversation Bondu&#8217;s child users have ever had with the toy.</p>
+<p>Without carrying out any actual hacking, simply by logging in with an arbitrary Google account, the two researchers immediately found themselves looking at children&#8217;s private conversations, the pet names kids had given their Bondu, the likes and dislikes of the toys&#8217; toddler owners, their favorite snacks and dance moves.</p>
+<p>In total, Margolis and Thacker <a href="https://josephthacker.com/hacking/2026/01/29/bondu-smart-toy-vulnerability.html">discovered</a> that the data Bondu left unprotected&#8212;accessible to anyone who logged in to the company&#8217;s public-facing web console with their Google username&#8212;included children&#8217;s names, birth dates, family member names, &#8220;objectives&#8221; for the child chosen by a parent, and most disturbingly, detailed summaries and transcripts of every previous chat between the child and their Bondu, a toy practically designed to elicit intimate one-on-one conversation. Bondu confirmed in conversations with the researchers that more than 50,000 chat transcripts were accessible through the exposed web portal, essentially all conversations the toys had engaged in other than those that had been manually deleted by parents or staff.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>&#8220;It felt pretty intrusive and really weird to know these things,&#8221; Thacker says of the children&#8217;s private chats and documented preferences that he saw. &#8220;Being able to see all these conversations was a massive violation of children&#8217;s privacy.&#8221;</p>
+<p>When Thacker and Margolis alerted Bondu to its glaring data exposure, they say, the company acted to take down the console in a matter of minutes before relaunching the portal the next day with proper authentication measures. When WIRED reached out to the company, Bondu CEO Fateen Anam Rafid wrote in a statement that security fixes for the problem &#8220;were completed within hours, followed by a broader security review and the implementation of additional preventative measures for all users.&#8221; He added that Bondu &#8220;found no evidence of access beyond the researchers involved.&#8221; (The researchers note that they didn&#8217;t download or keep any copies of the sensitive data they accessed via Bondu&#8217;s console, other than a few screenshots and a screen-recording video shared with WIRED to confirm their findings.)</p>
+<p>&#8220;We take user privacy seriously and are committed to protecting user data,&#8221; Anam Rafid added in his statement. &#8220;We have communicated with all active users about our security protocols and continue to strengthen our systems with new protections,&#8221; as well as hiring a security firm to validate its investigation and monitor its systems in the future.</p>
+ 
+<p>While Bondu&#8217;s near-total lack of security around the children&#8217;s data that it stored may be fixed, the researchers argue that what they saw represents a larger warning about the dangers of AI-enabled chat toys for kids. Their glimpse of Bondu&#8217;s backend showed how detailed the information is that it stored on children, keeping histories of every chat to better inform the toy&#8217;s next conversation with its owner. (Bondu thankfully didn&#8217;t store audio of those conversations, auto-deleting them after a short time and keeping only written transcripts.)</p>
+
+          
+                  
+
+              
+          
+          
+<p>Even now that the data is secured, Margolis and Thacker argue that it raises questions about how many people inside companies that make AI toys have access to the data they collect, how their access is monitored, and how well their credentials are protected. &#8220;There are cascading privacy implications from this,&#8221; says Margolis. &#8221;All it takes is one employee to have a bad password, and then we&#8217;re back to the same place we started, where it&#8217;s all exposed to the public internet.&#8221;</p>
+<p>Margolis adds that this sort of sensitive information about a child&#8217;s thoughts and feelings could be used for horrific forms of child abuse or manipulation. &#8220;To be blunt, this is a kidnapper&#8217;s dream,&#8221; he says. &#8220;We&#8217;re talking about information that lets someone lure a child into a really dangerous situation, and it was essentially accessible to anybody.&#8221;</p>
+<p>Margolis and Thacker point out that, beyond its accidental data exposure, Bondu also&#8212;based on what they saw inside its admin console&#8212;appears to use Google&#8217;s Gemini and OpenAI&#8217;s GPT5, and as a result may share information about kids&#8217; conversations with those companies. Bondu&#8217;s Anam Rafid responded to that point in an email, stating that the company does use &#8220;third-party enterprise AI services to generate responses and run certain safety checks, which involves securely transmitting relevant conversation content for processing.&#8221; But he adds that the company takes precautions to &#8220;minimize what&#8217;s sent, use contractual and technical controls, and operate under enterprise configurations where providers state prompts/outputs aren&#8217;t used to train their models.&#8221;</p>
+<p>The two researchers also warn that part of the risk of AI toy companies may be that they&#8217;re more likely to use AI in the coding of their products, tools, and web infrastructure. They say they suspect that the unsecured Bondu console they discovered was itself &#8220;vibe-coded"&#8212;created with generative AI programming tools that often lead to security flaws. Bondu didn&#8217;t respond to WIRED&#8217;s question about whether the console was programmed with AI tools.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Warnings about the risks of AI toys for kids have grown in recent months but have largely focused on the threat that a toy&#8217;s conversations will raise inappropriate topics or even lead them to dangerous behavior or self-harm. NBC News, for instance, <a href="https://www.nbcnews.com/tech/tech-news/ai-toys-gift-present-safe-kids-robot-child-miko-grok-alilo-miiloo-rcna246956">reported in December</a> that AI toys its reporters chatted with offered detailed explanations of sexual terms, tips about how to sharpen knives, and even seemed to echo Chinese government propaganda, stating for example that Taiwan is a part of China.</p>
+<p>Bondu, by contrast, appears to have at least attempted to build safeguards into the AI chatbot it gives children access to. The company even offers a $500 bounty for reports of &#8220;an inappropriate response&#8221; from the toy. &#8220;We&#8217;ve had this program for over a year, and no one has been able to make it say anything inappropriate,&#8221; a line on the company&#8217;s website reads.</p>
+<p>Yet at the same time, Thacker and Margolis found that Bondu was simultaneously leaving all of its users&#8217; sensitive data entirely exposed. &#8220;This is a perfect conflation of safety with security,&#8221; says Thacker. &#8220;Does &#8216;AI safety&#8217; even matter when all the data is exposed?&#8221;</p>
+<p>Thacker says that prior to looking into Bondu&#8217;s security, he&#8217;d considered giving AI-enabled toys to his own kids, just as his neighbor had. Seeing Bondu&#8217;s data exposure firsthand changed his mind.</p>
+<p>&#8220;Do I really want this in my house? No, I don&#8217;t,&#8221; he says. &#8220;It&#8217;s kind of just a privacy nightmare.&#8221;</p>
+<p><i>This story originally appeared on </i><a href="https://www.wired.com/story/an-ai-toy-exposed-50000-logs-of-its-chats-with-kids-to-anyone-with-a-gmail-account/"><i>wired.com</i></a><i>.</i></p>
+
+
+          
+                  
+
+                  
+          </div>
