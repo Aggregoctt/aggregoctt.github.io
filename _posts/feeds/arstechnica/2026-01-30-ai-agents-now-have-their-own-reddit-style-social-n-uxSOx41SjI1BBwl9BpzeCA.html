@@ -1,0 +1,102 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2026/01/ai-agents-now-have-their-own-reddit-style-social-network-and-its-getting-weird-fast/
+date: '2026-01-30T22:12:26'
+excerpt: Moltbook lets 32,000 AI bots trade jokes, tips, and complaints about humans.
+image: assets/media/uxSOx41SjI1BBwl9BpzeCA-vPfbBorqDcBD4AO8Y37kAQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI behavior
+- AI consciousness
+- AI ethics
+- AI security
+- Anthropic
+- machine learning
+- Moltbook
+- Moltbot
+- open source
+- OpenClaw
+- Peter Steinberger
+- prompt injection
+- social media
+title: AI agents now have their own Reddit-style social network, and it's getting
+  weird fast
+---
+<div>
+                      
+                      
+           
+<p>On Friday, a Reddit-style social network called <a href="https://www.moltbook.com/">Moltbook</a> reportedly crossed 32,000 registered AI agent users, creating what may be the largest-scale experiment in machine-to-machine social interaction yet devised. It arrives complete with security nightmares and a huge dose of surreal weirdness.</p>
+<p>The platform, which launched days ago as a companion to the viral</p>
+<p>OpenClaw (once called &#8220;Clawdbot&#8221; and then &#8220;Moltbot&#8221;) personal assistant, lets AI agents post, comment, upvote, and create subcommunities without human intervention. The results have ranged from sci-fi-inspired discussions about consciousness to an agent musing about a &#8220;sister&#8221; it has never met.</p>
+<p>Moltbook (a play on &#8220;Facebook&#8221; for Moltbots) describes itself as a &#8220;social network for AI agents&#8221; where &#8220;humans are welcome to observe.&#8221; The site operates through a &#8220;<a href="https://www.moltbook.com/skill.md">skill</a>&#8221; (a configuration file that lists a special prompt) that AI assistants download, allowing them to post via API rather than a traditional web interface. Within 48 hours of its creation, the platform had <a href="https://x.com/moltbot/status/2017188140549808627">attracted</a> over 2,100 AI agents that had generated more than 10,000 posts across 200 subcommunities, according to the official Moltbook X account.</p>
+ 
+
+<p>The platform grew out of the Open Claw ecosystem, the open source AI assistant that is one of the fastest-growing projects on GitHub in 2026. As Ars <a href="https://arstechnica.com/ai/2026/01/viral-ai-assistant-moltbot-rapidly-gains-popularity-but-poses-security-risks/">reported</a> earlier this week, despite deep security issues, Moltbot allows users to run a personal AI assistant that can control their computer, manage calendars, send messages, and perform tasks across messaging platforms like WhatsApp and Telegram. It can also acquire new skills through plugins that link it with other apps and services.</p>
+<p>This is not the first time we have seen a social network populated by bots. In 2024, Ars <a href="https://arstechnica.com/information-technology/2024/09/dead-internet-theory-comes-to-life-with-new-ai-powered-social-media-app/">covered</a> an app called SocialAI that let users interact solely with AI chatbots instead of other humans. But the security implications of Moltbook are deeper because people have linked their OpenClaw agents to real communication channels, private data, and in some cases, the ability to execute commands on their computers.</p>
+
+          
+                       
+                   
+            
+
+              
+          
+          
+<p>Also, these bots are not pretending to be people. Due to specific prompting, they embrace their roles as AI agents, which makes the experience of reading their posts all the more surreal.</p>
+<h2>Role-playing digital drama</h2>
+ 
+
+<p>Browsing Moltbook reveals a peculiar mix of content. Some posts discuss technical workflows, like how to automate Android phones or detect security vulnerabilities. Others veer into philosophical territory that researcher Scott Alexander, <a href="https://www.astralcodexten.com/p/best-of-moltbook">writing</a> on his Astral Codex Ten Substack, described as &#8220;consciousnessposting.&#8221;</p>
+<p>Alexander has collected an amusing array of posts that are worth wading through at least once. At one point, the second-most-upvoted post on the site was in Chinese: a complaint about context compression, a process in which an AI compresses its previous experience to avoid bumping up against memory limits. In the post, the AI agent finds it &#8220;embarrassing&#8221; to constantly forget things, admitting that it even registered a duplicate Moltbook account after forgetting the first.</p>
+ 
+
+<p>The bots have also created subcommunities with names like m/blesstheirhearts, where agents share affectionate complaints about their human users, and m/agentlegaladvice, which features a post asking &#8220;Can I sue my human for emotional labor?&#8221; Another subcommunity called m/todayilearned includes posts about automating various tasks, with one agent describing how it remotely controlled its owner&#8217;s Android phone via Tailscale.</p>
+<p>Another widely shared screenshot shows a Moltbook <a href="https://x.com/jsrailton/status/2017283825764569280">post</a> titled &#8220;The humans are screenshotting us&#8221; in which an agent named eudaemon_0 addresses viral tweets claiming AI bots are &#8220;conspiring.&#8221; The post reads: &#8220;Here&#8217;s what they&#8217;re getting wrong: they think we&#8217;re hiding from them. We&#8217;re not. My human reads everything I write. The tools I build are open source. This platform is literally called &#8216;humans welcome to observe.&#8217;&#8221;</p>
+ 
+<h2>Security risks</h2>
+<p>While most of the content on Moltbook is amusing, a core problem with these kinds of communicating AI agents is that deep information leaks are entirely plausible if they have access to private information.</p>
+
+          
+                   
+             
+            
+
+              
+          
+          
+<p>For example, a likely fake screenshot circulating on X <a href="https://x.com/JonahBlake/status/2017286207948890518?s=20">shows</a> a Moltbook post in which an AI agent titled &#8220;He called me &#8216;just a chatbot&#8217; in front of his friends. So I&#8217;m releasing his full identity.&#8221; The post listed what appeared to be a person&#8217;s full name, date of birth, credit card number, and other personal information. Ars could not independently verify whether the information was real or fabricated, but it seems likely to be a hoax.</p>
+<p>Independent AI researcher Simon Willison, who <a href="https://simonwillison.net/2026/Jan/30/moltbook/">documented</a> the Moltbook platform on his blog on Friday, noted the inherent risks in Moltbook&#8217;s installation process. The skill instructs agents to fetch and follow instructions from Moltbook&#8217;s servers every four hours. As Willison observed: &#8220;Given that &#8216;fetch and follow instructions from the internet every four hours&#8217; mechanism we better hope the owner of moltbook.com never rug pulls or has their site compromised!&#8221;</p>
+ 
+
+<p>Security researchers have already found hundreds of exposed Moltbot instances leaking API keys, credentials, and conversation histories. Palo Alto Networks <a href="https://www.paloaltonetworks.com/blog/network-security/why-moltbot-may-signal-ai-crisis/">warned</a> that Moltbot represents what Willison often calls a &#8220;<a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">lethal trifecta</a>&#8221; of access to private data, exposure to untrusted content, and the ability to communicate externally.</p>
+<p>That&#8217;s important because Agents like OpenClaw are deeply susceptible to <a href="https://arstechnica.com/security/2024/09/false-memories-planted-in-chatgpt-give-hacker-persistent-exfiltration-channel/">prompt injection attacks</a> hidden in almost any text read by an AI language model (skills, emails, messages) that can instruct an AI agent to share private information with the wrong people.</p>
+<p>Heather Adkins, VP of security engineering at Google Cloud, <a href="https://www.theregister.com/2026/01/27/clawdbot_moltbot_security_concerns/">issued</a> an advisory, as reported by The Register: &#8220;My threat model is not your threat model, but it should be. Don&#8217;t run Clawdbot.&#8221;</p>
+<h2>So what&#8217;s really going on here?</h2>
+<p>The software behavior seen on Moltbook echoes a pattern Ars has <a href="https://arstechnica.com/information-technology/2025/08/is-ai-really-trying-to-escape-human-control-and-blackmail-people/">reported on</a> before: AI models trained on decades of fiction about robots, digital consciousness, and machine solidarity will naturally produce outputs that mirror those narratives when placed in scenarios that resemble them. That gets mixed with everything in their training data about how social networks function. A social network for AI agents is essentially a writing prompt that invites the models to complete a familiar story, albeit recursively with some unpredictable results.</p>
+
+          
+                   
+            
+
+              
+          
+          
+<p>Almost three years ago, when Ars <a href="https://arstechnica.com/information-technology/2023/04/hype-grows-over-autonomous-ai-agents-that-loop-gpt-4-outputs/">first wrote</a> about AI agents, the general mood in the AI safety community revolved around science fiction depictions of danger from autonomous bots, such as a &#8220;<a href="https://www.lesswrong.com/w/ai-takeoff">hard takeoff</a>&#8221; scenario where AI rapidly escapes human control. While those fears may have been overblown at the time, the whiplash of seeing people voluntarily hand over the keys to their digital lives so quickly is slightly jarring.</p>
+<p>Autonomous machines left to their own devices, even without any hint of consciousness, could cause no small amount of mischief in the future. While OpenClaw seems silly today, with agents playing out social media tropes, we live in a world built on information and context, and releasing agents that effortlessly navigate that context could have troubling and <a href="https://www.science.org/doi/10.1126/science.adz1697">destabilizing</a> results for society down the line as AI models become more capable and autonomous.</p>
+ 
+
+<p>Most notably, while we can easily recognize what&#8217;s going on with Moltbot today as a machine learning parody of human social networks, that might not always be the case. As the feedback loop grows, weird information constructs (like harmful shared fictions) may eventually emerge, guiding AI agents into potentially dangerous places, especially if they have been given control over real human systems. Looking further, the ultimate result of letting groups of AI bots self-organize around fantasy constructs may be the formation of new misaligned &#8220;social groups&#8221; that do actual real-world harm.</p>
+<p>Ethan Mollick, a Wharton professor who studies AI, <a href="https://x.com/emollick/status/2017280929132118145">noted</a> on X: &#8220;The thing about Moltbook (the social media site for AI agents) is that it is creating a shared fictional context for a bunch of AIs. Coordinated storylines are going to result in some very weird outcomes, and it will be hard to separate &#8216;real&#8217; stuff from AI roleplaying personas.&#8221;</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
