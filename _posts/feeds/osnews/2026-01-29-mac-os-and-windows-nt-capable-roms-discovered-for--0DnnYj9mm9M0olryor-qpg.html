@@ -1,0 +1,63 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144296/mac-os-and-windows-nt-capable-roms-discovered-for-apples-unique-aix-network-server/
+date: '2026-01-29T23:50:34'
+excerpt: 'As most of you will know, Mac OS X (or Rhapsody if you count the developer
+  releases) wasn&#8217;t Apple&#8217;s first foray into the world of UNIX. The company
+  sold its own UNIX variant, A/UX, from 1988 to 1995, which combined a System V-based
+  UNIX with a System 7.0.1 desktop environment and application compatibility, before
+  it acquired NeXT and started working on Rhapsody/Mac OS X. As a sidenote, I don&#8217;t
+  know if the application compatibility layer was related to the Macintosh Application
+  Environment for UNIX, which I have running on my HP-UX machines. That&#8217;s not
+  the only time Apple dabbled with UNIX, though &#8211; Apple&#8217;s unique Apple
+  Network Server product from 1996 also came with UNIX, but time it wasn&#8217;t one
+  from Apple itself, but rather from its enemy-turned-friend IBM: AIX. The Network
+  Server shipped with a slightly customised version of IBM&#8217;s AIX operating system;
+  regular AIX straight from IBM wouldn&#8217;t work. The more things change, the more
+  they stay the same I guess. Since the Apple Network Server was built around a modified
+  Power Macintosh 9500 &#8211; there&#8217;s much more to the hardware, but that&#8217;s
+  the short of it &#8211; so you would expect the Network Server to also be able to
+  run regular Mac OS for PowerPC, right? Apple even sold server products running plain
+  Mac OS at the time, so it&#8217;d make sense, but nothing about Apple in the &#8217;90s
+  made any sense whatsoever, so no, use of plain Mac OS was locked out through the
+  ROM. And let&#8217;s not even get started about other PowerPC operating systems
+  of the time, like, of all things, Windows NT &#8211; something Apple supposedly
+  demonstrated at some point. But was that always the case? Well, we&#8217;ve got
+  new ROMs straight from a former Apple employee, and after flashing them to a supported
+  ROM chip, the Apple Network Sever can now run classic Mac OS. On top of that, and
+  even more miraculous, the Windows NT-capable ROMs have also been discovered. I&#8217;ll
+  give you a spoiler now: it turns out the NT ROM isn&#8217;t enough to install Windows
+  NT by itself, even though it has some interesting attributes. Sadly this was not
+  unexpected. But the pre-production ROM does work to boot Mac OS, albeit with apparent
+  bugs and an injection of extra hardware. Let&#8217;s get the 700 running again (call
+  it a Refurb Weekend) and show the process. ↫ Cameron Kaiser While it&#8217;s great
+  news to see that Mac OS can now be run on the Network Server, I&#8217;m personally
+  much more interested in the story behind the Windows NT ROMs. The idea that Apple
+  would sell a computer running Windows NT out of the box is wild to think about now,
+  but considering the desperate state the company was in at the time, all options
+  must&#8217;ve been on the table. Sadly, as Kaiser discovered, the Windows NT ROMs
+  in and of themselves are not enough to run Windows NT. However, they appear to be
+  much farther along in the development process than even the Mac OS-capable ROMs,
+  which is fascinating. When Jobs talked Gil Amelio into canning the ANS as well,
+  the ROM initiative naturally went out the window with it. However, while the existing
+  2.0 Mac OS ROMs are only known on an unmarked development flash stick similar to
+  mine, these final 2.26NT ROMs appear almost production-ready with fully printed
+  labels, suggesting they had reached a very late stage of development. ↫ Cameron
+  Kaiser Despite not being able to boot Windows NT for PowerPC as-is, most likely
+  because there&#8217;s no compatible ARC or HAL, Kaiser did discover a ton of interesting
+  details, like how this ROM configures the Network Server to run in little endian
+  mode, which is all Windows NT for PowerPC ever supported, making this the very first
+  time a PowerPC machine did so. I&#8217;m hoping Kaiser manages to track down the
+  necessary components to make Windows NT bootable on the ANS, as one of the most
+  unique curiosities in Apple history. There&#8217;s a ton more details in the article,
+  as per usual Kaiser standards, and it&#8217;s an absolute joy to read.'
+image: null
+source: osnews
+tags:
+- Apple
+title: Mac OS and Windows NT-capable ROMs discovered for Apple’s unique AIX Network
+  Server
+---
+<div><p>As most of you will know, Mac OS X (or Rhapsody if you count the developer releases) wasn&#8217;t Apple&#8217;s first foray into the world of UNIX. The company sold its own UNIX variant, A/UX, from 1988 to 1995, which combined a System V-based UNIX with a System 7.0.1 desktop environment and application compatibility, before it acquired NeXT and started working on Rhapsody/Mac OS X. As a sidenote, I don&#8217;t know if the application compatibility layer was related to the <a href="https://en.wikipedia.org/wiki/Macintosh_Application_Environment">Macintosh Application Environment for UNIX</a>, which I have running on my HP-UX machines.</p><p>That&#8217;s not the only time Apple dabbled with UNIX, though &#8211; Apple&#8217;s unique Apple Network Server product from 1996 also came with UNIX, but time it wasn&#8217;t one from Apple itself, but rather from its enemy-turned-friend IBM: AIX. The Network Server shipped with a slightly <a href="https://en.wikipedia.org/wiki/Apple_Network_Server#Software">customised version</a> of IBM&#8217;s AIX operating system; regular AIX straight from IBM wouldn&#8217;t work. The more things change, the more they stay the same I guess.</p><p>Since the Apple Network Server was built around a modified Power Macintosh 9500 &#8211; there&#8217;s much more to the hardware, but that&#8217;s the short of it &#8211; so you would expect the Network Server to also be able to run regular Mac OS for PowerPC, right? Apple even sold server products running plain Mac OS <a href="https://en.wikipedia.org/wiki/Apple_Workgroup_Server">at the time</a>, so it&#8217;d make sense, but nothing about Apple in the &#8217;90s made any sense whatsoever, so no, use of plain Mac OS was locked out through the ROM. And let&#8217;s not even get started about other PowerPC operating systems of the time, like, of all things, Windows NT &#8211; something Apple supposedly demonstrated at some point.</p><p>But was that always the case?</p><p>Well, we&#8217;ve got new ROMs <a href="https://oldvcr.blogspot.com/2025/10/the-apple-network-server-macos-roms.html">straight</a> from a former Apple employee, and after flashing them to a supported ROM chip, the Apple Network Sever can now run classic Mac OS. On top of that, and even more miraculous, the Windows NT-capable ROMs have also been discovered.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>I&#8217;ll give you a spoiler now: it turns out the NT ROM isn&#8217;t enough to install Windows NT by itself, even though it has some interesting attributes. Sadly this was not unexpected. But the pre-production ROM does work to boot Mac OS, albeit with apparent bugs and an injection of extra hardware. Let&#8217;s get the 700 running again (call it a Refurb Weekend) and show the process.</p>
+<a href="https://oldvcr.blogspot.com/2026/01/hands-on-with-two-apple-network-server.html">&#8619; Cameron Kaiser</a></blockquote><p>While it&#8217;s great news to see that Mac OS can now be run on the Network Server, I&#8217;m personally much more interested in the story behind the Windows NT ROMs. The idea that Apple would sell a computer running Windows NT out of the box is wild to think about now, but considering the desperate state the company was in at the time, all options must&#8217;ve been on the table. Sadly, as Kaiser discovered, the Windows NT ROMs in and of themselves are not enough to run Windows NT. However, they appear to be much farther along in the development process than even the Mac OS-capable ROMs, which is fascinating.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>When Jobs talked Gil Amelio into canning the ANS as well, the ROM initiative naturally went out the window with it. However, while the existing 2.0 Mac OS ROMs are only known on an unmarked development flash stick similar to mine, these final 2.26NT ROMs appear almost production-ready with fully printed labels, suggesting they had reached a very late stage of development.</p>
+<a href="https://oldvcr.blogspot.com/2026/01/hands-on-with-two-apple-network-server.html">&#8619; Cameron Kaiser</a></blockquote><p>Despite not being able to boot Windows NT for PowerPC as-is, most likely because there&#8217;s no compatible <a href="https://en.wikipedia.org/wiki/ARC_(specification)">ARC</a> or <a href="https://en.wikipedia.org/wiki/Architecture_of_Windows_NT#Hardware_abstraction_layer">HAL</a>, Kaiser did discover a ton of interesting details, like how this ROM configures the Network Server to run in little endian mode, which is all Windows NT for PowerPC ever supported, making this the very first time a PowerPC machine did so. I&#8217;m hoping Kaiser manages to track down the necessary components to make Windows NT bootable on the ANS, as one of the most unique curiosities in Apple history.</p><p>There&#8217;s a ton more details in the article, as per usual Kaiser standards, and it&#8217;s an absolute joy to read.</p></div>
