@@ -1,0 +1,90 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2026/01/developers-say-ai-coding-tools-work-and-thats-precisely-what-worries-them/
+date: '2026-01-30T19:04:15'
+excerpt: Ars spoke to several software devs about AI and found enthusiasm tempered
+  by unease.
+image: assets/media/SH01iXfDgLef3vqRaNKrFQ-Ev0RoaEoptvWE8_xcmdYSA.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- AI agents
+- AI and work
+- AI coding
+- Anthropic
+- Claude
+- Claude Code
+- GitHub Copilot
+- large language models
+- machine learning
+- microsoft
+- openai
+- openai codex
+- Programming
+- software development
+- vibe coding
+title: Developers say AI coding tools work—and that's precisely what worries them
+---
+<div>
+                      
+                      
+           
+<p>Software developers have spent the past two years watching AI coding tools evolve from advanced autocomplete into something that can, in <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">some cases</a>, build entire applications from a text prompt. Tools like Anthropic&#8217;s Claude Code and OpenAI&#8217;s Codex can now <a href="https://arstechnica.com/information-technology/2025/12/how-do-ai-coding-agents-work-we-look-under-the-hood/">work</a> on software projects for hours at a time, writing code, running tests, and, with human supervision, fixing bugs. OpenAI <a href="https://arstechnica.com/ai/2025/12/how-openai-is-using-gpt-5-codex-to-improve-the-ai-tool-itself/">says</a> it now uses Codex to build Codex itself, and the company recently <a href="https://arstechnica.com/ai/2026/01/openai-spills-technical-details-about-how-its-ai-coding-agent-works/">published</a> technical details about how the tool works under the hood. It has caused many to wonder: Is this just more AI industry hype, or are things actually different this time?</p>
+<p>To find out, Ars reached out to several professional developers on Bluesky to ask how they feel about these tools in practice, and the responses revealed a workforce that largely agrees the technology works, but remains divided on whether that&#8217;s entirely good news. It&#8217;s a small sample size that was self-selected by those who wanted to participate, but their views are still instructive as working professionals in the space.</p>
+<p>David Hagerty, a developer who works on point-of-sale systems, told Ars Technica up front that he is skeptical of the marketing. &#8220;All of the AI companies are hyping up the capabilities so much,&#8221; he said. &#8220;Don&#8217;t get me wrong&#8212;LLMs are revolutionary and will have an immense impact, but don&#8217;t expect them to ever write the next great American novel or anything. It&#8217;s not how they work.&#8221;</p>
+<p>Roland Dreier, a software engineer who has contributed extensively to the Linux kernel in the past, told Ars Technica that he acknowledges the presence of hype but has watched the progression of the AI space closely. &#8220;It sounds like implausible hype, but state-of-the-art agents are just staggeringly good right now,&#8221; he said. Dreier described a &#8220;step-change&#8221; in the past six months, particularly after Anthropic released <a href="https://arstechnica.com/ai/2025/11/anthropic-introduces-opus-4-5-cuts-api-pricing-and-enables-much-longer-claude-chats/">Claude Opus 4.5</a>. Where he once used AI for autocomplete and asking the occasional question, he now expects to tell an agent &#8220;this test is failing, debug it and fix it for me&#8221; and have it work. He estimated a 10x speed improvement for complex tasks like building a Rust backend service with Terraform deployment configuration and a <a href="https://svelte.dev/">Svelte</a> frontend.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>A huge question on developers&#8217; minds right now is whether what you might call &#8220;syntax programming,&#8221; that is, the act of manually writing code in the syntax of an established programming language (as opposed to conversing with an AI agent in English), will become extinct in the near future due to AI coding agents handling the syntax for them. Dreier believes syntax programming is largely finished for many tasks. &#8220;I still need to be able to read and review code,&#8221; he said, &#8220;but very little of my typing is actual Rust or whatever language I&#8217;m working in.&#8221;</p>
+<p>When asked if developers will ever return to manual syntax coding, Tim Kellogg, a developer who actively posts about AI on social media and builds autonomous agents, was blunt: &#8220;It&#8217;s over. AI coding tools easily take care of the surface level of detail.&#8221; Admittedly, Kellogg represents developers who have fully embraced agentic AI and now spend their days directing AI models rather than typing code. He said he can now &#8220;build, then rebuild 3 times in less time than it would have taken to build manually,&#8221; and ends up with cleaner architecture as a result.</p>
+<p>One software architect at a pricing management SaaS company, who asked to remain anonymous due to company communications policies, told Ars that AI tools have transformed his work after 30 years of traditional coding. &#8220;I have way more fun now than I ever did doing traditional coding,&#8221; he said. He added that he recently delivered a feature in about two weeks that he estimated would have taken a year using traditional methods. For side projects, he said he can now &#8220;spin up a prototype in like an hour and figure out if it&#8217;s worth taking further or abandoning.&#8221;</p>
+<p>Dreier said the lowered effort has unlocked projects he&#8217;d put off for years: &#8220;I&#8217;ve had &#8216;rewrite that janky shell script for copying photos off a camera SD card&#8217; on my to-do list for literal years.&#8221; Coding agents finally lowered the barrier to entry, so to speak, low enough that he spent a few hours building a full released package with a text UI, written in Rust with unit tests. &#8220;Nothing profound there, but I never would have had the energy to type all that code out by hand,&#8221; he told Ars.</p>
+
+          
+                  
+
+              
+          
+          
+<p>But not everyone shares the same enthusiasm.&#160;Concerns about AI coding agents building up technical debt, that is, making poor design choices early in a development process that snowball into worse problems over time, originated soon after the first debates around &#8220;<a href="https://arstechnica.com/ai/2025/03/is-vibe-coding-with-ai-gnarly-or-reckless-maybe-some-of-both/">vibe coding</a>&#8221; emerged in early 2025. Former OpenAI researcher Andrej Karpathy coined the term to describe programming by conversing with AI without fully understanding the resulting code, which many see as a clear hazard of AI coding agents.</p>
+<p>Darren Mart, a senior software development engineer at Microsoft who has worked there since 2006, shared similar concerns with Ars. Mart, who emphasizes he is speaking in a personal capacity and not on behalf of Microsoft, recently used Claude in a terminal to build a Next.js application integrating with Azure Functions. The AI model &#8220;successfully built roughly 95% of it according to my spec,&#8221; he said. Yet he remains cautious. &#8220;I&#8217;m only comfortable using them for completing tasks that I already fully understand,&#8221; Mart said, &#8220;otherwise there&#8217;s no way to know if I&#8217;m being led down a perilous path and setting myself (and/or my team) up for a mountain of future debt.&#8221;</p>
+<p>A data scientist working in real estate analytics, who asked to remain anonymous due to the sensitive nature of his work, described keeping AI on a very short leash for similar reasons. He uses GitHub Copilot for line-by-line completions, which he finds useful about 75 percent of the time, but restricts agentic features to narrow use cases: language conversion for legacy code, debugging with explicit read-only instructions, and standardization tasks where he forbids direct edits. &#8220;Since I am data-first, I&#8217;m extremely risk averse to bad manipulation of the data,&#8221; he said, &#8220;and the next and current line completions are way too often too wrong for me to let the LLMs have freer rein.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>Speaking of free rein, Nik backend engineer Brian Westby, who uses Cursor daily, told Ars that he sees the tools as &#8220;50/50 good/bad.&#8221; They cut down time on well-defined problems, he said, but &#8220;hallucinations are still too prevalent if I give it too much room to work.&#8221;</p>
+ 
+<h2>The legacy code lifeline and the enterprise AI gap</h2>
+<p>For developers working with older systems, AI tools have become something like a translator and an archaeologist rolled into one. Nate Hashem, a staff engineer at First American Financial, told Ars Technica that he spends his days updating older codebases where &#8220;the original developers are gone and documentation is often unclear on why the code was written the way it was.&#8221; That&#8217;s important because previously &#8220;there used to be no bandwidth to improve any of this,&#8221; Hashem said. &#8220;The business was not going to give you 2-4 weeks to figure out how everything actually works.&#8221;</p>
+<p>In that high-pressure, relatively low-resource environment, AI has made the job &#8220;a lot more pleasant,&#8221; in his words, by speeding up the process of identifying where and how obsolete code can be deleted, diagnosing errors, and ultimately modernizing the codebase.</p>
+<p>Hashem also offered a theory about why AI adoption looks so different inside large corporations than it does on social media. Executives demand their companies become &#8220;AI oriented,&#8221; he said, but the logistics of deploying AI tools with proprietary data can take months of legal review. Meanwhile, the AI features that Microsoft and Google bolt onto products like Gmail and Excel, the tools that actually reach most workers, tend to run on more limited AI models. &#8220;That modal white-collar employee is being told by management to use AI,&#8221; Hashem said, &#8220;but is given crappy AI tools because the good tools require a lot of overhead in cost and legal agreements.&#8221;</p>
+
+          
+                  
+
+              
+          
+          
+<p>Speaking of management, the question of what these new AI coding tools mean for software development jobs drew a range of responses. Does it threaten anyone&#8217;s job? Kellogg, who has embraced agentic coding enthusiastically, was blunt: &#8220;Yes, massively so. Today it&#8217;s the act of writing code, then it&#8217;ll be architecture, then it&#8217;ll be tiers of product management. Those who can&#8217;t adapt to operate at a higher level won&#8217;t keep their jobs.&#8221;</p>
+<p>Dreier, while feeling secure in his own position, worried about the path for newcomers. &#8220;There are going to have to be changes to education and training to get junior developers the experience and judgment they need,&#8221; he said, &#8220;when it&#8217;s just a waste to make them implement small pieces of a system like I came up doing.&#8221;</p>
+<p>Hagerty put it in economic terms: &#8220;It&#8217;s going to get harder for junior-level positions to get filled when I can get junior-quality code for less than minimum wage using a model like Sonnet 4.5.&#8221;</p>
+<p>Mart, the Microsoft engineer, put it more personally. The software development role is &#8220;abruptly pivoting from creation/construction to supervision,&#8221; he said, &#8220;and while some may welcome that pivot, others certainly do not. I&#8217;m firmly in the latter category.&#8221;</p>
+<p>Even with this ongoing uncertainty on a macro level, some people are really enjoying the tools for personal reasons, regardless of larger implications. &#8220;I absolutely love using AI coding tools,&#8221; the anonymous software architect at a pricing management SaaS company told Ars. &#8220;I did traditional coding for my entire adult life (about 30 years) and I have way more fun now than I ever did doing traditional coding.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
