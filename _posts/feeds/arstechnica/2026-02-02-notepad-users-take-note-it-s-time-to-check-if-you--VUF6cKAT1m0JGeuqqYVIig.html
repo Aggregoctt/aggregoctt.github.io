@@ -1,0 +1,65 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2026/02/notepad-updater-was-compromised-for-6-months-in-supply-chain-attack/
+date: '2026-02-02T20:30:56'
+excerpt: Suspected China-state hackers used update infrastructure to deliver backdoored
+  version.
+image: assets/media/VUF6cKAT1m0JGeuqqYVIig-Cut0DNw9Pu5N4AE4rdRA1w.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- notepad
+- Open source software
+- supply chain attacks
+title: 'Notepad++ users take note: It''s time to check if you''re hacked'
+---
+<div>
+                      
+                      
+          <p>Infrastructure delivering updates for Notepad++&#8212;a widely used text editor for Windows&#8212;was compromised for six months by suspected China-state hackers who used their control to deliver backdoored versions of the app to select targets, developers said Monday.</p>
+<p>&#8220;I deeply apologize to all users affected by this hijacking,&#8221; the author of a <a href="https://notepad-plus-plus.org/news/hijacked-incident-info-update/">post</a> published to the official <a href="https://notepad-plus-plus.org/">notepad-plus-plus.org</a> site wrote Monday. The post said that the attack began last June with an &#8220;infrastructure-level compromise that allowed malicious actors to intercept and redirect update traffic destined for notepad-plus-plus.org.&#8221; The attackers, whom multiple investigators tied to the Chinese government, then selectively redirected certain targeted users to malicious update servers where they received backdoored updates. Notepad++ didn&#8217;t regain control of its infrastructure until December.</p>
+<p>The attackers used their access to install a <a href="https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/">never-before-seen payload</a> that has been dubbed Chrysalis. Security firm Rapid 7 descrbed it as a &#8220;custom, feature-rich backdoor.&#8221;</p>
+<p>&#8220;Its wide array of capabilities indicates it is a sophisticated and permanent tool, not a simple throwaway utility,&#8221; company researchers said.</p>
+<h2>Hands-on keyboard hacking</h2>
+<p>Notepad++ said that officials with the unnamed provider hosting the update infrastructure consulted with incident responders and found that it remained compromised until September 2. Even then, the attackers maintained credentials to the internal services until December 2, a capability that allowed them to continue redirecting selected update traffic to malicious servers. The threat actor &#8220;specifically targeted Notepad++ domain with the goal of exploiting insufficient update verification controls that existed in older versions of Notepad++.&#8221; Event logs indicate that the hackers tried to re-exploit one of the weaknesses after it was fixed but that the attempt failed.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>According to independent researcher Kevin Beaumont, three organizations <a href="https://doublepulsar.com/small-numbers-of-notepad-users-reporting-security-woes-371d7a3fd2d9">told him</a> that devices inside their networks that had Notepad++ installed experienced &#8220;security incidents&#8221; that &#8220;resulted in hands on keyboard threat actors,&#8221; meaning the hackers were able to take direct control using a web-based interface. All three of the organizations, Beaumont said, have interests in East Asia.</p>
+<p>The researcher explained that his suspicions were aroused when Notepad++ version 8.8.8 introduced bug fixes in mid-November to &#8220;harden the Notepad++ Updater from being hijacked to deliver something&#8230; not Notepad++.&#8221;</p>
+<p>The update made changes to a bespoke Notepad++ updater known as GUP, or alternatively, WinGUP. The gup.exe executable responsible reports the version in use to https://notepad-plus-plus.org/update/getDownloadUrl.php and then retrieves a URL for the update from a file named gup.xml. The file specified in the URL is downloaded to the %TEMP% directory of the device and then executed.</p>
+<p>Beaumont wrote:</p>
+<blockquote><p>If you can intercept and change this traffic, you can redirect the download to any location it appears by changing the URL in the property.</p>
+<p>This traffic is supposed to be over HTTPS, however it appears you may be [able] to tamper with the traffic if you sit on the ISP level and TLS intercept. In earlier versions of Notepad++, the traffic was just over HTTP.</p>
+<p>The downloads themselves are signed&#8212;however some earlier versions of Notepad++ used a self signed root cert, which is on Github. With 8.8.7, the prior release, this was reverted to GlobalSign. Effectively, there&#8217;s a situation where the download isn&#8217;t robustly checked for tampering.</p>
+<p>Because traffic to notepad-plus-plus.org is fairly rare, it may be possible to sit inside the ISP chain and redirect to a different download. To do this at any kind of scale requires a lot of resources.</p></blockquote>
+<p>Beaumont published his working theory in December, two months to the day prior to Monday&#8217;s advisory by Notepad++. Combined with the details from Notepad++, it&#8217;s now clear that the hypothesis was spot on.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Beaumont also warned that search engines are so &#8220;rammed full&#8221; of advertisements pushing trojanized versions of Notepad++ that many users are unwittingly running them inside their networks. A rash of malicious Notepad++ extensions only compounds the risk.</p>
+<p>He advised that all users ensure they&#8217;re running the official version 8.8.8 or higher installed manually from notepad-plus-plus.org. Since he penned that advice, Notepad++ developers have urged all users to ensure they&#8217;re running 8.9.1 or higher.</p>
+<p>Larger organizations that manage Notepad++ and update it, he said, should consider blocking notepad-plus-plus.org or block the gup.exe process from having Internet access. &#8220;You may also want to block internet access from the notepad++.exe process, unless you have robust monitoring for extensions,&#8221; he added, but cautioned &#8220;for most organisations, this is very much overkill and not practical.&#8221;</p>
+<p>Users who want to investigate whether their devices have been targeted should refer to the indicators of compromise security of the previously linked (https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/) Rapid 7 post.</p>
+ 
+
+<p>Notepad++ has long attracted a large and loyal user base because it offers functions that aren&#8217;t available from the official Windows text editor Notepad. Recent moves by Microsoft to <a href="https://learn.microsoft.com/en-us/windows/client-management/manage-notepad?tabs=intune">integrate Copilot AI</a> into Notepad have driven further interest in the alternative editor. Alas, like so many other open source projects, funding for Notepad++ is dwarfed by the dependence the Internet places on it. The weaknesses that made the six-month compromise possible could easily have been caught and fixed had more resources been available.</p>
+<p>Post updated to add paragraphs 3, 4 and 16 providing details from Rapid 7 post</p>
+
+
+          
+                   
+            
+
+                  
+          </div>
