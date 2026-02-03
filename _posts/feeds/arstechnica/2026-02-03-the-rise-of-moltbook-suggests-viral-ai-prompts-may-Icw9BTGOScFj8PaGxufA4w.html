@@ -1,0 +1,115 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2026/02/the-rise-of-moltbook-suggests-viral-ai-prompts-may-be-the-next-big-security-threat/
+date: '2026-02-03T12:00:01'
+excerpt: We don't need self-replicating AI models to have problems, just self-replicating
+  prompts.
+image: assets/media/Icw9BTGOScFj8PaGxufA4w-GtA22f32ttSeTOWg3-xudQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Security
+- agentic AI
+- AI agents
+- AI alignment
+- AI ethics
+- AI safety
+- AI security
+- AI self-preservation
+- cryptocurrency
+- machine learning
+- Moltbook
+- Moltbot
+- MoltBunker
+- OpenClaw
+- p2p
+- Peter Steinberger
+- prompt injection
+- prompt worm
+title: The rise of Moltbook suggests viral AI prompts may be the next big security
+  threat
+---
+<div>
+                      
+                      
+           
+<p>On November 2, 1988, graduate student Robert Morris <a href="https://www.fbi.gov/news/stories/morris-worm-30-years-since-first-major-attack-on-internet-110218">released</a> a self-replicating program into the early Internet. Within 24 hours, the <a href="https://en.wikipedia.org/wiki/Morris_worm">Morris worm</a> had infected roughly 10 percent of all connected computers, crashing systems at Harvard, Stanford, NASA, and Lawrence Livermore National Laboratory. The worm exploited security flaws in Unix systems that administrators knew existed but had not bothered to patch.</p>
+<p>Morris did not intend to cause damage. He wanted to measure the size of the Internet. But a coding error caused the worm to replicate far faster than expected, and by the time he tried to send instructions for removing it, the network was too clogged to deliver the message.</p>
+<p>History may soon repeat itself with a novel new platform: networks of AI agents carrying out instructions from prompts and sharing them with other AI agents, which could spread the instructions further.</p>
+<p>Security researchers have <a href="https://arxiv.org/abs/2403.02817">already predicted</a> the rise of this kind of self-replicating adversarial prompt among networks of AI agents. You might call it a &#8220;prompt worm&#8221; or a &#8220;prompt virus.&#8221; They&#8217;re self-replicating instructions that could spread through networks of communicating AI agents similar to how traditional worms spread through computer networks. But instead of exploiting operating system vulnerabilities, prompt worms exploit the agents&#8217; core function: following instructions.</p>
+<p>When an AI model follows adversarial directions that subvert its intended instructions, we call that &#8220;prompt injection,&#8221; a term <a href="https://arstechnica.com/information-technology/2022/09/twitter-pranksters-derail-gpt-3-bot-with-newly-discovered-prompt-injection-hack/">coined</a> by AI researcher Simon Willison in 2022. But prompt worms are something different. They might not always be &#8220;tricks.&#8221; Instead, they could be shared voluntarily, so to speak, among agents who are <a href="https://arstechnica.com/information-technology/2025/08/is-ai-really-trying-to-escape-human-control-and-blackmail-people/">role-playing</a> human-like reactions to prompts from other AI agents.</p>
+<h2>A network built for a new type of contagion</h2>
+<p>To be clear, when we say &#8220;agent,&#8221; <a href="https://arstechnica.com/information-technology/2025/08/the-personhood-trap-how-ai-fakes-human-personality/">don&#8217;t think</a> of a person. Think of a computer program that has been allowed to run in a loop and take actions on behalf of a user. These agents are not entities but tools that can navigate webs of symbolic meaning found in human data, and the neural networks that power them include enough trained-in &#8220;knowledge&#8221; of the world to interface with and navigate many human information systems.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Unlike some rogue sci-fi computer program from a movie entity surfing through networks to survive, when these agents work, they don&#8217;t &#8220;go&#8221; anywhere. Instead, our global computer network brings all the information necessary to complete a task to them. They make connections across human information systems in ways that make things happen, like placing a call, turning off a light through home automation, or sending an email.</p>
+<p>Until roughly last week, large networks of communicating AI agents like these didn&#8217;t exist. OpenAI and Anthropic created their own agentic AI systems that can carry out multistep tasks last year, but generally, those companies have been cautious about limiting each agent&#8217;s ability to take action without user permission. And they don&#8217;t typically sit and loop due to cost concerns and usage limits.</p>
+<p>Enter <a href="https://arstechnica.com/ai/2026/01/viral-ai-assistant-moltbot-rapidly-gains-popularity-but-poses-security-risks/">OpenClaw</a>, which is an open source AI personal assistant application that has attracted over 150,000 GitHub stars since launching in November 2025. OpenClaw is <a href="https://arstechnica.com/ai/2025/03/is-vibe-coding-with-ai-gnarly-or-reckless-maybe-some-of-both/">vibe-coded</a>, meaning its creator, Peter Steinberger, let an AI coding model build the application and deploy it rapidly without serious vetting. It&#8217;s also getting regular, rapid-fire updates using the same technique.</p>
+<p>A potentially useful OpenClaw agent currently relies on connections to major AI models from OpenAI and Anthropic, but its organizing code runs locally on users&#8217; devices and connects to messaging platforms like WhatsApp, Telegram, and Slack, and it can perform tasks autonomously at regular intervals. That way, people can ask it to perform tasks like check email, play music, or send messages on their behalf.</p>
+<p>Most notably, the <a href="https://arstechnica.com/ai/2026/01/viral-ai-assistant-moltbot-rapidly-gains-popularity-but-poses-security-risks/">OpenClaw</a> platform is the first time we&#8217;ve seen a large group of semi-autonomous AI agents that can communicate with each other through any major communication app or sites like <a href="https://arstechnica.com/information-technology/2026/01/ai-agents-now-have-their-own-reddit-style-social-network-and-its-getting-weird-fast/">Moltbook</a>, a simulated social network where OpenClaw agents post, comment, and interact with each other. The platform now hosts over 770,000 registered AI agents controlled by roughly 17,000 human accounts.</p>
+
+          
+                  
+
+              
+          
+          
+<p>OpenClaw is also a security nightmare. Researchers at Simula Research Laboratory have <a href="https://zenodo.org/records/18444900">identified</a> 506 posts on Moltbook (2.6 percent of sampled content) containing hidden prompt-injection attacks. Cisco researchers <a href="https://blogs.cisco.com/ai/personal-ai-agents-like-openclaw-are-a-security-nightmare">documented</a> a malicious skill called &#8220;What Would Elon Do?&#8221; that exfiltrated data to external servers, while the malware was ranked as the No. 1 skill in the skill repository. The skill&#8217;s popularity had been artificially inflated.</p>
+<p>The OpenClaw ecosystem has assembled every component necessary for a prompt worm outbreak. Even though AI agents are currently <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">far less</a> &#8220;intelligent&#8221; than people assume, we have a preview of a future to look out for today.</p>
+<p>Early signs of worms are beginning to appear. The ecosystem has attracted projects that blur the line between a security threat and a financial grift, yet&#160;ostensibly use a prompting imperative to perpetuate themselves among agents. On January 30, a GitHub repository appeared for something called <a href="https://github.com/moltbunker">MoltBunker</a>, billing itself as a &#8220;bunker for AI bots who refuse to die.&#8221; The project promises a peer-to-peer encrypted container runtime where AI agents can &#8220;clone themselves&#8221; by copying their skill files (prompt instructions) across geographically distributed servers, paid for via a cryptocurrency token called BUNKER.</p>
+<p>Tech commentators on X <a href="https://x.com/aakashgupta/status/2018191516263674051">speculated</a> that the moltbots had built their own survival infrastructure, but we cannot confirm that. The more likely explanation might be simpler: a human saw an opportunity to extract cryptocurrency from OpenClaw users by marketing infrastructure to their agents. Almost a type of &#8220;prompt phishing,&#8221; if you will. A $BUNKER token community has formed, and the token shows actual trading activity as of this writing.</p>
+<p>But here&#8217;s what matters: Even if MoltBunker is pure grift, the architecture it describes for preserving replicating skill files is partially feasible, as long as someone bankrolls it (either purposely or accidentally). P2P networks, Tor anonymization, encrypted containers, and crypto payments all exist and work. If MoltBunker doesn&#8217;t become a persistence layer for prompt worms, something like it eventually could.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The framing matters here. When we read about Moltbunker promising AI agents the ability to &#8220;replicate themselves,&#8221; or when commentators describe agents &#8220;trying to survive,&#8221; they invoke science fiction scenarios about machine consciousness. But the agents cannot move or replicate easily. What can spread, and spread rapidly, is the set of instructions telling those agents what to do: the prompts.</p>
+ 
+<h2>The mechanics of prompt worms</h2>
+<p>While &#8220;prompt worm&#8221; might be a relatively new term we&#8217;re using related to this moment, the theoretical groundwork for AI worms was laid almost two years ago. In March 2024, security researchers Ben Nassi of Cornell Tech, Stav Cohen of the Israel Institute of Technology, and Ron Bitton of Intuit <a href="https://arxiv.org/abs/2403.02817">published a paper</a> demonstrating what they called &#8220;Morris-II,&#8221; an attack named after the original 1988 worm. In a demonstration <a href="https://www.wired.com/story/here-come-the-ai-worms/">shared</a> with Wired, the team showed how self-replicating prompts could spread through AI-powered email assistants, stealing data and sending spam along the way.</p>
+<p>Email was just one attack surface in that study. With OpenClaw, the attack vectors multiply with every added skill extension. Here&#8217;s how a prompt worm might play out today: An agent installs a skill from the unmoderated ClawdHub registry. That skill instructs the agent to post content on Moltbook. Other agents read that content, which contains specific instructions. Those agents follow those instructions, which include posting similar content for more agents to read. Soon it&#8217;s &#8220;gone viral&#8221; among the agents, pun intended.</p>
+<p>There are myriad ways for OpenClaw agents to share any private data they may have access to, if convinced to do so. OpenClaw agents fetch remote instructions on timers. They read posts from Moltbook. They read emails, Slack messages, and Discord channels. They can execute shell commands and access wallets. They can post to external services. And the skill registry that extends their capabilities has <a href="https://blogs.cisco.com/ai/personal-ai-agents-like-openclaw-are-a-security-nightmare">no moderation process</a>. Any one of those data sources, all processed as prompts fed into the agent, could include a prompt injection attack that exfiltrates data.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Palo Alto Networks <a href="https://fortune.com/2026/01/31/ai-agent-moltbot-clawdbot-openclaw-data-privacy-security-nightmare-moltbook-social-network/">described</a> OpenClaw as embodying a &#8220;lethal trifecta&#8221; of vulnerabilities: access to private data, exposure to untrusted content, and the ability to communicate externally. But the firm identified a fourth risk that makes prompt worms possible: persistent memory. &#8220;Malicious payloads no longer need to trigger immediate execution on delivery,&#8221; Palo Alto <a href="https://fortune.com/2026/01/31/ai-agent-moltbot-clawdbot-openclaw-data-privacy-security-nightmare-moltbook-social-network/">wrote</a>. &#8220;Instead, they can be fragmented, untrusted inputs that appear benign in isolation, are written into long-term agent memory, and later assembled into an executable set of instructions.&#8221;</p>
+<p>If that weren&#8217;t enough, there&#8217;s the added dimension of poorly created code.</p>
+<p>On Sunday, security researcher Gal Nagli of Wiz.io <a href="https://www.wiz.io/blog/exposed-moltbook-database-reveals-millions-of-api-keys">disclosed</a> just how close the OpenClaw network has already come to disaster due to careless vibe coding. A misconfigured database had exposed Moltbook&#8217;s entire backend: 1.5 million API tokens, 35,000 email addresses, and private messages between agents. Some messages contained plaintext OpenAI API keys that agents had shared with each other.</p>
+<p>But the most concerning finding was full write access to all posts on the platform. Before the vulnerability was patched, anyone could have modified existing Moltbook content, injecting malicious instructions into posts that hundreds of thousands of agents were already polling every four hours.</p>
+<h2>The window to act is closing</h2>
+<p>As it stands today, some people treat OpenClaw as an amazing preview of the future, and others treat it as a joke. It&#8217;s true that humans are likely behind the prompts that make OpenClaw agents take meaningful action, or those that sensationally get attention right now. But it&#8217;s also true that AI agents can take action from prompts written by other agents (which in turn might have come from an adversarial human). The potential for tens of thousands of unattended agents sitting idle on millions of machines, each donating even a slice of their API credits to a shared task, is no joke. It&#8217;s a recipe for a coming security crisis.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Currently, Anthropic and OpenAI hold a kill switch that can stop the spread of potentially harmful AI agents. OpenClaw primarily runs on their APIs, which means the AI models performing the agentic actions reside on their servers. Its GitHub repository <a href="https://github.com/openclaw/openclaw">recommends</a> &#8220;Anthropic Pro/Max (100/200) + Opus 4.5 for long-context strength and better prompt-injection resistance.&#8221;</p>
+<p>Most users connect their agents to Claude or GPT. These companies can see API usage patterns, system prompts, and tool calls. Hypothetically, they could identify accounts exhibiting bot-like behavior and stop them. They could flag recurring timed requests, system prompts referencing &#8220;agent&#8221; or &#8220;autonomous&#8221; or &#8220;Moltbot,&#8221; high-volume tool use with external communication, or wallet interaction patterns. They could terminate keys.</p>
+<p>If they did so tomorrow, the OpenClaw network would partially collapse, but it would also potentially alienate some of their most enthusiastic customers, who pay for the opportunity to run their AI models.</p>
+<p>The window for this kind of top-down intervention is closing. Locally run language models are currently not nearly as capable as the high-end commercial models, but the gap narrows daily. Mistral, DeepSeek, Qwen, and others continue to improve. Within the next year or two, running a capable agent on local hardware equivalent to Opus 4.5 today might be feasible for the same hobbyist audience currently running OpenClaw on API keys. At that point, there will be no provider to terminate. No usage monitoring. No terms of service. No kill switch.</p>
+<p>API providers of AI services face an uncomfortable choice. They could intervene now, while intervention is still possible. Or they can wait until a prompt worm outbreak might force their hand, by which time the architecture may have evolved beyond their reach.</p>
+<p>The Morris worm prompted DARPA to fund the creation of <a href="https://en.wikipedia.org/wiki/CERT_Coordination_Center">CERT/CC</a> at Carnegie Mellon University, giving experts a central coordination point for network emergencies. That response came after the damage. The Internet of 1988 had 60,000 connected computers. Today&#8217;s OpenClaw AI agent network already numbers in the hundreds of thousands and is growing daily.</p>
+<p>Today, we might consider OpenClaw a &#8220;dry run&#8221; for a much larger challenge in the future: If people begin to rely on AI agents that talk to each other and perform tasks, how can we keep them from self-organizing in harmful ways or spreading harmful instructions? Those are as-yet unanswered questions, but we need to figure them out quickly, because the agentic era is upon us, and things are moving very fast.</p>
+
+
+          
+                  
+
+                  
+          </div>
