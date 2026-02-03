@@ -1,0 +1,24 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144329/zig-replaces-third-party-c-code-with-zigs-own-code/
+date: '2026-02-03T21:56:01'
+excerpt: Over the past month or so, several enterprising contributors have taken an
+  interest in the zig libc subproject. The idea here is to incrementally delete redundant
+  code, by providing libc functions as Zig standard library wrappers rather than as
+  vendored C source files. In many cases, these functions are one-to-one mappings,
+  such as memcpy or atan2, or trivially wrap a generic function, like strnlen. So
+  far, roughly 250 C source files have been deleted from the Zig repository, with
+  2032 remaining. With each function that makes the transition, Zig gains independence
+  from third party projects and from the C programming language, compilation speed
+  improves, Zig’s installation size is simplified and reduced, and user applications
+  which statically link libc enjoy reduced binary size. ↫ Andrew Kelley on the Zig
+  Devlog The goal is to replace all of the musl, wasi-libc, and MinGW-w64 C code bundled
+  in Zig with new Zig code.
+image: null
+source: osnews
+tags:
+- General Development
+title: Zig replaces third-party C code with Zig’s own code
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Over the past month or so, several enterprising contributors have taken an interest in the <a href="https://codeberg.org/ziglang/zig/issues/30978" target="_blank" rel="noreferrer noopener">zig libc subproject</a>. The idea here is to incrementally delete redundant code, by providing libc functions as Zig standard library wrappers rather than as vendored C source files. In many cases, these functions are one-to-one mappings, such as <code>memcpy</code> or <code>atan2</code>, or trivially wrap a generic function, like <code>strnlen</code>.</p><p>So far, roughly 250 C source files have been deleted from the Zig repository, with 2032 remaining.</p><p>With each function that makes the transition, Zig gains independence from third party projects and from the C programming language, compilation speed improves, Zig&#8217;s installation size is simplified and reduced, and user applications which statically link libc enjoy reduced binary size.</p>
+<a href="https://ziglang.org/devlog/2026/#2026-01-31">&#8619; Andrew Kelley on the Zig Devlog</a></blockquote><p>The goal is to replace all of the musl, wasi-libc, and MinGW-w64 C code bundled in Zig with new Zig code.</p></div>

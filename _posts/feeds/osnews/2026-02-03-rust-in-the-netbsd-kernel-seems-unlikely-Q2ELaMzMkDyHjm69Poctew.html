@@ -1,0 +1,28 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144326/rust-in-the-netbsd-kernel-seems-unlikely/
+date: '2026-02-03T21:47:12'
+excerpt: Rust is everywhere, and it&#8217;s no surprise it&#8217;s also made its way
+  into the lowest levels of certain operating systems and kernels, so it shouldn&#8217;t
+  be surprising that various operating system developers have to field questions and
+  inquiries about Rust. NetBSD developer Benny Siegert wrote a blog post about this
+  very subject, and in it, details why it&#8217;s unlikely Rust will find its way
+  into the NetBSD base system and/or the kernel First, NetBSD is famed for its wide
+  architecture and platform support, and Rust would make that a lot more troublesome
+  due to Rust simply not being available on many platforms NetBSD supports. Rust release
+  cycles also aren&#8217;t compatible with NetBSD, it would draw a lot of dependency
+  code into the base system, and keeping Rust and its compiler toolchain working is
+  a lot of work that falls on the shoulders of a relatively small group of NetBSD
+  developers. Note that while NetBSD does tend to take a more cautious approach to
+  these matters than, say, Linux or FreeBSD, the operating system isn&#8217;t averse
+  to change on principle. For instance, not only is Lua part of the base system, it&#8217;s
+  even used in the NetBSD kernel due to its ability to rapidly develop and prototype
+  kernel drivers. In short, while it doesn&#8217;t seem likely Rust will make it into
+  the NetBSD base system, it&#8217;s not an impossibility either.
+image: null
+source: osnews
+tags:
+- NetBSD
+title: Rust in the NetBSD kernel seems unlikely
+---
+<div><p>Rust is everywhere, and it&#8217;s no surprise it&#8217;s also made its way into the lowest levels of certain operating systems and kernels, so it shouldn&#8217;t be surprising that various operating system developers have to field questions and inquiries about Rust. NetBSD developer Benny Siegert <a href="https://bentsukun.ch/posts/netbsd-rust-kernel/">wrote a blog post</a> about this very subject, and in it, details why it&#8217;s unlikely Rust will find its way into the NetBSD base system and/or the kernel</p><p>First, NetBSD is famed for its wide architecture and platform support, and Rust would make that a lot more troublesome due to Rust simply not being available on many platforms NetBSD supports. Rust release cycles also aren&#8217;t compatible with NetBSD, it would draw a lot of dependency code into the base system, and keeping Rust and its compiler toolchain working is a lot of work that falls on the shoulders of a relatively small group of NetBSD developers.</p><p>Note that while NetBSD does tend to take a more cautious approach to these matters than, say, Linux or FreeBSD, the operating system isn&#8217;t averse to change on principle. For instance, not only is Lua part of the base system, it&#8217;s even used in the NetBSD kernel due to its ability to rapidly develop and prototype kernel drivers. In short, while it doesn&#8217;t seem likely Rust will make it into the NetBSD base system, it&#8217;s not an impossibility either.</p></div>
