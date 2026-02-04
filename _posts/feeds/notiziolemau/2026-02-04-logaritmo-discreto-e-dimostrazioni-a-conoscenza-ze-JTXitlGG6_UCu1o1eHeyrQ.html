@@ -1,0 +1,33 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2026/02/04/logaritmo-discreto-e-dimostrazioni-a-conoscenza-zero/
+date: '2026-02-04T03:51:51'
+excerpt: Un protocollo per dimostrare che conosco qual è il logaritmo discreto di
+  un numero.
+image: assets/media/JTXitlGG6_UCu1o1eHeyrQ-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- mate-light 2026
+- matematica_light
+title: Logaritmo discreto e dimostrazioni a conoscenza zero
+---
+<div>
+			<p>Avevo parlato delle dimostrazioni a conoscenza zero <a href="https://xmau.com/wp/ilpost/2015/02/10/dimostrazioni-a-conoscenza-zero/">una decina d&#8217;anni fa</a>, sul Post. Magari la prossima settimana ne scrivo ancora. Per il momento vi lascio una dimostrazione pratica: una dimostrazione si dice a conoscenza zero se io riesco a convincerti che conosco un segreto senza rivelartelo. Per esempio, potrei dirti che ho una tecnica infallibile per lanciare una moneta e farla cascare su testa o croce: tu mi dai una moneta, mi dici quale faccia vuoi che esca, e io ci riesco una, dieci, cento volte di fila. A un certo punto tu ti fiderai che io sono effettivamente in grado di decidere quale faccia mostrare (e ovviamente non giocherai pi&#249; a testa o croce con me), anche se non hai nessuna idea di come io faccia. La parola chiave &#232; &#8220;fidarsi&#8221;: le dimostrazioni a conoscenza zero sono inerentemente probabilistiche, proprio perch&#233; non possiamo controllare la dimostrazione. Quello che conta &#232; che la probabilit&#224; che io sia stato semplicemente fortunato sia piccola a piacere: con un solo lancio capiterebbe una volta su due, con dieci lanci una volta su 1000, con cento lanci la probabilit&#224; di essere stato fortunato sarebbe inconcepibilmente piccola. </p>
+<p>Passiamo ora al logaritmo discreto. Probabilmente vi ricordate che se avete l&#8217;equazione $b^x = y$ allora $b$ &#232; la radice <i>x</i>-sima di $y$, mentre $x$ &#232; il logaritmo di $y$ in base $b$: a differenza di addizione e moltiplicazione, l&#8217;elevazione a potenza non &#232; commutativa e quindi ci sono due operazioni inverse. Quello che a scuola non insegnano &#232; che &#232; possibile anche calcolare il logaritmo in un gruppo finito, se la dimensione del gruppo &#232; un numero primo $p$ (insomma, se stiamo usando i numeri modulo $p$). Prendiamo per esempio $p = 7$: le potenze di 3 in base 7 sono le seguenti.</p>
+<p>$$\begin{matrix}<br>
+n    &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 \\<br>
+3^n  &amp; 3 &amp; 2 &amp; 6 &amp; 4 &amp; 5 &amp; 1 \\<br>
+\end{matrix}$$</p>
+<p>Notate che non consideriamo lo 0, perch&#233; ci interessa il gruppo moltiplicativo e non quello additivo; notate anche come tutti i valori da 1 a 6 sono presenti nella riga delle potenze. Da qui &#232; facile ricavare il logaritmo discreto: </p>
+<p>$$\begin{matrix}<br>
+n    &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 \\<br>
+3^n  &amp; 6 &amp; 2 &amp; 1 &amp; 4 &amp; 5 &amp; 3 \\<br>
+\end{matrix}$$</p>
+<p>In questo caso la tabella &#232; facile da calcolare, ma se partissimo da un numero primo di centinaia di cifre sarebbe ancora facile elevare un numero a una qualche potenza, ma non lo sarebbe affatto partire da quel risultato e risalire al numero. Il logaritmo discreto &#232; insomma una di quelle <a href="https://it.wikipedia.org/wiki/Funzione_unidirezionale">&#8220;funzioni a senso unico&#8221;</a> che servono per la crittografia. Come si pu&#242; sfruttare il logaritmo discreto per convincere il mio interlocutore che conosco $x$, il logaritmo in base $b$ di $y$, senza rivelarglielo? Ecco un protocollo di comunicazione, come <a href="https://www.johndcook.com/blog/2026/01/23/zkp-discrete-logarithm/">spiegato da John Cook</a>. </p>
+<p>(1) Io scelgo un numero (naturale) casuale $r$, calcolo $t = b^r$, e mando al mio interlocutore il numero $t$.<br>
+(2) Lui mi spedisce a sua volta un altro numero casuale $c$.<br>
+(3) Io calcolo $s = t + cx$ e glielo mando.<br>
+(4) Lui verifica ce effettivamente $b^s = ty^c$. In caso affermativo si fida (oppure riprova pi&#249; volte, se pensa che io abbia avuto fortuna).</p>
+<p>Cosa conosce il mio interlocutore, oltre alla base $b$ e a $y$? Due numeri: $t$ e $s$. Il primo, $t$, &#232; l&#8217;esponenziale (in base $b$ di un numero casuale, e quindi &#232; anch&#8217;esso casuale: non d&#224; dunque nessuna informazione. Il secondo, $s$, di per s&#233; &#232; basato su $x$, ma per trovarlo bisognerebbe conoscere $r$ e per riuscirci dovrebbe essere in grado di calcolare rapidamente il logaritmo discreto, cosa che al momento non &#232; fattibile. Infine, abbiamo che $b^s = b^{r+cx} = b^r b^{cx} = t (b^x)^c = ty^c$. Inoltre, visto che io non potevo conoscere a priori $c$, non potevo fare il calcolo in anticipo. Anche questo punto &#232; importante, perch&#233; altrimenti potrei usare dei trucchi: tornando all&#8217;esempio del lancio di monete, non &#232; cos&#236; difficile fare un video in cui io per dieci volte di fila lancio una moneta dicendo ciascuna volta cosa uscir&#224;. Comincio a filmare finch&#233; non mi capita la successione di dieci risultati corretti, e taglio tutta la parte precedente del video&#8230; </p>
+ 
+  					</div>
