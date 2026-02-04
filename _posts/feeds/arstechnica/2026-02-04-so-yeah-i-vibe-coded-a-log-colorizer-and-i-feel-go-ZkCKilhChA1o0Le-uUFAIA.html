@@ -1,0 +1,555 @@
+---
+author: Lee Hutchinson
+canonical_url: https://arstechnica.com/features/2026/02/so-yeah-i-vibe-coded-a-log-colorizer-and-i-feel-good-about-it/
+date: '2026-02-04T12:00:37'
+excerpt: Some semi-unhinged musings on where LLMs fit into my life—and how I'll keep
+  using them.
+image: assets/media/ZkCKilhChA1o0Le-uUFAIA-1KUZhyQANJTmMsxNpYBdXQ.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Features
+- AI
+- Anthropic
+- artificial inteligence
+- ChatGPT
+- chatgpt codex
+- Claude
+- Claude Code
+- Codex
+- gpt codex
+- LLM
+- openai
+- vibe coding
+title: So yeah, I vibe-coded a log colorizer—and I feel good about it
+---
+<div>
+            
+  
+  
+  
+  
+    
+      
+   
+  <span class="upper-deck__text">
+    agents and agency
+  </span>
+
+    
+
+    <h1 class="dusk:text-gray-100 mb-3 font-serif text-4xl font-bold text-gray-700 md:text-6xl md:leading-[1.05] dark:text-gray-100">
+      So yeah, I vibe-coded a log colorizer&#8212;and I feel good about it
+    </h1>
+
+    <p class="text-gray-550 dark:text-gray-250 dusk:text-gray-250 my-3 text-2xl leading-[1.1] md:leading-[1.2]">
+      Some semi-unhinged musings on where LLMs fit into my life&#8212;and how I&#8217;ll keep using them.
+    </p>
+
+          
+        <a class="text-orange-400 hover:text-orange-500" href="https://arstechnica.com/author/lee-hutchinson/">
+    Lee Hutchinson
+  </a>
+  &#8211;
+  <span class="whitespace-nowrap">
+    
+      Feb 4, 2026 7:00 am
+    
+    <span class="text-gray-550">|</span>  
+  </span>
+      
+    
+     
+
+     
+  
+
+
+
+  
+
+     
+    
+
+     
+    
+      
+      
+        
+          
+             
+            <span class="font-impact text-gray-350 text-base font-semibold uppercase">Story text</span>
+          
+           
+        
+
+        
+          Size
+ 
+
+
+Width
+      <span class="text-gray-400">*</span>
+  
+ 
+
+
+Links
+ 
+
+
+  
+    <span class="mb-0 italic">* Subscribers only</span><br>
+    &#160;&#160;<a href="/store/product/subscriptions/" class="text-green-400">Learn more</a>
+  
+
+          
+          
+        
+      
+    
+    
+  
+
+
+  
+
+  
+      
+    
+    
+      
+
+        
+        
+                      
+                      
+           
+<p>I can&#8217;t code.</p>
+<p>I know, I know&#8212;these days, that sounds like an excuse. Anyone can code, right?! Grab some tutorials, maybe an O&#8217;Reilly book, download an example project, and jump in. It&#8217;s just a matter of learning how to break your project into small steps that you can make the computer do, then memorizing a bit of syntax. Nothing about that is hard!</p>
+<p>Perhaps you can sense my sarcasm (and sympathize with my lack of time to learn one more technical skill).</p>
+<p>Oh, sure, I can &#8220;code.&#8221; That is, I can flail my way through a block of (relatively simple) pseudocode and follow the flow. I have a reasonably technical layperson&#8217;s understanding of conditionals and loops, and of when one might use a variable versus a constant. On a good day, I could probably even tell you what a &#8220;pointer&#8221; is.</p>
+<p>But pulling all that knowledge together and synthesizing a working application any more complex than &#8220;hello world&#8221;? I am not that guy. And at this point, I&#8217;ve lost the neuroplasticity and the motivation (if I ever had either) to become that guy.</p>
+<p>Thanks to AI, though, what has been true for my whole life need not be true anymore. Perhaps, <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">like my colleague Benj Edwards</a>, I can whistle up an LLM or two and tackle the creaky pile of &#8220;it&#8217;d be neat if I had a program that would do X&#8221; projects without being publicly excoriated on StackOverflow by apex predator geeks for daring to sully their holy temple of knowledge with my dirty, stupid, off-topic, already-answered questions.</p>
+<p>So I gave it a shot.</p>
+<h2>A cache-related problem appears</h2>
+<p>My project is a small Python-based log colorizer that I asked Claude Code to construct for me. If you&#8217;d like to peek at the code before listening to me babble, a version of the project without some of the Lee-specific customizations is <a href="https://github.com/code-a-saurus/NginxLogColorizer">available on GitHub</a>.</p>
+
+          
+                       
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+ 
+
+<p>Why a log colorizer? Two reasons. First, and most important to me, because I needed to look through a big ol&#8217; pile of web server logs, and off-the-shelf colorizer solutions weren&#8217;t customizable to the degree I wanted. Vibe-coding one that exactly matched my needs made me happy.</p>
+<p>But second, and almost equally important, is that this was a small project. The colorizer ended up being a 400-ish line, single-file Python script. The entire codebase, plus the prompting and follow-up instructions, fit easily within Claude Code&#8217;s context window. This isn&#8217;t an application that sprawls across dozens or hundreds of functions in multiple files, making it easy to audit (even for me).</p>
+<p>Setting the stage: I do the web hosting for my colleague Eric Berger&#8217;s Houston-area forecasting site, <a href="https://spacecityweather.com">Space City Weather</a>. It&#8217;s a self-hosted WordPress site, running on an AWS EC2 <a href="https://aws.amazon.com/ec2/instance-types/t3/">t3a.large</a> instance, fronted by Cloudflare using CF&#8217;s <a href="https://www.cloudflare.com/application-services/products/automatic-platform-optimization/">WordPress Automatic Platform Optimization</a>.</p>
+ 
+<p>Space City Weather also uses <a href="https://discourse.spacecityweather.com">self-hosted Discourse for commenting</a>, replacing WordPress&#8217; native comments at the bottom of Eric&#8217;s daily weather posts via the <a href="https://wordpress.org/plugins/wp-discourse/">WP-Discourse plugin</a>. Since bolting Discourse onto the site back in August 2025, though, I&#8217;ve had an intermittent issue where sometimes&#8212;but not all the time&#8212;a daily forecast post would go live and get cached by Cloudflare with the old, disabled native WordPress comment area attached to the bottom instead of the shiny new Discourse comment area. Hundreds of visitors would then see a version of the post without a functional comment system until I manually expired the stale page or until the page hit Cloudflare&#8217;s APO-enforced max age and expired itself.</p>
+<p>The problem behavior would lie dormant for weeks or months, and then we&#8217;d get a string of back-to-back days where it would rear its ugly head. Edge cache invalidation on new posts is supposed to be triggered automatically by <a href="https://wordpress.org/plugins/cloudflare/">the official Cloudflare WordPress plug-in</a>, and indeed, it usually worked fine&#8212;but &#8220;usually&#8221; is not &#8220;always.&#8221;</p>
+
+          
+                   
+            
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>In the absence of any obvious clues as to why this was happening, I consulted a few different LLMs and asked for possible fixes. The solution I settled on was having one of them author a small <a href="https://developer.wordpress.org/advanced-administration/plugins/mu-plugins/">mu-plugin</a> in PHP (more vibe coding!) that forces WordPress to slap &#8220;DO NOT CACHE ME!&#8221; headers on post pages until it has verified that Discourse has hooked its comments to the post. (Curious readers can put eyes on this plugin <a href="https://github.com/code-a-saurus/WebStuff/blob/main/scw-discourse-cf.php">right here</a>.)</p>
+<p>This &#8220;solved&#8221; the problem by preempting the problem behavior, but it did nothing to help me identify or fix the actual underlying issue. I turned my attention elsewhere for a few months. One day in December, as I was updating things, I decided to temporarily disable the mu-plugin to see if I still needed it. After all, problems sometimes go away on their own, right? Computers are crazy!</p>
+<p>Alas, the next time Eric made a Space City Weather post, it popped up sans Discourse comment section, with the (ostensibly disabled) WordPress comment form at the bottom. Clearly, the problem behavior was still in play.</p>
+<h2>Interminable intermittence</h2>
+<p>Have you ever been stuck troubleshooting an intermittent issue? Something doesn&#8217;t work, you make a change, it suddenly starts working, then despite making no further changes, it randomly breaks again.</p>
+<p>The process makes you question basic assumptions, like, &#8220;Do I actually know how to use a computer?&#8221; You feel like you might be actually-for-real losing your mind. The final stage of this process is the all-consuming death spiral, where you start asking stuff like, &#8220;Do I need to troubleshoot my troubleshooting methods? Is my server even working? Is the simulation we&#8217;re all living in finally breaking down and reality itself is toying with me?!&#8221;</p>
+<p>In this case, I couldn&#8217;t reproduce the problem behavior on demand, no matter how many tests I tried. I couldn&#8217;t see any narrow, definable commonalities between days where things worked fine and days where things broke.</p>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+ 
+<p>My best hope for getting a handle on the problem likely lay deeply buried in the server&#8217;s logs. Like any good sysadmin, I gave the logs a quick once-over for problems a couple of times per month, but Space City Weather is a reasonably busy medium-sized site and dishes out its daily forecast to between 20,000 and 30,000 people (&#8220;unique visitors&#8221; in web parlance, or &#8220;UVs&#8221; if you want to sound cool). Even with Cloudflare taking the brunt of the traffic, the daily web server log files are, let us say, &#8220;a bit dense.&#8221; My surface-level glances weren&#8217;t doing the trick&#8212;I&#8217;d have to actually dig in. And having been down this road before for other issues, I knew I needed more help than grep alone could provide.</p>
+<h2>The vibe use case</h2>
+<p>The Space City Weather web server uses <a href="https://nginx.org/">Nginx</a> for actual web serving. For folks who have never had the pleasure, Nginx, as configured in most of its distributable packages, keeps a pair of log files around&#8212;one that shows every request serviced and another just for errors.</p>
+<p>I wanted to watch the access log right when Eric was posting to see if anything obviously dumb/bad/wrong/broken was happening. But I&#8217;m not super-great at staring at a giant wall of text and symbols, and I tend to lean heavily on syntax highlighting and colorization to pick out the important bits when I&#8217;m searching through log files. There&#8217;s an old and crusty program called <a href="https://github.com/cornet/ccze">ccze</a> that&#8217;s easily findable in most repos; I&#8217;ve used it forever, and if its default output does what you need, then it&#8217;s an excellent tool.</p>
+ 
+
+ 
+<p>But customizing ccze&#8217;s output is a &#8220;here be dragons&#8221;-type task. The application is old, and time has ossified it into something like an unapproachably evil Mayan relic, filled with shadowy regexes and dark magic, fit to be worshipped from afar but not trifled with. Altering ccze&#8217;s behavior threatens to become an effort-swallowing bottomless pit, where you spend more time screwing around with the tool and the regexes than you actually spend using the tool to diagnose your original problem.</p>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>It was time to fire up VSCode and pretend to be a developer. I set up a new project, performed the demonic invocation to summon Claude Code, flipped the thing into &#8220;<a href="https://claudelog.com/mechanics/plan-mode/">plan mode</a>,&#8221; and began.</p>
+<p>&#8220;I&#8217;d like to see about creating an Nginx log colorizer,&#8221; I wrote in the prompt box. &#8220;I don&#8217;t know what language we should use. I would like to prioritize efficiency and performance in the code, as I will be running this live in production and I can&#8217;t have it adding any applicable load.&#8221; I dropped a truncated, IP-address-sanitized copy of yesterday&#8217;s Nginx access.log into the project directory.</p>
+<p>&#8220;See the access.log file in the project directory as an example of the data we&#8217;ll be colorizing. You can test using that file,&#8221; I wrote.</p>
+ 
+
+<p>Ever helpful, Claude Code chewed on the prompt and the example data for a few seconds, then began spitting output. It suggested Python for our log colorizer because of the language&#8217;s mature regex support&#8212;and to keep the code somewhat readable for poor, dumb me. The actual &#8220;vibe-coding&#8221; wound up spanning two sessions over two days, as I exhausted my Claude Code credits on the first one (a definite vibe-coding danger!) and had to wait for things to reset.</p>
+<h2>&#8220;Dude, lnav and Splunk exist, what is wrong with you?&#8221;</h2>
+<p>Yes, yes, a log colorizer is bougie and lame, and I&#8217;m treading over exceedingly well-trodden ground.&#160;I did, in fact, sit for a bit with existing tools&#8212;particularly&#160;<a href="https://lnav.org/" target="_blank" rel="noopener">lnav</a>, which does most of what I want.&#160;But I didn&#8217;t want most of my requirements met. I wanted all of them. I wanted a bespoke tool, and I wanted it without having to pay the &#8220;<a href="https://xkcd.com/1205/">is it worth the time?</a>&#8221; penalty. (Or, perhaps, I wanted to feel like the LLM&#8217;s time was being wasted rather than mine, given that the effort ultimately took two days of vibe-coding.)</p>
+
+          
+                   
+            
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>And about those two days: Getting a basic colorizer coded and working took maybe 10 minutes and perhaps two rounds of prompts. It was super-easy. Where I burned the majority of the time and compute power was in tweaking the initial result to be exactly what I wanted.</p>
+<p>For therein lies the truly seductive part of vibe-coding&#8212;the ease of asking the LLM to make small changes or improvements and the apparent absence of cost or consequence for implementing those changes. The impression is that you&#8217;re on the Enterprise-D, chatting with the ship&#8217;s computer, collaboratively solving a problem with Geordi and Data standing right behind you. It&#8217;s downright intoxicating to say, &#8220;Hm, yes, now let&#8217;s make it so I can show only IPv4 or IPv6 clients with a command line switch,&#8221; and the machine does it. (It&#8217;s even cooler if you make the request while swinging your leg over the back of a chair so you can sit in it <a href="https://www.youtube.com/watch?v=lVIGhYMwRgs">Riker-style</a>!)</p>
+ 
+
+<p>It&#8217;s exhilarating, honestly, in an Emperor Palpatine &#8220;UNLIMITED POWERRRRR!&#8221; kind of way. It removes a barrier that I didn&#8217;t think would ever be removed&#8212;or, rather, one I thought I would never have the time, motivation, or ability to tear down myself.</p>
+<p>In the end, after a couple of days of testing and iteration&#8212;including a couple of &#8220;Is this colorizer performant, and will it introduce system load if run in production?&#8221; back-n-forth exchanges where the LLM reduced the cost of our regex matching and ensured our main loop wasn&#8217;t very heavy, I got a tool that does exactly what I want.</p>
+ 
+<p>Specifically, I now have a log colorizer that:</p>
+<ul>
+<li>Handles multiple Nginx (and Apache) log file formats</li>
+<li>Colorizes things using 256-color ANSI codes that look roughly the same in different terminal applications</li>
+<li>Organizes hostname &amp; IP addresses in fixed-length columns for easy scanning</li>
+<li>Colorizes HTTP status codes and cache status (with configurable colors)</li>
+<li>Applies different colors to the request URI depending on the resource being requested</li>
+<li>Has specific warning colors and formatting to highlight non-HTTPS requests or other odd things</li>
+<li>Can apply alternate colors for specific IP addresses (so I can easily pick out Eric&#8217;s or my requests)</li>
+<li>Can constrain output to only show IPv4 or IPv6 hosts</li>
+</ul>
+
+          
+                   
+            
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>&#8230;and, worth repeating, it all looks exactly how I want it to look and behaves exactly how I want it to behave. Here&#8217;s another action shot!</p>
+ 
+
+<h2>Problem spotted</h2>
+<p>Armed with my handy-dandy log colorizer, I patiently waited for the wrong-comment-area problem behavior to re-rear its still-ugly head. I did not have to wait long, and within a couple of days, I had my root cause. It had been there all along, if I&#8217;d only decided to spend some time looking for it. Here it is:</p>
+ 
+
+<p>Briefly: The problem is Apple&#8217;s fault. (Well, not really. But kinda.)</p>
+<p>Less briefly: I&#8217;ve blurred out Eric&#8217;s IP address, but it&#8217;s dark green, so any place in the above image where you see a blurry, dark green smudge, that&#8217;s Eric. In the roughly 12-ish seconds presented here, you&#8217;re seeing Eric press the &#8220;publish&#8221; button on his daily forecast&#8212;that&#8217;s the &#8220;POST&#8221; event at the very top of the window. The subsequent events from Eric&#8217;s IP address are his browser having the standard post-publication conversation with WordPress so it can display the &#8220;post published successfully&#8221; notification and then redraw the WP block editor.</p>
+<p>Below Eric&#8217;s post, you can see the Discourse server (with orange IP address) notifying WordPress that it has created a new Discourse comment thread for Eric&#8217;s post, then grabbing the things it needs to mirror Eric&#8217;s post as the opener for that thread. You can see it does GETs for the actual post and also for the post&#8217;s embedded images. About one second after Eric hits &#8220;publish,&#8221; the new post&#8217;s Discourse thread is ready, and it gets attached to Eric&#8217;s post.</p>
+<p>Ah, but notice what else happens during that one second.</p>
+<p>To help expand Space City Weather&#8217;s reach, we cross-publish all of the site&#8217;s posts to Apple News, using <a href="https://wordpress.org/plugins/publish-to-apple-news/">a popular Apple News plug-in</a> (the same one Ars uses, in fact). And right there, with those two GET requests immediately after Eric&#8217;s POST request, lay the problem: You&#8217;re seeing the vanguard of Apple News&#8217; hungry army of story-retrieval bots, summoned by the same &#8220;publish&#8221; event, charging in and demanding a copy of the brand new post before Discourse has a chance to do its thing.</p>
+
+          
+                   
+             
+            
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+ 
+
+<p>It was a classic problem in computing: a <a href="https://en.wikipedia.org/wiki/Race_condition">race condition</a>. Most days, Discourse&#8217;s new thread creation would beat the AppleNewsBot rush; some days, though, it wouldn&#8217;t. On the days when it didn&#8217;t, the horde of Apple bots would demand the page before its Discourse comments were attached, and Cloudflare would happily cache what those bots got served.</p>
+<p>I knew my fix of emitting &#8220;NO CACHE&#8221; headers on the story pages prior to Discourse attaching comments worked, but now I knew why it worked&#8212;and why the problem existed in the first place. And oh, dear reader, is there anything quite so viscerally satisfying in all the world as figuring out the &#8220;why&#8221; behind a long-running problem?</p>
+<p>But then, just as Icarus became so entranced by the miracle of flight that he lost his common sense, I too forgot I soared on wax-wrought wings, and flew too close to the sun.</p>
+ 
+<h2>LLMs are not the Enterprise-D&#8217;s computer</h2>
+<p>I think we all knew I&#8217;d get here eventually&#8212;to the inevitable third act turn, where the center cannot hold, and things fall apart. If you read Benj&#8217;s latest experience with <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">agentic-based vibe coding</a>&#8212;or if you&#8217;ve tried it yourself&#8212;then what I&#8217;m about to say will probably sound painfully obvious, but it is nonetheless time to say it.</p>
+<p>Despite their capabilities, LLM coding agents are not smart. They also are not dumb. They are agents without agency&#8212;mindless engines whose purpose is to complete the prompt, and that is all.</p>
+ 
+
+<p>What this means is that, if you let them, Claude Code (and OpenAI Codex and all the other agentic coding LLMs) will happily spin their wheels for hours hammering on a solution that can&#8217;t ever actually work, so long as their efforts match the prompt. It&#8217;s on you to accurately scope your problem.&#160;You must articulate what you want in plain and specific domain-appropriate language, because the LLM cannot and will not properly intuit anything you leave unsaid.&#160;And having done that, you must then spot and redirect the LLM away from traps and dead ends. Otherwise, it will guess at what you want based on the alignment of <a href="https://transformer-circuits.pub/2025/linebreaks/index.html">a bunch of n-dimensional curves and vectors in high-order phase space</a>, and it might guess right&#8212;but it also very much might not.</p>
+
+          
+                   
+             
+            
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<h2>Lee loses the plot</h2>
+<p>So I had my log colorizer, and I&#8217;d found my problem. I&#8217;d also found, after leaving the colorizer up in a window tailing the web server logs in real time, all kinds of things that my previous behavior of occasionally glancing at the logs wasn&#8217;t revealing. Ooh, look, there&#8217;s a rest route that should probably be blocked from the outside world! Ooh, look, there&#8217;s a web crawler I need to feed into Cloudflare&#8217;s WAF wood-chipper because it&#8217;s ignoring robots.txt! Ooh, look, here&#8217;s an area where I can tweak my fastcgi cache settings and eke out a slightly better hit rate!</p>
+<p>But here&#8217;s the thing with the joy of problem-solving: Like all joy, its source is finite. The joy comes from the solving itself, and even when all my problems are solved and the systems are all working great, I still crave more joy. It is in my nature to therefore invent new problems to solve.</p>
+<p>I decided that the problem I wanted to solve next was figuring out a way for my log colorizer to display its output without wrapping long lines&#8212;because wrapped lines throw off the neatly delimited columns of log data. I would instead prefer that my terminal window sprout a horizontal scroll bar when needed, and if I wanted to see the full extent of a long line, I could grab the scroll bar and investigate.</p>
+<p>Astute readers will at this point notice two things: first, that now I really was reinventing&#160;lnav, except way worse and way dumber. Second, and more importantly, line-wrapping behavior is properly a function of the terminal application, not the data being displayed within it, and my approach was misguided from first principles. (This is in fact exactly the kind of request that can and should be slapped down on StackOverflow&#8212;and, indeed, searching there shows <a href="https://superuser.com/questions/600677/in-linux-console-how-to-not-wrap-output/600694">many examples</a> of <a href="https://unix.stackexchange.com/questions/20493/how-to-disable-line-wrap-in-a-terminal/345492">this exact thing happening</a>.)</p>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>But the lure of telling the machine what to do and then watching the machine weave my words into functional magic was too strong&#8212;surely we could code our way out of this problem! With LLMs, we can code our way out of any problem! Right?</p>
+<p>Eventually, after much refining of requirements, Claude produced what I asked it to produce: a separate Python script, which accepted piped input and created, like, a viewport or something&#8212;I don&#8217;t know, I can&#8217;t code, remember?&#8212;and within that viewport, I could scroll around. It seemed to work great!</p>
+<p>Problems became apparent when I actually tried scrolling around for more than a short distance&#8212;and by &#8220;problems,&#8221; I mean &#8220;my web server&#8217;s CPU lit up like a Christmas tree on fire.&#8221;</p>
+<p>&#8220;Issue,&#8221; I told the LLM. &#8220;When horizontal scrolling happens, the log wrapper takes up almost 100 percent of a host CPU core. Can we assess how to make this a zero-CPU-impact tool?&#8221;</p>
+<p>&#8220;This tool has to parse ANSI, slice lines, and repaint when you scroll,&#8221; it replied in what I imagined was an arch, droll tone. &#8220;The bottleneck is screen redraw + full-width scan of all lines on every new line or key repeat. Each new line triggers a full screen redraw of term_height lines, plus visible_width() over the entire buffer. Holding the arrow key generates rapid repeats, each doing a full redraw and slice of every line.&#8221;</p>
+ 
+<p>I was crestfallen.</p>
+<p>&#8220;Zero-CPU isn&#8217;t achievable,&#8221; continued the LLM, &#8220;but there are low-impact approaches.&#8221;</p>
+<p>My crest lifted a bit, and we dug in&#8212;but the LLM was perhaps a bit optimistic about those &#8220;low-impact approaches.&#8221; We burned several more days&#8217; worth of tokens on performance improvements&#8212;none of which I had any realistic input on because at this point we were way, way past my ability to flail through the Python code and understand what the LLM was doing. Eventually, we hit a wall.</p>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+ 
+
+<p>Instead of throwing in the towel, I vibed on, because the sunk cost fallacy is for other people. I instructed the LLM to shift directions and help me run the log display script locally, so my desktop machine with all its many cores and CPU cycles to spare would be the one shouldering the reflow/redraw burden and not the web server.</p>
+<p>Rather than drag this tale on for any longer, I&#8217;ll simply enlist Ars Creative Director Aurich Lawson&#8217;s skills to present the story of how this worked out in the form of a fun collage, showing my increasingly unhinged prompting of the LLM to solve the new problems that appeared when trying to get a script to run on ssh output when key auth and sudo are in play:</p>
+ 
+
+<h2>The bitter end</h2>
+<p>So, thwarted in my attempts to do exactly what I wanted in exactly the way I wanted, I took my log colorizer and went home. (The failed log display script is also up on GitHub with the colorizer if anyone wants to <a href="https://github.com/code-a-saurus/NginxLogColorizer/blob/main/lognowrap.py">point and laugh at my efforts</a>. Is the code good? Who knows?! Not me!) I&#8217;d scored my big win and found my problem root cause, and that would have to be enough for me&#8212;for now, at least.</p>
+<p>As to that &#8220;big win"&#8212;finally managing a root-cause analysis of my WordPress-Discourse-Cloudflare caching issue&#8212;I also recognize that I probably didn&#8217;t need a vibe-coded log colorizer to get there. The evidence was already waiting to be discovered in the Nginx logs, whether or not it was presented to me wrapped in fancy colors. Did I, in fact, use the thrill of vibe coding a tool to Tom Sawyer myself into doing the log searches? (&#8220;Wow, self, look at this new cool log colorizer! Bet you could use that to solve all kinds of problems! Yeah, self, you&#8217;re right! Let&#8217;s do it!&#8221;) Very probably. I know how to motivate myself, and sometimes starting a task requires some mental trickery.</p>
+
+          
+                   
+             
+            
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>This round of vibe coding and its muddled finale reinforced my personal assessment of LLMs&#8212;an assessment that hasn&#8217;t changed much with the addition of agentic abilities to the toolkit.</p>
+<p>LLMs can be fantastic if you&#8217;re using them to do something that you mostly understand. If you&#8217;re familiar enough with a problem space to understand the common approaches used to solve it, and you know the subject area well enough to spot the inevitable LLM hallucinations and confabulations, and you understand the task at hand well enough to steer the LLM away from dead-ends and to stop it from re-inventing the wheel, and you have the means to confirm the LLM&#8217;s output, then these tools are, frankly, kind of amazing.</p>
+ 
+<p>But the moment you step outside of your area of specialization and begin using them for tasks you don&#8217;t mostly understand, or if you&#8217;re not familiar enough with the problem to spot bad solutions, or if you can&#8217;t check its output, then oh, dear reader, may God have mercy on your soul. And on your poor project, because it&#8217;s going to be a mess.</p>
+<p>These tools as they exist today can help you if you already have competence. They cannot give you that competence. At best, they can give you a dangerous illusion of mastery; at worst, well, who even knows? Lost data, leaked PII, wasted time, possible legal exposure if the project is big enough&#8212;the &#8220;worst&#8221; list goes on and on!</p>
+<h2>To vibe or not to vibe?</h2>
+<p>The log colorizer is not the first nor the last bit of vibe coding I&#8217;ve indulged in. While I&#8217;m not <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">as prolific as Benj</a>, over the past couple of months, I&#8217;ve turned LLMs loose on a stack of coding tasks that needed doing but that I couldn&#8217;t do myself&#8212;often in direct contravention of my own advice above about being careful to use them only in areas where you already have some competence. I&#8217;ve had the thing make small WordPress PHP plugins, regexes, bash scripts, and my current crowning achievement: <a href="https://github.com/code-a-saurus/SWEditor">a save editor for an old MS-DOS game</a> (in both Python and Swift, no less!) And I had fun doing these things, even as entire vast swaths of rainforest were lit on fire to power my agentic adventures.</p>
+
+          
+                  
+
+              
+
+      
+       
+    
+                    
+         
+          
+    
+    
+      
+
+        
+        
+          
+          
+<p>As someone employed in a creative field, I&#8217;m appropriately nervous about LLMs, but for me, it&#8217;s time to face reality. An overwhelming majority of developers <a href="https://devecosystem-2025.jetbrains.com/artificial-intelligence">say they&#8217;re using AI tools</a> in some capacity. It&#8217;s a safer career move at this point, almost regardless of one&#8217;s field, to be more familiar with them than unfamiliar with them. The genie is not going back into the lamp&#8212;it&#8217;s too busy granting wishes.</p>
+<p>I don&#8217;t want y&#8217;all to think I feel doomy-gloomy over the genie, either, because I&#8217;m right there with everyone else, shouting my wishes at the damn thing. I am a better sysadmin than I was before agentic coding because now I can solve problems myself that I would have previously needed to hand off to someone else. Despite the problems, there is real value there,&#160; both personally and professionally. In fact, using an agentic LLM to solve a tightly constrained programming problem that I couldn&#8217;t otherwise solve is genuinely fun.</p>
+<p>And when screwing around with computers stops being fun, that&#8217;s&#160;when I&#8217;ll know I&#8217;ve truly become old.</p>
+
+
+          
+                  
+
+                  
+           
+
+
+
+
+
+
+  
+    
+  
+           
+        
+      <a href="https://arstechnica.com/author/lee-hutchinson/">
+                  Lee Hutchinson
+              </a>
+
+      <span class="block font-sans text-sm font-normal italic sm:inline-block">Senior Technology Editor</span>
+    
+  
+
+  
+    
+      <a href="https://arstechnica.com/author/lee-hutchinson/">
+                  Lee Hutchinson
+              </a>
+      <span class="block font-sans text-sm font-normal italic sm:ml-2 sm:inline-block">Senior Technology Editor</span>
+    
+
+    
+      Lee is the Senior Technology Editor, and oversees story development for the gadget, culture, IT, and video sections of Ars Technica. A long-time member of the Ars OpenForum with an extensive background in enterprise storage and security, he lives in Houston.
+    
+  
+
+  
+
+
+   
+              
+
+      
+       
+    
+  
+
+
+   
+
+
+   
+
+
+   
+  
+
+
+</div>
