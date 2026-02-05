@@ -1,0 +1,45 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2026/02/russian-state-hackers-exploit-office-vulnerability-to-infect-computers/
+date: '2026-02-04T23:08:04'
+excerpt: The window to patch vulnerabilities is shrinking rapidly.
+image: assets/media/oQa6cGJlbupCOfIu0Qu3MA-OANYV0-xAViN9JzuAUFC5A.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- APT28
+- microsoft
+- office
+- russia
+title: Microsoft releases urgent Office patch. Russian-state hackers pounce.
+---
+<div>
+                      
+                      
+          <p>Russian-state hackers wasted no time exploiting a critical Microsoft Office vulnerability that allowed them to compromise the devices inside diplomatic, maritime, and transport organizations in more than half a dozen countries, researchers said Wednesday.</p>
+<p>The threat group, tracked under names including APT28, Fancy Bear, Sednit, Forest Blizzard, and Sofacy, pounced on the vulnerability, tracked as CVE-2026-21509, less than 48 hours after Microsoft released an urgent, <a href="https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-21509">unscheduled security update</a> late last month, the researchers said. After reverse-engineering the patch, group members wrote an advanced exploit that installed one of two never-before-seen backdoor implants.</p>
+<h2>Stealth, speed, and precision</h2>
+<p>The entire campaign was designed to make the compromise undetectable to endpoint protection. Besides being novel, the exploits and payloads were encrypted and ran in memory, making their malice hard to spot. The initial infection vector came from previously compromised government accounts from multiple countries and were likely familiar to the targeted email holders. Command and control channels were hosted in legitimate cloud services that are typically allow-listed inside sensitive networks.</p>
+<p>&#8220;The use of CVE-2026-21509 demonstrates how quickly state-aligned actors can weaponize new vulnerabilities, shrinking the window for defenders to patch critical systems,&#8221; the researchers, with security firm Trellix, <a href="https://www.trellix.com/blogs/research/apt28-stealthy-campaign-leveraging-cve-2026-21509-cloud-c2/">wrote</a>. &#8220;The campaign&#8217;s modular infection chain&#8212;from initial phish to in-memory backdoor to secondary implants was carefully designed to leverage trusted channels (HTTPS to cloud services, legitimate email flows) and fileless techniques to hide in plain sight.&#8221;</p>
+<p>The 72-hour spear phishing campaign began January 28 and delivered at least 29 distinct email lures to organizations in nine countries, primarily in Eastern Europe. Trellix named eight of them: Poland, Slovenia, Turkey, Greece, the UAE, Ukraine, Romania, and Bolivia. Organizations targeted were defense ministries (40 percent), transportation/logistics operators (35 percent), and diplomatic entities (25 percent).</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The infection chain resulted in the installation of BeardShell or NotDoor, the tracking names Trellix has given to the novel backdoors. BeardShell gave the group full system reconnaissance, persistence through injecting processes into Windows svchost.exe, and an opening for lateral movement to other systems inside an infected network. The implant was executed through dynamically loaded .NET assemblies that left no disk-based forensic artifacts beyond memory from the resident code injection.</p>
+<p>NotDoor came in the form of a VBA macro and was installed only after the exploit chain disabled Outlook&#8217;s macro security controls. Once installed, the implant monitored email folders, including Inbox, Drafts, Junk Mail, and RSS Feeds. It bundled messages into a Windows .msg file, which would then be sent to attacker-controlled accounts set up on cloud service filen.io. To defeat security controls on high-privilege accounts that are designed to restrict access to classified cables and other sensitive documents, the macro processed emails with a custom &#8220;AlreadyForwarded&#8221; property and set &#8220;DeleteAfterSubmit&#8221; to true to purge forwarded messages from the Sent Items folder.</p>
+<p>Trellix attributed the campaign to APT28 with &#8220;high confidence&#8221; based on technical indicators and the targets selected. Ukraine&#8217;s CERT-UA has also <a href="https://cert.gov.ua/article/6287250">attributed</a> the attacks to UAC-0001, a tracking name that corresponds to APT28.</p>
+<p>&#8220;APT28 has a long history of cyber espionage and influence operations,&#8221; Trellix wrote. &#8220;The tradecraft in this campaign&#8212;multi-stage malware, extensive obfuscation, abuse of cloud services, and targeting of email systems for persistence&#8212;reflects a well-resourced, advanced adversary consistent with APT28&#8217;s profile. The toolset and techniques also align with APT28&#8217;s fingerprint.&#8221;</p>
+<p>Trellix has provided a <a href="https://www.trellix.com/blogs/research/apt28-stealthy-campaign-leveraging-cve-2026-21509-cloud-c2/">comprehensive list of indicators</a> organizations can use to determine if they have been targeted.</p>
+
+
+          
+                  
+
+                  
+          </div>
