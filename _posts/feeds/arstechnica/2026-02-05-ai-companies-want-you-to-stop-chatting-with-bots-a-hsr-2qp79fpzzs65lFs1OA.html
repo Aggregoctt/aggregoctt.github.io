@@ -1,0 +1,91 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/information-technology/2026/02/ai-companies-want-you-to-stop-chatting-with-bots-and-start-managing-them/
+date: '2026-02-05T22:47:54'
+excerpt: Claude Opus 4.6 and OpenAI Frontier pitch a future of supervising AI agents.
+image: assets/media/hsr-2qp79fpzzs65lFs1OA-6B_X62Uf3wTZeupdqsxb2Q.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI and work
+- AI assistants
+- AI benchmarks
+- AI coding
+- AI development tools
+- AI security
+- Anthropic
+- chatbots
+- Claude Code
+- Claude Opus
+- Claude Opus 4.6
+- code agents
+- Codex
+- generative ai
+- GPT-5.3-Codex
+- large language models
+- machine learning
+- openai
+- sam altman
+title: AI companies want you to stop chatting with bots and start managing them
+---
+<div>
+                      
+                      
+           
+<p>On Thursday, Anthropic and OpenAI shipped products built around the same idea: instead of chatting with a single AI assistant, users should be managing teams of AI agents that divide up work and run in parallel. The simultaneous releases are part of a gradual shift across the industry, from AI as a conversation partner to AI as a delegated workforce, and they arrive during a week when that very concept reportedly helped wipe $285 billion off software stocks.</p>
+<p>Whether that supervisory model works in practice remains an open question. Current AI agents still require heavy human intervention to catch errors, and no independent evaluation has confirmed that these multi-agent tools reliably outperform a single developer working alone.</p>
+<p>Even so, the companies are going all-in on agents. Anthropic&#8217;s contribution is <a href="https://www.anthropic.com/news/claude-opus-4-6">Claude Opus 4.6</a>, a new version of its most capable AI model, paired with a feature called &#8220;<a href="https://code.claude.com/docs/en/agent-teams">agent teams</a>&#8221; in Claude Code. Agent teams let developers spin up multiple AI agents that split a task into independent pieces, coordinate autonomously, and run concurrently.</p>
+<p>In practice, agent teams look like a split-screen terminal environment: A developer can jump between subagents using Shift+Up/Down, take over any one directly, and watch the others keep working. Anthropic <a href="https://www.anthropic.com/news/claude-opus-4-6">describes</a> the feature as best suited for &#8220;tasks that split into independent, read-heavy work like codebase reviews.&#8221; It is available as a research preview.</p>
+<p>OpenAI, meanwhile, released <a href="https://openai.com/index/introducing-openai-frontier/">Frontier</a>, an enterprise platform it describes as a way to &#8220;hire AI co-workers who take on many of the tasks people already do on a computer.&#8221; Frontier assigns each AI agent its own identity, permissions, and memory, and it connects to existing business systems such as CRMs, ticketing tools, and data warehouses. &#8220;What we&#8217;re fundamentally doing is basically transitioning agents into true AI co-workers,&#8221; Barret Zoph, OpenAI&#8217;s general manager of business-to-business, <a href="https://www.cnbc.com/2026/02/05/open-ai-frontier-enterprise-customers.html">told CNBC</a>.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Despite the hype about these agents being co-workers, from <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/">our experience</a>, these agents tend to work best if you think of them as tools that amplify existing skills, not as the autonomous co-workers the marketing language implies. They can produce impressive drafts fast but still require constant human course-correction.</p>
+<p>The Frontier launch came just three days after OpenAI <a href="https://arstechnica.com/ai/2026/02/openai-picks-up-pace-against-claude-code-with-new-codex-desktop-app/">released</a> a new macOS desktop app for Codex, its AI coding tool, which OpenAI executives described as a &#8220;command center for agents.&#8221; The Codex app lets developers run multiple agent threads in parallel, each working on an isolated copy of a codebase via Git worktrees.</p>
+<p>OpenAI also released <a href="https://arstechnica.com/ai/2026/02/with-gpt-5-3-codex-openai-pitches-codex-for-more-than-just-writing-code/">GPT-5.3-Codex</a> on Thursday, a new AI model that powers the Codex app. OpenAI claims that the Codex team used early versions of GPT-5.3-Codex to debug the model&#8217;s own training run, manage its deployment, and diagnose test results, similar to what OpenAI <a href="https://arstechnica.com/ai/2025/12/how-openai-is-using-gpt-5-codex-to-improve-the-ai-tool-itself/">told</a> Ars Technica in a December interview.</p>
+<p>&#8220;Our team was blown away by how much Codex was able to accelerate its own development,&#8221; the company wrote. On Terminal-Bench 2.0, the agentic coding benchmark, GPT-5.3-Codex scored 77.3%, which exceeds Anthropic&#8217;s just-released Opus 4.6 by about 12 percentage points.</p>
+<p>The common thread across all of these products is a shift in the user&#8217;s role. Rather than merely typing a prompt and waiting for a single response, the developer or knowledge worker becomes more like a supervisor, dispatching tasks, monitoring progress, and stepping in when an agent needs direction.</p>
+<p>In this vision, developers and knowledge workers effectively become middle managers of AI. That is, not writing the code or doing the analysis themselves, but delegating tasks, reviewing output, and hoping the agents underneath them don&#8217;t quietly break things. Whether that will come to pass (or if it&#8217;s actually a good idea) is still widely debated.</p>
+
+          
+                  
+
+              
+          
+          
+ 
+<h2>A new model under the Claude hood</h2>
+<p>Opus 4.6 is a substantial update to Anthropic&#8217;s flagship model. It succeeds <a href="https://arstechnica.com/ai/2025/11/anthropic-introduces-opus-4-5-cuts-api-pricing-and-enables-much-longer-claude-chats/">Claude Opus 4.5</a>, which Anthropic released in November. In a first for the Opus model family, it supports a context window of up to 1 million tokens (in beta), which means it can process much larger bodies of text or code in a single session.</p>
+<p>On benchmarks, Anthropic says Opus 4.6 tops OpenAI&#8217;s GPT-5.2 (an earlier model than the one released today) and <a href="https://arstechnica.com/google/2025/11/google-unveils-gemini-3-ai-model-and-ai-first-ide-called-antigravity/">Google&#8217;s Gemini 3 Pro</a> across several evaluations, including Terminal-Bench 2.0 (an agentic coding test), Humanity&#8217;s Last Exam (a multidisciplinary reasoning test), and BrowseComp (a test of finding hard-to-locate information online)</p>
+<p>Although it should be noted that OpenAI&#8217;s GPT-5.3-Codex, released the same day, seemingly reclaimed the lead on Terminal-Bench. On <a href="https://arcprize.org/arc-agi/2/">ARC AGI 2</a>, which attempts to test the ability to solve problems that are easy for humans but hard for AI models, Opus 4.6 scored 68.8 percent, compared to 37.6 percent for Opus 4.5, 54.2 percent for GPT-5.2, and 45.1 percent for Gemini 3 Pro.</p>
+<p>As always, take AI benchmarks with a grain of salt, since objectively measuring AI model capabilities is a relatively new and unsettled science.</p>
+<p>Anthropic also said that on a long-context retrieval benchmark called <a href="https://huggingface.co/datasets/openai/mrcr">MRCR v2</a>, Opus 4.6 scored 76 percent on the 1 million-token variant, compared to 18.5 percent for its Sonnet 4.5 model. That gap matters for the agent teams use case, since agents working across large codebases need to track information across hundreds of thousands of tokens without losing the thread.</p>
+<p>Pricing for the API stays the same as Opus 4.5 at $5 per million input tokens and $25 per million output tokens, with a premium rate of $10/$37.50 for prompts that exceed 200,000 tokens. Opus 4.6 is available on claude.ai, the Claude API, and all major cloud platforms.</p>
+
+          
+                  
+
+              
+          
+          
+<h2>The market fallout outside</h2>
+<p>These releases occurred during a week of exceptional volatility for software stocks. On January 30, Anthropic released 11 open source plugins for <a href="https://arstechnica.com/ai/2026/01/anthropic-launches-cowork-a-claude-code-like-for-general-computing/">Cowork</a>, its agentic productivity tool that launched on January 12. Cowork itself is a general-purpose tool that gives Claude access to local folders for work tasks, but the plugins extended it into specific professional domains: legal contract review, non-disclosure agreement triage, compliance workflows, financial analysis, sales, and marketing.</p>
+<p>By Tuesday, investors reportedly reacted to the release by <a href="https://www.bloomberg.com/news/articles/2026-02-03/legal-software-stocks-plunge-as-anthropic-releases-new-ai-tool">erasing</a> roughly $285 billion in market value across software, financial services, and asset management stocks. A Goldman Sachs basket of US software stocks fell 6 percent that day, its steepest single-session decline since April&#8217;s tariff-driven sell-off. Thomson Reuters led the rout with an 18 percent drop, and the pain spread to European and Asian markets.</p>
+<p>The purported fear among investors centers on AI model companies packaging complete workflows that compete with established software-as-a-service (SaaS) vendors, even if the verdict is still out on whether these tools can achieve those tasks.</p>
+<p>OpenAI&#8217;s Frontier might deepen that concern: its stated design lets AI agents log in to applications, execute tasks, and manage work with minimal human involvement, which Fortune <a href="https://fortune.com/2026/02/05/openai-frontier-ai-agent-platform-enterprises-challenges-saas-salesforce-workday/">described</a> as a bid to become &#8220;the operating system of the enterprise.&#8221; OpenAI CEO of Applications Fidji Simo pushed back on the idea that Frontier replaces existing software, <a href="https://www.cnbc.com/2026/02/05/open-ai-frontier-enterprise-customers.html">telling reporters</a>, &#8220;Frontier is really a recognition that we&#8217;re not going to build everything ourselves.&#8221;</p>
+<p>Whether these co-working apps actually live up to their billing or not, the convergence is hard to miss. Anthropic&#8217;s Scott White, the company&#8217;s head of product for enterprise, gave the practice a name that is likely to roll a few eyes. &#8220;Everybody has seen this transformation happen with software engineering in the last year and a half, where vibe coding started to exist as a concept, and people could now do things with their ideas,&#8221; White <a href="https://www.cnbc.com/2026/02/05/anthropic-claude-opus-4-6-vibe-working.html">told CNBC</a>. &#8220;I think that we are now transitioning almost into vibe working.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
