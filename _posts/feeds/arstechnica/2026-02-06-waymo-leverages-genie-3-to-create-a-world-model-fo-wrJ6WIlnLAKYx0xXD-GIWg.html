@@ -1,0 +1,52 @@
+---
+author: Ryan Whitwam
+canonical_url: https://arstechnica.com/google/2026/02/waymo-leverages-genie-3-to-create-a-world-model-for-self-driving-cars/
+date: '2026-02-06T20:44:35'
+excerpt: With Genie 3, Waymo wants to explore rare and even impossible driving conditions.
+image: assets/media/wrJ6WIlnLAKYx0xXD-GIWg-oymeZDKoJqpmQXjibntWIQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Cars
+- Google
+- google
+- self-driving car
+- waymo
+- world models
+title: Waymo leverages Genie 3 to create a world model for self-driving cars
+---
+<div>
+                      
+                      
+          <p>Google-spinoff Waymo is in the midst of expanding its self-driving car fleet into new regions. Waymo touts more than 200 million miles of driving that informs how the vehicles navigate roads, but the company&#8217;s AI has also driven billions of miles virtually, and there&#8217;s a lot more to come with the new Waymo World Model. Based on Google DeepMind&#8217;s Genie 3, <a href="https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation">Waymo says</a> the model can create &#8220;hyper-realistic&#8221; simulated environments that train the AI on situations that are rarely (or never) encountered in real life&#8212;like snow on the Golden Gate Bridge.</p>
+<p>Until recently, the autonomous driving industry relied entirely on training data collected from real cars and real situations. That means rare, potentially dangerous events are not well represented in training data. The Waymo World Model aims to address that by allowing engineers to create simulations with simple prompts and driving inputs.</p>
+<p>Google <a href="https://arstechnica.com/ai/2025/08/deepmind-reveals-genie-3-world-model-that-creates-real-time-interactive-simulations/">revealed Genie 3</a> last year, positioning it as a significant upgrade over other world models by virtue of its long-horizon memory. In Google&#8217;s world model, you can wander away from a given object, and when you look back, the model will still &#8220;remember&#8221; how that object is supposed to look. In earlier attempts at world models, the simulation would lose that context almost immediately. With Genie 3, the model can remember details for several minutes.</p>
+ 
+
+<p>Autoregressive world models like Genie don&#8217;t actually create 3D spaces, but instead render video quickly enough that it feels like an explorable world. Naturally, video games are cited as a prime application for world models, so much so that gaming company stocks dropped when Google recently expanded access to the technology as <a href="https://arstechnica.com/google/2026/01/google-project-genie-lets-you-create-interactive-worlds-from-a-photo-or-prompt/">Project Genie</a>. However, the latency and still rather short memory of Genie make gaming uses far from a certainty. Nevertheless, Waymo says Genie 3 is actually ideal for simulating the kind of data it needs to train self-driving cars.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<h2>On the road with AI</h2>
+<p>The Waymo World Model is not just a straight port of Genie 3 with dashcam videos stuffed inside. Waymo and DeepMind used a specialized post-training process to make the new model generate both 2D video and 3D lidar outputs of the same scene. While cameras are great for visualizing fine details, Waymo says lidar is necessary to add critical depth information to what a self-driving car &#8220;sees&#8221; on the road&#8212;maybe someone should tell <a href="https://arstechnica.com/tech-policy/2024/05/tesla-must-face-fraud-suit-for-claiming-its-cars-could-fully-drive-themselves/">Tesla</a> about that.</p>
+<p>Using a world model allows Waymo to take video from its vehicles and use prompts to change the route the vehicle takes, which it calls driving action control. These simulations, which come with lidar maps, reportedly offer greater realism and consistency than older reconstructive simulation methods.</p>
+ 
+
+<p>This model can also help improve the self-driving AI even without adding or removing everything. There are plenty of dashcam videos available for training self-driving vehicles, but they lack the multimodal sensor data of Waymo&#8217;s vehicles. Dropping such a video into the Waymo World Model generates matching sensor data, showing how the driving AI would have seen that situation.</p>
+<p>While the Waymo World Model can create entirely synthetic scenes, the company seems mostly interested in &#8220;mutating&#8221; the conditions in real videos. The blog post contains examples of changing the time of day or weather, adding new signage, or placing vehicles in unusual places. Or, hey, why not an elephant in the road?</p>
+ 
+
+<p>Waymo&#8217;s early test cities were consistently sunny (like Phoenix) with little inclement weather. These kinds of simulations could help the cars adapt to the more varied conditions. The new markets include places with more difficult conditions, including Boston and Washington, D.C.</p>
+<p>Of course, the benefit of the new AI model will depend on how accurately Genie 3 can simulate the real world. The test videos we&#8217;ve seen of Genie 3 run the gamut from pretty believable to uncanny valley territory, but Waymo believes the technology has improved to the point that it can teach self-driving cars a thing or two.</p>
+
+
+          
+                  
+
+                  
+          </div>

@@ -1,0 +1,74 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2026/02/malicious-packages-for-dydx-cryptocurrency-exchange-empties-user-wallets/
+date: '2026-02-06T22:16:51'
+excerpt: Incident is at least the third time the exchange has been targeted by thieves.
+image: assets/media/Hzp1R-gGy9xJqJxhHej-DQ-zI_UV2c9zpO_YEBmP8B3zw.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- cryptocurrency exchanges
+- malware
+- open source
+- supply chain attack
+title: Malicious packages for dYdX cryptocurrency exchange empties user wallets
+---
+<div>
+                      
+                      
+          <p>Open source packages published on the npm and PyPI repositories were laced with code that stole wallet credentials from dYdX developers and backend systems and, in some cases, backdoored devices, researchers said.</p>
+<p>&#8220;Every application using the compromised npm versions is at risk &#8230;.&#8221; the researchers, from security firm Socket, <a href="https://socket.dev/blog/malicious-dydx-packages-published-to-npm-and-pypi">said Friday</a>. &#8220;Direct impact includes complete wallet compromise and irreversible cryptocurrency theft. The attack scope includes all applications depending on the compromised versions and both developers testing with real credentials and production end-users.&#8221;</p>
+<p>Packages that were infected were:</p>
+<p><b>npm (</b><a href="https://socket.dev/npm/package/@dydxprotocol/v4-client-js/overview/3.4.1"><span>@dydxprotocol/v4-client-js</span></a><b>):</b></p>
+<ul>
+<li><span>3.4.1</span></li>
+<li><span>1.22.1</span></li>
+<li><span>1.15.2</span></li>
+<li><span>1.0.31</span></li>
+</ul>
+<p><b>PyPI (</b><a href="https://socket.dev/pypi/package/dydx-v4-client/overview/1.1.5.post1/tar-gz"><span>dydx-v4-client</span></a><b>):</b></p>
+<ul>
+<li><span>1.1.5post1</span></li>
+</ul>
+<h2>Perpetual trading, perpetual targeting</h2>
+<p>dYdX is a decentralized derivatives exchange that supports hundreds of markets for &#8220;perpetual trading,&#8221; or the use of cryptocurrency to bet that the value of a derivative future will rise or fall. Socket said dYdX has processed over $1.5 trillion in trading volume over its lifetime, with an average trading volume of $200 million to $540 million and roughly $175 million in open interest. The exchange provides code libraries that allow third-party apps for trading bots, automated strategies, or backend services, all of which handle mnemonics or private keys for signing.</p>
+<p>The npm malware embedded a malicious function in the legitimate package. When a seed phrase that underpins wallet security was processed, the function exfiltrated it, along with a fingerprint of the device running the app. The fingerprint allowed the threat actor to correlate stolen credentials to track victims across multiple compromises. The domain receiving the seed was dydx[.]priceoracle[.]site, which mimics the legitimate dYdX service at dydx[.]xyz through typosquatting.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The malicious code available on PyPI contained the same credential theft function, although it also implemented a remote access Trojan (RAT) that allowed the execution of new malware on infected systems. The backdoor received commands from dydx[.]priceoracle[.]site. The domain was registered on January 9, 17 days before the malicious package was uploaded to PyPI.</p>
+<p>The RAT, Socket said:</p>
+<ul>
+<li>Runs as a background daemon thread</li>
+<li>Beacons to the C2 server every 10 seconds</li>
+<li>Receives Python code from the server</li>
+<li>Executes it in an isolated subprocess with no visible output</li>
+<li>Uses a hardcoded authorization token:&#160;<code>490CD9DAD3FAE1F59521C27A96B32F5D677DD41BF1F706A0BF85E69CA6EBFE75</code></li>
+</ul>
+<p>Once installed, the threat actors could:</p>
+<ul>
+<li>Execute arbitrary Python code with user privileges</li>
+<li>Steal SSH keys, API credentials, and source code</li>
+<li>Install persistent backdoors</li>
+<li>Exfiltrate sensitive files</li>
+<li>Monitor user activity</li>
+<li>Modify critical files</li>
+<li>Pivot to other systems on the network</li>
+</ul>
+<p>Socket said the packages were published to npm and PyPI by official dYdX accounts, an indication that they were compromised and used by the attackers. dYdX officials didn&#8217;t respond to an email seeking confirmation and additional details.</p>
+<p>The incident is at least the third time dYdX has been targeted in attacks. Previous events include a <a href="https://x.com/maciejmensfeld/status/1573289599949996033">September 2022</a> uploading of malicious code to the npm repository and the <a href="https://x.com/dYdX/status/1815780835473129702">commandeering</a> in 2024 of the dYdX v3 website through DNS hijacking. Users were redirected to a malicious site that prompted them to sign transactions designed to drain their wallets.</p>
+<p>&#8220;Viewed alongside the 2022 npm supply chain compromise and the 2024 DNS hijacking incident, this [latest] attack highlights a persistent pattern of adversaries targeting dYdX-related assets through trusted distribution channels,&#8221; Socket said. &#8220;The threat actor simultaneously compromised packages in both npm and PyPI ecosystems, expanding the attack surface to reach JavaScript and Python developers working with dYdX.&#8221;</p>
+<p>Anyone using the platform should carefully examine all apps for dependencies on the malicious packages listed above.</p>
+
+
+          
+                  
+
+                  
+          </div>
