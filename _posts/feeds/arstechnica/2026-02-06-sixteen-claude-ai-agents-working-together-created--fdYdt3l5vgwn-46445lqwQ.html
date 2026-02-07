@@ -1,0 +1,73 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2026/02/sixteen-claude-ai-agents-working-together-created-a-new-c-compiler/
+date: '2026-02-06T23:40:58'
+excerpt: The $20,000 experiment compiled a Linux kernel but needed deep human management.
+image: assets/media/fdYdt3l5vgwn-46445lqwQ-oB-yBaoYKsqwUQiwER3umg.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- agentic AI
+- AI agents
+- AI coding
+- AI development tools
+- AI programming
+- AI research
+- Anthropic
+- Claude Code
+- code agents
+- Compilers
+- large language models
+- machine learning
+- Nicholas Carlini
+- open source
+title: Sixteen Claude AI agents working together created a new C compiler
+---
+<div>
+                      
+                      
+           
+<p>Amid a <a href="https://arstechnica.com/information-technology/2026/02/ai-companies-want-you-to-stop-chatting-with-bots-and-start-managing-them/">push toward AI agents</a>, with both Anthropic and OpenAI shipping multi-agent tools this week, Anthropic is more than ready to show off some of its more daring AI coding experiments. But as usual with claims of AI-related achievement, you&#8217;ll find some key caveats ahead.</p>
+<p>On Thursday, Anthropic researcher Nicholas Carlini <a href="https://www.anthropic.com/engineering/building-c-compiler">published a blog post</a> describing how he set 16 instances of the company&#8217;s Claude Opus 4.6 AI model loose on a shared codebase with minimal supervision, tasking them with building a C compiler from scratch.</p>
+<p>Over two weeks and nearly 2,000 Claude Code sessions costing about $20,000 in API fees, the AI model agents reportedly produced a 100,000-line Rust-based compiler capable of building a bootable Linux 6.9 kernel on x86, ARM, and RISC-V architectures.</p>
+<p>Carlini, a research scientist on Anthropic&#8217;s Safeguards team who previously spent seven years at Google Brain and DeepMind, used a new feature launched with Claude Opus 4.6 called &#8220;<a href="https://code.claude.com/docs/en/agent-teams">agent teams</a>.&#8221; In practice, each Claude instance ran inside its own Docker container, cloning a shared Git repository, claiming tasks by writing lock files, then pushing completed code back upstream. No orchestration agent directed traffic. Each instance independently identified whatever problem seemed most obvious to work on next and started solving it. When merge conflicts arose, the AI model instances resolved them on their own.</p>
+ 
+<p>The resulting compiler, which Anthropic has <a href="https://github.com/anthropics/claudes-c-compiler">released on GitHub</a>, can compile a range of major open source projects, including PostgreSQL, SQLite, Redis, FFmpeg, and QEMU. It achieved a 99 percent pass rate on the GCC torture test suite and, in what Carlini called &#8220;the developer&#8217;s ultimate litmus test,&#8221; compiled and ran Doom.</p>
+<p>It&#8217;s worth noting that a C compiler is a near-ideal task for semi-autonomous AI model coding: The specification is decades old and well-defined, comprehensive test suites already exist, and there&#8217;s a known-good reference compiler to check against. Most real-world software projects have none of these advantages. The hard part of most development isn&#8217;t writing code that passes tests; it&#8217;s figuring out what the tests should be in the first place.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>The compiler also has clear limitations that Carlini was upfront about. It lacks a 16-bit x86 backend needed to boot Linux from real mode, so it calls out to GCC for that step. Its own assembler and linker remain buggy. Even with all optimizations enabled, it produces less efficient code than GCC running with all optimizations disabled. And the Rust code quality, while functional, does not approach what an expert Rust programmer would produce. &#8220;The resulting compiler has nearly reached the limits of Opus&#8217;s abilities,&#8221; Carlini wrote. &#8220;I tried (hard!) to fix several of the above limitations but wasn&#8217;t fully successful. New features and bugfixes frequently broke existing functionality.&#8221;</p>
+<p>Those limitations may actually be more informative than the successes. Carlini reports that toward the end of the project, fixing bugs and adding features &#8220;frequently broke existing functionality,&#8221; a pattern familiar to anyone who has watched a codebase grow beyond the point where any contributor fully understands it.</p>
+<p>And that limitation is even more common when dealing with AI coding agents, which <a href="https://arstechnica.com/information-technology/2025/12/how-do-ai-coding-agents-work-we-look-under-the-hood/">lose coherence</a> over time. The model hit this wall at around 100,000 lines, which suggests a practical ceiling for autonomous agentic coding, at least with current models.</p>
+ 
+<h2>The human work behind the automation</h2>
+<p>Anthropic describes the compiler as a &#8220;clean-room implementation&#8221; because the agents had no Internet access during development. But that framing is somewhat misleading. The underlying model was trained on enormous quantities of publicly available source code, almost certainly including GCC, Clang, and numerous smaller C compilers. In traditional software development, &#8220;clean room&#8221; specifically means the implementers have never seen the original code. By that standard, this isn&#8217;t one.</p>
+<p>On Hacker News, the distinction drew sharp debate, reflective of a controversial reception to the news among developers. &#8220;It was rather a brute force attempt to decompress fuzzily stored knowledge contained within the network,&#8221; <a href="https://news.ycombinator.com/item?id=46904109">wrote</a> one commenter.</p>
+<p>The $20,000 figure also deserves some context. That number covers only API token costs and excludes the billions spent training the model, the human labor Carlini invested in building the scaffolding, and the decades of work by compiler engineers who created the test suites and reference implementations that made the project possible.</p>
+
+          
+                  
+
+              
+          
+          
+<p>And that scaffolding was not trivial, which makes any claim of &#8220;autonomous&#8221; work on the C compiler among the AI agents dubious. While the headline result is a compiler written without human pair-programming, much of the real work that made the project function involved designing the environment around the AI model agents rather than writing compiler code directly. Carlini spent considerable effort building test harnesses, continuous integration pipelines, and feedback systems tuned for the specific ways language models fail.</p>
+<p>He found, for example, that verbose test output polluted the model&#8217;s context window, causing it to lose track of what it was doing. To address this, Carlini designed test runners that printed only a few summary lines and logged details to separate files.</p>
+<p>He also found that Claude has no sense of time and will spend hours running tests without making progress, so he built a fast mode that samples only 1 percent to 10 percent of test cases. When all 16 agents got stuck trying to fix the same Linux kernel bug simultaneously, he used GCC as a reference oracle, randomly compiling most kernel files with GCC and only a subset with Claude&#8217;s compiler, so each agent could work on different bugs in different files.</p>
+<p>&#8220;Claude will work autonomously to solve whatever problem I give it,&#8221; Carlini wrote. &#8220;So it&#8217;s important that the task verifier is nearly perfect, otherwise Claude will solve the wrong problem.&#8221;</p>
+<p>None of this should obscure what the project actually demonstrates. A year ago, no language model could have produced anything close to a functional multi-architecture compiler, even with this kind of babysitting and an unlimited budget. The methodology of parallel agents coordinating through Git with minimal human supervision is novel, and the engineering tricks Carlini developed to keep the agents productive (context-aware test output, time-boxing, the GCC oracle for parallelization) could potentially represent useful contributions to the wider use of agentic software development tools.</p>
+<p>Carlini himself acknowledged feeling conflicted about his own results. &#8220;Building this compiler has been some of the most fun I&#8217;ve had recently, but I did not expect this to be anywhere near possible so early in 2026,&#8221; he wrote. He also raised concerns rooted in his previous career in penetration testing, noting that &#8220;the thought of programmers deploying software they&#8217;ve never personally verified is a real concern.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
