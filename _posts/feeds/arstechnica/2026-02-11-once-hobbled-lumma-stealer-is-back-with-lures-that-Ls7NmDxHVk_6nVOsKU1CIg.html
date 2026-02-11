@@ -1,0 +1,61 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2026/02/once-hobbled-lumma-stealer-is-back-with-lures-that-are-hard-to-resist/
+date: '2026-02-11T22:11:40'
+excerpt: ClickFix bait, combined with advanced Castleloader malware, is installing
+  Lumma "at scale."
+image: assets/media/Ls7NmDxHVk_6nVOsKU1CIg-Cut0DNw9Pu5N4AE4rdRA1w.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Security
+- castleloader
+- clickfix
+- infostealer
+- lumma
+- malware
+title: Once-hobbled Lumma Stealer is back with lures that are hard to resist
+---
+<div>
+                      
+                      
+          <p>Last May, law enforcement authorities around the world scored a key win when they hobbled the infrastructure of Lumma, an infostealer that infected nearly 395,000 Windows computers over just a two-month span leading up to the international operation. Researchers said Wednesday that Lumma is once again &#8220;back at scale&#8221; in hard-to-detect attacks that pilfer credentials and sensitive files.</p>
+<p>Lumma, also known as Lumma Stealer, first appeared in Russian-speaking cybercrime forums in 2022. Its cloud-based malware-as-a-service model provided a sprawling infrastructure of domains for hosting lure sites offering free cracked software, games, and pirated movies, as well as command-and-control channels and everything else a threat actor needed to run their infostealing enterprise. Within a year, Lumma was selling for as much as $2,500 for premium versions. By the spring of 2024, the FBI counted more than 21,000 listings on crime forums. Last year, Microsoft said Lumma had become the &#8220;go-to tool&#8221; for multiple crime groups, including Scattered Spider, one of the most prolific groups.</p>
+<h2>Takedowns are hard</h2>
+<p>The FBI and an international coalition of its counterparts <a href="https://arstechnica.com/security/2025/05/authorities-carry-out-global-takedown-of-infostealer-used-by-cybercriminals/">took action</a> early last year. In May, they said they seized 2,300 domains, command-and-control infrastructure, and crime marketplaces that had enabled the infostealer to thrive. Recently, however, the malware has made a comeback, allowing it to infect a significant number of machines again.</p>
+<p>&#8220;LummaStealer is back at scale, despite a major 2025 law-enforcement takedown that disrupted thousands of its command-and-control domains,&#8221; researchers from security firm Bitdefender <a href="https://www.bitdefender.com/en-us/blog/labs/lummastealer-second-life-castleloader">wrote</a>. &#8220;The operation has rapidly rebuilt its infrastructure and continues to spread worldwide.&#8221;</p>
+<p>As with Lumma before, the recent surge leans heavily on &#8220;ClickFix,&#8221; a form of social engineering lure that&#8217;s proving to be vexingly effective in causing end users to infect their own machines. Typically, these types of bait come in the form of fake CAPTCHAs that&#8212;rather requiring users to click a box or identify objects or letters in a jumbled image&#8212;instruct them to copy text and paste it into an interface, a process that takes just seconds. The text comes in the form of malicious commands provided by the fake CAPTCHA. The interface is the Windows terminal. Targets who comply then install loader malware, which in turn installs Lumma.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>A core part of the resurgence is the use of CastleLoader, a separate piece of malware that&#8217;s installed initially. It runs solely in memory, making it much harder to detect than malware that resides on a hard drive. Its code is heavily obfuscated, making it hard to spot its malice even when malware scanners can see it. CastleLoader also provides a flexible and full-featured command-and-control communication mechanism that users can customize to meet their specific needs.</p>
+<p>CastleLoader shares some of Lumma&#8217;s recently rebuilt infrastructure, an indication that the operators are working together or at least coordinating their activities. In other cases, Lumma relies on legitimate infrastructure&#8212;mostly from the content delivery networks Steam Workshop and Discord shared files&#8212;to be installed. The use of trusted platforms helps lower targets&#8217; suspicions. In either case, once the loader is executed, it surreptitiously burrows into the infected machine and, after lowering defenses, installs its second payload: Lumma.</p>
+<h2>It&#8217;s so easy to fall for ClickFix</h2>
+<p>People have grown so accustomed to hard-to-solve CAPTCHAs that they think little when instructed to copy website-provided text, click the Win-R keys, and then choose paste. Once this simple action is performed, Lumma has free rein over a host of sensitive files stored on infected machines. Bitdefender said the data includes:</p>
+<ul>
+<li><span>Credentials saved in web browsers</span></li>
+<li><span>Cookies</span></li>
+<li><span>Personal documents (.docx, .pdf, etc.)</span></li>
+<li><span>Sensitive files containing financial information, secret keys (including cloud keys), 2FA backup codes, and server passwords, as well as cryptocurrency private keys and wallet data</span></li>
+<li><span>Personal data such as ID numbers, addresses, medical records, credit card numbers, and dates of birth</span></li>
+<li><span>Cryptocurrency wallets and browser extensions associated with popular services like MetaMask, Binance, Electrum, Ethereum, Exodus, Coinomi, Bitcoin Core, JAXX, and Steem Keychain.</span></li>
+<li><span>Data from remote access tools and password managers, specifically AnyDesk and KeePass.</span></li>
+<li><span>Two-factor authentication (2FA) tokens and extensions such as Authenticator, Authy, EOS Authenticator, GAuth Authenticator, and Trezor Password Manager.</span></li>
+<li><span>Information from VPNs (.ovpn files), various email clients (Gmail, Outlook, Yahoo), and FTP clients.</span></li>
+<li><span>System metadata, including CPU information, operating system version (Windows 7 to Windows 11), system locale, installed applications, username, hardware ID, and screen resolution, is useful for profiling victims or tailoring future exploits.</span></li>
+</ul>
+<p>&#8220;The effectiveness of ClickFix lies in its abuse of procedural trust rather than technical vulnerabilities,&#8221; Bitdefender said. &#8220;The instructions resemble troubleshooting steps or verification workarounds that users may have encountered previously. As a result, victims often fail to recognize that they are manually executing arbitrary code on their own system.&#8221;</p>
+<p>While Lumma is targeting only Windows users, other malware campaigns have used the same technique to infect macOS machines since at least <a href="https://www.cloudsek.com/blog/amos-variant-distributed-via-clickfix-in-spectrum-themed-dynamic-delivery-campaign-by-russian-speaking-hackers">last June</a>. More recent ClickFix attacks on macOS users have <a href="https://www.microsoft.com/en-us/security/blog/2026/02/02/infostealers-without-borders-macos-python-stealers-and-platform-abuse/">continued</a> into <a href="https://cloud.google.com/blog/topics/threat-intelligence/unc1069-targets-cryptocurrency-ai-social-engineering">this year</a>.</p>
+<p>The best defense against ClickFix is to steer clear of sites offering free stuff. Windows and macOS provide a means to require a password before the command terminals can be opened. People with technical skills who administer machines on behalf of less experienced users may want to consider using this latter defense as well.</p>
+
+
+          
+                  
+
+                  
+          </div>
