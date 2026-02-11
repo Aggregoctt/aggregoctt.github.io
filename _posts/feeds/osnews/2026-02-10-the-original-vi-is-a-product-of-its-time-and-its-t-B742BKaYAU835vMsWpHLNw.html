@@ -1,0 +1,39 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144375/the-original-vi-is-a-product-of-its-time-and-its-time-has-passed/
+date: '2026-02-10T23:28:31'
+excerpt: For me, vim is a combination of genuine improvements in vi&#8217;s core editing
+  behavior (cf), frustrating (to me) bits of trying too hard to be smart (which I
+  mostly disable when I run across them), and an extension mechanism I ignore but
+  people use to make vim into a superintelligent editor with things like LSP integrations.
+  Some of the improvements and additions to vi&#8217;s core editing may be things
+  that Bill Joy either didn&#8217;t think of or didn&#8217;t think were important
+  enough. However, I feel strongly that some or even many of omitted features and
+  differences are a product of the limited environments vi had to operate in. The
+  poster child for this is vi&#8217;s support of only a single level of undo, which
+  drastically constrains the potential memory requirements (and implementation complexity)
+  of undo, especially since a single editing operation in vi can make sweeping changes
+  across a large file (consider a whole-file &#8216;:&#8230;s/../../&#8217; substitution,
+  for example). ↫ Chris Siebenmann I have only very limited needs when it comes to
+  command-line text editors, and as such, I absolutely swear by the simplicity of
+  nano. In other words, I&#8217;m probably not the right person to dive into the editor
+  debate that&#8217;s been raging for decades, but reading Siebenmann&#8217;s points
+  I can&#8217;t help but agree. In this day and age, defaulting an editor that has
+  only one level of undo is insanity, and I can&#8217;t imagine doing the kind of
+  complex work people who use command-line editors do while being limited to just
+  one window. As for the debate about operating systems that symlink the vi command
+  to vim or a similar improved variant of vi, I feel like that&#8217;s the wrong thing
+  to do. Much like how I absolutely despise how macOS hides its UNIX-y file system
+  structure from the GUI, leading to bizarre ls results in the terminal, I don&#8217;t
+  think you should be tricking users. If a user enters vi, it should launch vi, and
+  not something that kind of looks like vi but isn&#8217;t. Computers shouldn&#8217;t
+  be lying to users. If they don&#8217;t want their users to be using vi, they shouldn&#8217;t
+  be installing vi in the first place.
+image: null
+source: osnews
+tags:
+- Unix
+title: “The original vi is a product of its time (and its time has passed)”
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>For me, vim is a combination of genuine improvements in vi&#8217;s core editing behavior (<a href="https://utcc.utoronto.ca/~cks/space/blog/unix/VimFeaturesThatHookedMe">cf</a>), frustrating (to me) bits of trying too hard to be smart (which I mostly disable when I run across them), and an extension mechanism I ignore but people use to make vim into a superintelligent editor with things like <a href="https://en.wikipedia.org/wiki/Language_Server_Protocol">LSP</a> integrations.</p><p>Some of the improvements and additions to vi&#8217;s core editing may be things that Bill Joy either didn&#8217;t think of or didn&#8217;t think were important enough. However, I feel strongly that some or even many of omitted features and differences are a product of the limited environments vi had to operate in. The poster child for this is vi&#8217;s support of only a single level of undo, which drastically constrains the potential memory requirements (and implementation complexity) of undo, especially since a single editing operation in vi can make sweeping changes across a large file (consider a whole-file &#8216;:&#8230;s/../../&#8217; substitution, for example).</p>
+<a href="https://utcc.utoronto.ca/~cks/space/blog/unix/ViIsAProductOfItsTime">&#8619; Chris Siebenmann</a></blockquote><p>I have only very limited needs when it comes to command-line text editors, and as such, I absolutely swear by the simplicity of nano. In other words, I&#8217;m probably not the right person to dive into the editor debate that&#8217;s been raging for decades, but reading Siebenmann&#8217;s points I can&#8217;t help but agree. In this day and age, defaulting an editor that has only one level of undo is insanity, and I can&#8217;t imagine doing the kind of complex work people who use command-line editors do while being limited to just one window.</p><p>As for the debate about operating systems that symlink the <code>vi</code> command to vim or a similar improved variant of vi, I feel like that&#8217;s the wrong thing to do. Much like how I absolutely despise how macOS hides its UNIX-y file system structure from the GUI, leading to bizarre <code>ls</code> results in the terminal, I don&#8217;t think you should be tricking users. If a user enters <code>vi</code>, it should launch vi, and not something that kind of looks like vi but isn&#8217;t. Computers shouldn&#8217;t be lying to users.</p><p>If they don&#8217;t want their users to be using vi, they shouldn&#8217;t be installing vi in the first place.</p></div>

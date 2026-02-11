@@ -1,0 +1,24 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144377/80386-barrel-shifter/
+date: '2026-02-10T23:33:25'
+excerpt: 'I’m currently building an 80386-compatible core in SystemVerilog, driven
+  by the original Intel microcode extracted from real 386 silicon. Real mode is now
+  operational in simulation, with more than 10,000 single-instruction test cases passing
+  successfully, and work on protected-mode features is in progress. In the course
+  of this work, corners of the 386 microcode and silicon have been examined in detail;
+  this series documents the resulting findings. In the previous post, we looked at
+  multiplication and division &#8212; iterative algorithms that process one bit per
+  cycle. Shifts and rotates are a different story: the 386 has a dedicated barrel
+  shifter that completes an arbitrary multi-bit shift in a single cycle. What&#8217;s
+  interesting is how the microcode makes one piece of hardware serve all shift and
+  rotate variants &#8212; and how the complex rotate-through-carry instructions are
+  handled. ↫ nand2mario I understood some of this.'
+image: null
+source: osnews
+tags:
+- Intel
+title: 80386 barrel shifter
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>I&#8217;m currently building an 80386-compatible core in SystemVerilog, driven by the original Intel microcode extracted from real 386 silicon. Real mode is now operational in simulation, with more than 10,000 single-instruction test cases passing successfully, and work on protected-mode features is in progress. In the course of this work, corners of the 386 microcode and silicon have been examined in detail; this series documents the resulting findings.</p><p>In the <a href="https://nand2mario.github.io/posts/2026/80386_multiplication_and_division/">previous post</a>, we looked at multiplication and division &#8212; iterative algorithms that process one bit per cycle. Shifts and rotates are a different story: the 386 has a dedicated barrel shifter that completes an arbitrary multi-bit shift in a single cycle. What&#8217;s interesting is how the microcode makes one piece of hardware serve all shift and rotate variants &#8212; and how the complex rotate-through-carry instructions are handled.</p>
+<a href="https://nand2mario.github.io/posts/2026/80386_barrel_shifter/">&#8619; nand2mario</a></blockquote><p>I understood some of this.</p></div>
