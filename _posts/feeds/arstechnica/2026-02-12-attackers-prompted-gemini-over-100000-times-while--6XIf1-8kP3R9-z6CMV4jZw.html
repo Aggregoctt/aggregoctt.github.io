@@ -1,0 +1,72 @@
+---
+author: Benj Edwards
+canonical_url: https://arstechnica.com/ai/2026/02/attackers-prompted-gemini-over-100000-times-while-trying-to-clone-it-google-says/
+date: '2026-02-12T19:42:08'
+excerpt: Distillation technique lets copycats mimic Gemini at a fraction of the development
+  cost.
+image: assets/media/6XIf1-8kP3R9-z6CMV4jZw-MXAmEmGc3s-YMdBgY4VruQ.jpeg
+source: arstechnica
+tags:
+- AI
+- Biz & IT
+- Google
+- AI language models
+- AI security
+- ChatGPT
+- chatgtp
+- deepseek
+- Distillation
+- gemini
+- google
+- Google Gemini
+- large language models
+- LLMs
+- machine learning
+- openai
+title: Attackers prompted Gemini over 100,000 times while trying to clone it, Google
+  says
+---
+<div>
+                      
+                      
+          <p>On Thursday, Google <a href="https://cloud.google.com/blog/topics/threat-intelligence/distillation-experimentation-integration-ai-adversarial-use">announced</a> that &#8220;commercially motivated&#8221; actors have attempted to clone knowledge from its Gemini AI chatbot by simply prompting it. One adversarial session reportedly prompted the model more than 100,000 times across various non-English languages, collecting responses ostensibly to train a cheaper copycat.</p>
+<p>Google published the findings in what amounts to a quarterly self-assessment of threats to its own products that frames the company as the victim and the hero, which is not unusual in these self-authored assessments. Google calls the illicit activity &#8220;model extraction&#8221; and considers it intellectual property theft, which is a somewhat loaded position, <a href="https://www.theverge.com/2023/7/5/23784257/google-ai-bard-privacy-policy-train-web-scraping">given</a> that Google&#8217;s LLM was built from materials scraped from the Internet without permission.</p>
+<p>Google is also no stranger to the copycat practice. In 2023, The Information <a href="https://9to5google.com/2023/03/30/google-bard-chatgpt-training-report/">reported</a> that Google&#8217;s Bard team had been accused of using ChatGPT outputs from ShareGPT, a public site where users share chatbot conversations, to help train its own chatbot. Senior Google AI researcher Jacob Devlin, who created the influential BERT language model, <a href="https://finance.yahoo.com/news/top-ai-researcher-reportedly-left-190003999.html">warned</a> leadership that this violated OpenAI&#8217;s terms of service, then resigned and joined OpenAI. Google denied the claim but reportedly stopped using the data.</p>
+<p>Even so, Google&#8217;s terms of service forbid people from extracting data from its AI models this way, and the report is a window into the world of somewhat shady AI model-cloning tactics. The company believes the culprits are mostly private companies and researchers looking for a competitive edge, and said the attacks have come from around the world. Google declined to name suspects.</p>
+<h2>The deal with distillation</h2>
+<p>Typically, the industry calls this practice of training a new model on a previous model&#8217;s outputs &#8220;<a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/distillation-turning-smaller-models-into-high-performance-cost-effective-solutio/4355029">distillation</a>,&#8221; and it works like this: If you want to build your own large language model (LLM) but lack the billions of dollars and years of work that Google spent training Gemini, you can use a previously trained LLM as a shortcut.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>To do so, you need to feed the existing AI model thousands of carefully chosen prompts, collect all the responses, and then use those input-output pairs to train a smaller, cheaper model. The result will closely mimic the parent model&#8217;s output behavior but will typically be smaller overall. It&#8217;s not perfect, but it can be a far more efficient training technique than hoping to build a useful model on random Internet data that includes a lot of noise.</p>
+<p>The copycat model never sees Gemini&#8217;s code or training data, but by studying enough of its outputs, it can learn to <a href="https://arstechnica.com/ai/2025/03/ai-firms-follow-deepseeks-lead-create-cheaper-models-with-distillation/">replicate</a> many of its capabilities. You can think of it as reverse-engineering a chef&#8217;s recipes by ordering every dish on the menu and working backward from taste and appearance alone.</p>
+<p>In the report published by Google, its threat intelligence group <a href="https://cloud.google.com/blog/topics/threat-intelligence/distillation-experimentation-integration-ai-adversarial-use">describes</a> a growing wave of these distillation attacks against Gemini. Many of the campaigns specifically targeted the algorithms that help the model perform <a href="https://arstechnica.com/ai/2025/06/with-the-launch-of-o3-pro-lets-talk-about-what-ai-reasoning-actually-does/">simulated reasoning</a> tasks, or decide how to process information step by step.</p>
+<p>Google <a href="https://cloud.google.com/blog/topics/threat-intelligence/distillation-experimentation-integration-ai-adversarial-use">said</a> it identified the 100,000-prompt campaign and adjusted Gemini&#8217;s defenses, but it did not detail what those countermeasures involve.</p>
+<h2>A clone of a clone</h2>
+<p>Google is not the only company worried about distillation. OpenAI <a href="https://arstechnica.com/ai/2025/01/china-is-catching-up-with-americas-best-reasoning-ai-models/">accused</a> Chinese rival DeepSeek last year of using distillation to improve its own models, and the technique has since <a href="https://arstechnica.com/ai/2025/03/ai-firms-follow-deepseeks-lead-create-cheaper-models-with-distillation/">spread</a> across the industry as a standard for building cheaper, smaller AI models from larger ones.</p>
+<p>The line between standard distillation and theft depends on whose model you&#8217;re distilling and whether you have permission, a distinction that tech companies have spent billions of dollars trying to protect but that no court has tested.</p>
+
+          
+                  
+
+              
+          
+          
+<p>Competitors have been using distillation to clone AI language model capabilities since at least the GPT-3 era, with ChatGPT a popular target after its launch.</p>
+<p>In March 2023, shortly after Meta&#8217;s LLaMA model weights <a href="https://arstechnica.com/information-technology/2023/03/you-can-now-run-a-gpt-3-level-ai-model-on-your-laptop-phone-and-raspberry-pi/">leaked</a> online, Stanford University researchers <a href="https://crfm.stanford.edu/2023/03/13/alpaca.html">built</a> a model called Alpaca by fine-tuning LLaMA on 52,000 outputs generated by OpenAI&#8217;s GPT-3.5. The total cost was about $600. The result behaved so much like ChatGPT that it raised immediate questions about whether any AI model&#8217;s capabilities could be protected once it was accessible through an API.</p>
+<p>Later that year, Elon Musk&#8217;s xAI <a href="https://arstechnica.com/information-technology/2023/12/elon-musks-ai-bot-grok-speaks-as-if-made-by-openai-in-some-tests-causing-a-stir/">launched</a> its Grok chatbot, which promptly cited &#8220;OpenAI&#8217;s use case policy&#8221; when refusing certain requests. An xAI engineer blamed accidental ingestion of ChatGPT outputs during web scraping, but the specificity of the behavior, down to ChatGPT&#8217;s characteristic refusal phrasing and habit of wrapping responses with &#8220;Overall&#8230;&#8221; summaries, left many in the AI community unconvinced.</p>
+<p>As long as an LLM is accessible to the public, no foolproof technical barrier prevents a determined actor from doing the same thing to someone else&#8217;s model over time (though rate-limiting helps), which is exactly what Google says happened to Gemini.</p>
+<p>Distillation also occurs within companies, and it&#8217;s frequently used to create smaller, faster-to-run versions of older, larger AI models. OpenAI created GPT-4o Mini as a distillation of GPT-4o, for example, and Microsoft <a href="https://arstechnica.com/information-technology/2024/04/microsofts-phi-3-shows-the-surprising-power-of-small-locally-run-ai-language-models/">built</a> its compact Phi-3 model family using carefully filtered synthetic data generated by larger models.</p>
+<p>DeepSeek has also officially <a href="https://arstechnica.com/ai/2025/01/china-is-catching-up-with-americas-best-reasoning-ai-models/">published</a> six distilled versions of its R1 reasoning model, the smallest of which can run on a laptop.</p>
+
+
+          
+                  
+
+                  
+          </div>
