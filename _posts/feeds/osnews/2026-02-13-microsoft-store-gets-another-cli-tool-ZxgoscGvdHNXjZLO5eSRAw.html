@@ -1,0 +1,38 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144394/microsoft-store-gets-another-cli-tool/
+date: '2026-02-13T23:02:41'
+excerpt: We often lament Microsoft&#8217;s terrible stewardship of its Windows operating
+  system, but that doesn&#8217;t mean that they never do anything right. In a blog
+  post detailing changes and improvements coming to the Microsoft Store, the company
+  announced something Windows users might actually like? A new command-line interface
+  for the Microsoft Store brings app discovery, installation and update management
+  directly to your terminal. This enables developers and users with a new way to discover
+  and install Store apps, without needing the GUI. The Store CLI is available only
+  on devices where Microsoft Store is enabled. ↫ Giorgio Sardo at the Windows Blogs
+  Of course, this new command-line frontend to the Microsoft Store comes with commands
+  to install, update, and search for applications in the store, but sadly, it doesn&#8217;t
+  seem to come with an actual TUI for browsing and discovery, which is a shame. I
+  sometimes find it difficult to use dnf to find applications, as it&#8217;s not always
+  obvious which search terms to use, which exact spelling packagers are using, which
+  words they use in the description, and so on. In other words, it may not always
+  be clear if the search terms you&#8217;re using are the correct ones to find the
+  application you need. If package managers had a TUI to enable browsing for applications
+  instead of merely searching for them, the process of using the command line to find
+  and install applications would be much nicer. Arch has this third-party TUI called
+  pacseek for its package manager, and it looks absolutely amazing. I&#8217;ve run
+  into a rudimentary dnf TUI called dnfseek, but it&#8217;s definitely not as well-rounded
+  as pacseek, and it also hasn&#8217;t seen any development since its initial release.
+  I couldn&#8217;t find anything for apt, but there&#8217;s always aptitude, which
+  uses ncurses and thus fulfills a similar role. To really differentiate this new
+  Microsoft Store command-line tool from winget, the company could&#8217;ve built
+  a proper TUI, but instead it seems to just be winget with nicer formatted output
+  that is limited to just the Microsoft Store. Nice, I guess.
+image: null
+source: osnews
+tags:
+- Windows
+title: Microsoft Store gets another CLI tool
+---
+<div><p>We often lament Microsoft&#8217;s terrible stewardship of its Windows operating system, but that doesn&#8217;t mean that they never do anything right. In a blog post detailing changes and improvements coming to the Microsoft Store, the company announced something Windows users might actually like?</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>A new command-line interface for the Microsoft Store brings app discovery, installation and update management directly to your terminal. This enables developers and users with a new way to discover and install Store apps, without needing the GUI. The Store CLI is available only on devices where Microsoft Store is enabled.</p>
+<a href="https://blogs.windows.com/windowsdeveloper/2026/02/11/enhanced-developer-tools-on-the-microsoft-store/">&#8619; Giorgio Sardo at the Windows Blogs</a></blockquote><p>Of course, this new command-line frontend to the Microsoft Store comes with commands to install, update, and search for applications in the store, but sadly, it doesn&#8217;t seem to come with an actual TUI for browsing and discovery, which is a shame. I sometimes find it difficult to use dnf to find applications, as it&#8217;s not always obvious which search terms to use, which exact spelling packagers are using, which words they use in the description, and so on. In other words, it may not always be clear if the search terms you&#8217;re using are the correct ones to find the application you need.</p><p>If package managers had a TUI to enable browsing for applications instead of merely searching for them, the process of using the command line to find and install applications would be much nicer. Arch has this third-party TUI called <a href="https://github.com/moson-mo/pacseek">pacseek</a> for its package manager, and it looks absolutely amazing. I&#8217;ve run into a rudimentary dnf TUI called <a href="https://github.com/OmarHesham2356/dnfseek">dnfseek</a>, but it&#8217;s definitely not as well-rounded as pacseek, and it also hasn&#8217;t seen any development since its initial release. I couldn&#8217;t find anything for apt, but there&#8217;s always <a href="https://en.wikipedia.org/wiki/Aptitude_(software)">aptitude</a>, which uses ncurses and thus fulfills a similar role.</p></div>
