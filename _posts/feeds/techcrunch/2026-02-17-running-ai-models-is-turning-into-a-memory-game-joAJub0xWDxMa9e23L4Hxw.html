@@ -1,0 +1,49 @@
+---
+author: Russell Brandom
+canonical_url: https://techcrunch.com/2026/02/17/running-ai-models-is-turning-into-a-memory-game/
+date: '2026-02-17T16:44:14'
+excerpt: When we talk about the cost of AI infrastructure, the focus is usually on
+  Nvidia and GPUs -- but memory is an increasingly important part of the picture.
+image: assets/media/joAJub0xWDxMa9e23L4Hxw-1e5rbNg2_2bd1ogYAYwjUA.jpeg
+source: techcrunch
+tags:
+- AI
+- dram
+- Exclusive
+- inference costs
+title: Running AI models is turning into a memory game
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">When we talk about the cost of AI infrastructure, the focus is usually on Nvidia and GPUs &#8212; but memory is an increasingly important part of the picture. As hyperscalers prepare to build out billions of dollars worth of new data centers, the price for DRAM chips has jumped <a rel="nofollow" href="https://datatrack.trendforce.com/Chart/content/4694/mainstream-dram-spot-price">roughly 7x in the last year</a>. </p>
+
+<p class="wp-block-paragraph">At the same time, there&#8217;s a growing discipline in orchestrating all that memory to make sure the right data gets to the right agent at the right time. The companies that master it will be able to make the same queries with fewer tokens, which can be the difference between folding and staying in business.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph"><a rel="nofollow" href="http://Doug%20O'Laughlin">Semiconductor analyst Dan O&#8217;Laughlin</a> has an interesting look at the importance of memory chips on his Substack, where he talks with Val Bercovici, chief AI officer at Weka. They&#8217;re both semiconductor guys, so the focus is more on the chips than the broader architecture; the implications for AI software are pretty significant too.</p>
+
+<p class="wp-block-paragraph">I was particularly struck by this passage, in which Bercovici looks at the growing complexity of <a rel="nofollow" href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching">Anthropic&#8217;s prompt-caching documentation</a>:</p>
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p class="wp-block-paragraph">The tell is if we go to Anthropic&#8217;s prompt caching pricing page. It started off as a very simple page six or seven months ago, especially as Claude Code was launching &#8212; just &#8220;use caching, it&#8217;s cheaper.&#8221; Now it&#8217;s an encyclopedia of advice on exactly how many cache writes to pre-buy. You&#8217;ve got 5-minute tiers, which are very common across the industry, or 1-hour tiers &#8212; and nothing above. That&#8217;s a really important tell. Then of course you&#8217;ve got all sorts of arbitrage opportunities around the pricing for cache reads based on how many cache writes you&#8217;ve pre-purchased.</p>
+</blockquote>
+
+<p class="wp-block-paragraph">The question here is how long Claude holds your prompt in cached memory: you can pay for a 5-minute window, or pay more for an hour-long window. It&#8217;s much cheaper to draw on data that&#8217;s still in the cache, so if you manage it right, you can save an awful lot. There is a catch though: every new bit of data you add to the query may bump something else out of the cache window. </p>
+
+<p class="wp-block-paragraph">This is complex stuff, but the upshot is simple enough: Managing memory in AI models is going to be a huge part of AI going forward. Companies that do it well are going to rise to the top.</p>
+
+<p class="wp-block-paragraph">And there is plenty of progress to be made in this new field. Back in October, I covered <a href="https://techcrunch.com/2025/10/23/tensormesh-raises-4-5m-to-squeeze-more-inference-out-of-ai-server-loads/">a startup called TensorMesh</a> that was working on one layer in the stack known as cache-optimization. </p>
+ 
+
+<p class="wp-block-paragraph">Opportunities exist in other parts of the stack. For instance, lower down the stack, there&#8217;s the question of how data centers are using the different types of memory they have. (The interview includes a nice discussion of when DRAM chips are used instead of HBM, although it&#8217;s pretty deep in the hardware weeds.) Higher up the stack, end users are figuring out how to structure their model swarms to take advantage of the shared cache.</p>
+
+ 
+
+
+			
+
+			</div>
