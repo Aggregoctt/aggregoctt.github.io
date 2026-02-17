@@ -1,0 +1,23 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144416/a-deep-dive-into-apples-car-file-format/
+date: '2026-02-17T22:19:03'
+excerpt: Every modern iOS, macOS, watchOS, and tvOS application uses Asset Catalogs
+  to manage images, colors, icons, and other resources. When you build an app with
+  Xcode, your .xcassets folders are compiled into binary .car files that ship with
+  your application. Despite being a fundamental part of every Apple app, there is
+  little to none official documentation about this file format. In this post, I’ll
+  walk through the process of reverse engineering the .car file format, explain its
+  internal structures, and show how to parse these files programmatically. This knowledge
+  could be useful for security research and building developer tools that does not
+  rely on Xcode or Apple’s proprietary tools. ↫ ordinal0 at dbg.re Not only did ordinal0
+  reverse-engineer the file format, they also developed their own unique custom parser
+  and compiler for .car files that don&#8217;t require any of Apple&#8217;s tools.
+image: null
+source: osnews
+tags:
+- Apple
+title: A deep dive into Apple’s .car file format
+---
+<div><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Every modern iOS, macOS, watchOS, and tvOS application uses Asset Catalogs to manage images, colors, icons, and other resources. When you build an app with Xcode, your <code>.xcassets</code> folders are compiled into binary <code>.car</code> files that ship with your application. Despite being a fundamental part of every Apple app, there is little to none official documentation about this file format.</p><p>In this post, I&#8217;ll walk through the process of reverse engineering the <code>.car</code> file format, explain its internal structures, and show how to parse these files programmatically. This knowledge could be useful for security research and building developer tools that does not rely on Xcode or Apple&#8217;s proprietary tools.</p>
+<a href="https://dbg.re/posts/car-file-format/">&#8619; ordinal0 at dbg.re</a></blockquote><p>Not only did ordinal0 reverse-engineer the file format, they also developed their own unique custom parser and compiler for .car files that don&#8217;t require any of Apple&#8217;s tools.</p></div>
