@@ -1,0 +1,36 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144459/undo-in-vi-and-its-successors/
+date: '2026-02-19T01:06:29'
+excerpt: So vi only has one level of undo, which is simply no longer fit for the times
+  we live in now, and also wholly unnecessary given even the least powerful devices
+  that might need to run vi probably have more than enough resources to give at least
+  a few more levels of undo. What I didn&#8217;t know, however, is that vi&#8217;s
+  limited undo behaviour is actually part of POSIX, and for full compliance, you&#8217;re
+  going to need it. As Chris Siebenmann notes, vim and its derivatives ignore this
+  POSIX requirement and implement multiple levels of undo in the obviously correct
+  way. What about nvi, the default on the BSD variants? I didn&#8217;t know this,
+  but it has a convoluted workaround to both maintain POSIX compatibility and offer
+  multiple levels of undo, and it&#8217;s definitely something. Nvi has opted to remain
+  POSIX compliant and operate in the traditional vi way, while still supporting multi-level
+  undo. To get multi-level undo in nvi, you extend the first &#8216;u&#8217; with
+  &#8216;.&#8217; commands, so &#8216;u..&#8217; undoes the most recent three changes.
+  The &#8216;u&#8217; command can be extended with &#8216;.&#8217; in either of its
+  modes (undo&#8217;ing or redo&#8217;ing), so &#8216;u..u..&#8217; is a no-op. The
+  &#8216;.&#8217; operation doesn&#8217;t appear to take a count in nvi, so there
+  is no way to do multiple undos (or redos) in one action; you have to step through
+  them by hand. I&#8217;m not sure how nvi reacts if you want do things like move
+  your cursor position during an undo or redo sequence (my limited testing suggests
+  that it can perturb the sequence, so that &#8216;.&#8217; now doesn&#8217;t continue
+  undoing or redoing the way vim will continue if you use &#8216;u&#8217; or Ctrl-r
+  again). ↫ Chris Siebenmann Siebenmann lists a few other implementations and how
+  they work with undo, and it&#8217;s interesting to see how all of them try to solve
+  the problem in slightly different ways.
+image: null
+source: osnews
+tags:
+- Unix
+title: Undo in Vi and its successors
+---
+<div><p>So vi only has one level of undo, which is simply <a href="https://www.osnews.com/story/144375/the-original-vi-is-a-product-of-its-time-and-its-time-has-passed/">no longer fit</a> for the times we live in now, and also wholly unnecessary given even the least powerful devices that might need to run vi probably have more than enough resources to give at least a few more levels of undo. What I didn&#8217;t know, however, is that vi&#8217;s limited undo behaviour is actually part of POSIX, and for full compliance, you&#8217;re going to need it. As Chris Siebenmann <a href="https://utcc.utoronto.ca/~cks/space/blog/unix/ViUndoMyViews">notes</a>, vim and its derivatives ignore this POSIX requirement and implement multiple levels of undo in the obviously correct way.</p><p>What about nvi, the default on the BSD variants? I didn&#8217;t know this, but it has a convoluted workaround to both maintain POSIX compatibility and offer multiple levels of undo, and it&#8217;s definitely something.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p><a href="https://en.wikipedia.org/wiki/Nvi">Nvi</a> has opted to remain POSIX compliant and operate in the traditional vi way, while still supporting multi-level undo. To get multi-level undo in nvi, you extend the first &#8216;u&#8217; with &#8216;.&#8217; commands, so &#8216;u..&#8217; undoes the most recent three changes. The &#8216;u&#8217; command can be extended with &#8216;.&#8217; in either of its modes (undo&#8217;ing or redo&#8217;ing), so &#8216;u..u..&#8217; is a no-op. The &#8216;.&#8217; operation doesn&#8217;t appear to take a count in nvi, so there is no way to do multiple undos (or redos) in one action; you have to step through them by hand. I&#8217;m not sure how nvi reacts if you want do things like move your cursor position during an undo or redo sequence (my limited testing suggests that it can perturb the sequence, so that &#8216;.&#8217; now doesn&#8217;t continue undoing or redoing the way vim will continue if you use &#8216;u&#8217; or Ctrl-r again).</p>
+<a href="https://utcc.utoronto.ca/~cks/space/blog/unix/ViUndoMyViews">&#8619; Chris Siebenmann</a></blockquote><p>Siebenmann lists a few other implementations and how they work with undo, and it&#8217;s interesting to see how all of them try to solve the problem in slightly different ways.</p></div>
