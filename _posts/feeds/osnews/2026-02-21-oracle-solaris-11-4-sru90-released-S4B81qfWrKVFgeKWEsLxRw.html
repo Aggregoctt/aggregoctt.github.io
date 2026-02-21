@@ -1,0 +1,33 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144465/oracle-solaris-11-4-sru90-released/
+date: '2026-02-21T12:09:36'
+excerpt: 'Despite continuous rumors to the contrary, Oracle is still actively developing
+  Solaris, and it&#8217;s been more active than ever lately. Yesterday, the company
+  pushed out another release for customers with the proper support contracts: Oracle
+  Solaris 11.4 SRU90. Aside from the various package updates to bring them up to speed
+  with the latest releases, this new Solaris version also comes with a slew of improvements
+  for ZFS. ZFS changes in Oracle Solaris 11.4.90 include more flexibility in setting
+  retention properties when receiving a new file system, and adding the ability for
+  zfs scrub and resilver to run before all the blocks have been freed from previous
+  zfs destroy operations. (This requires upgrading pools to the new zpool version
+  54.) ↫ Alan Coopersmith You can now also set boot environments to never be destroyed
+  by either manual or automatic means, and more work has been done to prevent a specific
+  type of bug that would accidentally kill all running processes on the system. It
+  seems some programs mistakenly use -1 as a pid value in kill() calls. Now in 11.4.90,
+  the kill system call was modified to not allow processes to use a pid of -1 unless
+  they&#8217;d specifically set a process flag that they intend to kill all processes
+  first, to help with programs that didn&#8217;t check for errors when finding the
+  process id for the singular process they wanted to kill. ↫ Alan Coopersmith There&#8217;s
+  many more changes and improvements, of course, and hopefully, we&#8217;ll get to
+  see these in the next CBE release as well, so us mere mortals without expensive
+  support contracts can benefit from them too.'
+image: null
+source: osnews
+tags:
+- Solaris
+title: Oracle Solaris 11.4 SRU90 released
+---
+<div><p>Despite continuous rumors to the contrary, Oracle is still actively developing Solaris, and it&#8217;s been more active than ever lately. Yesterday, the company pushed out another release for customers with the proper support contracts: <a href="https://blogs.oracle.com/solaris/announcing-oracle-solaris-11-4-sru90">Oracle Solaris 11.4 SRU90</a>. Aside from the various package updates to bring them up to speed with the latest releases, this new Solaris version also comes with a slew of improvements for ZFS.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>ZFS changes in Oracle Solaris 11.4.90 include more flexibility in setting retention properties when receiving a new file system, and adding the ability for zfs scrub and resilver to run before all the blocks have been freed from previous zfs destroy operations. (This requires upgrading pools to the new zpool version 54.)</p>
+<a href="https://exquisite.social/@alanc@hachyderm.io/116105681197832797">&#8619; Alan Coopersmith</a></blockquote><p>You can now also set boot environments to never be destroyed by either manual or automatic means, and more work has been done to prevent a specific type of bug that would accidentally kill all running processes on the system. It seems some programs mistakenly use -1 as a pid value in kill() calls.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Now in 11.4.90, the kill system call was modified to not allow processes to use a pid of -1 unless they&#8217;d specifically set a process flag that they intend to kill all processes first, to help with programs that didn&#8217;t check for errors when finding the process id for the singular process they wanted to kill.</p>
+<a href="https://hachyderm.io/@alanc/116105777977729808">&#8619; Alan Coopersmith</a></blockquote></div>
