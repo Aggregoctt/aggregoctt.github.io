@@ -1,0 +1,59 @@
+---
+author: Tim Fernholz
+canonical_url: https://techcrunch.com/2026/02/23/guide-labs-debuts-a-new-kind-of-interpretable-llm/
+date: '2026-02-23T17:53:28'
+excerpt: The company open-sourced an 8 billion parameter LLM, Steerling-8B, trained
+  with a new architecture designed to make its actions easily interpretable.
+image: assets/media/xvX4R1xuSxJpUL--XVL6JA-FpvsX3bzdSO1Znl2UnYr9g.jpeg
+source: techcrunch
+tags:
+- AI
+- Exclusive
+- Guide Labs
+- science
+title: Guide Labs debuts a new kind of interpretable LLM
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">The challenge of wrangling a deep learning model is often understanding why it does what it does: Whether it&#8217;s xAI&#8217;s repeated struggle sessions to fine-tune Grok&#8217;s odd politics, ChatGPT&#8217;s struggles with sycophancy, or run-of-the-mill hallucinations, plumbing through a neural network with billions of parameters isn&#8217;t easy.</p>
+
+<p class="wp-block-paragraph">Guide Labs, a San Francisco start-up founded by CEO Julius Adebayo and chief science officer Aya Abdelsalam Ismail, is offering an answer to that problem today. On Monday, the company open-sourced an 8 billion parameter LLM, <a rel="nofollow" href="https://github.com/guidelabs/steerling">Steerling-8B</a>, trained with a new architecture designed to make its actions easily interpretable: Every token produced by the model can be traced back to its origins in the LLM&#8217;s training data.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">That can as a simple as determining the reference materials for facts cited by the model, or as complex as understanding the model&#8217;s understanding of humor or gender. </p>
+
+<p class="wp-block-paragraph">&#8220;If I have a trillion ways to encode gender, and I encode it in 1 billion of the 1 trillion things that I have, you have to make sure you find all those 1 billion things that I&#8217;ve encoded, and then you have to be able to reliably turn that on, turn them off,&#8221; Adebayo told TechCrunch. &#8220;You can do it with current models, but it&#8217;s very fragile &#8230; It&#8217;s sort of one of the holy grail questions.&#8221;</p>
+
+<p class="wp-block-paragraph">Adebayo began this work while earning his PhD at MIT, co-authoring a widely cited <a rel="nofollow" href="https://arxiv.org/abs/1810.03292">2018 paper</a> that showed existing methods of understanding deep learning models were not reliable. That work ultimately led to the creation of a new way of building LLMs: Developers insert a concept layer in the model that buckets data into traceable categories. This requires more up front data annotation, but by using other AI models to help, they were able to train this model as their largest proof of concept yet.</p>
+
+<p class="wp-block-paragraph">&#8220;The kind of interpretability people do is&#8230;neuroscience on a model, and we flip that,&#8221; Adebayo said. &#8220;What we do is actually engineer the model from the ground up so that you don&#8217;t need to do neuroscience.&#8221;</p>
+
+ 
+
+<p class="wp-block-paragraph">One concern with this approach is that it might eliminate some of the emergent behaviors that make LLMs so intriguing: Their ability to generalize in new ways about things they haven&#8217;t been trained on yet. Adebayo says that still happens in his company&#8217;s model: His team tracks what they call &#8220;discovered concepts&#8221; that the model discovered on its own, like quantum computing.</p>
+ 
+
+<p class="wp-block-paragraph">Adebayo argues this interpretable architecture will be something everyone needs. For consumer-facing LLMs, these techniques should allow model builders to do things like block the use of copyrighted materials, or better control outputs around subjects like violence or drug abuse. Regulated industries will require more controllable LLMs, for example in finance, where a model evaluating loan applicants needs to consider things like financial records but not race. There&#8217;s also a need for interpretability in scientific work, another area where Guide Labs has developed technology. Protein folding has been a big success for deep learning models, but scientists need more insight into why their software figured out promising combinations.</p>
+
+<p class="wp-block-paragraph">&#8220;This model demonstrates is that training interpretable models is no longer a sort of science; it&#8217;s now an engineering problem,&#8221; Adebayo said. &#8220;We figured out the science and we can scale them, and there is no reason why this kind of model wouldn&#8217;t match the performance of the frontier level models,&#8221; which have many more parameters.</p>
+
+<p class="wp-block-paragraph">Guide Labs says that Steerling-8B can achieved 90% of the capability of existing models, but uses less training data, thanks to its novel architecture. The next step for the company, which emerged from Y Combinator and raised a $9 million seed round from Initialized Capital in November 2024, is to build a larger model and begin offering API and agentic access to users. </p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;The way we&#8217;re current training models is super primitive, and so democratizing inherent interpretability is actually going to be a long term good thing for our role within the human race,&#8221; Adebayo told TechCrunch. &#8220;As we&#8217;re going after these models that are going to be super intelligent, you don&#8217;t want something to be making decisions on your behalf that&#8217;s sort of mysterious to you.&#8221;</p>
+
+ 
+
+
+			
+
+			</div>
