@@ -1,0 +1,46 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144473/gtk-nocsd-an-ld_preload-library-to-disable-csds/
+date: '2026-02-23T23:25:07'
+excerpt: While Libadwaita applications running in a GNOME desktop environment look
+  great and nicely consistent, they look utterly out of place and jarring when run
+  in Xfce, Pantheon, KDE, and others. The biggest reason for this is GNOME&#8217;s
+  insistence on using client-side decorations, which feel at home inside a GNOME environment,
+  but out of place in environments that otherwise do not use them. On top of that,
+  Libadwaita&#8217;s/GNOME&#8217;s CSDs can interfere with non-GNOME window managers
+  and their functionality, causing a whole host of problems. But what if you could
+  turn CSDs off? GTK-NoCSD is an LD_PRELOAD library to disable CSD in GTK3/4, LibHandy,
+  and LibAdwaita apps. CSD is client side decoration, there is also server side decoration,
+  SSD, both serving as the titlebar of windows. GTK3 adopted CSD, where this thick
+  headerbar is used with application controls embedded.This continued into the platform
+  library, LibHandy, then into GTK4 and the platform library of that, LibAdwaita.
+  This looks good on Gnome and makes these applications alike, but looks off everywhere
+  else and can potentially break window managers and remove window manager provided
+  functionality. This library restores the server side decoration, getting back the
+  window manager titlebar, and moves the controls from the CSD to under it, into the
+  window content. ↫ GTK-NoCSD&#8217;s Codeberg page This isn&#8217;t the first attempt
+  at such a solution, and certainly won&#8217;t be the last, and I&#8217;m glad they
+  exist. Do note that if you decide to use this library, any problems or bugs you
+  run into in an application &#8216;modified&#8217; by it should never be reported
+  to the application&#8217;s developer, but to the developer of this library. If you
+  encounter a bug in an application modified by this library, test the application
+  in its unmodified state to ensure it&#8217;s actually a bug in the application before
+  reporting it to the application&#8217;s developer. Developers who choose to use
+  client-side decorations are not responsible for bugs and issues arising from you
+  removing the CSD. Keep that in mind. That being said, whatever pixels appear on
+  your screen is entirely up to you as a user, and you have the right to theme, alter,
+  butcher, or mangle whatever application is running on your computer. If you dislike
+  the way CSDs look and feel on your computer, you can opt to resort to a solution
+  like this one, and that&#8217;s entirely fair game. There&#8217;s packages for Arch,
+  Fedora, and Gentoo, and of course, you can build it yourself. As for my personal
+  opinion &#8211; well, let&#8217;s just say I prefer KDE for many, many reasons,
+  and my disdain for CSDs is certainly one of them. Call me old-fashioned and out-of-touch,
+  but I like the classic distinction between titlebar, menubar, and toolbar.
+image: null
+source: osnews
+tags:
+- GTK+
+title: 'GTK-NoCSD: an LD_PRELOAD library to disable CSDs'
+---
+<div><p>While Libadwaita applications running in a GNOME desktop environment look great and nicely consistent, they look utterly out of place and jarring when run in Xfce, Pantheon, KDE, and others. The biggest reason for this is GNOME&#8217;s insistence on using client-side decorations, which feel at home inside a GNOME environment, but out of place in environments that otherwise do not use them. On top of that, Libadwaita&#8217;s/GNOME&#8217;s CSDs can interfere with non-GNOME window managers and their functionality, causing a whole host of problems.</p><p>But what if you could turn CSDs off?</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>GTK-NoCSD is an LD_PRELOAD library to disable CSD in GTK3/4, LibHandy, and LibAdwaita apps.</p><p>CSD is client side decoration, there is also server side decoration, SSD, both serving as the titlebar of windows. GTK3 adopted CSD, where this thick headerbar is used with application controls embedded.<br>This continued into the platform library, LibHandy, then into GTK4 and the platform library of that, LibAdwaita. This looks good on Gnome and makes these applications alike, but looks off everywhere else and can potentially break window managers and remove window manager provided functionality.</p><p>This library restores the server side decoration, getting back the window manager titlebar, and moves the controls from the CSD to under it, into the window content.</p>
+<a href="https://codeberg.org/MorsMortium/GTK-NoCSD">&#8619; GTK-NoCSD&#8217;s Codeberg page</a></blockquote><p>This isn&#8217;t the first attempt at such a solution, and certainly won&#8217;t be the last, and I&#8217;m glad they exist. Do note that if you decide to use this library, any problems or bugs you run into in an application &#8216;modified&#8217; by it should never be reported to the application&#8217;s developer, but to the developer of this library. If you encounter a bug in an application modified by this library, test the application in its unmodified state to ensure it&#8217;s actually a bug in the application before reporting it to the application&#8217;s developer. Developers who choose to use client-side decorations are not responsible for bugs and issues arising from you removing the CSD.</p><p>Keep that in mind.</p><p>That being said, whatever pixels appear on your screen is entirely up to you as a user, and you have the right to theme, alter, butcher, or mangle whatever application is running on your computer. If you dislike the way CSDs look and feel on your computer, you can opt to resort to a solution like this one, and that&#8217;s entirely fair game. There&#8217;s packages for Arch, Fedora, and Gentoo, and of course, you can build it yourself.</p><p>As for my personal opinion &#8211; well, let&#8217;s just say I prefer KDE for many, many reasons, and my disdain for CSDs is certainly one of them. Call me old-fashioned and out-of-touch, but I like the classic distinction between titlebar, menubar, and toolbar.</p></div>

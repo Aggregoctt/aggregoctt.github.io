@@ -1,0 +1,79 @@
+---
+author: Julie Bort
+canonical_url: https://techcrunch.com/2026/02/23/a-meta-ai-security-researcher-said-an-openclaw-agent-ran-amok-on-her-inbox/
+date: '2026-02-24T00:57:14'
+excerpt: The viral X post from an AI security researcher reads like satire. But it's
+  really a word of warning about what can go wrong when handing tasks to an AI agent.
+image: assets/media/rY0NT9-Cpc05vcJO3VJ6sw-kpCe-HThsrBobb_jkBXN_w.jpeg
+source: techcrunch
+tags:
+- AI
+- TC
+- meta ai
+- openclaw
+title: A Meta AI security researcher said an OpenClaw agent ran amok on her inbox
+---
+<div>
+<p id="speakable-summary" class="wp-block-paragraph">The <a href="https://x.com/summeryue0/status/2025774069124399363" target="_blank" rel="noreferrer noopener nofollow">now-viral X post</a> from Meta AI security researcher Summer Yue reads, at first, like satire. She told her OpenClaw AI agent to check her overstuffed email inbox and suggest what to delete or archive.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">The agent proceeded to run amok. It started deleting all her email in a &#8220;speed run&#8221; while ignoring her commands from her phone telling it to stop.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">&#8220;I had to RUN to my Mac mini like I was defusing a bomb,&#8221; she wrote, posting images of the ignored stop prompts as receipts.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">The Mac Mini, an affordable Apple computer that sits flat on a desk and <a href="https://techcrunch.com/2024/11/07/apple-mac-mini-m4-review-more-power-in-a-tiny-package/">fits in the palm of your hand</a>, has become the favored device these days for running OpenClaw. (The Mini is selling &#8220;like hotcakes,&#8221; one &#8220;confused&#8221; Apple employee apparently told <a href="https://x.com/karpathy/status/2024987174077432126" target="_blank" rel="noreferrer noopener nofollow">famed AI researcher Andrej Karpathy</a> when he bought one to run an OpenClaw alternative called NanoClaw.)&#160;</p>
+
+<p class="wp-block-paragraph"><a href="https://techcrunch.com/2026/02/15/openclaw-creator-peter-steinberger-joins-openai/">OpenClaw</a> is, of course, the open source AI agent that achieved fame through Moltbook, an AI-only social network. OpenClaw agents were at the center of that <a href="https://techcrunch.com/2026/02/16/after-all-the-hype-some-ai-experts-dont-think-openclaw-is-all-that-exciting/">now largely debunked episode</a> on Moltbook in which it looked like the AIs were plotting against humans.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">But OpenClaw&#8217;s mission, according to its <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noreferrer noopener nofollow">GitHub page</a>, is not focused on social networks. It aims to be a personal AI assistant that runs on your own devices.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">The Silicon Valley in-crowd has fallen so in love with OpenClaw that &#8220;claw&#8221; and &#8220;claws&#8221; have become the <a href="https://x.com/simonw/status/2024999368982757509" target="_blank" rel="noreferrer noopener nofollow">buzzwords of choice</a> for agents that run on personal hardware. Other such agents include <a href="https://zeroclaw.org/" target="_blank" rel="noreferrer noopener nofollow">ZeroClaw</a>, <a href="https://github.com/nearai/ironclaw" target="_blank" rel="noreferrer noopener nofollow">IronClaw</a>, and <a href="https://picoclaw.net/" target="_blank" rel="noreferrer noopener nofollow">PicoClaw</a>. Y Combinator&#8217;s podcast team even appeared on their <a href="https://www.youtube.com/watch?v=Q8wVMdwhlh4" target="_blank" rel="noreferrer noopener nofollow">most recent episode</a> dressed in lobster costumes.&#160;</p>
+ 
+
+<p class="wp-block-paragraph">But Yue&#8217;s post serves as a warning. As others on X noted, if an AI security researcher could run into this problem, what hope do mere mortals have?&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;Were you intentionally testing its guardrails or did you make a rookie mistake?&#8221; a software developer asked her on X.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">&#8220;Rookie mistake tbh,&#8221; she replied. She had been testing her agent with a smaller &#8220;toy&#8221; inbox, as she called it, and it had been running well on less important email. It had earned her trust, so she thought she&#8217;d let it loose on the real thing.&#160;</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">Yue believes that the large amount of data in her real inbox &#8220;triggered compaction,&#8221; she wrote. Compaction happens when the context window &#8212; the running record of everything the AI has been told and has done in a session &#8212; grows too large, causing the agent to begin summarizing, compressing, and managing the conversation.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">At that point, the AI may skip over instructions that the human considers quite important.&#160;&#160;</p>
+
+<p class="wp-block-paragraph">In this case, it may have skipped her last prompt &#8212; where she told it not to act &#8212; and reverted back to its instructions from the &#8220;toy&#8221; inbox.&#160;</p>
+
+<p class="wp-block-paragraph">As several others <a href="https://x.com/isik5/status/2025920413700641132" target="_blank" rel="noreferrer noopener nofollow">on X pointed out</a>, <a href="https://x.com/mikedelta221/status/2025936657396985983" target="_blank" rel="noreferrer noopener nofollow">prompts can&#8217;t be trusted</a> to act as security guardrails. Models may misconstrue or ignore them.&#160;</p>
+
+<p class="wp-block-paragraph">Various people offered suggestions that ranged from the exact syntax Yue should have used to stop the agent, to various methods to ensure better adherence to guardrails, like writing instructions to dedicated files or using other open source tools.&#160;</p>
+
+<p class="wp-block-paragraph">In the interest of full transparency, TechCrunch could not independently verify what happened to Yue&#8217;s inbox. (She didn&#8217;t respond to our request for comment, though she did respond to many questions and comments sent her way on X.)&#160;</p>
+
+<p class="wp-block-paragraph">But it doesn&#8217;t really matter.&#160;</p>
+
+<p class="wp-block-paragraph">The point of the tale is that agents aimed at knowledge workers, at their current stage of development, are risky. People who say they are using them successfully are cobbling together methods to protect themselves.</p>
+
+ 
+
+
+ 
+
+
+<p class="wp-block-paragraph">One day, perhaps soon (by 2027? 2028?), they may be ready for widespread use. Goodness knows many of us would love help with email, grocery orders, and scheduling dentist appointments. But that day has not yet come.&#160;</p>
+
+ 
+
+
+			
+
+			</div>
