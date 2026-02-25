@@ -1,0 +1,19 @@
+---
+author: .mau.
+canonical_url: https://xmau.com/wp/notiziole/2026/02/25/addizione-pitagorica/
+date: '2026-02-25T03:51:57'
+excerpt: L'abbiamo usata tutti non so quante volte...
+image: assets/media/5GEjkj-1Vu0q465tyzuLew-fPSEzurmvH_CFh7dxgPNFQ.jpeg
+source: notiziolemau
+tags:
+- mate-light 2026
+- matematica_light
+title: Addizione pitagorica
+---
+<div>
+			 
+<p>Sappiamo tutti che l&#8217;ipotenusa di un triangolo rettangolo di cateti 3 e 4 &#232; lunga 5. Cosa succede se invece che scrivere \( \sqrt (3^2 + 4^2) = 5 \) decidessimo la formula 3 &#8853; 4 = 5? Avremmo definito una nuova operazione, che possiamo chiamare <a href="https://it.wikipedia.org/wiki/Addizione_pitagorica">addizione pitagorica</a>. Che propriet&#224; ha questa operazione? Innanzitutto &#232; commutativa, come la normale addizione: \( a \oplus b = b \oplus a \). &#200; anche associativa: \( ( a \oplus b ) \oplus c a \oplus (b \oplus c) \), e quindi possiamo scrivere \( a \oplus b \oplus c \) senza parentesi, il che tra l&#8217;altro ci d&#224; la lunghezza della diagonale maggiore di un parallelepipedo. E ovviamente &#8211; non ve lo devo mica dimostrare, vero? &#8211; abbiamo che \( a \oplus b \lt a + b \), a meno che uno tra i due operandi sia nullo. </p>
+<p>Ma ci sono anche altri usi dell&#8217;addizione pitagorica, tanto che molti linguaggi di programmazione la implementano come la funzione <tt>hypot</tt> (ipotenusa, senza grande fantasia). Per esempio, se dobbiamo convertire un numero in coordinate cartesiane \(a, b\) nell&#8217;equivalente in coordinate polari \(r, \theta \) applichiamo le formule \( r = x \oplus y; \theta = \textrm{atan2}(y,x) \). Un altro uso &#232; quello per calcolare il valore efficace, detto anche media quadratica, di due valori, che &#232; dato dalla loro somma pitagorica scalata di un fattore \( \tfrac{1}{\sqrt 2} \); pi&#249; in generale la media quadratica di \( n \) valori ha come fattore di scala  \( \tfrac{1}{n} \).</p>
+<p>Una curiosit&#224; &#232; che nella maggior parte dei casi pratici di operazioni fatte al computer la radice quadrata serve solo per calcolare l&#8217;addizione pitagorica. Soprattutto con i primi calcolatori, quindi, si &#232; cercato di trovare un algoritmo meno complesso computazionalmente, e gi&#224; che si era l&#236; di trovarlo &#8220;robusto&#8221;. Se i due operandi sono molto grandi, infatti, il calcolo na&#239;f pu&#242; portare a un overflow. Nel 1983 hanno cos&#236; descritto <a href="https://blogs.mathworks.com/images/cleve/moler_morrison.pdf">un metodo iterativo</a> che sostituisce man mano ai due numeri di partenza altri due numeri con la stessa somma pitagorica ma col secondo che diventa sempre pi&#249; piccolo: quando arriva praticamente a zero, per definizione il primo numero &#232; il risultato. Oggi ci sono metodi molto pi&#249; semplici, anche perch&#233; possiamo permetterci il lusso di avere tabelle di lookup molto grandi che riducono enormemente il numero di operazioni necessarie; ma volete mettere il divertimento dei due ricercatori?</p>
+ 
+  					</div>
