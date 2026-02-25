@@ -1,0 +1,32 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144481/new-windows-update-adds-sysmon-to-windows/
+date: '2026-02-25T21:22:14'
+excerpt: 'Microsoft released an optional cumulative update for Windows 11, and for
+  once, it actually includes something many of you might actually like: it adds Sysmon
+  from Sysinternals to Windows natively, so you no longer have to install it manually.
+  Here&#8217;s a refresher on what, exactly, Sysmon does. System Monitor (Sysmon)
+  is a Windows system service and device driver that, once installed on a system,
+  remains resident across system reboots to monitor and log system activity to the
+  Windows event log. It provides detailed information about process creations, network
+  connections, and changes to file creation time. By collecting the events it generates
+  using Windows Event Collection or SIEM agents and subsequently analyzing them, you
+  can identify malicious or anomalous activity and understand how intruders and malware
+  operate on your network. The service runs as a protected process, thus disallowing
+  a wide range of user mode interactions. ↫ Mark Russinovich and Thomas Garnier After
+  installing the optional cumulative update in question, KB5077241, you can install
+  Sysmon as an optional Windows component. Of course, this is Microsoft we&#8217;re
+  talking about, so it&#8217;s not quite as straightforward as you&#8217;d think.
+  In Windows 11, there&#8217;s two places to add optional Windows features, and in
+  the case of Sysmon, you have to go to the old Windows features dialog instead of
+  the new View or edit optional features one. And also, don&#8217;t forget to first
+  remove the old Sysmon from Sysinternals in case you have it installed. After installation,
+  run sysmon -i as an administrator to enable the feature.'
+image: null
+source: osnews
+tags:
+- Windows
+title: New Windows update adds Sysmon to Windows
+---
+<div><p>Microsoft released <a href="https://support.microsoft.com/en-us/topic/february-24-2026-kb5077241-os-builds-26200-7922-and-26100-7922-preview-b8cc7bc8-d640-4f18-9437-3ee59298b970">an optional cumulative update for Windows 11</a>, and for once, it actually includes something many of you might actually like: it adds Sysmon from Sysinternals to Windows natively, so you no longer have to install it manually. Here&#8217;s a refresher on what, exactly, Sysmon does.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>System Monitor (Sysmon) is a Windows system service and device driver that, once installed on a system, remains resident across system reboots to monitor and log system activity to the Windows event log. It provides detailed information about process creations, network connections, and changes to file creation time. By collecting the events it generates using <a href="https://msdn.microsoft.com/library/windows/desktop/bb427443(v=vs.85).aspx">Windows Event Collection</a> or <a href="https://en.wikipedia.org/wiki/security_information_and_event_management">SIEM</a> agents and subsequently analyzing them, you can identify malicious or anomalous activity and understand how intruders and malware operate on your network. The service runs as a <a href="https://learn.microsoft.com/en-us/windows/win32/services/protecting-anti-malware-services-#system-protected-process">protected process</a>, thus disallowing a wide range of user mode interactions.</p>
+<a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon">&#8619; Mark Russinovich and Thomas Garnier</a></blockquote></div>
