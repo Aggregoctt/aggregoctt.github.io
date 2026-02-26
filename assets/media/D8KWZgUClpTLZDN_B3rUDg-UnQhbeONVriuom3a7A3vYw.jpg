@@ -1,0 +1,2535 @@
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>       <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-GB" data-ng-app itemscope="itemscope" itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js lt-ie9 lt-ie8" lang="en-GB" data-ng-app itemscope="itemscope" itemtype="http://schema.org/WebPage">        <![endif]-->
+<!--[if IE 8]>          <html class="no-js lt-ie9" lang="en-GB" data-ng-app itemscope="itemscope" itemtype="http://schema.org/WebPage">               <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-GB" data-ng-app itemscope="itemscope" itemtype="http://schema.org/WebPage">                   <!--<![endif]-->
+<!--
+		             .....                `..........`                        
+            `+++++`               -++++++++++.                        
+            `+++++`               -++++++++++.                        
+  -----------:::::`          -----:::::::----`                        
+ `+++++++++++.....           +++++:.....                              
+ `+++++++++++.....           +++++:.....                              
+  ...../+++++.....``````     +++++:.....                              
+       :+++++..........`     +++++:.....                              
+       :++++/..........``````+++++/.....`````                         
+       `````.+++++.....-+++++++++++++++++++++.                        
+            `+++++.....:+++++++++++++++++++++.                        
+            `/////-----:++++++//////////+++++-....`                   
+                  /++++++++++-----.     ++++++++++/                   
+                  +++++++++++-....`     ++++++++++/                   
+             -----+++++++++++.````-++++++++++/:::::`````              
+            `++++++++++++++++`    +MMMMMo++++-..........`             
+            `++++++++++++++++`    +MMMMMo++++-..........`             
+            `++++++++++++++++:::::+yyyyy:::::....../////.`````        
+            `+++++++++++++++++++++++++++..........-+++++-....`        
+            `+++++++++++++++++++++++++++..........-+++++-....`        
+            `++++++++++++++++-----------...........-----.....`        
+            `++++++++++++++++................................`        
+            `++++++++++++++++.................----------.....`        
+            `++++++++++++++++................/++++++++++-....`        
+            `++++++++++++++++................/++++++++++-....`        
+            `:::::+++++++++++................-::::::::::.`````        
+             `````+++++++++++................`                        
+             `````+++++++++++................`                        
+        ``````````-----------ooooooooooo:::::-----------`````         
+       ``````````````````````hdddddddddd////////////////.`````        
+       ``````````````````````hdddddddddd////////////////.`````        
+  ```````````:::::```````````syyyyhddddd................```````````   
+  ```````````/////```````````sssssyddddd```````````````````````````   
+  ``````````./////```````````sssssyddddd```````````````````````````   
+  ..........-/////```````````sssssyddddd``````````.:::::-..........`  
+  ..........-/////```````````sssssyddddd``````````./////-..........`  
+ `///////////ooooo.``````````syyyyysssss:::::.````.ooooo+//////////`  
+ `dddddddddddddddd.``````````hddddo`````hdddd:````-dddddddddddddddd-  
+ `dddddddddddddddd.``````````hddddo`````hdddd:````-dddddddddddddddd-  
+ `ddddddddddh/////`````./////yhhhhs/////yhhhh+//////////ydddddddddd-  
+ `ddddddddddy``````````:sssssssssssssssssssssssssso`````sdddddddddd-  
+ `ddddddddddy``````````:sssssssssssssssssssssssssso`````sdddddddddd-  
+  ------:::::++++++++++osssss-...............+sssss+++++:::::------`  
+       `````.ssssssssssssssss`               +ssssssssss-`````        
+       `````.ssssssssssssssss`               /ssssssssss-`````        
+       -:::::----------.`````                .----------:::::-        
+       -////:...........                     ...........:////:        
+  `````-:::::----------.                     .----------:::::-`````   
+  ..........-//////////-                     -//////////-..........`  
+  ..........-//////////-                     -//////////-..........`  
+  ```````````...........                     ............``````````   
+	-->
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- Migrated ID 611343, Structure ID 2027092, Last Generated "Year: 2026, Month: 01, Day: 30, Hour: 19, Minute: 00, Second: 03" -->
+
+	<title>404 &ndash; I AM ERROR | Nintendo UK</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="publisher" content="Nintendo of Europe SE">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://www.nintendo.com/eu/media/js/alps_config.js"></script>
+			<link rel="alternate" href="https://www.nintendo.com/en-gb/404.html" hreflang="en-GB">
+			<link rel="alternate" href="https://www.nintendo.com/de-de/404.html" hreflang="de-DE">
+			<link rel="alternate" href="https://www.nintendo.com/de-ch/404.html" hreflang="de-CH">
+			<link rel="alternate" href="https://www.nintendo.com/de-at/404.html" hreflang="de-AT">
+			<link rel="alternate" href="https://www.nintendo.com/fr-fr/404.html" hreflang="fr-FR">
+			<link rel="alternate" href="https://www.nintendo.com/fr-be/404.html" hreflang="fr-BE">
+			<link rel="alternate" href="https://www.nintendo.com/fr-ch/404.html" hreflang="fr-CH">
+			<link rel="alternate" href="https://www.nintendo.com/es-es/404.html" hreflang="es-ES">
+			<link rel="alternate" href="https://www.nintendo.com/nl-nl/404.html" hreflang="nl-NL">
+			<link rel="alternate" href="https://www.nintendo.com/nl-be/404.html" hreflang="nl-BE">
+			<link rel="alternate" href="https://www.nintendo.com/it-it/404.html" hreflang="it-IT">
+			<link rel="alternate" href="https://www.nintendo.com/it-ch/404.html" hreflang="it-CH">
+			<link rel="alternate" href="https://www.nintendo.com/pt-pt/404.html" hreflang="pt-PT">
+			<link rel="alternate" href="https://www.nintendo.com/en-za/404.html" hreflang="en-ZA">
+	<script src="https://www.nintendo.com/eu/media/bootstrap_js/ms/jquery/jquery.min.js"></script>
+	<style>.async-hide { opacity: 0 !important} </style>
+<script>
+window.gtmConfig = {
+	container: 'GTM-KBLT7XW',
+	loadOptimizeHidingSnippet: true,
+	loadHideAsync: false,
+	tagManagerContainers: 'GTM-KBLT7XW',
+	measurementID: 'UA-45712801-42',
+	optimizeContainers: 'GTM-PN5PNSC'
+}
+window.enableGA4 = true
+</script>
+<script src="https://www.nintendo.com/eu/media/js/gtm_init_script.js"></script>
+	<script src="https://www.nintendo.com/eu/media/js/consent_banner_script.js"></script>
+	<script type="text/javascript">
+	function OptanonWrapper() {
+  		loadGTM()
+	}
+	</script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	const userData = getCookieUserData()
+	window.dataLayer.push({
+		event: "page_view_meta",
+		page_view_meta: {
+			"page_id": "611343",
+			"locale_code": "en_GB",
+			"page_template": "standard",
+	        "page_category_main": undefined,
+	        "page_category_sub": undefined,
+	        "page_category_sub_sub": undefined,
+	        "user_id": userData.user_id || undefined,
+	        "page_title_master": "404 – I AM ERROR",
+	        "website_type": "Mothership",
+	        "original_location": window.location.href,
+	        "page_tag": undefined
+	   }
+	});
+</script>
+<script>
+var dataLayer = window.dataLayer || [];
+dataLayer.push({
+    'event': 'virtPath', 
+    'virtPath': '/404.html/from=' + document.referrer
+});
+</script>
+		<script>
+			var locale = "EN_GB";
+		</script>
+		<script>
+			var nindoContent = {
+				youTubeVideos: []
+			};
+		</script>
+<script>
+var countryList = {
+'AT': {
+'masterLanguage': 'Austria',
+'locale': 'Austria'
+}
+,'BE': {
+'masterLanguage': 'Belgium',
+'locale': 'Belgium'
+}
+,'BG': {
+'masterLanguage': 'Bulgaria',
+'locale': 'Bulgaria'
+}
+,'HR': {
+'masterLanguage': 'Croatia',
+'locale': 'Croatia'
+}
+,'CY': {
+'masterLanguage': 'Cyprus',
+'locale': 'Cyprus'
+}
+,'CZ': {
+'masterLanguage': 'Czech Republic',
+'locale': 'Czech Republic'
+}
+,'DK': {
+'masterLanguage': 'Denmark',
+'locale': 'Denmark'
+}
+,'EE': {
+'masterLanguage': 'Estonia',
+'locale': 'Estonia'
+}
+,'FI': {
+'masterLanguage': 'Finland',
+'locale': 'Finland'
+}
+,'FR': {
+'masterLanguage': 'France',
+'locale': 'France'
+}
+,'DE': {
+'masterLanguage': 'Germany',
+'locale': 'Germany'
+}
+,'GR': {
+'masterLanguage': 'Greece',
+'locale': 'Greece'
+}
+,'HU': {
+'masterLanguage': 'Hungary',
+'locale': 'Hungary'
+}
+,'IE': {
+'masterLanguage': 'Ireland',
+'locale': 'Ireland'
+}
+,'IT': {
+'masterLanguage': 'Italy',
+'locale': 'Italy'
+}
+,'LV': {
+'masterLanguage': 'Latvia',
+'locale': 'Latvia'
+}
+,'LT': {
+'masterLanguage': 'Lithuania',
+'locale': 'Lithuania'
+}
+,'LU': {
+'masterLanguage': 'Luxembourg',
+'locale': 'Luxembourg'
+}
+,'MT': {
+'masterLanguage': 'Malta',
+'locale': 'Malta'
+}
+,'NL': {
+'masterLanguage': 'Netherlands',
+'locale': 'Netherlands'
+}
+,'NO': {
+'masterLanguage': 'Norway',
+'locale': 'Norway'
+}
+,'PL': {
+'masterLanguage': 'Poland',
+'locale': 'Poland'
+}
+,'PT': {
+'masterLanguage': 'Portugal',
+'locale': 'Portugal'
+}
+,'RO': {
+'masterLanguage': 'Romania',
+'locale': 'Romania'
+}
+,'RU': {
+'masterLanguage': 'Russia',
+'locale': 'Russia'
+}
+,'SK': {
+'masterLanguage': 'Slovakia',
+'locale': 'Slovakia'
+}
+,'SI': {
+'masterLanguage': 'Slovenia',
+'locale': 'Slovenia'
+}
+,'ZA': {
+'masterLanguage': 'South Africa',
+'locale': 'South Africa'
+}
+,'ES': {
+'masterLanguage': 'Spain',
+'locale': 'Spain'
+}
+,'SE': {
+'masterLanguage': 'Sweden',
+'locale': 'Sweden'
+}
+,'CH': {
+'masterLanguage': 'Switzerland',
+'locale': 'Switzerland'
+}
+,'GB': {
+'masterLanguage': 'United Kingdom',
+'locale': 'United Kingdom'
+}
+}
+</script>
+	<link rel="shortcut icon" href="https://www.nintendo.com/eu/media/images/01_website_elements/icons/favicon.ico">
+	<link rel="shortcut icon" href="https://www.nintendo.com/eu/media/images/01_website_elements/icons/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" sizes="57x57" href="https://www.nintendo.com/eu/media/images/01_website_elements/icons/Nintendo_Website_icon_57x57.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://www.nintendo.com/eu/media/images/01_website_elements/icons/Nintendo_Website_icon_72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://www.nintendo.com/eu/media/images/01_website_elements/icons/Nintendo_Website_icon_114x114.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="https://www.nintendo.com/eu/media/images/01_website_elements/icons/Nintendo_Website_icon_144x144.png">
+			<link rel="canonical" href="https://www.nintendo.com/en-gb/404.html">
+
+	<meta property="og:site_name" content="Nintendo of Europe SE">
+	<meta property="fb:admins" content="nintendoadmin">
+	<meta property="fb:pages" content="327378310689790">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="en_GB">
+	<meta property="og:url" content="https://www.nintendo.com/en-gb/404.html">
+	<meta itemprop="name" property="og:title" content="404 &ndash; I AM ERROR">
+	<meta itemprop="description" property="og:description" content="Visit Nintendo UK's official website for everything you need to know about Nintendo!">
+	<meta property="og:image" content="
+https://www.nintendo.com/eu/media/images/10_share_images/others_3/404_error_pages/H2x1_404_Do_a_barrel_roll_page_enGB_image1280w.jpg">
+	<meta itemprop="image" property="og:image:secure_url" content="
+https://www.nintendo.com/eu/media/images/10_share_images/others_3/404_error_pages/H2x1_404_Do_a_barrel_roll_page_enGB_image1280w.jpg">
+	<meta name="twitter:title" content="404 &ndash; I AM ERROR">
+	<meta name="twitter:description" content="Visit Nintendo UK's official website for everything you need to know about Nintendo!">
+	<meta name="twitter:site" content="@NintendoUK">
+
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://www.nintendo.com/eu/media/images/10_share_images/others_3/404_error_pages/H2x1_404_Do_a_barrel_roll_page_enGB.jpg">
+   	 	<link href="https://www.nintendo.com/eu/media/styles/css/bootstrap_rd.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.typekit.net/oxq4edb.css">
+		<link href="https://www.nintendo.com/eu/media/styles/css/pl-main.css" rel="stylesheet">
+	<link href="https://www.nintendo.com/eu/media/quiz/css/chunk-common.css" rel="stylesheet">
+	<link href="https://www.nintendo.com/eu/media/quiz/css/quiz.css" rel="stylesheet">
+	<link href="https://www.nintendo.com/eu/media/quiz/css/carousel.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.nintendo.com/eu/media/css_1/ab_style.css">
+	<script type="text/javascript" src="https://www.nintendo.com/eu/media/js/ab_script.js"></script>
+	<script type="text/javascript" src="https://www.nintendo.com/eu/media/js/survey_config.js"></script>
+  </head>
+	<body class="rd8">
+	<div class="templateContainer">
+	<ul id="VC_myNintendoStoreMenuLinks">
+		<div>
+<li>
+<a href="/en-gb/My-Nintendo-Store/Settings-services/Overview-1311782.html" id="scndlvl_storeaccount_Overview" title="Overview">
+Overview
+</a>
+</li>
+<li>
+<a href="/en-gb/My-Nintendo-Store/Settings-services/Orders-1311781.html" id="scndlvl_storeaccount_Orders" title="Orders">
+Orders
+</a>
+</li>
+<li>
+<a href="/en-gb/My-Nintendo-Store/Settings-services/Address-book-1311780.html" id="scndlvl_storeaccount_Addressbook" title="Address book">
+Address book
+</a>
+</li>
+<li>
+<a href="https://accounts.nintendo.com/" id="scndlvl_storeaccount_NintendoAccountdetails" title="Nintendo Account details" target="nintendo">
+Nintendo Account details
+</a>
+</li>
+		</div>
+	</ul>
+	<script type="text/x-template" id="VC_gameRecomendationCard">
+<li class="page-list-group-item col-xs-6 col-sm-4 col-md-4 col-lg-3" :data-nsuid="gameNSUID[0]" data-price-context="shopping" :data-nt-item-title="gameData.title" :data-nt-item-title-master="gameData.title_master_s">
+		<div class="row page-container">
+			<div class="col-xs-12 col-sm-12 page-img ">
+		<a :href="gameData.url" v-ninviewport="itemInViewport" @click="itemClicked">
+<div data-component="red-cap" class="plm-red-cap " v-if="gameData?.originally_for_t === 'BEE'" ></div> <img class="img-responsive" :src="gameData.image_url_sq_s" v-bind:data-xs="gameData.image_url_sq_s" v-bind:data-sm="gameData.image_url_sq_s" :alt="gameData.title" > <noscript><img class="img-responsive" :src="gameData.image_url_sq_s" :alt="gameData.title" ></noscript>
+	</a>
+			</div>
+		<div class="col-xs-12 col-sm-12 page-info">
+		<a :href="gameData.url" v-ninviewport="itemInViewport" @click="itemClicked">
+					<p
+						class="page-title"
+					>{{ gameData.title }}</p>
+					<p class="page-data">
+						{{ gameSystem }}
+					</p>
+<p v-if="isPrice" class="price-small">
+	<span data-price-from-label v-if="isMultipleNSUIDs">Starting from: </span>
+	<span data-price v-if="isDiscount" class="original-price">{{ regularPrice }}</span><span v-bind="{'data-discount' : isDiscount}" v-bind:class="{'discount' : isDiscount}">{{ lowestPrice }}</span>
+</p>
+					<p class="page-description"
+							v-html="gameData.excerpt"
+						>
+							<span>gameData.excerpt</span>
+					</p>
+	</a>
+				<vc-wishlist-button
+						:nsuid="gameNSUID[0]" 
+					system-variants=""
+					tracking-context="Gamecard"
+					:only-icon="true"
+	              	class="price-box-btn-wrapper--wishlist"
+	           	></vc-wishlist-button>
+		</div>
+	</div>		
+</li>
+	</script>
+	<script type="text/x-template" id="VC_wishlistCards">
+	<div>
+		<div class="row page-group-list" v-bind:class="{'cards-with-overlay': isLoginStateCalculated && !isUserLoggedIn }" data-nt-item-list-title="Wishlist" data-nt-item-list-id="wishlist">
+			<div class="content-section-header lowercase">
+				<div class="content-section-header__container">
+					<h2 class="content-section-header__title">{{ texts.sectionHeaderTitle }}</h2>
+				</div>
+			</div>
+		  	<div v-if="!pricesFetched || !isUserLoggedIn">
+		 		<div is="VC_placeholderCards"></div>
+			</div>
+			<div v-if="isLoginStateCalculated && !isUserLoggedIn" class="cards-overlay">
+	          <slot name="signed-out"></slot>
+	<button class="pla-btn pla-btn--primary" @click='showLogin'>{{ texts.signedOut.btnLabel }}</button>
+	        </div>
+			<ul v-if="pricesFetched" class="results tc-xs-grid card-grid">
+<li class="page-list-group-item col-xs-6 col-sm-4 col-md-4 col-lg-3" :data-nsuid="item.nsuid_txt[0]" data-price-context="shopping" :data-nt-item-title="item.title" :data-nt-item-title-master="item.title_master_s" v-for="(item, key, index) in finalWishlistItems">
+		<div class="row page-container">
+			<div class="col-xs-12 col-sm-12 page-img ">
+		<a :href="item.url">
+<div data-component="red-cap" class="plm-red-cap " v-if="item?.originally_for_t === 'BEE'" ></div> <img class="img-responsive" :src="item.image_url_sq_s || item.image_url" v-bind:data-xs="item.image_url_sq_s || item.image_url" v-bind:data-sm="item.image_url_sq_s || item.image_url" :alt="item.title" > <noscript><img class="img-responsive" :src="item.image_url_sq_s || item.image_url" :alt="item.title" ></noscript>
+	</a>
+			</div>
+		<div class="col-xs-12 col-sm-12 page-info">
+		<a :href="item.url">
+					<p
+						class="page-title"
+					>{{ item.title }}</p>
+					<p class="page-data">
+						{{ item.system_names_txt ? item.system_names_txt[0] : item.pretty_date_s }}
+					</p>
+<p v-if="item.priceResults.isPrice" class="price-small">
+	<span data-price-from-label v-if="item.priceResults.isMultipleNSUIDs">Starting from: </span>
+	<span data-price v-if="item.priceResults.isDiscount" class="original-price">{{ item.priceResults.regularPrice }}</span><span v-bind="{'data-discount' : item.priceResults.isDiscount}" v-bind:class="{'discount' : item.priceResults.isDiscount}">{{ item.priceResults.lowestPrice }}</span>
+</p>
+	</a>
+				<vc-wishlist-button
+						:nsuid="item.nsuid_txt[0]" 
+					system-variants=""
+					tracking-context="Gamecard"
+					:only-icon="true"
+	              	class="price-box-btn-wrapper--wishlist"
+	           	></vc-wishlist-button>
+		</div>
+	</div>		
+</li>
+<vc-plm-card-filler
+	v-if="showFillerComponent"
+	:btn-label="cardFillerText.btnLabel"
+	:btn-href="cardFillerText.btnHref"
+	:title="cardFillerText.header">
+	<slot v-if="isFillerForEmptyList" name="card-filler-description-no-items"></slot><slot v-else name="card-filler-description"></slot>
+</vc-plm-card-filler>
+			</ul>
+			<template v-if="showSeeMore">
+<div
+	class="plm-content-section-footer ">
+<a 
+		:href="texts.seeMoreHref" class="pla-link pla-link--meta" :title="texts.seeMoreText"
+	>
+	<span class="pla-link__text pla-link__text--icon-right">{{ texts.seeMoreText }}</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-link__icon pla-link__icon--right" ><path d="M47.973 24a3.927 3.927 0 0 1-1.113 2.753L26.846 46.862a3.825 3.825 0 0 1-5.427 0L20.062 45.5a3.87 3.87 0 0 1 0-5.454L35.98 24 20.062 7.947a3.87 3.87 0 0 1 0-5.454l1.357-1.364a3.824 3.824 0 0 1 5.427 0L46.86 21.242A4.175 4.175 0 0 1 47.973 24zm-18.938 0a3.926 3.926 0 0 1-1.113 2.753L7.908 46.862a3.825 3.825 0 0 1-5.428 0L1.124 45.5a3.87 3.87 0 0 1 0-5.454L17.042 24 1.124 7.947a3.87 3.87 0 0 1 0-5.454l1.357-1.364a3.825 3.825 0 0 1 5.428 0l20.013 20.113A4.174 4.174 0 0 1 29.035 24z"/></svg>
+</a>
+</div>
+			</template>
+		</div>
+	</div>
+</script>
+	<script type="text/x-template" id="VC_eshopCharts">
+	<div>
+		<div class="row page-group-list" data-nt-item-list-title="eShop Charts" data-nt-item-list-id="eshop_charts">
+		  	<div v-if="!gamesFetched">
+		 		<div is="VC_placeholderCards"></div>
+			</div>
+			<ul v-if="gamesFetched" class="results tc-xs-grid card-grid">
+<li class="page-list-group-item col-xs-6 col-sm-4 col-md-4 col-lg-3" :data-nsuid="item.nsuid_txt[0]" data-price-context="shopping" :data-nt-item-title="item.title" :data-nt-item-title-master="item.title_master_s" v-for="(item, index) in eshopGames">
+		<div class="row page-container">
+			<div class="col-xs-12 col-sm-12 page-img ">
+		<a :href="item.url">
+<div data-component="red-cap" class="plm-red-cap " v-if="item?.originally_for_t === 'BEE'" ></div> <img class="img-responsive" :src="item.image_url_h16x9_s || item.image_url_h2x1_s || item.image_url" v-bind:data-xs="item.image_url_h16x9_s || item.image_url_h2x1_s || item.image_url" v-bind:data-sm="item.image_url_h16x9_s || item.image_url_h2x1_s || item.image_url" :alt="item.title" > <noscript><img class="img-responsive" :src="item.image_url_h16x9_s || item.image_url_h2x1_s || item.image_url" :alt="item.title" ></noscript>
+	</a>
+			</div>
+		<div class="col-xs-12 col-sm-12 page-info">
+		<a :href="item.url">
+					<p
+						class="page-title"
+					>{{ index + 1 }} - {{ item.title }}</p>
+					<p class="page-data">
+						{{ item.system_names_txt ? item.system_names_txt[0] : item.pretty_date_s }}
+					</p>
+<p  class="price-small">
+	<span data-price-from-label class="hidden">Starting from: </span>
+	<span data-price ></span><span data-discount class="discount" ></span>
+</p>
+	</a>
+				<vc-wishlist-button
+						:nsuid="item.nsuid_txt[0]" 
+					system-variants=""
+					tracking-context="Gamecard"
+					:only-icon="true"
+	              	class="price-box-btn-wrapper--wishlist"
+	           	></vc-wishlist-button>
+		</div>
+	</div>		
+</li>
+			</ul>			
+		</div>
+	</div>
+</script>
+	<script type="text/x-template" id="VC_button">
+  <a href="#" @click="clicked">
+  	<slot name="label">{{ label }}</slot>
+    <slot name="loader"></slot>
+  </a>
+</script>
+	<script type="text/x-template" id="VC_digitalPurchaseButton">
+  <vc-button
+  	v-if="isPurchase"
+  	@clicked="purchaseGame"
+  	:label="btnPurchaseLabel"
+  	class="pla-btn pla-btn--white pla-btn--lg pla-btn--block"
+  	:class="{'pla-btn--xl': large}"
+  	></vc-button>
+</script>
+	<script type="text/x-template" id="VC_digitalPurchaseDisclaimers">
+  <div v-if="isDisclaimer" class="plb-text--sm">
+    <template v-if="inline">
+      <span v-if="isPreorder && isGameOwned">{{preorderOwnedMsg}}.</span>
+      <span v-if="isPreorder && isGameOwned && isPurchasableDLCs">. </span>
+      <span v-if="isPurchasableDLCs">{{purchasableDLCsMsg}}</span>
+    </template>
+    <template v-else>
+ 	  <p v-if="isPreorder && isGameOwned">{{preorderOwnedMsg}}</p>
+      <p v-if="isPurchasableDLCs">{{purchasableDLCsMsg}}</p>
+    </template>
+  </div>
+</script>
+	<script type="text/x-template" id="VC_digitalPurchaseErrors">
+	<div v-if="isError">
+	  <p><span>!</span>{{errorHeader}}</p>
+	  <p>{{errorMsg}}</p>
+	  <a :href="errorMsgLnk" class="link-group-item"><span class="arrow-left"></span>{{errorMsgLnkLabel}}</a>
+	</div>
+</script>
+	<script type="text/x-template" id="VC_digitalPurchaseInformation">
+  <div v-if="isInfo">
+    <p><span>!</span>{{infoHeader}}</p>
+    <p>{{infoMsg}}</p>
+    <a :href="infoMsgLnk" class="link-group-item"><span class="arrow-left"></span>{{infoMsgLnkLabel}}</a>
+  </div>
+</script>
+	<script type="text/x-template" id="VC_justForYouBadge">
+  <div v-if="isPersonalDiscount">
+    <img class="img-responsive" :src="miiIconURL" alt="mii_icon">
+    <span>{{personalDiscountHeader}}</span>
+  </div>
+</script>
+	<style>
+  .small-loader.initial {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+  }
+</style>
+<script type="text/x-template" id="VC_loader">
+  <transition name="loader-ani">
+    <span v-if="initial" :class="{'small-loader initial': small, initialClass: initialClass}">
+      <slot name="initial"></slot>
+    </span>
+    <span v-if="loading" :class="{'loader-btn-ani': small, loadingClass: loadingClass}">
+      <slot name="loading"></slot>
+    </span>
+    <span v-if="completed" :class="{'checkmark-ani': small, completedClass: completedClass}">
+      <slot name="completed">
+        <template v-if="small">
+          <svg style="width: 10px; height: 10px; position: relative; left: 10px; margin: 0px;"
+	version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	viewBox="0 0 400 400"
+	enable-background="new 0 0 400 400"
+	xml:space="preserve">
+		<g><polyline fill="none" stroke="#fff" stroke-width="100" stroke-linecap="round" stroke-miterlimit="10" points="350,50 150,325 50,250"></polyline></g>
+</svg>
+        </template>
+      </slot>
+    </span>
+  </transition>
+</script>
+<script type="text/x-template" id="VC_price"> <div v-if="isPrice"> <div class="plm-price__original" v-if="isDiscount"> {{priceOld}} </div> <div class="plm-price__main"> {{priceCurrent}}<span class="plm-price__discount" v-if="isDiscount">{{priceDiscountPercentage}}</span> </div> <div class="plm-price__disclaimer" v-if="isEndDate"> {{endDateMsg}} </div> </div> </script>
+	<script type="text/x-template" id="VC_priceInformation">
+  <div v-if="isPrice">
+    <template v-if="inline">
+      <div class="plm-price__disclaimer"><span v-if="!isFree">{{priceOnEShopMsg}} ({{priceTaxMsg}})</span><span v-if="!isFree && !minimum">. </span><span v-if="!minimum">{{downloadVersionMsg}}</span><span v-if="!isFree && isMoreInfo || !minimum && isMoreInfo">. </span><slot name="moreinfo"></slot></div>
+    </template>
+    <template v-else>
+      <div v-if="!isFree">
+        <div class="plm-price__disclaimer"><span>{{priceOnEShopMsg}} ({{priceTaxMsg}})</span></div>
+        <slot name="moreInfo"></slot>
+      </div>
+    </template>
+  </div>
+</script>
+	<script type="text/x-template" id="VC_specialDemoDownloadButton">
+  <vc-button v-if="isDemoSpecial" @clicked="downloadSpecialDemo" :label="btnDemoLabel" class="btn price-box-btn" :class="{'btn-lg': large, 'btn-primary': primary}"></vc-button>
+</script>
+	<script type="text/x-template" id="VC_standardDemoDownloadButton">
+  <vc-button v-if="isDemoStandard" @clicked="downloadStandardDemo" :label="btnDemoLabel" class="btn price-box-btn" :class="{'btn-lg': large, 'btn-primary': primary}">
+    <template v-slot:loader>
+      <vc-loader
+        v-if="loader"
+          small
+        :initial="isDemoStandardButtonInitial"
+        :loading="isDemoStandardButtonLoading"
+        :completed="isDemoStandardButtonLoadingCompleted">
+      </vc-loader>
+    </template>
+  </vc-button>
+</script>
+	<script type="text/x-template" id="VC_trialDownloadButton">
+	<div v-if="showTrialButton">
+		<vc-button @clicked="downloadTrial" :label="btnTrialLabel" class="btn price-box-btn price-box-btn--trial" :class="{'btn-lg': large, 'btn-primary': primary}"></vc-button>
+		<p class="price-box-disclaimer">{{ trialDatesLabel }}</p>
+	</div>
+</script>
+	<script type="text/x-template" id="VC_systemVariantPicker">
+  <div v-if="isMultipleSystemVariants" class="plo-digital-price-box__variants">
+    <button v-if="isPurchasableVariant" v-for="(item, nsuid) in systemVariants" 
+    	v-on:click="setIndexCurrentByNSUID(nsuid)" 
+    	class="pla-btn plo-digital-price-box__variant-btn pla-btn--xs" 
+    	:class="[{ 'plo-digital-price-box__variant-btn--active': item.isActive }, buttonClasses]"
+    	>{{item.label}}</button>
+  </div>
+</script>
+	<script type="text/x-template" id="VC_wishlistButton">
+	<div v-if="showWishlistButton">
+	    <vc-button v-if="onlyIcon" @click.stop.prevent.native="buttonAction" class="pla-btn pla-btn--icon-only pla-btn--with-icon pla-btn--light-gray" :large="false" :class="{'disabled': isProcessingState}">
+	      <template v-slot:label><vc-pla-icon class="pla-btn__icon" :icon="icon"></vc-pla-icon></template>
+		</vc-button>
+	    <vc-button v-else @click.stop.prevent.native="buttonAction" class="btn price-box-btn btn-wishlist" :large="large" :class="{'disabled': isProcessingState}">
+			<template v-slot:label>{{ btnLabel }}</template>
+		</vc-button>
+	</div>
+</script>
+	<script type="text/x-template" id="VC_priceBoxStandard">
+  <div data-price-box="wrapper" class="game_info col-xs-12" v-if="showPriceBox">
+    <div class="row game_info_container">
+      <div class="col-xs-12">
+        <div class="row" 
+        	:class="{'price-box-item-top': isBreakpointSM, 'price-box-item-bottom': isBreakpointSM, 'price-box-sm-wrapper': isBreakpointSM}">
+          <template v-if="isShowPurchaseContent">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+              <vc-plo-mns-price-box class="row plu-mb-2"></vc-plo-mns-price-box>  
+              <vc-digital-purchase-errors
+              	data-price-box="error" 
+              	class="row price-box-item price-box-item-top price-box-item-bottom">
+              </vc-digital-purchase-errors>
+	          <div class="row plo-digital-price-box" v-if="showEshopPurchaseBox">
+          	  	  <div v-if="showHeadlineText" class="plo-digital-price-box__headline">
+          	  		{{ eshopPriceboxHeadline }}
+          	  	  </div>
+	          	  <template v-else>
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="6em" viewBox="0 0 300 50" class="pla-svg-icon plo-digital-price-box__logo" ><path d="M37.4 11.15V7.59A7.6 7.6 0 0029.8 0h-6.85a7.6 7.6 0 00-7.6 7.6v3.55H2.5L-.01 50h52.76l-2.51-38.85zM19.15 7.59a3.8 3.8 0 013.8-3.8h6.87a3.8 3.8 0 013.8 3.8v3.56H19.15zM4.04 46.21l2.03-31.28h9.28v7.2a.27.27 0 00.27.27h3.25a.27.27 0 00.27-.27v-7.2h14.48v7.2a.27.27 0 00.27.27h3.25a.27.27 0 00.27-.27v-7.2h9.28l2.02 31.28zM136.5 26.93a8.45 8.45 0 00.04 16.9 8.45 8.45 0 007.55-4.37l-3.79-1.33a4.53 4.53 0 01-3.8 1.8 4.07 4.07 0 01-3.97-3.1h9.4c2.02 0 3.05-.4 3.05-1.9a8.45 8.45 0 00-8.48-8zm-3.9 6.73a4.04 4.04 0 013.97-2.82 4.14 4.14 0 014.07 2.82zm-23.77-6.73a5.46 5.46 0 00-4.23 1.85h-.05v-1.35h-4.63v15.9h4.63V35.6c0-3.1 1.69-4.43 3.6-4.43 1.32 0 3.34.84 3.34 3.97v8.2h4.64v-8.54c0-5.35-3.7-7.86-7.3-7.86zm15.83-3.9h-4.62v4.4h-3.1v3.74h3.1v12.16h4.62V31.17h3.13v-3.75h-3.13zM92.2 43.34h4.64v-15.9H92.2zm2.32-23.4a2.7 2.7 0 102.7 2.7 2.7 2.7 0 00-2.7-2.69zM83.7 34.8l-9.4-12.33a3.44 3.44 0 00-2.64-1.67 2.44 2.44 0 00-2.7 2.6v19.94h4.98V29.48l9.39 12.34a3.44 3.44 0 002.64 1.66 2.44 2.44 0 002.7-2.6V20.95H83.7zm108.08-7.86a8.45 8.45 0 108.5 8.45 8.48 8.48 0 00-8.5-8.45zm0 12.73a4.28 4.28 0 114.2-4.27 4.24 4.24 0 01-4.2 4.27zm-14.7-11.07H177a5.87 5.87 0 00-4.27-1.66 8.45 8.45 0 000 16.9 5.86 5.86 0 004.27-1.67h.08v1.17h4.63V20.94h-4.63zm-4.2 11.09a4.3 4.3 0 010-8.6 4.3 4.3 0 010 8.6zm-17.41-12.75a5.45 5.45 0 00-4.23 1.85h-.05v-1.35h-4.63v15.9h4.63V35.6c0-3.1 1.68-4.43 3.6-4.43 1.32 0 3.34.84 3.34 3.97v8.2h4.63v-8.54c0-5.35-3.7-7.86-7.3-7.86zm65.77-3.07l3.1-4.92a.07.07 0 00-.03-.1l-2.26-.82a.07.07 0 00-.1.05l-.8 5.76a.05.05 0 00.04.06.05.05 0 00.05-.02zm70.35 3.07a5.87 5.87 0 00-4.27 1.66h-.08v-1.17h-4.63v22.4h4.63v-7.65h.08a5.87 5.87 0 004.26 1.65 8.45 8.45 0 000-16.89zm-.16 12.75a4.3 4.3 0 010-8.6 4.3 4.3 0 010 8.6zm-72.14-16a.05.05 0 00.04-.04l.42-5.8a.07.07 0 00-.08-.08l-2.38.34a.07.07 0 00-.06.09l2 5.46a.05.05 0 00.06.04zm35.9 3.25a5.46 5.46 0 00-4.23 1.85h-.05v-7.84h-4.62v22.4h4.62v-7.75c0-3.1 1.69-4.42 3.6-4.42 1.33 0 3.35.83 3.35 3.96v8.2h4.63V34.8c0-5.35-3.7-7.86-7.3-7.86zm17.36 0a8.45 8.45 0 108.5 8.45 8.48 8.48 0 00-8.5-8.45zm0 12.73a4.28 4.28 0 114.2-4.28 4.24 4.24 0 01-4.2 4.28zm-46.37-19.49l-3.42 4.71a.05.05 0 000 .07.05.05 0 00.06 0l5.05-2.9a.07.07 0 00.02-.1l-1.6-1.79a.07.07 0 00-.12.02zm-8.72 19.54a4.71 4.71 0 01-3.5-1.47l9.3-5.4c2-1.14 2.92-2.14 2.06-3.63a10.53 10.53 0 00-8.33-4.33 9.65 9.65 0 00-9.35 9.59c0 5.42 4.76 9.6 9.98 9.6A9.1 9.1 0 00227 35.6h-4.78a4.6 4.6 0 01-4.75 4.11zm-.15-10.7a4.57 4.57 0 013.24 1.33l-8.36 4.82A5.2 5.2 0 01217.3 29zm20.4.9c-2.22-.75-3.92-1.3-3.92-2.86 0-1.04.92-2.03 2.62-2.03a5.3 5.3 0 013.57 1.59l3.82-2.65a9.87 9.87 0 00-7.32-3.68c-4.06 0-7.55 2.97-7.55 6.84 0 2.9 1.95 5.63 6.03 6.98 2.56.84 4.16 1.36 4.16 2.99a2.4 2.4 0 01-2.53 2.14c-1.7 0-3.1-1.15-4.18-2.1l-4.06 2.82a11.49 11.49 0 008.12 4.04 7.31 7.31 0 007.6-7.01c0-2.77-1.56-5.48-6.36-7.07z"/></svg>
+	          	  </template>
+	              <vc-system-variant-picker></vc-system-variant-picker>
+	              <div class="plm-price plm-price--white">
+		              <vc-price></vc-price>
+		              <vc-price-information></vc-price-information>
+	              </div>
+	              <div v-if="isDisclaimer">
+	                <hr v-if="isPrice" class="plo-digital-price-box__hr"></hr>
+	                <vc-digital-purchase-disclaimers></vc-digital-purchase-disclaimers>
+	              </div>
+	              <div v-if="isPurchase">
+	                <vc-digital-purchase-button></vc-digital-purchase-button>
+	              </div>
+              </div>
+              <div v-if="isWishList || showTrialButton || isDemo" class="row price-box__action-wrapper">
+              	<p v-if="isWishList" class="price-box__action-heading">Want to buy later?</p>
+              	<vc-wishlist-button
+              		label-remove="Remove from Wish List"
+	              	label-add="Add to Wish List"
+	              	class="price-box-btn-wrapper--wishlist"
+            	  ></vc-wishlist-button>
+              	<p v-if="showTrialButton || isDemo" class="price-box__action-heading">Try for free</p>
+                <vc-trial-download-button class="price-box-btn-wrapper--trial"></vc-trial-download-button>
+              	<div v-if="isDemo" class="price-box-btn-wrapper--demo" data-price-box="demo_btn">
+	              <vc-standard-demo-download-button></vc-standard-demo-download-button>
+	              <vc-special-demo-download-button></vc-special-demo-download-button>
+	            </div>
+              </div>
+              <div v-if="isBenefits" data-price-box="benefits" class="row price-box-item price-box-item-bottom">
+                <hr v-if="!isFree" />
+                <a href="#game-disclaimer-anchor" class="link-group-item">
+                	What you need to know
+                </a>
+                <a href="https://www.nintendo.co.uk/Support/Nintendo-Switch/How-to-Purchase-or-Pre-Order-Nintendo-eShop-Games-on-the-Official-Nintendo-Website-1379032.html" class="link-group-item">
+                	Got stuck? Get help!
+                </a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">  
+              <vc-digital-purchase-information 
+              	data-price-box="info" 
+              	class="row price-box-item price-box-item-top price-box-item-bottom">
+              </vc-digital-purchase-information>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+	<script type="text/x-template" id="VC_priceBoxOverlay">
+  <div data-price-box="wrapper" class="game_info overlay__game-info">
+    <img v-if="imgSrc" :src="imgSrc" class="img-responsive visible-lg" :alt="imgAlt"></img>
+    <div class="row overlay__text-container overlay__text-container--top">
+      <div class="col-xs-12">
+        <div class="row">
+          <div v-if="!isConfirmationScreen">
+<div>
+  <p v-if="isDemoCampaign" class="overlay__pre-headline">Download the demo for</p>
+  <h2 class="overlay__headline">{{ headline }}</h2>
+  <p v-if="isDemoCampaign || isTrialCampaign" class="overlay__text">
+    <template v-if="isDescription">
+      <span v-html="sanitizedDownloadDescription"></span>
+    </template>
+    <template v-else>
+
+    </template>
+  </p>
+</div>
+            <template v-if="showPurchaseContent">
+              <div class="col-xs-12">
+				<template v-if="isDemoCampaign">
+					<div v-if="isDemo" data-price-box="demo_btn" class="row price-box-item">
+						<vc-standard-demo-download-button @download-success="showConfirmationScreen" large primary></vc-standard-demo-download-button>
+						<vc-special-demo-download-button large primary></vc-special-demo-download-button>
+					</div>
+				</template>
+				<template v-if="isTrialCampaign">
+					<div v-if="isTrial" data-price-box="trial_btn" class="row price-box-item">
+						<vc-trial-download-button class="price-box-btn-wrapper--trial" large primary></vc-trial-download-button>
+					</div>
+				</template>
+				<div class="row price-box-item price-box-item-bottom overlay__link-group">
+					<a href="#" class="link-group-item overlay__link modal-link" @click="closeOverlay('#game-disclaimer-anchor')">What you need to know</a>
+				</div>
+              </div>
+            </template>
+          </div>
+          <div v-if="isConfirmationScreen">
+            <div class="col-xs-12">
+              <div class="row price-box-item">
+                <h2 class="overlay__headline">{{ confirmationScreenHeadline }}</h2>
+                <p v-if="confirmationScreenDescription && hasMissionSucceeded" class="overlay__text">{{ confirmationScreenDescription }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+	<script type="text/x-template" id="VC_odp_actions">
+	<div>
+		<slot :isPurchase="isPurchase" :isDemo="isDemo"></slot>
+	</div>
+</script>
+<script type="text/x-template" id="VC_pageNavigation">
+<div>
+	<div :style="stickyPadding"></div>
+	  <nav class="plo-page-nav"
+		  :class="{ 'plo-page-nav--is-sticky': isSticky, 'plo-page-nav--is-open': isOpen }"
+		  data-component="plo-page-nav">
+<h1 class="plb-h5 plo-page-nav__page-title">{{ pageTitle }}</h1>
+	    <div class="plo-page-nav__button-row">
+<a role="button" href="#" class="plo-page-nav__toggle" data-toggle="menu" @click.stop.prevent="toggleDropdown" aria-label="Open menu"> <span class="pla-animated-svg-icon pla-menu-icon plo-page-nav__toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__top-line" style="transform: translateY(-0.25em);" ><path d="M0 21L48 21L48 27L0 27L0 9Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__mid-line" style="transform: translateY(0);" ><path d="M0 21L48 21L48 27L0 27L0 21Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__bottom-line" style="transform: translateY(+0.25em);" ><path d="M0 21L48 21L48 27L0 27L0 33Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__rotate-line-left" ><path d="M0 21L48 21L48 27L0 27L0 21Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__rotate-line-right" ><path d="M0 21L48 21L48 27L0 27L0 21Z"/></svg></span>Menu </a>
+						<vc-odp-actions v-show='isMobile && hash !== items[0].link' class="plo-page-nav__highlight-wrapper">
+				        	<template v-slot:default="slotProps">
+								<div class="plo-page-nav__highlight" v-nclick v-if="showNudge && (slotProps.isPurchase || slotProps.isDemo)" v-show="isSticky">
+							        <span class="plo-page-nav__highlight-divider"><svg xmlns="http://www.w3.org/2000/svg" height="60px" width="42px" viewBox="0 0 42 60" class="pla-svg-icon plo-page-nav__highlight-divider-icon" ><g> <rect y="4" width="31" height="52"/> <path d="M31,4h11v52H1L31,4z" fill="#fff"/> <path d="M36,4h6v52H6L36,4z" opacity=".66" fill="currentColor"/> <path d="M41,4h1v52H11L41,4z" fill="currentColor"/> </g></svg></span>
+						        		<vc-button
+						        			v-if='slotProps.isPurchase && slotProps.isDemo'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			:href='items[0].link' :data-toggle='items[0].type' :data-tab-type='items[0].labelType' data-subscribed-to='v-nclick'>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Demo & Purchase Options</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+						        		<vc-button
+						        			v-else-if='slotProps.isPurchase'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			:href='items[0].link' :data-toggle='items[0].type' :data-tab-type='items[0].labelType' data-subscribed-to='v-nclick'>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Purchase Options</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+						        		<vc-button
+						        			v-else-if='slotProps.isDemo'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			:href='items[0].link' :data-toggle='items[0].type' :data-tab-type='items[0].labelType' data-subscribed-to='v-nclick'>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Download Demo</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+					    		</div>
+				    		</template>
+				        </vc-odp-actions>
+						<vc-odp-actions v-show='!isMobile || hash === items[0].link' class="plo-page-nav__highlight-wrapper">
+				        	<template v-slot:default="slotProps">
+								<div class="plo-page-nav__highlight" v-nclick v-if="showNudge && (slotProps.isPurchase || slotProps.isDemo)" v-show="isSticky">
+							        <span class="plo-page-nav__highlight-divider"><svg xmlns="http://www.w3.org/2000/svg" height="60px" width="42px" viewBox="0 0 42 60" class="pla-svg-icon plo-page-nav__highlight-divider-icon" ><g> <rect y="4" width="31" height="52"/> <path d="M31,4h11v52H1L31,4z" fill="#fff"/> <path d="M36,4h6v52H6L36,4z" opacity=".66" fill="currentColor"/> <path d="M41,4h1v52H11L41,4z" fill="currentColor"/> </g></svg></span>
+						        		<vc-button
+						        			v-if='slotProps.isPurchase && slotProps.isDemo'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			v-nscroll-top>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Demo & Purchase Options</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+						        		<vc-button
+						        			v-else-if='slotProps.isPurchase'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			v-nscroll-top>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Purchase Options</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+						        		<vc-button
+						        			v-else-if='slotProps.isDemo'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			v-nscroll-top>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Download Demo</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+					    		</div>
+				    		</template>
+				        </vc-odp-actions>
+
+	    </div>
+	    <div class="plo-page-nav__content-wrapper">
+<h1 class="plb-h5 plo-page-nav__page-title">{{ pageTitle }}</h1>
+	      <div class="plo-page-nav__button-row">
+<a role="button" href="#" class="plo-page-nav__toggle" data-toggle="menu" @click.stop.prevent="toggleDropdown" aria-label="Close menu"> <span class="pla-animated-svg-icon pla-menu-icon plo-page-nav__toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__top-line" style="transform: translateY(-0.25em);" ><path d="M0 21L48 21L48 27L0 27L0 9Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__mid-line" style="transform: translateY(0);" ><path d="M0 21L48 21L48 27L0 27L0 21Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__bottom-line" style="transform: translateY(+0.25em);" ><path d="M0 21L48 21L48 27L0 27L0 33Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__rotate-line-left" ><path d="M0 21L48 21L48 27L0 27L0 21Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__rotate-line-right" ><path d="M0 21L48 21L48 27L0 27L0 21Z"/></svg></span>Menu </a>
+						<vc-odp-actions v-show='isMobile && hash !== items[0].link' class="plo-page-nav__highlight-wrapper">
+				        	<template v-slot:default="slotProps">
+								<div class="plo-page-nav__highlight" v-nclick v-if="showNudge && (slotProps.isPurchase || slotProps.isDemo)" v-show="isSticky">
+							        <span class="plo-page-nav__highlight-divider"><svg xmlns="http://www.w3.org/2000/svg" height="60px" width="42px" viewBox="0 0 42 60" class="pla-svg-icon plo-page-nav__highlight-divider-icon" ><g> <rect y="4" width="31" height="52"/> <path d="M31,4h11v52H1L31,4z" fill="#fff"/> <path d="M36,4h6v52H6L36,4z" opacity=".66" fill="currentColor"/> <path d="M41,4h1v52H11L41,4z" fill="currentColor"/> </g></svg></span>
+						        		<vc-button
+						        			v-if='slotProps.isPurchase && slotProps.isDemo'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			:href='items[0].link' :data-toggle='items[0].type' :data-tab-type='items[0].labelType' data-subscribed-to='v-nclick'>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Demo & Purchase Options</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+						        		<vc-button
+						        			v-else-if='slotProps.isPurchase'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			:href='items[0].link' :data-toggle='items[0].type' :data-tab-type='items[0].labelType' data-subscribed-to='v-nclick'>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Purchase Options</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+						        		<vc-button
+						        			v-else-if='slotProps.isDemo'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			:href='items[0].link' :data-toggle='items[0].type' :data-tab-type='items[0].labelType' data-subscribed-to='v-nclick'>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Download Demo</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+					    		</div>
+				    		</template>
+				        </vc-odp-actions>
+						<vc-odp-actions v-show='!isMobile || hash === items[0].link' class="plo-page-nav__highlight-wrapper">
+				        	<template v-slot:default="slotProps">
+								<div class="plo-page-nav__highlight" v-nclick v-if="showNudge && (slotProps.isPurchase || slotProps.isDemo)" v-show="isSticky">
+							        <span class="plo-page-nav__highlight-divider"><svg xmlns="http://www.w3.org/2000/svg" height="60px" width="42px" viewBox="0 0 42 60" class="pla-svg-icon plo-page-nav__highlight-divider-icon" ><g> <rect y="4" width="31" height="52"/> <path d="M31,4h11v52H1L31,4z" fill="#fff"/> <path d="M36,4h6v52H6L36,4z" opacity=".66" fill="currentColor"/> <path d="M41,4h1v52H11L41,4z" fill="currentColor"/> </g></svg></span>
+						        		<vc-button
+						        			v-if='slotProps.isPurchase && slotProps.isDemo'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			v-nscroll-top>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Demo & Purchase Options</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+						        		<vc-button
+						        			v-else-if='slotProps.isPurchase'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			v-nscroll-top>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Purchase Options</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+						        		<vc-button
+						        			v-else-if='slotProps.isDemo'
+						        			class="pla-link pla-link--meta plo-page-nav__highlight-link"
+						        			v-nscroll-top>
+						        			<template v-slot:label>
+						        				<span class="pla-link__text--icon-right">Download Demo</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 634 512" class="pla-svg-icon pla-link__icon pla-link--meta" ><path d="M310.64,253.48l.39.47L53.11,512,1.35,460.16l202.54-202.5L0,52.27,55.41,0,311.07,253.1Z" style="isolation:isolate" opacity=".33"/> <path d="M472.18,253.48l.38.47L214.64,512l-51.75-51.84,202.54-202.5-204-205.39L217,0,472.61,253.1Z" style="isolation:isolate" opacity=".66"/> <path d="M633.63,253.48l.38.47L376.09,512l-51.75-51.84,202.54-202.5L322.93,52.27,378.4,0,634.05,253.1Z"/></svg>
+						        			</template>
+						        		</vc-button>
+					    		</div>
+				    		</template>
+				        </vc-odp-actions>
+
+	      </div>
+	      <div class="plo-page-nav__nav-content-wrapper" ref="navcontainer">
+		      <div class="plo-page-nav__nav-content">
+		        <ul class="plo-page-nav__items" data-nav-items="bar">
+<li v-for="(item, index) in items" :key="index" v-if='!item.showOnlyIfLoggedIn || (isUserSessionConnected && isWaitingForAlps) || (isUserLoggedIn && !isWaitingForAlps)' :data-key="index" class="plo-page-nav__item" ref="navitem" :class="{ 'plo-page-nav__item--is-active': index === navigationCurrentTab, 'plo-page-nav__item--boundary': index === boundaryIndex && refsBoundaryIndex < refItems.length -1 }"> <a :href="item.link" class="plo-page-nav__link" :class="{ 'activate_microsite': item.isMicrosite }" :data-toggle="item.type === 'tab' ? 'tab' : false" :data-tab-type="item.labelType">{{ item.label }}</a> </li>
+<li class="plo-page-nav__item plo-page-nav__dropdown-toggle"> <a role="button" href="#" class="plo-page-nav__link" data-toggle="menu" @click.stop.prevent="toggleDropdown" aria-label="Show more"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="0.2em" viewBox="0 0 102.4 512" class="pla-svg-icon" ><path d="M0,409.6H102.4V512H0ZM0,204.8H102.4V307.2H0ZM0,0H102.4V102.4H0Z"/></svg></a> </li>
+		        </ul>
+		        <div class="plo-page-nav__dropdown">
+		          <ul class="plo-page-nav__dropdown-items" data-nav-items="dropdown">
+<li v-for="(item, index) in items" :key="index" v-if='!item.showOnlyIfLoggedIn || (isUserSessionConnected && isWaitingForAlps) || (isUserLoggedIn && !isWaitingForAlps)' :data-key="index" class="plo-page-nav__dropdown-item" :class="{ 'plo-page-nav__item--is-active': index === navigationCurrentTab, 'plo-page-nav__dropdown-item--boundary': index === boundaryIndex && refsBoundaryIndex < refItems.length -1 }"> <a :href="item.link" class="plo-page-nav__dropdown-link" :class="{ 'activate_microsite': item.isMicrosite }" :data-toggle="item.type === 'tab' ? 'tab' : false" :data-tab-type="item.labelType">{{ item.label }}</a> </li>
+		          </ul>
+		        </div>
+		      </div>
+	    	</div>
+	    </div>
+	  </nav>
+</div>
+</script>
+	<script type="text/x-template" id="VC_apiLockedContent">
+	<div>
+		<slot v-if="isSuccess" name="success">
+		</slot>
+		<slot v-else-if="isForbidden" name="forbidden">
+		</slot>
+		<slot v-else-if="isError" name="error">
+		</slot>
+		<div v-else-if="isLoading">
+			<p style="border-top: 4px white solid;" class="sp-circle"></p>
+		</div>
+	</div>
+</script>
+	<script type="text/x-template" id="VC_loginRequired">
+	<div>
+<vc-plo-overlay data-vue-factory="pl"
+   	:module-id="'login-required-overlay'"
+   	:fixed-footer="false"
+   	:is-self-closing="false"
+   	ref="loginOverlay"
+   	:block-class="'overlay-standard'"
+    class="plo-overlay--standard"
+>
+	   	<template v-slot="slotProps">
+			<slot name="login-required-overlay"></slot>
+			<div class="row">
+				<div class="col-xs-12">
+	<button class="pla-btn pla-btn--lg pla-btn--secondary" data-submit-button @click='showLogin'>Sign in</button>
+				</div>
+			</div>
+	    </template>
+	    <template #footer="slotProps">
+		</template>
+</vc-plo-overlay>
+		<slot name="login-required-content" v-if="isUserLoggedIn"></slot>
+	</div>
+</script>
+<script type="text/x-template" id="VC_redeemCode">
+	<div class="row content-container redeem-code">
+		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 redeem-code_wrapper">
+			<form 
+				class="form-wrapper" 
+				ref="form" 
+				novalidate 
+				autocomplete="off" 
+				data-send-json 
+				data-custom-method="PATCH" 
+				:action="actionWithCode" 
+				name="code-redemption" 
+				data-nt-track-success 
+				data-nt-track-errors 
+				data-nt-submit-category="Form" 
+			>
+				<div class="row input-wrapper redeem-code_input-wrapper">
+					<div class="col-xs-12 col-sm-9 col-sm-offset-2 form-input-wrapper">
+						<input type="text" pattern="^[A-Z0-9]{16}$" v-model="redemptionCode" required>
+					</div>
+				</div>
+				<div class="row input-wrapper redeem-code_input-wrapper">
+					<div class="col-xs-12 col-sm-9 col-sm-offset-2 form-input-wrapper">
+						<div class="g-recaptcha" data-sitekey="6LeQ604UAAAAACTltkRWlUJ6fiyLHFb60QRx3M4U"></div>
+					</div>
+				</div>
+				<input type="hidden" name="naid" ref="naid" />
+				<input type="hidden" name="token" ref="token" />
+				<input type="hidden" name="media-folder-id" ref="mediaFolderId" />
+				<div class="row input-wrapper">
+					<div class="col-xs-8 col-xs-offset-2 col-sm-9 col-sm-offset-2 text-center">
+						<button
+							class="pla-btn redeem-code_btn"
+							data-submit-button>
+							{{ buttonText }}
+						</button>
+						<p style="display:none;border-top: 4px white solid;" data-submit-loading class="sp-circle"></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-8 col-xs-offset-2 col-sm-9 col-sm-offset-2">
+						<div v-if="showErrorMessage" class="plm-alert plm-alert--error plm-alert--is-shown redeem-code_error">
+							<p v-if="isRequestInvalid">{{ invalidMessage }}</p>
+							<p v-if="isRequestError">{{ errorMessage }}</p>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</script>
+	<script type="text/x-template" id="VC_rankingsTable">
+	<div class="rankings" :class="'rankings--' + customName">
+		<div v-if="rankByCategory" v-for="(item, index) in list" :key="index" class="rankings-item-wrapper">
+			 <h3>{{ getTranslatedCategory(item.category) }}</h3>
+			<vc-rankings-table-item  :position="index + 1" :item="item" :indicator-labels="indicatorLabels" :img-prefix="imgPrefix" :rank-by-category="rankByCategory">
+				<slot></slot>
+			</vc-rankings-table-item>
+		</div>
+		<template v-if="!rankByCategory">
+			<vc-rankings-table-item  v-for="(item, index) in list" :key="index" :position="index + 1" :item="item" :indicator-labels="indicatorLabels" :img-prefix="imgPrefix" :rank-by-category="rankByCategory">
+				<slot></slot>
+			</vc-rankings-table-item>
+		</template>
+	</div>
+</script>
+<script type="text/x-template" id="VC_rankingsTableItem">
+	<div class="rankings-item">
+		<slot></slot>
+		<div class="rankings-item__wrapper rankings-item__wrapper--left">
+			<div class="rankings-item__position-wrapper">
+				<div v-if="!rankByCategory" class="rankings-item__position" :class="'rankings-item__position_' + position">{{ position }}</div>
+				<div v-else class="rankings-item__position-category" :class="'rankings-item__position_' + category"><img v-if="!isImg3Empty" src="" v-n-img-lazy-load :data-url="img3" class="rankings-item__position-category__img" :title="category" /></div>
+			</div>
+			<div class="rankings-item__player-info-wrapper">
+				<div class="rankings-item__img1-wrapper" v-if="!isImg1Empty">
+					<img src="" v-n-img-lazy-load :data-url="img1" class="rankings-item__img1"/>
+				</div>
+				<div class="rankings-item__labels-wrapper">
+					<div class="rankings-item__title-wrapper" v-if="!isTitleEmpty">
+						<p class="rankings-item__title">{{ title }}</p>
+					</div>
+					<div class="rankings-item__subtitle-wrapper" v-if="!isSubtitleEmpty">
+						<p class="rankings-item__subtitle">{{ subtitle }}</p>
+					</div>
+					<div class="rankings-item__country-wrapper" v-if="!isCountryEmpty">
+						<p class="rankings-item__country">{{ country }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rankings-item__wrapper rankings-item__wrapper--right">
+			<div class="rankings-item__indicators-wrapper" v-if="!isIndicatorsEmpty">
+				<div v-for="(indicator, indicatorKey) in indicators" :key="indicatorKey" class="rankings-item__indicator-wrapper" :class="'rankings-item__indicator-wrapper--' + indicatorKey">
+					<p class="rankings-item__indicator-label" v-if="!isIndicatorLabelsEmpty">{{ indicatorLabels[indicatorKey] }}</p>
+					<p class="rankings-item__indicator">{{ indicator }}</p>
+				</div>
+			</div>
+			<div class="rankings-item__img2-wrapper" v-if="!isImg2Empty">
+				<img src="" v-n-img-lazy-load :data-url="img2" class="rankings-item__img2"/>
+			</div>
+		</div>
+	</div>
+</script>
+	<script type="text/x-template" id="VC_purchaseLink">
+	<div :key="refreshKey">
+       <vc-plo-mns-price-box
+          @is-mns-purchase-change="updateIsMnsPurchase"
+          class="row plu-mb-2"
+          :custom-mns-config="mnsConfig"
+          :is-in-content="true"
+          ></vc-plo-mns-price-box>
+		<div v-if="!isMnsPurchase" class="purchase-link-container" :data-nsuid="nsuid">
+			<div class="purchase-link-content">
+				<div class="price">
+					<div class="amount">
+<p v-if="isPrice" class="price-small">
+	<span data-price-from-label v-if="isMultipleNSUIDs">Starting from: </span>
+	<span data-price :class="{'original-price': isDiscount}">{{regularPrice}}</span><span data-discount class="discount" v-if="isDiscount">{{lowestPrice}}*</span>
+	<span class="tax">(inc. VAT)</span>
+</p>
+					</div>
+				</div>
+				<a
+					:data-link="finalUrl"
+					data-title="title" 
+					:href="finalUrl" 
+					@click="buttonClicked"
+					target="_blank">{{ btnText }}</a>
+	 		</div>
+		</div>
+	</div>
+</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+	var dateFormat = 'DD/MM/YYYY';
+	var clearSVG = '<svg style="width: 8px; height: 8px;;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><g class="icon-x-v2"><rect x="-12.6" y="50.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -26.5148 64.0018)" class="st0" width="153.3" height="27.8"/><rect x="50.1" y="-12.6" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -26.5115 63.9949)" class="st0" width="27.8" height="153.3"/></g></svg>';
+	var error = {
+		required: "Please complete this field.",
+		email: "The email address you’ve entered cannot be accepted. Please enter a valid email address, making sure all the symbols are present and correct."
+	};
+</script>
+<script type="text/x-template" id="VC_registerYourInterestForm">
+	<div v-if="isUserLoggedIn && !isUserCountrySupported" class="plm-alert plm-alert--error plm-alert--is-shown">
+		<span class="plb-heading plb-h4 plm-alert__headline">Sorry, your region isn't supported</span>
+	</div>
+	<div v-else>
+		<div v-if="showSuccessMessage">
+			<div v-if="!isUserEmailOptedIn && (!isUserChild || (isUserChild && userAgeOver16))" class="plm-alert plm-alert--success plm-alert--is-shown">
+				<span class="plb-heading plb-h4 plm-alert__headline">success.addemailoptin.text.part1<a href="success.addemailoptin.link.url">success.addemailoptin.link.label</a>success.addemailoptin.text.part2</span>
+			</div>
+			<div v-else class="plm-alert plm-alert--success plm-alert--is-shown">
+				<span class="plb-heading plb-h4 plm-alert__headline">Thank you for registering your interest.</span>
+			</div>
+		</div>
+		<form
+		  ref="form"
+		  id="register-your-interest-form"
+		  name="register-your-interest-form"
+		  class="form-wrapper"
+		  data-send-json
+		  method="POST"
+		  action="https://4cboksyzcf.execute-api.eu-central-1.amazonaws.com/prod/registrations"
+		  novalidate
+		  autocomplete="off"
+		  data-nt-submit-category="Register You Interest"
+		  v-if="showForm"
+		>
+			<div class="row input-wrapper">
+				<div class="col-xs-12 col-sm-3">
+					<label class="label" for="email">E-mail address</label>
+				</div>
+				<div class="col-xs-12 col-sm-9 form-input-wrapper">
+					<div v-if="isUserLoggedIn && !isUserChild">
+						<input type="email" name="email" required maxlength="50" :value="userEmailAddress" disabled/>
+					</div>
+					<div v-else>
+						<input type="email" name="email" required maxlength="50" />
+					</div>
+				</div>
+			</div>
+			<input type="hidden" name="campaignId" :value="campaignId">
+			<div class="row input-wrapper">
+				<div class="col-xs-12 col-sm-9 col-sm-offset-3 form-input-wrapper">
+					<div class="g-recaptcha" data-sitekey="6LeQ604UAAAAACTltkRWlUJ6fiyLHFb60QRx3M4U"></div>
+				</div>
+			</div>
+			<input type="hidden" name="locale" value="EN_GB"/>
+			<input type="hidden" name="naid" v-model="userNAID"/>
+			<input type="hidden" name="missionId" :value="missionId"/>
+			<div class="row input-wrapper">
+				<div class="col-xs-8 col-xs-offset-2 col-sm-9 col-sm-offset-3">
+					<button class="pla-btn pla-btn--block pla-btn--large" data-submit-button>{{ buttonText }}</button>
+					<p style="display:none;border-top: 4px white solid;" data-submit-loading class="sp-circle"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2 col-sm-9 col-sm-offset-3">
+					<div v-if="showErrorMessage" class="plm-alert plm-alert--error plm-alert--is-shown">
+						<p v-if="isRequestError">{{ errorMessage }}</p>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div v-if="isMissionAlreadyTriggeredByTheUser">
+			<div class="plm-alert plm-alert--error plm-alert--is-shown">
+				<p>{{ errorMissionMessage }}</p>
+			</div>
+		</div>
+	</div>
+</script>
+	<div id="VC_placeholderCards">
+		<ul class="results tc-xs-grid">
+                    <li class="page-list-group-item  col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                        <div class="page-container plu-pa-2">
+                            <div class="page-img">
+                                <div class="loading-card">
+                                	<div class="sp-circle loading-card__sp-circle">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page-list-group-item  col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                        <div class="page-container plu-pa-2">
+                            <div class="page-img">
+                                <div class="loading-card">
+                                	<div class="sp-circle loading-card__sp-circle">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page-list-group-item  col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                        <div class="page-container plu-pa-2">
+                            <div class="page-img">
+                                <div class="loading-card">
+                                	<div class="sp-circle loading-card__sp-circle">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="page-list-group-item  col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                        <div class="page-container plu-pa-2">
+                            <div class="page-img">
+                                <div class="loading-card">
+                                	<div class="sp-circle loading-card__sp-circle">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+    	</ul>
+	</div>
+	<div id="VC_solrResults">
+    	<ul class="results card-grid">
+			<div is="VC_solrResult"
+    			v-for="(result, index) in results" :key="index"
+    			:result="result"
+    		></div>
+		</ul>
+     </div>
+      <div id="VC_solrResult">
+		<li class="col-xs-12 page-list-group-item">
+<a v-bind:href="isMerchandise ? pageURL : pageURL + '#Overview'" >
+				<div class="row page-container">
+					<div class="col-xs-12 page-img">
+						<img class="img-responsive" v-bind:src="pageImage.src" v-bind:alt="pageTitle" />
+					</div>
+					<div class="col-xs-12 page-info">
+						<p class="page-title">{{pageTitle}}</p>
+						<div v-if="type === 'GAME'">
+							<p class="page-data">
+								<span v-for="(gameSystem, index) in this.result.system_names_txt"
+						    		:key="index"
+								><span v-if="index!=0">, </span>{{gameSystem}}</span>
+							</p>
+						</div>
+						<div v-if="isMerchandise">
+<p v-if="isPrice" class="price-small">
+	<span data-price-from-label v-if="isMultipleNSUIDs">Starting from: </span>
+	<span data-price v-if="isDiscount" class="original-price">{{regularPrice}}</span><span v-bind="{'data-discount' : isDiscount}" v-bind:class="{'discount' : isDiscount}">{{lowestPrice}}</span>
+</p>
+						</div>
+					</div>
+				</div>
+			</a>
+		</li>
+	</div>
+</div>
+<script>
+	window.nindoSolrEnabled = true;
+	document.addEventListener('DOMContentLoaded', (event) => {
+	    var VC_myNintendoStoreMenuLinks = Vue.extend({
+			template: "#VC_myNintendoStoreMenuLinks"
+		});
+		Vue.component('VC_myNintendoStoreMenuLinks', VC_myNintendoStoreMenuLinks);
+		var VC_placeholderCards = Vue.extend({
+			template: "#VC_placeholderCards"
+		});
+		Vue.component('VC_placeholderCards', VC_placeholderCards);
+	});
+</script>
+	<div class="main-navbar-wrapper nrd8 srch8" data-header-wrapper>	
+<header
+	class="plo-header"
+		data-pl-component="plo-header"
+		data-component="mso-site-header"
+>
+		<button
+			class="pla-btn--plain plo-header__menu-toggle"
+	        data-pl-menu-toggle
+	        data-pl-component-toggle-state="is-menu-open"
+	    >
+<span class="pla-animated-svg-icon pla-menu-icon plo-page-nav__toggle-icon"><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__top-line" style="transform: translateY(-0.25em);" ><path d="M0 21L48 21L48 27L0 27L0 9Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__mid-line" style="transform: translateY(0);" ><path d="M0 21L48 21L48 27L0 27L0 21Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__bottom-line" style="transform: translateY(+0.25em);" ><path d="M0 21L48 21L48 27L0 27L0 33Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__rotate-line-left" ><path d="M0 21L48 21L48 27L0 27L0 21Z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-menu-icon__rotate-line-right" ><path d="M0 21L48 21L48 27L0 27L0 21Z"/></svg></span>
+    	</button>
+    	<a id="header-brand"
+    		tabindex="1"
+    		href="/en-gb/" class="pla-link--plain plo-header__logo-container">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="4em" viewBox="0 0 128 32" class="pla-svg-icon plo-header__logo" ><path d="M12.7,8.4h4.6l6.4,10.5V8.4h4.6v15.1h-4.6L17.3,13v10.5h-4.6L12.7,8.4L12.7,8.4L12.7,8.4zM53.3,10h4.5v2h2.4v1.5h-2.4v10h-4.5v-10h-2.4V12h2.4L53.3,10L53.3,10L53.3,10z M30.9,13.5h4.5v10h-4.5L30.9,13.5L30.9,13.5L30.9,13.5z M30.8,8.4h4.5v3.1h-4.5L30.8,8.4L30.8,8.4L30.8,8.4z M110.9,18.4c0,0,0,1.5,0,2.1c0,1.6-0.9,2.3-1.8,2.3s-1.8-0.7-1.8-2.3c0-0.6,0-2.2,0-2.2s0-1.5,0-2.1c0-1.6,0.9-2.2,1.8-2.2s1.8,0.7,1.8,2.2C110.9,16.9,110.9,18,110.9,18.4L110.9,18.4L110.9,18.4L110.9,18.4z M109.1,12.8c-3.6,0-6.5,2.5-6.5,5.6s2.9,5.6,6.5,5.6s6.5-2.5,6.5-5.6S112.7,12.8,109.1,12.8L109.1,12.8zM96.7,8.4h4.4v15.1h-4.4c0,0,0-0.5,0-0.6c-2.4,1.6-5.7,0.9-7.3-1.5c-0.6-0.9-0.9-2-0.9-3.1c0.1-3,2.6-5.3,5.5-5.3c0,0,0.1,0,0.1,0c0.9,0.1,1.8,0.4,2.5,0.9L96.7,8.4L96.7,8.4L96.7,8.4z M96.7,18.4v-1.8c0.1-1-0.6-1.8-1.6-1.9c-1-0.1-1.8,0.6-1.9,1.6c0,0.1,0,0.2,0,0.4c0,0.5,0,1.8,0,1.8s0,1.2,0,1.8c-0.1,1,0.6,1.8,1.6,1.9c1,0.1,1.8-0.6,1.9-1.6c0-0.1,0-0.3,0-0.4C96.7,19.6,96.7,18.4,96.7,18.4L96.7,18.4z M45.8,13c2.7-0.1,4.9,2,5,4.7c0,0.1,0,0.2,0,0.4c0,0.7,0,5.5,0,5.5h-4.4v-6.6c-0.1-1.1-1-1.9-2-1.8c-1.1,0-2,0.8-2.1,1.8c0,0.4,0,6.6,0,6.6h-4.4v-10h4.4c0,0,0,0.8,0,1.1C43.2,13.6,44.4,13.1,45.8,13L45.8,13L45.8,13z M82.1,13c2.7-0.1,4.9,2,5,4.7c0,0.1,0,0.2,0,0.4c0,0.7,0,5.5,0,5.5h-4.4v-6.6c-0.1-1.1-1-1.9-2-1.8c-1.1,0-2,0.8-2.1,1.8c0,0.4,0,6.6,0,6.6h-4.4v-10h4.4c0,0,0,0.8,0,1.1C79.4,13.6,80.7,13.1,82.1,13L82.1,13L82.1,13z M64.3,17c-0.1-0.7,0-1.3,0.3-2c0.3-0.6,0.9-0.9,1.6-0.9l0,0c0.6,0,1.2,0.4,1.6,0.9c0.3,0.6,0.4,1.3,0.3,2L64.3,17L64.3,17z M68,20c0,0,0,0,0,0.6c0,1.8-1.2,2.2-1.8,2.2c-1.1,0-1.9-0.9-1.9-2c0-0.1,0-0.2,0-0.3c0-0.5,0-2.1,0-2.1h8.4c0-3.1-3-5.7-6.6-5.7s-6.6,2.5-6.6,5.6s2.9,5.6,6.6,5.6c2.8,0.1,5.3-1.5,6.3-4.1H68L68,20z M116.3,9.6c0.7,0,1.1,0.2,1.1,0.7c0,0.3-0.2,0.6-0.6,0.7l0.6,1.1h-0.7l-0.5-1.1h-0.3v1.1h-0.6V9.6L116.3,9.6L116.3,9.6z M116.3,8.6c-1.3,0-2.3,1-2.4,2.3c0,1.3,1,2.3,2.3,2.4c1.3,0,2.3-1,2.4-2.3c0,0,0,0,0,0C118.5,9.6,117.5,8.6,116.3,8.6C116.3,8.6,116.3,8.6,116.3,8.6L116.3,8.6z M118.1,10.9c0,1-0.9,1.8-1.9,1.8s-1.8-0.9-1.8-1.9c0-1,0.8-1.8,1.8-1.8C117.3,9,118.1,9.9,118.1,10.9C118.1,10.9,118.1,10.9,118.1,10.9L118.1,10.9z M115.9,10.7h0.3c0.4,0,0.5-0.1,0.5-0.4s-0.2-0.4-0.6-0.4h-0.3L115.9,10.7L115.9,10.7L115.9,10.7z M16.7,32C6.7,32,0,24.8,0,16S6.7,0,16.7,0h94.6c10,0,16.7,7.3,16.7,16s-6.7,16-16.7,16H16.7z M16.8,3.9C8.8,4,3.9,9.3,3.9,16s4.8,12.1,12.8,12.1h94.5c8,0,12.8-5.4,12.8-12.1S119.2,4,111.2,3.9H16.8z"/></svg>
+	    </a>
+	    <nav class="plo-header__nav">
+		    <ul class="plo-header__nav-items">
+	            <li class="plo-header__nav-item plo-header__nav-item--search">
+	              <button 
+	              	tabindex="2"
+	              	class="pla-btn--plain plo-header__nav-button plo-header__nav-button"
+	              	data-toggle="modal" data-target="#modal-global-search"
+	              >
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 512 512" class="pla-svg-icon plo-header__nav-icon" ><path d="M302.29-.49c-116,.31-209.79,94.6-209.48,210.6a210.06,210.06,0,0,0,45.81,130.38L7.17,471.57a23.46,23.46,0,0,0,16.58,39.92A23.13,23.13,0,0,0,40,504.83L171.49,373.77c90.71,72.29,222.85,57.37,295.14-33.34S524,117.59,433.3,45.3A210,210,0,0,0,302.29-.49Zm0,376.91a166.84,166.84,0,1,1,166.7-167v.33A166.92,166.92,0,0,1,302.29,376.42Z"></path></svg>
+	                  <div class="plo-header__nav-label">Search</div>
+	              </button>
+	            </li>
+	            <li class="plo-header__nav-item plo-header__nav-item--wish-list">
+	              <a
+	              	tabindex="3"
+	              	href="https://ec.nintendo.com/my/wishlist"
+	              	class="pla-btn--plain plo-header__nav-button plo-header__nav-button externalnintendo"
+	              	target="_blank"
+	              >
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 512 512" class="pla-svg-icon plo-header__nav-icon" ><path d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path></svg>
+	                  <div class="plo-header__nav-label">Wish List</div>
+	               </a>
+	            </li>
+	            <li class="plo-header__nav-item plo-header__nav-item--account">
+	              	<button
+	              		tabindex="5"
+	              		class="pla-btn--plain plo-header__nav-button hidden"
+	              		data-ms-alps 
+	              	>
+						<alps-account-nav class="plo-header__custom-alps"
+							data-state="alps_mobile" class="mobile-login-btn hidden"
+						></alps-account-nav>
+					</button>
+					<div
+						tab-index="-1"
+						class="plo-header__alps-loader-wrapper alps-login-pre-loader alps-account-nav"
+						data-ms-alps-loader
+					>
+						<div class="plo-header__alps-loader-inner-wrapper alps-account-loading">
+							<alps-loading-indicator class="plo-header__alps-loading-icon">
+								<div role="img" aria-label="Loading" class="alps-loading-indicator">
+									<div class="alps-loading-parts">
+										<span class="alps-svg-icon alps-loading-part-1"></span>
+										<span class="alps-svg-icon alps-loading-part-2"></span>
+										<span class="alps-svg-icon alps-loading-part-3"></span>
+										<span class="alps-svg-icon alps-loading-part-4"></span>
+									</div>
+								</div>
+							</alps-loading-indicator>
+							<div class="plo-header__loading-label-placeholder"></div>
+						</div>
+					</div>
+					<button 
+						tabindex="5"
+						class="pla-btn--plain plo-header__nav-button custom-alps-login-door-button hidden"
+						data-ms-alps-login
+					>
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="0.875em" viewBox="0 0 448 512" class="pla-svg-icon plo-header__nav-icon" ><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
+						<div class="plo-header__nav-label">Sign In</div>
+		            </button>
+	            </li>
+	        </ul>  
+	    </nav>
+</header>
+	</div>
+<div class="modal modal-fullscreen modal-search fade" id="modal-global-search" tabindex="-1" role="dialog" data-backdrop="false" aria-hidden="true">
+  <div class="srch-modal-icon">
+  	<svg style="width: 90vw; height: 90vw; margin: 0 2px;"
+	version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	viewBox="0 0 164 155"
+	enable-background="new 0 0 32 32"
+	xml:space="preserve">
+		<path fill="#FFFFFF" d="M33.3,81.7C27.4,73.1,24,62.9,24,52c0-21,12.7-40,32.1-48s41.8-3.5,56.7,11.4c20.2,20.3,20.2,53,0,73.4c-14.9,14.9-37.3,19.4-56.6,11.3c-3.5-1.5-6.8-3.3-9.9-5.4l-30.6,30.7c-3.6,3.6-9.4,3.6-12.9,0c-1.8-1.8-2.8-4.1-2.8-6.6c0-2.4,1-4.8,2.7-6.5L33.3,81.7z M76,87.9c19.9,0,36-16.1,36-36S95.8,16,76,16S40,32.1,40,52S56.1,87.9,76,87.9z"/>
+</svg>
+  	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>  	
+  </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+		<form action="/en-gb/Search/Search-299117.html"
+			method="GET" id="send-search-form" class="navbar-form form-inline" ref="search-form-send">
+			<div class="form-group srch-input-group">
+				<input type="search" autocomplete="off" autocorrect="off" autocapitalize="none"
+					spellcheck="false" name="q" class="srch-global-input"
+					placeholder="Search...">
+				<button class="searchbutton-icon" type="submit"></button>
+			</div>
+		</form>
+		<div class="modal-search-suggestions">
+			<p>How about...</p>
+<ul>
+	<li><a href="/en-gb/Search/Search-299117.html?f=147394-86-126556">All Nintendo Switch 2 games</a></li>
+	<li><a href="/en-gb/Search/Search-299117.html?f=147394-86-6956-119600">All Nintendo Switch 2 games on sale</a></li>
+	<li><a href="/en-gb/Search/Search-299117.html?f=147394-5-81">All Nintendo Switch games</a></li>
+	<li><a href="/en-gb/Search/Search-299117.html?f=147394-5-82-6955">All Nintendo Switch games on sale</a></li>
+	<li><a href="/en-gb/Search/Search-299117.html?f=147394-7-79">All Nintendo 3DS games</a></li>
+	<li><a href="/en-gb/Search/Search-299117.html?f=147394-82-4">All Super Mario games</a></li>
+	<li><a href="/en-gb/Search/Search-299117.html?f=147394-84-2">All The Legend of Zelda games</a></li>
+	<li><a href="/en-gb/Search/Search-299117.html?f=147394-83-3">All Pokémon games</a></li>
+</ul>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+		<link rel="stylesheet" href="https://alps.cdn.nintendo.net/v1/css/alps.css">
+		<script src="https://alps.cdn.nintendo.net/v1/js/account_en_EUR.js"></script>
+	<script src="https://www.nintendo.com/eu/media/nindo/js/nindo.js"></script>
+	<script>
+		if(typeof nindo !== 'undefined'){
+			nindo.init({
+				site: 1
+			});
+		}
+	</script>
+	<noscript></noscript>
+	<div id="wrapper" class="toggled-2">
+  <script>
+	window.newMainNavi2Enabled= true;
+  </script>
+	<div id="navi_socialmedia_overlay" class="modal navi-socialmedia" role="dialog"	data-nt-overlay data-nt-action="Navi Socialmedia" data-nt-overlay-type="navi_social_media" data-nt-overlay-label="">
+	<div class="modal-dialog modal-lg" role="document">
+    	<div class="modal-content">
+	    	<div class="modal-header">	
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>					
+				<p class="overlay_headline">Visit us on</p>
+			</div>
+			<div class="modal-body">
+	    		<div class="row">
+		    	<div class="col-xs-12 col-sm-6 col-md-4 social-media">
+	<div class="row">
+		<div class="col-xs-2">
+			<div class="facebook-big icon-spacing"></div>
+		</div>
+		<div class="col-xs-10 navi-socialmedia-title">
+			Facebook
+		</div>
+	</div>
+	<hr>
+	    <p><a href="https://www.facebook.com/NintendoUK" class="externalnintendo" title="Nintendo" target="_blank">Nintendo</a></p>
+	    <p><a href="https://www.facebook.com/NintendoSwitchUK" class="externalnintendo" title="Nintendo Switch" target="_blank">Nintendo Switch</a></p>
+	    <p><a href="https://www.facebook.com/nintendo3dsuk" class="externalnintendo" title="Nintendo 3DS" target="_blank">Nintendo 3DS</a></p>
+	    <p><a href="https://www.facebook.com/MyNintendoStoreUK" class="externalnintendo" title="My Nintendo Store" target="_blank">My Nintendo Store</a></p>
+	    <p><a href="https://www.facebook.com/SuperMarioUK" class="externalnintendo" title="Super Mario" target="_blank">Super Mario</a></p>
+	    <p><a href="https://www.facebook.com/LegendofZeldaUK" class="externalnintendo" title="The Legend of Zelda" target="_blank">The Legend of Zelda</a></p>
+	    <p><a href="https://facebook.com/SmashBrosUK/" class="externalnintendo" title="Super Smash Bros." target="_blank">Super Smash Bros.</a></p>
+	    <p><a href="https://facebook.com/AnimalCrossingUK" class="externalnintendo" title="Animal Crossing" target="_blank">Animal Crossing</a></p>
+	    <p><a href="https://facebook.com/MarioKartUK" class="externalnintendo" title="Mario Kart" target="_blank">Mario Kart</a></p>
+	    <p><a href="https://www.facebook.com/SplatoonUK" class="externalnintendo" title="Splatoon" target="_blank">Splatoon</a></p>
+	    <p><a href="https://www.facebook.com/FireEmblemUK" class="externalnintendo" title="Fire Emblem" target="_blank">Fire Emblem</a></p>
+</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 social-media">
+	<div class="row">
+		<div class="col-xs-2">
+			<div class="twitter-big icon-spacing"></div>
+		</div>
+		<div class="col-xs-10 navi-socialmedia-title">
+			X
+		</div>
+	</div>
+	<hr>
+	    <p><a href="https://x.com/NintendoUK" class="externalnintendo" title="@NintendoUK" target="_blank">@NintendoUK</a></p>
+	    <p><a href="https://x.com/NintendoStoreUK" class="externalnintendo" title="My Nintendo Store" target="_blank">My Nintendo Store</a></p>
+	    <p><a href="https://x.com/NintendoUKVS" class="externalnintendo" title="@NintendoUKVS" target="_blank">@NintendoUKVS</a></p>
+	    <p><a href="https://x.com/SuperMario_UK" class="externalnintendo" title="@SuperMario_UK" target="_blank">@SuperMario_UK</a></p>
+	    <p><a href="https://x.com/AC_Isabelle" class="externalnintendo" title="@AC_Isabelle from Animal Crossing: New Horizons" target="_blank">@AC_Isabelle from Animal Crossing: New Horizons</a></p>
+</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 social-media">
+	<div class="row">
+		<div class="col-xs-2">
+			<div class="youtube-big icon-spacing"></div>
+		</div>
+		<div class="col-xs-10 navi-socialmedia-title">
+			YouTube
+		</div>
+	</div>
+	<hr>
+	    <p><a href="https://www.youtube.com/NintendoUK" class="externalnintendo" title="NintendoUK" target="_blank">NintendoUK</a></p>
+</div><div class="hidden-xs col-sm-8"></div>
+				<div class="col-xs-12 col-sm-6 col-md-4 social-media">
+	<div class="row">
+		<div class="col-xs-2">
+			<div class="instagram-big icon-spacing"></div>
+		</div>
+		<div class="col-xs-10 navi-socialmedia-title">
+			Instagram
+		</div>
+	</div>
+	<hr>
+	    <p><a href="https://instagram.com/NintendoUK" class="externalnintendo" title="NintendoUK" target="_blank">NintendoUK</a></p>
+	    <p><a href="https://instagram.com/NintendoSwitchEurope" class="externalnintendo" title="NintendoSwitchEurope" target="_blank">NintendoSwitchEurope</a></p>
+</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 social-media">
+	<div class="row">
+		<div class="col-xs-2">
+			<div class="twitch-big icon-spacing"></div>
+		</div>
+		<div class="col-xs-10 navi-socialmedia-title">
+			Twitch
+		</div>
+	</div>
+	<hr>
+	    <p><a href="http://www.twitch.tv/NintendoUK" class="externalnintendo" title="NintendoUK" target="_blank">NintendoUK</a></p>
+</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 social-media">
+	<div class="row">
+		<div class="col-xs-2">
+			<div class="linkedin-big icon-spacing"></div>
+		</div>
+		<div class="col-xs-10 navi-socialmedia-title">
+			LinkedIn
+		</div>
+	</div>
+	<hr>
+	    <p><a href="https://www.linkedin.com/company/nintendo-of-europe-gmbh" class="externalnintendo" title="Visit us on LinkedIn" target="_blank">Visit us on LinkedIn</a></p>
+</div>
+	      		</div>
+	      	</div>
+    	</div>
+  	</div>
+</div>
+  <div id="sidebar-wrapper" class="newSideWrapper">
+	<ul class="sidebar-nav nav-pills nav-stacked" id="mainNav">
+<li id="mainNav_games"><div class="main-nav-corner"><svg style="width: 8px; height: 8px; "
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 48 48"
+enable-background="new 0 0 48 48"
+xml:space="preserve">
+<polygon points="0 0 48 0 48 48"/>
+</svg></div>
+<div class="subMenuDropdown submenu-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+<div class="subMenuContainer">
+<span class="mainN">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1.125em" viewBox="0 0 576 512" class="pla-svg-icon main-navigation-icon" ><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
+</span>
+Games
+</div>
+</div><div class="col-md-12 container-sub-nav">
+<div class="mainNav-back"><svg style="width: 16px; height: 16px; "
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 18 18"
+enable-background="new 0 0 18 18"
+xml:space="preserve">
+<g class="backto"><rect x="0" y="0" width="5" height="5"/><rect x="6" y="0" width="5" height="5"/><rect x="12" y="0" width="5" height="5"/><rect x="0" y="6" width="5" height="5"/><rect x="6" y="6" width="5" height="5"/><rect x="12" y="6" width="5" height="5"/><rect x="0" y="12" width="5" height="5"/><rect x="6" y="12" width="5" height="5"/><rect x="12" y="12" width="5" height="5"/></g>
+</svg>Previous</div>
+<div class="dropdown-menu-wrapper">
+<ul role="menu" class="dropdown-menu" data-tr-lp="3">
+<li class="nav-main-title">
+Games
+</li>
+<li>
+<a href="/en-gb/Games/Games-347085.html" id="scndlvl_games_overview">
+Overview
+</a>
+</li><li><a href="/en-gb/games/nintendo_switch_2___games_2/nintendo_switch_2_searchredirect.html" id="scndlvl_games_NintendoSwitch2games" title="Nintendo Switch 2 games">
+Nintendo Switch 2 games
+</a></li><li><a href="/en-gb/games/nintendo_switch_5/nintendo_switch_searchredirect.html" id="scndlvl_games_NintendoSwitchgames" title="Nintendo Switch games">
+Nintendo Switch games
+</a></li><li><a href="/en-gb/Games/Monthly-Highlights/Monthly-Highlights-2866588.html" id="scndlvl_games_MonthlyHighlights" title="Monthly Highlights">
+Monthly Highlights
+</a></li><li><a href="https://www.nintendo.co.uk/Search/Search-299117.html?f=147394-16-71" id="scndlvl_games_Recentreleases" title="Recent releases">
+Recent releases
+</a></li><li><a href="https://www.nintendo.co.uk/Search/Search-299117.html?f=147394-14-73" id="scndlvl_games_Upcominggames" title="Upcoming games">
+Upcoming games
+</a></li><li><a href="https://www.nintendo.co.uk/Search/Search-299117.html?f=147394-5-14-68" id="scndlvl_games_Demos" title="Demos">
+Demos
+</a></li><li><a href="https://www.nintendo.co.uk/Search/Search-299117.html?f=147394-5-82-6951" id="scndlvl_games_Freetostartgames" title="Free-to-start games">
+Free-to-start games
+</a></li><li><a href="https://www.nintendo.co.uk/Search/Search-299117.html?f=161166-17171" id="scndlvl_games_DLC" title="DLC">
+DLC
+</a></li><li><a href="/en-gb/games/smart_device/smart_device_searchredirect.html" id="scndlvl_games_Smartdevicegames" title="Smart device games">
+Smart device games
+</a></li><li><a href="/en-gb/Games/Characters-hub/Nintendo-Characters-Hub-106313.html" id="scndlvl_games_Charactershub" title="Characters hub">
+Characters hub
+</a></li></ul>
+</div>
+</div></li><li id="mainNav_hardware"><div class="main-nav-corner"><svg style="width: 8px; height: 8px; "
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 48 48"
+enable-background="new 0 0 48 48"
+xml:space="preserve">
+<polygon points="0 0 48 0 48 48"/>
+</svg></div>
+<div class="subMenuDropdown submenu-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+<div class="subMenuContainer">
+<span class="mainN">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 30 30" class="pla-svg-icon main-navigation-icon" ><path d="M28.235 20.294h-7.941v7.941A1.77 1.77 0 0 1 18.529 30h-7.058a1.77 1.77 0 0 1-1.765-1.765v-7.941H1.765A1.77 1.77 0 0 1 0 18.529v-7.058a1.77 1.77 0 0 1 1.765-1.765h7.941V1.765A1.77 1.77 0 0 1 11.471 0h7.059a1.77 1.77 0 0 1 1.765 1.765v7.941h7.941A1.77 1.77 0 0 1 30 11.471v7.059a1.77 1.77 0 0 1-1.765 1.764zM7.059 14.118h-3.53a.882.882 0 0 0 0 1.765h3.53a.882.882 0 0 0 0-1.765zm8.823-10.589a.882.882 0 1 0-1.765 0v3.53a.882.882 0 1 0 1.765 0zm0 19.412a.882.882 0 0 0-1.765 0v3.529a.882.882 0 1 0 1.765 0zm10.588-8.824h-3.529a.882.882 0 1 0 0 1.765h3.529a.882.882 0 0 0 0-1.765z"/></svg>
+</span>
+Hardware
+</div>
+</div><div class="col-md-12 container-sub-nav">
+<div class="mainNav-back"><svg style="width: 16px; height: 16px; "
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 18 18"
+enable-background="new 0 0 18 18"
+xml:space="preserve">
+<g class="backto"><rect x="0" y="0" width="5" height="5"/><rect x="6" y="0" width="5" height="5"/><rect x="12" y="0" width="5" height="5"/><rect x="0" y="6" width="5" height="5"/><rect x="6" y="6" width="5" height="5"/><rect x="12" y="6" width="5" height="5"/><rect x="0" y="12" width="5" height="5"/><rect x="6" y="12" width="5" height="5"/><rect x="12" y="12" width="5" height="5"/></g>
+</svg>Previous</div>
+<div class="dropdown-menu-wrapper">
+<ul role="menu" class="dropdown-menu" data-tr-lp="3">
+<li class="nav-main-title">
+Hardware
+</li><li class="nav-second-level-title">Nintendo Switch 2</li>
+<li role="separator" class="divider"></li>
+<li>
+<a href="/en-gb/Hardware/Nintendo-Switch-2/Nintendo-Switch-2-2785301.html" id="thrdlvl_hardware_NintendoSwitch2_overview">
+Overview
+</a>
+</li><li><a href="/en-gb/Hardware/Nintendo-Switch-2/Features/Nintendo-Switch-2-Features-2785300.html" id="thrdlvl_hardware_NintendoSwitch2_Features" title="Features">
+Features
+</a></li><li><a href="/en-gb/Hardware/Nintendo-Switch-2/GameChat/Nintendo-Switch-2-GameChat-2785625.html" id="thrdlvl_hardware_NintendoSwitch2_GameChat" title="GameChat">
+GameChat
+</a></li><li><a href="/en-gb/Hardware/Nintendo-Switch-2/GameShare/Nintendo-Switch-2-GameShare-2785626.html" id="thrdlvl_hardware_NintendoSwitch2_GameShare" title="GameShare">
+GameShare
+</a></li><li><a href="/en-gb/Hardware/Nintendo-Switch-2/Nintendo-Switch-2-games/Nintendo-Switch-2-Games-2785634.html" id="thrdlvl_hardware_NintendoSwitch2_NintendoSwitch2games" title="Nintendo Switch 2 games">
+Nintendo Switch 2 games
+</a></li><li><a href="/en-gb/Hardware/Nintendo-Switch-2/Nintendo-Switch-2-accessories/Nintendo-Switch-2-Accessories-2785629.html" id="thrdlvl_hardware_NintendoSwitch2_NintendoSwitch2accessories" title="Nintendo Switch 2 accessories">
+Nintendo Switch 2 accessories
+</a></li><li><a href="/en-gb/Hardware/Nintendo-Switch-2/Nintendo-Switch-2-bundles/Nintendo-Switch-2-Bundles-2785628.html" id="thrdlvl_hardware_NintendoSwitch2_NintendoSwitch2bundles" title="Nintendo Switch 2 bundles">
+Nintendo Switch 2 bundles
+</a></li><li><a href="/en-gb/Hardware/Nintendo-Switch-2/Transferring-from-Nintendo-Switch/Transferring-to-Nintendo-Switch-2-2785638.html" id="thrdlvl_hardware_NintendoSwitch2_TransferringfromNintendoSwitch" title="Transferring from Nintendo Switch">
+Transferring from Nintendo Switch
+</a></li><li class="nav-second-level-title">Nintendo Switch Family</li>
+<li role="separator" class="divider"></li>
+<li>
+<a href="/en-gb/Hardware/Nintendo-Switch-Family/Nintendo-Switch-family-1618251.html" id="thrdlvl_hardware_NintendoSwitchFamily_overview">
+Overview
+</a>
+</li><li><a href="/en-gb/Hardware/Nintendo-Switch-Family/Nintendo-Switch-OLED-Model/Nintendo-Switch-OLED-Model-2000984.html" id="thrdlvl_hardware_NintendoSwitchFamily_NintendoSwitchOLEDModel" title="Nintendo Switch &ndash; OLED Model">
+Nintendo Switch &ndash; OLED Model
+</a></li><li><a href="/en-gb/Hardware/Nintendo-Switch-Family/Nintendo-Switch/Nintendo-Switch-1148779.html" id="thrdlvl_hardware_NintendoSwitchFamily_NintendoSwitch" title="Nintendo Switch">
+Nintendo Switch
+</a></li><li><a href="/en-gb/Hardware/Nintendo-Switch-Family/Nintendo-Switch-Lite/Nintendo-Switch-Lite-1595961.html" id="thrdlvl_hardware_NintendoSwitchFamily_NintendoSwitchLite" title="Nintendo Switch Lite">
+Nintendo Switch Lite
+</a></li><li><a href="/en-gb/Hardware/Nintendo-Switch-Family/Which-Nintendo-Switch-is-right-for-you-/Which-Nintendo-Switch-is-right-for-you-1596110.html" id="thrdlvl_hardware_NintendoSwitchFamily_WhichNintendoSwitchisrightforyou" title="Which Nintendo Switch is right for you?">
+Which Nintendo Switch is right for you?
+</a></li><li role="separator" class="divider nav-divider--bottom"></li>
+<li><a href="/en-gb/Hardware/Talking-Flower/Talking-Flower-3008088.html" id="scndlvl_hardware_TalkingFlower" title="Talking Flower">
+Talking Flower
+</a></li><li><a href="/en-gb/Hardware/Nintendo-Sound-Clock-Alarmo/Nintendo-Sound-Clock-Alarmo-2670177.html" id="scndlvl_hardware_NintendoSoundClockAlarmo" title="Nintendo Sound Clock: Alarmo">
+Nintendo Sound Clock: Alarmo
+</a></li><li><a href="/en-gb/Hardware/Game-Watch-The-Legend-of-Zelda/Game-Watch-The-Legend-of-Zelda-2039375.html" id="scndlvl_hardware_GameWatchTheLegendofZelda" title="Game &amp; Watch: The Legend of Zelda">
+Game &amp; Watch: The Legend of Zelda
+</a></li><li><a href="/en-gb/Hardware/amiibo-/amiibo-892173.html" id="scndlvl_hardware_amiibo" title="amiibo">
+amiibo
+</a></li><li><a href="/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html" id="scndlvl_hardware_NintendoHistory" title="Nintendo History">
+Nintendo History
+</a></li></ul>
+</div>
+</div></li><li id="mainNav_nso"><div class="main-nav-corner"><svg style="width: 8px; height: 8px; "
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 48 48"
+enable-background="new 0 0 48 48"
+xml:space="preserve">
+<polygon points="0 0 48 0 48 48"/>
+</svg></div>
+<div class="subMenuDropdown submenu-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+<div class="subMenuContainer">
+<span class="mainN">
+<svg style="width: 32px; height: 32px; position: relative; margin: 8px 8px 8px 8px; top: 1px; left: 12px; float: left;"
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 32 32"
+enable-background="new 0 0 32 32"
+xml:space="preserve">
+<g class="nav-icon-switch" fill="#999"><path d="M18.9,32h4.9c4.5,0,8.2-3.7,8.2-8.2v0V8.2C32,3.7,28.3,0,23.8,0c0,0,0,0,0,0h-5c-0.1,0-0.2,0.1-0.2,0.2c0,0,0,0,0,0v31.6C18.6,31.9,18.7,32,18.9,32z M25,14.4c1.8,0,3.2,1.5,3.2,3.2c0,1.8-1.5,3.2-3.2,3.2c-1.8,0-3.2-1.4-3.2-3.2C21.7,15.8,23.2,14.4,25,14.4C25,14.4,25,14.4,25,14.4z M15.2,0h-7C3.7,0,0,3.7,0,8.2v15.6C0,28.3,3.7,32,8.2,32h7c0.1,0,0.2-0.1,0.2-0.2l0,0V0.2C15.4,0.1,15.3,0,15.2,0C15.2,0,15.2,0,15.2,0z M12.9,29.4H8.2c-3.1,0-5.6-2.5-5.6-5.6V8.2c0-3.1,2.5-5.6,5.6-5.6h4.6L12.9,29.4z M5,9.6c0,1.7,1.3,3,3,3s3-1.3,3-3s-1.3-3-3-3S5,7.9,5,9.6L5,9.6z"/></g>
+</svg>
+</span>
+Nintendo Switch Online
+</div>
+</div><div class="col-md-12 container-sub-nav">
+<div class="mainNav-back"><svg style="width: 16px; height: 16px; "
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 18 18"
+enable-background="new 0 0 18 18"
+xml:space="preserve">
+<g class="backto"><rect x="0" y="0" width="5" height="5"/><rect x="6" y="0" width="5" height="5"/><rect x="12" y="0" width="5" height="5"/><rect x="0" y="6" width="5" height="5"/><rect x="6" y="6" width="5" height="5"/><rect x="12" y="6" width="5" height="5"/><rect x="0" y="12" width="5" height="5"/><rect x="6" y="12" width="5" height="5"/><rect x="12" y="12" width="5" height="5"/></g>
+</svg>Previous</div>
+<div class="dropdown-menu-wrapper">
+<ul role="menu" class="dropdown-menu" data-tr-lp="3">
+<li class="nav-main-title">
+Nintendo Switch Online
+</li>
+<li>
+<a href="/en-gb/Nintendo-Switch-Online/Nintendo-Switch-Online-Overview-1183143.html" id="scndlvl_nso_overview">
+Overview
+</a>
+</li><li><a href="/en-gb/Nintendo-Switch-Online/What-s-included-/Nintendo-Switch-Online-What-s-included-2060569.html" id="scndlvl_nso_Whatsincluded" title="What's included?">
+What's included?
+</a></li><li><a href="/en-gb/Nintendo-Switch-Online/Nintendo-Switch-Online-Expansion-Pack/Nintendo-Switch-Online-Expansion-Pack-What-s-included-2060571.html" id="scndlvl_nso_NintendoSwitchOnlineExpansionPack" title="Nintendo Switch Online + Expansion Pack">
+Nintendo Switch Online + Expansion Pack
+</a></li><li><a href="/en-gb/Nintendo-Switch-Online/Classic-games/Classic-games-Nintendo-Switch-Online-2719182.html" id="scndlvl_nso_Classicgames" title="Classic games">
+Classic games
+</a></li><li><a href="/en-gb/Nintendo-Switch-Online/Exclusive-benefits/Exclusive-benefits-Nintendo-Switch-Online-2719183.html" id="scndlvl_nso_Exclusivebenefits" title="Exclusive benefits">
+Exclusive benefits
+</a></li><li><a href="/en-gb/Nintendo-Switch-Online/Nintendo-Music/Nintendo-Music-2681952.html" id="scndlvl_nso_NintendoMusic" title="Nintendo Music">
+Nintendo Music
+</a></li></ul>
+</div>
+</div></li><li id="mainNav_nintendoeshop"><a href="/en-gb/Nintendo-eShop/Nintendo-eShop-1806894.html" title="Nintendo eShop">
+<div class="subMenuContainer">
+<span class="mainN">
+<svg style="width: 32px; height: 32px; position: relative; margin: 8px 8px 8px 8px; top: 1px; left: 12px; float: left;"
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 539.07 511.98"
+enable-background="new 0 0 539.07 511.98"
+xml:space="preserve">
+<g class="nav-icon-nintendoeshop" fill="#999" >
+<path d="M477.05,152.88l20.66,320.34H41.35L62,152.88h415m36.35-38.77H25.67L0,512H539.07L513.4,114.11ZM382.27,226.63V77.72A77.73,77.73,0,0,0,304.54,0h-70A77.73,77.73,0,0,0,156.8,77.72V226.63a2.77,2.77,0,0,0,2.77,2.77h33.24a2.77,2.77,0,0,0,2.76-2.77V77.72a39,39,0,0,1,39-39h70a39,39,0,0,1,38.95,39V226.63a2.77,2.77,0,0,0,2.77,2.77H379.5A2.77,2.77,0,0,0,382.27,226.63Z"/>
+</g>
+</svg>
+</span>
+Nintendo eShop
+</div>
+</a></li><li id="mainNav_store"><a href="https://store.nintendo.co.uk" title="My Nintendo Store">
+<div class="subMenuContainer">
+<span class="mainN">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1.3666666666666666666666666666667em" viewBox="0 0 41 30" class="pla-svg-icon main-navigation-icon" ><path d="M31.742 8.257A15.455 15.455 0 0 0 17.95.001c-6.905 0-14.047 4.607-14.047 12.316a8.747 8.747 0 0 0 4.826 7.718 1.532 1.532 0 0 0 2-.671l2.647-4.947 1.916 3.76a1.54 1.54 0 0 0 2.739 0l1.9-3.738 2.589 4.916a1.537 1.537 0 1 0 2.718-1.434l-3.97-7.541a1.558 1.558 0 0 0-1.37-.821 1.533 1.533 0 0 0-1.356.838l-1.88 3.694-1.882-3.69a1.534 1.534 0 0 0-2.721-.026L8.83 16.401a5.4 5.4 0 0 1-1.854-4.086c0-5.781 5.579-9.236 10.978-9.236a12.512 12.512 0 0 1 11.463 7.374 1.543 1.543 0 0 0 1.488.874 1.349 1.349 0 0 1 .229 0h.123A6.624 6.624 0 0 1 35.8 22.633a6.6 6.6 0 0 1-4.75 1.937 6.5 6.5 0 0 1-3.659-1.161 1.531 1.531 0 0 0-1.885.009 16.937 16.937 0 0 1-22.793-1.99 1.54 1.54 0 1 0-2.352 1.986 20.033 20.033 0 0 0 14.807 6.587 19.874 19.874 0 0 0 11.344-3.5 9.912 9.912 0 0 0 4.531 1.156 9.666 9.666 0 0 0 9.763-9.775 9.756 9.756 0 0 0-9.067-9.62z"/></svg>
+</span>
+My Nintendo Store
+</div>
+</a></li><li id="mainNav_support"><a href="/en-gb/Support/Welcome-to-Nintendo-Support-11593.html" title="Support">
+<div class="subMenuContainer">
+<span class="mainN">
+<svg style="width: 32px; height: 32px; position: relative; margin: 8px 8px 8px 8px; top: 1px; left: 12px; float: left;"
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 128 128"
+enable-background="new 0 0 128 128"
+xml:space="preserve">
+<g class="nav-icon-support" fill="#999"><path d="M120,96c0,9.5-7.7,17.2-17.2,17.2l-52-0.2c-3.5,5.1-8.6,9-15.4,11.4l-6.9,2.5V113l-3.2,0.2C15.7,113.7,8,105.4,8,96V18.4C8,8.9,15.7,1.2,25.2,1.2h77.6c9.5,0,17.2,7.7,17.2,17.2V96z M110.5,18.4c0-4.3-3.5-7.7-7.7-7.7c0,0,0,0,0,0H25.2c-4.3,0-7.7,3.4-7.7,7.7c0,0,0,0,0,0V96c0,4.3,3.5,7.7,7.7,7.8c0,0,0,0,0,0h11v11.1c4.9-1.9,8.7-6,10.2-11.1h56.3c4.3,0,7.7-3.5,7.7-7.7c0,0,0,0,0,0L110.5,18.4L110.5,18.4z M76,57l-1.4,1.2c-3,2.5-3.4,3.2-3.4,6.3v6.2H55.1v-7.7c0-6.3,1.6-8.3,5.5-12.3l6.7-6.8c0.9-1,1.4-2.3,1.3-3.6c0-3-1.9-4.9-5-4.9c-3.6,0-5.7,3-5.8,5.9l-0.1,1.3h-17l0.2-2.8c0.7-12.4,10.5-20.2,23.2-20.2s21.3,8,21.3,19.8C85.5,48.1,81,52.6,76,57z"/><ellipse cx="63.2" cy="84.7" rx="9.8" ry="9.6"/></g>
+</svg>
+</span>
+Support
+</div>
+</a></li><li id="mainNav_news"><div class="main-nav-corner"><svg style="width: 8px; height: 8px; "
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 48 48"
+enable-background="new 0 0 48 48"
+xml:space="preserve">
+<polygon points="0 0 48 0 48 48"/>
+</svg></div>
+<div class="subMenuDropdown submenu-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+<div class="subMenuContainer">
+<span class="mainN">
+<svg style="width: 32px; height: 32px; position: relative; margin: 8px 8px 8px 8px; top: 1px; left: 12px; float: left;"
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 128 128"
+enable-background="new 0 0 128 128"
+xml:space="preserve">
+<g class="nav-icon-news" fill="#999"><path d="M98.2,0H42.7c-8.9,0-16.4,6.6-17.5,15.4c-7.7,2.1-13.1,9.1-13.1,17.1v77.8c0,9.8,7.9,17.7,17.7,17.7h68.5c9.8,0,17.7-7.9,17.7-17.7V17.7C115.9,7.9,108,0,98.2,0 M108.5,110.3c0,5.7-4.6,10.3-10.3,10.3H29.8c-5.7,0-10.3-4.6-10.3-10.3V32.5c0-5.7,4.6-10.3,10.3-10.3h65.5c2,0,3.7-1.7,3.7-3.7s-1.7-3.7-3.7-3.7l0,0H32.9c1.3-4.4,5.3-7.4,9.9-7.4h55.5c5.7,0,10.3,4.6,10.3,10.3V110.3z"/><path d="M40.8,66.5h13C59.4,66.5,64,62,64,56.3v-13c0-5.6-4.6-10.2-10.2-10.2c0,0,0,0,0,0h-13c-5.6,0-10.2,4.6-10.2,10.2v13C30.6,62,35.2,66.5,40.8,66.5C40.8,66.5,40.8,66.5,40.8,66.5 M38.1,43.3c0-1.5,1.2-2.7,2.8-2.8h13c1.5,0,2.8,1.2,2.8,2.8l0,0v13c0,1.5-1.2,2.8-2.8,2.8l0,0h-13c-1.5,0-2.8-1.2-2.8-2.8V43.3L38.1,43.3z"/><path d="M93.7,38.7H75.1c-2,0-3.7,1.7-3.7,3.7c0,2,1.7,3.7,3.7,3.7h18.6c2,0,3.7-1.7,3.7-3.7C97.4,40.4,95.7,38.7,93.7,38.7"/><path d="M93.7,51.7H75.1c-2,0-3.7,1.7-3.7,3.7c0,2,1.7,3.7,3.7,3.7h18.6c2,0,3.7-1.7,3.7-3.7C97.4,53.4,95.7,51.7,93.7,51.7"/><path d="M93.7,74.9H34.3c-2,0-3.7,1.7-3.7,3.7c0,2,1.7,3.7,3.7,3.7h59.4c2,0,3.7-1.7,3.7-3.7C97.4,76.5,95.7,74.9,93.7,74.9"/><path d="M93.7,87.9H34.3c-2,0-3.7,1.7-3.7,3.7c0,2,1.7,3.7,3.7,3.7h59.4c2,0,3.7-1.7,3.7-3.7C97.4,89.5,95.7,87.9,93.7,87.9"/><path d="M93.7,100.8H34.3c-2,0-3.7,1.7-3.7,3.7c0,2,1.7,3.7,3.7,3.7h59.4c2,0,3.7-1.7,3.7-3.7C97.4,102.5,95.7,100.9,93.7,100.8"/></g>
+</svg>
+</span>
+News
+</div>
+</div><div class="col-md-12 container-sub-nav">
+<div class="mainNav-back"><svg style="width: 16px; height: 16px; "
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 18 18"
+enable-background="new 0 0 18 18"
+xml:space="preserve">
+<g class="backto"><rect x="0" y="0" width="5" height="5"/><rect x="6" y="0" width="5" height="5"/><rect x="12" y="0" width="5" height="5"/><rect x="0" y="6" width="5" height="5"/><rect x="6" y="6" width="5" height="5"/><rect x="12" y="6" width="5" height="5"/><rect x="0" y="12" width="5" height="5"/><rect x="6" y="12" width="5" height="5"/><rect x="12" y="12" width="5" height="5"/></g>
+</svg>Previous</div>
+<div class="dropdown-menu-wrapper">
+<ul role="menu" class="dropdown-menu" data-tr-lp="3">
+<li class="nav-main-title">
+News
+</li>
+<li>
+<a href="/en-gb/News/News-Updates-11145.html" id="scndlvl_news_overview">
+Overview
+</a>
+</li><li><a href="/en-gb/News/Nintendo-Direct/Latest-Nintendo-Direct/Nintendo-Direct-698557.html" id="scndlvl_news_NintendoDirect" title="Nintendo Direct">
+Nintendo Direct
+</a></li><li><a href="/en-gb/News/Indie-World/Indie-World-1440347.html" id="scndlvl_news_IndieWorld" title="Indie World">
+Indie World
+</a></li><li><a href="/en-gb/News/Ask-the-Developer/Ask-the-Developer-2399709.html" id="scndlvl_news_AsktheDeveloper" title="Ask the Developer">
+Ask the Developer
+</a></li><li><a href="/en-gb/News/Creator-s-Voice/Creator-s-Voice-2785640.html" id="scndlvl_news_CreatorsVoice" title="Creator's Voice">
+Creator's Voice
+</a></li><li><a href="/en-gb/News/Tips-and-tricks/Tips-and-Tricks-2399710.html" id="scndlvl_news_Tipsandtricks" title="Tips and tricks">
+Tips and tricks
+</a></li></ul>
+</div>
+</div></li>
+<li id="mainNav_share">
+<a data-toggle="modal" data-target="#navi_socialmedia_overlay" href="#navi_socialmedia_overlay">
+<div class="subMenuContainer">
+<span class="mainN">
+<svg style="width: 32px; height: 32px; position: relative; margin: 8px 8px 8px 8px; top: 6px; left: 8px; float: left;"
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 128 128"
+enable-background="new 0 0 400 400"
+xml:space="preserve">
+<g><path d="M32.43,100.85H4.88A4.55,4.55,0,0,1,.34,96.32v-2c0-13.15,5.58-24.45,12.44-29.39A14.19,14.19,0,0,1,8.07,54.2c0-7.56,5.58-13.7,12.47-13.7S33,46.63,33,54.2a14.21,14.21,0,0,1-4.71,10.72,23.33,23.33,0,0,1,5,5,6.7,6.7,0,0,1,1,5.93,58.38,58.38,0,0,0-2.38,16.6A66.94,66.94,0,0,0,32.43,100.85Z"/><path d="M95.83,100.85h27a4.84,4.84,0,0,0,4.84-4.66q0-.94,0-1.88c0-13.15-5.58-24.45-12.44-29.38a14.19,14.19,0,0,0,4.72-10.73c0-7.56-5.59-13.7-12.48-13.71S95,46.63,95,54.2a14.21,14.21,0,0,0,4.71,10.72,23.25,23.25,0,0,0-4.89,4.89A6.93,6.93,0,0,0,93.75,76,58.4,58.4,0,0,1,96.1,92.43a67,67,0,0,1-.49,8.16A.22.22,0,0,0,95.83,100.85Z"/><path d="M52.57,55.72a1.65,1.65,0,0,0,.14-2.38,18.46,18.46,0,0,1-4.77-12.55c0-9.74,7.19-17.64,16.06-17.64s16.06,7.9,16.06,17.64a18.49,18.49,0,0,1-4.77,12.55,1.65,1.65,0,0,0,.14,2.38C83.59,62.56,90,76.44,90,92.43a67,67,0,0,1-.48,8.08.38.38,0,0,1-.38.33H38.86a.38.38,0,0,1-.38-.33A67,67,0,0,1,38,92.43C38,76.43,44.41,62.56,52.57,55.72Z"/></g>
+</svg>
+</span>Stay in touch
+</div>
+</a>
+</li>
+<li id="mainNav_more" data-text-overview="Overview">
+<div class="main-nav-corner"><svg style="width: 8px; height: 8px; "
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 48 48"
+enable-background="new 0 0 48 48"
+xml:space="preserve">
+<polygon points="0 0 48 0 48 48"/>
+</svg></div>
+<div class="subMenuDropdown submenu-button" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+<div class="subMenuContainer">
+<span class="mainN">
+...
+</span><div class="visible-xs">Misc.</div>
+</div>
+</div>
+<div class="col-md-12 container-sub-nav no-transition">
+<div class="mainNav-back"><svg style="width: 16px; height: 16px; "
+version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 18 18"
+enable-background="new 0 0 18 18"
+xml:space="preserve">
+<g class="backto"><rect x="0" y="0" width="5" height="5"/><rect x="6" y="0" width="5" height="5"/><rect x="12" y="0" width="5" height="5"/><rect x="0" y="6" width="5" height="5"/><rect x="6" y="6" width="5" height="5"/><rect x="12" y="6" width="5" height="5"/><rect x="0" y="12" width="5" height="5"/><rect x="6" y="12" width="5" height="5"/><rect x="12" y="12" width="5" height="5"/></g>
+</svg>Previous</div>
+<div class="dropdown-menu-wrapper">
+<ul role="menu" class="dropdown-menu" data-tr-lp="3">
+<li class="nav-main-title nav-title-small">
+Misc.</li>
+<li>
+<a href="/en-gb/Misc-/The-Super-Mario-Galaxy-Movie-2915226.html" id="scndlvl_more_TheSuperMarioGalaxyMovie" title="The Super Mario Galaxy Movie">
+The Super Mario Galaxy Movie
+</a>
+</li>
+<li>
+<a href="https://my.nintendo.com/" id="scndlvl_more_MyNintendo" title="My Nintendo" target="nintendo">
+My Nintendo
+</a>
+</li>
+<li>
+<a href="https://nintendoeurope.csod.com/ux/ats/careersite/1/home?c=nintendoeurope" id="scndlvl_more_Career" title="Career">
+Career
+</a>
+</li>
+<li>
+<a href="/en-gb/Misc-/Sitemap/Sitemap-625950.html" id="scndlvl_more_Sitemap" title="Sitemap">
+Sitemap
+</a>
+</li>
+</ul>
+</div>
+</div>
+</li>
+	</ul>
+	<a href="#top" title="Go to Top">
+		<div id="mainNavTop" class="hidden-xs">
+			<svg style="width: 12px; height: 12px; transform: rotate(180deg);"
+	version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	viewBox="0 0 48 48"
+	enable-background="new 0 0 48 48"
+	xml:space="preserve">
+	<path fill="#BF0010" d="M24,38.5c-1,0-2-0.4-2.8-1.1l-20.1-20c-1.5-1.5-1.5-3.9,0-5.4l0,0l1.4-1.4C4,9.1,6.4,9.1,8,10.6l16,15.9l16.1-15.9c1.5-1.5,3.9-1.5,5.5,0l1.3,1.4c1.5,1.5,1.5,3.9,0,5.4l0,0l-20.1,20C26,38.1,25,38.5,24,38.5L24,38.5L24,38.5z"/>
+</svg>
+		</div>
+	</a>
+</div>     
+	<div id="page-content-wrapper">
+	<div class="container-fluid main empty-stage-top">
+		<div class="row">
+		<div class="col-xs-12 col-md-8 col-lg-9 ">
+<div class="row row-content txt-img-container">
+<div class="col-xs-12 content">
+<div class="media txt-img-center-lg txt-top-img pbt-text-bottom pbt1602443">
+<div class=" media-left text_w_image_left n-lazy">
+<img data-res="unchanged-image1600w" class="img-responsive" src="https://www.nintendo.com/eu/media/images/01_website_elements/other_elements/grey.gif" data-xs="https://www.nintendo.com/eu/media/images/10_share_images/others_3/404_error_pages/H2x1_404_Do_a_barrel_roll_page_enGB_image1600w.jpg" alt="H2x1_404_Do_a_barrel_roll_page_enGB.jpg" />
+</div>
+</div>
+</div>
+<style>
+.pbt1602443.media.txt-top-img .media-body.image-text h2,
+.pbt1602443.media.txt-top-img .media-body.image-text p{
+color: #000000;
+}
+.pbt1602443.media.txt-top-img.pbt-gradient .media-left:before{
+background: none;
+}
+@media only screen and (max-width: 767px){
+.pbt1602443.media.txt-top-img.pbt-crop-mobile .media-left{
+background: none;
+}
+.pbt1602443.media.txt-top-img.pbt-gradient .media-left:before{
+background: none;
+}
+}
+</style>
+</div><div class="row content-container"> <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2"> <div class="row row-content"> <div class="col-xs-12 text-center"> <p class="textHSmaller">Never give up. Trust your instincts.</p> <div class="row row-content special-btn-links"> <div class="col-xs-12 col-sm-6 text-center"> <a class="gold btn special-btn pull-right" href="#" title="Do a barrel roll!" data-target="body" data-action="rotate">Do a barrel roll!</a> </div> <div class="col-xs-12 col-sm-6 text-center"> <a class="gold btn pull-left" href="/en-gb/" title="Go to the homepage">Go to the homepage</a> </div> </div> </div> </div> </div> </div>
+		</div>
+		<div class="col-xs-12 col-md-4 col-lg-3 sidebox">
+			<div class="">
+<div class="row page-group-list" data-nt-item-list-title="" data-nt-item-list-id="">
+
+	<div class="content-section-header">
+				<div class="content-section-header__container">
+					<p class="content-section-header__title">Latest news</p>
+				</div>
+	</div>
+
+	<ul class="results card-xs-list card-list">		
+<li class="page-list-group-item col-xs-12" data-nt-item-title="" data-nt-item-title-master="">
+		<div class="row page-container">
+			<div class="col-xs-3 col-lg-4 page-img n-lazy">
+		<a title="Nintendo eShop Highlights – 29/01/2026" href="/en-gb/News/2026/January/Nintendo-eShop-Highlights-29-01-2026-3014809.html">
+<img class="img-responsive" src="https://www.nintendo.com/eu/media/images/01_website_elements/other_elements/grey.gif" data-xs="https://www.nintendo.com/eu/media/images/news_12/2026/january_32/1x1_Other_WeeklyDownloadNews_Week05_GB_en_bannerTM_MD.jpg" data-sm="https://www.nintendo.com/eu/media/images/news_12/2026/january_32/1x1_Other_WeeklyDownloadNews_Week05_GB_en_image950w.jpg" alt="Nintendo eShop Highlights – 29/01/2026" title="Nintendo eShop Highlights – 29/01/2026"> <noscript><img class="img-responsive" src="https://www.nintendo.com/eu/media/images/news_12/2026/january_32/1x1_Other_WeeklyDownloadNews_Week05_GB_en_bannerTM_MD.jpg" alt="Nintendo eShop Highlights – 29/01/2026" ></noscript>
+	</a>
+			</div>
+		<div class="col-xs-9 col-lg-8 page-info">
+		<a title="Nintendo eShop Highlights – 29/01/2026" href="/en-gb/News/2026/January/Nintendo-eShop-Highlights-29-01-2026-3014809.html">
+					<p
+						class="page-title"
+					>Nintendo eShop Highlights – 29/01/2026</p>
+					<p class="page-data">
+29/01/2026  | Nintendo Switch, Nintendo Switch 2
+					</p>
+					<p class="page-description"
+						>
+							<span>Take a look at this week's new Nintendo eShop games!</span>
+					</p>
+	</a>
+		</div>
+	</div>		
+</li>
+<li class="page-list-group-item col-xs-12" data-nt-item-title="" data-nt-item-title-master="">
+		<div class="row page-container">
+			<div class="col-xs-3 col-lg-4 page-img n-lazy">
+		<a title="Upcoming games – February 2026" href="/en-gb/News/2026/February/Upcoming-games-February-2026-3013712.html">
+<img class="img-responsive" src="https://www.nintendo.com/eu/media/images/01_website_elements/other_elements/grey.gif" data-xs="https://www.nintendo.com/eu/media/images/news_12/2026/february_28/upcoming_games___february_2026/1x1_NSwitch2_UpcomingGames_February2026_GB_en_bannerTM_MD.jpg" data-sm="https://www.nintendo.com/eu/media/images/news_12/2026/february_28/upcoming_games___february_2026/1x1_NSwitch2_UpcomingGames_February2026_GB_en_image950w.jpg" alt="Upcoming games – February 2026" title="Upcoming games – February 2026"> <noscript><img class="img-responsive" src="https://www.nintendo.com/eu/media/images/news_12/2026/february_28/upcoming_games___february_2026/1x1_NSwitch2_UpcomingGames_February2026_GB_en_bannerTM_MD.jpg" alt="Upcoming games – February 2026" ></noscript>
+	</a>
+			</div>
+		<div class="col-xs-9 col-lg-8 page-info">
+		<a title="Upcoming games – February 2026" href="/en-gb/News/2026/February/Upcoming-games-February-2026-3013712.html">
+					<p
+						class="page-title"
+					>Upcoming games – February 2026</p>
+					<p class="page-data">
+28/01/2026  | Nintendo Switch, Nintendo Switch 2
+					</p>
+					<p class="page-description"
+						>
+							<span>Mario Tennis Fever, Resident Evil Requiem, DRAGON QUEST VII Reimagined, and more are launching this February!</span>
+					</p>
+	</a>
+		</div>
+	</div>		
+</li>
+<li class="page-list-group-item col-xs-12" data-nt-item-title="" data-nt-item-title-master="">
+		<div class="row page-container">
+			<div class="col-xs-3 col-lg-4 page-img n-lazy">
+		<a title="New multiplayer features have arrived in Kirby Air Riders!" href="/en-gb/News/2026/January/New-multiplayer-features-have-arrived-in-Kirby-Air-Riders--3013633.html">
+<img class="img-responsive" src="https://www.nintendo.com/eu/media/images/01_website_elements/other_elements/grey.gif" data-xs="https://www.nintendo.com/eu/media/images/news_12/2026/january_32/new_multiplayer_features_have_arrived_in_kirby_air_riders_/1x1_HP_NSwitch2_KirbyAirRiders_FreeUpdate_GB_en_bannerTM_MD.jpg" data-sm="https://www.nintendo.com/eu/media/images/news_12/2026/january_32/new_multiplayer_features_have_arrived_in_kirby_air_riders_/1x1_HP_NSwitch2_KirbyAirRiders_FreeUpdate_GB_en_image950w.jpg" alt="New multiplayer features have arrived in Kirby Air Riders!" title="New multiplayer features have arrived in Kirby Air Riders!"> <noscript><img class="img-responsive" src="https://www.nintendo.com/eu/media/images/news_12/2026/january_32/new_multiplayer_features_have_arrived_in_kirby_air_riders_/1x1_HP_NSwitch2_KirbyAirRiders_FreeUpdate_GB_en_bannerTM_MD.jpg" alt="New multiplayer features have arrived in Kirby Air Riders!" ></noscript>
+	</a>
+			</div>
+		<div class="col-xs-9 col-lg-8 page-info">
+		<a title="New multiplayer features have arrived in Kirby Air Riders!" href="/en-gb/News/2026/January/New-multiplayer-features-have-arrived-in-Kirby-Air-Riders--3013633.html">
+					<p
+						class="page-title"
+					>New multiplayer features have arrived in Kirby Air Riders!</p>
+					<p class="page-data">
+27/01/2026  | Nintendo Switch 2
+					</p>
+					<p class="page-description"
+						>
+							<span>GameShare support, Grand Prix mode and more.</span>
+					</p>
+	</a>
+		</div>
+	</div>		
+</li>
+<li class="page-list-group-item col-xs-12" data-nt-item-title="" data-nt-item-title-master="">
+		<div class="row page-container">
+			<div class="col-xs-3 col-lg-4 page-img n-lazy">
+		<a title="What’s new in the Splatoon 3 – Version 11.0.0 update?" href="/en-gb/News/2026/January/What-s-new-in-the-Splatoon-3-Version-11-0-0-update-3011546.html">
+<img class="img-responsive" src="https://www.nintendo.com/eu/media/images/01_website_elements/other_elements/grey.gif" data-xs="https://www.nintendo.com/eu/media/images/news_12/2026/january_32/what_s_new_in_the_splatoon_3___version_11_0_0_update_/1x1_NSwitch_Splatoon3_UpdateV11_bannerTM_MD.jpg" data-sm="https://www.nintendo.com/eu/media/images/news_12/2026/january_32/what_s_new_in_the_splatoon_3___version_11_0_0_update_/1x1_NSwitch_Splatoon3_UpdateV11_image950w.jpg" alt="What’s new in the Splatoon 3 – Version 11.0.0 update?" title="What’s new in the Splatoon 3 – Version 11.0.0 update?"> <noscript><img class="img-responsive" src="https://www.nintendo.com/eu/media/images/news_12/2026/january_32/what_s_new_in_the_splatoon_3___version_11_0_0_update_/1x1_NSwitch_Splatoon3_UpdateV11_bannerTM_MD.jpg" alt="What’s new in the Splatoon 3 – Version 11.0.0 update?" ></noscript>
+	</a>
+			</div>
+		<div class="col-xs-9 col-lg-8 page-info">
+		<a title="What’s new in the Splatoon 3 – Version 11.0.0 update?" href="/en-gb/News/2026/January/What-s-new-in-the-Splatoon-3-Version-11-0-0-update-3011546.html">
+					<p
+						class="page-title"
+					>What’s new in the Splatoon 3 – Version 11.0.0 update?</p>
+					<p class="page-data">
+27/01/2026  | Nintendo Switch
+					</p>
+					<p class="page-description"
+						>
+							<span>Check out the latest tweaks and additions included in the latest free update to Splatoon 3.</span>
+					</p>
+	</a>
+		</div>
+	</div>		
+</li>
+	</ul>
+<div
+	class="plm-content-section-footer ">
+<a 
+		href="/en-gb/News/News-Updates-11145.html" title="More News" class="pla-link pla-link--meta"
+	>
+	<span class="pla-link__text pla-link__text--icon-right">More News</span><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 48 48" class="pla-svg-icon pla-link__icon pla-link__icon--right" ><path d="M47.973 24a3.927 3.927 0 0 1-1.113 2.753L26.846 46.862a3.825 3.825 0 0 1-5.427 0L20.062 45.5a3.87 3.87 0 0 1 0-5.454L35.98 24 20.062 7.947a3.87 3.87 0 0 1 0-5.454l1.357-1.364a3.824 3.824 0 0 1 5.427 0L46.86 21.242A4.175 4.175 0 0 1 47.973 24zm-18.938 0a3.926 3.926 0 0 1-1.113 2.753L7.908 46.862a3.825 3.825 0 0 1-5.428 0L1.124 45.5a3.87 3.87 0 0 1 0-5.454L17.042 24 1.124 7.947a3.87 3.87 0 0 1 0-5.454l1.357-1.364a3.825 3.825 0 0 1 5.428 0l20.013 20.113A4.174 4.174 0 0 1 29.035 24z"/></svg>
+</a>
+</div>
+</div>
+<style>
+.img-framed{
+	width: 100%;
+    display: block;
+    position: relative;
+}
+.img-framed .frame {
+    position: absolute;
+}
+.img-framed .frame + img {
+    padding: 11%;
+}
+.frametest-variant-1 .frame{
+	display: none !important;
+}
+.frametest-variant-1 .img-framed .frame + img {
+	padding: 0;
+}
+</style>
+			</div>
+		</div>
+		</div>
+	<div class="row row-footer">
+		<footer id="GA-bottom" class="col-xs-12 col-md-8 col-lg-9 nrd8" data-tr-lp="7">
+			<div class="panel-group" role="tablist"> 
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="collapseListGroupHeading1"> 
+						<a id="footer-brand" class="logolink" href="/en-gb/">
+						<div class="active navbar-brand">
+						<svg style="width: 80px; height: 20px; position: relative; margin: 0 40px 0 0; top: 0px; left: 0px; float: left;"
+	version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	viewBox="0 0 128 32"
+	enable-background="new 0 0 128 32"
+	xml:space="preserve">
+		<path fill="#ffffff" d="M12.7,8.4h4.6l6.4,10.5V8.4h4.6v15.1h-4.6L17.3,13v10.5h-4.6L12.7,8.4L12.7,8.4L12.7,8.4zM53.3,10h4.5v2h2.4v1.5h-2.4v10h-4.5v-10h-2.4V12h2.4L53.3,10L53.3,10L53.3,10z M30.9,13.5h4.5v10h-4.5L30.9,13.5L30.9,13.5L30.9,13.5z M30.8,8.4h4.5v3.1h-4.5L30.8,8.4L30.8,8.4L30.8,8.4z M110.9,18.4c0,0,0,1.5,0,2.1c0,1.6-0.9,2.3-1.8,2.3s-1.8-0.7-1.8-2.3c0-0.6,0-2.2,0-2.2s0-1.5,0-2.1c0-1.6,0.9-2.2,1.8-2.2s1.8,0.7,1.8,2.2C110.9,16.9,110.9,18,110.9,18.4L110.9,18.4L110.9,18.4L110.9,18.4z M109.1,12.8c-3.6,0-6.5,2.5-6.5,5.6s2.9,5.6,6.5,5.6s6.5-2.5,6.5-5.6S112.7,12.8,109.1,12.8L109.1,12.8zM96.7,8.4h4.4v15.1h-4.4c0,0,0-0.5,0-0.6c-2.4,1.6-5.7,0.9-7.3-1.5c-0.6-0.9-0.9-2-0.9-3.1c0.1-3,2.6-5.3,5.5-5.3c0,0,0.1,0,0.1,0c0.9,0.1,1.8,0.4,2.5,0.9L96.7,8.4L96.7,8.4L96.7,8.4z M96.7,18.4v-1.8c0.1-1-0.6-1.8-1.6-1.9c-1-0.1-1.8,0.6-1.9,1.6c0,0.1,0,0.2,0,0.4c0,0.5,0,1.8,0,1.8s0,1.2,0,1.8c-0.1,1,0.6,1.8,1.6,1.9c1,0.1,1.8-0.6,1.9-1.6c0-0.1,0-0.3,0-0.4C96.7,19.6,96.7,18.4,96.7,18.4L96.7,18.4z M45.8,13c2.7-0.1,4.9,2,5,4.7c0,0.1,0,0.2,0,0.4c0,0.7,0,5.5,0,5.5h-4.4v-6.6c-0.1-1.1-1-1.9-2-1.8c-1.1,0-2,0.8-2.1,1.8c0,0.4,0,6.6,0,6.6h-4.4v-10h4.4c0,0,0,0.8,0,1.1C43.2,13.6,44.4,13.1,45.8,13L45.8,13L45.8,13z M82.1,13c2.7-0.1,4.9,2,5,4.7c0,0.1,0,0.2,0,0.4c0,0.7,0,5.5,0,5.5h-4.4v-6.6c-0.1-1.1-1-1.9-2-1.8c-1.1,0-2,0.8-2.1,1.8c0,0.4,0,6.6,0,6.6h-4.4v-10h4.4c0,0,0,0.8,0,1.1C79.4,13.6,80.7,13.1,82.1,13L82.1,13L82.1,13z M64.3,17c-0.1-0.7,0-1.3,0.3-2c0.3-0.6,0.9-0.9,1.6-0.9l0,0c0.6,0,1.2,0.4,1.6,0.9c0.3,0.6,0.4,1.3,0.3,2L64.3,17L64.3,17z M68,20c0,0,0,0,0,0.6c0,1.8-1.2,2.2-1.8,2.2c-1.1,0-1.9-0.9-1.9-2c0-0.1,0-0.2,0-0.3c0-0.5,0-2.1,0-2.1h8.4c0-3.1-3-5.7-6.6-5.7s-6.6,2.5-6.6,5.6s2.9,5.6,6.6,5.6c2.8,0.1,5.3-1.5,6.3-4.1H68L68,20z M116.3,9.6c0.7,0,1.1,0.2,1.1,0.7c0,0.3-0.2,0.6-0.6,0.7l0.6,1.1h-0.7l-0.5-1.1h-0.3v1.1h-0.6V9.6L116.3,9.6L116.3,9.6z M116.3,8.6c-1.3,0-2.3,1-2.4,2.3c0,1.3,1,2.3,2.3,2.4c1.3,0,2.3-1,2.4-2.3c0,0,0,0,0,0C118.5,9.6,117.5,8.6,116.3,8.6C116.3,8.6,116.3,8.6,116.3,8.6L116.3,8.6z M118.1,10.9c0,1-0.9,1.8-1.9,1.8s-1.8-0.9-1.8-1.9c0-1,0.8-1.8,1.8-1.8C117.3,9,118.1,9.9,118.1,10.9C118.1,10.9,118.1,10.9,118.1,10.9L118.1,10.9z M115.9,10.7h0.3c0.4,0,0.5-0.1,0.5-0.4s-0.2-0.4-0.6-0.4h-0.3L115.9,10.7L115.9,10.7L115.9,10.7z M16.7,32C6.7,32,0,24.8,0,16S6.7,0,16.7,0h94.6c10,0,16.7,7.3,16.7,16s-6.7,16-16.7,16H16.7z M16.8,3.9C8.8,4,3.9,9.3,3.9,16s4.8,12.1,12.8,12.1h94.5c8,0,12.8-5.4,12.8-12.1S119.2,4,111.2,3.9H16.8z"/>
+</svg>
+						</div>
+						</a>
+						<div class="panel-title"> 
+							<a href="#collapseListGroup1" class="collapsed pull-right" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseListGroup1">
+							<span class="country-selector-earth">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 512 512" class="pla-svg-icon" ><path d="M155.3 155.3C149.1 161.6 138.9 161.6 132.7 155.3C126.4 149.1 126.4 138.9 132.7 132.7L164.7 100.7C170.9 94.44 181.1 94.44 187.3 100.7C193.6 106.9 193.6 117.1 187.3 123.3L155.3 155.3zM0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM256 464C261.8 464 267.5 463.8 273.1 463.3C272.4 461 272 458.5 272 456C272 442.7 261.3 432 248 432H226.7C214.7 432 203.2 427.2 194.7 418.7L178.7 402.7C166.7 390.7 160 374.5 160 357.5V354.3C160 332.9 170.7 312.9 188.5 301L215.9 282.7C226.4 275.7 238.7 272 251.4 272H272.3C287.6 272 302.4 277.5 313.1 287.4L340.5 310.2C347.9 316.5 357.4 320 367.1 320C377.9 320 388.3 324.3 395.1 331.1L409.4 345.4C413.6 349.6 419.4 352 425.4 352C430.2 352 434.7 353.5 438.4 356.1C444.7 344.7 449.9 332.6 453.1 320H446.6C432.1 320 418.2 314.2 408 304L389.7 285.7C386 282 384 277.1 384 272C384 266.9 386 261.1 389.7 258.3L397.2 250.8C398.1 249 400 246.6 400 244C400 241.4 398.1 238.1 397.2 237.2L390.6 230.6C386.4 226.4 380.6 224 374.6 224H363.3C357.1 224 352 218.9 352 212.7C352 209.7 353.2 206.8 355.3 204.7L360 200C365.1 194.9 372.1 192 379.3 192H400C408.8 192 416 184.8 416 176C416 167.2 408.8 160 400 160H370.6C360.3 160 352 168.3 352 178.6C352 186.6 346.9 193.7 339.3 196.2L318.1 203.3C310.7 205.8 307.1 214.3 310.7 221.3L311.8 223.6C315.6 231.1 310.1 240 301.7 240C298.1 240 294.7 238.3 292.6 235.5L276.3 213.7C273.6 210.1 269.4 208 264.8 208C259.4 208 254.5 211.1 252 215.9L248 224C243.1 233.8 232.9 240 221.9 240C205.6 240 192 226.7 192 210.3V206.1C192 197.1 195.6 188.4 201.9 182.1L219.9 164.1C222.5 161.5 224 157.9 224 154.2C224 148.1 227.9 142.7 233.6 140.8L260.2 131.9C267.9 129.4 275 124.1 280.8 119.2L300.7 99.31C302.8 97.19 304 94.31 304 91.31C304 85.07 298.9 80 292.7 80H291.7C289.3 80 286.9 80.72 284.9 82.06L243.1 109.9C241.1 111.3 238.7 112 236.3 112C229.5 112 224 106.5 224 99.72V90.67C224 83.95 227.2 77.63 232.5 73.6L266.3 48.25C262.9 48.09 259.5 48 256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464V464z"/></svg></span>
+							 <span class="country-selector-text">UK & Ireland</span>
+							<span class="country-selector-sort">
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="0.83333333333333333333333333333333em" viewBox="0 0 10 12" class="pla-svg-icon" ><path data-name="double arrows" d="M0 7.144h10L5 12Zm0-2.289L5 0l5 4.856Z" fill="#fff"/></svg></span>
+							</a> 
+						</div>				
+					</div> 
+					<div class="panel-collapse collapse" role="tabpanel" id="collapseListGroup1" aria-labelledby="collapseListGroupHeading1" aria-expanded="false" style="height: 0px;"> 
+						<div class="inside-panel">
+						<div class="hl-body">
+							<p class="headline-body">Change country</p>
+						</div>
+						<div class="panel-body hidden-xs">
+					<ul class="list-group">
+								<li class="list-group-item">
+									<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="nl-be" href="https://www.nintendo.com/nl-be/404.html">
+										<span class="NL_BE"></span>België
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a title="404 - PAGE INEXISTANTE" rel="alternate" hreflang="fr-be" href="https://www.nintendo.com/fr-be/404.html">
+										<span class="FR_BE"></span>Belgique
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a title="404 - TECHNISCHES PROBLEM" rel="alternate" hreflang="de-de" href="https://www.nintendo.com/de-de/404.html">
+										<span class="DE_DE"></span>Deutschland
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a title="404 - P&amp;Aacute;GINA NO IDENTIFICADA. &amp;iexcl;ABANDONEN LA NAVE!" rel="alternate" hreflang="es-es" href="https://www.nintendo.com/es-es/404.html">
+										<span class="ES_ES"></span>España
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a title="404 - PAGE INEXISTANTE" rel="alternate" hreflang="fr-fr" href="https://www.nintendo.com/fr-fr/404.html">
+										<span class="FR_FR"></span>France
+									</a>
+								</li>
+								</ul>
+								<ul class="list-group">
+								<li class="list-group-item">
+									<a title="404 - SONO ERROR" rel="alternate" hreflang="it-it" href="https://www.nintendo.com/it-it/404.html">
+										<span class="IT_IT"></span>Italia
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="nl-nl" href="https://www.nintendo.com/nl-nl/404.html">
+										<span class="NL_NL"></span>Nederland
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a title="404 - TECHNISCHES PROBLEM" rel="alternate" hreflang="de-at" href="https://www.nintendo.com/de-at/404.html">
+										<span class="DE_AT"></span>Österreich
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a title="404 &amp;ndash; ERRO" rel="alternate" hreflang="pt-pt" href="https://www.nintendo.com/pt-pt/404.html">
+										<span class="PT_PT"></span>Portugal
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a title="404 - TECHNISCHES PROBLEM" rel="alternate" hreflang="de-ch" href="https://www.nintendo.com/de-ch/404.html">
+										<span class="DE_CH"></span>Schweiz
+									</a>
+								</li>
+								</ul>
+								<ul class="list-group">
+								<li class="list-group-item">
+									<a title="404 - PAGE INEXISTANTE" rel="alternate" hreflang="fr-ch" href="https://www.nintendo.com/fr-ch/404.html">
+										<span class="FR_CH"></span>Suisse
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a title="404 - SONO ERROR" rel="alternate" hreflang="it-ch" href="https://www.nintendo.com/it-ch/404.html">
+										<span class="IT_CH"></span>Svizzera
+									</a>
+								</li>
+								<li class="list-group-item locale_selector_current">
+									<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="en-gb" href="https://www.nintendo.com/en-gb/404.html">
+										<span class="EN_GB"></span>UK & Ireland
+									</a>
+								</li>
+								<li class="list-group-item">
+									<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="en-za" href="https://www.nintendo.com/en-za/404.html">
+										<span class="EN_ZA"></span>South Africa
+									</a>
+								</li>
+							<li class="list-group-item locale-selector-global">
+								<a title="See all regions" data-nt-title="See all regions" href="https://www.nintendo.com/regionselector/" target="_blank">
+									See all regions
+								</a>
+							</li>			
+						</ul>
+								<ul class ="list-group">
+									<li class="list-group-item">
+										<a title="Lylat" href="Games/Nintendo-64/Lylat-Wars-277897.html"><span class="Lylat"></span>Lylat</a>
+									</li>
+								</ul>
+						</div>
+						<div class="panel-body visible-xs">
+						<ul class="list-group">
+						<li class="list-group-item">
+							<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="nl-be" href="https://www.nintendo.com/nl-be/404.html">
+								<span class="NL_BE"></span>België
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 - PAGE INEXISTANTE" rel="alternate" hreflang="fr-be" href="https://www.nintendo.com/fr-be/404.html">
+								<span class="FR_BE"></span>Belgique
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 - TECHNISCHES PROBLEM" rel="alternate" hreflang="de-de" href="https://www.nintendo.com/de-de/404.html">
+								<span class="DE_DE"></span>Deutschland
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 - P&amp;Aacute;GINA NO IDENTIFICADA. &amp;iexcl;ABANDONEN LA NAVE!" rel="alternate" hreflang="es-es" href="https://www.nintendo.com/es-es/404.html">
+								<span class="ES_ES"></span>España
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 - PAGE INEXISTANTE" rel="alternate" hreflang="fr-fr" href="https://www.nintendo.com/fr-fr/404.html">
+								<span class="FR_FR"></span>France
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 - SONO ERROR" rel="alternate" hreflang="it-it" href="https://www.nintendo.com/it-it/404.html">
+								<span class="IT_IT"></span>Italia
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="nl-nl" href="https://www.nintendo.com/nl-nl/404.html">
+								<span class="NL_NL"></span>Nederland
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 - TECHNISCHES PROBLEM" rel="alternate" hreflang="de-at" href="https://www.nintendo.com/de-at/404.html">
+								<span class="DE_AT"></span>Österreich
+							</a>
+						</li>
+						</ul>
+						<ul class="list-group">
+						<li class="list-group-item">
+							<a title="404 &amp;ndash; ERRO" rel="alternate" hreflang="pt-pt" href="https://www.nintendo.com/pt-pt/404.html">
+								<span class="PT_PT"></span>Portugal
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 - TECHNISCHES PROBLEM" rel="alternate" hreflang="de-ch" href="https://www.nintendo.com/de-ch/404.html">
+								<span class="DE_CH"></span>Schweiz
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 - PAGE INEXISTANTE" rel="alternate" hreflang="fr-ch" href="https://www.nintendo.com/fr-ch/404.html">
+								<span class="FR_CH"></span>Suisse
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 - SONO ERROR" rel="alternate" hreflang="it-ch" href="https://www.nintendo.com/it-ch/404.html">
+								<span class="IT_CH"></span>Svizzera
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="en-za" href="https://www.nintendo.com/en-za/404.html">
+								<span class="EN_ZA"></span>South Africa
+							</a>
+						</li>
+						<li class="list-group-item locale_selector_current">
+							<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="en-gb" href="https://www.nintendo.com/en-gb/404.html">
+								<span class="EN_GB"></span>UK & Ireland
+							</a>
+						</li>
+							<li class="list-group-item locale-selector-global">
+								<a title="See all regions" data-nt-title="See all regions" href="https://www.nintendo.com/regionselector/" target="_blank">
+									See all regions
+								</a>
+							</li>					
+						</ul>
+						</div>
+					</div>
+					</div> 
+				</div>
+				<div class="panel-footer">
+					<div class="pf-links-hg">
+<a href="/en-gb/Support/Parental-Controls/Parents-642522.html" id="footer_ParentsParentalControls" title="Parents &amp; Parental Controls">Parents &amp; Parental Controls</a>
+<a href="/en-gb/Support/Welcome-to-Nintendo-Support-11593.html" id="footer_Support" title="Support">Support</a>
+<a href="/en-gb/Support/Company-Information/Company-Information-1106807.html" id="footer_CompanyInformation" title="Company Information">Company Information</a>
+<a href="https://nintendoeurope.csod.com/ux/ats/careersite/1/home?c=nintendoeurope" id="footer_Career" title="Career">Career</a>
+<a href="/en-gb/Legal-information/Website-Privacy-Policy/Website-Privacy-Policy-637785.html" id="footer_WebsitePrivacyPolicy" title="Website Privacy Policy">Website Privacy Policy</a>
+</div>
+<div class="pf-links-sg">
+<a id="footer_Cookiesettings" title="Cookie settings" class="ot-sdk-show-settings plu-cursor-pointer">Cookie settings</a>
+<a href="/en-gb/Legal-information/Legal-information-757082.html" id="footer_Legalinformation" title="Legal information">Legal information</a>
+<a href="/en-gb/Legal-information/Service-Termination/Service-Termination-2234682.html" id="footer_ServiceTermination" title="Service Termination">Service Termination</a>
+<a href="https://www.nintendo.co.jp/csr/en-gb/index.html" id="footer_CSR" title="CSR" class="externalnintendo" target="_blank">CSR</a>
+<a href="https://www.nintendo.co.jp/csr/pdf/ModernSlaveryTransparencyStatement_en.pdf" id="footer_ModernSlaveryTransparencyStatement" title="Modern Slavery Transparency Statement" target="nintendo">Modern Slavery Transparency Statement</a>
+<a href="/en-gb/Legal-information/Accessibility-declaration-2858593.html" id="footer_Accessibilitydeclaration" title="Accessibility declaration">Accessibility declaration</a>
+<a href="/en-gb/Support/Contact/Contact-621598.html" id="footer_Contact" title="Contact">Contact</a>
+</div>
+					<p id="copyright">&copy; Nintendo. 2026 </p>
+	  			</div> 
+			</div>
+		</footer>
+	</div>
+	<script src="https://www.nintendo.com/eu/media/bootstrap_js/bootstrap.min.js"></script>
+	<script src="https://www.nintendo.com/eu/media/bootstrap_js/ms/main.js"></script>
+	<script src="https://www.nintendo.com/eu/media/js/pl/pl-source-vendor.js"></script>
+	<script src="https://www.nintendo.com/eu/media/js/pl/pl-main.js"></script>
+	<script src="https://www.nintendo.com/eu/media/quiz/js/vue.js"></script>
+	<script src="https://www.nintendo.com/eu/media/quiz/js/icons.js"></script>
+	<script src="https://www.nintendo.com/eu/media/quiz/js/dialog.js"></script>
+	<script src="https://www.nintendo.com/eu/media/quiz/js/chunk-common.js"></script>
+	<script src="https://www.nintendo.com/eu/media/quiz/js/quiz.js"></script>
+	<script src="https://www.nintendo.com/eu/media/quiz/js/carousel.js"></script>
+<div id="locale_selector_overlay" class="modal localebox" data-tr-lp="8">
+	<div class="modal-dialog">
+		<div class="modal-content container-fluid">
+			<div class="modal-header">	
+				<button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>					
+				<p class="overlay_headline">Change country</p>
+			</div>
+			<div class="row modal-body">
+				<div class="col-sm-6">
+				<ul class="leftcol fromNL">
+								<li>
+									<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="nl-be" href="https://www.nintendo.com/nl-be/404.html">
+										<span class="NL_BE"></span>België
+									</a>
+								</li>
+								<li>
+									<a title="404 - PAGE INEXISTANTE" rel="alternate" hreflang="fr-be" href="https://www.nintendo.com/fr-be/404.html">
+										<span class="FR_BE"></span>Belgique
+									</a>
+								</li>
+								<li>
+									<a title="404 - TECHNISCHES PROBLEM" rel="alternate" hreflang="de-de" href="https://www.nintendo.com/de-de/404.html">
+										<span class="DE_DE"></span>Deutschland
+									</a>
+								</li>
+								<li>
+									<a title="404 - P&amp;Aacute;GINA NO IDENTIFICADA. &amp;iexcl;ABANDONEN LA NAVE!" rel="alternate" hreflang="es-es" href="https://www.nintendo.com/es-es/404.html">
+										<span class="ES_ES"></span>España
+									</a>
+								</li>
+								<li>
+									<a title="404 - PAGE INEXISTANTE" rel="alternate" hreflang="fr-fr" href="https://www.nintendo.com/fr-fr/404.html">
+										<span class="FR_FR"></span>France
+									</a>
+								</li>
+								<li>
+									<a title="404 - SONO ERROR" rel="alternate" hreflang="it-it" href="https://www.nintendo.com/it-it/404.html">
+										<span class="IT_IT"></span>Italia
+									</a>
+								</li>
+								<li>
+									<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="nl-nl" href="https://www.nintendo.com/nl-nl/404.html">
+										<span class="NL_NL"></span>Nederland
+									</a>
+								</li>
+								<li class="noborderItem ">
+									<a title="404 - TECHNISCHES PROBLEM" rel="alternate" hreflang="de-at" href="https://www.nintendo.com/de-at/404.html">
+										<span class="DE_AT"></span>Österreich
+									</a>
+								</li>
+								</ul>
+					</div>			
+					<div class="col-sm-6">
+								<ul class="rightcol fromNL">
+								<li>
+									<a title="404 &amp;ndash; ERRO" rel="alternate" hreflang="pt-pt" href="https://www.nintendo.com/pt-pt/404.html">
+										<span class="PT_PT"></span>Portugal
+									</a>
+								</li>
+								<li>
+									<a title="404 - TECHNISCHES PROBLEM" rel="alternate" hreflang="de-ch" href="https://www.nintendo.com/de-ch/404.html">
+										<span class="DE_CH"></span>Schweiz
+									</a>
+								</li>
+								<li>
+									<a title="404 - PAGE INEXISTANTE" rel="alternate" hreflang="fr-ch" href="https://www.nintendo.com/fr-ch/404.html">
+										<span class="FR_CH"></span>Suisse
+									</a>
+								</li>
+								<li>
+									<a title="404 - SONO ERROR" rel="alternate" hreflang="it-ch" href="https://www.nintendo.com/it-ch/404.html">
+										<span class="IT_CH"></span>Svizzera
+									</a>
+								</li>
+								<li class="locale_selector_current">
+									<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="en-gb" href="https://www.nintendo.com/en-gb/404.html">
+										<span class="EN_GB"></span>UK & Ireland
+									</a>
+								</li>
+								<li class="noborderItem ">
+									<a title="404 &amp;ndash; I AM ERROR" rel="alternate" hreflang="en-za" href="https://www.nintendo.com/en-za/404.html">
+										<span class="EN_ZA"></span>South Africa
+									</a>
+								</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="external_warning_overlay" class="modal external_warning" data-nt-overlay data-nt-action="External Warning" data-nt-overlay-type="external_warning" data-nt-overlay-label="">
+	<div class="modal-dialog externalbox" data-tr-lp="8">
+	<div class="modal-content container-fluid">
+		<div class="modal-header">	
+			<button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>					
+			<p class="overlay_headline">Attention!</p>
+		</div>
+		<div class="row modal-body">
+			<div class="col-xs-12">
+<p>You are about to leave the Nintendo of Europe site. Nintendo of Europe is not responsible for the content or security of the site you are about to visit.</p>
+				<a href="#cancel" class="btn cancel white close_small filter gradient" data-dismiss="modal" title="Cancel">Cancel</a>
+				<a href="#continue" class="btn continue blue arrow_right filter alignright gradient" target="_blank" title="Continue">Continue</a>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div id="mothership_survey_overlay" class="modal external_warning" data-nt-overlay data-nt-action="Mothership Survey" data-nt-overlay-type="mothership_survey" data-nt-overlay-label="">
+	<div class="modal-dialog externalbox" data-tr-lp="8">
+	<div class="modal-content container-fluid">
+		<div class="modal-header">	
+			<button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>					
+			<p class="overlay_headline">Survey</p>
+		</div>
+		<div class="row modal-body">
+			<div class="col-xs-12">
+<p>Dear visitor,</p><p>Thank you for visiting the Nintendo website! You have been randomly chosen to take part in a brief survey. By taking a few minutes to share your thoughts and opinions, you will be helping us to improve our website.</p><p>Naturally, any information provided by you in this survey will be treated in confidence.</p><p>Your Nintendo of Europe Team</p>
+				<a href="#cancel" class="btn cancel white close_small filter gradient" data-dismiss="modal" title="Decline invitation">Decline invitation</a>
+				<a href="#continue" class="btn continue blue arrow_right filter alignright gradient" data-dismiss="modal" title="Take the survey">Take the survey</a>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div id="facebook_overlay" class="modal facebook">	
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">	
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>					
+			<p class="overlay_headline">Facebook</p>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">	
+					<div class="facebook-big"></div>
+				</div>
+				<div class="col-xs-12 col-sm-8">
+					<div class="colorbox_content">
+<p>Visit us on Facebook:</p>
+					    <p><a href="https://www.facebook.com/NintendoUK" class="externalnintendo" title="Nintendo" target="_blank">Nintendo</a></p>
+					    <p><a href="https://www.facebook.com/NintendoSwitchUK" class="externalnintendo" title="Nintendo Switch" target="_blank">Nintendo Switch</a></p>
+					    <p><a href="https://www.facebook.com/nintendo3dsuk" class="externalnintendo" title="Nintendo 3DS" target="_blank">Nintendo 3DS</a></p>
+					    <p><a href="https://www.facebook.com/MyNintendoStoreUK" class="externalnintendo" title="My Nintendo Store" target="_blank">My Nintendo Store</a></p>
+					    <p><a href="https://www.facebook.com/SuperMarioUK" class="externalnintendo" title="Super Mario" target="_blank">Super Mario</a></p>
+					    <p><a href="https://www.facebook.com/LegendofZeldaUK" class="externalnintendo" title="The Legend of Zelda" target="_blank">The Legend of Zelda</a></p>
+					    <p><a href="https://facebook.com/SmashBrosUK/" class="externalnintendo" title="Super Smash Bros." target="_blank">Super Smash Bros.</a></p>
+					    <p><a href="https://facebook.com/AnimalCrossingUK" class="externalnintendo" title="Animal Crossing" target="_blank">Animal Crossing</a></p>
+					    <p><a href="https://facebook.com/MarioKartUK" class="externalnintendo" title="Mario Kart" target="_blank">Mario Kart</a></p>
+					    <p><a href="https://www.facebook.com/SplatoonUK" class="externalnintendo" title="Splatoon" target="_blank">Splatoon</a></p>
+					    <p><a href="https://www.facebook.com/FireEmblemUK" class="externalnintendo" title="Fire Emblem" target="_blank">Fire Emblem</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div id="twitter_overlay" class="modal twitter">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">	
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>					
+			<p class="overlay_headline">X</p>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">	
+					<div class="twitter-big"></div>
+				</div>
+				<div class="col-xs-12 col-sm-8">
+					<div class="colorbox_content">
+					    <p><a href="https://x.com/NintendoUK" class="externalnintendo" title="@NintendoUK" target="_blank">@NintendoUK</a></p>
+					    <p><a href="https://x.com/NintendoStoreUK" class="externalnintendo" title="My Nintendo Store" target="_blank">My Nintendo Store</a></p>
+					    <p><a href="https://x.com/NintendoUKVS" class="externalnintendo" title="@NintendoUKVS" target="_blank">@NintendoUKVS</a></p>
+					    <p><a href="https://x.com/SuperMario_UK" class="externalnintendo" title="@SuperMario_UK" target="_blank">@SuperMario_UK</a></p>
+					    <p><a href="https://x.com/AC_Isabelle" class="externalnintendo" title="@AC_Isabelle from Animal Crossing: New Horizons" target="_blank">@AC_Isabelle from Animal Crossing: New Horizons</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div id="youtube_overlay" class="modal youtube">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">	
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>					
+			<p class="overlay_headline">YouTube</p>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">	
+					<div class="youtube-big"></div>
+				</div>
+				<div class="col-xs-12 col-sm-8">
+					<div class="colorbox_content">
+					    <p><a href="https://www.youtube.com/NintendoUK" class="externalnintendo" title="NintendoUK" target="_blank">NintendoUK</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div id="instagram_overlay" class="modal instagram">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">	
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>					
+			<p class="overlay_headline">Instagram</p>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">	
+					<div class="instagram-big"></div>
+				</div>
+				<div class="col-xs-12 col-sm-8">
+					<div class="colorbox_content">
+<p>Join us on Instagram:</p>
+					    <p><a href="https://instagram.com/NintendoUK" class="externalnintendo" title="NintendoUK" target="_blank">NintendoUK</a></p>
+					    <p><a href="https://instagram.com/NintendoSwitchEurope" class="externalnintendo" title="NintendoSwitchEurope" target="_blank">NintendoSwitchEurope</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div id="twitch_overlay" class="modal twitch">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">	
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>					
+			<p class="overlay_headline">Twitch</p>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">	
+					<div class="twitch-big"></div>
+				</div>
+				<div class="col-xs-12 col-sm-8">
+					<div class="colorbox_content">
+<p>Visit us on Twitch:</p>
+					    <p><a href="http://www.twitch.tv/NintendoUK" class="externalnintendo" title="NintendoUK" target="_blank">NintendoUK</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div id="linkedin_overlay" class="modal linkedin">
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">	
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>					
+			<p class="overlay_headline">LinkedIn</p>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">	
+					<div class="linkedin-big"></div>
+				</div>
+				<div class="col-xs-12 col-sm-8">
+					<div class="colorbox_content">
+					    <p><a href="https://www.linkedin.com/company/nintendo-of-europe-gmbh" class="externalnintendo" title="Visit us on LinkedIn" target="_blank">Visit us on LinkedIn</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div id="youtube-player-overlay" class="modal modal-media">
+	<div class="modal-dialog media_player_overlay">
+		<div class="modal-content media_player_wrapper">
+			<div class="container modal-body">
+				<div class="media_player_headline"></div>
+				<div class="media_player_content embed-responsive embed-responsive-16by9"></div>
+				<div class="media_player_description"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="universal_modal" class="modal universal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
+				<p class="overlay_headline"></p>
+			</div>
+			<div class="row modal-body">
+				<div class="col-xs-12 overlay_content"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- BEGIN PAGE TAG EXECUTION CALL -->
+<script>
+	var vlc = "0"; // Capture Link Click	1=TRUE, 0=FALSE
+	var v = {};
+	var zog_pv ={
+		pn:  '404 &ndash; I AM ERROR',
+		pid: "611343",
+		ws: "Home/",
+		pt:  "pt_standard",
+		l:	locale
+	};
+</script>
+<!-- END PAGE TAG EXECUTION CALL -->
+<!--[if lte IE 8]> <script>$(document).ready(function() { document.create('ng-submit'); });</script>    <![endif]-->
+    	</div>
+    </div>
+    </div>
+	</body>
+</html>
+
+
+
+
