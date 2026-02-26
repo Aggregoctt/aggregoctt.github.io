@@ -1,0 +1,36 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144484/you-can-add-a-menu-bar-to-kde-title-bars-with-this-tool-for-some-reason/
+date: '2026-02-25T22:46:05'
+excerpt: Only a few days ago we talked about the concept of client-side decorations,
+  and how more and more desktop environments and operating systems &#8211; specifically
+  GNOME and macOS &#8211; are putting more and more buttons, menus, and other widgets
+  inside title bars. How about we take this concept a step further? This hides the
+  AppMenu icon button and draws the menu in the title bar. It also includes a search
+  button to find actions. It works on both X11 and Wayland. On Wayland, GTK apps don&#8217;t
+  export the menu in a KDE-friendly way. You need to start them with GDK_BACKEND=x11
+  environment variable or you can try the experimental appmenu-gtk-module-wayland
+  (GTK3 only). ↫ material-decoration&#8217;s GitHub page So this little tool allows
+  you to add an application&#8217;s menu bar (file, edit, view, etc.) to the titlebar
+  of a KDE application. The way it works is that it adds an optional widget to KDE&#8217;s
+  System Settings > Colors &#38; Themes > Window Decorations > Configure Titlebar
+  Buttons&#8230;, alongside regular staples like close, minimise, maximise, etc. You
+  can then freely add said &#8220;menu bar&#8221; to the title bar of your applications.
+  There&#8217;s some configuration options, too. For instance, you can disable the
+  search button, or turn the entire menu bar into a hamburger menu instead. It looks
+  weird, and I&#8217;m definitely not the target audience for this, but I do find
+  it intriguing. I&#8217;ve never seen anything like this before, and I doubt many
+  people will like it since it takes up so much space if you don&#8217;t opt to use
+  the hamburger menu option. That being said, I&#8217;m fairly sure KDE and Kwin allow
+  you to edit the titlebars of specific applications and specific windows, which does
+  open some interesting possibilities for, say, applications or windows which you
+  always have maximised or whatever. There&#8217;s an AUR package for Arch users,
+  but everyone else will have to build it themselves.
+image: null
+source: osnews
+tags:
+- KDE
+title: You can add a menu bar to KDE title bars with this tool, for some reason
+---
+<div><p>Only a few days ago we <a href="https://www.osnews.com/story/144473/gtk-nocsd-an-ld_preload-library-to-disable-csds/">talked</a> about the concept of client-side decorations, and how more and more desktop environments and operating systems &#8211; specifically GNOME and macOS &#8211; are putting more and more buttons, menus, and other widgets inside title bars. How about we take this concept a step further?</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>This hides the AppMenu icon button and draws the menu in the title bar. It also includes a search button to find actions. It works on both X11 and Wayland. On Wayland, GTK apps don&#8217;t export the menu in a KDE-friendly way. You need to start them with <code>GDK_BACKEND=x11</code> environment variable or you can try the experimental <a href="https://github.com/guiodic/appmenu-gtk-module-wayland">appmenu-gtk-module-wayland</a> (GTK3 only).</p>
+<a href="https://github.com/guiodic/material-decoration">&#8619; material-decoration&#8217;s GitHub page</a></blockquote><p>So this little tool allows you to add an application&#8217;s menu bar (file, edit, view, etc.) to the titlebar of a KDE application. The way it works is that it adds an optional widget to KDE&#8217;s System Settings &gt; Colors &amp; Themes &gt; Window Decorations &gt; Configure Titlebar Buttons&#8230;, alongside regular staples like close, minimise, maximise, etc. You can then freely add said &#8220;menu bar&#8221; to the title bar of your applications. There&#8217;s some configuration options, too. For instance, you can disable the search button, or turn the entire menu bar into a hamburger menu instead.</p><p>It looks weird, and I&#8217;m definitely not the target audience for this, but I do find it intriguing. I&#8217;ve never seen anything like this before, and I doubt many people will like it since it takes up so much space if you don&#8217;t opt to use the hamburger menu option. That being said, I&#8217;m fairly sure KDE and Kwin allow you to edit the titlebars of specific applications and specific windows, which does open some interesting possibilities for, say, applications or windows which you always have maximised or whatever.</p></div>
