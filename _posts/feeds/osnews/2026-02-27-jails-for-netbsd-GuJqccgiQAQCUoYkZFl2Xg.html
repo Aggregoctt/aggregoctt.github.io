@@ -1,0 +1,26 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144499/jails-for-netbsd/
+date: '2026-02-27T21:58:11'
+excerpt: FreeBSD has its jails technology, and it seems NetBSD might be getting something
+  similar soon. Jails for NetBSD aims to bring lightweight, kernel-enforced isolation
+  to NetBSD.  The system is intended to remain fully NetBSD-native. Isolation and
+  policy enforcement are integrated into the kernel’s security framework rather than
+  implemented in a separate runtime layer. It does not aim to become a container platform.
+  It does not aim to provide virtualization. ↫ Matthias Petermann It has all the usual
+  features you have come to expect from jails, like resource quota, security profiles,
+  logging, and so on. Processes inside jails have no clue they&#8217;re in a jail,
+  and using supervisor mode, jails are descendent from a single process and remain
+  visible in the host process table. Of course, there&#8217;s many more features listed
+  in the linked article. It&#8217;s in development and not a default part of NetBSD
+  at this time. The project, led by Matthias Petermann, is developed out of tree,
+  with an unofficial NetBSD 10.1 ISO with the jails feature included available as
+  well.
+image: null
+source: osnews
+tags:
+- NetBSD
+title: Jails for NetBSD
+---
+<div><p>FreeBSD has its <a href="https://docs.freebsd.org/en/books/handbook/jails/">jails technology</a>, and it seems NetBSD might be getting something similar soon.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>Jails for NetBSD aims to bring lightweight, kernel-enforced isolation to NetBSD.</p>[&#8230;]<p>The system is intended to remain fully NetBSD-native. Isolation and policy enforcement are integrated into the kernel&#8217;s security framework rather than implemented in a separate runtime layer.</p><p>It does not aim to become a container platform. It does not aim to provide virtualization.</p>
+<a href="https://netbsd-jails.petermann-digital.de/">&#8619; Matthias Petermann</a></blockquote><p>It has all the usual features you have come to expect from jails, like resource quota, security profiles, logging, and so on. Processes inside jails have no clue they&#8217;re in a jail, and using supervisor mode, jails are descendent from a single process and remain visible in the host process table. Of course, there&#8217;s many more features listed in the linked article.</p><p>It&#8217;s in development and not a default part of NetBSD at this time. The project, led by Matthias Petermann, is developed out of tree, with an unofficial NetBSD 10.1 ISO with the jails feature included available as well.</p></div>
