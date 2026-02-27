@@ -1,0 +1,165 @@
+---
+author: Andrew Cunningham
+canonical_url: https://arstechnica.com/gadgets/2026/02/how-to-downgrade-from-macos-26-tahoe-on-a-new-mac/
+date: '2026-02-27T14:34:45'
+excerpt: Most new Macs can still be downgraded with few downsides. Here's what to
+  know.
+image: assets/media/85DIcb6l99TAHHSOBwSAjA-gigjdSuY_HDK8A5UWp-ooA.jpeg
+source: arstechnica
+tags:
+- Apple
+- Tech
+- apple
+- iMac
+- Mac
+- Mac mini
+- Mac Studio
+- MacBook Air
+- MacBook Pro
+- macOS 15
+- macos 15 sequoia
+- macos 26
+- macos 26 tahoe
+title: How to downgrade from macOS 26 Tahoe on a new Mac
+---
+<div>
+                      
+                      
+           
+<p>An Ars Technica colleague recently bought a new M4 MacBook Air. I have <a href="https://arstechnica.com/apple/2025/03/apple-m4-macbook-air-review-i-have-no-notes/">essentially nothing bad to say about this hardware</a>, except to point out that even in our current memory shortage apocalypse, Apple is still charging higher-than-market-rates for RAM and SSD upgrades. Still, most people buying this laptop will have a perfectly nice time with it.</p>
+<p>But for this colleague, it was also their first interaction with macOS 26 Tahoe and the Liquid Glass redesign, the Mac&#8217;s first major software design update since the Apple Silicon era began with <a href="https://arstechnica.com/gadgets/2020/11/macos-11-0-big-sur-the-ars-technica-review/">macOS 11 Big Sur in 2020</a>.</p>
+<p>Negative consumer reaction to Liquid Glass <a href="https://arstechnica.com/gadgets/2026/01/are-people-avoiding-ios-26-because-of-liquid-glass-its-complicated/">has been overstated</a> by some members of the Apple enthusiast media ecosystem, and Apple&#8217;s data shows that iOS 26 adoption rates are <a href="https://developer.apple.com/support/app-store/">roughly in line with those of</a> the last few years. But the Mac&#8217;s foray into Liquid Glass has drawn particular ire from longtime users (developers Jeff Johnson and Norbert Heger have been tracking persistently weird <a href="https://lapcatsoftware.com/articles/2026/2/4.html">Finder</a> and <a href="https://noheger.at/blog/2026/01/11/the-struggle-of-resizing-windows-on-macos-tahoe/">window resizing behavior</a>, to pick two concrete examples, and Daring Fireball&#8217;s John Gruber <a href="https://daringfireball.net/2026/01/resizing_windows_macos_26">has encouraged</a> users not to upgrade).</p>
+<p>My general approach to software redesigns is to just roll with them and let their imperfections and quirks become background noise over time&#8212;it&#8217;s part of my job to <a href="https://arstechnica.com/gadgets/2025/09/macos-26-tahoe-the-ars-technica-review/#toc-h10">point out problems where I see them</a>, but I also need to keep up with new releases whether I&#8217;m in love with them or not.</p>
+<p>But this person has no such job requirement, and they had two questions: Can I downgrade this? And if so, how?</p>
+<p>The answer to the first question is &#8220;yes, usually,&#8221; and Apple provides some advice scattered across multiple documentation pages. This is an attempt to bring all of those steps together into one page, aimed directly at new Mac buyers who are desperate to switch from Tahoe to the more-familiar macOS 15 Sequoia.</p>
+
+  <span class="toc-title font-impact block text-base font-semibold uppercase text-green-400">Table of Contents</span>
+
+   
+
+
+<h2>A preemptive warning about security updates and older versions of macOS</h2>
+<p>Before we begin: Apple handles macOS updates differently from iOS updates. Eventually, Apple requires devices that support the latest iOS and iPadOS versions to install those updates if they want to continue getting security patches. That means if your iPhone or iPad&#160;can run iOS or iPadOS 26, it needs to be running iOS or iPadOS 26 to stay patched.</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Older macOS versions, on the other hand, are updated for around three years after they&#8217;re initially released. The first year, they get both security patches and new features. The next two years, they get security patches and new versions of the Safari browser. Macs running older-but-supported macOS versions also generally continue to get the <a href="https://eclecticlight.co/2026/02/18/firmware-updates-for-macos-tahoe-sequoia-and-sonoma/">same firmware updates</a> as those running the latest macOS version.</p>
+<p>Generally, we&#8217;d recommend against using macOS versions after security updates have dried up. For macOS 15 Sequoia, that will happen around September or October of 2027. Apple also sometimes leaves individual vulnerabilities unpatched on older operating systems; only the latest releases are guaranteed to get every patch. If you can look past the elements of Tahoe&#8217;s design that bother you most, staying on it is the safest option.</p>
+<p>You can follow steps similar to the ones in this guide to downgrade some Macs to even older versions of macOS, but I wouldn&#8217;t recommend it; macOS 14 Sonoma will get security and Safari updates for only another six months or so, which isn&#8217;t long enough to justify spending the time to install it.</p>
+<p>What we won&#8217;t cover is how to transfer data you want to keep from your Tahoe install to an older version of macOS. We&#8217;re assuming you have a new and relatively pristine Mac to downgrade, one that you haven&#8217;t loaded up with data other than what you already have synced to iCloud.</p>
+ 
+<h2>Can my Mac downgrade?</h2>
+<p>Mostly, yes. Any Mac with an M4 family chip or older, including the M4 MacBook Air and everything else in Apple&#8217;s current lineup, should support the current version of Sequoia (as of this writing, 15.7.4, with Safari 26.3).</p>
+<p>As a rule of thumb, Macs will not run any version of macOS older than the one they shipped with when they launched. Apple provides security updates for older versions of macOS, but it doesn&#8217;t bother backporting drivers and other hardware support from newer versions to older ones.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The only Mac to launch since Tahoe was released is <a href="https://arstechnica.com/gadgets/2025/10/m5-macbook-pro-review-fifth-generation-apple-silicon-in-a-familiar-wrapper/">the M5 MacBook Pro</a>, so owners of that system will need Tahoe or newer. If Apple puts out new Macs in early March <a href="https://arstechnica.com/apple/2026/02/get-ready-for-new-macs-and-ipads-apple-announces-special-experience-on-march-4/">as expected</a>, those Macs will&#160;also only work with Tahoe or newer, and downgrades won&#8217;t be possible.</p>
+<p>Although we&#8217;re mainly talking about new Macs here, these steps should all be identical for any Apple Silicon Mac, from the original M1 computers on up. If you buy a recently used Mac that ships with Tahoe installed, a downgrade still works the same way. We won&#8217;t cover the steps for installing anything on an Intel Mac&#8212;vanishingly few of them support Tahoe in the first place, and most people certainly shouldn&#8217;t be buying them at this late date.</p>
+<h2>Option one: A bootable USB installer</h2>
+<p>Apple hasn&#8217;t shipped physical install media for macOS <a href="https://arstechnica.com/gadgets/2011/07/mac-os-x-10-7/#page-2">in 15 years</a>, but each downloadable installer still includes the bits you need to make a bootable USB install drive. And while late-Intel-era Macs with Apple T2 chips briefly made booting from external media kind of a pain, Apple Silicon Macs will boot from a USB drive just as easily and happily as early Intel-era Macs did.</p>
+<p>This method will be the easiest for most people because it only requires you to own a single Mac&#8212;the one you&#8217;re downgrading.</p>
+<h3>Create the USB installer</h3>
+ 
+
+<p>To make a USB installer, you&#8217;ll need a 32GB or larger USB flash drive and the downloadable macOS Sequoia installer. A 16GB drive was large enough for macOS for many years, but Sequoia and Tahoe are too large by a couple of gigabytes.</p>
+<p>Apple&#8217;s support page <a href="https://support.apple.com/en-us/102662">here</a> links to every downloadable macOS installer going back to 2011&#8217;s 10.7 Lion. In Tahoe, the macOS Sequoia link takes you to the App Store, which then bounces you to Software Update in the Settings app. This process has enough points of failure that it may not work the first time; try clicking the &#8220;Get&#8221; button in the App Store again and it usually goes.</p>
+
+          
+                   
+            
+
+              
+          
+          
+<p>If you&#8217;re downloading the installer from within macOS Tahoe, you&#8217;ll see a pop-up when the download completes, telling you that the installer can&#8217;t be run from within that version of macOS. Since we&#8217;ll be running it off of its own USB stick, you can safely ignore this message.</p>
+ 
+
+<p>While the installer is downloading, install and prepare your USB drive. Open Disk Utility, click the View button, and select &#8220;show all devices.&#8221; Click the root of your USB drive under the &#8220;external&#8221; header in the left sidebar, and click the Erase button in the upper-right control area.</p>
+ 
+<p>Change the disk&#8217;s name to whatever you want&#8212;I use &#8220;MyVolume&#8221; so I don&#8217;t have to change Apple&#8217;s sample terminal commands when copying the installer files&#8212;and make sure the Format is set to Mac OS Extended (Journaled) and the Scheme is set to GUID Partition Map. (That&#8217;s not an error; the macOS installer still wants an HFS+ filesystem rather than APFS.)</p>
+<p>The handy thing is that if you have a larger USB drive, you can create installers for multiple macOS versions by partitioning the disk with the Partition button. A 64GB drive split into three ~21GB partitions could boot Tahoe, Sequoia, and another past or future macOS version; I just have it split into two volumes so I can boot Sequoia and Tahoe installers from the same drive.</p>
+ 
+
+<p>Once the Sequoia installer is in your Applications folder, run a Terminal command to copy the installer files. Apple has commands for each version of macOS on <a href="https://support.apple.com/en-us/101578">this page</a>. Use this one for Sequoia:</p>
+<p><code>sudo /Applications/Install\ macOS\ Sequoia.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume</code></p>
+<p>If you named the USB drive something other than MyVolume when you formatted it, change the name in the command as well. Note that names with spaces require a backslash before each space.</p>
+<p>The Terminal will prompt you for your password and ask you to type Y to confirm. It will then reformat the drive and copy the files over. The time this takes will vary depending on the speed of the USB drive you&#8217;re using, but for most USB 3 drives, it should only take a few minutes to create the installer. When the Terminal command is done running, leave the disk inserted and shut down your Mac.</p>
+
+          
+                   
+            
+
+              
+          
+          
+<h3>Using the USB installer</h3>
+<p>With your Mac powered down and the USB installer drive inserted, press and hold the power button on your Mac (the Touch ID button on any laptop or the dedicated power button on a desktop) until the text under the Apple logo changes to &#8220;loading startup options.&#8221; You should see the macOS Sequoia installer listed alongside Macintosh HD as a boot option; highlight it and click Continue. If you don&#8217;t&#160;see the Sequoia installer, you may need an extra step&#8212;highlight Options, then click Continue, and we&#8217;ll talk more about this momentarily.</p>
+<p>Once booted, the Sequoia installer will automatically launch the macOS installer to do an in-place upgrade, which isn&#8217;t what we want. Hit Command+Q to quit the installer and click through the confirmation, and you&#8217;ll get the typical menu of recovery environment options; from here, launch Disk Utility, click the top level of the internal Macintosh HD disk, and click Erase. Click through the prompts to erase the Mac and restart.</p>
+ 
+
+<p>After the Mac restarts, you&#8217;ll need an Internet connection to activate it before you can do anything else with it; connect using the Wi-Fi menu in the top-right, typing in your network SSID and password manually if the menu doesn&#8217;t auto-populate. This will activate your Mac and get you back to the recovery environment menu.</p>
+<p>Here, select the Sequoia installer and click through the prompts&#8212;you should be able to install Sequoia on the now-empty Macintosh HD volume with no difficulty. From here, there&#8217;s nothing else to do. Wait until the installation completes, and when it&#8217;s ready, it will boot into a fresh Sequoia install, ready to be set up.</p>
+<p>If you didn&#8217;t see your Sequoia installer in the boot menu before and you clicked the Options gear instead, it usually means that FileVault encryption or Find My was enabled on the Mac&#8212;maybe you signed into your Apple account when you were initially setting up Tahoe before you decided you wanted nothing to do with it.</p>
+
+          
+                   
+            
+
+              
+          
+          
+ 
+<p>When you boot into the recovery environment, you&#8217;ll be asked to select a user you know the password for, which will unlock the encrypted disk. If all you want to do is erase the Mac and make it bootable from your USB stick, don&#8217;t worry about this; just select Recovery Assistant from the menu, select Erase Mac, and click through the prompts. Then, use the steps above to boot from your USB stick, and you should be able to install a fresh copy of whatever macOS version you want to the now-erased internal drive.</p>
+<h2>The nuclear option: A DFU restore</h2>
+<p>Normally, a bootable USB installer does everything you need it to do. It wipes the data from your Mac&#8217;s internal storage and replaces it with new data. But occasionally you need to drill a little deeper, either because your Mac becomes unresponsive or you&#8217;ve been running beta software and want to switch back to a stable release. Or just because other steps haven&#8217;t worked for you.</p>
+<p>The nuclear option for resetting a Mac is a <a href="https://support.apple.com/en-us/108900">DFU (or Device Firmware Upgrade) restore</a>. Based on the restore process for iPhones and iPads, a DFU restore uses a compressed <a href="https://en.wikipedia.org/wiki/IPSW">IPSW archive</a> that contains not only the macOS system files but also firmware files for all Apple Silicon Macs. The USB installer just replaces macOS; the DFU restore replaces everything from the firmware on up. (These are also the same files used to create macOS virtual machines using <a href="https://arstechnica.com/gadgets/2022/07/how-to-use-free-virtualization-apps-to-safely-test-the-macos-ventura-betas/">Apple&#8217;s Virtualization Framework</a>.)</p>
+<p>Because a DFU restore can only be performed on a Mac that&#8217;s booted into a special DFU mode, you&#8217;ll need a second Mac with a USB-C or Thunderbolt port, plus a USB-C cable. Apple says the USB-C charging cable included with Macs will work for this but not to use a Thunderbolt cable; I&#8217;ve used a generic USB-C cable, and it has worked fine.</p>
+
+          
+                  
+
+              
+          
+          
+<p>The first step is to download the relevant IPSW file from Apple. <a href="https://mrmacintosh.com/apple-silicon-m1-full-macos-restore-ipsw-firmware-files-database/">This page on the Mr. Macintosh site</a> is the one I have bookmarked because it&#8217;s a good repository of virtually every macOS IPSW file Apple has ever released, including beta versions for when those are useful.</p>
+<p>First, download the macOS 15.6.1 IPSW file linked on that page (and <a href="https://updates.cdn-apple.com/2025SummerFCS/fullrestores/093-10809/CFD6DD38-DAF0-40DA-854F-31AAD1294C6F/UniversalMac_15.6.1_24G90_Restore.ipsw">here</a>) to your host Mac (Apple stops releasing IPSW files for older OSes once newer ones have been released, so this is the newest file you&#8217;ll be able to get for macOS 15). Both iPhones and iPads have model-specific IPSW files, but for macOS, there&#8217;s just one image that works with all Macs.</p>
+<p>On the Mac you&#8217;re trying to restore&#8212;we&#8217;ll call it the &#8220;target Mac&#8221; for simplicity&#8217;s sake&#8212;figure out which of its USB-C ports is <a href="https://support.apple.com/en-us/120694">the designated DFU port</a>. There&#8217;s only one that will work, and it&#8217;s usually the leftmost or rightmost port. Plug one end of the USB-C cable into that DFU port and the other into any USB-C port on your host Mac and follow <a href="https://support.apple.com/en-us/108900">Apple&#8217;s instructions</a> for how to boot the system into DFU mode.</p>
+ 
+
+<p>When it&#8217;s successfully booted into DFU mode, your host Mac will see the target Mac, and you&#8217;ll see the same notification you get any time you plug in USB accessories for the first time. Allow it to connect, open a Finder window, and scroll down the left-hand sidebar until you get to &#8220;Mac&#8221; under the Locations heading.</p>
+<p>The Finder&#8217;s DFU interface is pretty simple&#8212;a picture, a line of text, and two buttons. We want to restore, not revive, the Mac. Clicking the Revive Mac button will normally download and install the latest macOS version from Apple. But you can force it to use a different IPSW file&#8212;like the Sequoia one we just downloaded&#8212;by holding down the Option key as you click it. Navigate to the IPSW file, open it, and allow the restore process to begin.</p>
+
+          
+                   
+            
+
+              
+          
+          
+ 
+ 
+
+<p>This will take some time; you can track progress in the first phase in the Finder window. After a few minutes, the Mac you&#8217;re restoring will light back up, and you can watch its progress there. Once the target Mac reboots with its signature chime, the process is complete.</p>
+<p>Because the IPSW file is for an outdated version of Sequoia, the first thing you&#8217;ll want to do is hit Software Update for the latest Sequoia and Safari versions; you&#8217;ll be offered a Tahoe upgrade, but you obviously won&#8217;t want to do that after the trouble you just went through. Scroll down to &#8220;other updates,&#8221; and you&#8217;ll be offered all the non-Tahoe updates available.</p>
+<h2>Downgrader&#8217;s remorse?</h2>
+<p>You will run into a handful of downsides when running an older version of macOS, especially if you&#8217;re trying to use it with iPhones and/or iPads that have been updated to version 26.</p>
+<p>Most of the awkwardness will involve new features introduced in Messages, Notes, Reminders, and other Apple apps that sync between devices. The Messages app in Sequoia <a href="https://www.macrumors.com/guide/ios-26-messages-app/">doesn&#8217;t support</a> background images or polls, and it handles spam filtering slightly differently. They&#8217;re minor absences and annoyances, mostly, but they&#8217;re still absences and annoyances.</p>
+<p>At least for the time being, though, you&#8217;ll find Sequoia pretty well-supported by most of Apple&#8217;s ecosystem. Core services like iCloud and iMessage aren&#8217;t going anywhere; Xcode still supports Sequoia, as does every <a href="https://arstechnica.com/gadgets/2026/01/seven-things-to-know-about-how-apples-creator-studio-subscriptions-work/">Apple Creator Studio app update</a> aside from the new Pixelmator Pro. App support may eventually drop off, but there&#8217;s not a lot that requires the latest and greatest version of macOS.</p>
+<p>If and when you decide it&#8217;s time to step up to a newer version of macOS, Tahoe (or whatever macOS 27 is called) will be there in Software Update waiting for you. You&#8217;ll need to install a new version eventually if you want to keep getting app updates and security patches. But you don&#8217;t have to yet.</p>
+
+
+          
+                  
+
+                  
+          </div>
