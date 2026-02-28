@@ -1,0 +1,47 @@
+---
+author: Dan Goodin
+canonical_url: https://arstechnica.com/security/2026/02/google-is-using-clever-math-to-quantum-proof-https-certificates/
+date: '2026-02-28T01:26:41'
+excerpt: Merkle Tree Certificate support is already in Chrome. Soon, it will be everywhere.
+image: assets/media/uBpc_5AVB8ye-nYFPwtCDw-zbTuMnvIglhGM-vhAWDNWw.jpeg
+source: arstechnica
+tags:
+- Biz & IT
+- Google
+- Security
+- certificate transparency
+- HTTPS
+- merkle trees
+- shor's algorithm
+title: Google quantum-proofs HTTPS by squeezing 2.5kB of data into 64-byte space
+---
+<div>
+                      
+                      
+          <p>Google on Friday unveiled its plan for its Chrome browser to secure HTTPS certificates against quantum computer attacks without breaking the Internet.</p>
+<p>The objective is a tall order. The quantum-resistant cryptographic data needed to transparently publish TLS certificates is roughly 40 times bigger than the classical cryptographic material used today. Today&#8217;s <a href="https://en.wikipedia.org/wiki/X.509">X.509 certificates</a> are about 64 bytes in size, and comprise six elliptic curve signatures and two EC public keys. This material can be cracked through the quantum-enabled <a href="https://en.wikipedia.org/wiki/Shor's_algorithm">Shor&#8217;s algorithm</a>. Certificates containing the equivalent quantum-resistant cryptographic material are roughly 2.5 kilobytes. All this data must be transmitted when a browser connects to a site.</p>
+<h2>The bigger they come, the slower they move</h2>
+<p>&#8220;The bigger you make the certificate, the slower the handshake and the more people you leave behind,&#8221; said Bas Westerbaan, principal research engineer at Cloudflare, which is partnering with Google on the transition. &#8220;Our problem is we don&#8217;t want to leave people behind in this transition.&#8221; Speaking to Ars, he said that people will likely disable the new encryption if it slows their browsing. He added that the massive size increase can also degrade &#8220;middle boxes,&#8221; which sit between browsers and the final site.</p>
+<p>To bypass the bottleneck, companies are turning to <a href="https://en.wikipedia.org/wiki/Merkle_tree">Merkle Trees</a>, a data structure that uses cryptographic hashes and other math to verify the contents of large amounts of information using a small fraction of material used in more traditional verification processes in public key infrastructure.</p>
+<p>Merkle Tree Certificates, &#8220;replace the heavy, serialized chain of signatures found in traditional PKI with compact Merkle Tree proofs,&#8221; members of Google&#8217;s Chrome Secure Web and Networking Team <a href="https://security.googleblog.com/2026/02/cultivating-robust-and-efficient.html">wrote Friday</a>. &#8220;In this model, a Certification Authority (CA) signs a single &#8216;Tree Head&#8217; representing potentially millions of certificates, and the &#8216;certificate&#8217; sent to the browser is merely a lightweight proof of inclusion in that tree.&#8221;</p>
+
+          
+                       
+                  
+
+              
+          
+          
+<p>Google and other browser makers require that all TLS certificates be published in public transparency logs, which are append-only distributed ledgers. Website owners can then check the logs in real time to ensure that no rogue certificates have been issued for the domains they use. The transparency programs were implemented in response to the <a href="https://www.theregister.com/2011/09/07/diginotar_hacker_proof/">2011 hack</a> of Netherlands-based DigiNotar, which allowed the minting of 500 counterfeit certificates for Google and other websites, some of which were used to spy on web users in Iran.</p>
+<p>Once viable, Shor&#8217;s algorithm could be used to forge classical encryption signatures and break classical encryption public keys of the certificate logs. Ultimately, an attacker could forge <a href="https://blog.cloudflare.com/pq-2025/">signed certificate timestamps</a> used to prove to a browser or operating system that a certificate has been registered when it hasn&#8217;t.</p>
+<p>To rule out this possibility, Google is adding cryptographic material from quantum-resistant algorithms such as <a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf">ML-DSA</a>. This addition would allow forgeries only if an attacker were to break both classical and post-quantum encryption. The new regime is part of what Google is calling the quantum-resistant root store, which will complement the Chrome Root Store the company <a href="https://security.googleblog.com/2023/05/how-chrome-root-program-keeps-users-safe.html">formed in 2022</a>.</p>
+<p>The MTCs use Merkle Trees to provide quantum-resistant assurances that a certificate has been published without having to add most of the lengthy keys and hashes. Using other techniques to reduce the data sizes, the MTCs will be roughly the same 64-byte length they are now, Westerbaan said.</p>
+<p>The new system has already been implemented in Chrome. For the time being, Cloudflare is enrolling roughly 1,000 TLS certificates to test how well the MTCs work. For now, Cloudflare is generating the distributed ledger. The plan is for CAs to eventually fill that role. The Internet Engineering Task Force standards body has recently formed a working group called the <a href="https://datatracker.ietf.org/wg/plants/about/">PKI, Logs, And Tree Signatures</a>, which is coordinating with other key players to develop a long-term solution.</p>
+<p>&#8220;We view the adoption of MTCs and a quantum-resistant root store as a critical opportunity to ensure the robustness of the foundation of today&#8217;s ecosystem,&#8221; Google&#8217;s Friday blog post said. &#8220;By designing for the specific demands of a modern, agile internet, we can accelerate the adoption of post-quantum resilience for all web users.&#8221;</p>
+
+
+          
+                  
+
+                  
+          </div>
