@@ -1,0 +1,36 @@
+---
+author: Thom Holwerda
+canonical_url: https://www.osnews.com/story/144503/windows-server-insider-builds-can-now-boot-from-refs/
+date: '2026-02-27T23:25:18'
+excerpt: 'The file system of the Windows operating system is NTFS, whether you&#8217;re
+  running it on a desktop/laptop or server. It&#8217;s the only file system Windows
+  can run on and boot from, at least officially, so you&#8217;re not even given a
+  choice of file systems for the boot volume like you are on, say, desktop Linux.
+  That&#8217;s about to change, though: Microsoft has finally announced that Windows
+  Server will be able to boot from ReFS. We’re excited to announce that Resilient
+  File System (ReFS) boot support is now available for Windows Server Insiders in
+  Insider Preview builds. For the first time, you can install and boot Windows Server
+  on an ReFS-formatted boot volume directly through the setup UI. With ReFS boot,
+  you can finally bring modern resilience, scalability, and performance to your server’s
+  most critical volume — the OS boot volume. ↫ chcurlet-msft at Microsoft&#8217;s
+  Tech Community Without diving too much into the weeds, ReFS can roughly be seen
+  as Microsoft&#8217;s answer to modern file systems like ZFS and Btrfs, with comparable
+  design goals and feature sets. It&#8217;s been around since 2012, but only for Windows
+  Server, and with every Windows Server release since, the company has improved performance,
+  added new features, and fixed bugs. Now, in 2026, it seems Microsoft thinks ReFS
+  is ready to be used as a bootable file system for Windows Server. If you want to
+  try this for yourself, you need to be a Windows Insider and make sure you have Windows
+  Server build 29531.1000.260206-1841 or newer. During installation, the Windows installer
+  will ask you to choose between NTFS and ReFS; the rest of the installation process
+  will be pretty much the same as before. Now all we need is to wait for ReFS to become
+  an option on client versions of Windows too, which would mark &#8211; arguably &#8211;
+  only the second time in history Windows transitioned from one default filesystem
+  to the another.'
+image: null
+source: osnews
+tags:
+- Windows
+title: Windows Server Insider builds can now boot from ReFS
+---
+<div><p>The file system of the Windows operating system is NTFS, whether you&#8217;re running it on a desktop/laptop or server. It&#8217;s the only file system Windows can run on and boot from, at least officially, so you&#8217;re not even given a choice of file systems for the boot volume like you are on, say, desktop Linux. That&#8217;s about to change, though: Microsoft has finally announced that Windows Server will be able to boot from <a href="https://learn.microsoft.com/en-us/windows-server/storage/refs/refs-overview">ReFS</a>.</p><blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"><p>We&#8217;re excited to announce that Resilient File System (ReFS) boot support is now available for Windows Server Insiders in Insider Preview builds. For the first time, you can install and boot Windows Server on an ReFS-formatted boot volume directly through the setup UI. With ReFS boot, you can finally bring modern resilience, scalability, and performance to your server&#8217;s most critical volume &#8212; the OS boot volume.</p>
+<a href="https://techcommunity.microsoft.com/blog/windowsservernewsandbestpractices/announcing-refs-boot-for-windows-server-insiders/4496592">&#8619; chcurlet-msft at Microsoft&#8217;s Tech Community</a></blockquote><p>Without diving too much into the weeds, ReFS can roughly be seen as Microsoft&#8217;s answer to modern file systems like ZFS and Btrfs, with comparable design goals and feature sets. It&#8217;s been around since 2012, but only for Windows Server, and with every Windows Server release since, the company has improved performance, added new features, and fixed bugs. Now, in 2026, it seems Microsoft thinks ReFS is ready to be used as a bootable file system for Windows Server.</p></div>
